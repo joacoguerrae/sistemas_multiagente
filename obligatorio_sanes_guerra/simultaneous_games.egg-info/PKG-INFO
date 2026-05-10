@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: simultaneous-games
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: gymnasium>=1.2.3
+Requires-Dist: ipykernel>=7.2.0
+Requires-Dist: jupyter>=1.0.0
+Requires-Dist: numpy>=2.4.3
+Requires-Dist: pettingzoo>=1.25.0
