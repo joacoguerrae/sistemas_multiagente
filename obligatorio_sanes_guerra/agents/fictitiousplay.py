@@ -31,6 +31,9 @@ class FictitiousPlay(Agent):
             self.learned_policy[agent] = self.count[agent] / np.sum(self.count[agent])
 
     def get_rewards(self) -> dict:
+        if hasattr(self, '_cached_rewards'):
+            return self._cached_rewards
+            
         g = self.game.clone()
         agents_actions = list(map(lambda agent: list(g.action_iter(agent)), g.agents))
         rewards: dict[tuple, float] = {}
@@ -47,6 +50,7 @@ class FictitiousPlay(Agent):
             g.step(action_dict)
             rewards[joint_action] = g.reward(self.agent)
 
+        self._cached_rewards = rewards
         return rewards
 
     def get_utility(self):

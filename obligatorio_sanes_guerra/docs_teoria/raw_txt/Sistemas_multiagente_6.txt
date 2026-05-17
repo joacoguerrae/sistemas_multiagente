@@ -1,0 +1,171 @@
+Sistemas Multiagente
+Regret Matching
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+15 de abril de 2026
+
+Ejemplo: RPS
+I P1 elige Rock y P2 elige Paper
+
+I Las recompensas son -1 y 1, respectivamente
+
+I ¿Qué pasa si P1 elige otra acción (asumiendo que P2 no cambia)?
+I Si elige Paper , su recompensa es 0, o sea 1 más que con Rock
+
+I Si elige Scissors, su recompensa es 1, o sea 2 más que con Rock
+
+Sergio Yovine
+
+Regret Matching
+
+15 de abril de 2026
+
+2/7
+
+Concepto de arrepentimiento (regret)
+La diferencia entre la recompensa obtenida y la que se hubiera podido
+obtener jugando otra acción es el arrepentimiento (regret)
+Dada a ∈ A:
+gp (ap0 , a) = Rp (ap0 , a−p ) − Rp (a)
+
+ap0 ∈ Ap
+
+Ejemplo:
+g1 (Paper , (Rock, Paper )) = R1 (Paper , Paper ) − R1 (Rock, Paper )) = 1
+g1 (Scissors, (Rock, Paper )) = R1 (Scissors, Paper ) − R1 (Rock, Paper )) = 2
+
+Sergio Yovine
+
+Regret Matching
+
+15 de abril de 2026
+
+3/7
+
+Regret matching
+Idea
+I Elegir la acción que más se lamentó no haber jugado en el pasado
+I Pero no ser demasiado predecible ...
+I Usar como estrategia la distribución dada por los regrets positivos
+acumulados
+I Ejemplo
+t
+
+a
+
+R1
+
+g1
+
+acumulado
+
+estrategia
+
+1
+
+(R, P)
+
+-1
+
+(0,1,2)
+
+(0,1,2)
+
+0, 31 , 23
+
+
+
+2
+
+(S, R)
+
+-1
+
+(1,2,0)
+
+(1,3,2)
+
+1 3 2
+6, 6, 6
+
+
+
+Sergio Yovine
+
+Regret Matching
+
+15 de abril de 2026
+
+4/7
+
+(Unconditional) Regret matching
+Inicializar π̂p1 con la distribución uniforme y Gp1 = 0
+En cada iteración t + 1:
+I Calcular y acumular los regrets:
+t
+gpt+1 (ap0 ) = Rp (ap0 , a−p
+) − Rp (at )
+
+ap0 ∈ Ap
+
+Gpt+1 = Gpt + gpt+1
+I Obtener la estrategia de regret matching :
+máx{Gpt+1 , 0}
+π̂pt+1 = P
+máx{Gpt+1 , 0}
+si el denominador es negativo o nulo, se asigna la uniforme
+I Elegir apt+1 ∼ π̂pt+1
+I Se aprende π̄pt = 1t
+Sergio Yovine
+
+P
+
+s
+s≤t π̂p
+Regret Matching
+
+15 de abril de 2026
+
+5/7
+
+FP vs RM
+FP es un agente ficticio, observa:
+I Las estrategias de todos los agentes (agent modeling )
+I Su matriz de recompensas completa
+RM es un agente informado, observa:
+I Su estrategia
+I Su vector de regrets dada una estrategia del resto (regret modeling )
+Un agente ingenuo, observa:
+I Su estrategia
+I Su recompensa
+A. Jafari, A. Greenwald, D. Gondek. On No-Regret Learning, Fictitious Play, and Nash
+Equilibrium. 2001
+
+Sergio Yovine
+
+Regret Matching
+
+15 de abril de 2026
+
+6/7
+
+Bibliografı́a recomendada
+
+I Todd W. Neller, Marc Lanctot. An Introduction to Counterfactual
+Regret Minimization. July 9, 2013.
+
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 4. Sec. 4.10. Chapter 6. Sec. 6.5.
+
+Sergio Yovine
+
+Regret Matching
+
+15 de abril de 2026
+
+7/7
+
+

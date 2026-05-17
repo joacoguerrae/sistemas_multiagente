@@ -1,0 +1,860 @@
+Sistemas Multiagente
+Teorı́a de juegos
+Juegos ordinales de una jugada
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+20 de marzo de 2025
+
+Game theory deals with interactive situations where two or more individuals, called players
+make decisions that jointly determine the final outcome. To see an example point your
+browser to the following video:1
+.
+In this video each of two players, Sarah and Steve, has to pick one of two balls: inside one
+ball appears the word ‘split’ and inside the other the word ‘steal’ (each player is first asked
+to secretly check which of the two balls in front of him/her is the split ball and which is the
+steal ball). They make their decisions simultaneously. The possible outcomes are shown in
+Figure 2.1, where each row is labeled with a possible choice for Sarah and each column
+with a possible choice for Steven. Each cell in the table thus corresponds to a possible pair
+of choices and the resulting outcome is written inside the cell.
+
+Juegos ordinales de una jugada (matriciales simultáneos)
+Split or Steal
+
+Sarah vs Steve
+
+  
+
+
+ 
+
+
+
+ 
+
+
+   
+
+
+ 
+
+
+   
+
+
+ 
+
+ 
+ 
+
+   
+
+
+ 
+
+
+   
+
+
+
+
+
+
+Figure 2.1: The Golden Balls “game”
+
+What should a rational player do in such a situation? It is tempting to reason as follows
+https://www.facebook.com/Britishumour/videos/1127818344236313/
+
+1 The video shows an excerpt from Golden Balls, a British daytime TV game show. If you search for
+‘Split or Steal’ on youtube.com you will find several instances of this game.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+2 / 19
+
+Modelo de un juego
+I Marco de juego
+
+I Jugadores (agentes): p ∈ P = {1, . . . , n}
+I Acciones de cada jugador: Ap
+Q
+I Acciones conjuntas1 : A = p∈P Ap = A1 × . . . × An
+
+I Utilidad (recompensa): R : P × A → R
+
+La función de utilidad es una representación del orden de preferencias de
+cada jugador sobre los resultados de las acciones conjuntas.
+a p b
+a p b
+a ∼p b
+
+1
+
+:
+:
+:
+
+p prefiere el resultado de a al de b
+para p el resultado de a es mejor o igual que el de b
+p es indiferente entre a y b (a p b ∧ b  a)
+
+En teorı́a de juegos se las suele llamar perfiles
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+3 / 19
+
+Ejemplo: Sarah vs Steve
+I Jugadores (agentes): p ∈ P = {Sarah, Steve}
+I Acciones de cada jugador: ASarah = ASteve = {Split, Steal }
+I Utilidad (recompensa):
+
+Sarah
+
+Split
+Steal
+
+Steve
+Split Steal
+3 4 2 1
+4 3 2 2
+
+ASarah Split Split Steal Steal
+ASteve Split Steal Split Steal
+3
+2
+4
+2
+4
+1
+3
+2
+
+I Sarah es avara (prefiere más plata a menos) y egoista (se enfoca en lo
+que ella recibe):
+(Steal, Split) Sarah (Split, Split) Sarah (Split, Steal) ∼Sarah (Steal, Steal)
+
+I Steve es equitativo (prefiere repartir en partes iguales) y benevolente
+(prefiere que Sarah se lleve algo a que no se lleve nada):
+
+(Split, Split) Steve (Steal, Split) Steve (Steal, Steal) Steve (Split, Steal)
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+4 / 19
+
+Actuar racionalmente
+I El jugador p elige la acción que maximiza su beneficio esperado, de
+acuerdo a sus preferencias, capturadas por la utilidad, que definen sus
+incentivos y objetivos
+
+I Ejemplo: Sarah vs Steve
+I Sarah: Steal
+I Steve: Split
+
+I Resolver el juego consiste en encontrar tales acciones
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+5 / 19
+
+Estrategias puras o determinı́sticas
+I Estrategia (policy) conjunta pura o determinı́stica:
+π∈A
+I Notación
+I p ∈ P, −p = P \ {p} es el conjunto de los otros jugadores
+I πp ∈ Ap es la estrategia pura (acción) del jugador p ∈ P
+I π−p ∈ A−p son las estrategias del resto de los jugadores
+I π = (πp , π−p )
+I Rp (π) = R(p, π) ∈ R es la recompensa
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+6 / 19
+
+Dominancia
+I πp domina estrictamente a πp0 :
+πp A πp0 si para toda π−p , Rp (πp , π−p ) > Rp (πp0 , π−p )
+I πp domina débilmente a πp0 : πp w πp0 si
+I para toda π−p , Rp (πp , π−p ) ≥ Rp (πp0 , π−p ), y
+I existe π−p , tal que Rp (πp , π−p ) > Rp (πp0 , π−p )
+
+I πp es equivalente a πp0 :
+πp ≡ πp0 si para toda π−p , Rp (πp , π−p ) = Rp (πp0 , π−p )
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+7 / 19
+
+Dominancia
+I πp es una estrategia estrictamente dominante si para toda πp0 ,
+πp A πp0 :
+Ejemplo: Steve: Split A Steal
+I πp es una estrategia débilmente dominante si para toda πp0 , πp w πp0
+o πp ≡ πp0
+Ejemplo: Sarah: Steal w Split
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+8 / 19
+
+other players). For example, consider the following two-player
+offsDominancia:
+of Player 1 areejemplo
+shown:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+: A game showing only the payoffs of Player 1
+Sergio
+Teorı́a de juegos
+1 strategy
+A Yovine
+strictly dominates strategy
+B:
+
+20 de marzo de 2025
+
+9 / 19
+
+Dominancia: Equilibrio dominante
+Una estrategia conjunta π es un equilibrio dominante si para todo jugador
+p ∈ P, πp es una estrategia dominante.
+Ejemplo: Sarah vs Steve
+Sarah:
+
+Sarah
+
+Split
+Steal
+
+Steve
+Split Steal
+3 4 2 2
+4 3 2 1
+
+Steal w Split
+Steve:
+Split A Steal
+
+(Steal, Split) es un equilibrio dominante
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+10 / 19
+
+the matrix in Figure 11.4b. Finally, Player 1 should anticipate that Player 2
+(anticipating
+that Player 1 iterado
+will never play U) will never play L or R, and so
+Equilibrio
+dominante
+Player 1 should conclude that M is strictly dominated by D (the matrix in
+
+IFigure
+11.4c). Using
+iterated
+strict dominance,
+then,
+we can predict
+En muchos
+juegos
+no existen
+estrategias
+dominantes
+... that
+peroPlayer
+existen
+1 estrategias
+will choose Ddominadas.
+and Player 2 will choose C.
+Player 2
+
+Player 1
+
+L
+
+C
+
+R
+
+U
+
+1,1
+
+2,0
+
+2,2
+
+M
+
+0,3
+
+1,5
+
+4,4
+
+D
+
+2,4
+
+3,6
+
+3,0
+
+Figure 11.3: Iterated strict dominance example
+
+Conocimiento común
+No importa lo que haga 2, un jugador 1 racional nunca jugará U (D A U).
+Si 2 sabe que 1 no jugará U, entonces 2 jugará C .
+Si 1 sabe que 2 sabe que 1 no jugará U, entonces 1 sabe que 2 jugará C .
+Entonces 1 jugará D.
+Idea: eliminar las estrategias dominadas iterativamente.
+Fun: Friends.
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+11 / 19
+
+Equilibrio dominante iterado
+I IDSDS: Eliminación iterada de estrategias estrictamente dominadas
+
+104 CHAPTER 11. ITERATED DOMINANCE AND NASH EQUILIBRIUM
+L
+
+C
+
+R
+
+L
+
+C
+
+R
+
+L
+
+C
+
+R
+
+U
+
+/1,1
+///
+
+/2,0
+///
+
+/2,2
+///
+
+U
+
+/1,1
+///
+
+/2,0
+///
+
+/2,2
+///
+
+U
+
+/1,1
+///
+
+//
+2,0
+//
+
+/2,2
+///
+
+M
+
+0,3
+
+1,5
+
+4,4
+
+M
+
+/0,3
+///
+
+1,5
+
+/4,4
+///
+
+M
+
+/0,3
+///
+
+//
+1,5
+//
+
+/4,4
+///
+
+D
+
+2,4
+
+3,6
+
+3,0
+
+D
+
+/2,4
+///
+
+3,6
+
+/3,0
+///
+
+D
+
+/2,4
+///
+
+3,6
+
+/3,0
+///
+
+(a)
+
+(b)
+
+(c)
+
+Figure 11.4: Solution to iterated strict dominance example
+
+(D, C) es un equilibrio estrictamente dominante iterado.
+
+Question: Does the order of elimination matter?
+
+Answer:
+Although it is not obvious, the end result of iterated strict dominance
+I IDWDS:
+Eliminación iterada de estrategias débilmente dominadas
+is always the same regardless of the sequence of eliminations. In other words,
+(tarea)
+if in some game you can either eliminate U for Player 1 or L for Player 2, you
+don’t need to worry about which one to “do first”: either way you’ll end up at
+Sergio
+Yovine
+Teorı́a de juegos
+20 de marzo de 2025
+12 / 19
+the same
+answer.
+
+ame (T,L) is the unique IDWDS solution, indeed it is
+Equilibrio
+de Nash
+t (B,R)
+is also
+a Nash equilibrium.
+oes not simplify this game at all.
+I En muchos juegos no existen estrategias dominantes ni dominadas.
+
+I Idea: Estrategia conjunta en la que ningún jugador tiene incentivo
+
+The para
+following
+game has a unique pure strategy Nash
+cambiar unilateralmente.
+be simplified by IDWDS
+T
+M
+B
+
+L
+2,2
+1,-1
+0,1
+
+C
+-1,1
+0,0
+2,-1
+
+R
+1,0
+1,-2
+-2,3
+
+El Equilibrio de Nash (EN) es (T , L).
+Fun: A Beautiful Mind - Bar Scene.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+13 / 19
+
+T
+B
+
+Equilibrio de Nash
+
+1,1
+0,0
+
+0,0
+0,0
+
+I Mejor respuesta:
+
+this game (T,L) is the unique IDWDS solution, indeed it is a dom
+{πp |equilibrium.
+∀πp0 . Rp (πp , π−p ) ≥ Rp (πp0 , π−p )}
+p (π−pa) =
+n, but (B,R) BR
+is also
+Nash
+SDSIdoes not simplify this game at all.
+Equilibrio de Nash:
+
+∀p. πp ∈ BRp (π−p )
+
+ple 3 The following game has a unique pure strategy Nash equil
+n not
+be simplified by IDWDS
+Ejemplo:
+T
+M
+B
+
+L
+2,2
+1,-1
+0,1
+
+C
+-1,1
+0,0
+2,-1
+
+R
+1,0
+1,-2
+-2,3
+
+El Equilibrio de Nash (EN) es (T , L).
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+14 / 19
+
+Equilibrio de Nash: interpretaciones posibles
+No regret Ningún agente puede hacer algo mejor dadas las acciones del
+resto de los agentes
+Self-enforcing agreement Si hubieran llegado a un acuerdo no vinculante
+previamente, lo cumplirı́an sı́ y solo sı́ es un EN
+Viable recommendation Si una tercera parte hubiera hecho una
+recomendación, los agentes la seguirı́an sı́ y solo sı́ es un EN
+Transparent reasoning Si los agentes son igualmente racionales
+(conocimiento común) llegan a la misma conclusión
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+15 / 19
+
+ote that C and R are both best responses when Player
+the only
+with
+Figure
+Equilibrio
+de 11.6b:
+Nash: puede
+haberboxes
+varios with both payoffs
+d (M, R), the Nash equilibria of the game.
+
+C
+
+R
+
+L
+
+C
+
+R
+
+//,0/
+
+//
+2,2
+//
+
+U
+
+5,1
+
+2,0
+
+2,2
+
+//,5/
+
+4,5
+
+M
+
+0,4
+
+1,5
+
+4,5
+
+,6
+
+//
+1,0
+//
+
+D
+
+2,4
+
+3,6
+
+1,0
+
+(a)
+
+(b)
+
+(D, C) y (M, R) son equilibrios de Nash
+
+h equilibria:
+(a) with strike-outs; (b) with underlinings
+I D ∈ BR (C ) y C ∈ BR (D)
+1
+
+2
+
+I M ∈ BR1 (R) y R ∈ BR2 (M)
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+16 / 19
+
+e of a game that has no Nash equilibria is the Matching Pennies gam
+Nash:
+puede
+haberhas
+ninguno
+usEquilibrio
+two-playerde
+game
+where
+eachnoplayer
+a coin and decides wheth
+face or the Tails face. If both choose H or both choose T then Pla
+I Matching pennies: No tiene equilibrio de Nash (en estrategias
+Player
+2 wins. Each player strictly prefers the outcome where she h
+puras).
+native outcome. The game is illustrated in Figure 2.23.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+Figure 2.23: The matching pennies game
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+17 / 19
+
+Resumen
+I Dos agentes que actúan en simultáneo
+I Las recompensas como medio para ordenar las preferencias
+I Observabilidad completa de acciones y recompensas
+I Conocimiento común
+I (Concepto de) solución (racional): equilibrio de Nash.
+I Problemas subsistentes
+1. Puede haber más de uno . . .
+2. Puede no haber ninguno.
+3. ¿Se puede aprender?
+
+Veremos 2 y 3 en la próxima clase.
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+18 / 19
+
+Lectura recomendada
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 3. Secs. 1-2.
+
+I G. Bonanno. Game Theory, 2nd ed. 2018. Chapter 2. Secs. 1-2, 5-6.
+
+I Y. Bauman. Quantum Microeconomics with Calculus. 2009. Chapter
+11. Ejercicios p. 114.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+20 de marzo de 2025
+
+19 / 19
+
+

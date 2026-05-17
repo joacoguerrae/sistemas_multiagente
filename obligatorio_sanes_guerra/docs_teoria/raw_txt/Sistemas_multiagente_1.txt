@@ -1,0 +1,276 @@
+Sistemas Multiagente
+Introducción
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+18 de marzo de 2026
+
+Inteligencia artificial
+
+S. Russell, P. Norvig. Artificial Intelligence: A Modern Approach (4th ed). Pearson, 2022. (Chapter 1).
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+2 / 11
+
+1
+
+4. Knowledge Representation
+
+Actuar racionalmente: agente inteligente
+Abilities
+Goals/Preferences
+Agent
+
+Prior Knowledge
+Observations
+
+Actions
+Past Experiences
+Environment
+
+D. Poole, A. Mackworth. Artificial Intelligence. Foundations of Computational Agents (3rd ed). Cambridge University Press,
+2023. (Chapter 1, Fig. 1.4)
+
+Figure 1.3: An agent interacting with an environment
+
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+3 / 11
+
+Interacción agente-ambiente
+
+tions and presenting new situations to the agent.1 The environment al
+ewards, special numerical values that the agent seeks to maximize ov
+its choice of actions.
+
+Agent
+state
+
+reward
+
+St
+
+Rt
+
+action
+Rt+1
+St+1
+
+At
+
+Environment
+
+Figure 3.1: The agent–environment interaction in a Markov decision process.
+
+R. Sutton, A. Barto.
+Reinforcement
+An Introduction (2nd ed.).
+MIT Press, 2018.
+specifically,
+the
+agent Learning.
+and environment
+interact
+at (Chapter
+each 3,ofFig.a3.1)
+sequence of
+2
+ps, t = 0, 1, 2, 3, . . .. At each time step t, the agent receives some represe
+nvironment’s state, St 2 S, and on that basis selects an action, At 2 A(s
+p later, in
+part
+of its action, the agent
+receives
+a4 / 11nu
+Sergio
+Yovine as a consequence
+Introducción
+18 de marzo
+de 2026
+
+Sistema multiagente
+Agent
+
+Agent
+
+Goals
+
+Communication
+
+Goals
+Actions
+
+Domain knowledge
+
+Domain knowledge
+
+Actions
+
+Observations
+
+Observations
+
+Actions
+
+Actions
+
+Environment
+
+Figure
+1.1: Schematic of a multi-agent system. A multi-agent system consists
+S. V. Albrecht et al. Multi-Agent Reinforcement Learning: Foundations and Modern Approaches. (Chapter 1, Fig. 1.1)
+Sergio Yovine and multiple decision-making
+Introducción
+18 de marzo
+de 2026
+5 / 11
+of an environment
+agents (shown
+as circles
+inside
+
+Chap
+
+Sistema multiagente - ejemplo
+
+ure 1.2: A level-based foraging task in which a group of three robots, e
+S. V. Albrecht et al. Multi-Agent Reinforcement Learning: Foundations and Modern Approaches. (Chapter 1, Fig. 1.2)
+rolled by an agent, must collect all items (shown as apples). Each ro
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+6 / 11
+
+6
+
+Chapter 1
+
+Interacción entre múltiples agentes
+Agent 1
+observation
+& reward
+
+action
+
+Agent 2
+
+observation
+& reward
+
+Agent n
+
+action
+
+joint action
+action
+
+observation
+& reward
+
+Environment
+joint action modifies environment state
+
+Figure 1.3: Schematic of multi-agent reinforcement learning. A set of n agents
+S. V. Albrecht
+et al. Multi-Agent
+Reinforcement Learning:
+Foundations
+and Modern
+(Chapter 1, Fig.
+1.3)choose
+receive
+individual
+observations
+about
+the state
+of theApproaches.
+environment,
+and
+actions to modify the state of the environment. Each agent then receives a scalar
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+7 / 11
+
+Sistema multiagente
+Multiagent systems are those systems that include multiple autonomous entities with either diverging information or diverging
+interests, or both.
+
+Such agents can be trading agents . . . , game-playing agents that
+assist (or replace) human players in a multiplayer game, or autonomous robots in a multi-robot setting.
+
+Y. Shoham, K. Leyton-Brown. Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations. Cambridge
+University Press, 2009. (Introduction)
+
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+8 / 11
+
+Problemática del aprendizaje de policies
+Agentes ¿Cuántos hay? ¿La cantidad es fija o variable?
+Conocimiento ¿Conocen sus preferencias y/o los del resto?
+Observabilidad ¿Completa, parcial y/o distorsionada?
+Utilidad ¿Cómo se reparte? ¿Competitiva? ¿Cooperativa?
+Objetivo ¿Cuál es el propósito de la policy ?
+Control ¿Centralizado o distribuido?
+Comunicación ¿Comunican? ¿Cómo? ¿Puede fallar? ¿Es ruidosa?
+
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+9 / 11
+
+Objetivo de la materia
+
+Estudiar algoritmos de aprendizaje de policies en diversas instancias de
+sistemas multiagente.
+
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+10 / 11
+
+Lectura recomendada
+
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 1.
+
+I Y. Shoham, K. Leyton-Brown. Multiagent Systems: Algorithmic,
+Game-Theoretic and Logical Foundations. Cambridge University
+Press, 2009. Introduction.
+
+Sergio Yovine
+
+Introducción
+
+18 de marzo de 2026
+
+11 / 11
+
+

@@ -1,16 +1,13 @@
-from itertools import product, filterfalse
+from itertools import product
 import numpy as np
 from numpy import ndarray
 from gymnasium.spaces import Discrete
 from base.game import SimultaneousGame, ActionDict, ObsDict, AgentID
 
-def to_ord(s):
-    return list(map(lambda x: ord(x)-64,s))
-
 class Blotto(SimultaneousGame):
 
     def __init__(self, S=3, N=2):
-        assert(N > 1 and N < S and S < 50)
+        assert(N > 1 and N <= S and S < 50)
         self.S = S          # number of soldiers
         self.N = N          # number of battle fields
 
@@ -35,9 +32,8 @@ class Blotto(SimultaneousGame):
         self.set_R()
 
     def set_moves(self):
-        s = ''.join(map(chr,range(65,65+self.S)))
-        h = map(lambda x: to_ord(x), product(s, repeat=self.N))
-        f = filterfalse(lambda l: sum(l) != self.S or not (all(l[i] <= l[i+1] for i in range(len(l) - 1))), h)
+        h = product(range(self.S + 1), repeat=self.N)
+        f = filter(lambda l: sum(l) == self.S, h)
         self._moves = list(f)
 
     def _U(self, x, y):

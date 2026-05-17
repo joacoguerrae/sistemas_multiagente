@@ -1,0 +1,249 @@
+Sistemas Multiagente
+Fictitious Play
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+25 de marzo de 2025
+
+Ficticious Play
+I El juego se juega en rondas
+I No se conocen las utilidades de los adversarios
+I Se supone comportamiento estacionario
+I Propuesto como técnica iterativa para computar soluciones
+Game Theory and
+Multi-agent RL 1951)
+443
+aproximadas14 (Brown,
+Robinson,
+
+joint state st
+
+st
+r1
+
+Agent 1
+
+a1
+
+Agent 2
+
+a2
+
+st
+r2
+
+ri
+
+...
+
+st
+
+joint action at
+
+Agent i
+
+ai
+
+E
+N
+V
+I
+R
+O
+N
+M
+E
+N
+T
+
+reward rt
+
+Fig. 14.1 Multiple agents acting in the same environment
+
+Sergio Yovine
+
+Fictitious Play
+
+25 de marzo de 2025
+
+2/7
+
+Fictitious play
+I counttp,q (aq ) es la cantidad de veces que p observó a q 6= p jugar
+aq ∈ Aq hasta la iteración t.
+I count0p,q (aq ) es un valor inicial arbitrario
+t
+I countt+1
+p,q (aq ) = countp,q (aq ) + 1 si q juega aq en la iteración t + 1
+
+I En cada iteración t,
+I p estima la estrategia estocástica de −p aproximando la distribución de
+las acciones observadas hasta t 1 :
+t
+countp,q
+(aq )
+t
+0
+aq0 ∈Aq countp,q (aq )
+
+π̂qt (aq ) = P
+t
+I p juega apt ∈ BR(π̂−p
+)
+1
+
+Hipótesis: las estrategias de los oponentes son independientes.
+Sergio Yovine
+
+Fictitious Play
+
+25 de marzo de 2025
+
+3/7
+
+Fictitious play (ejemplo)
+
+V10 (U, (1, 0)) = 3 · 1 + 0 · 0 = 3
+
+U
+D
+
+L
+
+R
+
+3 3
+4 4
+
+0 0
+1 1
+
+V10 (D, (1, 0)) = 4 · 1 + 1 · 0 = 4
+a10 = arg máx V1 (π10 , (1, 0)) = D
+U,D
+
+1 3
+1
+3
+3
+V20 (L, ( , )) = 3 + 4 = + 3
+4 4
+4
+4
+4
+1 3
+1
+3
+3
+0
+I count02 (U, D) = (1, 3) V2 (R, ( , )) = 0 + 1 =
+4 4
+4
+4
+4
+1 3
+a20 = arg máx V20 (π20 , ( , )) = L
+L,R
+4 4
+
+Conteo inicial (t = 0)
+I count01 (L, R) = (3, 0)
+
+Sergio Yovine
+
+Fictitious Play
+
+25 de marzo de 2025
+
+4/7
+
+Fictitious play (ejemplo)
+V11 (U, (1, 0)) = 3 · 1 + 0 · 0 = 3
+
+U
+D
+
+L
+3 3
+4 4
+
+R
+0 0
+1 1
+
+V11 (D, (1, 0)) = 4 · 1 + 1 · 0 = 4
+a11 = arg máx V11 (π11 , (1, 0)) = D
+U,D
+
+1 4
+1
+4
+19
+V21 (L, ( , )) = 3 + 4 =
+5 5
+5
+5
+5
+1
+4
+1
+4
+4
+I count12 (U, D) = (1, 4) V21 (R, ( , )) = 0 + 1 =
+5 5
+5
+5
+5
+
+t=1
+I count11 (L, R) = (4, 0)
+
+1 4
+a21 = arg máx V21 (π21 , ( , )) = L
+L,R
+5 5
+t → ∞ la estrategia π t → ((0, 1), (1, 0)) = (D, L) (que es un equilibrio
+estrictamente dominante) y V t → (4, 4)
+Sergio Yovine
+
+Fictitious Play
+
+25 de marzo de 2025
+
+5/7
+
+Fictitious play
+Convergencia (para 2 jugadores)
+
+I Si converge a una estrategia π entonces π es un equilibrio de Nash.
+
+I FP converge en los juegos de suma zero.
+
+I Puede no converger en otros casos (Shappley, 1964).
+
+I Puede exhibir ciclos de estrategias puras.
+
+Sergio Yovine
+
+Fictitious Play
+
+25 de marzo de 2025
+
+6/7
+
+Lectura recomendada
+
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 6. Sec. 3.1.
+
+Sergio Yovine
+
+Fictitious Play
+
+25 de marzo de 2025
+
+7/7
+
+

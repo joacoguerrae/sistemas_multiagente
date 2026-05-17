@@ -1,0 +1,316 @@
+Sistemas Multiagente
+Juegos estocásticos
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+22 de abril de 2026
+
+44 estocásticos
+Juegos
+
+Chapter 3
+
+Partially Observable Stochastic Game
+n agents
+m states - partially observed
+
+Stochastic Game
+n agents
+m states - fully observed
+
+Repeated
+Normal-Form Game
+n agents
+1 state
+
+Markov
+Decision Process
+1 agent
+m states
+
+Figure 3.1: Hierarchy of game models used in this book. Partially observable
+stochastic games (POSGs) include stochastic games as a special case in which
+theSergio
+states
+and agents’ chosen actions
+fully observable by all agents.
+StochasYovine
+Juegosare
+estocásticos
+22 de abril
+de 2026
+
+S. V. Albrecht et al. Multi-Agent Reinforcement Learning: Foundations and Modern Approaches. (Chapter 3, Fig. 3.1)
+
+2 / 13
+
+Procesos de decisión de Markov con múltiples jugadores
+p = 0.5
+
+s1
+a = (2,2)
+r = (1,1)
+
+p = 0.5
+
+s2
+1,3 0,4
+
+1,1 0,1
+2,2 1,1
+p = 0.8
+
+a = (1,2)
+r = (0,4)
+
+a = (2,1)
+r = (4,1)
+p = 0.2
+
+4,0 3,1
+
+Sergio Yovine
+
+p = 1.0
+
+s3
+1,1 0,0
+4,1 3,2
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+3 / 13
+
+Procesos de decisión de Markov con múltiples jugadores
+I P = {1, . . . , n}: conjunto de agentes (o jugadores)
+I S: conjunto de estados
+
+I EsFinal : S → B: estados terminales
+
+I µ : S → [0, 1]: distribución de estados iniciales
+X
+
+µ(s) = 1
+
+tal que µ(s) = 0 si EsFinal(s)
+
+s
+
+I A = A1 × . . . × An : acciones conjuntas
+
+I T : S × A × S → [0, 1]: transiciones, tal que para todo s ∈ S y a ∈ A:
+X
+s0
+
+T (s 0 | s, a) = 1
+
+I R : S × A × S → Rn : recompensas de cada jugador en cada transición
+I obs : S × A → O: observación
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+4 / 13
+
+mes:
+Models of Multi-Agent
+Interaction
+Observabilidad
+parcial
+
+gure 3.4: Level-based foraging environment with partial observability. Agen
+S. V. Albrecht et al. Multi-Agent Reinforcement Learning: Foundations and Modern Approaches. (Chapter 3, Fig. 3.4))
+serve
+the world through their local vision fields (shown as gray rectangl
+ound the agents).
+Sergio Yovine
+Juegos estocásticos
+22 de abril de 2026
+5 / 13
+
+Historias y episodios
+I Una historia es una secuencia
+ht = s 0 a0 . . . s t−1 at−1 s t
+tal que
+I s0 ∼ µ
+I para todo t, ait ∼ πi (· | obs(ht )), con πi la estrategia de i ∈ P
+I para todo t, s t+1 ∼ T (· | s t , at )
+
+I Una episodio es una historia tal que se cumple EsFinal(s t )
+
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+6 / 13
+
+Retorno esperado
+El valor para agente i en la historia h es:
+X
+Viπ (h) =
+π(a | σ(h))Qi (h, a)
+a∈A
+
+con
+Qiπ (h, a) =
+
+X
+
+s 0 ∈S
+
+h
+i
+T (s 0 | s, a) Ri (s, a, s 0 ) + γViπ (has 0 )
+
+s es el último estado de h.
+El retorno esperado para agente i de la estrategia conjunta π es:
+Ui (π) = Es∼µ Viπ (s)
+
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+7 / 13
+
+Independent Q-learning (IQL)
+Para agente i:
+Inicializar: Qi (s, ai ) = 0 para todo s ∈ S, ai ∈ Ai
+Repetir:
+s∼µ
+Repetir hasta que s sea terminal:
+Con prob. ε elegir ai ∼ U(Ai ), si no ai = arg máx Qi (s, ·)
+Observar ri y s 0
+
+
+Qi (s, ai ) ← Qi (s, ai ) + α ri + γ máx Qi (s 0 , ·)) − Qi (s, ai )
+s ← s0
+I Ventaja: simple y escalable (e.g., deep reinforcement learning)
+I Desventaja: puede no converger a un equilibrio de Nash
+
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+8 / 13
+
+Joint-action learning usando teorı́a de juegos (JAL-GT)
+Para agente i:
+Inicializar: Qj (s, a) = 0 para todo j ∈ P, s ∈ S, a ∈ A
+Repetir:
+s∼µ
+Repetir hasta que s sea terminal:
+Con prob. ε elegir ai ∼ U(Ai ), si no ai ∼ πis t.q. π s = Solve(Γs )
+Observar a = (ai , a−i ), (ri , r−i ) y s 0 
+
+0
+Para todo j: Qj (s, a) ← Qj (s, a) + α rj + γValuej (Γs ) − Qj (s, a)
+s ← s0
+tal que:
+I Γs es el juego (en forma normal) dado por Q(s, ·)
+
+I Solve(Γs ) devuelve un equilibrio π s de Γs
+P
+I Valuej (Γs ) = a∈A Γsj (a)π s (a) es el valor del equilibrio
+
+Ejemplo: Minimax Q-Learning (Littman 1994) para juegos de suma cero dos jugadores.
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+9 / 13
+
+JAL-GT: inconvenientes
+
+I En general, no se puede aprender las estrategias de equilibrio en todos
+los casos solo con Qi (s, a)
+
+I Prescribe cómo se deben comportar los agentes en equilibrio, por
+ejemplo, resolviendo los juegos con minimax.
+
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+10 / 13
+
+Joint-action learning usando agent modeling (JAL-AM)
+Para agente i:
+Inicializar:
+Qi (s, a) = 0 para todo s ∈ S, a ∈ A
+πj (· | s) = U(Aj ) para todo j 6= i, s ∈ S
+Repetir:
+s∼µ
+Repetir hasta que s sea terminal:
+Con prob. ε elegir ai ∼ U(Ai ), si no ai = arg máx AVi (s, ·)
+Observar a = (ai , a−i ), ri y s 0
+Para todo j 6= i: actualizar
+ π−i
+
+Qi (s, a) ← Qi (s, a) + α ri + γ máx AVi (s 0 , ·)) − Qi (s, a)
+s ← s0
+con:
+AVi (s, ai ) =
+
+X
+a−i
+
+Sergio Yovine
+
+
+Q s, (ai , a−i ) π−i (a−i | s)
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+11 / 13
+
+Bibliografı́a recomendada
+
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 4. Sec. 4.1. Chapter 5. Sec. 5.3. Chapter 6.
+Secs. 6.2, 6.2.1 y 6.3.2
+I M. L. Littman. Markov games as a framework for multi-agent
+reinforcement learning. ICML. Vol. 94. 1994.
+
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+12 / 13
+
+Bibliografı́a
+
+I Multi-Agent Reinforcement Learning: Independent vs Cooperative
+Agents. Ming Tan. ICML. 1993.
+I Uther, William and Manuela Veloso (1997). Adversarial reinforcement
+learning. Technical Report CMU-CS-03-107. Carnegie Mellon
+University.
+
+Sergio Yovine
+
+Juegos estocásticos
+
+22 de abril de 2026
+
+13 / 13
+
+

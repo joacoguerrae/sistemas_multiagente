@@ -19,11 +19,12 @@ class RegretMatching(Agent):
         self.learned_policy = self.curr_policy.copy()
         self.niter = 1
         np.random.seed(seed=seed)
+        self._eval_game = game.clone()
 
     def regrets(self, played_actions: ActionDict) -> dict[AgentID, float]:
         actions = played_actions.copy()
 
-        g = self.game.clone()
+        g = self._eval_game
         u = np.zeros(g.num_actions(self.agent), dtype=float)
         #
         # TODO: calcular regrets

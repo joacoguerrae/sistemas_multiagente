@@ -1,0 +1,179 @@
+Facultad de Ingeniería
+Bernard Wand-Polak
+Cuareim 1451
+11.100 Montevideo, Uruguay
+Tel. 2902 15 05 Fax 2908 13 70
+www.ort.edu.uy
+
+EVALUACIÓN
+MATERIA
+Cátedra
+POSTGRADO
+CONDICIONES
+
+Obligatorio 1
+
+GRUPOS
+
+FECHA
+
+15/04/2026
+Sistemas Multiagente
+Cátedra de Inteligencia Artificial y Big Data
+Master en Inteligencia Artificial / Master en Big Data / Master en Ingeniería
+-​ Puntaje máximo: 30 puntos
+-​ Puntaje mínimo: 1 punto
+-​ Fecha de entrega: 28/05/2026 hasta las 21:00 horas en gestion.ort.edu.uy (max. 40Mb en formato
+zip, rar o pdf)
+
+Uso de material de apoyo y/o consulta
+Inteligencia Artificial Generativa
+-​
+-​
+-​
+
+-​
+-​
+
+-​
+
+-​
+-​
+
+Seguir las pautas de los docentes: Se deben seguir las instrucciones específicas de los
+docentes sobre cómo utilizar la IA en cada curso.
+Citar correctamente las fuentes y usos de IA: Siempre que se utilice una herramienta de IA para
+generar contenido, se debe citar adecuadamente la fuente y la forma en que se utilizó.
+Se debe indicar:
+a.​ la /las herramientas utilizadas y
+b.​ el contexto de uso: por ejemplo, generación de ideas, redacción inicial, análisis de
+datos, corrección de estilo, etc.
+Todo contenido producido por IAG debe ser revisado y verificado; cualquier error presente será
+responsabilidad del estudiante.
+Ser responsables con el uso de la IA: Conocer los riesgos y desafíos, como la creación de
+“alucinaciones”, los peligros para la privacidad, las cuestiones de propiedad intelectual, los
+sesgos inherentes y la producción de contenido falso.
+El uso de herramientas de Inteligencia Artificial Generativa (IAG) puede emplearse como apoyo
+en el proceso de aprendizaje. Sin embargo, no sustituye el razonamiento crítico ni la
+elaboración personal. El estudiante es responsable de que el trabajo presentado refleje su
+propia comprensión, análisis y proceso cognitivo sobre el tema.
+La defensa es obligatoria y eliminatoria.
+La defensa será presencial salvo en casos en que se habilite la defensa oral sincrónica en
+forma remota.
+
+Defensa
+Fecha de defensa: 08/07/2025
+La defensa es obligatoria y eliminatoria. El docente es quien definirá y comunicará la modalidad, y
+mecánica de defensa. La no presentación a la misma implica la pérdida de la totalidad de los puntos del
+Obligatorio.
+
+IMPORTANTE:
+1) Inscribirse
+2) Formar grupos de hasta 3 personas del mismo dictado
+3) Subir el trabajo a Gestión antes de la hora indicada (ver hoja al final del documento:
+“RECORDATORIO”)
+Aquellos de ustedes que presenten alguna dificultad con su inscripción o tengan inconvenientes técnicos,
+por favor contactarse con la Coordinadora de cursos o Coordinación Adjunta antes de las 20:00h del día
+de la entrega, a través del mail: adjuntos_ei@ort.edu.uy.
+
+Página 1 de 3
+
+Master en Inteligencia Artificial / Master en Big Data / Master en Ingeniería
+
+Facultad de Ingeniería
+Bernard Wand-Polak
+Cuareim 1451
+11.100 Montevideo, Uruguay
+Tel. 2902 15 05 Fax 2908 13 70
+www.ort.edu.uy
+
+Obligatorio
+El trabajo obligatorio comprende las siguientes actividades:
+1.​ Implementación de los algoritmos de aprendizaje:
+○​ Fictitious Play (FP)
+○​ Regret Matching (RM)
+○​ Independent Q-Learning (IQL)
+○​ Joint-Action Learning - Agent Modeling (JAL-AM)
+2.​ Validación de los algoritmos (como mínimo) con los ambientes:
+○​ Matching Pennies (MP)
+○​ Rock-Paper-Scissor (RPS)
+○​ Blotto
+○​ Foraging
+Otros ambientes van a ser provistos. Se apreciará la validación en otros ambientes no provistos.
+
+Implementación
+●​ Debe estar basada en el código template disponible en el sitio de aulas de la materia, en la solapa
+Obligatorio y ser para N agentes.
+
+Validación
+●​ Debe consistir en una extensiva experimentación de los algoritmos entre ellos (cuando aplique) en
+diferentes ambientes, por FP vs FP, FP vs RM, FP vs RandomAgent, IQL vs IQL, etc.
+
+Entregables
+●​ Por gestión: un informe detallado de la experimentación realizada y los resultados observados. Se
+recomienda usar gráficas para mostrar los experimentos.
+●​ Incluir un link a github público con el código y los experimentos.
+
+Página 2 de 3
+
+Master en Inteligencia Artificial / Master en Big Data / Master en Ingeniería
+
+Facultad de Ingeniería
+Bernard Wand-Polak
+Cuareim 1451
+11.100 Montevideo, Uruguay
+Tel. 2902 15 05 Fax 2908 13 70
+www.ort.edu.uy
+
+RECORDATORIO: IMPORTANTE PARA LA ENTREGA
+La entrega de los obligatorios será en formato digital online, a excepción de algunas materias que se entregarán en Bedelía
+y en ese caso recibirá información específica en el dictado de la misma.
+Los principales aspectos a destacar sobre la entrega online de obligatorios son:
+1.​
+Ingresá al sistema de Gestión.
+2.​
+En el menú, seleccioná el ítem “Evaluaciones” y la instancia de evaluación correspondiente, que figura bajo el
+título “Inscripto”.
+3.​
+
+Para iniciar la entrega hacé clic en el ícono:
+
+4.​
+Ingresá el número de estudiante de cada uno de los integrantes y hacé clic en “Agregar”. El sistema confirmará
+que los integrantes estén inscriptos al obligatorio y, de ser así, mostrará el nombre y la fotografía de cada uno de ellos.
+Una vez agregados todos los integrantes, hacé clic en “Crear equipo”.
+Cualquier integrante podrá:
+• Modificar la integración del equipo.
+• Subir el archivo de la entrega.
+5.​
+Seleccioná el archivo que deseás entregar. Verificá el nombre del archivo que aparecerá en la pantalla y hacé
+clic en “Subir” para iniciar la entrega. Cada equipo (hasta 2 estudiantes) debe entregar un único archivo en formato
+zip o rar (los documentos de texto deben ser pdf, y deben ir dentro del zip o rar). El archivo a subir debe tener un
+tamaño máximo de 40mb
+Cuando el archivo quede subido, se mostrará el nombre generado por el sistema (1), el tamaño y la fecha en que
+fue subido.
+6.​
+El sistema enviará un e-mail a todos los integrantes del equipo informando los detalles del archivo entregado y
+confirmando que la entrega fue realizada correctamente.
+7.​
+
+Podés cerrar la pestaña de entrega y continuar utilizando Gestión o salir del sistema.
+
+8.​
+
+La hora tope para subir el archivo será las 21:00 del día fijado para la entrega.
+
+9.​
+etc).
+
+La entrega se podrá realizar desde cualquier lugar (ej. hogar del estudiante, laboratorios de la Universidad,
+
+10.​ Aquellos de ustedes que presenten alguna dificultad con su inscripción o tengan inconvenientes técnicos, por favor
+contactarse con la Coordinadora de Cursos o Coordinación Adjunta antes de las 20:00h del día de la entrega, a través del
+mail: adjuntos_ei@ort.edu.uy.
+
+Página 3 de 3
+
+Master en Inteligencia Artificial / Master en Big Data / Master en Ingeniería
+
+

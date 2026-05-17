@@ -1,0 +1,199 @@
+Sistemas Multiagente
+Teorı́a de juegos
+Equilibrio correlacionado
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+8 de abril de 2026
+
+Alicia y Bruno
+Alicia prefiere ir al cine antes que ir al partido. Bruno es al revés. Pero
+ambos prefieren ir juntos a ir separados.
+
+Alicia
+
+Cine
+Partido
+
+Bruno
+Cine Partido
+2 1
+0 0
+0 0
+1 2
+
+(Cine, Cine) y (Partido, Partido) son dos EN en estrategias puras, con
+utilidades (2, 1) y (1, 2), respectivamente.
+
+¿Hay otros EN?
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+2/8
+
+Alicia y Bruno
+Bruno revela su estrategia πB = (x, 1 − x). La utilidad de Alicia es:
+2x + 0(1 − x) con Cine
+0x + 1(1 − x) con Partido
+Para que a Alicia le sea indiferente elegir Cine o Partido:
+
+2x + 0(1 − x) = 0x + 1(1 − x)
+1
+=⇒ x =
+3
+
+Entonces, πB = 13 , 23 .
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+3/8
+
+Alicia y Bruno
+Alicia revela su estrategia πA = (x, 1 − x). La utilidad de Bruno es:
+1x + 0(1 − x) con Cine
+0x + 2(1 − x) con Partido
+Para que a Bruno le sea indeferente elegir Cine o Partido:
+
+1x + 0(1 − x) = 0x + 2(1 − x)
+2
+=⇒ x =
+3
+
+Entonces, πA = 23 , 13 .
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+4/8
+
+Alicia y Bruno
+
+Entonces π = (πA , πB ) =
+con utilidad:
+
+1 2
+3, 3
+
+
+
+,
+
+2 1
+3, 3
+
+
+
+es un EN en estrategias mixtas,
+
+21
+12
+(2, 1) +
+(1, 2) =
+33
+33
+
+
+
+2 2
+,
+3 3
+
+
+
+Los tres EN tienen utilidades distintas para los jugadores.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+5/8
+
+Equilibrio Correlacionado
+Alicia y Bruno llegan al siguiente acuerdo. Se tira una moneda justa. Si
+sale cara ambos eligen Cine, si no eligen Partido.
+Esto corresponde a una estrategia conjunta:
+(
+1
+si a = (C , C ) o a = (P, P)
+π(a) = 2
+0 si no
+que no se puede expresar como el producto de estrategias independientes.
+La utilidad es:
+1
+1
+(2, 1) + (1, 2) =
+2
+2
+
+
+
+3 3
+,
+2 2
+
+
+
+Esta estrategia es un equilibrio correlacionado.
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+6/8
+
+Equilibrio correlacionado
+Una estrategia conjunta es una distribución de probabilidad
+π : A → ∆(A)
+Un modificador de acción es una función
+ξp : Ap → Ap
+π es un equilibrio correlacionado si para todo p ∈ P, para todo ξp :
+X
+X
+π(a)Rp (ξp (ap ), a−p ) ≤
+π(a)Rp (a)
+a∈A
+
+a∈A
+
+El conjunto de equilibrios correlacionados contiene al conjunto de EN.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+7/8
+
+Bibliografı́a
+
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 4. Secs. 6-7.
+I Aumann, R. J. (1974). Subjectivity and correlation in randomized
+strategies. Journal of mathematical Economics, 1(1), 67-96.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+8 de abril de 2026
+
+8/8
+
+

@@ -1,0 +1,676 @@
+Sistemas Multiagente
+Teorı́a de juegos
+Estrategias mixtas o estocásticas
+Sergio Yovine
+Universidad ORT Uruguay
+yovine@ort.edu.uy
+
+25 de marzo de 2025
+
+e of a game that has no Nash equilibria is the Matching Pennies gam
+usEquilibrio
+two-playerde
+game
+where each player has a coin and decides wheth
+Nash
+face or the Tails face. If both choose H or both choose T then Pla
+Player
+wins. Each
+player
+prefers
+where
+she h
+I 2
+Matching
+pennies:
+No strictly
+tiene equilibrio
+de the
+Nashoutcome
+en estrategias
+puras.
+native outcome. The game is illustrated in Figure 2.23.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+Figure 2.23: The matching pennies game
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+2 / 19
+
+Estrategias mixtas o estocásticas
+I Una estrategia mixta (o estocástica) es una distribución de
+probabilidad sobre las acciones de un jugador:
+
+∆(Ap ) , {πp : Ap → [0, 1] |
+
+X
+
+πp (ap ) = 1}
+
+ap ∈Ap
+
+I Una estrategia pura (o determinı́stica) es un caso particular en el que
+I existe una acción ap tal que πp (ap ) = 1, y
+I para toda acción ap0 6= ap , πp (ap0 ) = 0.
+
+I π = (π1 , . . . , πn ) ∈
+
+Q
+
+p∈P ∆(Ap ) es una estrategia conjunta
+
+π(a) =
+
+Y
+
+πp (ap )
+
+p∈P
+
+I El soporte de π es {ap | πp (ap ) > 0}
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+3 / 19
+
+
+
+otherwise Player 2 wins. Each player strictly prefers the outcome where she herself wins
+to the alternative outcome. The game is illustrated in Figure 2.23.
+
+Ejemplo: Matching pennies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+1 The matching pennies game
+Figure 2.23:
+Para πp (H) = πp (T ) = , p = {1, 2}, la estrategia conjunta π es:
+2
+
+
+Test your understanding of the concepts introduced in this section, by
+going through the exercises in Section
+H 2.9.6
+T at the end of this chapter.
+
+Sergio Yovine
+
+H
+
+1
+4
+
+1
+4
+
+T
+
+1
+4
+
+1
+4
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+4 / 19
+
+Valor
+I El valor para el jugador p ∈ P de una estrategia conjunta π es:
+
+
+
+
+
+Vp (π) = Ea∼π Rp (a) =
+
+X
+
+π(a)Rp (a)
+
+a∈A
+
+I Ejemplo: Matching pennies con πp (H) = πp (T ) = 12
+1
+1
+1
+1
+V1 = 1 + 0 + 0 + 1
+4
+4
+4
+4
+1
+=
+2
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+5 / 19
+
+Mejor respuesta
+
+I πp es una mejor respuesta de p ∈ P a la estrategia conjunta π−p si:
+
+πp = arg 0 máx Vp (πp0 , π−p )
+πp ∈∆(Ap )
+
+I BR(π−p ) son las mejores respuestas de p a la estrategia π−p .
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+6 / 19
+
+Equilibrio de Nash
+I Es una estrategia conjunta π tal que para todo p ∈ P
+
+πp ∈ BR(π−p )
+Todo juego (finito) tiene al menos un equilibrio de Nash
+en estrategias mixtas. (Nash, 1951)
+I Ejemplo: En Matching pennies,
+π ∗ = (π1∗ , π2∗ ) tal que ∀p ∈ {1, 2}, πp∗ (H) = πp∗ (T ) =
+
+1
+2
+
+es un equilibrio de Nash.
+I ¿ Cómo se calcula un EN ?
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+7 / 19
+
+Matching pennies
+En forma de juego de suma zero:
+H
+T
+
+∀a ∈ A, R1 (a) = −R2 (a)
+
+V1 (π) =
+
+X
+
+H
+1
+-1
+
+T
+-1
+1
+
+π(a)R1 (a)
+
+a∈A
+
+=
+
+X
+
+π(a)(−R2 (a))
+
+a∈A
+
+=−
+
+X
+
+π(a)R2 (a)
+
+a∈A
+
+= −V2 (π)
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+8 / 19
+
+Matching pennies
+
+¿Cuál es la mejor respuesta a π2 = (h2 , t2 ) = ( 13 , 23 )?
+
+
+V
+(π
+,
+π
+)
+=
+h
+1h
+−1t
++
+t
+−1h
++
+1t
+1
+1
+2
+2
+1
+1
+2
+1
+1
+PSFEP
+%TTVS\MQEXIJSVQ
+7XITF]WXITWSPYXMSR
+ 2
+
+QE\MQYQ
+1
+= h1 − (1 − h1 ) +
+− h1 + (1 − h1 )
+3
+3
+ 2
+
+1
+= 2h1 − 1 +
+− 2h1 + 1
+3
+3
+2
+1
+PSX
+= − h1 +
+3
+3
+máx V1 (π1 , π2 ) = 31 en π1 = (0, 1).
+Entonces, BR(π2 ) = {(0, 1)}.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+9 / 19
+
+Propiedad
+
+I Para toda estrategia conjunta π existe una estrategia determinı́stica
+πp0 tal que
+
+πp0 ∈ BR(π−p )
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+10 / 19
+
+Matching pennies
+
+I ¿ π = (π1 , π2 ) = ((0, 1), ( 13 , 32 )) es un equilibrio de Nash ?
+
+I Respuesta: No. ¿Por qué?
+
+I BR(π1 ) 6= π2 (ejercicio).
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+11 / 19
+
+Matching pennies
+
+El valor de π ∗ es:
+V1 (π ∗ ) =
+
+X
+a∈A
+
+π ∗ (a)R1 (a) =
+
+X1
+a∈A
+
+4
+
+R1 (a) =
+
+1X
+R1 (a) = 0
+4
+a∈A
+
+¿V1 (π1 , π2∗ ) puede ser mayor para alguna otra estrategia π1 ?
+
+
+1
+∗
+V1 (π1 , π2 ) =
+1h1 −1t1 −1h1 + 1t1 = 0
+2
+Entonces π ∗ es un equilibrio de Nash.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+12 / 19
+
+Matching
+pennies
+Saddle Point:
+Matching Pennies
+
+Computing Nash Equilibrium; Maxmin
+
+Sergio Yovine
+
+Lecture 5, Slide 18
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+13 / 19
+
+Maxmin
+- Minmax
+plot 5p-3, -7p+4, p in (0.55)..(0.6)
+El agente revela su estrategia πa = (λ, 1 − λ)
+Extended Keyboard
+
+Upload
+
+Ex
+
+V (πa , L) = 2λ + (−3)(1 − λ) = 5λ − 3
+
+interpretation:
+V (πa , R) = (−3)λ Input
++ 4(1
+− λ) = −7λ + 4
+
+Vmáx,mı́n = máxλ∈[0,1] mı́n{5λ − 3, −7λ + 4} = −
+πmáx =
+
+A
+B
+
+L
+2
+-3
+
+7
+12
+
+1
+12
+
+Plot:
+
+R
+-3
+4
+
+Sergio Yovine
+
+Parametric
+Teorı́a deplot:
+juegos
+
+Enlarge
+Customize14 / 19
+25 de marzo de 2025
+
+Maxmin
+- Minmax
+plot 5p-3, -7p+4, p in (0.55)..(0.6)
+El oponente revela su estrategia πo = (α, 1 − α)
+Extended Keyboard
+
+Upload
+
+Ex
+
+V (A, πo ) = 2α + (−3)(1 − α) = 5α − 3
+
+interpretation:
+V (B, πo ) = (−3)α Input
++ 4(1
+− α) = −7α + 4
+
+Vmı́n,máx = mı́nα∈[0,1] máx{5α − 3, −7α + 4} = −
+πmı́n =
+
+A
+B
+
+L
+2
+-3
+
+7
+12
+
+1
+12
+
+Plot:
+
+R
+-3
+4
+
+Sergio Yovine
+
+Parametric
+Teorı́a deplot:
+juegos
+
+Enlarge
+Customize15 / 19
+25 de marzo de 2025
+
+Teorema Minimax
+Para todo juego de suma zero de 2 jugadores (John von Neumann, 1928)
+I Vmáx,mı́n = Vmı́n,máx = V ∗ , llamado valor minimax del juego
+I Existen πa∗ , πo∗ tales que
+πa∗ ∈ arg máx mı́nV (πa , πo )
+πa
+
+πo
+
+πo∗ ∈ arg mı́n máxV (πa , πo )
+πo
+
+πa
+
+Toda solución es un EN
+πa∗ ∈ BR(πo∗ )
+
+πo∗ ∈ BR(πa∗ )
+Todo EN tiene valor V ∗ y es solución.
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+16 / 19
+
+Solución Minimax para agente (en el ejemplo)
+minimize V
+
+plot 5p-3, -7p+4, p in (0.55)..(0.6)
+
+subject to
+
+Extended Keyboard
+
+Upload
+
+Examples
+
+2πa (A) + (−3)πa (B) ≤ V
+
+(vs. L)
+
+(−3)πa (A) + 4πa (B) ≤ V
+
+Random
+
+(vs. R)
+
+Input interpretation:
+
+πa (A) + πa (B) = 1
+πa (A) ≥ 0
+Plot:
+
+Sergio Yovine
+
+πa (B) ≥ 0
+
+Parametric plot:
+
+Enlarge
+Teorı́a de juegos
+
+Customize
+
+25 de marzo de 2025
+
+17 / 19
+
+Solución Minimax para agente (en general)
+Para juegos de suma cero de dos jugadores
+minimize V
+subject to
+X
+a∈Acc(p)
+
+X
+
+πp (a)Rp (a, b) ≤ V
+
+∀b ∈ Acc(q)
+
+πp (a) = 1
+
+a∈Acc(p)
+
+πp (a) ≥ 0
+
+Sergio Yovine
+
+∀a ∈ Acc(p)
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+18 / 19
+
+Lectura recomendada
+
+I S. V. Albrecht, F. Christianos and L. Schäfer. Multi-Agent
+Reinforcement Learning: Foundations and Modern Approaches. MIT
+Press, 2024. Chapter 4. Secs. 2-4.
+
+Sergio Yovine
+
+Teorı́a de juegos
+
+25 de marzo de 2025
+
+19 / 19
+
+
