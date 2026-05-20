@@ -1,0 +1,1678 @@
+# Clase8 - sistemas_multiagente (con timestamps)
+
+[00:00:00 -> 00:00:24]  Un
+[00:00:24 -> 00:00:47]  Bien, bueno, buenas noches a todos. Hoy vamos a empezar con el último tema de clase o de
+[00:00:47 -> 00:00:55]  tipo de sistema multi agentes, habíamos visto un tipo de agentes en los cuales
+[00:00:55 -> 00:01:03]  todos los agentes actúan de manera simultánea sobre ambiente,
+[00:01:03 -> 00:01:08]  distintos tipos de sistemas,
+[00:01:08 -> 00:01:14]  arrancando de sin estado, de una jugada, después con estado, ahora vamos a seguir con lo
+[00:01:14 -> 00:01:29]  lo llamamos fuegos alternados o sitios de agentes en los cuales los agentes actúan de manera apórtulos,
+[00:01:29 -> 00:01:35]  esencialmente de manera no sincrónica.
+[00:01:35 -> 00:01:50]  Una parte de la clase va a estar dedicada a esto, después vamos a dar consulta sobre el obligatorio
+[00:01:50 -> 00:01:55]  Así que vamos a seguir con este ritmo
+[00:01:55 -> 00:02:06]  y bueno, esencialmente la parte práctica de esto va a venir el segundo obviado
+[00:02:06 -> 00:02:13]  hoy vamos a arrancar, como estamos bien, tenemos tiempo, nos vamos a ir con tranquilidad
+[00:02:13 -> 00:02:23]  a priori, no tengo la idea de haber los dos, en aula si es cosa el dadao 1 o el dadao 2
+[00:02:23 -> 00:02:27]  pero si vemos menos que ellos no hay problema porque estamos bien
+[00:02:31 -> 00:02:41]  capaz que una parte de esto así podemos ver un ejemplo simple como el de Aleric
+[00:02:41 -> 00:02:50]  Bueno, entonces ahora para los que están online voy a arrancar con esta diapositiva que están acá.
+[00:02:50 -> 00:02:57]  Me voy a tratar de trabajar en el pizarro, hacer algunos puntos del pizarro, que se paranos en todo el día.
+[00:02:57 -> 00:02:58]  Hola.
+[00:02:58 -> 00:02:59]  Hola.
+[00:02:59 -> 00:03:06]  Para no ser tan morosos y seguir así la diapositiva.
+[00:03:06 -> 00:03:15]  Entonces, este es vos alcas rados 1, que le va a parecer como 600, que queda mucho a 28.
+[00:03:18 -> 00:03:27]  Sería eso. Ahora me presentaré esto y el primer ejemplo y después dejo de compartir.
+[00:03:27 -> 00:03:50]  Bueno, bien. En lo comercial lo primero que vamos a hacer es esta idea que tengo con muchos agentes que juegan, que actúan de manera no sincronizada.
+[00:03:50 -> 00:03:59]  Los ejemplos típicos de estos son los juegos como el Catetit, el Asfetres, Go...
+[00:03:59 -> 00:04:08]  estos son los de los jugadores, hay también de múltiples jugadores como el poker, el futbol, el intirial...
+[00:04:08 -> 00:04:14]  de juegos que bueno, como siempre...
+[00:04:14 -> 00:04:31]  De hecho, por ejemplo, que están viendo ustedes, el foraging, los robots y bien los modelamos para que se muevan simultáneamente, a manera sincrónica
+[00:04:31 -> 00:04:36]  Si ya lo empezaron a hacer, bien lo que tiene una acción es hacer nada,
+[00:04:36 -> 00:04:49]  con lo cual básicamente en cada turno de acción uno o más robots no hacen nada.
+[00:04:49 -> 00:04:53]  Es una manera de simular la interacción.
+[00:04:53 -> 00:05:02]  Pero la característica particular que interviene sobre todo con este tipo de sistemas,
+[00:05:02 -> 00:05:08]  a veces es que no todos los agentes pueden jugar o pueden participar en un determinado momento.
+[00:05:08 -> 00:05:17]  Podemos hacer el ajedrez, podemos hacer el atleti, o podemos hacer el truco, o el fóquer, ahí.
+[00:05:17 -> 00:05:31]  Entonces, típicamente en cada estado del sistema, del ambiente, hay una restricción del minto de agentes que es aquario.
+[00:05:31 -> 00:05:48]  Bien, antes de arrancar, analizar el juego alternado, vamos a empezar por un juego simple
+[00:05:48 -> 00:05:54]  y no vamos a enfocar primero como si fuera un juego simultáneo, vamos a analizarlo con
+[00:05:54 -> 00:05:56]  las técnicas que tenemos.
+[00:06:00 -> 00:06:02]  Es sencillo.
+[00:06:02 -> 00:06:07]  Bueno, ahí dice jugar al derrame, pero vamos a hacerlo primero no al derrame.
+[00:06:07 -> 00:06:11]  Hay dos agentes de dos juegos.
+[00:06:11 -> 00:06:15]  Hay dos agentes.
+[00:06:15 -> 00:06:17]  Uno lo vamos a llamar agente.
+[00:06:17 -> 00:06:18]  ¿Bien?
+[00:06:18 -> 00:06:20]  Que va a ser el que...
+[00:06:20 -> 00:06:24]  ...es el caso de jugador de la ronca y que juega primero.
+[00:06:25 -> 00:06:30]  Por ejemplo, en el caso de no eternado va a ser el jugador china.
+[00:06:31 -> 00:06:37]  Uno que elige una caja y el otro componente que elige un número dentro de la caja.
+[00:06:40 -> 00:06:42]  Las cajas son ABC.
+[00:06:42 -> 00:06:49]  Ahora vamos a pensar en términos de simultáneo.
+[00:06:55 -> 00:06:58]  Primero lo tengo que explicar, porque después voy a compartir.
+[00:06:59 -> 00:07:05]  Hay tres cajas a veces y después dentro de cada caja hay, digamos, dos acciones.
+[00:07:05 -> 00:07:11]  Ahora vamos a suponer que hay un orden en esos dos.
+[00:07:11 -> 00:07:19]  esos dos números que están ahí corresponden a la utilidad de los cartas que estarán dentro de la caja
+[00:07:19 -> 00:07:27]  y que se pueden llamar las cartas L, que están a la izquierda, y la carta R, que está a la derecha.
+[00:07:27 -> 00:07:32]  Nos vamos a poner un orden y nos vamos a nombrar de esa manera.
+[00:07:32 -> 00:07:37]  Y el número que está es la utilidad para GEN.
+[00:07:37 -> 00:07:47]  Y siendo un juego de suma 0, eso quiere decir que la carta L que está dentro de la caja A,
+[00:07:47 -> 00:07:51]  la que es para gente de menos 50, o sea, lo que es para gente de 40, es 5.
+[00:07:51 -> 00:08:00]  O sea, es medio confuso porque no es menos 50 a 50 la suma 0, sino la suma 0 es entre menos 50 con 50 y 50 con menos 50.
+[00:08:00 -> 00:08:13]  Es más fácil explicarlo acá. O sea, acá este es un juego de suma cero, la carta left de la caja B es 1 para agente, menos 1 para opulente.
+[00:08:13 -> 00:08:22]  La carta right es 3 para agente, menos 3 para opulente. Ahí está el tema de la suma cero.
+[00:08:22 -> 00:08:27]  Entonces es... el otro es medio 5-15.
+[00:08:27 -> 00:08:30]  Dejo de compartir, hacemos el pizarra.
+[00:08:30 -> 00:08:37]  Y vamos a ver que esto es un juego primero de simultánea.
+[00:08:37 -> 00:08:41]  Entonces, ¿cómo lo modela el Agin?
+[00:08:41 -> 00:08:43]  Así.
+[00:08:43 -> 00:08:59]  Bueno, aquí es agente, es jugador fila, bien, este es agente, este es oponente,
+[00:08:59 -> 00:09:01]  Ahora es simultáneo, ¿no? ¿Dónde está?
+[00:09:01 -> 00:09:05]  La caja A, la caja B, la caja C, ¿bien?
+[00:09:05 -> 00:09:14]  Y este dice, bueno, dentro de la caja A elijo la carta que está a la izquierda o la carta que está a la derecha.
+[00:09:14 -> 00:09:20]  Y ahora pongo las utilidades desde el punto de vista de Agenda.
+[00:09:20 -> 00:09:24]  la izquierda o la izquierda que está a la derecha.
+[00:09:24 -> 00:09:28]  Y ahora pongo las utilidades del punto de vista de Ager.
+[00:09:33 -> 00:09:38]  Menos 50-50, 1-3,
+[00:09:39 -> 00:09:41]  menos 5-5.
+[00:09:41 -> 00:10:03]  ¿Cómo resolverían este juego? O sea, un juego simulaño, suma a cero, por ejemplo, ¿qué buscarían?
+[00:10:03 -> 00:10:10]  ¿Cómo lo resolviste? Como dijimos, resolvió de alguna estrategia
+[00:10:10 -> 00:10:17]  que sea de equilibrio de las. ¿Por qué? Como cualquier otro equilibrio.
+[00:10:17 -> 00:10:28]  De equilibrio dominante, etc. Las estrategias dominantes, claro, ni mal no hay.
+[00:10:28 -> 00:10:32]  siempre están cruzadas
+[00:10:32 -> 00:10:36]  esta es mayor que esta acá y esta es mayor que esta acá
+[00:10:36 -> 00:10:40]  esta es mayor que esta acá y esta es mayor que esta acá
+[00:10:43 -> 00:10:47]  es lo mismo para oponentes
+[00:10:47 -> 00:10:51]  ¿Hay equilibrios de Nash?
+[00:10:51 -> 00:10:54]  ¿Pense que no?
+[00:10:54 -> 00:11:01]  Y vamos a ver, se acuerdan como... acá hacemos lo de las rayitas también, de usar los colores
+[00:11:01 -> 00:11:07]  Pero hay un solo número, no importa, porque cuando lo hacemos para azul tenemos que complementar lo que está
+[00:11:07 -> 00:11:10]  O sea, si...
+[00:11:10 -> 00:11:12]  Bueno, lo que ponés tenés que elegir derecho, ¿no?
+[00:11:15 -> 00:11:18]  Ahí, sin importar qué dice la gente, ¿no?
+[00:11:18 -> 00:11:24]  Bueno, vamos a ver.
+[00:11:24 -> 00:11:30]  Si...
+[00:11:30 -> 00:11:41]  Estas son las utilidades para agentes.
+[00:11:41 -> 00:11:44]  Para oponentes menos un duelo es menos tres.
+[00:11:44 -> 00:11:46]  Pero menos tres es más chico que menos uno.
+[00:11:46 -> 00:11:49]  Tampoco tiene una estrategia.
+[00:11:50 -> 00:11:52]  Estas son las utilidades para gente.
+[00:11:52 -> 00:11:53]  Para gente.
+[00:11:53 -> 00:11:57]  Entonces para vos ponente, como su juego suma 0 es menos lo que está ahí.
+[00:11:57 -> 00:12:03]  No nos comentaba poner el muro en rojo y ponemos el contrario en azul.
+[00:12:03 -> 00:12:03]  Bueno, bueno.
+[00:12:03 -> 00:12:05]  Sí, sí, sí.
+[00:12:05 -> 00:12:05]  ¿Está bien?
+[00:12:05 -> 00:12:07]  Así nos perdemos menos también.
+[00:12:10 -> 00:12:12]  Vamos a hacerlo así, así no...
+[00:12:13 -> 00:12:15]  Menos 50.
+[00:12:15 -> 00:12:28]  1 es menos 5, esto es 50, 3 es 15 y azul es 50.
+[00:12:28 -> 00:12:30]  No, no, no, no, no apretá el...
+[00:12:30 -> 00:12:32]  Aquí está el pino.
+[00:12:43 -> 00:12:48]  Acá se ve que por ejemplo acá hay relleno con el...
+[00:12:48 -> 00:12:51]  O sea, a oponente del congelo.
+[00:12:51 -> 00:12:53]  Diciando que si...
+[00:12:53 -> 00:12:57]  Bien, entonces, el equilibrio en H
+[00:12:57 -> 00:13:04]  que marcamos. Para gente, ¿cuál es la best response a L?
+[00:13:06 -> 00:13:14]  1, ¿no? La best response es la acción que le da la mayor utilidad.
+[00:13:14 -> 00:13:18]  Vamos a hacerlo para las estrategias 1.
+[00:13:18 -> 00:13:24]  Y para frente a R, es 50.
+[00:13:24 -> 00:13:26]  A ver si... ah.
+[00:13:27 -> 00:13:29]  O sea, también...
+[00:13:31 -> 00:13:39]  Agente nunca jugaría C a esto, para que no se hundiera, porque siempre hay una...
+[00:13:39 -> 00:13:42]  para cada acción siempre hay una que tiene utilidad mayor.
+[00:13:42 -> 00:13:59]  Aquí frente a ¿cuál es la respons de oponente? 50.
+[00:13:59 -> 00:14:11]  o sea, L frente a B es esta, ¿no?
+[00:14:11 -> 00:14:18]  Y en? ya acá no importa porque...
+[00:14:18 -> 00:14:20]  ¿Porque la va a eliminar?
+[00:14:20 -> 00:14:21]  ¿Porque?
+[00:14:21 -> 00:14:24]  Sí, aunque este es 5,
+[00:14:25 -> 00:14:29]  marco, pero igual ya sabemos que no podía haber ninguna...
+[00:14:29 -> 00:14:31]  este...
+[00:14:31 -> 00:14:34]  Yo decía, ah, este es con miante, ah.
+[00:14:35 -> 00:14:39]  Es cierto, frente a A,
+[00:14:40 -> 00:14:42]  él le conviene jugar. Sí, le conviene jugar este.
+[00:14:42 -> 00:14:45]  Frente a B, le conviene jugar esta.
+[00:14:45 -> 00:14:50]  Y bueno, frente a C, también le conviene jugar B.
+[00:14:51 -> 00:14:58]  ¿Por qué? ¿5?
+[00:14:58 -> 00:15:03]  Ahí sí, está bien diciendo. Ahí vemos que tenía una estrategia más fácil,
+[00:15:03 -> 00:15:08]  pero se tenía una estrategia al revés. No era la regla.
+[00:15:08 -> 00:15:11]  Pero bueno, el equilibrio en H es este.
+[00:15:11 -> 00:15:19]  ¿Puedo jugar con esto?
+[00:15:19 -> 00:15:23]  Básicamente el tema es que no hay...
+[00:15:23 -> 00:15:29]  No tienes que jugar simultáneamente sin saber qué acción...
+[00:15:29 -> 00:15:45]  En este caso ya estamos a ver otra manera, se habrá pasado por algo medio rápido que llamamos minimax,
+[00:15:45 -> 00:15:52]  que luego lo vamos a volver a ver, que se ha enterrado, por eso lo he pensado repetirlo acá,
+[00:15:52 -> 00:15:57]  que era, en algunos casos, los equilibrios que llamamos de minimax,
+[00:15:57 -> 00:16:04]  en los juegos de los jugadores suma a 0, era el equilibrio de nash y sólo va a una manera más sencilla de resolver,
+[00:16:04 -> 00:16:06]  pero sólo me daba un hip-hop un.
+[00:16:07 -> 00:16:13]  Y puede no haber una estrategia pura.
+[00:16:16 -> 00:16:21]  Pero bueno, acá, ¿cómo lo hacemos acá?
+[00:16:22 -> 00:16:27]  Acá si miremos solamente los números rojos
+[00:16:28 -> 00:16:34]  Porque cuando hacemos min y max, miramos solamente uno de los números
+[00:16:35 -> 00:16:41]  min es lo que dice oponente y max es lo que dice ajed
+[00:16:42 -> 00:16:44]  Entonces
+[00:16:44 -> 00:16:53]  Y podemos dar la misma idea de la red response frente a L.
+[00:16:53 -> 00:17:00]  O sea, cuál es la red response?
+[00:17:00 -> 00:17:07]  El que tiene el valor máximo que entra con una.
+[00:17:07 -> 00:17:09]  O sea, es una.
+[00:17:09 -> 00:17:19]  Y el valor máximo en esta columna es 50
+[00:17:19 -> 00:17:25]  Estos son los max
+[00:17:25 -> 00:17:35]  Pero ahora, oponente de estos, elige min
+[00:17:35 -> 00:17:37]  ¿Sí?
+[00:17:40 -> 00:17:42]  Sí
+[00:17:43 -> 00:17:45]  ¿Y es?
+[00:17:45 -> 00:17:47]  No
+[00:17:48 -> 00:17:51]  Si corresponde a ver
+[00:17:53 -> 00:17:58]  Pero así como hicimos esta red deberíamos poder hacer el inverso
+[00:17:58 -> 00:18:01]  O sea, porque no hay orden
+[00:18:01 -> 00:18:06]  min max o max min debería decirlo en el 12
+[00:18:06 -> 00:18:08]  tendría que elegir los min
+[00:18:09 -> 00:18:11]  siempre rojos
+[00:18:11 -> 00:18:18]  entonces el min rojo acá es menos 50
+[00:18:20 -> 00:18:25]  el min rojo es 1
+[00:18:26 -> 00:18:30]  y el min acá es menos 5
+[00:18:31 -> 00:18:40]  Pero ahora le tocaría a gente de elegir, y entonces va a ser de todos los 1000 que va a elegir el oponente va a elegir el más.
+[00:18:40 -> 00:18:45]  Y esto es uno y uno sí.
+[00:18:47 -> 00:18:50]  Los dos análisis.
+[00:18:56 -> 00:18:59]  Bien, ahora, vamos.
+[00:19:01 -> 00:19:08]  Vamos un poquito al alternado y a lo que dice como está presentado.
+[00:19:08 -> 00:19:13]  Lo de la carta de la izquierda y la carta de la derecha es la mayor literaria.
+[00:19:19 -> 00:19:30]  ¿Qué pasa si simplemente yo digo, por ejemplo, hay que elegir una carta
+[00:19:30 -> 00:19:38]  y tiene distintos nombres, o simplemente por ejemplo hacemos que en la caja B
+[00:19:38 -> 00:19:46]  invierto los valores, invierto las utilidades, yo digo el de right
+[00:19:46 -> 00:19:54]  tiene 1 y el de left tiene 3
+[00:19:54 -> 00:20:01]  Si usted todavía había discutido el método de análisis de los juegos alternados,
+[00:20:01 -> 00:20:04]  diría que si esto fuera un juego alternado, ¿cambiaría?
+[00:20:09 -> 00:20:14]  Sí, porque algunos juegos elegirían primero la caja.
+[00:20:14 -> 00:20:16]  ¿Y entonces?
+[00:20:16 -> 00:20:19]  Y el otro juego elegiría lo mejor, la mejor respuesta a esa caja.
+[00:20:19 -> 00:20:23]  Y no necesariamente la misma acción en todas las cajas.
+[00:20:23 -> 00:20:29]  La que me dice que no estamos ahora con eso, pero ¿qué pasa acá?
+[00:20:29 -> 00:20:35]  ¿Qué pasa acá? O sea, si yo hiciera eso en el menú,
+[00:20:35 -> 00:20:40]  entonces si lo quisiera modelar por un juego simultáneo,
+[00:20:40 -> 00:20:45]  ¿qué me iba a quedar? Allá me iba a quedar que...
+[00:20:45 -> 00:20:55]  ¿Me voy a quedar a cambiar un 1?
+[00:20:55 -> 00:20:57]  O a mi me va a quedar un 3.
+[00:20:57 -> 00:21:01]  Aca un...
+[00:21:01 -> 00:21:03]  Vamos a estirar lo mismo, no.
+[00:21:03 -> 00:21:11]  Menos 3 y esto menos 1.
+[00:21:11 -> 00:21:21]  Ahora, ¿cuál es la B-response de frente a L?
+[00:21:25 -> 00:21:30]  Bueno, sigue siendo esto, sigue siendo el valor positivo.
+[00:21:32 -> 00:21:39]  Pero, ¿cuál de los dos es la B-response para frente a B?
+[00:21:39 -> 00:21:44]  que queda acá, que queda a menos 1, y a este lado.
+[00:21:44 -> 00:21:49]  Entonces ahora ya me... solo porque di cuenta de eso.
+[00:21:49 -> 00:21:54]  Que intuitivamente, como que en los juegos, si fuera alterado, de hecho, lico primero la caja
+[00:21:54 -> 00:22:03]  y después leí con el número, no me molestaría, debería poder resolverlo y debería poder elegir...
+[00:22:03 -> 00:22:07]  Pero entonces ahí ya no me queda ninguno marcado.
+[00:22:09 -> 00:22:19]  Y si yo hago Minimax, acá me queda 3, acá me queda 50, y de este lado me queda 3.
+[00:22:19 -> 00:22:46]  y acá me queda el max, el max así que es 50, el mínimo es el mínimo, el mínimo es 50,
+[00:22:46 -> 00:22:53]  Es él que elige acá el que es el menor 50, o sea, es esto.
+[00:22:53 -> 00:22:58]  Acá elige el mínimo que es el menor 3.
+[00:23:01 -> 00:23:07]  Elige... Sí, sí, porque está eliguiendo sobre la roja.
+[00:23:07 -> 00:23:12]  Entonces elige... Sí, no, parece por eso. Es el menor 50.
+[00:23:12 -> 00:23:19]  Entonces elige 1 y acá elige el mínimo de acá que es menos 5.
+[00:23:20 -> 00:23:23]  Y acá da 1, o sea, es un distinto.
+[00:23:23 -> 00:23:28]  No hay solución minima.
+[00:23:28 -> 00:23:54]  Entonces, hay un cambio cuando pasamos a unas.
+[00:23:54 -> 00:23:59]  hay un cambio.
+[00:23:59 -> 00:24:06]  Perdón, cuando pasamos de juegos simultáneos vamos a estar...
+[00:24:06 -> 00:24:09]  por el hecho de que hay un conocimiento adicional
+[00:24:09 -> 00:24:17]  que es la acción que jugaron los jugadores anteriores
+[00:24:17 -> 00:24:21]  asumiendo que eso es observable, que es lo que es
+[00:24:21 -> 00:24:24]  No lo explicité, pero es asumiendo.
+[00:24:24 -> 00:24:32]  En este caso, bueno, el juego lo que pasa es que la elección de la caja es visible para el jugador.
+[00:24:34 -> 00:24:44]  Pero bueno, he dicho, señor Passen, entre paréntesis, si bien no hay soluciones en estrategias puras,
+[00:24:44 -> 00:24:48]  hay en estrategias mixtas por Nash.
+[00:24:48 -> 00:24:51]  Así que, bueno, si te quieres después buscar
+[00:24:52 -> 00:24:56]  Pero no lo voy a poder hacer porque ya se mueran que con treco por doya era complicado
+[00:24:56 -> 00:24:58]  Así que, vamos a...
+[00:25:03 -> 00:25:05]  Pero bueno, entonces, la...
+[00:25:08 -> 00:25:10]  La cuestión ahora es
+[00:25:11 -> 00:25:14]  ¿Cómo modelaríamos, primero?
+[00:25:14 -> 00:25:25]  Este juego, para poder analizarlo, tenemos que encontrar un modelo, como por ejemplo
+[00:25:25 -> 00:25:35]  en el caso de los juegos de concepto clásico conectado, modelamos por un MDP.
+[00:25:35 -> 00:25:48]  El modelo, bueno, a veces como que se puede imaginar en este caso, sabiendo que las acciones
+[00:25:48 -> 00:25:54]  y las elecciones son visibles, sobre toda la información que está ahí es visible.
+[00:25:54 -> 00:26:03]  Entonces, como decir, el modelo natural de este tipo de juegos es un árbol.
+[00:26:05 -> 00:26:14]  Es un árbol donde ya la información mínima que hay en cada nodo es quién juega.
+[00:26:14 -> 00:26:19]  La cual sea la gente que pueda actuar en ese nodo.
+[00:26:19 -> 00:26:28]  Entonces, este nodo va a ser Agente, el jugador.
+[00:26:28 -> 00:26:36]  Y después en ese nodo, Agente tiene tres acciones.
+[00:26:36 -> 00:26:38]  y el nombre es A, D, C
+[00:26:44 -> 00:26:46]  acá se va a otro lado
+[00:26:50 -> 00:26:52]  acá ya tenemos más información
+[00:26:56 -> 00:26:58]  6 juegos oponentes
+[00:27:00 -> 00:27:02]  pero bueno, además sé cuál es la caja
+[00:27:02 -> 00:27:04]  que se metió
+[00:27:06 -> 00:27:13]  Y acá están las acciones de oponente.
+[00:27:22 -> 00:27:25]  Que no están nombradas, es elegir una u otra.
+[00:27:25 -> 00:27:32]  Y acá le ponemos la sí, ahora sí, porque puedo sumar hacer, si quieren le ponen el vector, pero...
+[00:27:32 -> 00:27:40]  ponemos acá menos 50, 50, realmente esto se pone con un cuadradito
+[00:27:46 -> 00:27:54]  1, 2, puede ser al revés, ahora ya sabemos que puede ser al revés
+[00:27:54 -> 00:28:01]  y luego estar así porque sí está la positiva, si no, y no,
+[00:28:01 -> 00:28:05]  se fundimos, pero puede ser al revés, obviamente.
+[00:28:08 -> 00:28:12]  Y, si quieren, no hay nombre de salidacciones, pero si quieren, les podemos hacer.
+[00:28:18 -> 00:28:20]  Este es el modelo.
+[00:28:20 -> 00:28:22]  Es ese el mismo modelo.
+[00:28:22 -> 00:28:30]  No hay otra información más porque las decisiones son totalmente deterministas.
+[00:28:30 -> 00:28:32]  De los... hasta ahí, del juego.
+[00:28:32 -> 00:28:38]  O sea, lo que es el marco hasta acá es lo que llamaríamos el marco del juego.
+[00:28:38 -> 00:28:45]  O sea, el marco del juego se desarrocha de esta manera, como cuando lees las instrucciones de la caja.
+[00:28:45 -> 00:28:50]  El primer jugador empieza eligiendo una caja.
+[00:28:50 -> 00:28:55]  Segundo jugador, ahí hay la carta dentro de la caja.
+[00:28:55 -> 00:28:57]  Marcos, tu.
+[00:28:57 -> 00:29:02]  Acá tenemos un juego y, igual que el otro jugador, tenemos las habilidades.
+[00:29:06 -> 00:29:13]  Y, además dijimos, suma 0, o sea que lo que uno gana, el otro lo quiera.
+[00:29:13 -> 00:29:20]  Ahora tenemos que resolver el juego.
+[00:29:20 -> 00:29:23]  Tenemos que resolver el efecto.
+[00:29:23 -> 00:29:29]  Esencialmente, encontrar una estrategia para cada ente.
+[00:29:29 -> 00:29:32]  Para ente y para oponente.
+[00:29:32 -> 00:29:37]  El concepto es el mismo, es encontrar una estrategia conjunta.
+[00:29:37 -> 00:29:40]  Y...
+[00:29:40 -> 00:29:45]  va a ser igual a un par...
+[00:29:52 -> 00:29:55]  y...
+[00:29:55 -> 00:30:00]  va a ser igual a...
+[00:30:00 -> 00:30:05]  Y la gente, no le así, y...
+[00:30:05 -> 00:30:08]  ¡Qué oponente!
+[00:30:08 -> 00:30:11]  Pero me está faltando algo, ¿dónde?
+[00:30:11 -> 00:30:18]  ¿Es una estrategia única y global para las acciones?
+[00:30:18 -> 00:30:23]  No, es como los MDP, o sea, los juegos de tocastico, necesito una, porque acá hay estados.
+[00:30:23 -> 00:30:27]  Es como los MDP, necesito una...
+[00:30:27 -> 00:30:37]  Acá hay estados, entonces necesito una estrategia para cada estado.
+[00:30:37 -> 00:30:40]  Ahora las estrategias son funciones.
+[00:30:40 -> 00:30:47]  Lo pueden ver como una estrategia que es una función de los estados, que me da para cada estado un par.
+[00:30:47 -> 00:30:50]  Estrategia de agentes y estrategia oponentes.
+[00:30:50 -> 00:31:01]  o como cada estado tiene una estrategia.
+[00:31:04 -> 00:31:08]  Bien, ahora una pregunta que puede surgir es
+[00:31:10 -> 00:31:18]  ¿Necesito una estrategia para todo agente en todo estado?
+[00:31:18 -> 00:31:24]  Porque el oponente no juega acá, mi agente juega acá.
+[00:31:24 -> 00:31:41]  No podría, pero en este caso, dado que los turnos de la gente que juega en un determinado estado está predeterminado por el estado,
+[00:31:41 -> 00:31:47]  Por acá está predeterminado el estado este de juego agente, el estado este de juego aparente.
+[00:31:47 -> 00:31:50]  Bueno, no sería necesario.
+[00:31:50 -> 00:32:02]  En el caso general, en muchos juegos, el jugador que juega primero no está predeterminado.
+[00:32:02 -> 00:32:07]  El resultado de, por ejemplo, tirar una moneda o...
+[00:32:07 -> 00:32:16]  Un juego así se conoce, un juego que se llama Azul, súper interesante, que simulan
+[00:32:16 -> 00:32:24]  paldocitas de cerámica y hay que armar todas unas cosas de colores.
+[00:32:24 -> 00:32:34]  El juego tiene algo de azar, pero bastante de encontrar una estrategia.
+[00:32:34 -> 00:32:41]  Para hacer de estrategia y bueno, la regla para empezar es el último que estuvo en contuga
+[00:32:41 -> 00:32:46]  Es decir, no está determinado de además
+[00:32:46 -> 00:32:52]  Y otra cosa más importante, la verdad es que el 1 lo conozco
+[00:32:52 -> 00:32:57]  Y hay otras variantes del 1 que no conozco
+[00:32:57 -> 00:33:18]  Pero en el juego como el 1 hay cartas que cambian el sentido de la mano, saltean a jugadores, o incluso hacen volver a jugar.
+[00:33:18 -> 00:33:25]  Entonces no hay necesariamente una alternancia predeterminada, ni sé de
+[00:33:25 -> 00:33:30]  antemano quién juega en un determinado estado.
+[00:33:30 -> 00:33:34]  ¿Puede tener relación si juega?
+[00:33:34 -> 00:33:39]  Entonces, bueno, por eso.
+[00:33:39 -> 00:33:52]  En casos generales, todo agente tiene una política, en estrategia, un top-down.
+[00:33:52 -> 00:34:03]  Y es interesante, después, los algoritmos, ver el comportamiento del mismo algoritmo de aprendizaje.
+[00:34:03 -> 00:34:10]  Por ejemplo, en juegos en los cuales el orden está fijo,
+[00:34:10 -> 00:34:19]  ¿qué pasa si usamos el mismo algoritmo para la gente que juega primero y para el cual se juega?
+[00:34:19 -> 00:34:24]  ¿A qué estrategia converte cada uno?
+[00:34:24 -> 00:34:26]  Está.
+[00:34:26 -> 00:34:30]  Bien. Ahora...
+[00:34:30 -> 00:34:37]  Y acá ahora lo que debemos, o lo que vamos a hacer es encontrar las estrategias.
+[00:34:40 -> 00:34:48]  Y así como nos planteamos los juegos simultáneos diferentes,
+[00:34:48 -> 00:34:51]  buscar algún concepto que terminó siendo el equilibrio en ARCH,
+[00:34:51 -> 00:34:56]  que puede terminar siendo los equilibrios correlacionados y todo eso,
+[00:34:56 -> 00:35:07]  Acá vamos a hacer un poco de ejercicio de qué cosas pueden llegar a ocurrir o cuáles serían los convocamientos determinados.
+[00:35:07 -> 00:35:15]  O sea, bueno, qué sería lo que había que buscar en función de cómo se comportan nosotros.
+[00:35:15 -> 00:35:24]  Porque, bueno, hay que poder ponerse en el rol de un agente y oponente.
+[00:35:24 -> 00:35:33]  porque la gente tiene que jugar sin saber que jugó.
+[00:35:33 -> 00:35:35]  O sea, un oponente no jugó.
+[00:35:35 -> 00:35:39]  La gente debe hacer hipótesis sobre qué va a jugar.
+[00:35:39 -> 00:35:46]  El oponente ya jugó, o sea, ya puede definir su estrategia
+[00:35:46 -> 00:35:52]  de manera...dado que ya saben que está en el estado de estar y...
+[00:35:52 -> 00:36:00]  En este caso, pero imagínense un juego como el de Atleti que, por este árbol,
+[00:36:00 -> 00:36:04]  puede tener tanto resumir a uno como quiera, ¿no?
+[00:36:04 -> 00:36:09]  Acá hay dos, pero si hubiera una tercera jugada, cuarta jugada, uno jugara, eso...
+[00:36:09 -> 00:36:11]  ...se pudiera ganar.
+[00:36:11 -> 00:36:16]  Pero acá, en este caso, ya oponente...
+[00:36:16 -> 00:36:24]  juega por la estrategia de agente a la misma.
+[00:36:27 -> 00:36:36]  Entonces, vamos ahora en el rol de agente.
+[00:36:36 -> 00:36:37]  ¿Vamos?
+[00:36:37 -> 00:36:38]  ¿Un pregunta?
+[00:36:38 -> 00:36:39]  Sí, va.
+[00:36:39 -> 00:36:40]  Bueno.
+[00:36:40 -> 00:36:42]  Un darlo.
+[00:36:42 -> 00:36:52]  ¿Cómo modelaría si la misma acción de agente me puede llevar a distintos estados?
+[00:36:52 -> 00:36:56]  ¿O estaba un juego de cartas donde se pide una carta?
+[00:36:56 -> 00:37:00]  Con eso lo iba a ver después, pero yo quería la pregunta.
+[00:37:00 -> 00:37:08]  En realidad la manera más sencilla de eso, si el efecto es estocástico,
+[00:37:08 -> 00:37:16]  Entonces, existe otro tipo de nodo en el cual vamos a hacer este tipo de cosas.
+[00:37:16 -> 00:37:20]  Esa sería la manera más fácil.
+[00:37:20 -> 00:37:25]  No tengo ver, pero al final, claro.
+[00:37:25 -> 00:37:33]  La pasaje es A y después tiene como pasaje A1
+[00:37:33 -> 00:37:37]  Esa sería la...
+[00:37:37 -> 00:37:41]  Lo podés simular
+[00:37:41 -> 00:37:46]  Si, esta probablemente no sería observable
+[00:37:46 -> 00:37:55]  Ya podía tener un gano acá, directo, pero podía ser como si no hubiese eso.
+[00:37:55 -> 00:37:59]  Podía haber más de uno.
+[00:37:59 -> 00:38:04]  Y ahí algoritmos que no soportan y otra vez no.
+[00:38:04 -> 00:38:08]  Esto lo vamos a ver en realidad.
+[00:38:08 -> 00:38:15]  Lo vamos a presentar con problemas similares, como después cuando veamos sistemas de información parciales.
+[00:38:15 -> 00:38:17]  porque ese ubicado de...
+[00:38:17 -> 00:38:19]  ¿se distribuyen a cartas?
+[00:38:19 -> 00:38:21]  pues espero que es eso,
+[00:38:21 -> 00:38:23]  se distribuyen a cartas y no sabes
+[00:38:23 -> 00:38:25]  vosotros no sabéis que no es que...
+[00:38:25 -> 00:38:29]  o tiro una carta pero no sabéis que la tiro
+[00:38:35 -> 00:38:37]  por ahora no, pero cuando...
+[00:38:37 -> 00:38:40]  o sea, por ahora el tipo de modelo que vamos a ver
+[00:38:40 -> 00:38:42]  es que hay un nodo
+[00:38:42 -> 00:38:49]  Esa Machance, que es algún mecanismo fotográfico que hace eso y que es explícito.
+[00:38:50 -> 00:38:55]  Pero si no es que cuando hablamos de ese tema de la información parcial
+[00:38:55 -> 00:39:00]  hay algoritmos que lo manejan.
+[00:39:00 -> 00:39:02]  Es un problema.
+[00:39:02 -> 00:39:04]  Y la otra pregunta?
+[00:39:04 -> 00:39:10]  La otra idea es que tenemos que comenzar siempre de abajo,
+[00:39:10 -> 00:39:12]  O sea, el estado marginal
+[00:39:13 -> 00:39:15]  Vamos a empezar con la que?
+[00:39:15 -> 00:39:16]  Como?
+[00:39:16 -> 00:39:18]  Ah, comenzar con la que?
+[00:39:18 -> 00:39:24]  Para saber cuál es la última acción que puede...
+[00:39:24 -> 00:39:30]  O sea, porque el último que toma una acción es el que más poder de decisión tiene, no?
+[00:39:30 -> 00:39:33]  Es el que en este caso define cuál es el...
+[00:39:33 -> 00:39:35]  Claro, entonces hay que ir de abajo para arriba
+[00:39:35 -> 00:39:39]  Bueno, sí, o sea, ese mecanismo general se llama backward interaction
+[00:39:39 -> 00:39:49]  Vamos a ver el algoritmo que funciona, efectivamente, de atrás, de las hojas hacia arriba
+[00:39:49 -> 00:40:00]  Pero para terminar en ese algoritmo, lo que tenemos que hacer es definir el valor como una función recursiva
+[00:40:00 -> 00:40:05]  Claro, yo iba a decir recursos pero me parecía un poco normal
+[00:40:05 -> 00:40:09]  Es overkill porque en el día de hoy sólo tenemos una opción cada una
+[00:40:09 -> 00:40:13]  Pero supongo que después vamos a ver en un sistema más complejo
+[00:40:13 -> 00:40:18]  donde hay múltiples acciones y ahí sí como que la recursos ideal
+[00:40:18 -> 00:40:19]  vean de una forma más colgada
+[00:40:19 -> 00:40:28]  En el caso que hay vamos a tener que definir así como en el caso de la jugada
+[00:40:28 -> 00:40:39]  definíamos el valor como la esperanza de las recompensas para la policía
+[00:40:39 -> 00:40:51]  y después a los MDP, una definición inductiva o recursiva del valor diciendo
+[00:40:51 -> 00:41:00]  el valor en un estado que es la esperanza de la recompensa más el valor en el estado siguiente
+[00:41:00 -> 00:41:10]  vamos a tener que definir también, o tal dar una definición de valor que recursiva y después los algoritmos para resolver
+[00:41:12 -> 00:41:17]  Pero lo que vamos a hacer es que... ¿qué es? ¿ya? ¿me lo miente ya? Ah, me lo cuelgo.
+[00:41:17 -> 00:41:20]  Vamos a ver si pasan un poquito estos indifutibles
+[00:41:20 -> 00:41:24]  Entonces, vamos a ver si podemos atacar ese problema
+[00:41:24 -> 00:41:26]  Vamos a mirar eso
+[00:41:26 -> 00:41:29]  Entonces, justamente para hacerlo
+[00:41:29 -> 00:41:34]  Vamos a ver si podemos jugar un poquito eso
+[00:41:39 -> 00:41:41]  Por ejemplo, podemos decir que
+[00:41:41 -> 00:41:51]  Si ustedes fueran agentes, por ejemplo, ¿qué harían?
+[00:41:51 -> 00:42:00]  Y justifíenlo. Diganme, bueno, haría tal cosa por tal cosa y estoy asumiendo tal cosa.
+[00:42:00 -> 00:42:04]  Yo les quería el B porque la chance de...
+[00:42:04 -> 00:42:14]  En los ponentes nunca vas a jugar algo que te van a dar ganancia a vos, ¿no?
+[00:42:14 -> 00:42:20]  Entonces, asumiendo que juegas A o C, vas a estar perdiendo 50 o 15.
+[00:42:20 -> 00:42:25]  Entonces, asumiste que eres el...
+[00:42:25 -> 00:42:30]  Bueno, perdón.
+[00:42:30 -> 00:42:32]  ¿Avisaba?
+[00:42:32 -> 00:42:34]  No, no, no pasa nada.
+[00:42:34 -> 00:42:36]  ¿Avisaba?
+[00:42:36 -> 00:42:38]  No, no, pero tú.
+[00:42:38 -> 00:42:40]  Para que me andan a barrar.
+[00:42:40 -> 00:42:41]  Sí, pero después...
+[00:42:41 -> 00:42:43]  Vamos, que estamos en la sala.
+[00:42:43 -> 00:42:44]  ¿No te vas a cortar?
+[00:42:44 -> 00:42:45]  Esa es mía.
+[00:42:45 -> 00:42:47]  No te vas a cortar, no vas a dejar.
+[00:42:47 -> 00:42:49]  No, no, no, pero...
+[00:42:49 -> 00:42:51]  La hacerás mis...
+[00:42:51 -> 00:42:53]  La haceré mi esposa, por eso.
+[00:42:53 -> 00:42:58]  ¿Tienes otra?
+[00:42:58 -> 00:43:01]  Bien, bien.
+[00:43:01 -> 00:43:12]  No, pero en serio hay mucho que ver, yo me la llevo por agarrar una casita de papel.
+[00:43:12 -> 00:43:14]  No, espera. Es el cortín.
+[00:43:14 -> 00:43:16]  Es lo que quiero.
+[00:43:16 -> 00:43:21]  Entonces, ¿cuál es la selección?
+[00:43:21 -> 00:43:24]  Sería la B.
+[00:43:24 -> 00:43:26]  ¿Qué es B?
+[00:43:26 -> 00:43:28]  Bueno, voy a empezar aquí.
+[00:43:28 -> 00:43:30]  La gente...
+[00:43:30 -> 00:43:32]  o sea, acá...
+[00:43:34 -> 00:43:36]  Sería...
+[00:43:36 -> 00:43:38]  lo voy a escribir así.
+[00:43:38 -> 00:43:40]  Sería la acción B.
+[00:43:40 -> 00:43:41]  Claro.
+[00:43:41 -> 00:43:44]  Sería la acción 0,1,0.
+[00:43:44 -> 00:43:47]  En términos de la que lo hicimos de trabajo el día.
+[00:43:47 -> 00:43:51]  Pero ¿por qué? Porque el importe sí es que
+[00:43:51 -> 00:43:59]  si el oponente sería en la línea actual.
+[00:43:59 -> 00:44:11]  o sea, en este caso, sería siempre elegir, siempre elegir cuál, ¿eh?
+[00:44:11 -> 00:44:13]  Sí, el R.
+[00:44:13 -> 00:44:15]  No, el R.
+[00:44:15 -> 00:44:17]  Elegir el menor valor de esto, ¿sí?
+[00:44:17 -> 00:44:19]  Sí, lo leo a Ferreira.
+[00:44:19 -> 00:44:21]  Entonces,
+[00:44:21 -> 00:44:23]  está por eso.
+[00:44:23 -> 00:44:27]  Pero, acá la podemos juntar así también,
+[00:44:27 -> 00:44:35]  que es este, no sé, donde el primero es L y el segundo es R.
+[00:44:35 -> 00:44:42]  Pero no importa, en realidad si yo le hubiera llamado a esto de R y esto de L,
+[00:44:42 -> 00:44:46]  entonces ahí que voy a cambiarla y esto va a depender del Ita.
+[00:44:46 -> 00:44:50]  Ah, los S. Pero no vamos a hacer L.
+[00:44:50 -> 00:44:55]  Pero eso no cambiaría lo que dice Avis.
+[00:44:55 -> 00:45:02]  y cuál sería el valor de esa estrategia?
+[00:45:02 -> 00:45:06]  para agentes
+[00:45:06 -> 00:45:08]  ¿3?
+[00:45:08 -> 00:45:10]  No, no, no
+[00:45:10 -> 00:45:12]  1
+[00:45:12 -> 00:45:18]  y es a ido de ver lo de la inducción para arriba
+[00:45:18 -> 00:45:20]  o sea de cómo remonta el valor
+[00:45:20 -> 00:45:24]  lo que hace es que el valor de la hoja remonta.
+[00:45:27 -> 00:45:45]  La estrategia conjunta que es jugar B y después que oponente, en cualquier caso,
+[00:45:45 -> 00:45:54]  elija la que minimiza el valor para la gente,
+[00:45:54 -> 00:46:01]  que a esta vamos a llamar la estrategia MIN para ponerle.
+[00:46:01 -> 00:46:05]  Después, después realmente, es este.
+[00:46:05 -> 00:46:10]  Es este. Y el valor es este.
+[00:46:10 -> 00:46:20]  Pero lo importante sobre todo es la hipótesis que hay ahí,
+[00:46:20 -> 00:46:24]  yo supongo que el oponente va a jugar así.
+[00:46:24 -> 00:46:31]  Entonces eso también me da una especie de meta de estrategia,
+[00:46:31 -> 00:46:35]  que es la meta estrategia minimax, o sea,
+[00:46:35 -> 00:46:42]  suponiendo que oponente juega a mí, la gente va a jugar más.
+[00:46:42 -> 00:46:48]  Eso lo vamos a ver, las estrategias y más.
+[00:46:48 -> 00:46:53]  Que no me da, o sea, no es que me da B, me da B en este caso particular.
+[00:46:53 -> 00:46:57]  Díselo como una meta estratégica, es decir,
+[00:46:57 -> 00:47:08]  Si en cualquier situación lo que va a hacer agente es suponer que oponente juega min
+[00:47:08 -> 00:47:21]  y entonces de todos los posibles valores, en este caso sería menos 50, 1 y menos 5
+[00:47:21 -> 00:47:34]  que le quita el max, así que fue parecido a lo que hicimos en la columna, en el juego.
+[00:47:34 -> 00:47:46]  Esto es una especie de meta estrategia porque ustedes me dan cualquier gol y la puedo instanciar.
+[00:47:46 -> 00:47:59]  La manera gráfica de ver esta estrategia es que se suele usar a decir, a los nodos
+[00:48:02 -> 00:48:11]  Max, donde la decisión es maximizar lo que remonta de las hojas, se le pone un algoritmo para arriba
+[00:48:11 -> 00:48:27]  y a los nodos donde va a ser el juego oponente, asumiendo que va a jugar mi cuento.
+[00:48:29 -> 00:48:36]  Y así quiere ver cómo llegamos formalmente a este análisis, a decir que lo que conviene es jugar B.
+[00:48:36 -> 00:48:42]  Bueno, es porque supongan que juegan a...
+[00:48:42 -> 00:48:58]  Entonces, dado que están suponiendo que oponente juega a min, lo que va a venir acá es un valor que es menos 50, ¿no?
+[00:48:58 -> 00:49:07]  El valor que va a subir acá es 1 y el valor que va a subir acá es menos 5.
+[00:49:07 -> 00:49:23]  Y acá lo que hace el D es llegar, bueno, el Dico, el máximo de los valores del nivel siguiente.
+[00:49:23 -> 00:49:28]  Y esta me da 1.
+[00:49:33 -> 00:49:42]  Pero esto es independiente de si esto realmente es una alternancia perfecta o no.
+[00:49:42 -> 00:49:47]  En realidad, si un nodo es min o un nodo es max,
+[00:49:47 -> 00:49:54]  Esencialmente depende si en el nodo juega agentes o en el nodo juega oponentes.
+[00:49:54 -> 00:50:01]  En todos los nodos juega agente, van a ser nodos max y todos los nodos donde juega oponentes van a ser nodos minimo.
+[00:50:01 -> 00:50:15]  Si estuvieramos en el 1 y jugamos una carta que dice jugar de nuevo y yo soy agente, bueno, la gente va a estar en otro nodo max que puede haber jugado.
+[00:50:15 -> 00:50:20]  Así puede haber 2.000 seguidos.
+[00:50:27 -> 00:50:31]  Bien, entonces lo que vamos a hacer es hacer ahora vamos a hacer una pausa
+[00:50:31 -> 00:50:40]  y después vamos a ver porque este es solamente uno que vamos a adquirir la ecuación de valor de problemas
+[00:50:40 -> 00:50:43]  pero vamos a dar cambio, hay otros casos así.
+[00:50:43 -> 00:50:46]  Porque si no, esto daría casi que esencialmente...
+[00:50:46 -> 00:50:49]  ...este, ¿qué es que hace?
+[00:50:49 -> 00:50:51]  Terminij.
+[00:50:52 -> 00:50:54]  Bueno, si hacemos una pausa...
+[00:50:54 -> 00:50:55]  Esto es tocando.
+[00:50:55 -> 00:50:59]  No, si hacemos solo esto, elegimos el I, Max, etc.
+[00:50:59 -> 00:51:01]  Es totalmente terminijico.
+[00:51:04 -> 00:51:06]  Pero vamos a ver esto de haber otros.
+[00:51:06 -> 00:51:08]  Hacemos una pausa.
+[00:51:13 -> 00:51:39]  Viene
+[00:51:39 -> 00:51:41]  grabando para no olvidarme después.
+[01:06:09 -> 01:06:13]  Bueno, no, no, no, ya se va a adaptar.
+[01:06:13 -> 01:06:17]  No, no, pensé que...
+[01:06:17 -> 01:06:21]  ¿Cómo es?
+[01:06:21 -> 01:06:25]  Bien, bueno, retomamos.
+[01:06:25 -> 01:06:32]  Acá me consultaron si ponían un poco de información sobre la tesis,
+[01:06:32 -> 01:06:48]  que es algo que le interesa a todos o a muchos, el trabajo final, los tesis, salvo a los que ya la hicieron y la van a pasar.
+[01:06:48 -> 01:06:57]  Lo cual de hecho sería interesante que los que no lo hicieron todavía, venían algunas de las defensas del tesis que van a hacer el trabajo final
+[01:06:57 -> 01:07:00]  que van a hacer la última semana de mayo.
+[01:07:00 -> 01:07:03]  La última semana de mayo y el primer ejemplo.
+[01:07:05 -> 01:07:15]  Bien, entonces, tengo este amigo acá y le voy a dar un poquito de práctica para hablar de eso.
+[01:07:15 -> 01:07:23]  Entonces, lo que terminamos de discutir es, bueno, a partir de este modelo que todavía no hemos liado,
+[01:07:23 -> 01:07:30]  aunque no lo definí formalmente, esto lo entendemos que es un árbol, sí es un árbol,
+[01:07:30 -> 01:07:43]  es muy importante, y en el cual las hojas son donde están las utilidades,
+[01:07:43 -> 01:07:53]  y discutimos una primera, por ejemplo, solución al problema que sería buscar esa
+[01:07:53 -> 01:08:07]  esa estrategia conjunta que consiste en asumiendo que oponente juega mini, a minimizar, a elegir el valor más chico acá,
+[01:08:10 -> 01:08:20]  agente, se llamaría esa estrategia como la estrategia mini max porque se juega max pero asumiendo que oponente juega mini.
+[01:08:20 -> 01:08:28]  pero bueno para darle para eso tenga digamos que sea correcto que tenga un
+[01:08:28 -> 01:08:33]  sentido que es el valor de una
+[01:08:33 -> 01:08:35]  no me escuchas
+[01:08:35 -> 01:08:37]  yo me des de ti
+[01:08:37 -> 01:08:39]  no me escuchas, estaba sin audio
+[01:08:39 -> 01:08:41]  si hola hola, te escuchas?
+[01:08:41 -> 01:08:43]  por ahí es capaz que
+[01:08:43 -> 01:08:45]  vamos a usar el micrófono, yo acá lo veo como que
+[01:08:45 -> 01:08:47]  se escucha
+[01:08:47 -> 01:08:49]  si se escucha?
+[01:08:49 -> 01:08:51]  hola hola
+[01:08:51 -> 01:08:53]  nadie de los que esta online
+[01:08:53 -> 01:08:55]  de ahí como que se escucha, a ver alguien
+[01:08:55 -> 01:08:57]  si Sergio
+[01:08:57 -> 01:08:59]  te escuchamos
+[01:08:59 -> 01:09:01]  si si
+[01:09:03 -> 01:09:08]  Entonces, lo que vamos a...
+[01:09:09 -> 01:09:15]  ...al luego que vamos a sacar, así se ve en el centro, es...
+[01:09:17 -> 01:09:28]  ...defino el valor de una estrategia siempre, ahora sí, de esta forma, en estado S...
+[01:09:28 -> 01:09:40]  La verdad tiene dos... el dado que está en la utilidad no está en las acciones
+[01:09:40 -> 01:09:51]  Podría estar, tenemos una forma bastante similar a la de los MDP, sino que está totalmente en las hojas
+[01:09:51 -> 01:09:54]  ¿Ven? Lo hay.
+[01:09:54 -> 01:09:56]  Utilidad, ¿Ves?
+[01:09:56 -> 01:09:59]  Esto tiene dos partes.
+[01:10:01 -> 01:10:11]  Hoy en día es la utilidad siempre para la gente.
+[01:10:11 -> 01:10:19]  En realidad esto lo podríamos decir para cualquier jugador definido.
+[01:10:19 -> 01:10:26]  Vamos a acá, el poder definido es el que arranca en la raíz.
+[01:10:27 -> 01:10:31]  En realidad, todos los que...
+[01:10:32 -> 01:10:40]  Creo que, bueno, no sé si todos, a la mayoría, son ingeniería en sistemas o computación o lo que sea.
+[01:10:40 -> 01:10:52]  La raíz es la raíz en un momento, porque acá hay otro árbol cuya raíz es este.
+[01:10:55 -> 01:11:03]  Ahora, para simplificar, vamos a decir que a ese jugador identificado, o sea, agente identificado,
+[01:11:03 -> 01:11:09]  para el cual estamos evaluando, calculando el valor, va a ser agente.
+[01:11:09 -> 01:11:14]  Por supuesto, sepan que ese agente va a ser...
+[01:11:14 -> 01:11:24]  ...cualquiera de los agentes en el lugar donde empecemos a hacer la evolución.
+[01:11:24 -> 01:11:33]  O sea, cuando yo puedo calcular el valor acá para agente y acá el valor también para agente o también para oponente.
+[01:11:33 -> 01:11:36]  Acá va a estar agente y de mi lado.
+[01:11:36 -> 01:11:37]  Y de mi lado.
+[01:11:37 -> 01:11:39]  Y es que no nos importa quién...
+[01:11:39 -> 01:11:46]  No, lo que va a haber puto para acá, para la utilidad, la utilidad es la utilidad para el que vamos a llamar agente.
+[01:11:46 -> 01:11:48]  Para ese la utilidad, ¿tanto?
+[01:11:48 -> 01:11:50]  Y esto, este, este...
+[01:11:50 -> 01:11:51]  ¿Cuál está?
+[01:11:51 -> 01:11:54]  O sea, estas utilidades están definidas.
+[01:11:54 -> 01:11:57]  Hay siempre la utilidad para agente.
+[01:12:00 -> 01:12:03]  Para el que se define como agente.
+[01:12:06 -> 01:12:12]  Entonces, la utilidad en ese...
+[01:12:15 -> 01:12:18]  Pero eso acuerda que la utilidad en ese es la utilidad para...
+[01:12:18 -> 01:12:19]  ¿A qué?
+[01:12:25 -> 01:12:27]  Y si...
+[01:12:31 -> 01:12:35]  O sea, si ese es un estado final, una ofra...
+[01:12:36 -> 01:12:42]  Las hojas, por ejemplo, vas a hacer 50, 50...
+[01:12:42 -> 01:12:52]  Y si no es en una hoja, voy a tomar la esperanza...
+[01:12:52 -> 01:13:10]  Pero digamos de ti, del jugador P sin P.
+[01:13:10 -> 01:13:17]  Voy a poner como estaba el boteo sin pisar bomba.
+[01:13:47 -> 01:13:54]  la la la la la la... acá esta oportunidad siempre para agentes
+[01:13:54 -> 01:14:03]  esta esperanza acá es para... se calcula sobre el jugador que juega
+[01:14:03 -> 01:14:05]  en ese...
+[01:14:09 -> 01:14:13]  vamos a tomar una...
+[01:14:13 -> 01:14:16]  Ehh...
+[01:14:16 -> 01:14:19]  Ah...
+[01:14:21 -> 01:14:25]  Uy, te vamos a poner ahí en polvo ese la gente donde...
+[01:14:27 -> 01:14:34]  Ahora, agente a este y oponente porque si no vamos a mezclar con las A de las acciones y...
+[01:14:35 -> 01:14:39]  el A de oponente, así, del área agente.
+[01:14:39 -> 01:14:44]  Agente es el que se llama agente, porque si no... y A es una acción.
+[01:14:44 -> 01:15:02]  No, porque acá tengo definido el valor de agente tomando la esperanza sobre las acciones de agente.
+[01:15:02 -> 01:15:08]  Y acá va a ser de oponente, porque es oponente que va a tener valor acá.
+[01:15:12 -> 01:15:15]  Y acá es el de...
+[01:15:26 -> 01:15:31]  En realidad el valor es siempre para gente, tiene alguna cual es la acción de oponente.
+[01:15:32 -> 01:15:36]  ¿Entendido?
+[01:15:36 -> 01:15:42]  Cuando hicimos el minimax, fue, dijimos
+[01:15:42 -> 01:15:48]  acá era menos 50, acá era 50, es decir, porque es la utilidad
+[01:15:48 -> 01:15:54]  y acá era el min entre estos dos
+[01:15:54 -> 01:16:01]  pero el min entre estos dos corresponde a la distribución de probabilidad L
+[01:16:01 -> 01:16:08]  ¿Pero quién es jugador?
+[01:16:08 -> 01:16:10]  ¿O oponente acá?
+[01:16:10 -> 01:16:14]  Acá el jugador es oponente, acá es afrente.
+[01:16:14 -> 01:16:18]  Y en la utilidad si quieres es como que el jugador es afrente.
+[01:16:18 -> 01:16:21]  ¿Siempre o en ese caso?
+[01:16:21 -> 01:16:25]  No, porque se defina el árbol así.
+[01:16:25 -> 01:16:29]  ¿Se defina el árbol así?
+[01:16:29 -> 01:16:36]  es para el que estemos evaluando el concepto, calculando el valor.
+[01:16:36 -> 01:16:41]  Si estuviera calculando el valor para oponente,
+[01:16:41 -> 01:16:47]  y bueno acá yo tendría que ser consistente y deciría que son las utilidades para oponente.
+[01:16:47 -> 01:16:59]  Esto es la utilidad siempre para el jugador o la gente para el cual estamos evaluando
+[01:16:59 -> 01:17:00]  la unidad.
+[01:17:00 -> 01:17:06]  Y ya que si después de ponerle jugar a gente, después hubo una hoja, ¿y cuáles son las
+[01:17:06 -> 01:17:08]  hojas de la gente?
+[01:17:08 -> 01:17:12]  O sea, la soja... sí, sí.
+[01:17:12 -> 01:17:14]  La utilidad...
+[01:17:14 -> 01:17:20]  La utilidad esta acá, si vos querés que tu agente sea oponente,
+[01:17:20 -> 01:17:23]  entonces tenés que cambiarle la soja.
+[01:17:23 -> 01:17:25]  Tenés que cambiarle el valor a la soja.
+[01:17:29 -> 01:17:31]  Eso es lo que es imponer.
+[01:17:31 -> 01:17:37]  Siempre hay... o sea, piensen que siempre hay un agente que está definido,
+[01:17:37 -> 01:17:39]  que es sobre el cual vamos a calcular los valores.
+[01:17:39 -> 01:17:41]  Si quieres lo que el juego haremos, si mucho quieres calcular,
+[01:17:41 -> 01:17:44]  cuál es el valor para a gente.
+[01:17:44 -> 01:17:49]  Para que me quede claro, si quiero el valor para gente, para este jugador.
+[01:17:51 -> 01:17:58]  En el suma a cero siempre es lo que gana, es lo reverso.
+[01:17:58 -> 01:17:59]  Sí, sí, sí.
+[01:17:59 -> 01:17:59]  Ok.
+[01:17:59 -> 01:18:03]  Entonces siempre que estamos alternando de jugadores,
+[01:18:03 -> 01:18:07]  con el negativo, el positivo y el negativo antitipo
+[01:18:07 -> 01:18:10]  o sea, para no asimizar, tenemos que minizar desde el otro
+[01:18:10 -> 01:18:19]  es que, dado que es las hojas, siempre el valor va a ser la utilidad de agente
+[01:18:19 -> 01:18:27]  y agente si le juega max, entonces cada vez que vos tengas un nodo oponente
+[01:18:27 -> 01:18:30]  y si juega min, entonces vas a hacer min
+[01:18:30 -> 01:18:38]  Acaba de dar mi línea, pero eso es el caso que estemos usando la estrategia de un Imax.
+[01:18:38 -> 01:18:49]  Pues yo primero necesito usar un valor para cualquier estrategia, no solamente la Imax.
+[01:18:49 -> 01:19:07]  Entonces, elijo una A y acá es donde está donde elijo una acción A que viene de la distribución correspondiente al jugador que juega ese nómbre
+[01:19:07 -> 01:19:16]  y del valor de hacerla accionar y acá es donde determinístico porque voy a considerar
+[01:19:16 -> 01:19:25]  el sucesor de A de S por A
+[01:19:25 -> 01:19:35]  El estado S' es el sucesor de hacer la acción A.
+[01:19:35 -> 01:19:47]  para el acuerdo. Si estoy acá, el sucesor de agente en este juego, si agente es el agente de la acción,
+[01:19:47 -> 01:19:55]  o sea, el sucesor, el todo sucesor de este nodo o de este estado, si agente es la acción, la acción es el que.
+[01:19:55 -> 01:20:02]  A ver si terminé estado S, este va a ser mi estado sucesor.
+[01:20:02 -> 01:20:12]  Aquí hay que yo lo llamo estado S0, estado inicial, este va a ser sucesor de S0 por A.
+[01:20:12 -> 01:20:24]  Este va a ser el sucesor de S0 por B, y a este que está acá, que me llaman sucesor de S1
+[01:20:24 -> 01:20:26]  de C1 por L.
+[01:20:29 -> 01:20:30]  ¡Señal!
+[01:20:30 -> 01:20:32]  A ver, eso ha sido una hoja.
+[01:20:37 -> 01:20:41]  Ahora, eso es medio crítico, pero en realidad ¿cómo lo podemos hacer?
+[01:20:41 -> 01:20:44]  Bueno, de tal que tenemos dos, lo vamos a expandir.
+[01:20:44 -> 01:20:46]  O sea, o bien tengo la utilidad
+[01:20:48 -> 01:20:49]  de S,
+[01:20:50 -> 01:20:53]  si final es S,
+[01:20:54 -> 01:20:56]  Ahí está la recursión, ¿no?
+[01:20:56 -> 01:20:58]  Claro, acá está la recursión.
+[01:20:58 -> 01:21:00]  Ahí está la recursión.
+[01:21:02 -> 01:21:09]  Pero bueno, para ser más visual, dado que tengo dos jugadores, tengo dos posibilidades.
+[01:21:09 -> 01:21:20]  O bien, el jugador es si el P es igual agente, o sea, si el jugador es agente y si el P es...
+[01:21:20 -> 01:21:25]  O bueno, esto es más fácil de ver.
+[01:21:25 -> 01:21:28]  Acá, entonces, ya la esperanza la puedo hacer directamente.
+[01:21:28 -> 01:21:34]  Sucesores de ti, de la gente.
+[01:21:37 -> 01:21:41]  De este...
+[01:21:41 -> 01:21:43]  Lo voy a poner así.
+[01:21:43 -> 01:21:45]  Yo no sé si se prima de...
+[01:21:45 -> 01:21:47]  ¿Qué se prima?
+[01:21:50 -> 01:22:00]  con el valor de pi en su pleno.
+[01:22:00 -> 01:22:08]  Acabé de dar la suma, son sucesores, pi componente,
+[01:22:08 -> 01:22:10]  ¿Qué dice?
+[01:22:10 -> 01:22:14]  D, E, D
+[01:22:14 -> 01:22:16]  Ah, o sea, se sabe esa la reúne
+[01:22:16 -> 01:22:18]  Acá tenemos que aplicar renuevo
+[01:22:20 -> 01:22:22]  Y esto siempre lo
+[01:22:26 -> 01:22:28]  ¿Quién lo marcó? Vamos acá para ver qué
+[01:22:28 -> 01:22:30]  Todo el tiempo estoy haciendo
+[01:22:30 -> 01:22:32]  este valor para gentes
+[01:22:38 -> 01:22:52]  Entonces, es el caso general. Si la minimax en realidad...
+[01:22:52 -> 01:22:59]  Voy a hacer esto así, un poquito más en el espacio.
+[01:23:04 -> 01:23:15]  ¿En qué cambia la minimax? Es que en lugar de la suma, voy a tomar el max sobre los ssql.
+[01:23:15 -> 01:23:27]  y cuando es oponente voy a tomar el min, el lugar de tomar la...
+[01:23:27 -> 01:23:29]  y acá es un volante.
+[01:23:40 -> 01:23:46]  Obviamente los S están pertenecientes a sucesores
+[01:23:48 -> 01:23:49]  S,
+[01:23:51 -> 01:23:54]  y estos son los sucesores.
+[01:23:54 -> 01:24:01]  Y si quieren son sucesores para la gente, siempre es para jugar con ellos.
+[01:24:01 -> 01:24:08]  Eso es para que lo vean de mierda.
+[01:24:08 -> 01:24:12]  Esto tiene interés porque, ¿qué pasa?
+[01:24:12 -> 01:24:18]  Acá hay una hipótesis que están todos jugando estrategias,
+[01:24:18 -> 01:24:22]  estrategias, esto casi, estrategias pro y...
+[01:24:22 -> 01:24:26]  pero no puede pasar que, como hicimos,
+[01:24:26 -> 01:24:32]  los dos jueguen estrategias deterministas,
+[01:24:32 -> 01:24:38]  esta sería la... esto como ya sería la ecuación
+[01:24:38 -> 01:24:42]  de la repudencia llamamos minimax,
+[01:24:42 -> 01:24:48]  donde agente juega max y oponente juega minim.
+[01:24:48 -> 01:24:55]  Pero no es la única que nos interesa por símileras.
+[01:24:55 -> 01:25:00]  Podemos... o sea, podemos... la relación general es lo dos para el tocatio.
+[01:25:00 -> 01:25:10]  Por ejemplo, si queremos encontrar una... si existe la estrategia, es tocatio.
+[01:25:10 -> 01:25:13]  Y si no, otra decisión es esta.
+[01:25:16 -> 01:25:18]  Lo vemos así, así.
+[01:25:18 -> 01:25:26]  La esperanza es el número sobre pi con un ruido.
+[01:25:28 -> 01:25:30]  ¿Esto qué sería?
+[01:25:30 -> 01:25:33]  Bueno, esto sería...
+[01:25:33 -> 01:25:38]  Ojolente juega a maximizar la utilidad,
+[01:25:38 -> 01:25:41]  Pero bajo la hipótesis que...
+[01:25:41 -> 01:25:44]  Perdón, la gente juega con actividad y debilidad.
+[01:25:44 -> 01:25:49]  Bajo la hipótesis que oponente tiene una distribución de todo el tiempo.
+[01:25:49 -> 01:25:52]  O sea, juega a alguna distribución de todo el tiempo.
+[01:25:55 -> 01:26:01]  Por ejemplo, supongamos que oponente...
+[01:26:01 -> 01:26:11]  Cuando hicimos el análisis, el que subidió ahí, era asumiendo que, o ponende, también,
+[01:26:11 -> 01:26:19]  racional, maximizar su utilidad, en este caso era minimizando la de ajedrez.
+[01:26:19 -> 01:26:26]  Y si fuera un jugador jugando...
+[01:26:26 -> 01:26:38]  Ahora tengo el siguiente dilema, yo calculé mi estrategia asumiendo que el otro jugador iba a jugar min.
+[01:26:38 -> 01:26:47]  Y eso me había dado que lo mejor que podía hacer era jugar b y que tenía un valor de 1.
+[01:26:47 -> 01:26:55]  Ahora supongamos que yo programé eso y que venga cualquier jugador.
+[01:26:55 -> 01:27:06]  Entonces yo digo, pero viene ahora un jugador random que juega alineatorio uniforme.
+[01:27:06 -> 01:27:10]  Y mi oponente ahora jugando a donde?
+[01:27:10 -> 01:27:13]  Uniforme, jugando a un uniforme.
+[01:27:13 -> 01:27:17]  Entonces, qué quiere decir jugar a un uniforme?
+[01:27:17 -> 01:27:22]  Pero el tuyo sigue siendo...
+[01:27:22 -> 01:27:24]  El tuyo sigue siendo...
+[01:27:24 -> 01:27:26]  El tuyo sigue siendo...
+[01:27:26 -> 01:27:28]  Sí, sí, yo jugo minimax.
+[01:27:28 -> 01:27:44]  que yo hago mi análisis y digo voy a jugar B, también porque en el análisis mini max supongo que oponente va a jugar E
+[01:27:44 -> 01:27:52]  yo podría pensar que la mitad de las veces uniforme, y la mitad de las veces juega el y la mitad de las veces no va a jugar E
+[01:27:52 -> 01:27:57]  Entonces, yo les doy una instrucción de probabilidad acá.
+[01:27:57 -> 01:28:01]  Esa va a ser pi oponente.
+[01:28:04 -> 01:28:08]  Pi oponente. Pi oponente es medio un L.
+[01:28:08 -> 01:28:13]  Entonces, si yo ahora aplico esta fórmula,
+[01:28:15 -> 01:28:18]  ¿cuánto me da el valor?
+[01:28:18 -> 01:28:20]  ¿Cuál es el valor de 2?
+[01:28:20 -> 01:28:26]  Me da 2 porque es 1 más 3, y me da el valor de 2.
+[01:28:26 -> 01:28:28]  ¿Ya?
+[01:28:28 -> 01:28:33]  1 más 3 dividido 2.
+[01:28:33 -> 01:28:37]  O sea, 1 medio más 3 medio. ¿Cuánto medio?
+[01:28:37 -> 01:28:43]  1 medio por 1 más 1 medio.
+[01:28:43 -> 01:28:50]  2, y lo que remontaría de valor la cuerda de ecuación es 2
+[01:28:50 -> 01:28:54]  Ah claro, porque el 2 te queda arriba, te queda el oponente
+[01:28:54 -> 01:29:06]  Pero sigue siendo un 2, lo puse en azul, pero sigue siendo la utilidad para la gente
+[01:29:06 -> 01:29:10]  Entonces 12 mayor que 1
+[01:29:10 -> 01:29:14]  ¿Qué le pasó a mi estrategia minimax?
+[01:29:18 -> 01:29:24]  La predicción que yo tenía de mi estrategia minimax es que su valor era 1.
+[01:29:27 -> 01:29:36]  Pero en realidad, cuando jugué esa estrategia contra un oponente random, tuve 2 utilidades.
+[01:29:36 -> 01:29:41]  más de lo que pensé que iba a tener
+[01:29:42 -> 01:29:45]  y por qué
+[01:29:48 -> 01:29:54]  no no no estaría esto porque en realidad la estrategia mini max es la
+[01:29:54 -> 01:30:01]  ver disponse a una gente que juega mini pero no es la ver disponse a una gente
+[01:30:01 -> 01:30:10]  o no necesariamente la doy respons a una gente que juega random 0.5 0.5
+[01:30:10 -> 01:30:18]  pero yo dije algo sin justificarlo es cuál es la doy respons en este ejemplo a
+[01:30:18 -> 01:30:22]  una gente que juega 0.5 0.5
+[01:30:22 -> 01:30:25]  ¿Por qué C?
+[01:30:25 -> 01:30:35]  Porque acá tengo 1,5 y acá tengo 10,5
+[01:30:35 -> 01:30:45]  y recorrer, acá también tengo 1,5 y acá tengo valor C.
+[01:30:45 -> 01:30:59]  Entonces, si yo hago ahora este análisis, o sea, resuelvo esta ecuación, que no es la ecuación B max,
+[01:30:59 -> 01:31:12]  como mi análisis, mi análisis ahora es, yo voy a siempre jugar max, pero voy a suponer que mi agente, o que el oponente juega, para que el oponente juega random.
+[01:31:12 -> 01:31:23]  Pero Rand no ve esta distribución. Entonces bajo ese análisis, agente diría voy a jugar C.
+[01:31:23 -> 01:31:35]  Porque C es la vera respons de tan mítica a un oponente que juega con esa distribución de probabilidad.
+[01:31:35 -> 01:31:44]  Entonces, lo que esto introduce es que hay que tener cuidado con este análisis porque
+[01:31:44 -> 01:31:53]  lo que estos análisis hacen es suponen algo sobre componente.
+[01:31:53 -> 01:31:55]  Efectualmente podría tener un
+[01:31:55 -> 01:31:57]  teclitismo indecalado...
+[01:31:57 -> 01:31:59]  Pero ¿por qué?
+[01:31:59 -> 01:32:01]  O sea, pero bueno...
+[01:32:01 -> 01:32:03]  Lo que pasa es que...
+[01:32:03 -> 01:32:05]  ahora... ¿por qué esto es así?
+[01:32:05 -> 01:32:07]  ¿Por qué?
+[01:32:07 -> 01:32:09]  En los juegos simultáneos
+[01:32:09 -> 01:32:11]  que nosotros vimos...
+[01:32:11 -> 01:32:13]  Ah, pues era simultáneo.
+[01:32:13 -> 01:32:15]  No tenían que...
+[01:32:15 -> 01:32:17]  simultáneamente...
+[01:32:17 -> 01:32:19]  No tenían que...
+[01:32:19 -> 01:32:21]  ...sigualmente...
+[01:32:21 -> 01:32:23]  ...sigualmente...
+[01:32:23 -> 01:32:27]  El dato de que se nos sabe lo que...
+[01:32:27 -> 01:32:31]  No hay una...
+[01:32:31 -> 01:32:35]  Tengo que suponer...
+[01:32:35 -> 01:32:40]  Aunque el equilibrio de Nash dice, bueno, todos hacemos el mismo análisis
+[01:32:40 -> 01:32:48]  y todos los jugadores converten a ese equilibrio.
+[01:32:48 -> 01:33:00]  Acá, en el caso de los juegos de tecnología, en este tipo de análisis, hay que cambiar
+[01:33:00 -> 01:33:11]  un poco la mirada y hay que pensar en que este análisis no se hace una vez para siempre.
+[01:33:11 -> 01:33:18]  Este árbol podría ser gigante.
+[01:33:18 -> 01:33:35]  Entonces se va a hacer más bien en un esquema de voy a planificar y después voy a jugar.
+[01:33:35 -> 01:33:42]  Pero en esa planificación la hago de cabeza, o sea, la gente lo hace en papel o lo que sea,
+[01:33:42 -> 01:33:51]  suponiendo que oponentes van a jugar, porque eventualmente van a jugar en algún momento cuando les toque el turno.
+[01:33:51 -> 01:33:56]  Mientras tanto que ahora el turno me toca a mí, yo voy a hacer mi análisis,
+[01:33:58 -> 01:34:02]  tengo que suponer que es lo que van a jugar los demás jugadores.
+[01:34:02 -> 01:34:07]  Es lo que hacen, no sé si algún juego al pedreso o algún otro juego así de ese tipo,
+[01:34:07 -> 01:34:09]  cuando juegan al truco, cuando juegan al poker,
+[01:34:09 -> 01:34:12]  ustedes están siempre suponiendo que van a hacer los demás.
+[01:34:16 -> 01:34:19]  Y si juegan a juego de azar, como por ejemplo el poker,
+[01:34:19 -> 01:34:22]  no siempre los jugadores juegan de terminigio, ¿no?
+[01:34:22 -> 01:34:26]  Pero vamos a ver, porque hay bluffing, ¿no?
+[01:34:26 -> 01:34:29]  O sea, puede mentir, puede mentir.
+[01:34:29 -> 01:34:38]  Yo hago el análisis y el jugador le puede interesar un tip para engañar y eventualmente hacerme abandonar
+[01:34:38 -> 01:34:43]  cuando en realidad yo tenía un jugador mejor.
+[01:34:43 -> 01:34:49]  Acá no hay gráfico porque todavía no, después porque esa actual información está ahí.
+[01:34:49 -> 01:34:55]  No se puede confiar en todo el juego de información completa.
+[01:34:55 -> 01:35:04]  Pero sí, el tema de que hay que jugar mentalmente, o sea, simular un montón de jugadas,
+[01:35:04 -> 01:35:11]  esto lo que hay que hacer es jugar todas las jugadas posibles,
+[01:35:11 -> 01:35:15]  o sea, tu árbol, eventualmente hasta el final,
+[01:35:15 -> 01:35:20]  en el que se drense, se puede hacer, sentarse de ti y llevar algo bastante grande,
+[01:35:20 -> 01:35:27]  y decidí entonces a partir de ese análisis, que voy a jugar acá.
+[01:35:27 -> 01:35:32]  Pero para hacer esa análisis hay que suponer algo sobre lo que va a ser oponente.
+[01:35:32 -> 01:35:39]  Pero ¿qué pasa? El oponente puede no jugar, de acuerdo a la hipótesis que uno hizo.
+[01:35:39 -> 01:35:46]  Yo hice el análisis este, dije voy a jugar este, ve.
+[01:35:46 -> 01:35:53]  Y resulta que este oponente no jugó ni jugó rango.
+[01:35:53 -> 01:35:56]  Y ahí ya estaba, o sea, ya partí.
+[01:35:56 -> 01:36:04]  No, acá lo partí y gané más de lo que estimé, pero podía ganar más.
+[01:36:04 -> 01:36:09]  Pero no pasó nada, simplemente están las limitantes.
+[01:36:09 -> 01:36:11]  Y ahí eso hay que tener en cuenta.
+[01:36:11 -> 01:36:21]  Cuando lo van a probar, decir por qué está obteniendo más, por ejemplo, no está obteniendo todo lo que yo espero.
+[01:36:21 -> 01:36:32]  Bueno, porque están haciendo hipótesis sobre cómo están jugando los otros jugadores y eso se eventualmente nos están siguiendo esa hipótesis.
+[01:36:32 -> 01:36:41]  Acá es como una especie de agent modeling, pero no aprendido. Estoy suponiendo un modelo de OVOL.
+[01:36:41 -> 01:36:45]  Sí, pero ahora tenías una pregunta.
+[01:36:45 -> 01:36:52]  ¿Y acá cómo se dice? ¿Y el tipo de oponentes es jugando y viendo?
+[01:36:52 -> 01:37:02]  El algoritmo más sencillo que vamos a empezar viendo, que es el algoritmo de minipax,
+[01:37:02 -> 01:37:11]  excepto supone esa racionalidad termítica, siempre vamos a jugar Valverde y Montes,
+[01:37:11 -> 01:37:17]  la altura, el oponente va a jugar min y la gente va a jugar max.
+[01:37:17 -> 01:37:24]  Luego vamos a ver otros donde... yo llamo de public counterfactuals,
+[01:37:24 -> 01:37:32]  así que aprendan bien de demization, porque ahí sí, un poco que se juegan los dos roles
+[01:37:32 -> 01:37:37]  y se aprende más un equilibrio pero no exactamente el que más.
+[01:37:37 -> 01:37:41]  Es todo eso.
+[01:37:41 -> 01:37:50]  Pero bueno, para que sea lo determinético, tiene que haber algún tipo de determinismo en el juego, por ejemplo, cartas o algo.
+[01:37:50 -> 01:38:00]  Pero bueno, a este es totalmente un nombre.
+[01:38:00 -> 01:38:08]  Al análisis donde yo pongo max acá y min acá se llama el análisis minimax.
+[01:38:08 -> 01:38:17]  A este análisis cuando yo uso max acá y esperanza acá se lo llama expected max.
+[01:38:19 -> 01:38:24]  El max es por t max y el expected es por t esperanza.
+[01:38:24 -> 01:38:29]  ExpectTmaps
+[01:38:29 -> 01:38:34]  Entonces básicamente tenemos tipo 2
+[01:38:34 -> 01:38:41]  En la dispositiva, en un caso, solo por el análisis
+[01:38:41 -> 01:38:47]  En el cual el componente juega benévolo
+[01:38:47 -> 01:38:51]  Y juega un machine chart
+[01:38:51 -> 01:38:55]  Entonces va a jugar siempre 50.
+[01:38:57 -> 01:38:59]  En este caso, vuelvo a jugar.
+[01:39:01 -> 01:39:03]  ¿Qué es lo que debías decirle?
+[01:39:04 -> 01:39:11]  En el anterior, en el video que debía, perdón, de grado, no?
+[01:39:11 -> 01:39:12]  No de más.
+[01:39:12 -> 01:39:13]  Ah, sí, sí.
+[01:39:13 -> 01:39:18]  Que había que hacer para el juego 20-48.
+[01:39:18 -> 01:39:20]  Ah, sí, en 20-48.
+[01:39:21 -> 01:39:25]  Y ahí estaba definido el expect, digamos.
+[01:39:25 -> 01:39:27]  O sea, como que...
+[01:39:27 -> 01:39:34]  El oponente era la máquina de jugar un 2, el 80% del vídeo creo, y un 4, el 8% del vídeo.
+[01:39:34 -> 01:39:38]  Eso, eso, acá.
+[01:39:38 -> 01:39:45]  O sea, después de todo, ahora sí estoy compariando, porque así no tendré que...
+[01:39:45 -> 01:39:47]  ¿Soy yo acá?
+[01:39:47 -> 01:39:55]  Primero para la pregunta de hoy, ¿qué es lo que agrega si hay un nodo?
+[01:39:55 -> 01:40:03]  Es tirar una moneda, o traer una carta, o lo que sea, y se agrega así como está...
+[01:40:03 -> 01:40:10]  lo que sería Spectrum Minimax, que es oponente juega min, la gente juega max,
+[01:40:10 -> 01:40:16]  y ese no es un chance, se llama jugar a su distribución de probabilidades,
+[01:40:16 -> 01:40:23]  más de uno, puede haber el momento de poder sacar una carta, tirar un dado, etc.
+[01:40:23 -> 01:40:33]  En lo que decía Agustín, la realidad, esta ecuación es si yo saco a un nuevo oponente,
+[01:40:33 -> 01:40:39]  y ustedes lo hacen contra un ambiente, por ejemplo, un juego de 2048, que tiene ese.
+[01:40:39 -> 01:40:45]  O sea, juegos de una gente, pero que hay también chance, porque ustedes hacen un movimiento,
+[01:40:45 -> 01:40:51]  estado siguiente puede ser aleatorio porque pueden entrar monedas,
+[01:40:51 -> 01:40:57]  hay un valor, si qué se yo, ahí la distribución de probabilidad,
+[01:40:57 -> 01:41:00]  en el caso del azar, se supone crear conocida.
+[01:41:00 -> 01:41:04]  O sea, el mecanismo de azar que se usa tiene una distribución conocida,
+[01:41:04 -> 01:41:07]  a diferencia de lo monente que puede tener cualquiera.
+[01:41:07 -> 01:41:12]  Por ejemplo, hemos puesto una moneda o...
+[01:41:15 -> 01:41:23]  Y para terminar con esto, esto. Lo de las propiedades.
+[01:41:23 -> 01:41:27]  Lo puedo ver acá para no escribirlo, pero eso ya lo vimos.
+[01:41:27 -> 01:41:42]  ¿Cuál es la propiedad de la de Minimax?
+[01:41:42 -> 01:41:48]  Es Minimax en la ver response a Minimax.
+[01:41:48 -> 01:42:01]  Si oponente juega min, lo mejor que puedo hacer es eso, suponiendo que juega min, jugar max.
+[01:42:01 -> 01:42:18]  sale llena de mínimas. Ahí es la best response de la gente oponente que juega a mí es jugar mínimas.
+[01:42:18 -> 01:42:32]  Si a gente cambiara acá, acá cambió la de oponente. Si yo cambio la de la gente voy a obtener un valor menor.
+[01:42:32 -> 01:42:40]  Si el otro juega, realmente, es el enemigo. Ah, esa es la manera de ponerlo.
+[01:42:40 -> 01:42:48]  Y esto que está acá nos muestra esto.
+[01:42:48 -> 01:42:56]  El tercer punto es que eventualmente si el oponente no juega a mi, juega a otra cosa,
+[01:42:56 -> 01:43:03]  ¿existe alguna estrategia del oponente que tenga un valor mayor?
+[01:43:03 -> 01:43:09]  ¿Esta? No, esa es la...
+[01:43:09 -> 01:43:20]  Es eso, mi máximo es necesariamente la brand response a cualquier otra cosa, porque en este caso la brand response era jugar C.
+[01:43:20 -> 01:43:30]  30.05.05, la verdad es que Pons no era jugar A, sino jugar C, que fue lo que vi.
+[01:43:30 -> 01:43:37]  Ahí está, está jugando Mink. No está jugando Mink, por eso. Que fue lo que jugó acá.
+[01:43:37 -> 01:43:40]  Jugó una distribución de probabilidad a la interna.
+[01:43:40 -> 01:43:56]  Entonces, existe alguna distribución de probabilidades de oponentes en la cual, eventualmente, la gente tiene otra estrategia mejor que el minimax.
+[01:43:56 -> 01:44:19]  Pero, por otro lado, Minimax es conservadora, es que es un piso, le da un piso de lo que
+[01:44:19 -> 01:44:26]  que puede ganar a gente frente a cualquiera de los oponentes.
+[01:44:26 -> 01:44:31]  Esto quiere decir que no le puede ir peor.
+[01:44:33 -> 01:44:44]  Esto quiere decir que el valor de minimax contra min es menor o igual al valor de minimax contra otro oponente.
+[01:44:44 -> 01:44:47]  Cualquiera sea.
+[01:44:47 -> 01:45:00]  No puedo, o sea, no puede, por ejemplo, si yo juego minimax, no puedo ganar cero, no puedo ganar menos de uno.
+[01:45:00 -> 01:45:06]  Ni ninguna estrategia del oponente va a tener un valor menor a uno.
+[01:45:06 -> 01:45:09]  O sea, es un piso, es una cota inferior.
+[01:45:09 -> 01:45:12]  Puedo ganar más, pero nunca ganar menos.
+[01:45:12 -> 01:45:16]  ganar menos. Entonces, conservador.
+[01:45:16 -> 01:45:18]  Pero en este juego...
+[01:45:18 -> 01:45:20]  No, no, siempre.
+[01:45:20 -> 01:45:22]  No, pero...
+[01:45:22 -> 01:45:26]  ...venos ahí también.
+[01:45:26 -> 01:45:38]  Sí, porque esto es jugar contra mí, es jugar contra la pura que te da el menor valor acá.
+[01:45:38 -> 01:45:46]  Y si yo cambio la distribución, el valor va a aumentar, no va a disminuir.
+[01:45:46 -> 01:45:54]  Porque el mínimo corresponde a la distribución 1, 0.
+[01:45:54 -> 01:45:58]  Acá corresponde a la 1, 0.
+[01:45:58 -> 01:46:03]  Si se empieza a mover la probabilidad para el otro lado, el valor va a aumentar.
+[01:46:08 -> 01:46:13]  Entonces siempre te da algo observado.
+[01:46:13 -> 01:46:18]  Porque como creí siempre, es el mejor peor caso.
+[01:46:18 -> 01:46:24]  Exacto, es el mejor peor caso.
+[01:46:24 -> 01:46:29]  Y no...
+[01:46:29 -> 01:46:37]  Apínense que esto, aunque concubra a cualquier profundidad, siempre que suba un caso
+[01:46:37 -> 01:46:42]  me voy a quedar con el mejor peor caso, el peor peor caso, el peor peor caso
+[01:46:42 -> 01:46:45]  Peor que eso no me puede ir nunca
+[01:46:47 -> 01:46:50]  Y así lo remonto hasta...
+[01:46:50 -> 01:47:00]  Pero bueno, realmente es una estimación de mejor...
+[01:47:00 -> 01:47:06]  El oponente no es un agente también, o sea,
+[01:47:06 -> 01:47:11]  no habíamos... y creo que estaba en la definición de algo así que
+[01:47:11 -> 01:47:16]  el agente también siempre entendía que era maximizar su valor, o algo así,
+[01:47:16 -> 01:47:25]  unidad, si no tendría sentido el que juega tipo uniforme por ejemplo
+[01:47:25 -> 01:47:31]  si el juego es de formación parcial
+[01:47:31 -> 01:47:37]  y ahora pues pasa que no nos va a dar el tiempo, vamos a ir tranquilos
+[01:47:37 -> 01:47:43]  vamos a hacer un caso, un análisis de un juego de poker sencillo con información
+[01:47:43 -> 01:47:49]  tiene información parcial y minimax te da nada, básicamente el juego se mata siempre.
+[01:47:49 -> 01:47:54]  En cambio si bloqueas, podés ganar.
+[01:47:58 -> 01:48:10]  Y ese jugador y ese oponente que hace bluffing es, por si quieres, puede alcanzar una unidad mayor que el que no lo hace.
+[01:48:13 -> 01:48:19]  Bueno, pero...
+[01:48:19 -> 01:48:21]  Sí, es lo que yo me parecía, que...
+[01:48:21 -> 01:48:26]  Voy a dar las dos horas para esto, vamos a dejar tiempo para...
+[01:48:26 -> 01:48:33]  Pero eso, bueno, después lo seguimos viendo la clase que viene, porque hay tiempo...
+[01:48:33 -> 01:48:39]  Para esto, así ya, porque...
+[01:48:39 -> 01:48:42]  Tienen también un par de semanas para entregar lo obligatorio, ¿no?
+[01:48:42 -> 01:48:45]  vamos a abrir la página de eso
+[01:48:45 -> 01:48:48]  pero ahora ya vamos...
+[01:48:48 -> 01:48:51]  ¿Me pierdes tampoco para el proceso ya?
+[01:48:51 -> 01:48:56]  No, que viene en un par de semanitas más
+[01:48:56 -> 01:48:59]  o tres semanas
+[01:48:59 -> 01:49:03]  y bueno, si quieren entonces
+[01:49:03 -> 01:49:07]  antes de que venga Martín
+[01:49:07 -> 01:49:09]  para el practico
+[01:49:09 -> 01:49:11]  Yo me entomío y me de marco.
+[01:49:15 -> 01:49:19]  Si quieren les cuento un poco del trabajo final.
+[01:49:21 -> 01:49:25]  Si, pero puedes esperar un minuto, porque yo también necesito de la vaina.
+[01:49:25 -> 01:49:27]  Si, además quiero escuchar.
+[01:49:27 -> 01:49:30]  No, luego de todo hay la pausa. Si quieren hacer una pausa, luego hay la pausa.
+[01:49:31 -> 01:49:34]  Pero quédense a la...
+[01:49:34 -> 01:49:41]  online que está... hablamos de esto.
+[01:56:34 -> 01:56:47]  ...
+[01:56:47 -> 01:56:49]  Acá volvemos.
+[01:56:49 -> 01:56:57]  Entonces, me preguntarán si cuál es el tema de los trabajos finales.
+[01:56:57 -> 01:57:04]  No te llene alguna pregunta concreta, alguna duda o quieres que les cuente todo.
+[01:57:04 -> 01:57:06]  Hace cuenta, hace cuenta.
+[01:57:06 -> 01:57:09]  No tengo ni las básicas de esto.
+[01:57:09 -> 01:57:13]  Bueno, primero la formalidad.
+[01:57:13 -> 01:57:21]  Para hacer el trabajo final tienen que tener seis justos aprobados.
+[01:57:21 -> 01:57:24]  Creo que se adelanta a todas mis condiciones.
+[01:57:24 -> 01:57:30]  pero digo eso porque capaz que no siguieron el recorrido habitual y cuando estaba haciendo
+[01:57:30 -> 01:57:33]  un montón de gente pero deben haber una o otras.
+[01:57:33 -> 01:57:37]  Pero bueno, seis, cualquiera.
+[01:57:37 -> 01:57:42]  Están en esas condiciones pueden hacer el trabajo final.
+[01:57:42 -> 01:57:47]  El trabajo final es en equipo, lo pueden hacer en equipo o lo pueden hacer solo,
+[01:57:47 -> 01:57:51]  o sea, hasta tres. Uno, dos o tres.
+[01:57:54 -> 01:58:01]  Ahora vengo al tema de la cantidad de personas.
+[01:58:01 -> 01:58:11]  El proceso, si empiezan el semestre que viene,
+[01:58:11 -> 01:58:14]  si lo hacen el semestre que viene, se desborda.
+[01:58:14 -> 01:58:17]  O sea, en cualquier caso que lo hagan en marzo o arranque en agosto,
+[01:58:17 -> 01:58:25]  se desborda al otro semestre aproximadamente hasta la mitad del semestre
+[01:58:25 -> 01:58:37]  o sea es la idea que sea como una más o menos mantener seis meses de trabajo
+[01:58:37 -> 01:58:47]  no que sea dentro de los seis meses todo porque hay un mes o algo así que se
+[01:58:47 -> 01:59:00]  va en la definición del proyecto. La definición del proyecto es, se hace durante la materia de trabajo final.
+[01:59:00 -> 01:59:08]  No sé si los que sean de que hayan hecho alguna carrera de grado en Ork o en la formula ingeniería acá,
+[01:59:08 -> 01:59:15]  Tenemos una paróxena de mecánica, pero para los que no lo hayan hecho,
+[01:59:15 -> 01:59:19]  ustedes tienen que inscribir a la materia,
+[01:59:19 -> 01:59:29]  después generar el grupo, pero es como cuando se inscriben a un obligatorio,
+[01:59:29 -> 01:59:34]  tienen que inscribirse individualmente, después se constituye el grupo,
+[01:59:34 -> 01:59:44]  O sea, podrían, por ejemplo, tranquilamente inscribirse y definir el grupo durante ese proceso.
+[01:59:44 -> 01:59:49]  Eso ha pasado, gente, que se le iba a hacer el distribuidor y que nada, está.
+[01:59:49 -> 01:59:55]  Vamos a los juntos y ponemos un anteproyecto juntos que es el primer paso.
+[01:59:55 -> 02:00:03]  Desde el momento de la inscripción, tiene aproximadamente un mes para presentar lo que se llama un anteproyecto.
+[02:00:03 -> 02:00:17]  En un anteproyecto es una idea más o menos elaborada, pero realmente no resuelta de algún problema que quieran abordar.
+[02:00:17 -> 02:00:22]  Dicho esto, esa es la formalidad del anteproyecto.
+[02:00:22 -> 02:00:30]  La idea, o sea, lo mejor es que si empiezan a tener ideas, las puedan anotar.
+[02:00:30 -> 02:00:38]  Ita anotando y eventualmente charlando con cualquiera de los docentes del cooperado.
+[02:00:38 -> 02:00:41]  O sea, no necesariamente con ningún catedrático ni coordinador.
+[02:00:41 -> 02:00:42]  Al mismo tiempo es un coordinador.
+[02:00:42 -> 02:00:50]  Ustedes tienen un tema de deep learning, de qué se yo, y tuvieron buena onda con, no sé,
+[02:00:50 -> 02:00:57]  con Joaquín, con Marcos, lo pueden pelotear con Guaydira dello, con Marías,
+[02:00:57 -> 02:01:02]  y usar eso como cifra.
+[02:01:02 -> 02:01:08]  Y después traer Rosilia, ese hilo con lo que hablábamos más específicamente,
+[02:01:08 -> 02:01:12]  conmigo o con Marías.
+[02:01:12 -> 02:01:15]  Y ahora sí, pregunta.
+[02:01:15 -> 02:01:18]  No, no es que la que puede...
+[02:01:18 -> 02:01:19]  Ah, ahí está bien...
+[02:01:19 -> 02:01:21]  No, pero ya que bueno...
+[02:01:21 -> 02:01:24]  Por ejemplo, ¿qué temas? ¿Cuáles eran?
+[02:01:24 -> 02:01:26]  ¿Qué era el tema?
+[02:01:26 -> 02:01:35]  En gran idea hay dos tipos, uno que podrían llamar más aplicados.
+[02:01:35 -> 02:01:45]  En el que lo que buscan es aplicar técnicas que vieron
+[02:01:45 -> 02:01:49]  pero a su vez también profundizar las técnicas que vieron
+[02:01:49 -> 02:01:54]  y eventualmente algunas que no vieron pero que son aledañas
+[02:01:54 -> 02:02:02]  por ejemplo, el de Syntensor, ReformerLearnLinia, dice un montón de algoritmos que no vieron
+[02:02:02 -> 02:02:07]  capaz que les interesa ver y aplicar a un problema concreto.
+[02:02:07 -> 02:02:14]  Un problema concreto que puede venir de, por ejemplo, de una empresa, si trabajas en una empresa o tienes
+[02:02:14 -> 02:02:22]  este, montando o lo que sea, a la empresa o sea, me propuso tal tema,
+[02:02:22 -> 02:02:29]  esa puede ser. En este, por ejemplo, concretamente en este semestre hay
+[02:02:29 -> 02:02:34]  tres proyectos, así, tres o cuatro proyectos.
+[02:02:34 -> 02:02:41]  De que es una empresa, no necesariamente la que trabaja los estudiantes,
+[02:02:41 -> 02:02:50]  que propone un tema, ese tema que llega a los estudiantes,
+[02:02:50 -> 02:02:54]  y los estudiantes lo ven con nosotros, y dijimos ok, está bien.
+[02:02:54 -> 02:02:59]  ¿Qué condiciones tiene que tener esa hipotesis?
+[02:02:59 -> 02:03:09]  O sea, para que haya algún tipo de innovación, pero no científica, no necesariamente.
+[02:03:09 -> 02:03:11]  O sea, innovaciones...
+[02:03:11 -> 02:03:16]  Bueno, por ejemplo, que haya un interesado, una empresa, por ejemplo, que tiene un problema concreto, que es el resolver,
+[02:03:16 -> 02:03:28]  que no hay herramientas para hacerlo o son caras o quiere hacer un ensayo para ver si...
+[02:03:28 -> 02:03:37]  una especie de prueba de concepto para ver si ir hacia ese lado la técnica, no sé,
+[02:03:37 -> 02:03:45]  En realidad, tipo de técnica de deep learning es aplicable para eso.
+[02:03:45 -> 02:03:47]  Imágenes.
+[02:03:49 -> 02:03:58]  Eso sería un caso. Este semestre, sí, con lo que puedan ir algunas,
+[02:03:58 -> 02:04:01]  le vamos a mandar la fecha de la defensa y eso.
+[02:04:01 -> 02:04:14]  Hay una de imágenes, hay un par de... hay más de propuestas, porque hay un par de proyectos que vienen de UTE.
+[02:04:14 -> 02:04:20]  Eso es gente que trabajó en UTE, o está en una obra vinculada...
+[02:04:20 -> 02:04:26]  No, porque esos dos debutes son, contaba que son dos.
+[02:04:26 -> 02:04:32]  Uno de imágenes que viene donde un debute es un alias de un cliente de la empresa que propone
+[02:04:32 -> 02:04:36]  y otro de mismos que interrumpen.
+[02:04:36 -> 02:04:38]  Por ejemplo.
+[02:04:40 -> 02:04:45]  O sea, no es porque por si no hay un debute con el X que interese, sino que lo vemos,
+[02:04:45 -> 02:04:57]  que hay suficiente grado de complejidad para que sea una tesis y no sea agarrar y copiar una solución que anda rodillando vueltas.
+[02:04:57 -> 02:05:10]  Ha habido... ah, después hay una chica que hace también sobre aplicación de reinforcement learning de su empresa
+[02:05:10 -> 02:05:26]  Hay un problema de control de dispositivos, hay otro tipo de dispositivos, hay otra detección de fraude, suma y dos detección de fraude.
+[02:05:26 -> 02:05:35]  En el pasado ha habido tesis similares propuestas por bancos o por...
+[02:05:35 -> 02:05:44]  Ese sería un tipo. O sea, hablo de una empresa, la verdad es que son ustedes mismos, no?
+[02:05:44 -> 02:05:54]  porque tienen un interés particular.
+[02:05:54 -> 02:06:05]  Y las otras son un poco más de investigación, no necesariamente donde el problema es...
+[02:06:05 -> 02:06:11]  resolver un problema concreto, ¿no?
+[02:06:11 -> 02:06:15]  Este...
+[02:06:15 -> 02:06:19]  hacer una detección de fraude en...
+[02:06:19 -> 02:06:25]  o por ejemplo, si, detección de anualías en redes.
+[02:06:25 -> 02:06:28]  En redes de datos.
+[02:06:28 -> 02:06:32]  A nivel, no sé, de SP o...
+[02:06:32 -> 02:06:40]  sino que el objetivo sea más bien explorar unas técnicas que les interesaron
+[02:06:40 -> 02:06:44]  pero que no vieron y ven que ha habido un desarrollo.
+[02:06:44 -> 02:06:52]  También motivado por alguna aplicación.
+[02:06:52 -> 02:07:01]  Por ejemplo, pero digamos que la innovación no va a venir más que nada,
+[02:07:01 -> 02:07:07]  o sea, el driver no es la aplicación propia, he dicho, sino por ejemplo comparar técnicas.
+[02:07:07 -> 02:07:15]  Vieron un algoritmo y hay dos o tres más en la vuelta que supuestamente son optimizaciones,
+[02:07:15 -> 02:07:23]  entonces, bueno, agarran un dataset y hacen una evaluación de eso.
+[02:07:27 -> 02:07:29]  Esto lo tenemos hecho.
+[02:07:29 -> 02:07:32]  O sea, tiene un componente más de investigación.
+[02:07:32 -> 02:07:36]  O sea, el tratamiento de todo el arte y...
+[02:07:37 -> 02:07:42]  Más en ese sentido, o sea, es más en eso, bueno,
+[02:07:42 -> 02:08:04]  A Ari y Juan ya trabajaron en un asistente basado en agentes de modelo de lenguaje para detectar y validar invariantes de programas.
+[02:08:04 -> 02:08:07]  Si saben lo que es invariante de programas.
+[02:08:07 -> 02:08:09]  Yo no.
+[02:08:09 -> 02:08:13]  No importa lo que son, no importa.
+[02:08:13 -> 02:08:28]  Por ejemplo, tiene como vente de implementación, como vente de investigación, como programas LLM.
+[02:08:28 -> 02:08:40]  Después hubo otros temas, por ejemplo, otras tesis más centradas en privacidad de datos,
+[02:08:40 -> 02:08:48]  eso más en la parte de Big Data. Pero entra perfectamente en la parte mundial.
+[02:08:48 -> 02:08:55]  Pero un poco esa dos. Lo que vamos a medir ahí es también el grado de complejidad,
+[02:08:55 -> 02:08:59]  que no sean ni demasiado grandes ni demasiado chicos.
+[02:08:59 -> 02:09:03]  Por ahí, para una persona vamos a decir, no, esto es mucho,
+[02:09:03 -> 02:09:07]  pero para tres, capaz que está bien, la misma de esas.
+[02:09:07 -> 02:09:11]  Pero capaz que para tres, también, demasiado.
+[02:09:19 -> 02:09:23]  Obviamente no estamos excedo de la IE de GULFY,
+[02:09:23 -> 02:09:25]  Si puede fallar o va a fallar.
+[02:09:26 -> 02:09:31]  Pero bueno, lo ideal para mí es tratar de minimizar las...
+[02:09:32 -> 02:09:34]  O sea, ¿qué cosas fallan?
+[02:09:35 -> 02:09:37]  Habitualmente
+[02:09:37 -> 02:09:45]  si la tesis viene de una empresa o de un tercero, suele casi con probabilidad 1, es los datos.
+[02:09:46 -> 02:09:50]  Por más que la empresa cubre, no sé qué, que estén,
+[02:09:50 -> 02:09:57]  Ya nos ha pasado incluso este semestre también y se ponemos que cada vez.
+[02:09:57 -> 02:10:07]  Entonces lo que sugerimos en ese caso es que, por casualidad,
+[02:10:07 -> 02:10:17]  los datos que se prometieron nunca llegan, tener un plan B ya desde el día 1,
+[02:10:17 -> 02:10:27]  No vamos a esperar a que cuando valen 75% de la tesis, la empresa no nos riego los datos,
+[02:10:27 -> 02:10:30]  que nos debían dar, no sé qué, no son buenas, etc.
+[02:10:30 -> 02:10:38]  Eso por ejemplo es algo que si se define bien previamente durante el anteproyecto,
+[02:10:38 -> 02:10:42]  o sea, durante la elaboración del anteproyecto, es algo que si lo podemos pelotear,
+[02:10:42 -> 02:10:48]  vamos a decir, consigan datos, vean si hay data sets, si mirares, etc.
+[02:10:48 -> 02:10:54]  Porque de un punto de vista, ustedes hacen lo mismo si lo decimos.
+[02:10:54 -> 02:11:02]  Para nosotros, un peso de estudiantes es lo mismo si la data viene de un te, o de otro,
+[02:11:02 -> 02:11:09]  u otra, de fondo de ojos reales.
+[02:11:09 -> 02:11:20]  realmente es mucho más interesante trabajar con imágenes reales sacadas por un aparato concreto que tienen en una determinada clínica y no con los datos de un cable
+[02:11:20 -> 02:11:28]  pero bueno, frente a la probabilidad no nula y bastante alta, porque los datos por aquí razón no estén
+[02:11:28 -> 02:11:34]  está bueno tener siempre el data set sin backup, son de igualdad
+[02:11:34 -> 02:11:44]  Nosotros levantamos varios proyectos previos a...
+[02:11:44 -> 02:11:50]  Donde nos decían, si tenemos datos y después...
+[02:11:50 -> 02:11:58]  O no nos podían prometer con su guía. Nosotros decimos, denos los datos y nos comprometemos a hacer lo que sea que haya que estar, pero primero...
+[02:11:58 -> 02:12:10]  Claro, yo me tenía que dar de mal, y bueno, uno nunca lo terminó de conseguir y otro te consiguió y era super chiquito.
+[02:12:10 -> 02:12:12]  No se podía hacer nada.
+[02:12:15 -> 02:12:19]  ¿Es cual es el problema con el tema de confidencial?
+[02:12:19 -> 02:12:22]  Con confidencial no hay problema.
+[02:12:22 -> 02:12:30]  que siempre no hay problema es lo mejor, por más que oficialmente no se haga así,
+[02:12:30 -> 02:12:36]  pero lo mejor es saber eso desde el comienzo.
+[02:12:36 -> 02:12:43]  Porque desde el bonte de la la unidad no hay ningún mecanismo particular para, por ejemplo,
+[02:12:43 -> 02:12:52]  igual un año o un día y donde sea de un tutor o otra pero si eso se saca que a veces puede ser necesario
+[02:12:52 -> 02:13:02]  el rendido pero en ese caso si se sabe de antemano bueno se sabe si busca un tutor o una tutora que
+[02:13:02 -> 02:13:08]  acepte participar de esas condiciones que eventualmente tengan firmado en el EDA porque
+[02:13:08 -> 02:13:13]  el tutor o tutora va a tener acceso a determinada información.
+[02:13:13 -> 02:13:19]  Por eso se hace un problema, pero es algo que en realidad se termina haciendo entre
+[02:13:19 -> 02:13:27]  tutor o tutora con la empresa. Lo que sí pasa al lado de la
+[02:13:27 -> 02:13:32]  es que lo que se protege es el informe.
+[02:13:32 -> 02:13:38]  O sea, el mecanismo es el informe de la tesis,
+[02:13:38 -> 02:13:43]  que es esencialmente el documento,
+[02:13:43 -> 02:13:46]  el único entregable formal es el documento,
+[02:13:46 -> 02:13:51]  no se publica hasta dos años después.
+[02:13:51 -> 02:13:55]  Esa es la protección de confidencialidad que se da.
+[02:13:55 -> 02:13:58]  El código de la TEC y eso no se tiene que integrar?
+[02:13:58 -> 02:14:02]  El código no, ni el código ni los datos.
+[02:14:05 -> 02:14:09]  Lo que... de esos dos cosas.
+[02:14:09 -> 02:14:19]  Lo que puede pasar es que eventualmente los correctores al final, o sea, el dado,
+[02:14:19 -> 02:14:31]  o pida algún tipo de verlo o lo que sea. O estar tranquilo y no hay problema.
+[02:14:31 -> 02:14:39]  Porque en general que el informe haya resultados, eso puede tener un determinado valor,
+[02:14:39 -> 02:14:45]  pero no es el problema. Si no fue bien con el modelo, hubo mucho mejor que el otro,
+[02:14:45 -> 02:14:51]  no vimos un dato, no vimos código, no vimos nada. En general eso no ha ocasionado nunca problemas.
+[02:14:55 -> 02:15:02]  Pero bueno, en ese caso también si hay cuestiones de confidencial, el código no lo publicamos,
+[02:15:02 -> 02:15:11]  Pero tampoco hemos tenido problemas, tampoco me he despedido. Si no veo el código, no lo corrigo.
+[02:15:11 -> 02:15:20]  Y ni siquiera es necesario ponerlo en el informe.
+[02:15:20 -> 02:15:27]  Habitualmente, si no hay problema de confidencialidad, el código se le pone un link a GitHub.
+[02:15:27 -> 02:15:31]  Cuando entregan el obligatorio, link aginca.
+[02:15:31 -> 02:15:38]  De todas maneras, ese link generalmente dura una cantidad de tiempo después,
+[02:15:38 -> 02:15:42]  meses después ya lo sistemadas o lo que sea, no importa eso.
+[02:15:42 -> 02:15:48]  Pero por menos el correctorio lo vieron ver en ese momento.
+[02:15:48 -> 02:15:53]  Pero digo, formalmente lo que se hace es...
+[02:15:53 -> 02:15:58]  Por eso a nosotros nos gusta saber lo de antemano, pero no se hace nada hasta el momento de la entrega.
+[02:15:58 -> 02:16:08]  Cuando se va a informar la entrega se pide una autorización al decano para que se autorice la no publicación en biblioteca del informe hasta dos años después.
+[02:16:08 -> 02:16:14]  Siempre se autoriza, entonces hay que hacer ese paso formal.
+[02:16:14 -> 02:16:17]  O sea, el informe se entrega, se manda al biblioteca, pero no se publica.
+[02:16:17 -> 02:16:23]  Y ahí es, bueno, la universidad que asume la responsabilidad de que no se va a publicar.
+[02:16:26 -> 02:16:28]  Eso cuando peque la confianza.
+[02:16:28 -> 02:16:32]  Y ya, no, no, no, se va a pedir ver los datos, ni nada.
+[02:16:32 -> 02:16:43]  Ahí, como consejo también, lo que yo les suelo pedir es que tengan igual algún data set o algo,
+[02:16:43 -> 02:16:56]  Mooc o algo como para, aunque sea en datos totalmente artificiales, poder mostrar algo
+[02:16:56 -> 02:17:03]  y que son los compromisos de los que están ahí, no pueden tener alguno de algo bien parecido
+[02:17:03 -> 02:17:06]  pero no son los datos reales
+[02:17:06 -> 02:17:13]  ¿Puedo decir otra cosa más?
+[02:17:13 -> 02:17:32]  Bueno, y el problema es si no tiene tema, si no tiene tema traten de acercarse antes y decirlo, lo voy a hacer, lo vamos a hacer, no sé, hipo, estrés, lo vamos a hacer y no tengo tema.
+[02:17:32 -> 02:17:35]  cuando lo desmovie, no lo sé, está...
+[02:17:35 -> 02:17:39]  Bueno, a veces tenemos...
+[02:17:39 -> 02:17:45]  Si no tenemos una puerta, o sea, una ventanilla abierta específica de focrado,
+[02:17:45 -> 02:17:51]  sí hay una de proyectos de toda la facultad, o sea, el formulario de carrera de ingeniería de sistemas,
+[02:17:51 -> 02:17:55]  entonces podemos ver ahí, a veces,
+[02:17:55 -> 02:18:02]  los proyectos exceden un poco lo que sería un trabajo final de grado
+[02:18:02 -> 02:18:07]  y puede servir para apoderar también
+[02:18:07 -> 02:18:13]  Entonces, a veces hay, digo no, no hay masas, los proyectos, sí, esperando
+[02:18:13 -> 02:18:16]  pero bueno, se puede buscar algo
+[02:18:17 -> 02:18:19]  ¿Cómo es el tratamiento del tutor?
+[02:18:19 -> 02:18:21]  Hay buen intento, ¿no?
+[02:18:21 -> 02:18:25]  No, bueno, no, bueno, pero no, no, no, no, no, no.
+[02:18:25 -> 02:18:37]  Si lo normal es, dios mío, antes mandan en el proyecto la comisión de trabajo final,
+[02:18:37 -> 02:18:50]  que es Matías, Hugo Mora, que es el de Big Data, y yo, vamos y asignamos tutorial.
+[02:18:51 -> 02:18:59]  tratamos en la medida de lo posible que esté lo más relacionado posible con el tema
+[02:18:59 -> 02:19:02]  no siempre es posible
+[02:19:02 -> 02:19:08]  si usted se dice sobre imágenes médicas
+[02:19:08 -> 02:19:13]  no hay imágenes positivas pero hay que específicamente sepa del tema
+[02:19:13 -> 02:19:16]  porque en Rusia y América ya piensan ser
+[02:19:16 -> 02:19:17]  ¿Vale?
+[02:19:18 -> 02:19:20]  Ese no es el...
+[02:19:20 -> 02:19:22]  O sea, ese es el porcento.
+[02:19:22 -> 02:19:24]  Obviamente...
+[02:19:24 -> 02:19:27]  No, no, el porcento es un equivocado.
+[02:19:27 -> 02:19:35]  Pero, si ustedes ya pueden haber hablado, ya con algún docente de acá,
+[02:19:36 -> 02:19:41]  y el desacepto sea el sustituto.
+[02:19:41 -> 02:19:42]  Bueno, ahí es el porcento.
+[02:19:42 -> 02:19:50]  Soñar el docente, y ustedes lo promover, está ok, y lo aceptamos.
+[02:19:50 -> 02:19:57]  Así que como el rol de tutor es normal, que es un docente pago,
+[02:19:57 -> 02:20:05]  él ya tiene que ser parte de nuestro cartilla de tutores.
+[02:20:05 -> 02:20:10]  Pero pasa también que a veces, ya pasaba en las tesis de UTE, por ejemplo,
+[02:20:10 -> 02:20:16]  y me dice, ahí Oscar, el tutor, y tengo un problema y aceptó y...
+[02:20:18 -> 02:20:22]  Eso también puede ser. Pero si tenia, no sé, como...
+[02:20:22 -> 02:20:32]  No sé, como aquí, o aquí, no sé, y ni siquiera tienen alguien que pidieron algo, porque les gustó el tema,
+[02:20:32 -> 02:20:39]  o Andrés, o lo que sea, y como me hicieron, que los tutores, y van a ver,
+[02:20:39 -> 02:20:52]  de problemas. Ahí no tienen que decir. Ya hablamos con Al y nos gustó el tema. Ahora,
+[02:20:52 -> 02:20:57]  después si viene, por ejemplo, a Andrés, le estuvieron a la guordina ahora, porque
+[02:20:57 -> 02:21:00]  dijo que es el serie temporal, si les gustó mucho el serie temporal, si quieren hacer
+[02:21:00 -> 02:21:08]  una serie temporal es... Quieren que la... Entonces Andrés ahí dijo, pues no puede
+[02:21:08 -> 02:21:14]  el sistema de interés, la gente, que se yo, ahí en ese caso, lo mejor es decir,
+[02:21:14 -> 02:21:16]  que no vamos a dar el proceso.
+[02:21:18 -> 02:21:21]  Si tenés medicina misma, pues no te va a necesitar.
+[02:21:23 -> 02:21:27]  Estamos todos en un compromiso, por lo menos lo voy a dar.
+[02:21:28 -> 02:21:36]  Pero bueno, la idea es que todo el mundo se lo conforme, aunque lo mismo,
+[02:21:36 -> 02:21:44]  que puede pasar, que se van a llevar bien con alguien durante la...
+[02:21:44 -> 02:21:48]  bueno, por ejemplo, otra persona no quiere trabajar
+[02:21:50 -> 02:21:54]  lo tendremos, lo vamos a tener en cuenta, pero no vamos a poner en un tutor
+[02:21:54 -> 02:21:58]  con el cual se van a llevar mal
+[02:22:00 -> 02:22:04]  y no sé si hay ninguna... bueno, y después eso, o sea, eso es un mes
+[02:22:04 -> 02:22:13]  La idea es pasar eso, si ya tienen el tema antes, por más que formalmente tengan que entregarlo como obligatorio en la fecha que hay,
+[02:22:13 -> 02:22:19]  porque cuando eso se entrega así, por más que ya la tengan, ya no se han terminado,
+[02:22:19 -> 02:22:23]  y que se entrega el obligatorio mañana, no lo van a poder porque no está bien.
+[02:22:23 -> 02:22:25]  Y por lo tanto, lo van a tener que entregar en ese momento.
+[02:22:25 -> 02:22:33]  Pero si ustedes no lo envían, estamos de acuerdo, ya podemos avanzar incluso con el nombramiento de tutor, la tutora, y ya sí.
+[02:22:33 -> 02:22:39]  y ya arrancan. Por más que el FALC lo había inserido a lo que sea, a lo semanal,
+[02:22:39 -> 02:22:46]  a entregar formalmente el anteproyecto. Eso es el mejor de los mundos.
+[02:22:47 -> 02:22:55]  Y después hay un informe de avance que para empezar el agosto es a mediados de
+[02:22:55 -> 02:23:01]  diciembre por ahí. Lo tratamos de hacer un poquito antes para evitar que sea
+[02:23:01 -> 02:23:05]  El 23 de diciembre tienen un informe y después no pueden hacer nada.
+[02:23:05 -> 02:23:09]  La avalía cierra y ustedes no pueden tener un feedback hasta febrero, ¿no?
+[02:23:09 -> 02:23:17]  Entonces, el informe de avance, el objetivo es tener un checkpoint formal.
+[02:23:19 -> 02:23:27]  La idea es que si llegan al informe de avance, lleguen bien.
+[02:23:27 -> 02:23:41]  Normalmente podemos poner un 0, o sea podemos poner no pasa el informe, pero es que 0,1, es una nota vinagre, pasa no pasa,
+[02:23:41 -> 02:23:55]  como ahora no pasa, nunca pasó, no tiene ningún impacto, pero si realmente se llega a una situación en la que la cosa está
+[02:23:55 -> 02:23:59]  ¿Cómo se dice?
+[02:24:00 -> 02:24:03]  Imposible de sobrellevar.
+[02:24:03 -> 02:24:06]  Estamos todos de acuerdo.
+[02:24:06 -> 02:24:09]  Fue todo por nosotros que...
+[02:24:09 -> 02:24:13]  O sea, hay algo que pasó.
+[02:24:15 -> 02:24:17]  Entonces, mejor que se hagan de vos.
+[02:24:17 -> 02:24:19]  Que también ha pasado. No pasa nada.
+[02:24:19 -> 02:24:31]  Si se han debajado una materia mientras no hayan tenido ninguna evaluación con nota,
+[02:24:31 -> 02:24:33]  no le valen por la vida.
+[02:24:33 -> 02:24:39]  Y en el caso de trabajo penal la única evaluación con nota es la defensa de la tesis.
+[02:24:39 -> 02:24:44]  Su informe de avance le pueden pasar y después decidir que no siguen y no pasen.
+[02:24:44 -> 02:24:57]  Pero bueno, eso es un mecanismo de control. La idea es que si ya ha pasado y no pasa nada, todas las situaciones han pasado.
+[02:24:57 -> 02:25:05]  Pasar el informe de avance, pasarse después, tener ya sabiendo que el informe de avance se iba a llegar más o menos,
+[02:25:05 -> 02:25:11]  hay reuniones premias que son de ideal con mí o con Matías o lo que sea
+[02:25:11 -> 02:25:16]  y con el tutor para decir qué es lo que está pasando o no es la solución, qué pasa
+[02:25:16 -> 02:25:22]  El típico problema de ese es que tenía que correr los datos y no lo estamos yendo
+[02:25:22 -> 02:25:32]  En noviembre se le hicieron todos los pages, se escribieron el código, jugaron con los datos
+[02:25:32 -> 02:25:37]  Se dedica a que elito y los datos no llegan, pero no llegan, pero no llegan, bueno, qué hacemos.
+[02:25:37 -> 02:25:54]  La presencia de la
+[02:25:54 -> 02:25:59]  En general debemos encontrar...
+[02:25:59 -> 02:26:04]  ...hubo situaciones complicadas...
+[02:26:04 -> 02:26:12]  Estamos en lo que hacen minimax, el mejor de los peor casos.
+[02:26:12 -> 02:26:16]  Para tener el cual es el peor.
+[02:26:16 -> 02:26:23]  Y después, bueno, el problema de la tesis de agosto, ya lo sé, son las vacaciones.
+[02:26:23 -> 02:26:25]  Por eso hay que dar un poquito más.
+[02:26:25 -> 02:26:34]  Porque en general el programa que día 2 vamos a trabajar, que se yo, en enero está perdido.
+[02:26:34 -> 02:26:37]  O sea, está ganado por otra cosa.
+[02:26:37 -> 02:26:39]  La tesis está perdido.
+[02:26:39 -> 02:26:44]  En general, entonces se cuesta, y después cuesta el reno de ordenado de marzo.
+[02:26:44 -> 02:26:51]  Entonces la entrega es el reno de ordenado de marzo.
+[02:26:51 -> 02:27:02]  Para que tenga febrero, que tenga fórtua también, que tenga carnaval, y así que la defensa termina siendo maya.
+[02:27:06 -> 02:27:08]  Bueno, como de ustedes, ¿no?
+[02:27:08 -> 02:27:14]  ¿Está en la lista? ¿Puedo decirle el verano? ¿Qué es como el resultado del verano?
+[02:27:14 -> 02:27:19]  ¿Cuánto sufrieron de inmediato?
+[02:27:19 -> 02:27:23]  ¿Cómo que te da la acción?
+[02:27:23 -> 02:27:25]  ¿Soy el que no me da la acción?
+[02:27:25 -> 02:27:26]  ¿Eh?
+[02:27:26 -> 02:27:28]  Por eso pensaba que estabamos diciendo.
+[02:27:28 -> 02:27:33]  Se va de ocasiones y entonces ahí sí hay un...
+[02:27:33 -> 02:27:35]  Suele haber una aceleración después.
+[02:27:35 -> 02:27:37]  En general que...
+[02:27:37 -> 02:27:41]  O sea, después de que ya lo puede agarrar todo, suele haber ahí...
+[02:27:41 -> 02:27:47]  Pero por eso, todo eso hay que verlo ahí en el informe de abajo.
+[02:27:49 -> 02:27:54]  No sé si, bueno, hay mucho blablabla o...
+[02:27:54 -> 02:27:56]  No sé si yo, no sé si no.
+[02:27:56 -> 02:27:58]  O sea, nos escriben...
+[02:27:58 -> 02:28:01]  O sea, si se ha empezado a tener una idea, lo mejor es que hagan...
+[02:28:01 -> 02:28:05]  Ya tienen un grupo, que hacen un grupo y un team con...
+[02:28:05 -> 02:28:08]  suman amatías, al rastro, a mí...
+[02:28:08 -> 02:28:15]  Y nos tiran algunas ideas y lo vemos o no tenemos idea o...
+[02:28:15 -> 02:28:18]  Y ahí vamos viendo.
+[02:28:22 -> 02:28:27]  Por tiempo, así, en la gusto podemos crear algo.
+[02:28:34 -> 02:28:36]  ¿Cómo?
+[02:28:37 -> 02:28:39]  Ah, ok.
+[02:28:39 -> 02:28:51]  Mientras hago esto, una cosa más es que no olvide que habrá muchas imágenes y todo,
+[02:28:51 -> 02:28:57]  pero no hablamos del LLM, pero también de esos que se aplican para las imágenes.
+[02:28:57 -> 02:29:05]  Y el otro tema es si van a ver que eso no se va a pasar mucho tiempo y el recurso de cómputo,
+[02:29:05 -> 02:29:08]  imaginar sobre qué lo van a hacer.
+[02:29:08 -> 02:29:15]  En una época las Jupyter Notebooks de acá andaban bien,
+[02:29:15 -> 02:29:20]  pero no tenían la necesidad suficiente para las mismas cosas.
+[02:29:20 -> 02:29:23]  Para un proyecto razonable, la imagen es anda,
+[02:29:23 -> 02:29:27]  pero bueno, eso ya tiene que marcar en el cincuenta y veinte y todo eso.
+[02:29:27 -> 02:29:31]  Eso que lo tengan en cuenta para verlo.
+[02:29:31 -> 02:29:38]  se va a evaluar y que entre por esas funciones.
+[02:29:38 -> 02:29:44]  Porque si no, no pasa nada, yo me pago mi licencia, no sé qué, el chat,
+[02:29:44 -> 02:29:49]  de su gusto y no hay problema.
+[02:29:49 -> 02:29:53]  O no, no sé más que se da.
+[02:30:53 -> 02:30:55]  No, solo cuando tu mismo entorca.
+[02:30:56 -> 02:31:00]  Y acá puede comenzar su objeción, no necesitan.
+[02:31:05 -> 02:31:06]  ¿Ya está, no?
+[02:31:06 -> 02:31:08]  Mueviste ahí para...
+[02:31:10 -> 02:31:11]  Ahí ya está.
+[02:31:13 -> 02:31:15]  Somos la ausencia de quejas.
+[02:31:16 -> 02:31:19]  Bueno, la ausencia de quejas vale...
+[02:31:23 -> 02:31:27]  ¿Bien? Ah, no, yo no estoy con... Bueno, está.
+[02:31:27 -> 02:31:28]  No estás en el...
+[02:31:28 -> 02:31:29]  Yo estoy solo, como...
+[02:31:29 -> 02:31:30]  Sí. Bueno.
+[02:31:30 -> 02:31:33]  Listo. Así que...
+[02:31:33 -> 02:31:35]  Eh... está.
+[02:31:35 -> 02:31:38]  Cualquier pregunta del...
+[02:31:38 -> 02:31:41]  Si tienen todavía de plástico, no les...
+[02:31:43 -> 02:31:47]  Por lo más todo, digamos, se llega a la argumentación.
+[02:31:47 -> 02:31:48]  Digamos, de...
+[02:31:48 -> 02:31:50]  A crear una book.
+[02:31:50 -> 02:31:51]  Va.
+[02:31:51 -> 02:31:53]  ¿Todo el que es obligatorio?
+[02:31:53 -> 02:31:56]  Lo mejor es que hagan un informe.
+[02:31:56 -> 02:32:03]  Además, una sola notebook y todo.
+[02:32:03 -> 02:32:07]  Claro, lo mejor es que hagan un informe y entreguen a notebook, pero...
+[02:32:07 -> 02:32:14]  El mejor es que hagan un informe y guía diciendo dónde en el conjunto lo resuman los experimentos que se ven.
+[02:32:14 -> 02:32:18]  ¿Y saquen alguna...
+[02:32:18 -> 02:32:28]  Lo que normalmente, lo más fácil para nosotros, pero bueno, lo que sigo mantén decir, pero no,
+[02:32:28 -> 02:32:39]  es que entren el informe PDF uniendo todo con el link a un lista o algo que si quieren,
+[02:32:39 -> 02:32:43]  si no lo quieren poner público, bueno, nos lo comparten a nuestras direcciones.
+[02:32:43 -> 02:32:56]  Eso es lo mejor. Si tienen alguna notebook corrida, lo mejor es que tienen un HTML o un PDF para que existan.
+[02:32:56 -> 02:33:04]  Este es el snapshot de la notebook que yo corrí, porque cuando la levantábamos... eso es lo mejor.
+[02:33:04 -> 02:33:06]  y eso lo ponen en el gif
+[02:33:06 -> 02:33:08]  claro
+[02:33:08 -> 02:33:10]  y luego que te den el informe
+[02:33:10 -> 02:33:12]  le pego algún gráfico o algo al lado
+[02:33:12 -> 02:33:14]  claro, claro, si, si, si
+[02:33:14 -> 02:33:16]  puede ser
+[02:33:16 -> 02:33:18]  si, osea, ustedes arman el informe con
+[02:33:18 -> 02:33:20]  si, van sacando gráficos y lo que quieran
+[02:33:20 -> 02:33:22]  lo que pueden hacer es agarrar
+[02:33:22 -> 02:33:24]  y agarrar la notebook toda ejecutada con todos los software
+[02:33:24 -> 02:33:26]  y eso lo pueden exportar con un archivo
+[02:33:26 -> 02:33:28]  PDF que lo directamente
+[02:33:28 -> 02:33:30]  o con HTML
+[02:33:30 -> 02:33:32]  y lo separan
+[02:33:32 -> 02:33:39]  informe y esa no es tu. Pero hacíamos cosas para ver el output que vieron ustedes, si
+[02:33:39 -> 02:33:45]  la verdad es que es que gustar todo el output puede demorar y que puede darme resultados distintos.
+[02:33:45 -> 02:33:51]  Y por qué el informe, para que se vea que estamos grabando, si lo que hay grabado, sí,
+[02:33:51 -> 02:34:00]  porque el informe es porque también me gusta que se vea las conclusiones que ustedes sacan.
+[02:34:00 -> 02:34:09]  Por ejemplo, comparamos, en el que consultamos, fictitious play contra fictitious play,
+[02:34:09 -> 02:34:12]  tal condenso, y eso fue lo que observamos.
+[02:34:12 -> 02:34:20]  Pero por ejemplo, cuando comparamos fictitious play contra random, esto fue lo que observamos.
+[02:34:20 -> 02:34:28]  Y está bien, porque en el otro, es razonable que haya ocurrido tal cosa.
+[02:34:28 -> 02:34:32]  Bueno, cuando lo hacemos, el quince y el nueve, cuando el quince y el nueve,
+[02:34:32 -> 02:34:34]  uno espera que salgan dos equilibrio en una.
+[02:34:34 -> 02:34:36]  Si salen dos equilibrio en una.
+[02:34:36 -> 02:34:38]  Hay un ejemplo,
+[02:34:38 -> 02:34:40]  o sea, tengo que
+[02:34:40 -> 02:34:43]  descubrir la pólvora.
+[02:34:43 -> 02:34:45]  Por ejemplo, el de la...
+[02:34:45 -> 02:34:47]  el de...
+[02:34:47 -> 02:34:50]  que creo que hay más que hacer el hecho, el de la batalla de los exos,
+[02:34:50 -> 02:34:52]  que tiene
+[02:34:52 -> 02:34:54]  dos equilibrios
+[02:34:54 -> 02:34:56]  puros,
+[02:34:56 -> 02:35:05]  Y después tiene un regalo de una especie de re-infin, la cantidad de equilibrios
+[02:35:05 -> 02:35:10]  se llama correlacionados y tiene otro equilibrio acá, muy buena,
+[02:35:10 -> 02:35:14]  No sé, a ver si por ejemplo, una pregunta interesante, si alguna vez
+[02:35:14 -> 02:35:21]  el QtUplay o Regret Machine les dio algún equilibrio que no sea los extremos
+[02:35:21 -> 02:35:23]  y no hay ninguno de sus puestos.
+[02:35:25 -> 02:35:29]  Es como observación, no le estoy diciendo que le tiene que dar y si no le da está mal,
+[02:35:29 -> 02:35:35]  se dice que en realidad hay una parte aleatoria, el QtSuitPlay y el WebMatching,
+[02:35:35 -> 02:35:40]  entonces, que no también les da, o no, de ese tipo de observación.
+[02:35:40 -> 02:35:44]  O sea, recorrimos mil veces, o sea, 100 veces, que si yo no lo digo nunca,
+[02:35:44 -> 02:35:46]  Se salió dos veces de...
+[02:35:46 -> 02:35:48]  ¿Nueve de cómo ocurrió?
+[02:35:48 -> 02:35:50]  ¿Lo ocurrieron o lo experimentaron?
+[02:35:52 -> 02:35:54]  Ese tipo de observación.
+[02:35:56 -> 02:36:00]  Y después, tipo de visualizaciones, por ejemplo.
+[02:36:00 -> 02:36:04]  Bueno, hay algunos y cosas.
+[02:36:04 -> 02:36:10]  Hay una cantidad de ejemplos que son básicamente para...
+[02:36:10 -> 02:36:16]  Los equilibrios son conocidos, los problemas son chiquitos, a ver si los encuentra,
+[02:36:16 -> 02:36:25]  cuántas integraciones para encontrar, habíamos visto que el sistema también de Kurnó
+[02:36:25 -> 02:36:33]  que en realidad puede escalar, lo mismo pasa con floto, puede hacerlo escalar.
+[02:36:33 -> 02:36:42]  Entonces bueno, ver, sobre todo ahí es interesante, es interesante ver si encuentran los equilibrios,
+[02:36:42 -> 02:36:47]  pero también comparar donde todos los tipos de función de los algoritmos.
+[02:36:47 -> 02:36:50]  Ver que bien mal que un monografo y su efecto.
+[02:36:50 -> 02:36:54]  Vamos a ver si hay algo notable.
+[02:36:54 -> 02:36:58]  Bueno, en el momento vamos a combatear a cosas distintas.
+[02:36:58 -> 02:37:01]  Por eso estamos aquí.
+[02:37:01 -> 02:37:07]  Y después el foraging, ¿Cuántas más lo hiciste?
+[02:37:07 -> 02:37:11]  El foraging, ¿Cuáles eran las cosas interesantes?
+[02:37:11 -> 02:37:17]  Bueno, sí, para las curvas de comparación de IQL contra al AI.
+[02:37:17 -> 02:37:24]  Y después pruebas con dos agentes, tres agentes, dos comidas.
+[02:37:24 -> 02:37:26]  Ah, eso sí.
+[02:37:26 -> 02:37:35]  Porque hay algunas configuraciones default que están ahí, que son básicas, pero que pueden darle cualquier configuración.
+[02:37:35 -> 02:37:40]  Si tiene alguna duda de cómo generar configuraciones extra con Foraging,
+[02:37:40 -> 02:37:44]  que no hay que hacer nada ahí, porque no hay los parámetros, eso es el CMake.
+[02:37:44 -> 02:37:51]  Creo que tiene límites, pero el máximo puede jugar cinco jugadores y joder.
+[02:37:51 -> 02:37:54]  No, tiene agentes, no.
+[02:37:54 -> 02:38:03]  Claro, claro, por ejemplo, la computación más complicada creo que son tres agentes y ahí es un cooperativo
+[02:38:03 -> 02:38:09]  porque no hay por menos dos que tienen que juntar para levantar una manzana, pero después pueden jugar con ellos
+[02:38:09 -> 02:38:15]  y pueden hacer alguna manzana más, que prefiera la cooperación de tres, por ejemplo
+[02:38:15 -> 02:38:17]  Para hacer pan de ese último...
+[02:38:17 -> 02:38:22]  Creo que ahí si le ponen Free Food y le ponen no sé...
+[02:38:23 -> 02:38:25]  Cuánto parámetros, cómo...
+[02:38:25 -> 02:38:28]  No sé, es muy raro, pero ahí está la documentación y si no...
+[02:38:28 -> 02:38:30]  Nada, pero para que no se vea, no me importa.
+[02:38:30 -> 02:38:33]  Y después también puede cambiar el tamaño del tablero,
+[02:38:33 -> 02:38:37]  en vez de usar 5x5 pueden aumentarlo,
+[02:38:37 -> 02:38:41]  creo que pueden ponerlo en el número, 8x8.
+[02:38:41 -> 02:38:45]  Ahí no se va a echar mucho, porque va a demorar mucho.
+[02:38:45 -> 02:38:49]  Hay bastura de gas, lo que dicen les, además, es probar otras...
+[02:38:49 -> 02:38:52]  Lo que usted quiera.
+[02:38:52 -> 02:38:54]  Ahí si le da...
+[02:38:54 -> 02:38:58]  Sí, porque ahí empiezan a tener temas de tiempo, y muchas cosas, así que...
+[02:38:58 -> 02:39:02]  Pero, qué decir, pueden explorar por ahí, tienen muchos...
+[02:39:02 -> 02:39:07]  El no provisto es lo que nosotros buscamos, que ustedes sugieren...
+[02:39:07 -> 02:39:10]  No, no, pero eso no te lo subí.
+[02:39:10 -> 02:39:15]  ¿Pero esos son los que la letra dice otrovista?
+[02:39:15 -> 02:39:17]  Claro, claro, claro.
+[02:39:17 -> 02:39:19]  ¿Son otrovistas?
+[02:39:19 -> 02:39:21]  Si, si, si.
+[02:39:21 -> 02:39:23]  Si ustedes quieren, por ejemplo,
+[02:39:23 -> 02:39:25]  ustedes son bienvenidas,
+[02:39:25 -> 02:39:29]  si ustedes hay un libro
+[02:39:29 -> 02:39:31]  que les puede interesar,
+[02:39:31 -> 02:39:33]  el juego de spacing, ¿no?
+[02:39:33 -> 02:39:36]  Si tienen alguno y...
+[02:39:36 -> 02:39:39]  digo, no se vayan de algo más complejo que el otrovista.
+[02:39:39 -> 02:39:41]  Bueno, así es.
+[02:39:43 -> 02:39:51]  Lo que queríamos hacer, por eso como arraín, era agregarle un poco de no determinismo al foraje.
+[02:39:51 -> 02:39:55]  Eso es lo que se tiene, eso es fácil de encorgar.
+[02:39:55 -> 02:39:57]  Es cuando el foraje...
+[02:39:58 -> 02:40:05]  Cuando se elige la acción A, amasando la acción A, con un corrupción, como una política epsilon gris,
+[02:40:05 -> 02:40:10]  Eso lo pueden hacer sin tocar con la gente.
+[02:40:10 -> 02:40:13]  Eso es una opción de propulsividad.
+[02:40:13 -> 02:40:17]  Pero eso era realmente extra.
+[02:40:17 -> 02:40:21]  Yo lo conocí en una opción de...
+[02:40:21 -> 02:40:29]  No, porque en realidad lo pueden hacer de manera muy sencilla cuando los agentes sincronizan las opciones.
+[02:40:29 -> 02:40:32]  Cuando se llama el vector de sincronización de las opciones,
+[02:40:32 -> 02:40:39]  y yo cada gente ahí ese sincronizador va a agarrar la opción a 1, la opción a 2, la opción a 3,
+[02:40:39 -> 02:40:45]  luego de cada gente y lo que pueden hacer es cambiar de manera aleatoria, la gente dijo a 1.
+[02:40:46 -> 02:40:52]  Porque eso, el slip, o sea, el ambiente, la gente dice voy a hacer a 1.
+[02:40:52 -> 02:40:55]  Pero sacarme la gente, sacarme la gente, no hago...
+[02:40:55 -> 02:41:00]  Sí, pero eso no, sí, pero eso realmente es...
+[02:41:00 -> 02:41:09]  Y ahora, de acuerdo, a ver si te entendiste, cuando se la acción conjunta, cuando estás armando la acción conjunta, ahí resisto.
+[02:41:09 -> 02:41:14]  Te dijo alguno de los tres que quise ponerle y le cambio de acción a ese.
+[02:41:14 -> 02:41:16]  Claro, ya, se mueren.
+[02:41:16 -> 02:41:17]  Y se cambia de los tres.
+[02:41:17 -> 02:41:20]  No, a todos.
+[02:41:20 -> 02:41:24]  Por eso es que hay que decir a uno, a todos, le haces a todos.
+[02:41:24 -> 02:41:29]  puedo hacer la que yo quiero para cada uno y bueno con una probabilidad muy baja va a cambiar lo que yo quiero.
+[02:41:29 -> 02:41:42]  Es como el de la gente de Inmaze, de la gente de Croc in Lay, uno de esos agentes que tienen Slippery, que tienen North, East...
+[02:41:42 -> 02:41:44]  No nos siga la Inmaze.
+[02:41:44 -> 02:41:47]  Claro, no nos siga la Inmaze.
+[02:41:47 -> 02:41:53]  Claro, por eso le digo, por eso me iba a hacer un teatrán que es lo más fácil de hacer un teatrán.
+[02:41:53 -> 02:42:00]  en el rap, nosotros le dimos un ambiente.
+[02:42:00 -> 02:42:14]  No, no, puedes hablar del rap, el rap es muy fácil, no meterse con el foraging puro y duro que está dentro de nuestro ambiente, porque ese es inexplicable.
+[02:42:14 -> 02:42:17]  Pero alcanza con a este, lo llevo visto.
+[02:42:17 -> 02:42:24]  Y con una propagadía 0 a 1, lo cambié.
+[02:42:24 -> 02:42:27]  Y creo que esa era una manera fácil.
+[02:42:27 -> 02:42:29]  Pero no se preocupen porque no tienen problema.
+[02:42:29 -> 02:42:31]  ¿Comparado de cubetes con qué?
+[02:42:31 -> 02:42:33]  Que tienen bastante con...
+[02:42:35 -> 02:42:37]  Quería que debiera de informe, ¿no?
+[02:42:37 -> 02:42:39]  ¿Y también el de informe?
+[02:42:39 -> 02:42:43]  ¿También es más troca?
+[02:42:43 -> 02:42:46]  y después se va a poder comer esto.
+[02:42:46 -> 02:42:49]  Y a ver cómo lo veas.
+[02:42:49 -> 02:42:52]  Es un poco tipo de cerrar algo.
+[02:42:52 -> 02:42:56]  Y bueno, yo le dije que a un lado me gustaría que la cristiana le diga
+[02:42:56 -> 02:43:00]  si eso si no le sale, que la tiran a...
+[02:43:00 -> 02:43:02]  No, ya, ya, ya.
+[02:43:02 -> 02:43:08]  Entonces, si quieren venir, todos...
+[02:43:08 -> 02:43:13]  Bueno, al libro, las que...
+[02:43:13 -> 02:43:16]  ...la que tiene papel de vigera, esa...
+[02:43:16 -> 02:43:18]  ...este...
+[02:43:18 -> 02:43:20]  Sí, sí, sí.
+[02:43:20 -> 02:43:22]  Esto es el...
+[02:43:22 -> 02:43:24]  ...el que ha estado...
+[02:43:24 -> 02:43:26]  ...el que ha estado...
+[02:43:26 -> 02:43:28]  ...bueno...
+[02:43:28 -> 02:43:32]  ...para el gobierno en esta, es solamente el que le...
+[02:43:32 -> 02:43:33]  ...pero...
+[02:43:33 -> 02:43:35]  ...todo esto es introducción, de la de...
+[02:43:35 -> 02:43:37]  ...como el que cada uno se vigere...
+[02:43:37 -> 02:43:43]  Así que, le dimos todo el recto, esto es tocha, todo el recto.
+[02:43:43 -> 02:43:47]  Los volvemos a 17, 17, y tenemos 4.
+[02:43:47 -> 02:43:54]  Hoy dimos que vamos a hacer también el final de la primera vez.
+[02:43:54 -> 02:43:56]  Y acá empezamos.
+[02:43:56 -> 02:43:58]  El 4 y el 7.
+[02:43:58 -> 02:44:00]  ¿Cuál es el problema?
+[02:44:00 -> 02:44:06]  El problema es que el tiempo y la sensación.
+[02:44:06 -> 02:44:08]  El tiempo y la sensación.
+[02:44:08 -> 02:44:10]  Y esto es lo que más se puede acordar.
+[02:44:10 -> 02:44:12]  Hay que dar unas dos primeras filas.
+[02:44:12 -> 02:44:14]  A ver si...
+[02:44:14 -> 02:44:16]  La sensación y la sensación.
+[02:44:16 -> 02:44:18]  ¿Ves?
+[02:44:18 -> 02:44:20]  Esa es la evolución de la franquicia.
+[02:44:20 -> 02:44:22]  Hay dos que son parecidas, digamos, o menos las mismas curvas.
+[02:44:22 -> 02:44:24]  Es la evolución de la...
+[02:44:24 -> 02:44:30]  la evolución de la recompensa o la devolución de la...
+[02:44:30 -> 02:44:32]  La devolución de la promedio.
+[02:44:32 -> 02:44:34]  Sí, la devolución de la recompensa.
+[02:44:34 -> 02:44:36]  ¿Valo?
+[02:44:36 -> 02:44:38]  O la...
+[02:44:38 -> 02:44:40]  ¿Eso es la devolución de la recompensa?
+[02:44:40 -> 02:44:42]  Sí.
+[02:44:42 -> 02:44:44]  ¿Esta?
+[02:44:44 -> 02:44:46]  Sí, la valoría.
+[02:44:46 -> 02:44:48]  La valería.
+[02:44:48 -> 02:44:50]  Y acá, bueno, la perspectiva ronda,
+[02:44:50 -> 02:44:52]  ya que se ve buena gente que esto que está haciendo,
+[02:44:52 -> 02:44:56]  Esto es lo mismo, lo más largo es lo que se ve
+[02:44:57 -> 02:45:00]  Este que tiene 50 mil, este que tiene solo mil
+[02:45:00 -> 02:45:02]  Esta fue una sola vez
+[02:45:02 -> 02:45:05]  Es de la largo policy o de la play policy?
+[02:45:10 -> 02:45:14]  No voy a conseguir que yo oscare a ustedes, pero la técnica del otro
+[02:45:15 -> 02:45:18]  Es la que aprende cada gente para decir que voy a elegir
+[02:45:18 -> 02:45:23]  No, no, no, no, está bien ahí. O sea, en realidad tiene los dos, cada uno muestra la del otro y la otra algo parqueando o algo así.
+[02:45:23 -> 02:45:27]  Sí, y comparten bien.
+[02:45:27 -> 02:45:30]  Pero ahí está, no hay ninguna duda porque las mismas...
+[02:45:30 -> 02:45:39]  Otra cosa que hicimos fue la distancia contra los dos de los que el vídeo debería ser,
+[02:45:39 -> 02:45:44]  de la distancia contra la que vamos a hablar hoy en día, que el video debería ser
+[02:45:44 -> 02:45:52]  donde pusimos la distancia en el video para ver eso
+[02:45:52 -> 02:45:55]  y finalmente el cual problema que hubo.
+[02:45:57 -> 02:45:59]  Por lo mejor el experimento...
+[02:45:59 -> 02:46:01]  Bueno, chau, chau.
+[02:46:01 -> 02:46:05]  ...el video era un coincido, creo que fue un coincido.
+[02:46:05 -> 02:46:12]  No, porque es como lo otro, o sea, yo no lo sé bien, porque tiene el quidro papeletisguerazo.
+[02:46:12 -> 02:46:13]  Sí.
+[02:46:13 -> 02:46:14]  ¿Lo más usado?
+[02:46:14 -> 02:46:24]  Ah, por eso, porque ahí está, ahí también lo pueden mostrar, este triangulito también lo pueden mostrar con el de la otra.
+[02:46:24 -> 02:46:25]  Ah.
+[02:46:25 -> 02:46:27]  O sea, es interesante.
+[02:46:27 -> 02:46:31]  Con el de la otra, con el de Machupeza.
+[02:46:31 -> 02:46:34]  Con el de la otra, con el de la otra, con el de Machupeza.
+[02:46:34 -> 02:46:36]  No, no, no, no.
+[02:46:36 -> 02:46:38]  No, no, no, no.
+[02:46:38 -> 02:46:40]  Está compartiendo...
+[02:46:40 -> 02:46:42]  está compartiendo a...
+[02:46:42 -> 02:46:44]  a cosas cercanas,
+[02:46:44 -> 02:46:46]  que también está...
+[02:46:46 -> 02:46:48]  No, pero...
+[02:46:48 -> 02:46:50]  Este es el número...
+[02:46:50 -> 02:46:52]  No, pero...
+[02:46:52 -> 02:46:54]  No, está bueno, está bueno.
+[02:46:54 -> 02:46:56]  El número 3, sí, está bueno.
+[02:46:58 -> 02:47:00]  El número 3,
+[02:47:00 -> 02:47:02]  está bueno.
+[02:47:32 -> 02:47:34]  No, no hay más, hay seis.
+[02:47:34 -> 02:47:36]  Bueno, eh...
+[02:47:36 -> 02:47:38]  ¿Qué tal?
+[02:47:38 -> 02:47:40]  La parte de acá la pueden poner en dos.
+[02:47:42 -> 02:47:44]  O sea, más.
+[02:47:44 -> 02:47:48]  No, para que ahí pueden separar en dos.
+[02:47:48 -> 02:47:50]  Para ver.
+[02:47:50 -> 02:47:52]  Para ver el otro.
+[02:47:52 -> 02:47:54]  ¿No sé?
+[02:47:54 -> 02:47:56]  Bien.
+[02:47:56 -> 02:47:58]  Vale, vale.
+[02:47:58 -> 02:48:00]  ¿Y otra cuál es?
+[02:48:00 -> 02:48:10]  distancia a la política de miza.
+[02:48:10 -> 02:48:12]  Al equilibrio conocido.
+[02:48:12 -> 02:48:15]  Debe ser distancia a un tercer centro central.
+[02:48:15 -> 02:48:17]  Pero distancia de dos, ¿no?
+[02:48:17 -> 02:48:22]  Es decir, cuadrado del primero y de otro del otro.
+[02:48:22 -> 02:48:25]  De eso he de convertir a serie.
+[02:48:25 -> 02:48:29]  Son pocas, pero para que la gráfica quedara nuevamente.
+[02:48:29 -> 02:48:33]  La... ¿qué pasó? Cuando hacemos cosas con muchas,
+[02:48:33 -> 02:48:39]  para eso en realidad era este gráfico que estaremos...
+[02:48:39 -> 02:48:40]  No.
+[02:48:40 -> 02:48:44]  Cuando hicimos una tarea se entendía la gráfica.
+[02:48:44 -> 02:48:47]  Entonces dijimos, hacemos un menú y trotamos a ver qué.
+[02:48:47 -> 02:48:50]  Una cosa que pueden ver, que puede ser...
+[02:48:50 -> 02:48:52]  y también los de...
+[02:48:52 -> 02:48:54]  los de...
+[02:48:54 -> 02:48:56]  no, no...
+[02:48:56 -> 02:48:58]  y jugaron fue con... o sea...
+[02:48:58 -> 02:49:00]  ver las acciones de China, no solamente la...
+[02:49:00 -> 02:49:02]  la...
+[02:49:02 -> 02:49:04]  la...
+[02:49:04 -> 02:49:06]  la...
+[02:49:06 -> 02:49:08]  o sea, por ejemplo, sobre todo el Quintillo Play
+[02:49:08 -> 02:49:10]  que juega a Mecum Pons
+[02:49:10 -> 02:49:12]  ¿cuántas veces jugó? ¿cuántas veces?
+[02:49:12 -> 02:49:16]  o sea, ¿cuál es la distribución real que jugó?
+[02:49:16 -> 02:49:18]  o sea que...
+[02:49:18 -> 02:49:26]  acá por ejemplo, no sé si estás hablando de esto, pero acá está la ventiga actual,
+[02:49:26 -> 02:49:35]  esto es la ventiga promedio para el caso de los frijillos con la ventiga de la macha.
+[02:49:35 -> 02:49:39]  Esto es solo para la ventiga de la macha.
+[02:49:39 -> 02:49:46]  La que jugó realmente es la azul,
+[02:49:46 -> 02:49:51]  y esta, la naranja, es el primer.
+[02:49:51 -> 02:49:56]  Entonces, es como que acá te queda más claro la convergencia del a promedio
+[02:49:56 -> 02:49:58]  y esto es lo que hizo.
+[02:49:58 -> 02:50:02]  Obviamente, el simulacro que hizo...
+[02:50:02 -> 02:50:04]  Exacto, entre el aprendiz y los que...
+[02:50:04 -> 02:50:10]  Pero si no unes el a promedio, la convencia es a 0,5
+[02:50:10 -> 02:50:14]  y que a mí entendía que es 0,5
+[02:50:14 -> 02:50:22]  Creo que si explotean la acción jugada, no la...
+[02:50:23 -> 02:50:28]  Porque en RegretMatching el edificio es absurdo, de acuerdo a la instrucción.
+[02:50:29 -> 02:50:33]  En tissuePlay hace ver fonts, o al termínimo.
+[02:50:34 -> 02:50:41]  Igual en los dos casos es interesante ver el histograma de las acciones jugadas.
+[02:50:41 -> 02:50:43]  Y lo que hay que poder hacer.
+[02:50:44 -> 02:50:51]  O sea, ¿qué jugó? Porque el Regret Machine está aprendiendo a una distribución,
+[02:50:51 -> 02:50:57]  juega una determinada distribución y tira al saco.
+[02:50:57 -> 02:51:00]  El Regret Machine.
+[02:51:04 -> 02:51:08]  Y el Precision Player hace una response.
+[02:51:08 -> 02:51:17]  Entonces, normalmente eso debería ser tipo 50-50, y todo lo más.
+[02:51:17 -> 02:51:18]  Para ver.
+[02:51:20 -> 02:51:24]  Si ustedes ven, si ustedes van a intentar ver eso, ¿sabes?
+[02:51:24 -> 02:51:30]  Es un encater block, donde el programa que ven es ver el perjil realmente de ayer que jugó.
+[02:51:30 -> 02:51:36]  Entonces por ahí vemos que, en promedio jugó un timita, pero capaz que jugó ráfaga de
+[02:51:36 -> 02:51:41]  El de Hell y todas las maras de A.I. y todas las maras de A.I.
+[02:51:41 -> 02:51:44]  Pero pasa eso.
+[02:51:44 -> 02:51:45]  Claro, por eso.
+[02:51:45 -> 02:51:49]  Lo vemos a E.S.O. y de alguna forma esto lo representa.
+[02:51:49 -> 02:51:52]  Porque entiendo lo de hacer lo otro.
+[02:51:54 -> 02:51:57]  Y yo me recordaría, esto para que me mantenga solo, está bien.
+[02:51:57 -> 02:52:04]  Pero, el trote dice que el loco está siempre jugando lo mismo hasta que llega al abajo.
+[02:52:04 -> 02:52:13]  Bueno, acá la plaza y la casera, pero porque si es bastante lo que veo que está jugando es ahí...
+[02:52:15 -> 02:52:18]  Y queda como cada vez que cuesta más por llevar.
+[02:52:18 -> 02:52:20]  Eso también sería.
+[02:52:21 -> 02:52:23]  Pero por más que quiera que te acarte...
+[02:52:26 -> 02:52:31]  No tenés saludos porque bueno, ahora mismo soy valiente en...
+[02:52:31 -> 02:52:32]  No.
+[02:52:32 -> 02:52:34]  ¿El Pitches Plains?
+[02:52:34 -> 02:52:36]  No, el Pitches Plains.
+[02:52:36 -> 02:52:39]  ¿Cómo usted histograma y está teniendo algo que es raro?
+[02:52:39 -> 02:52:47]  ¿Es lo que ha sido? ¿El loco jugador anhelé o no es la policy que está en detección?
+[02:52:47 -> 02:52:53]  Es la policy, pero está en el acción.
+[02:52:53 -> 02:52:55]  Es la política que tiene.
+[02:52:55 -> 02:52:57]  Pero es la polo.
+[02:52:57 -> 02:52:59]  y solo haciendo...
+[02:52:59 -> 02:53:01]  ¿Cómo se es que...?
+[02:53:01 -> 02:53:03]  Polis...
+[02:53:03 -> 02:53:05]  ¿Cómo se llama?
+[02:53:05 -> 02:53:07]  ¿Y te quise como un vizero no?
+[02:53:07 -> 02:53:09]  Si, por eso, por eso.
+[02:53:13 -> 02:53:15]  Porque se mueve bien.
+[02:53:15 -> 02:53:17]  Si, eso es lo que quería...
+[02:53:17 -> 02:53:19]  Porque la barra no da lo que hicimos, porque parece que no hay un código malo.
+[02:53:19 -> 02:53:23]  No, no, porque uno solo dice de la Vigilance Machine, pero...
+[02:53:27 -> 02:53:32]  Parece raro que...
+[02:53:35 -> 02:53:37]  No lo verás, vamos a ver.
+[02:53:40 -> 02:53:42]  Y ahí están...
+[02:53:43 -> 02:53:46]  O sea, porque daba la sensación que como si ya no eran más, ¿sabes?
+[02:53:46 -> 02:53:50]  Sí, pero la verdad es que esto no es que el valor sea eso, ¿no?
+[02:53:50 -> 02:53:53]  Esto es que tomó la decisión...
+[02:53:53 -> 02:53:57]  Esto es... que el director dio una serie.
+[02:53:58 -> 02:54:00]  ¿Verdad? No es...
+[02:54:01 -> 02:54:03]  Le dejamos hablar un momento porque...
+[02:54:06 -> 02:54:07]  A ver si lo podemos...
+[02:54:07 -> 02:54:09]  A ver, el cuelgo y el otro no dan base, ¿no?
+[02:54:10 -> 02:54:13]  O sea, pero si no, pues lo miran y lo aman.
+[02:54:13 -> 02:54:17]  El acúdigo lo amo.
+[02:54:17 -> 02:54:19]  ¿Pero que es el nuevo centro?
+[02:54:19 -> 02:54:21]  ¿Qué va por el centro?
+[02:54:21 -> 02:54:23]  Bien, pero...
+[02:54:23 -> 02:54:25]  Sí, no, no hay ganas.
+[02:54:29 -> 02:54:31]  ¿Por qué el nuevo centro?
+[02:54:31 -> 02:54:33]  ¿Qué es lo que se defiende a un orden de eso?
+[02:54:33 -> 02:54:35]  De un orden de ese?
+[02:54:35 -> 02:54:37]  No, que la...
+[02:54:37 -> 02:54:39]  que la...
+[02:54:39 -> 02:54:41]  la...
+[02:54:41 -> 02:54:43]  la policía en instante T
+[02:54:43 -> 02:54:45]  siempre sea 1-0-0-1.
+[02:54:45 -> 02:54:53]  1 la piedad que me obtengan por el matching.
+[02:54:53 -> 02:54:57]  Pero no es el que queda, no?
+[02:54:57 -> 02:54:59]  Claro.
+[02:54:59 -> 02:55:02]  O sea, no es el que queda.
+[02:55:02 -> 02:55:06]  Lo que está mostrando es que yo decía,
+[02:55:06 -> 02:55:11]  esto te muestra 1, 0 por el G, bueno el G.
+[02:55:11 -> 02:55:14]  La política es poniendo según lo que está.
+[02:55:14 -> 02:55:22]  Pero jugó eso en lo que salió, o están viendo, o están bloqueando el vector,
+[02:55:22 -> 02:55:27]  o sea la distribución de probabilidad cada por lo que regrese en la escala.
+[02:55:27 -> 02:55:32]  Eso no pasa nada, que sea siempre 1, 0, 1.
+[02:55:32 -> 02:55:34]  O sea, está acumulando.
+[02:55:34 -> 02:55:40]  No, sí, sí, después la policía promedio ya va a hacer 5, 0, 5.
+[02:55:40 -> 02:55:42]  La por medio es este.
+[02:55:42 -> 02:55:44]  Este es el acceso para jugar.
+[02:55:44 -> 02:55:46]  Está jugando en el arco por acá.
+[02:55:46 -> 02:55:48]  Está jugando uno,
+[02:55:48 -> 02:55:50]  acá, acá, acá, acá.
+[02:55:50 -> 02:55:52]  Y por allá,
+[02:55:52 -> 02:55:54]  deja de jugar acá.
+[02:55:54 -> 02:55:56]  Eso es típico de
+[02:55:56 -> 02:55:58]  de DJ Player.
+[02:55:58 -> 02:56:00]  Eso es lo que...
+[02:56:00 -> 02:56:02]  No, pero tiene sentido porque va a jugar
+[02:56:02 -> 02:56:04]  unas cuantas partidas, una, hasta que
+[02:56:04 -> 02:56:06]  el regreso le de para el otro lado.
+[02:56:06 -> 02:56:08]  Pero...
+[02:56:08 -> 02:56:11]  Eso no es un juego, es un juego a la gente.
+[02:56:11 -> 02:56:17]  Pero por eso, que juegue eso, el punto va a que la policy en el instante T sea esa.
+[02:56:17 -> 02:56:18]  Que está jugando, ¿no?
+[02:56:18 -> 02:56:20]  Capaz que...
+[02:56:20 -> 02:56:22]  O sea, si no me lo juega, no puedo jugar.
+[02:56:22 -> 02:56:25]  Porque si estoy hecho play-scene, juega a la armaz.
+[02:56:25 -> 02:56:27]  Me juego a la armaz de las otras.
+[02:56:27 -> 02:56:30]  Me juego a la armaz de las otras y ya.
+[02:56:30 -> 02:56:33]  Pero Regret Machine, que realmente juega...
+[02:56:33 -> 02:56:38]  Haces sampling sobre la...
+[02:56:38 -> 02:56:41]  Entonces puede ser que...
+[02:56:41 -> 02:56:45]  Salvo que fuera el que sea tan...
+[02:56:45 -> 02:56:47]  ...debalanceada...
+[02:56:47 -> 02:56:50]  No, pero puede ser que...
+[02:56:50 -> 02:56:53]  ...en el código...
+[02:56:53 -> 02:56:56]  ...1 0 y 0 1 porque es lo que estaba jugando.
+[02:56:56 -> 02:56:59]  Claro, claro, claro.
+[02:56:59 -> 02:57:05]  Sí, o sea, por eso me encerraba lo que dijiste, oye, que quería dar la opción, a mí esto te la muestra.
+[02:57:05 -> 02:57:11]  Pero capaz que no está bien por tener por el polisismo. Eso puede ser.
+[02:57:11 -> 02:57:13]  Claro, porque no es la polis.
+[02:57:13 -> 02:57:15]  Claro, es la acción y no es la acción.
+[02:57:15 -> 02:57:17]  Que salió de la polis.
+[02:57:17 -> 02:57:19]  Sí, me falta que...
+[02:57:19 -> 02:57:23]  Que está como un polisismo, la polisismo que no va a la polis.
+[02:57:23 -> 02:57:25]  Sí, como que eso no va a la polis.
+[02:57:25 -> 02:57:28]  Si, lo que la política actual no...
+[02:57:28 -> 02:57:30]  Pero todo lo que está.
+[02:57:30 -> 02:57:34]  O sea, está bueno y buen tipo ver, mostrar lo que va jugando no cabe.
+[02:57:34 -> 02:57:36]  Si, pero todo lo que está.
+[02:57:36 -> 02:57:39]  La maldición de lo que pasa a la gente.
+[02:57:42 -> 02:57:49]  Este tipo de milagros y la batalla general, lo hacíamos en fin.
+[02:58:19 -> 02:58:26]  Los determinimentos y el mecanismo de la movilización de los experimentos son estas y estas son las gráficas.
+[02:58:26 -> 02:58:30]  Esa estructura de... ¿Cuál te parece algo maravilloso?
+[02:58:30 -> 02:58:34]  ¿Y algún tipo de gráfico?
+[02:58:34 -> 02:58:35]  No sé, no sé.
+[02:58:35 -> 02:58:36]  No sé, no sé.
+[02:58:36 -> 02:58:38]  Creo que todas son gráficos.
+[02:58:38 -> 02:58:42]  La media de la gráfica es que muestren un poco.

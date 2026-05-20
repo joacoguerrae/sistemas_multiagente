@@ -1,0 +1,760 @@
+# Clase4 - sistemas_multiagente (con timestamps)
+
+[00:00:30 -> 00:00:39]  La lectura del obligatorio, ya lo hemos anunciado igual después formalmente, todavía no subí
+[00:00:39 -> 00:00:49]  la letra de este año, pero es igual que me había pasado, así que igual después, una
+[00:00:49 -> 00:01:07]  segunda hora, lo vamos a leer formalmente. Bueno, yo ahora les voy a presentar el tema que queda,
+[00:01:07 -> 00:01:17]  que es el otro algoritmo de aprendizaje de Policies para los que hemos estado viendo,
+[00:01:17 -> 00:01:27]  que son juegos de sistemas en los cuales son de una jugada simultánea,
+[00:01:27 -> 00:01:33]  los agentes simultáneamente hacen todos una acción de manera simultánea.
+[00:01:33 -> 00:01:43]  que es lo que llamamos juegos matriciales de una jugada, pero que tenemos que ver.
+[00:01:43 -> 00:01:49]  Para los cuales ya vimos los distintos conceptos que,
+[00:01:49 -> 00:01:56]  esencialmente, eran el tema del equilibrio, el equilibrio en Ash, primero, y después el
+[00:01:56 -> 00:02:01]  el concepto de equilibrio correlacional.
+[00:02:01 -> 00:02:05]  Vimos un primer algoritmo de aprendizaje,
+[00:02:05 -> 00:02:10]  la clase pasada, que fue fictitious plane,
+[00:02:10 -> 00:02:14]  y ahora vamos a ver otro algoritmo de aprendizaje.
+[00:02:14 -> 00:02:19]  Vemos otras características distintas,
+[00:02:19 -> 00:02:21]  y después, como lo he entendido,
+[00:02:21 -> 00:02:25]  básicamente, el primer obligatorio va a ser implementado y comparado
+[00:02:25 -> 00:02:35]  en distintos escenarios. Bien, el último que vamos a ver hoy se llama Regret Machine.
+[00:02:35 -> 00:02:51]  Es difícil, digamos, contar una traducción sencilla, digamos, algo así como alineamiento
+[00:02:51 -> 00:02:59]  de RKDM, de great matching, es más fácil de retener.
+[00:02:59 -> 00:03:08]  Pero bueno, para atender de qué se trata vamos a ver, vamos con un ejemplo, en este caso
+[00:03:08 -> 00:03:15]  tiene la papel ligera y vamos a ver cómo funciona.
+[00:03:15 -> 00:03:21]  Después si tienen dudas sobre fictitious play, que fue lo que vimos la día pasada,
+[00:03:21 -> 00:03:30]  lo vemos, incluso a la luz del rango 2 algoritmo
+[00:03:30 -> 00:03:37]  lo podemos comparar y ver cómo funcionan cada uno
+[00:03:40 -> 00:03:47]  Bien, entonces, como que me pongo un juego, todos conocen Tierra de Rompelitijera
+[00:03:47 -> 00:04:00]  RPS, Rock Paper Scissors, y jugadores 1 y 2 que elige papel.
+[00:04:00 -> 00:04:08]  Bueno, todos conocemos las reglas del juego.
+[00:04:08 -> 00:04:18]  El papel gana piedra.
+[00:04:18 -> 00:04:25]  y entonces en papel viene 1 de recompensa
+[00:04:25 -> 00:04:31]  y el jugador 2 que jugó papel tiene 1 de recompensa
+[00:04:31 -> 00:04:35]  y el jugador 1 que jugó piedra tiene menos 1 de recompensa
+[00:04:35 -> 00:04:39]  ¿sabes? eso, se va a perder
+[00:04:39 -> 00:04:44]  lo que se puede plantear cada jugador
+[00:04:44 -> 00:04:50]  cada agente de las situaciones puede hacer un análisis de tipo contraparticle
+[00:04:50 -> 00:04:53]  conocen lo que es un análisis contraparticle?
+[00:04:53 -> 00:04:58]  que pasa si en lugar de haber hecho lo que hice hago otra cosa
+[00:05:03 -> 00:05:10]  lo que pasó, pasó, pero el análisis contraparticle, que pasa si hubiera actuado de tipo?
+[00:05:10 -> 00:05:16]  dado que el otro jugador va poco en poco
+[00:05:16 -> 00:05:26]  y hagamos luego por ejemplo para P1 que fue el que perdió
+[00:05:26 -> 00:05:32]  entonces si P1 hubiera elegido papel
+[00:05:32 -> 00:05:38]  ahí hubiera tenido un empate
+[00:05:38 -> 00:05:42]  entonces hubiera tenido como recompensa 0
+[00:05:42 -> 00:05:50]  o sea que Willow ha tenido uno más de lo que obtuvo
+[00:05:50 -> 00:05:58]  esa diferencia entre 2 y 1 es lo que llamamos el arrepentimiento
+[00:05:58 -> 00:06:02]  o sea, es una especie de valoración del arrepentimiento
+[00:06:02 -> 00:06:10]  jugando arrepentido está jugador uno de haber jugado piedra con respecto a papel
+[00:06:10 -> 00:06:18]  el papel de un empate, entonces el arrepentimiento que le da esa acción
+[00:06:18 -> 00:06:22]  con respecto a la que jugó es un, es una valoración de eso
+[00:06:22 -> 00:06:25]  básicamente la diferencia entre las dos recomeces
+[00:06:25 -> 00:06:40]  y si hubiera jugado hijera, hubiera obtenido más uno, lo que tenía uno contra el menos uno, pues tú.
+[00:06:40 -> 00:06:48]  Entonces ahí su arrepentimiento, el arrepentimiento que le da no haber jugado hijera es 2.
+[00:06:48 -> 00:07:13]  Y esa es la idea, a partir de esta reacción, la diferencia, el arrepentimiento que es la diferencia entre la recompensa obtenida por haber jugado una opción y la recompensa que se hubiera obtenido
+[00:07:14 -> 00:07:15]  si
+[00:07:15 -> 00:07:17]  no? porque sabía!
+[00:07:17 -> 00:07:19]  si se había jugado por otra acción
+[00:07:19 -> 00:07:21]  que le funcionaba más que la repentin人民
+[00:07:21 -> 00:07:23]  en un hatred
+[00:07:24 -> 00:07:25]  ehp
+[00:07:27 -> 00:07:28]  lcsl
+[00:07:30 -> 00:07:30]  venía
+[00:07:33 -> 00:07:34]  para formar esa
+[00:07:35 -> 00:07:38]  el el repentin
+[00:07:39 -> 00:07:41]  es el
+[00:07:43 -> 00:07:51]  acá hay una acción A que es la acción conjunta
+[00:07:51 -> 00:07:58]  dice dar A solo, no dice dar su P, es la acción conjunta
+[00:07:58 -> 00:08:05]  entonces dentro de la acción conjunta A, porque ponemos el ejemplo, la acción
+[00:08:05 -> 00:08:11]  conjunta que se jugó en el ejemplo fue Rock Paper
+[00:08:11 -> 00:08:13]  que es el acción A
+[00:08:13 -> 00:08:17]  por un lado
+[00:08:17 -> 00:08:19]  y por otro lado tengo la acción individual
+[00:08:19 -> 00:08:21]  de un determinado agente
+[00:08:21 -> 00:08:23]  por ejemplo
+[00:08:23 -> 00:08:25]  Paper
+[00:08:25 -> 00:08:27]  o Seasaw
+[00:08:27 -> 00:08:29]  y eventualmente
+[00:08:29 -> 00:08:31]  Rock también
+[00:08:31 -> 00:08:33]  A prima sugeres
+[00:08:33 -> 00:08:35]  la otra acción
+[00:08:35 -> 00:08:39]  que podría haber jugado
+[00:08:39 -> 00:08:51]  agentes que IA es la acción conjunta. Entonces es la evidencia entre la recompensa que habríamos
+[00:08:51 -> 00:09:04]  tenido si hubiera jugado a prima sub P, en lugar de a sub P, menos la recompensa de jugador.
+[00:09:04 -> 00:09:06]  O sea, nada se hace a su...
+[00:09:06 -> 00:09:07]  Sí.
+[00:09:07 -> 00:09:08]  Una pregunta.
+[00:09:08 -> 00:09:14]  Esto del agarretimiento sirve para que aprenda a saber cuál es el mejor movimiento?
+[00:09:14 -> 00:09:16]  Sí, ahora vamos.
+[00:09:16 -> 00:09:17]  Sí.
+[00:09:17 -> 00:09:18]  Ya?
+[00:09:18 -> 00:09:19]  Bueno.
+[00:09:19 -> 00:09:24]  La idea es que a partir del agarretimiento podamos...
+[00:09:24 -> 00:09:25]  Espera.
+[00:09:25 -> 00:09:26]  Ahí está.
+[00:09:26 -> 00:09:33]  Otro ecónico es el de regret matching, que lo que intenta hacer es aprender la policy
+[00:09:33 -> 00:09:37]  a jugar, la estrategia a jugar a partir de observar los arrepentimientos.
+[00:09:41 -> 00:09:47]  Victitious Play, acuérdanlo que hace es modela lo que jugaba o juega.
+[00:09:48 -> 00:09:49]  Pues todo el resto.
+[00:09:50 -> 00:09:52]  Bueno, posiblemente.
+[00:09:52 -> 00:09:57]  Acá vamos a ver otro enfoque en la cual la gente solo mira
+[00:09:59 -> 00:10:02]  sus arrepentimientos y a partir de ahí, vendamos.
+[00:10:03 -> 00:10:06]  y va a atender una...
+[00:10:07 -> 00:10:10]  y vamos a ver después a dónde va.
+[00:10:14 -> 00:10:17]  Entonces, eso es para que llegue.
+[00:10:17 -> 00:10:19]  O sea, es lo que hacen es,
+[00:10:19 -> 00:10:22]  agarrar el vector de acciones
+[00:10:22 -> 00:10:24]  y cambiar.
+[00:10:24 -> 00:10:26]  Cada gente lo que hace es
+[00:10:26 -> 00:10:28]  cambiar la acción de juego por todas las demás
+[00:10:28 -> 00:10:32]  y comparar las recompensas.
+[00:10:33 -> 00:10:42]  y en ese orden, o sea, es lo que obtendría menos de lo que obtuvo.
+[00:10:42 -> 00:10:49]  Porque eso es, entonces, si lo que obtendría es mejor, le va a dar positivo,
+[00:10:49 -> 00:10:57]  porque le va a dar un arrepentimiento grande, y si lo que obtendría es peor, le va a dar negativo.
+[00:10:57 -> 00:11:07]  también porque fíjense, en estos dos casos la diferencia da 1 y 2 porque tanto jugar
+[00:11:07 -> 00:11:14]  papel como jugar tijera en estas situaciones es mejor que jugar quiebre
+[00:11:14 -> 00:11:25]  pero si hubiera jugado, si cambiamos, haga rock por scissors, tijera, entonces de este
+[00:11:25 -> 00:11:34]  lado tendría menos 2, entonces tendría menos 1 y el otro es menos 2.
+[00:11:38 -> 00:11:43]  Cuando el repelimiento es positivo, que es decir que cambiar la acción es bueno,
+[00:11:43 -> 00:11:48]  cuando el repelimiento es negativo, que cambiar la acción no es bueno.
+[00:11:48 -> 00:11:50]  pero otra gente se puso a la cuenta.
+[00:11:51 -> 00:11:55]  En este caso, claro, porque jugó la corrupción.
+[00:11:56 -> 00:11:57]  Fango.
+[00:11:58 -> 00:12:01]  Y a refarar, en este caso, el juego es un masel, entonces lo que...
+[00:12:03 -> 00:12:05]  gana uno en lo que pió de los dos.
+[00:12:07 -> 00:12:12]  Entonces, bueno, ahí, pues, cubriendo hasta el tema, es para qué usamos esto.
+[00:12:12 -> 00:12:24]  Bueno, esta noción del aprendimiento es para derivar el algoritmo prensa.
+[00:12:24 -> 00:12:25]  ¿Ves?
+[00:12:25 -> 00:12:26]  ¿Lo eres?
+[00:12:26 -> 00:12:27]  ¿Ves un poco?
+[00:12:27 -> 00:12:28]  Sí.
+[00:12:28 -> 00:12:33]  Yo guardo solo lo mío, no guardo lo del otro.
+[00:12:33 -> 00:12:36]  En este caso no.
+[00:12:36 -> 00:12:45]  son dos modelos totalmente en punto de aprendizaje, lo que observan los agentes es...
+[00:12:45 -> 00:12:50]  Ah, los doctorones... o sea, no modelía yo...
+[00:12:50 -> 00:12:57]  Bueno, a ver, lo que modelan es porque los dos casos que están observando solamente
+[00:12:57 -> 00:13:14]  sus recompensas y la opción conjuntas y la recompensa.
+[00:13:14 -> 00:13:19]  Lo que no hacen es considerar lo que los otros jugaban.
+[00:13:19 -> 00:13:22]  Necesitan observarlo porque necesitan calcular la recompensa.
+[00:13:22 -> 00:13:29]  El otro no lo cuenta, solamente para calcular cuál es fuera que compensa.
+[00:13:29 -> 00:13:36]  Porque yo no sé cuál es la recompensa del otro, es un mortero, por lo tanto yo la puedo calcular.
+[00:13:36 -> 00:13:48]  Sí, pero tenés que saber, para cambiarla, tu acción necesita siempre mantener A menos P.
+[00:13:48 -> 00:13:55]  o sea vos no podes calcular la recompensa sin saber cual fue la transparo de la acción que guardo
+[00:13:57 -> 00:14:00]  Bueno, pero un poco, dije que la siguiente transparencia
+[00:14:00 -> 00:14:05]  pusiste ahí sin ser demasiado parano, no, pero no usar demasiado parano
+[00:14:05 -> 00:14:07]  Es otra cosa, es otro punto
+[00:14:07 -> 00:14:14]  Si yo si pudiera usar el otro puedo tener un poco de idea de que es lo que el otro va a...
+[00:14:14 -> 00:14:16]  No, pero eso no hace referencias
+[00:14:16 -> 00:14:28]  no se ve, eso hace referencia de realidad a fictitious play, porque fictitious play se
+[00:14:28 -> 00:14:38]  guardan siempre a hacer verni-poss determinísticamente, si acá se guarda siempre la que maximiza
+[00:14:38 -> 00:14:53]  en regret, que tiene el enemigo acá. La que maximiza el arrepentimiento se puede haber jugado rock
+[00:14:53 -> 00:15:03]  contra paper, dado que, sale el pote, dado que el otro jugador jugó paper, entonces ya jugó tijera,
+[00:15:03 -> 00:15:10]  eso es determinístico y entonces de acuerdo a eso, el otro agente sabría exactamente lo que se va a jugar después
+[00:15:11 -> 00:15:13]  porque sí, no?
+[00:15:16 -> 00:15:23]  entonces no se puede ser determinístico, el otro agente ya sabría que la siguiente ronda de
+[00:15:23 -> 00:15:28]  realizaje se va a jugar pijera, entonces no te cambias opción y vas a jugar pieres
+[00:15:28 -> 00:15:39]  a eso va a ser la referencia. Entonces a diferencia de fictitious play que se juega a una respuesta determinística,
+[00:15:39 -> 00:15:40]  acá hay que jugar al retorno.
+[00:15:44 -> 00:15:57]  No es determinísticamente la acción que maximiza la arrepentimiento que se va a poner.
+[00:15:58 -> 00:16:06]  Entonces, ¿cuál es la idea?
+[00:16:06 -> 00:16:12]  Básicamente la idea es ir acumulando los arrepentimientos
+[00:16:12 -> 00:16:16]  y a partir de... en lugar de...
+[00:16:16 -> 00:16:19]  para... no, para la imagen simple
+[00:16:19 -> 00:16:23]  en Cistillo Play se contaban las acciones jugadas por los demás
+[00:16:23 -> 00:16:27]  o por todo el mundo, es un conteo de acciones
+[00:16:27 -> 00:16:33]  Acá en lugar de contar acciones vamos a sumar arrepentimiento, sumar regrets.
+[00:16:35 -> 00:16:39]  Y así como a partir del conteo de acciones se estimaba una probabilidad,
+[00:16:39 -> 00:16:43]  vamos a estimar una probabilidad a partir de los regrets.
+[00:16:46 -> 00:16:50]  La que tiene mayor regrets va después de empezar a tener una pro.
+[00:16:50 -> 00:16:54]  Llegando a Azure iba a tener más chances de salir, pero no va a salir de manera determinida.
+[00:16:54 -> 00:17:03]  y así los regles van a empezar a subir o bajar a subir y eventualmente ir a un lado
+[00:17:03 -> 00:17:10]  y no hay como dice el algo que punte las dos, un modelo que punte las dos
+[00:17:10 -> 00:17:18]  Lo que pueden hacer es que de todos estos...
+[00:17:18 -> 00:17:25]  Lo que yo les dije es para sentir su plan, no lo agreguen de nuevo para esto.
+[00:17:25 -> 00:17:33]  Entonces estos algoritmos, cuando ustedes los ven, siempre asumen que todos los agentes
+[00:17:33 -> 00:17:43]  hacen, juegan el mismo algoritmo, o sea, todos hacen fictitious play, todos hacen regret matching.
+[00:17:44 -> 00:17:49]  Entonces bajo esas condiciones se puede ver, puede estudiar la convergencia, hacia dónde va
+[00:17:51 -> 00:18:03]  la policy que se calcula de esa manera hiperativa, pensado como algoritmo de estimación de la policy
+[00:18:03 -> 00:18:16]  como nosotros lo presentamos acá, les pido que lo exploren, es que pueden mezclar como
+[00:18:16 -> 00:18:20]  quieran, pueden hacer que una gente juegue Pictition Play y otra gente juegue Regret
+[00:18:20 -> 00:18:28]  Matching, pueden jugar Pictition Play contra Random, pueden jugar Random contra Regret
+[00:18:28 -> 00:18:37]  parte de la exploración y ver qué logue da y ver si todo eso tiene sentido.
+[00:18:38 -> 00:18:42]  Si después del punto de vista matéorico todos son dos modelos de IDI.
+[00:18:44 -> 00:18:50]  No sé que haría si un mismo agente mezcla tanto.
+[00:19:20 -> 00:19:33]  lo puedes probar y ver. Son dos modelos distintos, pero bueno, de nuevo, porque el objetivo de estos
+[00:19:33 -> 00:19:41]  algoritmos es estimar la policía y el equilibrio. No sé qué pasaría si se...
+[00:19:41 -> 00:19:52]  la forma es cada tanto explorar, si cada tanto es como una rango, comportarte como uno de ellos,
+[00:19:52 -> 00:19:58]  cada tanto para volver a las cosas, comportarte como uno de ellos.
+[00:19:58 -> 00:20:04]  Todo se puede hacer, lo único, si quieres, explore otros algoritmos, esto lo que va es
+[00:20:04 -> 00:20:09]  cuáles son las propiedades que esto tiene en términos de equilibrio, porque acuérdense que
+[00:20:09 -> 00:20:15]  objetivo es encontrar el equilibrio.
+[00:20:15 -> 00:20:28]  Entonces, pero no puedo pensar que entremos en esos loops que a veces pasan y salir de
+[00:20:28 -> 00:20:44]  No dije que no, lo dije que el juego es explorar, de repente lo que no sé es cuáles serían
+[00:20:44 -> 00:20:51]  las propiedades teóricas de eso, pero pueden ver que capaz que en estos juegos.
+[00:20:51 -> 00:20:56]  De hecho, van a ver una cosa, pero no quiero hablar nada, porque así no perdemos a vista
+[00:20:56 -> 00:21:05]  lo que queremos explicar que de Great Machine después, y en parte de la materia de la
+[00:21:05 -> 00:21:17]  obligatoria o articular, se exploren alternativas y variantes. Pero para seguir y para no divergir
+[00:21:17 -> 00:21:28]  vamos a ver cómo funciona el warning. Básicamente, lo que digo es que el pico y el pico de la
+[00:21:28 -> 00:21:34]  nueva era que el pico y el play iteraba, en esta iteración se van a ir calculando los
+[00:21:34 -> 00:21:43]  regrets y se van a ir acumulando los picos. Se va a contar el regret en el arrapendimiento
+[00:21:43 -> 00:21:47]  en una iteración y después se van a ir acumulando.
+[00:21:49 -> 00:21:56]  Y a partir de eso se va a ir obteniendo una estrategia.
+[00:21:56 -> 00:21:57]  ¿Siempre voy a hacer esta?
+[00:21:57 -> 00:21:59]  Sí, sin dudas, ¿dejéos?
+[00:21:59 -> 00:22:00]  Muchas.
+[00:22:00 -> 00:22:01]  Sí.
+[00:22:01 -> 00:22:02]  ¿Madrid?
+[00:22:02 -> 00:22:03]  ¡Guerrero!
+[00:22:03 -> 00:22:04]  Sí.
+[00:22:04 -> 00:22:05]  Gracias.
+[00:22:05 -> 00:22:06]  ¡Ana!
+[00:22:06 -> 00:22:07]  Sí.
+[00:22:07 -> 00:22:08]  ¡Pues no me mojo!
+[00:22:08 -> 00:22:12]  Pues es un emojo.
+[00:22:12 -> 00:22:14]  Un emojo, un emojo en la masilla.
+[00:22:14 -> 00:22:18]  Claro, no tengo esto que hable.
+[00:22:18 -> 00:22:20]  Después de que suena el secreto.
+[00:22:20 -> 00:22:22]  No, no, no.
+[00:22:22 -> 00:22:24]  Este...
+[00:22:24 -> 00:22:26]  2, 1, 0, 0.
+[00:22:26 -> 00:22:28]  Primero, la primera parte es
+[00:22:28 -> 00:22:30]  sumamos Rock,
+[00:22:30 -> 00:22:32]  ahí está.
+[00:22:32 -> 00:22:34]  Está en punto de vista de
+[00:22:34 -> 00:22:36]  Agente Google. De 2
+[00:22:36 -> 00:22:48]  Entonces la recompensa es menos 1 para el de 1 que pierde y los regrets son 0,1,2
+[00:22:48 -> 00:22:57]  piedra contra piedra es 0, piedra contra papel es 1 y piedra contra tijeras es 0
+[00:22:57 -> 00:23:06]  Inicialmente se arranca con los regrets en cero, a diferencia de pkgplay se puede arrancar
+[00:23:06 -> 00:23:16]  con una distribución, una estrategia random, un count random.
+[00:23:16 -> 00:23:27]  y la policy no es otra cosa que el vector de regreso amulado normalizado.
+[00:23:27 -> 00:23:34]  O sea, eso me da 0,1% de perdido.
+[00:23:34 -> 00:23:39]  Y lo que decía desde no debe ser revancido prescílios es que la siguiente acción se
+[00:23:39 -> 00:23:48]  va a hacer tirando al azar de acuerdo con esa introducción
+[00:23:49 -> 00:23:55]  por ejemplo, si el fuego va a ir a cero de que se puede
+[00:23:55 -> 00:24:03]  pierna, un tercio en el que se puede papel y dos tercios que se puede piso
+[00:24:03 -> 00:24:14]  supongamos que se sorteó de un T-Shirt
+[00:24:14 -> 00:24:21]  y que, por otro lado, jugador 2 jugó Rock
+[00:24:21 -> 00:24:31]  eso es un ejemplo, en el poquito es así como el jugador, Moquillo Banasar, de acuerdo a su distribución
+[00:24:31 -> 00:24:40]  que observó en base a los regrets acumulados jugador 2 y todo lo mismo. En todo caso jugador 1 vio Rock, Pedro, Wink.
+[00:24:44 -> 00:24:52]  Como decía, puede ser que si comparen el Regret Match y encontrar a otros jugadores
+[00:24:52 -> 00:24:54]  que es todo el que ha sido totalmente raro.
+[00:24:58 -> 00:25:05]  De nuevo, ahí, tijera, tierra contra piedra,
+[00:25:05 -> 00:25:12]  o piedra recompensa menos 1, ahí tiene otro vector de regrets,
+[00:25:12 -> 00:25:16]  porque ahora es 0 siempre contra aquello que jugó,
+[00:25:16 -> 00:25:18]  en este caso lo mejor es jugar papel,
+[00:25:18 -> 00:25:27]  Entonces jugó 2 acá en el regreso y 1 es el jugador de los dos que era el empate.
+[00:25:27 -> 00:25:34]  Y ahora es la suma de todos dos, 0, 1, 2 que era el acumulado hasta ese momento,
+[00:25:34 -> 00:25:40]  más 1, 2, 0, 1, 3, 2, de regreso acumulados,
+[00:25:40 -> 00:25:48]  y lo que hacemos es normalizar eso y obtenemos un sexto, tres sextos, dos, y así lo sigue.
+[00:25:48 -> 00:25:53]  ¿Qué nos puede pasar?
+[00:25:53 -> 00:26:04]  Si hubiera hemos hecho la ejecución del lado de jugador 2
+[00:26:04 -> 00:26:14]  Tu hubieramos tenido regreso negativo porque ganó las dos veces
+[00:26:14 -> 00:26:17]  y cómo se repite con negativos.
+[00:26:17 -> 00:26:22]  Entonces, lo que tenemos que considerar
+[00:26:22 -> 00:26:30]  son solamente para hacer esta acumulación
+[00:26:30 -> 00:26:32]  por ejemplo, para hacer la acumulación
+[00:26:32 -> 00:26:34]  para obtener la estrategia
+[00:26:34 -> 00:26:37]  es solamente los regres positivos.
+[00:26:37 -> 00:26:43]  O sea, la acumulación se hace con regres positivos y negativos
+[00:26:43 -> 00:26:48]  pero para molecular la estrategia solo podemos considerar los regres positivos
+[00:26:48 -> 00:26:52]  no lo sumamos a la estrategia del carnet
+[00:26:52 -> 00:26:55]  no, o sea, lo sumas en el acumulado
+[00:26:55 -> 00:26:58]  pero cuando ahora lo hacemos
+[00:26:58 -> 00:27:02]  lo sumas siempre en el acumulado pero al acumular
+[00:27:02 -> 00:27:06]  o sea, esto es lo que debemos hacer para bajarlo o bajarlo a tiempo
+[00:27:06 -> 00:27:10]  y lo resolviendo todo ahora y no saltar cosas que se impugran
+[00:27:10 -> 00:27:13]  entonces
+[00:27:13 -> 00:27:24]  Iniciamos con todos, este es el acumulado, IP es el jugador de IP, primero el acumulado de los regrets,
+[00:27:24 -> 00:27:31]  0, vector de seguncimiento, o sea, como si ponen acá, acá en realidad sería un P igual a 0,
+[00:27:31 -> 00:27:42]  que son el acumulado en el instante T que es 007, y la estrategia inicial, porque hay que arrancar jugando algo,
+[00:27:42 -> 00:27:46]  es la distribución uniforme.
+[00:27:46 -> 00:27:50]  Uniforme, la distribución hasta ese momento y
+[00:27:50 -> 00:27:52]  regreso.
+[00:27:52 -> 00:27:55]  Pues es, arrancamos así.
+[00:27:55 -> 00:27:59]  En la iteración siguiente, obviamente lo que hace es
+[00:27:59 -> 00:28:05]  cada jugador usa la distribución en el instante T
+[00:28:05 -> 00:28:10]  para jugar una determinada acción
+[00:28:10 -> 00:28:17]  y eso me da la acción conjunta a T en el stand T
+[00:28:17 -> 00:28:23]  por ejemplo que sería Rock Paper
+[00:28:23 -> 00:28:29]  calculamos los regres por ejemplo 0 1 2
+[00:28:29 -> 00:28:37]  y calculamos los regres acumulados por ejemplo 0 1 2
+[00:28:40 -> 00:28:49]  y ahora como efectivamente puede haber ahora puede haber regrés negativos eventualmente
+[00:28:49 -> 00:28:52]  el regrés tanculado podría ser negativo también
+[00:28:54 -> 00:29:02]  entonces lo que hacemos para obtener la distribución de probabilidad solo tomamos los regrés positivos
+[00:29:02 -> 00:29:10]  del máximo entre el regrés tanculado y 0 esto es vectorialta o sea se toma si ustedes
+[00:29:10 -> 00:29:20]  que se sumieron, por ejemplo, 1, 2, 3 en el acumulado, 1-2, 3, le queda 1, 0, 3.
+[00:29:20 -> 00:29:25]  Vector, esta es una operación vector, todas las operaciones que tienen acá son vectorianos.
+[00:29:27 -> 00:29:31]  Estas operaciones están analíticas, vectorianos, para todo esto es vectorio.
+[00:29:31 -> 00:29:40]  Y después los mismos, o sea, para normalizar es suman, dividen por la suma de lo positivo.
+[00:29:40 -> 00:29:51]  Y ahora, así como en el numerado, o sea, así como en los regresos acumulados,
+[00:29:51 -> 00:29:57]  podría haber números regalivos, ahora lo que pasa es que en el denominador puede ser cero.
+[00:29:57 -> 00:29:59]  O incluso en los siglos de algo.
+[00:29:59 -> 00:30:08]  si algo de eso ocurre usamos de nuevo la unifórmica
+[00:30:08 -> 00:30:21]  si algo falla acá, si me queda cero o me queda negativo, vuelvo a la unifórmica
+[00:30:21 -> 00:30:30]  Entonces, lo que va a pasar es lo mismo que el Tillo's Play, que en cada integración
+[00:30:30 -> 00:30:42]  cada gente va a jugar una distribución normalmente distinta, calculada de una determinada manera,
+[00:30:42 -> 00:30:45]  respuesta a lo que observó.
+[00:30:50 -> 00:31:01]  Dictitious Play es clave de respons a lo que observó del resto. Acá es solo mira sus recompensas,
+[00:31:02 -> 00:31:11]  los arrepentimientos y estima una introducción. Pero en el caso que yo tengo es una secuencia
+[00:31:11 -> 00:31:12]  de distribución
+[00:31:12 -> 00:31:16]  en
+[00:31:16 -> 00:31:21]  t-shutplay se puede haber response, acá se puede haber aleatorio de acuerdo a esta disfunción
+[00:31:21 -> 00:31:27]  aquí he encendido porque lo que digo de t-shutplay es modelar lo que está jugando el resto y
+[00:31:27 -> 00:31:33]  jugar una bad response de lo que está jugando el resto, acá es ver en qué agentes se equivocó
+[00:31:33 -> 00:31:46]  que debería haber jugado y después en realidad
+[00:31:48 -> 00:31:53]  a diferencia de lo que se dice que es esa secuencia que converte, acá hay que mirar otra cosa,
+[00:31:53 -> 00:31:58]  no es esa secuencia, sino el promedio de la introducción del grupo.
+[00:32:00 -> 00:32:03]  En cada iteración.
+[00:32:03 -> 00:32:08]  No es de los que ha traído cosas, un stick de chico,
+[00:32:08 -> 00:32:12]  eso es lo que se va jugando en cada iteración,
+[00:32:12 -> 00:32:18]  pero después hay que mantener otra cosa que es, si quieren estallar, el grupo.
+[00:32:18 -> 00:32:22]  Es el promedio de todas esas escuelas.
+[00:32:24 -> 00:32:27]  Esa es la distribución que está jugando realmente
+[00:32:27 -> 00:32:29]  entre esta agencia.
+[00:32:31 -> 00:32:33]  O que está aprendiendo.
+[00:32:33 -> 00:32:35]  No es esa que va haciendo así.
+[00:32:36 -> 00:32:37]  Efectivamente.
+[00:32:40 -> 00:32:46]  La realidad para analizar la convarquía
+[00:32:46 -> 00:32:52]  un poco más complicado porque no convergen, es decir, obviamente a un equilibrio en Ash,
+[00:32:52 -> 00:32:58]  sino a equilibrios relacionados, y se asegura que los equilibrios relacionados son distribuciones
+[00:32:58 -> 00:33:08]  con clúdicos. Entonces, no están adecuados, van después a ver y analizar la convergencia
+[00:33:08 -> 00:33:20]  de los ejemplos, a la conjunta, tienen que observar lo que conjuntamente jugaron durante todo el juego.
+[00:33:20 -> 00:33:30]  Pero eso, digo, ahora lo dejo así, después se metan en la implementación y a experimentar y ver cómo...
+[00:33:30 -> 00:33:37]  que lo que está pasando lo van a ver y lo discutimos.
+[00:33:37 -> 00:33:48]  Lo digo porque acá es lo que va pasando cada gente.
+[00:33:48 -> 00:34:02]  ahora como un poco ya anticipamos, hablando de la 50-sus-play y el V-Ray Images son dos modelos
+[00:34:02 -> 00:34:11]  de aprendizaje de este disque, de hecho tienen nombres distintos, modelado de la gente de Asian
+[00:34:11 -> 00:34:18]  modeling en el caso de fictitious play y reverse modeling en el caso de the regecution
+[00:34:18 -> 00:34:24]  el importante es eso que te digo
+[00:34:24 -> 00:34:38]  en realidad fictitious play observa, no tanto el estético, observa las elecciones jugadas
+[00:34:38 -> 00:34:46]  observa las agencias jugadas por todos los agentes y ahí se quema una empírica de los que están jugando
+[00:34:46 -> 00:34:53]  todos los agentes, el resto de los agentes, contando y viviendo por la cantidad de veces que
+[00:34:53 -> 00:35:11]  y luego cada acción. Pero para calcular Vs.Response necesitan toda su matriz de recompensa completa
+[00:35:11 -> 00:35:19]  porque necesitan multiplicar el vector de recompensas para cada uno de los dos miembros por la distribución.
+[00:35:23 -> 00:35:37]  En Regret Machine, la gente observa la acción conjunta, porque tiene que poder calcular esto.
+[00:35:37 -> 00:35:46]  Entonces necesita observar la acción conjunta en el instante T.
+[00:35:46 -> 00:35:54]  Pero no la usa, todo lo usa, no hace nada más que ir a la matriz de recompensa de Hibert.
+[00:35:54 -> 00:36:06]  Y ni siquiera necesita la matriz de recompensa, porque la recompensa se la da y quieren jugar la opción y observarla.
+[00:36:06 -> 00:36:15]  Y eso en realidad lo vamos a ver, y así se observa bien.
+[00:36:15 -> 00:36:25]  Porque para calcular la red response, si tengo la batería, lo puedo hacer bien.
+[00:36:25 -> 00:36:40]  Pero para calcular el regret, lo único que hago es como hacía el agente.
+[00:36:40 -> 00:36:44]  Vuelvo a jugar la otra opción y vuelvo a observar la contramedad.
+[00:36:44 -> 00:36:50]  No necesito, o sea, el agente no necesita conocer la matriz del juego.
+[00:36:50 -> 00:36:59]  simplemente, a ver ya, voy a simular, ejecutar esta nueva opción mía
+[00:37:01 -> 00:37:04]  con la otra, con el resto
+[00:37:08 -> 00:37:10]  de lo que es jugar los demás
+[00:37:13 -> 00:37:17]  como hacen en culearni
+[00:37:20 -> 00:37:31]  fue de la realidad, siempre lo que hacían era la acción y la ejecutaban de nuevo en el juego, en el ambiente
+[00:37:31 -> 00:37:36]  y cuando se terminaba el episodio y se reseteaban en el ambiente y jugaban de nuevo
+[00:37:36 -> 00:37:41]  bueno, en Fictitious, en Regret Magic, fue exactamente lo mismo
+[00:37:41 -> 00:37:48]  y también de ejecutar. De hecho también, pero mucho más caro.
+[00:37:58 -> 00:38:08]  Pero bueno, si tiene el vector de regres, si también debería de tener todo el vector de regres,
+[00:38:08 -> 00:38:17]  también puedo hacer nueve citas jugando. Pero la idea de acá es que si ambiente solamente
+[00:38:17 -> 00:38:21]  le da la recompensa que obtiene, bueno, o puede obtener algo.
+[00:38:21 -> 00:38:33]  Bien, pero computacionalmente para calcular la response,
+[00:38:33 -> 00:38:40]  vamos a poder conocer todo en la matriz.
+[00:38:40 -> 00:38:47]  Y bueno, y después había una tercera clase de agentes,
+[00:38:47 -> 00:38:58]  que lo vamos a ver después, cuando comendemos un poco la complejidad y pasemos a ambientes
+[00:38:58 -> 00:39:07]  estocáticos, así como un poco de lo que miembros de la agencia de agentes, pero en
+[00:39:07 -> 00:39:16]  caso de un triagener, si un agente solo puede observar su estrategia y su recompensa, es
+[00:39:16 -> 00:39:26]  especie de independencia. Por eso les estoy adelantando que simplemente
+[00:39:26 -> 00:39:32]  hace una acción, obtiene una recompensa, eventualmente ajusta su policy y sigue
+[00:39:32 -> 00:39:39]  pero sin para nada ver ni comparar qué podría haber obtenido jugando otra cosa
+[00:39:39 -> 00:39:53]  o los que están jugando el recluse. Entonces, se le da más o menos el espacio de tipo de modeles.
+[00:39:54 -> 00:40:06]  La mayoría, como sabes, son tipo L model. Bien, bueno, los sitios diferentes son menos.
+[00:40:06 -> 00:40:26]  cuarto. Hay dos puentes de información, ahora en realidad está en libro, pueden completar estos
+[00:40:26 -> 00:40:35]  de libro, después lo vamos a ver, por aquí vamos a ver algunas cosas del libro y una cosa más que me había aprovechado para completar el cuadrero de
+[00:40:35 -> 00:40:45]  el círculo subidimensional, ahí dice Regret Patching Unconditional, o sea, un condicionado,
+[00:40:45 -> 00:40:58]  un no condicionado. ¿A qué hace referencia eso? Hace que este vector de regreso acumulado no
+[00:40:58 -> 00:41:04]  no tiene cuenta que se jugó, o sea no memoriza que se jugó, es simplemente se acumula
+[00:41:08 -> 00:41:10]  los regrets que se van...
+[00:41:12 -> 00:41:20]  entonces ese regret 1 que está acá y ese regret 0 que están acá fueron con acciones distintas
+[00:41:20 -> 00:41:31]  y fueron en el caso de comparar con acciones distintas, de acá se pudo rock y acá se pudo
+[00:41:31 -> 00:41:32]  rock.
+[00:41:32 -> 00:41:41]  Hay una versión más sofisticada que es la que se llama con un visanero, como verde,
+[00:41:41 -> 00:41:48]  Bueno, no lo ver, digo, si bien lo que yo me dice el héroe, pero para explicarle por qué eso es una parte impondicional,
+[00:41:48 -> 00:41:55]  es que esencialmente los regrets se calculan con respecto solamente a la acción que se acumula,
+[00:41:55 -> 00:42:03]  o sea, lo que se cuenta son solamente los regrets acumulados con respecto a la acción que se acaba de jugar.
+[00:42:03 -> 00:42:09]  O sea que vamos a tener como más a tener una cuenta para los regrets contra Caesar,
+[00:42:09 -> 00:42:15]  los regrets calculados contra haber jugado tijera, contra haber jugado piedra, contra
+[00:42:15 -> 00:42:19]  haber jugado papel, por ejemplo, en este caso.
+[00:42:19 -> 00:42:25]  O sea, eso complica porque no es simplemente sumar, hay que saber qué acción jugó en
+[00:42:25 -> 00:42:29]  cada episodio, en cada episodio.
+[00:42:29 -> 00:42:35]  la interacción. ¿Cómo cambia eso la decisión que tomas en cualquier coche de elegir la probación?
+[00:42:35 -> 00:42:44]  Y bueno, porque la decisión cambia porque ya no tengo... la decisión cambia en el sentido que se
+[00:42:44 -> 00:42:55]  va a calcular una probabilidad para cada acción distinta a la que jugué y es la interacción T y
+[00:42:55 -> 00:43:02]  y para la de jube la opción D va a ser uno menos lo que se calculó, la suma de lo que se calculó.
+[00:43:02 -> 00:43:04]  Eso va a ser lo único que es.
+[00:43:04 -> 00:43:10]  Porque lo único que voy a hacer es calcular con respecto a la contrapaper, tijera,
+[00:43:10 -> 00:43:15]  o sea, piedra contra papel, tijera contra papel si fuera lo que jube.
+[00:43:15 -> 00:43:21]  Eso me va a dar una discusión de probar, me daría una probaridad para piedra,
+[00:43:21 -> 00:43:28]  Pero no es claro. Supongamos que jugue a la piedra.
+[00:43:28 -> 00:43:36]  Voy a tener una para papel contra piedra y otra para tijera contra piedra.
+[00:43:36 -> 00:43:39]  Eso me va a dar dos probabilidades.
+[00:43:39 -> 00:43:45]  La voy a sumar y la diferencia se la voy a imputar a jugar piedra.
+[00:43:45 -> 00:43:52]  porque no la sumé, voy a calcular las diferencias con respecto a las que jugué
+[00:43:52 -> 00:43:55]  pero no las que jugué contra el contra-signal
+[00:43:55 -> 00:43:59]  y es condicionado a lo que jugué en, no a que se jugó en los contados
+[00:43:59 -> 00:44:05]  condicionado a lo que jugaste cada vez, a lo que jugaste en todas las...
+[00:44:05 -> 00:44:07]  o sea, ¿qué pasó?
+[00:44:07 -> 00:44:13]  los regres solamente condicionaban a lo que jugaste cada vez
+[00:44:13 -> 00:44:15]  Esto es este ejemplo.
+[00:44:17 -> 00:44:19]  Cada vez que jugaste, lo mismo.
+[00:44:20 -> 00:44:23]  No mezclar los regresos a tu lado contra toda la sección.
+[00:44:23 -> 00:44:27]  Si no vas a tener los regresos de papel contra piedra,
+[00:44:27 -> 00:44:30]  los regresos de piteras contra piedra,
+[00:44:30 -> 00:44:33]  si fue lo que jugaste en la última sección.
+[00:44:33 -> 00:44:35]  Pues cada vez haces eso.
+[00:44:35 -> 00:44:42]  Para solamente sumar los que obtuviste cada vez que jugaste esa sección.
+[00:44:43 -> 00:44:53]  Entonces, por eso necesitan saber en cada iteración qué jugar.
+[00:44:53 -> 00:44:59]  Entonces, no pueden ir acumulando, necesitan un poco más de información.
+[00:44:59 -> 00:45:06]  Y hacer esas vueltas.
+[00:45:06 -> 00:45:12]  Si lo quieren experimentar, lo que pueden hacer es probar, a ver si le da el hito,
+[00:45:12 -> 00:45:15]  probar en estos casos condicional contra...
+[00:45:15 -> 00:45:19]  No condicional contra confusión.
+[00:45:23 -> 00:45:24]  Y el otro punto...
+[00:45:24 -> 00:45:27]  Sí, bueno, después lo vemos.
+[00:45:27 -> 00:45:31]  Hacemos una pausa ahora de 10 minutos,
+[00:45:31 -> 00:45:34]  y así les muestro algunas cosas que lo tienen obligatorio
+[00:45:34 -> 00:45:41]  y el resto va a ser trabajar en la implementación y comentarles un poco de lo obligatorio.
+[00:45:41 -> 00:45:42]  Bien?
+[00:45:42 -> 00:45:48]  Entonces, esto de compartir...
+[00:45:48 -> 00:45:51]  Me escuchan, ¿no?
+[00:45:51 -> 00:45:56]  Sí, te escuchamos, Sergio.
+[00:45:56 -> 00:46:08]  Bueno, voy a leer la letra obligatoria y después la voy a definir.
+[00:46:08 -> 00:46:18]  José Santander si está en el formato o un cambio de formato de letra.
+[00:46:18 -> 00:46:22]  está el 12 de este año pasado.
+[00:46:22 -> 00:46:26]  La parte campeón que le importa.
+[00:46:26 -> 00:46:28]  La parte es importante, el resto no importa.
+[00:46:28 -> 00:46:32]  El juntaje máximo 30 puntos.
+[00:46:32 -> 00:46:38]  El juntaje mínimo 1 punto peso ciberpande.
+[00:46:38 -> 00:46:41]  La fecha de entrega 28.05.
+[00:46:41 -> 00:46:46]  Eso, pero en realidad lo que cuenta es lo que está en funcionarios.
+[00:46:46 -> 00:46:52]  vamos a chequear que... o sea, lo que ustedes tienen en cuestión es...
+[00:46:54 -> 00:47:02]  ...cuántas... me acuerdo, así que las petas que hay ahí, si no están las vamos a guardar, lo que vale es las que están en cuestión.
+[00:47:06 -> 00:47:14]  Pues mire, todo una cantidad de cosas sobre la generativa, lo que importa acá sobre la generativa
+[00:47:16 -> 00:47:24]  en dos lugares, ovejante, la generación de código y la generación de edipol
+[00:47:24 -> 00:47:33]  la generación de código, o sea, todo lo que quieras, file o lo que sea
+[00:47:33 -> 00:47:41]  la experiencia de la última, o sea, que no haya pasado pero puede haber mejorado
+[00:47:41 -> 00:47:48]  no provee, es que en general no generaba bien código para estos algoritmos
+[00:47:48 -> 00:47:57]  pero tienen el libro, los juegos, lo que se puede consultar, la interpretación, se puede hacer todo lo que quieran
+[00:47:57 -> 00:47:59]  Y esto es un
+[00:47:59 -> 00:48:00]  en Cobylof
+[00:48:00 -> 00:48:05]  pero tanto no es un secreto
+[00:48:05 -> 00:48:11]  no es tan importante que el código
+[00:48:11 -> 00:48:13]  se vea sino el hecho que los programen
+[00:48:13 -> 00:48:14]  para que lo entiendan
+[00:48:14 -> 00:48:15]  para que no se trompan
+[00:48:15 -> 00:48:18]  esa es la idea
+[00:48:18 -> 00:48:23]  para los detalles y todo eso
+[00:48:23 -> 00:48:32]  que lo usen, pero bueno, es importante que lo intenten hacer ustedes para entender lo
+[00:48:32 -> 00:48:33]  que te va.
+[00:48:33 -> 00:48:42]  Muy bien, el informe también. Ahora, lo más importante de todo es que experimentas con
+[00:48:42 -> 00:48:48]  programas, ya vamos a salir, les voy a mostrar un poquito. Y es lo más rico para ustedes
+[00:48:48 -> 00:48:52]  para poder decir que no, la pregunta es que surgieron.
+[00:48:52 -> 00:48:54]  Y qué pasa si hacemos...
+[00:48:54 -> 00:49:00]  Yo no le dije que no, y la botella de que se te lo hacen,
+[00:49:00 -> 00:49:07]  y bueno, no anduvo, no anduvo, está y lo podemos discutir.
+[00:49:07 -> 00:49:15]  Lo mismo que... no es lo de mínima, lo de mínima es que ustedes emparen lo que vemos en clase,
+[00:49:15 -> 00:49:22]  pero todo ha habido... los combinaciones que son ni me habéis imaginado
+[00:49:22 -> 00:49:31]  por lo que lo observé y me ha quedado razonable, no es razonable, etc.
+[00:49:31 -> 00:49:47]  No sé si para hacer que... tampoco le queramos imponer ninguna plataforma para que guarden
+[00:49:47 -> 00:49:54]  los experimentos, no sé qué han usado, han usado Waze and Bayas, y CMLflow, no sé, pero
+[00:49:54 -> 00:50:03]  va a haber muchos experimentos, entonces, el día de hoy están un poco prolijos y de jugar, no porque no quiera quedar a mí,
+[00:50:03 -> 00:50:14]  y no después si nos quieren presentar, hacer un dibujo o hacer una explicación de lo que observaron se van a enredar.
+[00:50:14 -> 00:50:38]  Si lo usan y quieren poner el enlace para que veamos que lo hicieron, lo ideal, porque
+[00:50:38 -> 00:50:47]  experimentos de ahora acá, eso se aprecia lo mismo que el código, si tiene el código en un Git,
+[00:50:47 -> 00:50:53]  lo pongan porque hay un poco de espacio para subirlo, entonces lo mejor es que digan,
+[00:50:53 -> 00:51:00]  bueno el código está en este Git, los experimentos están en este lugar de Ways and Bias,
+[00:51:00 -> 00:51:08]  que si quieren darlo, que el informe lo empongan él a hacer el análisis de lo que observar.
+[00:51:08 -> 00:51:13]  Por ejemplo, comparamos esto y esto, ¿convergió o no convergió?
+[00:51:13 -> 00:51:22]  ¿Ven? es un poco la idea de todo eso.
+[00:51:22 -> 00:51:33]  Es defensa, que me lo he dado. Bueno, esto es parte del template, así que hay que ponerlo en defensa.
+[00:51:33 -> 00:51:45]  En realidad hay una defensa que es en el parcial. En el parcial hacemos una defensa, una pregunta,
+[00:51:45 -> 00:51:49]  un par de preguntas sobre la defensa, eso sí, como puede ser del obligatorio 1 y el obligatorio 2,
+[00:51:49 -> 00:51:58]  que tienen que recordarlo. Por eso es la fecha del parcial.
+[00:51:58 -> 00:52:08]  El parcial, lo que vamos a hacer, creo que son 30, 30, 40, 40 con el parcial,
+[00:52:08 -> 00:52:14]  díbilamente son 30, 35 puntos, no lo usé exactamente todavía, y después hay una
+[00:52:14 -> 00:52:27]  Como es en un grupo, si llegado el caso, tenemos algunas dudas sobre la participación de cada uno,
+[00:52:27 -> 00:52:33]  queremos y podremos hacer una consulta individual, pero la verdad es que hay que haber tiempo para
+[00:52:33 -> 00:52:41]  que trabajen en clase y lo que vamos a hacer es ir viendo con ustedes lo que van haciendo,
+[00:52:41 -> 00:52:48]  entonces no va a haber problemas. O sea, espero digamos de autoría que todos los miembros del equipo trabajen,
+[00:52:48 -> 00:52:57]  que los veamos que han hecho cosas, que... bueno, obviamente sabemos que están haciendo un tema que
+[00:52:57 -> 00:53:04]  ya van a no necesariamente gastar los dos o tres personas del equipo laboral, pues 100% cada uno,
+[00:53:04 -> 00:53:11]  pero bueno que trabajen y que todos aporten
+[00:53:11 -> 00:53:14]  eso es el...
+[00:53:18 -> 00:53:23]  Dijiste que el 28 de mayo de la fecha de la que tenés arriba
+[00:53:23 -> 00:53:27]  es la fecha de entrega, pero yo me entregué
+[00:53:27 -> 00:53:29]  dijiste que es la fecha de pasear, a ver vamos
+[00:53:29 -> 00:53:32]  no, no, no, la fecha de pasear es el 8 de julio
+[00:53:32 -> 00:53:34]  Ah, eso.
+[00:53:34 -> 00:53:36]  O sea, ahí...
+[00:53:36 -> 00:53:39]  Esa fecha de defensa es la fecha del parcial.
+[00:53:39 -> 00:53:41]  Esa fecha de defensa es la fecha del parcial.
+[00:53:41 -> 00:53:45]  A ver, una única defensa para los dos obligatorios el día del parcial.
+[00:53:45 -> 00:53:48]  Pero, ¿se defienden los dos obligatorios?
+[00:53:48 -> 00:53:59]  Sí, sí. O sea, las preguntas que haya de defensa pueden ser del obligatorio 1, del obligatorio 2 o...
+[00:53:59 -> 00:54:01]  y o
+[00:54:01 -> 00:54:03]  pero
+[00:54:03 -> 00:54:05]  creo que lo hemos pasado un en el lado
+[00:54:09 -> 00:54:11]  este el estilo
+[00:54:11 -> 00:54:13]  cual fue
+[00:54:13 -> 00:54:15]  el que observo
+[00:54:15 -> 00:54:17]  cual fue la diferencia que observo
+[00:54:17 -> 00:54:19]  entre Pistillo Plane, Glippet Machine
+[00:54:19 -> 00:54:21]  este por ejemplo
+[00:54:21 -> 00:54:23]  un vaso
+[00:54:23 -> 00:54:25]  o un preparciso o no se que
+[00:54:25 -> 00:54:27]  o esta
+[00:54:27 -> 00:54:46]  con el estilo. Es hasta tres personas en un migratorio, es bastante, hay contras sobrados.
+[00:55:16 -> 00:55:22]  puede ser un poquito más dificultad. Una cosa importante, ya la apertura del partido no, pero bueno,
+[00:55:22 -> 00:55:28]  sin olvidar que se inscriban, que se inscriban a la red del grupo, todo lo demás, si alguien tiene una duda,
+[00:55:28 -> 00:55:36]  pues ya, tentan todo, o sea, todo un año, ya que lo que todo lo manejan, pero bueno, no esperen hasta el último momento,
+[00:55:36 -> 00:55:44]  a las 21 horas para subir, o ese tipo de cosas, porque eso, o sea, ese tipo de cosas no me pueden ayudar,
+[00:55:44 -> 00:55:50]  Si ustedes no subieron, no se quiera, el link está con todos los del abajo en esta cara.
+[00:55:52 -> 00:55:57]  Es importante que suban. De nuevo, lo que queremos pedir es que suban el informe
+[00:55:57 -> 00:56:02]  con los links al código y a los experimentos si los tienes, lo del link va a estar.
+[00:56:04 -> 00:56:08]  Bien, ahora, ¿en qué consiste el obligatorio? En realidad, yo sí que no me cumbé porque
+[00:56:08 -> 00:56:13]  faltaban dos algoritmos más, pero eso lo vamos a ver.
+[00:56:13 -> 00:56:15]  Le quiero acusar a las clases de viernes.
+[00:56:15 -> 00:56:21]  Hay tiempo porque tenemos más de un mes para hacerlo.
+[00:56:21 -> 00:56:26]  Esencialmente la implementación de cuatro algoritmos, por ahora vimos dos.
+[00:56:26 -> 00:56:28]  Bien.
+[00:56:28 -> 00:56:36]  Pero estos corresponden a todo lo que es el sistema de multiagenes simultáneos.
+[00:56:36 -> 00:56:47]  Los que ya vimos son PredictUplay y DirectMatching, en los cuales el ambiente es determinístico
+[00:56:47 -> 00:56:53]  y después vamos a ver independent learning, que yo ya os mencioné un poquito, o otros
+[00:56:53 -> 00:57:02]  dos de tipo Ancient Modeling, que ya mencioné cuando Predict consiste, o sea, variantes
+[00:57:02 -> 00:57:11]  similares a Fertigius Play, si quieran, o de la gran familia de algoritmos de ese tipo, de Shell Modeling,
+[00:57:11 -> 00:57:15]  pero estos dos, QLaming y Joint Action Learning, son de tipo QLaming,
+[00:57:15 -> 00:57:20]  iban a ser para ambientes de tipo...
+[00:57:20 -> 00:57:29]  o sea, de concepto graphics, pero son ambientes que no terminan, pero simulándose.
+[00:57:29 -> 00:57:37]  De hecho hoy en día tenemos un solo ambiente que van a ver ahí, que es bastante interesante
+[00:57:37 -> 00:57:42]  No sé si no te lo pongo a vosotros, pero por ahí para probar, lo pongo a nosotros
+[00:57:42 -> 00:57:50]  Por eso lo que le puse es la variación, lo que le puse como mínimo, es pasar eso
+[00:57:50 -> 00:57:56]  por lo menos hay uno más que después se lo voy a dar, que no puedo implementarlo
+[00:57:56 -> 00:58:06]  para esta familia, digamos, son los que vimos, que son FidgetPay y el de GreatMatching
+[00:58:06 -> 00:58:17]  los que están en el código que le dimos, hay MatchingPay, RockPaperSeasault
+[00:58:17 -> 00:58:21]  y uno que no vimos que el peloto, ahora se lo comento
+[00:58:21 -> 00:58:27]  y después le voy a poner a ver a uno, a alguno más que fue un grupo que vimos
+[00:58:28 -> 00:58:31]  bueno si, me atreves a pasar, que vimos
+[00:58:31 -> 00:58:34]  DTJUPLAY, que en realidad no le dice el nombre, pero bueno
+[00:58:34 -> 00:58:39]  en teoría el juego se conoce como la batalla de los exos, jugando entre sexys
+[00:58:39 -> 00:58:43]  en el cine
+[00:58:43 -> 00:58:48]  El de 2,1,1,2,0,0,0,0
+[00:58:50 -> 00:58:53]  Si, el para 5,1,1,2,0,0,0
+[00:58:56 -> 00:59:00]  Es interesante porque a diferencia de los otros son todos de suma a cero y tener de suma a cero
+[00:59:00 -> 00:59:08]  y tiene un equilibrio correlacionado que ya vimos, recuerdan que era mitad acá y mitad acá
+[00:59:08 -> 00:59:20]  Entonces, para... pero no lo estoy viendo, no tengo que probarlo, pero después ya se lo vamos a...
+[00:59:20 -> 00:59:25]  O sea, más allá de poner una ambigüedad que haya en la letra,
+[00:59:25 -> 00:59:31]  digo, todo lo vamos a realizar en clase y pues el objetivo de ir agregando el cosas, sí,
+[00:59:31 -> 00:59:37]  porque sí, sino para que pueda... el sanar y más jugo salga.
+[00:59:37 -> 00:59:42]  Y después el foraging, que todavía no es lo mismo, pero es que sí lo vamos a hablar
+[00:59:42 -> 00:59:47]  después cuando veamos si el pedo de ti la reintrancachó la rín, pues ya la clase que
+[00:59:47 -> 00:59:54]  tiene. Está bien porque es otro modelo. Vemos que hablar de poses, tocas, que se
+[00:59:54 -> 01:00:00]  de los modelos, en Google, la gente, esto toca fix.
+[01:00:00 -> 01:00:12]  Bien, una cosa que sigue sin importar en la implementación es que por más que estos juegos
+[01:00:12 -> 01:00:26]  que le demos, sean de hecho los tres, sean capaces de, yo la revuelvo en la arriba para que le vamos a dar uno de tres agentes,
+[01:00:26 -> 01:00:39]  para que lo puedan normalmente probar con n agentes paramétricos, que lo hagan paramétrico realmente, para una cantidad de gente cualquiera,
+[01:00:39 -> 01:00:50]  no para dos, por más que estos juegos sean de juegos de 3 para que los puedan probar
+[01:00:50 -> 01:00:54]  si se lo veis, los vamos a dar lo más imposible
+[01:00:54 -> 01:01:02]  o sea, que nunca que sean para N agentes y la cantidad de editorialidad de acción
+[01:01:02 -> 01:01:08]  si se les complica, lo vemos pero no lo veis
+[01:01:08 -> 01:01:18]  Hay algunos tips que le vamos a dar, que ya leímos, pero eso lo vemos y luego se lo discutimos en clase,
+[01:01:18 -> 01:01:23]  por eso le idea trabajar también acá en clase en la parte de la implementación.
+[01:01:23 -> 01:01:39]  Y después la validación, como les dije, de mínima a agentes relacionados entre sí.
+[01:01:39 -> 01:01:46]  Y como decía, me la he encachado, hubo gente que comparó, por ejemplo, Fictitious Play,
+[01:01:46 -> 01:01:53]  que son fictitious play para modelos para juegos estocásticos.
+[01:01:53 -> 01:01:59]  No está pensado para juegos estocásticos, pero bueno, funciona.
+[01:01:59 -> 01:02:04]  En definitiva observa lo que observa y para que uno le estrategia.
+[01:02:04 -> 01:02:10]  Entonces, lo que yo puedo tener es pasar una teoría que diga cómo convergen los estipos,
+[01:02:10 -> 01:02:23]  otro pero ustedes tienen que comparar y darles bienvenidos, porque la idea que les digo es,
+[01:02:23 -> 01:02:28]  así como están presentados en todos lados, este algoritmo que les cubren, el cripto-glazo,
+[01:02:28 -> 01:02:37]  el timo, el cripto-glazo, el tima, un cripto-glazo relacionado, la idea es que vean qué pasa cuando
+[01:02:37 -> 01:02:44]  un agente independiente vende usa un determinado algoritmo de realizaje sin saber que está haciendo el reloj.
+[01:02:44 -> 01:02:50]  Para ver si también ha implementado lo tenemos que probar,
+[01:02:50 -> 01:03:01]  el 252P, el matchingPay para ver si converge a un vper 0.5 0.5 para los dos o si puede hacer
+[01:03:01 -> 01:03:06]  en los otros casos lo sabemos que se puede
+[01:03:06 -> 01:03:13]  las cosas interesantes por ejemplo que son también interesantes de observar es
+[01:03:13 -> 01:03:16]  si alguno de los agentes juega random
+[01:03:16 -> 01:03:19]  porque eso lo puede llegar a interpelar
+[01:03:19 -> 01:03:23]  que pasa si un agente juega random y el otro juega fictish play
+[01:03:23 -> 01:03:27]  o regre matchup a ver a donde va
+[01:03:27 -> 01:03:43]  random puede ser uniforme o alguna otra, eso sí es interesante de comparar, por eso se
+[01:03:43 -> 01:03:48]  los da, did you play o did you play, did you play contra the great matching y did you play
+[01:03:48 -> 01:04:00]  estamos dando mucho. Y lo mismo en las obras, que todavía no hay. Y después creo que lo
+[01:04:00 -> 01:04:03]  lo otro es el
+[01:04:03 -> 01:04:08]  la única cosa que se puede recordar es que es antes de las 21 horas
+[01:04:08 -> 01:04:11]  así que bueno
+[01:04:13 -> 01:04:18]  bien no sé si sobre esto hay alguna otra pregunta
+[01:04:18 -> 01:04:22]  me lo van haciendo
+[01:04:22 -> 01:04:25]  cuando le surjan eso no hay ningún problema
+[01:04:25 -> 01:04:29]  lo que yo les quería mostrar ahora es el primero
+[01:04:29 -> 01:04:35]  o la parte de experimentación, que todo como, por ejemplo,
+[01:04:38 -> 01:04:45]  se puede basar en los experimentos que tienen en el libro, por ejemplo,
+[01:04:45 -> 01:04:51]  y el tipo de visualizaciones presentadas en el libro para hacer el bote.
+[01:04:52 -> 01:04:56]  Y si no lo saben hacer, le digan esto ahora a Vision,
+[01:04:56 -> 01:05:08]  que sea Gemini, díganme un plot igual a este y se lo va a hacer, no hay más inconveniente con esto.
+[01:05:10 -> 01:05:13]  Esto es un ejemplo de TKG.
+[01:05:13 -> 01:05:27]  la gráfica es la evolución de la policy de
+[01:05:27 -> 01:05:38]  de Gizu Play para el jugador uno proyectada sobre, bueno este es un poquito claro, como
+[01:05:38 -> 01:05:48]  es un nombre de pancillo, tiene tres acciones, en realidad esto no está en 3D, sino está
+[01:05:48 -> 01:05:55]  proyectado sobre el plano para dos de las secciones. En este caso creo que es piedra
+[01:05:55 -> 01:06:04]  y papel. La de la otra es uno menos la suma de estas dos. Y tiene esta obtusia que usa
+[01:06:04 -> 01:06:17]  esto para el cuadrante inferior, digamos, está el cuadro 1 y el cuadrante superior está el cuadro 2
+[01:06:18 -> 01:06:27]  y que es esto bueno esto, este es el caso en que los dos arrancan de este uniforme
+[01:06:27 -> 01:06:36]  creo que es esta uniforme y después esto lo que le va viendo mostrando es lo que
+[01:06:36 -> 01:06:44]  ando la evolución de la prácticamente esto es una exclusión no observar la UPS, la RwR
+[01:06:44 -> 01:06:51]  lugar pero en lo que va haciendo esto le va mostrando esto simplemente
+[01:06:57 -> 01:07:09]  la proyección en 2d sobre rock and paper de la policía de agente 1 y de la policía que va aprendiendo
+[01:07:09 -> 01:07:18]  Esto es lo observado, esto es lo que va observando.
+[01:07:18 -> 01:07:27]  Esto último es la jugando de response y depende de una posición inicial.
+[01:07:27 -> 01:07:39]  Si ustedes arrancan de intenciones distintas, puede ser que esto no tenga esta forma.
+[01:07:39 -> 01:07:44]  Esto les muestra cómo esto va convirtiendo.
+[01:07:44 -> 01:07:49]  La convergencia puede ser otra, puede tener otro tipo de vuelta.
+[01:07:49 -> 01:07:52]  Pero esto va convirtiendo a qué?
+[01:07:52 -> 01:07:54]  A un tercio, un tercio, un tercio.
+[01:07:54 -> 01:08:04]  Esto es 0.33, 0.33, acá, o de rock y de perla. Falta la otra dimensión.
+[01:08:04 -> 01:08:08]  Y al mismo tiempo este fue haciendo simétricamente lo mismo.
+[01:08:08 -> 01:08:22]  Puede ser que esto no observen, pero usted puede implodear exactamente lo mismo, capaz de tener otro tipo de conferencia, tan triangular ni tan linda como esto.
+[01:08:22 -> 01:08:26]  Esto es simplemente una manera de explotar la evolución del algoritmo.
+[01:08:28 -> 01:08:34]  Porque tienen que explotar una distorsión de probabilidad en media dimensión, en este caso en
+[01:08:34 -> 01:08:41]  tres dimensión. Una astucia acá es proyectarla en dos dimensiones. Bien, obviamente si esto fuera
+[01:08:41 -> 01:08:49]  cuatro, cinco, cinco acciones sería más complicado de visualizar. Pero ustedes la pueden proyectar.
+[01:08:49 -> 01:08:57]  si hubieran 4 o 5 acciones, pues hacen esto para diferentes, como se llama,
+[01:08:57 -> 01:09:10]  pareles de acciones. Acá lo que les muestra es la evolución de ambas. Y lo que uno tendría que ver
+[01:09:10 -> 01:09:19]  que todo esto va a ser cada vez más chiquito, más concéntricos y convergen a 0.332
+[01:09:19 -> 01:09:27]  o que lo pueden bloquear de una manera. Ahora vamos a ver otro tipo de plots.
+[01:09:27 -> 01:09:38]  estos son ejemplos, pero pueden visualizar así, no está límpico, está muy malentísimo
+[01:09:38 -> 01:09:45]  de entender, esto es lo que realmente pasó, esto sí es interesante porque es lo que yo
+[01:09:45 -> 01:09:52]  decía en el caso de the teaching plane, es que eventualmente uno puede observar si lo
+[01:09:52 -> 01:10:00]  de esta manera lo que realmente se jugó por ejemplo que acabo de decir una dos tres cuatro
+[01:10:00 -> 01:10:18]  cinco o sea y eso puede ser que puedan ver que hay ciertas cosas en una particular ejecución que se
+[01:10:22 -> 01:10:28]  Pero finalmente otra cosa es el paт olor, otra butalHAZ..
+[01:10:35 -> 01:10:37]  suitable
+[01:10:42 -> 01:10:44]  GB
+[01:10:46 -> 01:10:46]  sait
+[01:10:52 -> 01:11:14]  Este es interesante, este es el mismo de recién, pero ven que lo que ven acá es la devolución,
+[01:11:14 -> 01:11:20]  mismo plot, mismo tipo de plot, pero para el caso de regret matching y no para el caso
+[01:11:20 -> 01:11:28]  de 52 play, está un poco de la forma, pero es exactamente la misma, esto es obviamente una
+[01:11:28 -> 01:11:43]  excepción posible, pueden hacer varias ejecuciones y ver si como hay en la zona aleatoria, se observan
+[01:11:43 -> 01:11:51]  cierto tipo de... pero, que va a dar, van a decir, Recreate Machine, la de la de los
+[01:11:51 -> 01:11:58]  Inquillo Play, hay dos estrategias, una la que se va jugando y otra es el de la de la
+[01:11:58 -> 01:12:08]  Enfamed. Y en realidad esto es la conjunta proyectada y esto es lo que jugaron cada uno
+[01:12:08 -> 01:12:11]  individualmente
+[01:12:11 -> 01:12:14]  como más caótico
+[01:12:14 -> 01:12:18]  esto pueden observar
+[01:12:20 -> 01:12:23]  los patrones son parecidos pero bueno
+[01:12:23 -> 01:12:26]  tienen este tipo de cosas acá y acá
+[01:12:26 -> 01:12:30]  pero puede ser muy fino, de hecho pueden hacer lo mismo si uno juega
+[01:12:30 -> 01:12:36]  de gated matching y el otro juega por ejemplo random or fictitious rate
+[01:12:36 -> 01:12:42]  este es otro tipo de visualización y esta es otra
+[01:12:45 -> 01:12:46]  acá
+[01:12:48 -> 01:13:00]  esto le muestra la policy, o sea, es una proyección en 2D de una estrategia de 3 dimensión
+[01:13:00 -> 01:13:06]  que son tres acciones. Y ahora esto que está acá, otra manera de verlo
+[01:13:11 -> 01:13:16]  y le voy a mostrar, esto es un poco más parecido a lo que me vieron por ejemplo en Google Earth
+[01:13:16 -> 01:13:22]  acá le muestra por iteración, obviamente acá cada episodio tiene lo que es uno
+[01:13:22 -> 01:13:26]  porque cada episodio tiene solamente una acción
+[01:13:26 -> 01:13:37]  pero bueno, acá pueden ver y lo que ven ahí, por ejemplo acá es el Regret Promedio,
+[01:13:37 -> 01:13:47]  o sea hacen muchas ejecuciones de Regret Matching y van a ver la evolución de los Regrets Promedio
+[01:13:47 -> 01:13:55]  para cada una de las acciones, esto porque es esta función.
+[01:13:56 -> 01:14:05]  van viendo la evolución del regre de rock, del regre de paper, del regre de scissors
+[01:14:05 -> 01:14:15]  y lo que va viendo acá es que hay una convergencia a cero, hay una oscilación individualmente
+[01:14:15 -> 01:14:24]  pero después se empieza a estar cada vez más concentrado, otro tipo, así como puede
+[01:14:24 -> 01:14:33]  de regreso y de la nodalidad también. Esto simplemente para que tengan ejemplos de tipo
+[01:14:33 -> 01:14:39]  de visualización que se espera que...
+[01:14:39 -> 01:14:41]  y ahora vamos
+[01:14:45 -> 01:14:47]  para poder tratar
+[01:14:47 -> 01:14:49]  este...
+[01:14:49 -> 01:14:51]  convulsiones
+[01:14:51 -> 01:14:53]  y...
+[01:15:01 -> 01:15:03]  voy a seguir acá porque tengo que llevarme su batería
+[01:15:03 -> 01:15:05]  así que no tengo
+[01:15:05 -> 01:15:07]  donde enchufarla
+[01:15:07 -> 01:15:15]  el problema que tienen ustedes, entonces voy a dejar de compartir
+[01:15:17 -> 01:15:17]  y
+[01:15:20 -> 01:15:21]  ya compartirá
+[01:15:28 -> 01:15:31]  aquí lo que necesitamos compartir ahora es el perro
+[01:15:37 -> 01:15:51]  Lo knight y la
+[01:15:51 -> 01:16:00]  Northern Breaking Acc frontal deολ�를
+[01:16:21 -> 01:16:27]  con el plot
+[01:16:27 -> 01:16:30]  ok
+[01:16:37 -> 01:16:39]  bien
+[01:16:39 -> 01:16:41]  este es el otro juego que está
+[01:16:41 -> 01:16:43]  bastante delgado
+[01:16:43 -> 01:16:45]  este no es exactamente
+[01:16:45 -> 01:16:47]  de suma 0
+[01:16:47 -> 01:16:49]  pero es de suma constante
+[01:16:49 -> 01:16:51]  suma constante
+[01:16:51 -> 01:16:53]  este...
+[01:16:53 -> 01:16:55]  igual
+[01:16:55 -> 01:16:59]  el lío es
+[01:17:05 -> 01:17:09]  la idea es que cada jugador tiene un ejército
+[01:17:09 -> 01:17:13]  de una determinada cantidad de soldados
+[01:17:13 -> 01:17:17]  y este...
+[01:17:17 -> 01:17:26]  hay distintas posiciones que tenían campos de batalla y cada jugador tiene que poner
+[01:17:26 -> 01:17:32]  simultáneamente una cantidad de soldados en el lado de los dos campos de batalla
+[01:17:32 -> 01:17:53]  entonces lo más sencillo de ver es dos jugadores y el equipo de batalla con seis soldados. Bueno,
+[01:17:53 -> 01:18:02]  Acabamos de ver que a priori la cantidad, los campos de batalla no están ordenados ni
+[01:18:02 -> 01:18:08]  están numerados, pero bueno acabamos de hacer la versión más sencilla que es menos combinatoria
+[01:18:08 -> 01:18:16]  que es digamos los campos de batalla 0.1.2 por ejemplo y lo único que se puede hacer es incrementar
+[01:18:16 -> 01:18:23]  la cantidad de soldados a medida que se incrementa el índice de campo de batalla.
+[01:18:23 -> 01:18:29]  Por ejemplo, si tienen 6 soldados de campo de batalla, las configuraciones posibles son
+[01:18:29 -> 01:18:39]  1, 2, 3, 1, 2, 3, 1, 1, 4 y 2, 2, 2, son las tres posibles.
+[01:18:39 -> 01:18:51]  La cantidad de soldado, el índice J más 1 tiene que ser mayor o igual al índice J.
+[01:18:51 -> 01:18:56]  O bien ponen 1, 2, 3, incrementa, o bien ponen 1, 1, 4, o bien ponen 2, 2, 2.
+[01:18:59 -> 01:19:15]  Y después, ¿quién gana? Bueno, en realidad, es el que opuso más o menos gana en cada campo y el que tiene más victorias gana.
+[01:19:15 -> 01:19:29]  por ejemplo, esas son las configuraciones, cada configuración contra sí mismo es un empate,
+[01:19:29 -> 01:19:37]  pero después hay por ejemplo 1-1-4, si juega contra 1-2-3 empatan el 1,
+[01:19:37 -> 01:19:49]  pierden el 2 y ganan el 3, un empate, una victoria, una perder, una derrota, es 0, es un empate, 1-3
+[01:19:49 -> 01:19:57]  contra 2-2-2 también es un empate porque es, bueno, 1 pierde, empata, gana
+[01:19:57 -> 01:20:12]  y después 2-2-2 le gana a 1-1-4 gana gana y pierde es 2-1-4
+[01:20:12 -> 01:20:24]  En un caso de que no me conviene jugar siempre 2-2-2,
+[01:20:24 -> 01:20:30]  y bueno, lo que dice, por ejemplo que 2-2-2
+[01:20:32 -> 01:20:34]  o sea, ¿cuáles son los equilibrianas?
+[01:20:34 -> 01:20:38]  esa es la pregunta, bueno
+[01:20:38 -> 01:20:42]  este, 2-2-2 y 1-2-3
+[01:20:42 -> 01:20:46]  entonces, también son
+[01:20:46 -> 01:20:48]  ¿1-2-3 también?
+[01:20:48 -> 01:20:52]  1-3 contra 2-2-2 hay empate
+[01:20:54 -> 01:21:00]  entonces 1,2,3,1 quiere que 1,2,3 no quiera ni contra 1,1,4 ni contra 2,2,2
+[01:21:00 -> 01:21:09]  y 2,2,2 no pierde ni contra 1,2,3 ni contra 1,1,4
+[01:21:09 -> 01:21:15]  o sea en realidad 2,2,2 es una vez responsa 1,2,3 y 1,2,3 es una vez responsa 2,2,2
+[01:21:15 -> 01:21:22]  por más que 2,2,2 le gane a 1,1,4, en realidad es un equilibrio porque 2,2 son vocalmente vez responsa 1,1,2
+[01:21:22 -> 01:21:24]  Entonces es un equipo.
+[01:21:30 -> 01:21:34]  Hay que pensar eso, son un equipo.
+[01:21:35 -> 01:21:40]  Porque si vos jugabas 1-2-3 nadie nos jugaría 1-4.
+[01:21:40 -> 01:21:44]  Porque para ver la respuesta es 1-2-3 o 1-2-2.
+[01:21:44 -> 01:21:48]  Y si hemos jugado 2-2 nadie nos jugaría 1-4.
+[01:21:48 -> 01:21:56]  ¿Puede ser cambiar el ambiente? ¿Pueden estar desordenados los números?
+[01:21:56 -> 01:22:05]  Bueno, si te animas a hacer ese cambio, lo que pasa es que la combinatoria de impulsos
+[01:22:05 -> 01:22:14]  mayor, sí, pero se podría. Un poco la dificultad es que salvo este caso, que se conocen después
+[01:22:14 -> 01:22:22]  realmente muy poco los equilibrios que se conocen, acá hay otro. Y este es un equilibrio puro,
+[01:22:22 -> 01:22:33]  porque he guardado 2, por ejemplo 1, 2, 3. Pero también por ejemplo con 2 soldados, 2, 4, 6.
+[01:22:34 -> 01:22:42]  Esto son cosas que pueden probar. Si jugamos eso y uso un Pistillo Play debería converger a esto.
+[01:22:42 -> 01:22:52]  Pero después ya empieza a ser, después empiezan a ser, por ejemplo, acá, este caso es interesante porque ahí pueden salir muchas cosas.
+[01:22:52 -> 01:22:56]  Y ahí las ejecuciones son mucho más largas, o cincitos y demás.
+[01:22:56 -> 01:23:14]  y esto sería, por ejemplo, un tercio, un tercio, un tercio de estas tres acciones.
+[01:23:14 -> 01:23:22]  La dificultad acá, si quieren, es combinatoria, es que cada acción es un vector de cosas
+[01:23:22 -> 01:23:27]  que de esos dados te ponen en cada un vector de tres números, la cantidad de acciones es muy grande
+[01:23:29 -> 01:23:36]  no es que 355 son acciones, sino que 355 es una acción, 337 es otra acción y 157, porque es simultánea
+[01:23:39 -> 01:23:44]  entonces este, quiero tuner todo con
+[01:23:44 -> 01:23:53]  matching pennies para que se anda bien, después rompe el sensor y después si ya tienen confianza
+[01:23:53 -> 01:24:04]  que están dando bien, tienen que darle a él, que tarda bastante más. Pero es interesante porque
+[01:24:04 -> 01:24:11]  que pueden... acá las visualizaciones siempre se hacen más complicadas, si quieren...
+[01:24:11 -> 01:24:19]  las acciones son vectores de tres números, entonces...
+[01:24:19 -> 01:24:21]  es el episodio de 100Modos
+[01:24:23 -> 01:24:25]  pero bueno, vayan de poco yo
+[01:24:25 -> 01:24:27]  la idea es que
+[01:24:27 -> 01:24:29]  por lo menos lo prueben
+[01:24:29 -> 01:24:31]  para ver como va el mar y
+[01:24:31 -> 01:24:33]  vean
+[01:24:33 -> 01:24:35]  que es lo que
+[01:24:35 -> 01:24:37]  vamos a observar
+[01:24:39 -> 01:24:41]  si
+[01:24:41 -> 01:24:43]  se les ocurre
+[01:24:43 -> 01:24:45]  bueno, no pueden decir al despues
+[01:24:45 -> 01:24:47]  en cualquier caso, este
+[01:24:47 -> 01:24:57]  si quieren ir a ver está bastante bien, acá tienen una idea de lo que pueden hacer si les interesa este caso en particular.
+[01:25:01 -> 01:25:11]  Bueno, yo creo que no tengo nada más ahora, así que la idea es que se pongan a trabajar y si pueden
+[01:25:11 -> 01:25:21]  salen dudas de la implementación, me dicen, tengo que ahora partir y quedar un ratito.
+[01:25:27 -> 01:25:34]  Yo tengo que compartir y grabar, armos alas y...

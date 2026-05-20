@@ -1,0 +1,1701 @@
+# Clase2 - sistemas_multiagente (con timestamps)
+
+[00:00:00 -> 00:00:25]  Hay un par de caras nuevas que no vi en la clase pasada. Me olvidé la lista, pensaba
+[00:00:25 -> 00:00:33]  pasaron pero me dicen como se llama? Sí, David Perez. ¿Pero vos estabas online? Sí,
+[00:00:33 -> 00:00:39]  también. Natalia Gamso. Bien, ¿cómo estabas? ¿No? ¿Gracias, ah? Bien. Creo que me está
+[00:00:39 -> 00:00:50]  faltando alguien, me parece. Pero después se quedó con Bedería. Si hay alguien, le
+[00:00:50 -> 00:00:52]  aparece en la lista que creo que tampoco vino a la clase pasada.
+[00:00:56 -> 00:00:56]  Bien, bueno.
+[00:01:02 -> 00:01:08]  Vamos a repasar rápido lo de la última, o sea,
+[00:01:08 -> 00:01:16]  la primera clase y responder a algunos de los temas que
+[00:01:16 -> 00:01:20]  quedaron plan de a dos y vamos a partir de la clase de hoy.
+[00:01:23 -> 00:01:25]  Dejo de compartir, así se ve.
+[00:01:26 -> 00:01:29]  Queda mejor grabado del pizarrón.
+[00:01:30 -> 00:01:32]  Esto va a ser un pequeño repasito.
+[00:01:34 -> 00:01:36]  Si vuelvo a ver las diapositivas.
+[00:01:38 -> 00:01:41]  Se ve, ¿no? Hay un pedacito de acá, pero bueno.
+[00:01:41 -> 00:01:56]  Una de las cosas que quieren que, de lo que hablamos la primera clase, que es importante,
+[00:01:56 -> 00:02:00]  digamos, es el tema de las preferencias también.
+[00:02:03 -> 00:02:09]  Que son las preferencias de alguna manera que explican las recompensas.
+[00:02:11 -> 00:02:20]  O las utilidades o los payoffs, como también se llaman en teoría de juegos, pero bueno,
+[00:02:20 -> 00:02:27]  como este, claro, vamos a seguir un poco la terminología de agentes, ¿está bien?
+[00:02:27 -> 00:02:34]  Eso es importante. ¿Está bien? Son las preferencias. Lo que va a pasar es, cuéntense en la práctica,
+[00:02:34 -> 00:02:45]  que ya no vamos a explicar las recompensas. Bueno, las recompensas son estas. Este es el problema que hay que resolver y punto.
+[00:02:45 -> 00:02:49]  Pero sepan que, en realidad, las recompensas son consecuencia de preferencia.
+[00:02:49 -> 00:02:58]  También hicimos toda una discusión sobre, bueno, el hecho de que en el juego se repartiera de acuerdo a las acciones
+[00:02:58 -> 00:03:03]  una determinada cantidad de plata o hubiera una determinada cantidad de beneficio, lo que sea,
+[00:03:03 -> 00:03:11]  no implica automáticamente cuáles son las preferencias que van a tener los agentes por
+[00:03:11 -> 00:03:17]  cada una de las acciones. Eso, por cada uno de los resultados de este...
+[00:03:17 -> 00:03:22]  le ganamos el juego, ¿te vienes? O del marco de juego para hacer eso.
+[00:03:22 -> 00:03:25]  Ahora vamos a...
+[00:03:25 -> 00:03:29]  hoy como que pasé a la última clase, que vamos a imputir esto,
+[00:03:29 -> 00:03:33]  después ya vamos a hablar de recompetas y nada más.
+[00:03:37 -> 00:03:41]  Segunda, digamos,
+[00:03:43 -> 00:03:46]  cosa importante es, bueno,
+[00:03:46 -> 00:03:54]  es, bueno, el concepto de estrategia conjunta,
+[00:03:58 -> 00:04:02]  el concepto de estrategia es una policy, pero es conjunta.
+[00:04:02 -> 00:04:08]  Entonces, hay que decir que ahora, cuando hablemos de estrategia general,
+[00:04:08 -> 00:04:13]  va a ser la composición de las estrategias de todos los agentes
+[00:04:13 -> 00:04:17]  que están participando en la situación.
+[00:04:19 -> 00:04:21]  Vamos a hablar de estrategia conjunta
+[00:04:21 -> 00:04:27]  y de estrategia individual de cada agente.
+[00:04:28 -> 00:04:32]  También eso hace que a veces sea medio engorroso escribirlo, pero...
+[00:04:35 -> 00:04:36]  Y después,
+[00:04:37 -> 00:04:43]  si hablamos de la estrategia individual,
+[00:04:43 -> 00:04:50]  Pero bueno, también después la conjunta puede ser pura,
+[00:04:50 -> 00:04:56]  exacta, o mixta o probabilista.
+[00:05:00 -> 00:05:01]  Bien.
+[00:05:01 -> 00:05:04]  Eso también es bueno.
+[00:05:04 -> 00:05:09]  Una policy o una estrategia pura es una acción.
+[00:05:09 -> 00:05:09]  ¿También?
+[00:05:09 -> 00:05:12]  O sea, a disposición de la gente.
+[00:05:12 -> 00:05:18]  una estrategia pura conjunta es un vector de acciones.
+[00:05:18 -> 00:05:21]  La versión probabilística de esto es como una especie de
+[00:05:21 -> 00:05:22]  one-hot.
+[00:05:22 -> 00:05:26]  O sea, cada no tiene un vector de 0 si 1, donde hay un 1,
+[00:05:26 -> 00:05:32]  solamente en la acción de cada agente.
+[00:05:32 -> 00:05:35]  Es también pensar que una es determinista de la misma.
+[00:05:35 -> 00:05:35]  Claro, claro.
+[00:05:35 -> 00:05:36]  Exacto.
+[00:05:36 -> 00:05:36]  La pura.
+[00:05:36 -> 00:05:38]  La de la de Dios, por eso.
+[00:05:38 -> 00:05:39]  Exactamente.
+[00:05:39 -> 00:05:39]  Determinista.
+[00:05:42 -> 00:05:57]  ¿Esta bien? Ahora está bien, lo que pasa es que después cuando veamos, digamos, los
+[00:05:57 -> 00:06:05]  juegos ya legivalentes de los MDP, eventualmente una acción pura va a producir diferentes
+[00:06:05 -> 00:06:15]  outcomes porque no determinista en el MDP, en el ambiente, pero eso no lo vamos a adelantar.
+[00:06:15 -> 00:06:22]  Pura es igual a determinista. Y mixta es probabilista. Quiere decir que, en general, como estrategia,
+[00:06:22 -> 00:06:28]  o sea, la estrategia es determinista porque es pura acción. Me explico que la estrategia
+[00:06:28 -> 00:06:33]  es probabilista porque es una introducción de probabilidad sobre todo de las acciones.
+[00:06:33 -> 00:06:38]  Para no mezclar las cosas.
+[00:06:38 -> 00:06:40]  Bien.
+[00:06:40 -> 00:06:45]  Y tercero vimos que,
+[00:06:45 -> 00:06:48]  o sea, lo importante es que
+[00:06:48 -> 00:06:58]  como definir cuál es la solución a un problema no es evidente.
+[00:06:58 -> 00:07:00]  Porque hay varios. O sea, no es que
+[00:07:00 -> 00:07:07]  no es que una gente va a maximizar su utilidad porque está interacuando con otros, también
+[00:07:07 -> 00:07:13]  entonces el efecto de sus acciones va a producir, o sea, sus acciones van a producir algún
+[00:07:13 -> 00:07:19]  efecto en las utilidades de los otros, entonces las utilidades van a pensar, no, si hago una
+[00:07:19 -> 00:07:22]  cosa, la mía sube pero el otro lo baja, entonces el otro lo va a cambiar, entonces la sucia
+[00:07:22 -> 00:07:31]  va a subir y la mía eventualmente va a bajar y entonces eso hace que aunque como que la
+[00:07:31 -> 00:07:41]  solución un poco que aparece es que haya algún tipo de equilibrio en la opción o
+[00:07:41 -> 00:07:45]  en el efecto de las enciendas.
+[00:07:45 -> 00:07:54]  Bien, pero así vimos que, digamos,
+[00:07:54 -> 00:08:00]  algo que es, de alguna manera, racional y que sigue la misma
+[00:08:00 -> 00:08:01]  idea.
+[00:08:01 -> 00:08:09]  La racionalidad es como intentar maximizar la utilidad de
+[00:08:09 -> 00:08:11]  acuerdo a la recompon.
+[00:08:11 -> 00:08:13]  Y acá aparecían diferentes cosas.
+[00:08:13 -> 00:08:23]  Por ejemplo, conceptos de estrategia estrictamente
+[00:08:23 -> 00:08:24]  dominante o dominante.
+[00:08:34 -> 00:08:37]  Decimos estrictamente dominante y débil mención.
+[00:08:37 -> 00:08:54]  Y concluimos que, con esa visión de racionalidad individual, un agente que tuviera una estrategia
+[00:08:54 -> 00:09:05]  dominante o estrictamente dominante, que quiere decir que si uno, por ejemplo, vamos a hacerlo
+[00:09:05 -> 00:09:15]  en un ejemplo de un agente que juega la fila, su fila y sus utilidades en esa fila son siempre
+[00:09:15 -> 00:09:21]  mayores o iguales que en las otras filas en la misma posición. Igual lo vamos a ver ahora
+[00:09:21 -> 00:09:27]  en el consejo. Pero si un agente tiene una fila, bueno, como si es columna, una columna
+[00:09:27 -> 00:09:31]  o una estrategia de ese tipo, entonces, naturalmente,
+[00:09:31 -> 00:09:34]  la va a jugar.
+[00:09:34 -> 00:09:40]  Y eso, no sé si lo veo hasta dónde puedo escribir.
+[00:09:45 -> 00:09:53]  Y esto, entonces, si todos los agentes tienen estrategia
+[00:09:53 -> 00:09:56]  dominante, todos los agentes las van a jugar y eso va a llevar
+[00:09:56 -> 00:10:01]  a algo que es un equilibrio que se llama equilibrio dominio.
+[00:10:01 -> 00:10:08]  Pero bueno, ahí llegamos a eso y después empezamos a ver que
+[00:10:08 -> 00:10:13]  eventualmente no había siempre estrategias
+[00:10:13 -> 00:10:19]  directamente dominantes, que sí había cosas como estrategias
+[00:10:19 -> 00:10:21]  dominadas.
+[00:10:21 -> 00:10:25]  Entonces dijimos, bueno, podemos proceder por eliminación.
+[00:10:25 -> 00:10:30]  y viendo esta misma ilógica, ninguna gente va a jugar una estrategia que dominaba por otra.
+[00:10:30 -> 00:10:36]  Entonces empezamos a la idea de eliminar esas estrategias
+[00:10:36 -> 00:10:42]  y eso nos llevó a decir, bueno, existe algo más general
+[00:10:45 -> 00:10:49]  que es lo que llamamos el equilibrio de Nash.
+[00:10:49 -> 00:10:50]  ¿Está bien?
+[00:10:53 -> 00:11:01]  Es cuando lo que juega cada agente, lo que hace cada agente, es la mejor respuesta,
+[00:11:01 -> 00:11:06]  la best response a lo que hacen todos nosotros.
+[00:11:07 -> 00:11:16]  El razonamiento es siempre dado que, o sea, dado que el reto de los jugadores o el reto de los agentes
+[00:11:16 -> 00:11:25]  hace una cosa, cuál es mi mejor respuesta. Y si después todos los agentes hacen eso,
+[00:11:25 -> 00:11:32]  eso me da una estrategia que es la estrategia de equilibrio que se llama el equilibrio de la
+[00:11:32 -> 00:11:45]  Es como un punto fijo de esa. Si alguno de los agentes no responde de la mal manera,
+[00:11:45 -> 00:11:50]  lo que haces lo va a cambiar. Va a cambiar y va a siempre elegir. Si uno cambia, entonces
+[00:11:50 -> 00:12:00]  los otros van a cambiar y eso pasa también porque asumimos que hay lo que llamamos el
+[00:12:00 -> 00:12:09]  conocimiento común. Así como una gente sabe, puede deducir lo que van a jugar los otros,
+[00:12:09 -> 00:12:15]  todos los agentes saben lo que van a deducir los otros. Y todo entonces, cada uno sabe,
+[00:12:15 -> 00:12:26]  que el otro sabe, que el otro sabe y así. ¿No hay conocimiento común en el conocimiento
+[00:12:26 -> 00:12:34]  el equilibrio de Nash está basado en el hecho de que todos razonan de la misma manera, porque
+[00:12:34 -> 00:12:44]  si no, no hay. Es como una axioma. Si vos sacas esa axioma, tendré que elaborar otra
+[00:12:44 -> 00:12:50]  teoría. No sé si es cierta la pregunta. O sea, si sacas la axioma de Common Knowledge,
+[00:12:50 -> 00:12:53]  ¿Cuál es la respuesta?
+[00:12:55 -> 00:13:00]  Eso es una solución basada en que todos razonan igual.
+[00:13:00 -> 00:13:02]  Sí, pero vos hablaste de la...
+[00:13:02 -> 00:13:06]  que todos se jugaron a gente y que no...
+[00:13:06 -> 00:13:10]  Ah, ok, pero eso no cambia como lo es.
+[00:13:10 -> 00:13:14]  O sea, no importa que sea de observabilidad total o observabilidad parcial.
+[00:13:14 -> 00:13:19]  Está bien, pero la pregunta es, si, todo lo que hicimos es en observabilidad
+[00:13:19 -> 00:13:21]  completa.
+[00:13:25 -> 00:13:41]  El razonamiento de conocimientos comunes es como una axioma, es decir, no podemos pensar que una gente sabe más que otro.
+[00:13:41 -> 00:13:47]  Tenemos que pensar que si una gente sabe algo, todos los demás saben exactamente lo mismo.
+[00:13:49 -> 00:13:59]  esa es la idea. No se puede, digamos, razonar, o sea, no se puede derivar cosas racionalmente
+[00:13:59 -> 00:14:09]  si no hace eso como hipote, si no estarías diciendo que hay una gente que es omnisciente
+[00:14:09 -> 00:14:16]  o que tiene más conocimiento y que sabe cosas que los demás no saben. Lo que no es lo mismo
+[00:14:16 -> 00:14:28]  que obviamente hay gente que no observan lo mismo que otros, pero si ambos tienen la misma
+[00:14:28 -> 00:14:31]  observación sobre algo, hacen el mismo razón a mí.
+[00:14:31 -> 00:14:41]  Hay una máscara por que la realidad es basada en la diferencia entre preferencia y recompensa.
+[00:14:41 -> 00:14:46]  Entonces, ¿tienen que conocer la preferencia de los otros para pensar que van a jugar
+[00:14:46 -> 00:14:47]  con jugaderos?
+[00:14:47 -> 00:14:56]  No, la recompensa. Porque dijimos que no hay juegos y no hay recompensas. Pero las recompensas
+[00:14:56 -> 00:15:04]  derivan de preferencia. En realidad, no hay juegos, sino no hay preferencias. Las recompensas
+[00:15:04 -> 00:15:14]  son una valoración que solo dijimos que hasta ahora sirve solo para comparar. No sirve para
+[00:15:14 -> 00:15:21]  hacer otras operaciones que la comparación. O sea, solamente lo que me interesa de la
+[00:15:21 -> 00:15:29]  es que 4 mayor que 3. Pero si yo quiero hacer otra cosa más, y ahora lo vamos a hacer,
+[00:15:29 -> 00:15:35]  va a tener que... por ejemplo quiero calcular una esperanza, bueno, voy a tener que poder
+[00:15:35 -> 00:15:44]  operar con eso. Como decía, sí, no es lo mismo 4 que 20. Pero a los efectos del equilibrio
+[00:15:44 -> 00:15:57]  es exactamente lo mismo, donde para las estrategias puras.
+[00:15:57 -> 00:16:05]  Que la utilidad sea de 20 o de 4 en la medida que todo lo demás sea más chico.
+[00:16:05 -> 00:16:08]  Es el orden, es lo que me importa.
+[00:16:08 -> 00:16:15]  Claro, eso sí. Por ejemplo, en el ejemplo de las que hemos pasado, sabíamos el valor monetario de ganar el juego,
+[00:16:15 -> 00:16:22]  pero no se sabía la preferencia de un más avar o un más avar, todo lo que debemos de hacer después.
+[00:16:22 -> 00:16:28]  En ese caso, como muy difícil hacer, no debería haber un equilibrio en Ash, porque nunca puedo adivinar para dónde va el pilot.
+[00:16:28 -> 00:16:30]  ¿Está bien?
+[00:16:30 -> 00:16:42]  efectiva, o sea, lo que sí podemos, capaz que eso es lo que noto claro acá, y si es así, disculpas,
+[00:16:42 -> 00:16:48]  es en este caso, si la matriz de juego, vamos a ver de los jugadores, para que sea más fácil,
+[00:16:48 -> 00:16:57]  pero si es de N jugadores exactamente igual, es conocida por todos. Eso sí, eso sí, por eso es
+[00:16:57 -> 00:17:01]  es de información total.
+[00:17:01 -> 00:17:04]  No hay nada oculto para nadie.
+[00:17:04 -> 00:17:04]  Eso sí.
+[00:17:09 -> 00:17:13]  Pero, digamos, cómo es que es ortogonal con el common knowledge.
+[00:17:13 -> 00:17:17]  O sea, el conocimiento común es, bueno,
+[00:17:17 -> 00:17:20]  si no le permito a un agente hacer un razonamiento,
+[00:17:20 -> 00:17:22]  entonces le tengo que permitir a todos hacer el razonamiento.
+[00:17:22 -> 00:17:23]  No puede jugar.
+[00:17:23 -> 00:17:26]  Después, obviamente, en la práctica vos vas a poner jugar
+[00:17:26 -> 00:17:31]  una gente contra otro que no necesariamente y eso lo vamos a experimentar. Por ejemplo,
+[00:17:31 -> 00:17:41]  vamos a hacer jugar una gente que tiene una determinada manera de aprender y de encontrar
+[00:17:41 -> 00:17:47]  una policy contra otro que juega random. Y el objetivo es ver si, por ejemplo, cuál
+[00:17:47 -> 00:17:52]  es el efecto de eso contra random. Todo eso también lo podemos estudiar. Podemos, por
+[00:17:52 -> 00:17:58]  por ejemplo, podemos decir que determinada estrategia tiene determinadas propiedades
+[00:17:58 -> 00:18:06]  contra... que por ejemplo es conservadora contra cualquier agente.
+[00:18:08 -> 00:18:14]  Pero es un equilibrio si el agente... si el otro agente es racional.
+[00:18:14 -> 00:18:16]  Está bien, hijo de la...
+[00:18:16 -> 00:18:18]  ¿También en el poquito, en la posición ahí?
+[00:18:18 -> 00:18:22]  Eso responde...
+[00:18:22 -> 00:18:30]  Esa preferencia, lo dijiste, todas las conversas, no?
+[00:18:30 -> 00:18:38]  No sé si están bien o no están bien, pero todos tienen el mismo conocimiento de ese conjunto de preferencias, o sea, todos...
+[00:18:38 -> 00:18:48]  No, no, o sea, las preferencias son lo que justifican o lo que definen una determinada recompensa.
+[00:18:48 -> 00:18:56]  Una vez que cada agente fijó sus recompensas, en función de sus preferencias, todos los agentes conocen las recompensas.
+[00:18:56 -> 00:18:59]  Y ya lo demás que si queréis...
+[00:18:59 -> 00:19:04]  Yo también entendía, Lelia, de que las preferencias es como que cada uno las modela.
+[00:19:04 -> 00:19:13]  Cada gente modela las preferencias, pero también aprendí que las que tenían los demás, es decir, uno se va a integrar a través de las recompensas,
+[00:19:13 -> 00:19:16]  ¿cuáles son las preferencias de los otros jugadores de eso?
+[00:19:16 -> 00:19:24]  Bueno, es eso. Cuando cada gente a partir de sus preferencias define recompensas,
+[00:19:24 -> 00:19:29]  todos los agentes hacen lo mismo y eso nos da esa famosa matriz de juego,
+[00:19:29 -> 00:19:35]  donde yo veo todas las recompensas de todos los jugadores, de toda esa gente.
+[00:19:35 -> 00:19:39]  O sea, las recompensas no deberían ser como un indicativo de preferencia.
+[00:19:39 -> 00:19:39]  Exactamente.
+[00:19:39 -> 00:19:40]  Una evaluación de la preferencia.
+[00:19:40 -> 00:19:41]  Exactamente.
+[00:19:41 -> 00:19:43]  ¿No hay el valor monetario? ¿La recompensa no hay el valor monetario?
+[00:19:43 -> 00:19:45]  Ahora hay que decirlo. No, exactamente.
+[00:19:45 -> 00:19:53]  O sea, la historia es que hay que desprenderse de eso de que una recompensa está directamente relacionada con el valor monetario,
+[00:19:53 -> 00:20:04]  lo que sea de una resultado de un determinado marco de juego.
+[00:20:04 -> 00:20:13]  La regla del juego dice que si vos jugas tal cosa ganas 100 mil.
+[00:20:13 -> 00:20:22]  La regla del juego si vos haces split y el otro hace split entonces se va a mitad y mitad.
+[00:20:22 -> 00:20:30]  esa es la regla del pueblo. O si vos haces split y el otro hace still, entonces te va a tocar otro.
+[00:20:30 -> 00:20:37]  Pero esas son las reglas del pueblo, llamamos marcos. El hecho de conocer las reglas y que
+[00:20:37 -> 00:20:42]  las reglas sean esas no deriva, o sea, no implica automáticamente cuáles son las preferencias.
+[00:20:42 -> 00:20:52]  Bueno, el ejemplo que habíamos usado es que en una primera cita con potencial o eventual
+[00:20:52 -> 00:21:01]  pareja uno puede, por ejemplo, perder el juego, hacer cosas cuando juega contra un hijo o
+[00:21:01 -> 00:21:09]  sea con un hijo que le está enseñando y todo, puede perder a propósito. Bueno, las reglas
+[00:21:09 -> 00:21:19]  con la regla. Si yo me dejo hacer un jaque mate, bueno, la historia es no decir que eso
+[00:21:19 -> 00:21:26]  fue un comportamiento irracional, no racional, si fue racional porque yo tenía otras preferencias.
+[00:21:26 -> 00:21:32]  En ese caso el caje de jaque mate va a tener una recompensa muy grande para vos, como vos
+[00:21:32 -> 00:21:37]  tenías preferencia de hacer jaque mate en esa situación contra tu hijo para jardonar,
+[00:21:37 -> 00:21:43]  que se sienta bien, pero que no está. O sea, eso va de realidad, bueno, claro, la jugada que va a derivar al
+[00:21:43 -> 00:21:50]  jaque mate, si querés, va a tener, este, mucha... la voy a preferir, voy a preferir que él me haga
+[00:21:50 -> 00:21:55]  jaque mate a que yo haga jaque mate. Por eso.
+[00:21:55 -> 00:22:08]  y me quedo atrás y la matriz ya sabe, es la matriz, ¿quién la construye? ¿Cada uno la construye el otro tiempo?
+[00:22:08 -> 00:22:10]  No, o sea...
+[00:22:10 -> 00:22:14]  ¿De qué responsabilidad es la construcción de esa matriz?
+[00:22:14 -> 00:22:21]  La construcción de esa matriz, en realidad tiene que ser construida por las preferencias de los agentes.
+[00:22:21 -> 00:22:24]  Eso es lo que construye la matriz.
+[00:22:24 -> 00:22:30]  que tiene. ¿Quién tiene la responsabilidad de dudar? Yo a gente tengo que imaginarme lo de esa matriz de todos los agentes,
+[00:22:30 -> 00:22:34]  ¿las en el ambiente y se la da a todos?
+[00:22:34 -> 00:22:43]  Vamos a decir, o sea, en la realidad va a estar construida por los agentes que definen sus preferencias.
+[00:22:43 -> 00:22:51]  Vamos a ver ahora, para asentar la teoría y aprender los algoritmos, esas matrices,
+[00:22:51 -> 00:22:58]  estas preferencias y eso los recompensa, van a estar dadas, pero van a representar determinadas
+[00:22:58 -> 00:23:05]  preferencias de los agentes. Y después vamos a ver algoritmos que algunos van a, por ejemplo,
+[00:23:05 -> 00:23:12]  el que vimos para identificar los equilibrios de Nash, era marcarlos, eso requiere información
+[00:23:12 -> 00:23:18]  completa. Después, pero hoy no vamos a llegar, va a ser después de Turismo, vamos a ver
+[00:23:18 -> 00:23:24]  el primer algoritmo de aprendizaje que, por ejemplo, podemos aprender, o sea, una gente
+[00:23:24 -> 00:23:34]  puede aprender una policy sin conocer de antemano las preferencias del resto. Y podemos probar
+[00:23:34 -> 00:23:40]  que en determinadas circunstancias eso igual va a converger, por ejemplo, al equilibrio
+[00:23:40 -> 00:23:48]  de náufragos y se puede hacer aunque no se conozcan las preferencias. Solo observando,
+[00:23:48 -> 00:23:54]  porque la idea es, bueno, yo puedo intentar descubrir o aprender cuáles son las preferencias,
+[00:23:54 -> 00:24:00]  las recompensas de los otros viendo lo que juegan. Y si viendo que si juegan más, si
+[00:24:00 -> 00:24:06]  toman más frente a la misma situación, toman una acción mucho de manera, mucho más frecuente
+[00:24:06 -> 00:24:11]  que otra, bueno eventualmente hay una determinada preferencia. Aunque no conozcas su utilidad,
+[00:24:11 -> 00:24:19]  pero vos sabes que eso es más problema. Una pregunta, si es estocástico la manera que actúa el
+[00:24:19 -> 00:24:25]  otro agente, en realidad teóricamente no tenés manera de confirmar de que llegaste a un equilibrio
+[00:24:25 -> 00:24:31]  de mesh, porque no sabes si todo lo que aprendiste es porque en realidad esta experiencia no se
+[00:24:31 -> 00:24:35]  triguerido el caso en lo que arriesga.
+[00:24:35 -> 00:24:38]  En realidad, claro, pero en realidad razón, razón.
+[00:24:38 -> 00:24:40]  Razonas inversamente.
+[00:24:40 -> 00:24:44]  En realidad, lo que es es, si hay un equilibrio,
+[00:24:44 -> 00:24:50]  entonces el algoritmo eventualmente lo encuentra.
+[00:24:50 -> 00:24:54]  Entonces, después, si vos encontraste, si tú...
+[00:24:54 -> 00:24:58]  Después es como pasa si bien es lo mismo que vieron en
+[00:24:58 -> 00:25:03]  de informen, o sea, que son, si vos empezás a utilizar estrategias gri y otro de los demás,
+[00:25:03 -> 00:25:08]  pues eventualmente de converger en soluciones suboptimas y todo eso.
+[00:25:08 -> 00:25:17]  O sea, tampoco, en el reforzo tenés la garantía que es el de mayor calidad.
+[00:25:17 -> 00:25:23]  De hecho, cuando usás un descuento, tampoco, digamos, es que favoreciendo las acciones
+[00:25:23 -> 00:25:29]  lo que me hizo el ruido fue que capaz que escuché mal, pero decía que en esos
+[00:25:29 -> 00:25:34]  ambientes donde no conocemos cuáles son las preferencias exactas de la gente
+[00:25:34 -> 00:25:40]  podemos llegar a equilibrio y este como para tener que asegurarlo.
+[00:25:40 -> 00:25:44]  En determinados casos, que no vamos a ver porque no lo vimos.
+[00:25:44 -> 00:25:52]  En el caso que sí, aunque sea esto, aunque son bastante limitados, pero hay casos en los cuales
+[00:25:52 -> 00:26:02]  esos algoritmos pueden converger a situaciones de equilíbrio.
+[00:26:02 -> 00:26:16]  Igual no quiero... está muy interna de la discusión, pero no quiero completamente...
+[00:26:16 -> 00:26:22]  O sea, descargados, diverger.
+[00:26:22 -> 00:26:26]  No, pero solo una cosa más que capaz que decíes.
+[00:26:26 -> 00:26:30]  O sea, muchos de estos problemas que son estudiados
+[00:26:30 -> 00:26:35]  hace mucho tiempo en teoría de juegos, hay algoritmos,
+[00:26:35 -> 00:26:40]  o sea, hay maneras de resolverlos pasando por
+[00:26:40 -> 00:26:42]  programación lineal.
+[00:26:42 -> 00:26:44]  Algunos sí, otros no.
+[00:26:44 -> 00:26:51]  todos escucharon, ahora saben lo que es resolver un sistema
+[00:26:51 -> 00:26:53]  lineal, por programación lineal simplex.
+[00:26:57 -> 00:27:08]  No es, este, el equilibrio de Nash no se puede.
+[00:27:08 -> 00:27:11]  Es un poco más complejo que eso.
+[00:27:14 -> 00:27:20]  No lo quiero volver, no sé si... El otro día había mayoritariamente gente de sistemas,
+[00:27:20 -> 00:27:25]  en una se escuchaba hablar de complejidad de algoritmos y todo lo demás.
+[00:27:25 -> 00:27:31]  Resolver el equilibrio en hash en general es un problema bastante duro, bastante difícil.
+[00:27:31 -> 00:27:41]  Entonces, pero no solamente por eso, digamos, sobre todo que la idea es ver algoritmos más
+[00:27:41 -> 00:27:50]  de aprendizaje y, además, de aprendizaje realmente como distribuido, por decir que
+[00:27:50 -> 00:27:56]  similares a los que, digamos, al mismo enfoque que vieron en lo que se ve en reinforcement
+[00:27:56 -> 00:28:02]  en agentes, es decir, una agente que interactúa y a partir de eso aprende una policy sin
+[00:28:02 -> 00:28:08]  saber mucho más del ambiente que lo que el ambiente le devuelve como observación. Pero
+[00:28:08 -> 00:28:13]  Bueno, pero para dar una mínima garantía de que eso anda bien
+[00:28:13 -> 00:28:16]  en una cantidad de casos en los cuales se puede demostrar,
+[00:28:16 -> 00:28:23]  la idea es, por eso, empezar a verlo, pues igual,
+[00:28:23 -> 00:28:25]  cuáles son los conceptos, qué es lo que realmente vamos
+[00:28:25 -> 00:28:30]  a aprender, si se puede aprender, etcétera.
+[00:28:30 -> 00:28:35]  Pero lo que vamos a hacer es vamos a poder,
+[00:28:35 -> 00:28:37]  Yo tenía... ¿Ves?
+[00:28:37 -> 00:28:39]  ¿Cinco y media?
+[00:28:40 -> 00:28:42]  Dado que...
+[00:28:42 -> 00:28:43]  O sea, voy a colchar.
+[00:28:43 -> 00:28:45]  Pues vamos hasta acá.
+[00:28:46 -> 00:28:48]  Y él.
+[00:28:48 -> 00:28:51]  Y vamos a poner dos problemas.
+[00:28:51 -> 00:28:53]  Para que...
+[00:28:53 -> 00:28:58]  Vamos a empezar con uno que quedó pendiente la vez pasada.
+[00:28:58 -> 00:29:00]  Este, de la discusión con...
+[00:29:00 -> 00:29:03]  Y ahí vamos a volver a repetir esto.
+[00:29:03 -> 00:29:10]  pero que quedó pendiente de la semana pasada, que cuando presentamos y discutimos el caso
+[00:29:10 -> 00:29:26]  de Steve y Sara, Carlos mencionó el dilema del prisionero. Entonces una cosa bastante
+[00:29:26 -> 00:29:33]  articular del teclado de juegos es que determinadas situaciones tienen nombres. Uno es el dilema
+[00:29:33 -> 00:29:42]  del prisionero que es muy conocido y hay otros.
+[00:29:42 -> 00:29:48]  El problema justamente es que lo que pasa es que a veces uno identifica el dilema del
+[00:29:48 -> 00:29:55]  prisionero con la situación de Stivisara. En realidad, por eso yo, si vimos el tema
+[00:29:55 -> 00:30:02]  de las preferencias y recompensas? No, como el dilema de presionero es un juego, o sea,
+[00:30:02 -> 00:30:07]  o de hecho una familia de juegos, o sea, quiere decir que ya las recompensas, las utilidades,
+[00:30:07 -> 00:30:16]  están dadas. Está bien. No es que cualquier marco de juego como el de Stevie Zara, lleva a
+[00:30:16 -> 00:30:19]  a un dilema de presionero.
+[00:30:19 -> 00:30:21]  Pero podemos agarrar el juego, o sea,
+[00:30:21 -> 00:30:26]  el marco de juego de Stevie Zara y asignarle prioridades,
+[00:30:26 -> 00:30:30]  es bueno, recompensas, bueno, prioridades o preferencias,
+[00:30:30 -> 00:30:34]  para transformarlo en un dilema de presionero.
+[00:30:40 -> 00:30:45]  ¿Qué es, en realidad, o qué tipo de,
+[00:30:45 -> 00:30:49]  No sé si todos escucharon el cuento de William Pryor,
+[00:30:49 -> 00:30:58]  pero vamos a escribirlo y después discutimos la historia
+[00:30:58 -> 00:31:01]  alrededor.
+[00:31:01 -> 00:31:05]  Y podemos usar como ejemplo el de Stevie Sarr.
+[00:31:05 -> 00:31:14]  En realidad, sí, es un juego de dos jugadores.
+[00:31:14 -> 00:31:15]  ¿Se ve?
+[00:31:15 -> 00:31:17]  ¿No te cae?
+[00:31:17 -> 00:31:18]  ¿No te cae?
+[00:31:18 -> 00:31:19]  ¿No te cae?
+[00:31:19 -> 00:31:20]  Sí, se ve.
+[00:31:20 -> 00:31:21]  ¿No te puede decir?
+[00:31:21 -> 00:31:35]  Vamos a suponer que puedan Alice y igual Isia para... vamos a poner... Isia y Beto.
+[00:31:35 -> 00:31:55]  ¿También Alicia tiene las acciones a1 y a2 y Beto tiene las acciones de 1 y de 2? ¿También?
+[00:31:55 -> 00:32:04]  Split-steel, split-steel. También le pueden ir si el razonar en abstracto es difícil,
+[00:32:04 -> 00:32:08]  Pero, bueno, para lo mejor es split-steel, split-steel.
+[00:32:08 -> 00:32:15]  Entonces, el sabor a split-split era 50-50.
+[00:32:15 -> 00:32:21]  Entonces, vamos a llamar a ese, ese es el resultado,
+[00:32:21 -> 00:32:23]  vamos a llamarlo uno-one.
+[00:32:23 -> 00:32:28]  Split-split, 50-50, vamos a ver, o de manera genética,
+[00:32:28 -> 00:32:32]  el resultado o uno-uno.
+[00:32:32 -> 00:32:34]  Esto era split-still.
+[00:32:34 -> 00:32:35]  ¿Cómo?
+[00:32:35 -> 00:32:37]  Se llamaba O1 o O2.
+[00:32:38 -> 00:32:41]  Para no cargar lo de significado particular.
+[00:32:41 -> 00:32:44]  Lo simplificamos pero lo hacemos de manera general.
+[00:32:45 -> 00:32:47]  O2-1.
+[00:32:47 -> 00:32:48]  Still-sli.
+[00:32:48 -> 00:32:51]  Y O2.
+[00:32:53 -> 00:32:55]  Still-still.
+[00:32:55 -> 00:32:56]  Ahora.
+[00:32:56 -> 00:33:13]  Si, ambos jugadores ordenan las prioridades de la siguiente manera.
+[00:33:13 -> 00:33:18]  Alicia hace como esto.
+[00:33:18 -> 00:33:33]  la más prioritaria es O2-1. O sea, la más preferida. ¿Está bien? Entonces vamos a
+[00:33:33 -> 00:33:45]  ponerle... Primero... como que el orden de preferencias de Alicia es así. Primero esta,
+[00:33:45 -> 00:34:00]  después Z, después Z y después Z. O21 mayor que O11, mayor que O12, mayor que O2.
+[00:34:00 -> 00:34:05]  Ya ahí está funcionando arriba del output y no arriba de la sección, ¿verdad? Ahí
+[00:34:05 -> 00:34:07]  está visualizando el output.
+[00:34:07 -> 00:34:12]  Sí, sí. Por eso. O sea, es el razón. ¿Qué pasa? O sea, ¿qué es lo que hay que
+[00:34:12 -> 00:34:21]  pero claro, el razonamiento de Alicia es, bueno, si juego a 1 y Beto juega a B1 va a salir esto,
+[00:34:21 -> 00:34:30]  va a ser por ejemplo 50-50. Pero si juego a 2 y Beto juega a B1 va a salir 100 para mí,
+[00:34:30 -> 00:34:36]  0 para mí. ¿Cuál de las dos prefiero? ¿Prefiero que salga 100-0 o prefiero que salga 50-50?
+[00:34:36 -> 00:34:41]  Entonces, si Alicia dice, prefiero que salga 100-0.
+[00:34:41 -> 00:34:42]  ¿Sí?
+[00:34:42 -> 00:34:43]  ¿Sí?
+[00:34:43 -> 00:34:48]  No, no, está bien.
+[00:34:48 -> 00:34:51]  No, no, no.
+[00:34:51 -> 00:34:54]  1, 2.
+[00:34:54 -> 00:34:57]  Entonces, prefiero que...
+[00:34:57 -> 00:34:59]  Ese es un poco el razonamiento.
+[00:34:59 -> 00:35:04]  Prefiero que salga 2-1, prefiero que salga still split.
+[00:35:04 -> 00:35:15]  o sea, mejor dicho, prefiero ganar 100 a ganar 50, 50, pero a su vez prefiero ganar 50, 50 a
+[00:35:15 -> 00:35:27]  quedarme con 0, pero prefiero que mi adversario se quede con 0 a que gane algo. Ese es el
+[00:35:27 -> 00:35:33]  razonamiento. Entonces es el tipo de razonamiento que puedo decir es avaro, egoísta, etc. Pero si
+[00:35:33 -> 00:35:41]  los dos son avaros y egoístas, entonces como que Beto ordena sus preferencias básicamente de
+[00:35:41 -> 00:35:49]  manera opuesta a las de Alicia. O sea, lo primero que va a preferir es 1 o 2, o sea, still.
+[00:35:49 -> 00:35:58]  o sea, es todo él hacer still y que ganaste todo él.
+[00:35:58 -> 00:36:04]  Después 50-50,
+[00:36:05 -> 00:36:14]  después este, y después,
+[00:36:14 -> 00:36:18]  O sea, prefiere que los dos no ganen nada a que lleve todo el otro.
+[00:36:18 -> 00:36:35]  Entonces, eso es, o1 o2 mayor que o1 o1 mayor que o2 o2 mayor que o2 o2.
+[00:36:35 -> 00:36:38]  Bien, está bien acá.
+[00:36:38 -> 00:36:42]  Entonces ahora le ponemos números, puede ser cualquiera.
+[00:36:42 -> 00:36:47]  pero con 4 números, vamos a ver 0, 1, 2 y 3, ¿está bien?
+[00:36:47 -> 00:36:54]  Entonces, a Alicia le pones 0, 1, 2 y 3.
+[00:36:56 -> 00:37:02]  Y a la editorial le pones 3, o sea, 9, ¿no? 11, supongo, bueno, 12.
+[00:37:02 -> 00:37:05]  Bueno, no importa, la cuestión es tener orro.
+[00:37:06 -> 00:37:10]  Entonces, ¿qué queda acá? Borro esto porque si no nos va a quedar...
+[00:37:10 -> 00:37:14]  No, vamos a ver esto. Vamos a ver acá afilado.
+[00:37:17 -> 00:37:20]  No sé si esto se ve en lo que está online.
+[00:37:22 -> 00:37:24]  Ah, bien. Se ve bien, sí.
+[00:37:25 -> 00:37:26]  Sí, se ve.
+[00:37:27 -> 00:37:30]  Gracias. Entonces, ¿qué hay lo que queda?
+[00:37:31 -> 00:37:33]  Alicia, ¿dónde va a poner un 3? ¿Aca?
+[00:37:35 -> 00:37:37]  ¿Va a poner un 2 acá?
+[00:37:40 -> 00:37:46]  voy a poner un 1 acá y voy a poner un 0 acá
+[00:37:50 -> 00:37:58]  esto va a poner un 3 acá, un 2 acá, un 1 acá y un 0 acá
+[00:38:02 -> 00:38:04]  ¿Cuál es el equilibrio?
+[00:38:06 -> 00:38:08]  ¡Uy! ¿Es un arroz?
+[00:38:10 -> 00:38:14]  3 1, 3 2, 1 0
+[00:38:14 -> 00:38:18]  ¿Cuál es la...? Alicia tiene una estrategia dominante
+[00:38:18 -> 00:38:24]  Sí, tiene una estrategia dominante que es a 2, porque 3 1 mayor que 2 0
+[00:38:24 -> 00:38:28]  Eso es dominante, 3 mayor que 2, 1 mayor que 0
+[00:38:28 -> 00:38:32]  Es una estrategia dominante
+[00:38:32 -> 00:38:34]  A 2
+[00:38:34 -> 00:38:38]  Es una estrategia dominante, o sea, Alicia va a jugar a 2
+[00:38:38 -> 00:38:46]  Y Beto, que va a jugar? Tres mayor que dos, uno mayor que cero. Beto también tiene la
+[00:38:46 -> 00:38:50]  estrategia dominante, que es B2.
+[00:38:50 -> 00:39:04]  Entonces, el resultado de eso es esto, este acá, uno a uno, que es el equilibrio de ello.
+[00:39:04 -> 00:39:06]  En este caso particular.
+[00:39:08 -> 00:39:10]  Es un equilibrio.
+[00:39:12 -> 00:39:16]  Pero si yo pongo cualquier otro número acá que mantenga este orden...
+[00:39:16 -> 00:39:18]  Pero ven, se me ha sentido diferente.
+[00:39:18 -> 00:39:23]  No entiendo por qué se te equivoca el hash y todo, si ahora elegimos...
+[00:39:24 -> 00:39:31]  No, este es el GIO A2. Bueno, podemos hacer el razonamiento.
+[00:39:31 -> 00:39:36]  Si Beto juega a B1.
+[00:39:36 -> 00:39:37]  ¿Bien?
+[00:39:37 -> 00:39:40]  Este... a ver.
+[00:39:40 -> 00:39:49]  Sí, pero este no es un equilibrio.
+[00:39:49 -> 00:39:52]  A ver.
+[00:39:52 -> 00:39:59]  Sí, Alicia juega a A1.
+[00:39:59 -> 00:40:06]  a ver, ¿cuál es la mejor respuesta de Beto?
+[00:40:06 -> 00:40:09]  1, 2, 2.
+[00:40:10 -> 00:40:14]  Y si Alicia juega a 2, ¿cuál es la mejor respuesta de Beto?
+[00:40:14 -> 00:40:16]  2, 2.
+[00:40:18 -> 00:40:21]  Y esto es simétrico, así que no nos da lo mismo.
+[00:40:21 -> 00:40:29]  Si Beto juega B1, ¿cuál es la mejor respuesta de Alicia?
+[00:40:29 -> 00:40:31]  Jugará a 2.
+[00:40:31 -> 00:40:35]  Y si Beto juega B2, ¿cuál es la mejor respuesta de Alicia?
+[00:40:35 -> 00:40:37]  Jugará a 2.
+[00:40:39 -> 00:40:43]  Tenía un equilibrio dominante y es un equilibrio de nacho.
+[00:40:43 -> 00:40:47]  Todo equilibrio dominante es un equilibrio de nacho.
+[00:40:47 -> 00:40:57]  puede ser equilibrado a la nacionalidad. Entonces, este es el dilema del prisionero.
+[00:40:57 -> 00:41:03]  Ahora le ponemos semántica si quieren a esto. El dilema del prisionero, como está como
+[00:41:03 -> 00:41:12]  el cuentito, es que A1 es no delatar, o sea, Alicia y Beto son dos prisioneros y A1 es
+[00:41:12 -> 00:41:19]  no delatar y A2 es delatar, porque les prometen que si delatan, van a tener una reducción de V.
+[00:41:19 -> 00:41:24]  Pero si ambos delatan, entonces van los dos a prisión.
+[00:41:24 -> 00:41:27]  Está bien, con una pena así aumentada.
+[00:41:27 -> 00:41:35]  Entonces, van a hacerle V y si no delatan, van a cuide.
+[00:41:35 -> 00:41:46]  Bueno, esos son los cuatro outcomes posibles. Acá van a juicio, acá va Beto preso, Acá
+[00:41:46 -> 00:41:52]  va Alicia presa, Acá van los... ahí ordenan sus preferencias. Pero estoy como diciendo,
+[00:41:52 -> 00:42:00]  prefieren ir los dos presos, pues vaya, solo el otro. Digo, solo, solo.
+[00:42:00 -> 00:42:08]  Lo mismo del de Split Steel, donde con esas preferencias, o si no, yo les di para leer
+[00:42:08 -> 00:42:19]  el bonano que explica esto también, es con tener a uno sería... Les ofrecen que si trabajan
+[00:42:19 -> 00:42:28]  a dos... el personal, el funcionario, les ofrecen que si trabajan más y aumentan su
+[00:42:28 -> 00:42:39]  productividad van a tener un bono. A uno es seguir trabajando normalmente, a dos es aumentar
+[00:42:39 -> 00:42:45]  el trabajo, pero bueno, no solamente está el bono, sino está el hecho de que al aumentar
+[00:42:45 -> 00:42:51]  el trabajo se pierde tiempo de estar con la familia. Entonces no solamente la plata que
+[00:42:51 -> 00:42:59]  juega ahí, sino también el hecho de que uno pierde el beneficio. Pero si lo 2 tiene ese razonamiento de
+[00:42:59 -> 00:43:06]  ser egoícha o avaro, va a terminar haciendo ordenar sus preferencias así y la cosa termina también con el 2.
+[00:43:06 -> 00:43:12]  Por eso que el Día de la Crescionadora es cualquier juego que tenga estas características.
+[00:43:12 -> 00:43:28]  Pero esto pone justamente en... esto es un equilibrio.
+[00:43:28 -> 00:43:32]  Pero, ¿qué pasa? No es la máxima utilidad en Funcac.
+[00:43:32 -> 00:43:37]  ¿Cuál es la máxima utilidad?
+[00:43:37 -> 00:43:51]  Esto es el equilibrio de Arash. Pero este, que está acá, en realidad cuantitativamente
+[00:43:51 -> 00:44:00]  es mejor, o sea, la utilidad de ambos agentes es mayor, y de margo no es un equilibrio.
+[00:44:00 -> 00:44:11]  Por eso el tema de que no vamos a hacer necesariamente se va a maximizar la utilidad con esta.
+[00:44:11 -> 00:44:16]  Está también el hecho de que si...
+[00:44:16 -> 00:44:33]  Si yo elijo, si Alicia elige esta, y si Beto sabe que Alicia va a elegir esta, entonces Alicia dice no, es un vacío regoso,
+[00:44:33 -> 00:44:35]  Ahí en la final está la misma monesta.
+[00:44:35 -> 00:44:37]  Y todo.
+[00:44:39 -> 00:44:41]  Esto que está acá no es un equilibrio,
+[00:44:41 -> 00:44:45]  pero tiene un nombre. Este es el óptimo de Pareto.
+[00:44:57 -> 00:44:59]  ¿Está bien? ¿Y qué particularidad tiene?
+[00:44:59 -> 00:45:01]  O sea que es un óptimo,
+[00:45:01 -> 00:45:06]  es un óptico, hay que decir que es mayor o igual de utilidad
+[00:45:06 -> 00:45:09]  en todos, para todos los ascendes
+[00:45:09 -> 00:45:11]  ¿bien?
+[00:45:11 -> 00:45:13]  perdón
+[00:45:13 -> 00:45:15]  para
+[00:45:15 -> 00:45:17]  eh
+[00:45:17 -> 00:45:19]  para
+[00:45:19 -> 00:45:23]  nosotros, para al menos, este mayor que este, si, este mayor que este
+[00:45:23 -> 00:45:27]  porque es una utilidad, este mayor que este
+[00:45:27 -> 00:45:29]  está bien
+[00:45:29 -> 00:45:43]  ¿Por qué? Si alguno de los jugadores cambia, si alguno de los agentes cambia, entonces
+[00:45:43 -> 00:45:53]  al menos uno tiene menor utilidad. Por ejemplo, acá Alicia podría pasar de jugar a uno a
+[00:45:53 -> 00:46:06]  a dos. Pero en ese caso, Beto perdería. Entonces, no... De hecho, es como si fuera una especie
+[00:46:06 -> 00:46:16]  de orden parcial. Todos son incomparables y este es mayor del web. Pero tiene esa idea.
+[00:46:16 -> 00:46:23]  un último aparento es que al menos uno de los jugadores,
+[00:46:23 -> 00:46:31]  o de los agentes, baja su utilidad si cambiamos el logo.
+[00:46:31 -> 00:46:37]  Entonces, lo que parece, no sé, contemplativo,
+[00:46:37 -> 00:46:40]  ¿por qué no se dice esto?
+[00:46:40 -> 00:46:45]  Bueno, es porque eso contrapone la utilidad o la racionalidad
+[00:46:45 -> 00:46:53]  individual es esta a la racionalidad colectiva. Tenemos que lograr un consenso, tenemos que
+[00:46:53 -> 00:46:59]  ponerlo de acuerdo en que esto es lo mejor y ninguno y todo el mundo que conoce a gente
+[00:46:59 -> 00:47:10]  respeta ese contrato. Porque si uno no respeta, esto se cambia y eventualmente aprovecha esa
+[00:47:10 -> 00:47:18]  información para su beneficio personal. Entonces, esto es un óptimo pero no es un
+[00:47:18 -> 00:47:30]  equilibrío. Entonces, si esto es una solución al problema, pero esto no es una solución
+[00:47:30 -> 00:47:39]  estable al problema porque cualquiera que cambie me cambia el resultado.
+[00:47:40 -> 00:47:45]  Bien, gracias.
+[00:47:45 -> 00:47:48]  Entonces,
+[00:47:49 -> 00:47:56]  con esto, tenemos una pausa, podemos volver al otro y
+[00:47:56 -> 00:48:03]  nos quedaba otro tema para resolver, que es...
+[00:48:03 -> 00:48:08]  había esencialmente visto un problema que
+[00:48:08 -> 00:48:16]  puede haber más de una solución, puede haber más de un equilibrio de Nash puro.
+[00:48:16 -> 00:48:20]  ¿Vamos a otro ejemplo? Podemos ver otro.
+[00:48:20 -> 00:48:24]  Y puede no haber
+[00:48:24 -> 00:48:27]  equilibrio de Nash en estrategias funciones.
+[00:48:27 -> 00:48:30]  Entonces,
+[00:48:31 -> 00:48:37]  si eso fuera así y se hubiera quedado ahí Nash,
+[00:48:37 -> 00:48:41]  creo que hubiera recibido el premio Nobel o el premio de economía.
+[00:48:41 -> 00:48:48]  Entonces, ahora vamos a ver que sí existe siempre,
+[00:48:48 -> 00:48:57]  Si, vamos a hacer estrategias no deterministas, estrategias estocadas. Eso lo vemos después en la pausa.
+[00:48:57 -> 00:48:59]  Vamos.
+[00:48:59 -> 00:49:11]  Bien, paro la grabación para que nos vea, pero después recuerdenme, por las dudas, que las retome.
+[00:49:11 -> 00:49:15]  Bien.
+[00:49:18 -> 00:49:21]  Rueda vamos, entonces. Rueda vamos.
+[00:49:26 -> 00:49:32]  Y vamos a... Comparir en ahora sí voy a compartir un ratito.
+[00:49:38 -> 00:49:41]  Vamos a ver esto para optar online.
+[00:49:42 -> 00:49:44]  Teoría de juegos estrategias mixtas.
+[00:49:48 -> 00:49:53]  les tendría que dar esto, sistema multiaponte 4
+[00:50:03 -> 00:50:07]  vamos a hacer un poquito de vídeo positiva después pasamos al nuevo quizáno
+[00:50:07 -> 00:50:19]  Bueno, vamos primero a arrancar con un juego ahora, con un juego, o sea ya están dadas
+[00:50:19 -> 00:50:25]  las recompensas, vamos a hablar por un ratito de preferencia en la... ya están dadas las
+[00:50:25 -> 00:50:33]  recompensas. Está bien. Y también tiene un nombre,
+[00:50:33 -> 00:50:43]  se llama el juego de Matching Penis. La realidad que hace, de donde viene, de un juego que consiste
+[00:50:43 -> 00:50:56]  tirar o... no, mejor dicho no, para el bordo, el corrí. Consiste en elegir o cara o cerro.
+[00:50:56 -> 00:51:02]  Esto es sin tirar, o sea, cada jugador elige, tiene una moneda y elige. Tiene atrás y la
+[00:51:02 -> 00:51:08]  saca. Los dos jugadores hacen lo mismo.
+[00:51:08 -> 00:51:21]  Si la pieza coincide, los dos sacan cara, los dos sacan secos, Kade y Pais, gana el
+[00:51:21 -> 00:51:31]  jugador 1, si no gana el jugador 2. Y acá las preferencias están, o sea, se prefiere
+[00:51:31 -> 00:51:33]  se prefiere ganar a perder.
+[00:51:35 -> 00:51:37]  Se prefiere ganar a perder.
+[00:51:39 -> 00:51:41]  Bien, pero los valores podrían ser cualquiera,
+[00:51:41 -> 00:51:43]  digamos,
+[00:51:43 -> 00:51:45]  solo que se prefiere ganar a perder
+[00:51:45 -> 00:51:47]  y
+[00:51:47 -> 00:51:49]  esencialmente cualquiera de las dos situaciones
+[00:51:49 -> 00:51:52]  de ganar o cualquiera de las dos situaciones de perder
+[00:51:52 -> 00:51:54]  son igualmente preferidas,
+[00:51:54 -> 00:51:56]  también no hay diferencia.
+[00:51:57 -> 00:51:59]  Sobretodo lo único que necesitamos es dos valores,
+[00:51:59 -> 00:52:07]  valores, 1 mayor que 0, etc. No hay acá equilibrio de Nash. No hay nada, o sea, no
+[00:52:07 -> 00:52:13]  hay estrategias estrictamente dominantes, si lo hubiera, habría un equilibrio, no hay
+[00:52:13 -> 00:52:22]  dominadas, y tampoco hay equilibrio de Nash. Entonces bueno, en estrategias puras, o sea,
+[00:52:22 -> 00:52:28]  hay una acción, o un par de acciones, que sea de...
+[00:52:28 -> 00:52:32]  Si lo intentan hacer, se le ayuda a hacer así, o en algún sentido.
+[00:52:32 -> 00:52:38]  De cero paso a una, de este paso a acá, de este paso a esa, y así.
+[00:52:38 -> 00:52:44]  Bien, entonces, la astucia, si quieren, es pasar a estrategias mixtas.
+[00:52:44 -> 00:52:48]  O sea, decir a estrategias probabilísticas.
+[00:52:48 -> 00:52:55]  Intuitivamente, sin hacer ningún cálculo, más o menos.
+[00:52:55 -> 00:53:01]  Y si yo al principio lo spoilé y dije todo su juego de tirar una moneda, sale ese.
+[00:53:01 -> 00:53:05]  Ahí está. ¿Qué les daría?
+[00:53:08 -> 00:53:11]  O sea, podríamos pensar que tirar una moneda sería algo razonable.
+[00:53:11 -> 00:53:14]  razonable, así que lo mejor, si ustedes tuvieran que jugar
+[00:53:14 -> 00:53:18]  Machin Pennies, ¿qué harían?
+[00:53:20 -> 00:53:22]  ¿Sacarían siempre Head?
+[00:53:26 -> 00:53:29]  Porque si sacan siempre Head, ¿qué pasa?
+[00:53:29 -> 00:53:32]  O sea, supongan que están jugando conmigo y empiezan a sacar Head.
+[00:53:32 -> 00:53:35]  ¿Qué se supone? ¿Y ahí está? ¿Cómo no? O sea, ¿qué pasa?
+[00:53:35 -> 00:53:40]  Entonces, si vos estás sacando Head todo el tiempo, ¿yo qué voy a hacer?
+[00:53:40 -> 00:53:45]  Si supongo que ustedes son jugador uno, ustedes ganan cuando yo saco lo mismo que ustedes.
+[00:53:45 -> 00:53:50]  Entonces si yo veo que están sacando siempre head,secondes así, modo queились me le
+[00:53:50 -> 00:53:54]  unusual razón para sacar Tail, ¿OBvio que están sacando?
+[00:53:54 -> 00:53:59]  Si esto no está bien, empiezo a ganarle yo, entonces ustedes ven que yo empiezo a sacar
+[00:53:59 -> 00:54:02]  Tail".
+[00:54:06 -> 00:54:09]  Y al final, si acuérdate o nosоворían SEÑORGB, no sé que está el final,
+[00:54:09 -> 00:54:13]  piensa que hay una situación de ahí como de equilibrio, es que al final usted
+[00:54:13 -> 00:54:18]  cuenta cuántas veces jugaron Hell y cuántas veces jugaron Tail.
+[00:54:18 -> 00:54:24]  Así bueno, 50-50, si no juego eso pierdo porque cuando juego otra cosa
+[00:54:24 -> 00:54:30]  el otro se va a dar cuenta y me va a jugar más para ganar, está bien, entonces
+[00:54:30 -> 00:54:36]  pero para eso tengo que jugar muchas veces y tengo que poder comparar las
+[00:54:36 -> 00:54:43]  utilidades. Por eso es que las utilidades no pueden ser cualquier cosa, tienen que poder ser
+[00:54:43 -> 00:54:54]  manipuladas porque cuando hicimos ese razonamiento medio así en el aire, dijimos que es como si
+[00:54:54 -> 00:54:59]  fuera una especie de variable aleatoria, gel, pues es decir, tirar una acción, eso es como una variable
+[00:54:59 -> 00:55:07]  y la utilidad también, entonces su valor va a depender de la distribución de probabilidad.
+[00:55:07 -> 00:55:23]  El juego de base es cada jugador tiene una moneda, también cara seca o jepter, entonces simultáneamente
+[00:55:23 -> 00:55:29]  la sacamos. Pero tiras la monedas. No, no, simultáneamente elegimos un valor.
+[00:55:29 -> 00:55:33]  Yo piso primero y el salto está... No, simultáneamente...
+[00:55:33 -> 00:55:35]  ¿Conocen piedra, papel, tijera? Sí.
+[00:55:35 -> 00:55:38]  Piedra, papel, tijera, pero de dos en lugar de tres.
+[00:55:38 -> 00:55:41]  O sea, piedra, papel, tijera es una variante de...
+[00:55:41 -> 00:55:43]  Yo piso como la recu, yo elijo lo que saco.
+[00:55:43 -> 00:55:47]  Vos elegís lo que sacas y yo también, pero los dos sacamos a la vez.
+[00:55:47 -> 00:55:56]  también si salen las dos iguales ganamos por uno. No, no, a cada uno o dos no es un orden, es simplemente...
+[00:55:58 -> 00:56:01]  o bien si sale de los dos Gs o de los dos Gs, y si sale distinto, gano yo.
+[00:56:07 -> 00:56:14]  Lo que decía es que si lo miramos así en estrategias puras cada vez, o sea, no tiene solución, no tiene un equilibrio en nada.
+[00:56:14 -> 00:56:26]  Entonces, es que bueno, pasa si lo jugamos varias veces y vemos, se les digo, ¿qué harían?
+[00:56:26 -> 00:56:32]  Cuando ustedes juegan piedra o verdigera, capaz que es algo más conocido, ¿qué pasa
+[00:56:32 -> 00:56:35]  si lo juegan varias veces y sacan siempre lo mismo?
+[00:56:35 -> 00:56:44]  Bueno, que si juegan siempre con otro jugador, el jugador empieza a observar, el otro jugador
+[00:56:44 -> 00:56:50]  esto, no hay, o sea, es información completa porque sabe que están siendo racionales, lo que quieren
+[00:56:50 -> 00:56:58]  es ganar también bajo ese supuesto, están viendo que sacan siempre, no sé, piedra y entonces bueno,
+[00:56:58 -> 00:57:05]  empieza a sacar papel. Pero eso es un, o sea, contra el que estás jugando, el que siempre saca piedra
+[00:57:05 -> 00:57:11]  también es un jugador relativamente, no sé si llamarlo irracional, pero en realidad al no tener una
+[00:57:11 -> 00:57:13]  la estrategia óptima, que cómo hace la elección.
+[00:57:13 -> 00:57:18]  No, el racional es que va a ser en función de las habilidades que tiene.
+[00:57:18 -> 00:57:20]  Y...
+[00:57:20 -> 00:57:22]  Claro, perdón. No hay manera de ser racional.
+[00:57:22 -> 00:57:24]  No es que el jugador sea irracional,
+[00:57:24 -> 00:57:26]  sino que no hay óptimo, no?
+[00:57:26 -> 00:57:28]  O sea, no hay el ser óptimo,
+[00:57:28 -> 00:57:30]  en este caso, para ninguno de los jugadores.
+[00:57:30 -> 00:57:32]  No, o sea, que lo que hago es,
+[00:57:32 -> 00:57:34]  no hay equilibrio en Ash, pero tampoco hay
+[00:57:34 -> 00:57:40]  una estrategia óptima, si querés, pura.
+[00:57:40 -> 00:57:45]  porque si yo quisiera jugar siempre head, el otro se va a dar cuenta
+[00:57:45 -> 00:57:53]  y si vos sos jugador 1 y juegas siempre head, yo jugador 2 voy a observar que voy haciendo head, head, head
+[00:57:53 -> 00:57:59]  y voy a hacer tail, tail, tail, tail y me gana
+[00:57:59 -> 00:58:06]  pero de nuevo, así como yo hago ese arrazanamiento, vos haces el mismo arrazanamiento
+[00:58:06 -> 00:58:12]  momento en que yo juego Hell or Tail vas a empezar a reaccionar a eso y jugar otra cosa.
+[00:58:12 -> 00:58:19]  Pero hay una diferencia que vas a contar con sucesivos jugados, en el otro solamente teníamos
+[00:58:19 -> 00:58:20]  una sola jugada. Claro, claro.
+[00:58:20 -> 00:58:23]  Acabas con un pucho de jugada y contas con esa información.
+[00:58:23 -> 00:58:27]  Claro, en realidad es como que tenés, sí, y esa era la poca diferencia, es como una
+[00:58:27 -> 00:58:33]  jugada que se juega una sola vez, pero vos vas a jugar este juego, este mismo juego, un
+[00:58:33 -> 00:58:38]  un montón de veces. Pero realmente es el juego, o sea, no necesariamente es el mismo
+[00:58:38 -> 00:58:44]  jugador, pero es, o sea, en términos abstractos, es el mismo jugador porque tiene la misma
+[00:58:44 -> 00:58:46]  matriz. ¿Tá?
+[00:58:46 -> 00:58:55]  Este, ¿cómo resolves eso? O sea, si yo quiero resolver esto, ¿qué es la estrategia óptima?
+[00:58:55 -> 00:59:00]  ¿Un jugador debería jugar o una gente, qué es lo que una gente debería hacer?
+[00:59:00 -> 00:59:06]  porque algo tiene que hacer, o tiene que elegir Head o tiene que elegir Tail, algo tiene que hacer
+[00:59:06 -> 00:59:08]  está bien?
+[00:59:08 -> 00:59:10]  eh... está bien?
+[00:59:10 -> 00:59:12]  entonces
+[00:59:12 -> 00:59:16]  ambos tendrían que jugar 50-50 siempre
+[00:59:16 -> 00:59:20]  porque si hay una predominancia el otro va a doler una detallación
+[00:59:20 -> 00:59:23]  ese es el razonamiento intuitivo que hacen
+[00:59:23 -> 00:59:31]  que hacer. Vamos a decir que ese razonamiento lleva a un equilibrio de Nash. Y ese va a
+[00:59:31 -> 00:59:36]  ser el equilibrio de Nash. Pero para eso tenemos que hacer porque no definimos, o sea, tenemos
+[00:59:36 -> 00:59:41]  que dar la teoría porque no definimos equilibrio de Nash sobre estrategias probabilísticas,
+[00:59:41 -> 00:59:45]  solo definimos sobre estrategias públicas. Entonces vamos a hacer el mismo razonamiento
+[00:59:45 -> 00:59:51]  y vamos a definir lo que es la mejor respuesta pero en términos de estrategias probabilísticas.
+[00:59:51 -> 01:00:03]  Esta es como que la última definición, después vamos a empezar con los algoritmos de aprendizaje
+[01:00:03 -> 01:00:10]  que nos van a permitir descubrir si se puede estas, esto seguir.
+[01:00:10 -> 01:00:15]  Pero lo que tenemos que tratar de entender es qué es lo que van a hacer esos algoritmos.
+[01:00:15 -> 01:00:21]  es de nuevo comparado a una gente, el hecho de que lo que estamos buscando es
+[01:00:21 -> 01:00:25]  maxi-assamble. Acá va a haber otra cosa, porque uno va a hacer una cosa y el otro va a hacer otra.
+[01:00:27 -> 01:00:35]  Puedo cambiar mi estrategia porque veo que el otro gente está haciendo otra cosa.
+[01:00:37 -> 01:00:44]  Esta es una definición de simplemente el espacio de distribuciones en el mundo.
+[01:00:44 -> 01:00:51]  también pi cuárense, cuárense la policy, pero ahora digo la policy de agente P, que es una función
+[01:00:51 -> 01:01:02]  del espacio de acciones de agente P a 0,1 y que es sumado. Bueno, acá está lo que les decía,
+[01:01:02 -> 01:01:12]  es que una estrategia pura es un caso particular donde una de esas acciones tiene toda la densidad
+[01:01:12 -> 01:01:15]  digamos, acumulada, una y toda la demás valense.
+[01:01:15 -> 01:01:17]  Bien.
+[01:01:19 -> 01:01:23]  Bien, y entonces, una...
+[01:01:25 -> 01:01:30]  ...como se llama, policy conjunta, es un vector de policies.
+[01:01:33 -> 01:01:38]  O sea, eso tiene dimensión de cantidad de agentes por cantidad de acciones.
+[01:01:38 -> 01:01:39]  De cada agente.
+[01:01:39 -> 01:01:49]  del orden de tamaño de A, si es todo quien la mire.
+[01:01:51 -> 01:02:01]  El tema del soporte, no sé si lo conocías, solo recordar que son las acciones que tienen probabilidad,
+[01:02:01 -> 01:02:12]  este... ¿cómo se llama? No Nula. Bien, ahora, tengo que poder operar, entonces ya
+[01:02:12 -> 01:02:20]  estos no van a ser números que solo me permiten ordenar, son ahora números regales, que tienen
+[01:02:20 -> 01:02:25]  este... se los llama carnales en el juego, pero bueno, son números regales.
+[01:02:25 -> 01:02:35]  Hay toda una parte que no vamos a ver que es de cómo que siempre puedo pasar de preferencias
+[01:02:35 -> 01:02:51]  a utilidades. En este contexto, no lo vamos a ver, la temática de nadie mucho querido,
+[01:02:51 -> 01:03:03]  Pero sepan que se puede y se puede llegar a algo que nos permite operar con esas utilidades.
+[01:03:03 -> 01:03:06]  Bien.
+[01:03:06 -> 01:03:09]  Entonces,
+[01:03:09 -> 01:03:26]  Por ejemplo, esto es un ejemplo particular, una estrategia conjunta particular, podría
+[01:03:26 -> 01:03:31]  ser, ahora piensen que ahora estamos no en cada agente, sino en el espacio conjunto.
+[01:03:31 -> 01:03:33]  Yo tengo una distribución, tengo que tener una distribución
+[01:03:33 -> 01:03:35]  en el espacio.
+[01:03:35 -> 01:03:47]  Entonces, que, por ejemplo, head-head podría salir,
+[01:03:47 -> 01:03:51]  o sea, jugarse un cuarto de las veces,
+[01:03:51 -> 01:03:56]  head-tail un cuarto de las veces, tail-head un cuarto de las
+[01:03:56 -> 01:03:58]  veces, podría ser otro.
+[01:03:58 -> 01:04:02]  Este es un caso particular.
+[01:04:02 -> 01:04:06]  Esencialmente quiere decir que, por ejemplo,
+[01:04:06 -> 01:04:15]  que Agente 1 juega GED la mitad de las veces y Agente 2 juega
+[01:04:15 -> 01:04:16]  GED también la mitad de las veces.
+[01:04:16 -> 01:04:20]  Un medio por un medio igual.
+[01:04:20 -> 01:04:23]  Y fuera otra obtienen otra matriz.
+[01:04:23 -> 01:04:27]  Y el GED es que de las distribuciones individuales se
+[01:04:27 -> 01:04:42]  puede ir a la distribución conjunta que es en realidad el valor de la distribución conjunta.
+[01:04:42 -> 01:04:50]  La acción A es el producto de las probabilidades de cada gente en su acción, el subvector
+[01:04:50 -> 01:05:06]  de acción. Entonces, una vez que yo hago eso, entonces, ahora... esto lo que hicieron
+[01:05:06 -> 01:05:11]  en agentes, pero con un jugador acá, o sea, con un agente con muchos, tengo que definir
+[01:05:11 -> 01:05:24]  el valor de una policía para un jugador. Antes, cuando los juegos de las estrategias
+[01:05:24 -> 01:05:30]  puras no nos preguntábamos porque era simplemente los que obteníamos como recompensa de la acción
+[01:05:30 -> 01:05:37]  que íbamos a hacer. Era, por ejemplo, la matriz que hicimos, era 2 para Alicia si se
+[01:05:37 -> 01:05:50]  jugaba a 1 a 1, perdona, a 1 v 1. Ahora, como los jugadores juegan una distribución
+[01:05:50 -> 01:06:03]  de promedio, no crean una esperanza. Entonces, para el jugador P, la distribución conjunta,
+[01:06:03 -> 01:06:07]  tienen que cuenta en lo que juegan los otros jugadores
+[01:06:08 -> 01:06:14]  es la recompensa que me da jugar a
+[01:06:16 -> 01:06:22]  si yo soy P, donde A obviamente tiene la exclusión de Pitchless
+[01:06:22 -> 01:06:37]  Entonces, en este caso, por ejemplo, si la distribución de probabilidad de cada uno
+[01:06:37 -> 01:06:43]  de los dos agentes, está lo mismo, el otro puede jugar distinto, pero acá ambos tienen
+[01:06:43 -> 01:06:55]  esta o P es cualquiera, digamos, en realidad es 1, pero acá es para cualquiera, y bueno,
+[01:06:55 -> 01:07:02]  es la probabilidad de que salga Head-Head un cuarto por la utilidad de Head-Head.
+[01:07:02 -> 01:07:10]  Lo que tenemos que hacer es multiplicar esta más aquí por esta, de acuerdo, o sea, los
+[01:07:10 -> 01:07:15]  rojos por esto o los azules por esto, dependiendo cuál es el jugador de interés. Si es rojo,
+[01:07:15 -> 01:07:23]  es 1 cuarto por 1 más 1 cuarto por 0 más 1 cuarto por 0 más 1 cuarto por 1. Y en el
+[01:07:23 -> 01:07:28]  otro caso va a ser 1 cuarto por 0 más 1 cuarto por 1 más 1 cuarto por 1 más 1 cuarto por
+[01:07:28 -> 01:07:32]  0. Al final va a dar lo mismo, me lo hago caso porque simplemente es ordenado y me va
+[01:07:32 -> 01:07:41]  dar un mil y medio. O sea, puedo definir que quiere decir el valor de una pólice.
+[01:07:43 -> 01:07:54]  Es la esperanza de la dispercusión que está definida por las pólices conjuntas.
+[01:07:54 -> 01:07:58]  ¿No? ¿Tienes? ¿Todo bien?
+[01:07:58 -> 01:08:09]  Bien, entonces, ya con esto me alcanzo porque tenemos ahora conceptos de utilidad y puedo
+[01:08:09 -> 01:08:13]  saber, entonces, ya, más lo puedo ordenar, como puedo hacer cualquier cosa, puedo multiplicarlo
+[01:08:13 -> 01:08:17]  o lo puedo ordenar, pero lo puedo ordenar. Entonces, puedo definir, tengo la misma, la
+[01:08:17 -> 01:08:23]  definición equivalente de mejor respuesta. ¿Te acuerdas que la idea de Nash es decir,
+[01:08:23 -> 01:08:28]  ¿Cuál es la mejor respuesta que tiene un jugador o una gente
+[01:08:28 -> 01:08:31]  frente a lo que juegan o lo que hacen los demás?
+[01:08:33 -> 01:08:37]  Antes lo que hacían los demás era una acción pura, una acción.
+[01:08:37 -> 01:08:40]  Entonces simplemente que era la acción que es la mejor respuesta
+[01:08:41 -> 01:08:44]  a cualquiera de las acciones que jueguen.
+[01:08:44 -> 01:08:46]  Y bueno, acá es lo mismo, pero lo que tengo que tener básicamente
+[01:08:46 -> 01:08:49]  tengo que ver cuál es la acción que...
+[01:08:49 -> 01:08:52]  O sea, ¿cuál es, perdón, la distribución de probabilidades?
+[01:08:52 -> 01:08:56]  de cuál es la distribución de probabilidad que maximiza el valor.
+[01:08:57 -> 01:08:59]  Y esto, ¿qué quiere decir qué?
+[01:09:00 -> 01:09:04]  Agente P juega esta distribución, P primate,
+[01:09:04 -> 01:09:06]  y todo lo demás no.
+[01:09:06 -> 01:09:09]  O sea, todo lo demás juega en algo fijo que es conocido.
+[01:09:10 -> 01:09:14]  O sea, ¿cuál es la mejor respuesta a P y menos P?
+[01:09:16 -> 01:09:19]  Lo que juegan los demás lo asumo fijo.
+[01:09:22 -> 01:09:25]  Obviamente acá no lo conozco, pero acá está fijo.
+[01:09:25 -> 01:09:31]  Lo que acá tendré que hacer es tratar de ver cuál es la mejor
+[01:09:31 -> 01:09:35]  respuesta que tiene frente a lo que jugamos.
+[01:09:35 -> 01:09:38]  La dificultad ahora es mayor, porque antes era una acción,
+[01:09:38 -> 01:09:42]  cuando miraba cuál era, le ponía una liñita abajo,
+[01:09:42 -> 01:09:47]  ya estaba, pero ahora tengo que encontrar
+[01:09:47 -> 01:09:56]  una distribución de probabilidad que sea la mejor respuesta a la distribución de probabilidad
+[01:09:57 -> 01:10:06]  conjunta que todos los otros. Pero bueno, pues se entiende la idea. Lo que necesitamos ver es que
+[01:10:06 -> 01:10:09]  es una mejor respuesta ahora es una distribución de probabilidad.
+[01:10:09 -> 01:10:18]  Bien. Entonces, bueno, y esto es simplemente la versión conjuntista. Bueno, puede haber
+[01:10:18 -> 01:10:28]  más de una, como puede haber más de una mejor respuesta, entonces tenemos el conjunto
+[01:10:28 -> 01:10:38]  de las mejores respuestas. Por ejemplo, vamos a ver, si vamos a este ejemplo, ¿no? O bien
+[01:10:38 -> 01:10:46]  ser esta instrucción de probabilidad. Y ustedes y yo les digo, bueno, y este razonamiento
+[01:10:46 -> 01:10:56]  es el que vamos a hacer. Ustedes saben de alguno, porque, no sé, yo les voy a dar un
+[01:10:56 -> 01:11:04]  papelito y este, que él iba a jugar sin pretale. Y ustedes saben eso. Entonces, ¿cuál es su
+[01:11:04 -> 01:11:09]  mejor respuesta a que yo juegue siempre?
+[01:11:10 -> 01:11:14]  si ustedes son jugador un y yo jugador otro, perdón
+[01:11:14 -> 01:11:20]  cuando ganan ustedes? si yo juego que dije Staley, yo juego acá entonces cuál es su mejor
+[01:11:20 -> 01:11:22]  respuesta?
+[01:11:22 -> 01:11:24]  ¿eh? cuartel
+[01:11:24 -> 01:11:26]  ¿está bien?
+[01:11:26 -> 01:11:28]  o sea esa es la mejor respuesta
+[01:11:28 -> 01:11:30]  ¿eh?
+[01:11:30 -> 01:11:32]  si
+[01:11:32 -> 01:11:34]  yo juego
+[01:11:34 -> 01:11:36]  un medio, un medio
+[01:11:36 -> 01:11:38]  ¿cuál es su mejor respuesta?
+[01:11:40 -> 01:11:42]  o sea si juego la mitad de las veces
+[01:11:42 -> 01:11:44]  este y la mitad de las veces el que
+[01:11:44 -> 01:11:46]  medio medio
+[01:11:46 -> 01:11:48]  medio medio
+[01:11:48 -> 01:11:50]  no bueno medio medio
+[01:11:50 -> 01:11:52]  El tema es que es un medio y medio.
+[01:11:52 -> 01:11:56]  Cruzado, no sabes, estás bien.
+[01:11:56 -> 01:11:59]  Idealmente, cuando yo juego a Tait, no vas a jugar.
+[01:11:59 -> 01:12:02]  No, pero no sabes cuando yo voy a jugar.
+[01:12:02 -> 01:12:05]  Pero de nuevo, si yo la mitad de las veces juego a Tait,
+[01:12:05 -> 01:12:08]  la mitad de las veces juego a G, y esto lo jugamos infinitas veces,
+[01:12:08 -> 01:12:15]  vamos a tener que...
+[01:12:15 -> 01:12:18]  La mejor respuesta es jugar lo mismo.
+[01:12:18 -> 01:12:30]  Pero un poco el razonamiento es por eso, porque si ustedes juegan otra cosa, no van a maximizar
+[01:12:30 -> 01:12:38]  y yo puedo cambiar estrategias. Esa es la dificultad un poco de todo, porque hay que
+[01:12:38 -> 01:12:44]  hacer un razonamiento, como si algo fuera a no variar, y sin embargo puede, porque la
+[01:12:44 -> 01:12:47]  la gente puede cambiar su estrategia.
+[01:12:47 -> 01:12:51]  Como que todo este razonamiento es estacionario.
+[01:12:51 -> 01:12:55]  Esa gente no va a cambiar sus estrategias.
+[01:12:59 -> 01:13:03]  Pero si lo pensamos como algo diálogo que va a que un
+[01:13:03 -> 01:13:08]  jugador va aprendiendo, entonces esa gente que va aprendiendo
+[01:13:08 -> 01:13:17]  van cambiando su estrategia. En realidad van, como todo el tiempo, jugando no una estrategia
+[01:13:17 -> 01:13:21]  estacionaria, sino una que no, que cambia con el tiempo.
+[01:13:21 -> 01:13:26]  Anfara, eso ya... eso para que... anticipado lo que vamos a ver la semana que viene, que
+[01:13:26 -> 01:13:34]  son los algoritmos de la presa. Y bueno, el concepto de Kiriunas es el mismo que de antes.
+[01:13:34 -> 01:13:39]  decir todo el mundo juega una best response a todos los demás.
+[01:13:39 -> 01:13:46]  O sea, si una pi, ahora una estrategia conjunta pi, es un equilibrio de Nash,
+[01:13:46 -> 01:13:55]  si agarran lo que juega cada agente, pi, y eso está en el conjunto de la best response a lo que
+[01:13:55 -> 01:13:58]  juegan los otros de pi.
+[01:13:58 -> 01:14:06]  Entonces, si eso se cumple, bueno, es una vez de respons. Si está la misma lógica
+[01:14:06 -> 01:14:13]  de antes, que es lo que yo intento decir, ¿con qué pasa si cambio? Que si cambio,
+[01:14:13 -> 01:14:17]  entonces el oro también va a cambiar y no vamos a estar en un diferente equilibrio.
+[01:14:17 -> 01:14:22]  Y si el otro cambia, bueno, yo también voy a cambiar.
+[01:14:22 -> 01:14:27]  Bien.
+[01:14:27 -> 01:14:40]  En el caso de Matching Pennies, un medio y un medio es un equilibrio de nacho.
+[01:14:40 -> 01:14:42]  La pregunta.
+[01:14:42 -> 01:14:46]  Acá nos da utilidad un medio cada uno.
+[01:14:46 -> 01:14:49]  Un medio a un medio era esto.
+[01:14:49 -> 01:14:52]  Y nos da utilidad un medio a cada uno.
+[01:14:52 -> 01:14:58]  ¿Qué diferencia hay entre este equilibrio de Nash y el primero que vimos?
+[01:14:58 -> 01:15:06]  Que vimos que era un par de coordenadas estáticos y acá es un bambaleando.
+[01:15:06 -> 01:15:08]  Bueno, buena pregunta.
+[01:15:08 -> 01:15:20]  Puede haber equilibrios de Nash también en estrategias put.
+[01:15:20 -> 01:15:27]  O sea, podría haber y además puede haber en estrategias mixtas.
+[01:15:27 -> 01:15:33]  O sea, una estrategia mixta como esta de una distribución de proballán
+[01:15:33 -> 01:15:36]  no excluye el hecho de que, o sea, incluye a las puras,
+[01:15:36 -> 01:15:39]  porque eventualmente la solución es una estrategia punta.
+[01:15:44 -> 01:15:47]  Lo que hace es que te dan más soluciones.
+[01:15:53 -> 01:15:57]  No sé si respondí a tu pregunta o era...
+[01:15:57 -> 01:16:01]  Sí, y son puntos que una incluye la otra.
+[01:16:01 -> 01:16:02]  Claro.
+[01:16:02 -> 01:16:06]  O sea, puede ser que no haya, como en este caso,
+[01:16:06 -> 01:16:13]  puede ser que no haya equilibrios en estrategias públicas.
+[01:16:14 -> 01:16:15]  Equilibrios.
+[01:16:16 -> 01:16:18]  Es este caso, ¿no?
+[01:16:19 -> 01:16:22]  Acá no hay un equilibrio en estrategias públicas.
+[01:16:22 -> 01:16:25]  El equilibrio se va a dar en las estrategias mixtas.
+[01:16:29 -> 01:16:31]  Pero a veces puede haber dos.
+[01:16:31 -> 01:16:34]  puede haber equilibrios en esta... y vamos a un ejemplo,
+[01:16:34 -> 01:16:37]  puede haber equilibrios en estrategias puras y equilibrios en estrategias mixtas.
+[01:16:37 -> 01:16:39]  O sea, en policies...
+[01:16:39 -> 01:16:40]  Eh...
+[01:16:40 -> 01:16:41]  Eh...
+[01:16:41 -> 01:16:42]  ¿Está?
+[01:16:44 -> 01:16:45]  Eh...
+[01:16:49 -> 01:16:50]  Bien.
+[01:16:50 -> 01:16:51]  Eh...
+[01:16:51 -> 01:16:52]  Eh...
+[01:16:52 -> 01:16:53]  Bien.
+[01:16:53 -> 01:16:54]  Está.
+[01:16:54 -> 01:16:55]  Entonces, bueno, no...
+[01:16:55 -> 01:16:56]  Perdón.
+[01:16:56 -> 01:16:57]  Eh...
+[01:16:57 -> 01:16:58]  Entonces.
+[01:16:58 -> 01:17:00]  Y este es el resultado de...
+[01:17:00 -> 01:17:08]  Bueno, digamos, de Nash, importante que es que cualquiera sea el juego finito, ¿no?
+[01:17:08 -> 01:17:23]  Tiene al menos un equilibrio en estrategias mixtas. O sea, eso quiere decir que esta,
+[01:17:23 -> 01:17:29]  y voy a introducir el término que se llama concepto de solución, podemos ver otro tipo de soluciones ahora,
+[01:17:29 -> 01:17:34]  es estable porque no es, a veces existe, a veces no, existe siempre.
+[01:17:35 -> 01:17:39]  En este tipo de juegos, está claro.
+[01:17:39 -> 01:17:46]  Juegos finitos, de cualquier dimensión, no importa con cualquier cantidad de jugadores,
+[01:17:46 -> 01:17:48]  pero siempre existen.
+[01:17:51 -> 01:17:53]  La cuestión es cómo se calcula.
+[01:17:53 -> 01:18:02]  No quiero, o sea, esto es lo que no vamos a explorar mucho, pero sí está bueno tener
+[01:18:02 -> 01:18:08]  una idea de cómo se hace, porque en realidad después lo que vamos a querer hacer es tratar
+[01:18:08 -> 01:18:16]  de aproximarlos y tratar de aprenderlos. No simplemente dame el juego y se lo tiro a un
+[01:18:16 -> 01:18:22]  solver de ecuaciones si puede y me lo resuelve. No, no, vamos a ver, justamente, porque en
+[01:18:22 -> 01:18:28]  casos reales toda la discusión de idiomas, muchas veces no se conocen, la recompensa de los otros, etcétera.
+[01:18:28 -> 01:18:36]  Pero, sin embargo, bueno, igual una gente tiene, o sea, imagínense que tienen que implementar un bot
+[01:18:36 -> 01:18:45]  para que juegue, no sé, a la red de derecho o como hay para que juegue a la bolsa.
+[01:18:45 -> 01:18:50]  Y va a haber un montón de bots jugando y con todos los agentes y todo, y ahí no conocen las red, las
+[01:18:50 -> 01:18:52]  utilidades que tienen.
+[01:18:52 -> 01:18:57]  Porque a veces es capaz que le están jugando a que baje.
+[01:18:57 -> 01:18:59]  No cosas como decir.
+[01:18:59 -> 01:19:00]  ¿Está bien?
+[01:19:00 -> 01:19:06]  Lo que me preocupa es si vas a encontrar un equilibrio de Nash si en realidad no te asegura mayor utilidad en todas las cosas.
+[01:19:06 -> 01:19:10]  No, pero te asegura la solución racional al problema.
+[01:19:10 -> 01:19:12]  O sea, si todos somos racionales, no vamos a jugar eso.
+[01:19:12 -> 01:19:15]  Porque esa es la idea.
+[01:19:15 -> 01:19:22]  Si todos vamos a hacer racionales, individuales y vamos a respetar nuestras preferencias,
+[01:19:22 -> 01:19:23]  vamos a jugar.
+[01:19:23 -> 01:19:24]  Si, pero si todos tenemos la misma preferencia.
+[01:19:24 -> 01:19:27]  No, no, no, no. No, no, no. ¿Por qué tener la misma preferencia?
+[01:19:27 -> 01:19:29]  Lo que sí es...
+[01:19:29 -> 01:19:31]  Tenemos que tenerla.
+[01:19:31 -> 01:19:35]  Lo quiero expresar como una solución conocida.
+[01:19:35 -> 01:19:37]  Todo esto es información perfecta.
+[01:19:37 -> 01:19:42]  La matriz, o sea, el cubo, está definida.
+[01:19:42 -> 01:19:53]  Si tenemos diferentes preferencias y equilibria de la A a C, la rotación es la misma.
+[01:19:53 -> 01:20:02]  Pero va a haber. En estrategia oscura eso no pasa, puede no haber, puede haber combinaciones
+[01:20:02 -> 01:20:09]  de utilidades como la que vimos que no tiene. Pero acá dice no importa, siempre va a haber.
+[01:20:09 -> 01:20:16]  también, lo que no quiere decir que sea fácil encontrarlo y todo lo demás, pero existe.
+[01:20:16 -> 01:20:26]  Y es de acuerdo a esta visión, que por eso es una visión, es un concepto, la solución
+[01:20:26 -> 01:20:33]  al problema. De hecho, vamos a ver, espero que me dé tiempo para verlo otra, sino igual
+[01:20:33 -> 01:20:36]  la parte práctica nos vemos la semana que viene.
+[01:20:36 -> 01:20:40]  Y acá en mi estrategia, en mis estrategias mixtas,
+[01:20:40 -> 01:20:43]  que le di a la Ipliogonash y ahí este...
+[01:20:43 -> 01:20:46]  ¿Pero es posible no? No, no, para jugar a esto.
+[01:20:46 -> 01:20:53]  En realidad no sé si existe, o sea, si no hay un teorema de existencia,
+[01:20:53 -> 01:20:57]  porque... Pero sería la...
+[01:20:57 -> 01:20:59]  O sea, si lo tengo que enunciar, ¿cómo sería?
+[01:20:59 -> 01:21:02]  Lo mismo, la distribución de probabilidad,
+[01:21:02 -> 01:21:08]  la política, la política conjunta, que es tal que cualquier
+[01:21:08 -> 01:21:14]  movimiento, cualquier cambio hace que la utilidad de alguno de los agentes va...
+[01:21:18 -> 01:21:24]  Si existe y lo puedo encontrar matemáticamente, no sé, pero esa pregunta no sé.
+[01:21:24 -> 01:21:28]  Te la debo la respuesta, pero bueno, la definición es la misma.
+[01:21:28 -> 01:21:38]  Lo que pasa es que si existe en cualquier juego, no sé, por...
+[01:21:38 -> 01:21:46]  Por acá estoy... probablemente existe y capaz que es más de uno.
+[01:21:46 -> 01:21:53]  Porque la diferencia es que, para esto es un óptimo.
+[01:21:53 -> 01:21:57]  O sea, yo agarro la función y lo que busco es un óptimo.
+[01:22:00 -> 01:22:03]  Si la función es continua, y todo lo más, que creo que lo pasa acá,
+[01:22:03 -> 01:22:05]  no debería haber problema, existe.
+[01:22:05 -> 01:22:08]  Esto no es un óptimo, es un punto fijo.
+[01:22:08 -> 01:22:10]  Es más difícil encontrar los puntos fijos de la función.
+[01:22:10 -> 01:22:14]  Y no necesariamente en cualquier espacio,
+[01:22:14 -> 01:22:17]  para cualquier función eso existe.
+[01:22:17 -> 01:22:21]  Lo que muestra a Nash es que existe ese punto fijo
+[01:22:21 -> 01:22:27]  en el conjunto de las estrategias mixtas definidas sobre tribofuegos.
+[01:22:27 -> 01:22:32]  Es como que más difícil el hecho de encontrar un punto fijón,
+[01:22:32 -> 01:22:34]  encontrar un óptimo en una función.
+[01:22:34 -> 01:22:41]  Aunque en realidad, bueno, al final para encontrar los puntos fijos se buscan
+[01:22:41 -> 01:22:47]  los ceros, f de x menos x igual a 0, deriván y todo.
+[01:22:47 -> 01:22:49]  este, pero bueno.
+[01:22:54 -> 01:23:08]  Pero bueno, eso te puedo ver, a ver que no sé si existe un teorema que diga existe y es este, y un algoritmo que lo encuentre.
+[01:23:08 -> 01:23:17]  lo que sí es el problema de existencia, no es solamente que existe, sino que además
+[01:23:17 -> 01:23:34]  se puede encontrar. No es fácil encontrarlo, pero lo que le dije es más complejo, que
+[01:23:34 -> 01:23:43]  no se puede, digamos, resolver, o sea, no se puede encontrar por un simple planteo de resolver
+[01:23:43 -> 01:23:59]  una desigualdad lineal. Y ahora vamos a ver por qué eso es importante. Capaz que... No,
+[01:23:59 -> 01:24:03]  que tendría que dar, sí, para entender eso tenemos que hacer algunos triplicos.
+[01:24:03 -> 01:24:15]  Lo que vamos a hacer porque es más simple, o sea que el teorema es el de Nash, es general,
+[01:24:15 -> 01:24:22]  pero vamos a hacer algo más simple, que son los juegos que se llaman de suma cero.
+[01:24:22 -> 01:24:26]  Juego de suma 0 son en los que la utilidad de uno es igual a menos la utilidad del otro.
+[01:24:28 -> 01:24:36]  Es por... o sea, podemos transformar si quieren el de Macho in Penis en 1 menos 1 en lugar de 1 0
+[01:24:38 -> 01:24:45]  para es decir, bueno, que si gano, gano 1 y si pierdo, pierdo 1.
+[01:24:45 -> 01:24:54]  Pueden pensar que ese 1 es una apuesta que se hace para jugar pero es lo mismo.
+[01:24:54 -> 01:24:57]  Eso no cambia.
+[01:24:57 -> 01:25:04]  De hecho no van a cambiar su equilibrio en Ash para seguir siendo un 1.5.
+[01:25:04 -> 01:25:09]  Pero es más fácil manejarlo.
+[01:25:09 -> 01:25:15]  Y hacer una cuentita en este ejemplo para encontrarlo.
+[01:25:15 -> 01:25:17]  ¿Va bien?
+[01:25:17 -> 01:25:20]  Entonces, la particularidad que tienen estos juegos de suma 0
+[01:25:20 -> 01:25:23]  es que si para cada acción conjunta,
+[01:25:23 -> 01:25:25]  nosotros siempre tenemos versiones conjuntas,
+[01:25:25 -> 01:25:30]  la recompensa para jugador 1 es igual a menos la recompensa del
+[01:25:30 -> 01:25:35]  jugador 2, es un juego de suma 0.
+[01:25:35 -> 01:25:39]  Y de dos jugadores, ¿sabes?
+[01:25:39 -> 01:25:42]  Si no, hay que generalizarlo así.
+[01:25:42 -> 01:25:43]  De dos agentes.
+[01:25:43 -> 01:25:50]  te puedo mover de L hasta L. Y bueno, si yo tengo dos agentes, el valor de 1 es menos el valor de L.
+[01:25:50 -> 01:25:58]  Eso es una cuenta básica. Entonces, ¿por qué esto es más simple de resolver?
+[01:25:58 -> 01:26:07]  Porque solo me tengo que ocupar de 1. El otro es la C. Si uno tiene X, el otro va a tener menos X, su utilidad.
+[01:26:07 -> 01:26:08]  Y ya está.
+[01:26:08 -> 01:26:09]  Entonces, más simple.
+[01:26:12 -> 01:26:16]  Y se resuelve para lo mismo.
+[01:26:16 -> 01:26:17]  ¿Entá?
+[01:26:22 -> 01:26:24]  Bien.
+[01:26:24 -> 01:26:28]  No le dé importancia a esa cuenta.
+[01:26:28 -> 01:26:31]  Piénselo de esta manera.
+[01:26:31 -> 01:26:36]  Supongamos ahora que para cambiar,
+[01:26:36 -> 01:26:41]  Agente quien 2 no juega, o sea, no tiene como distribución un
+[01:26:41 -> 01:26:43]  medio, un medio.
+[01:26:43 -> 01:26:47]  Tiene un tercio, dos tercios.
+[01:26:47 -> 01:26:48]  ¿Está?
+[01:26:52 -> 01:26:55]  Entonces, la pregunta que nos hacemos es, bueno,
+[01:26:55 -> 01:27:06]  si Agente 1 conociera la policía de Agente 2,
+[01:27:06 -> 01:27:11]  cuál es el razonamiento que haría. Podría saber cuál es su utilidad
+[01:27:11 -> 01:27:15]  y por qué me sirve saber su utilidad, porque a partir de la utilidad yo voy a poder saber
+[01:27:15 -> 01:27:17]  gente de uno va a poder saber qué es lo que les quiero jugar.
+[01:27:18 -> 01:27:18]  ¿Está bien?
+[01:27:20 -> 01:27:28]  Entonces, siguiendo el razonamiento de Nash, lo que hay que hacer, si yo conozco la distribución del otro
+[01:27:28 -> 01:27:32]  lo que tengo que buscar es cuál es mi best response.
+[01:27:32 -> 01:27:37]  Entonces este es el flan deo de la best response.
+[01:27:37 -> 01:27:43]  ¿Pasante de un flan deo?
+[01:27:43 -> 01:27:49]  Es, o sea, la...
+[01:27:49 -> 01:27:53]  con probabilidad, que en este caso es un tercio, es de 2.
+[01:27:53 -> 01:27:54]  Sí.
+[01:27:54 -> 01:27:56]  El jugador 1 va...
+[01:27:56 -> 01:27:58]  Bueno, acá está...
+[01:27:58 -> 01:28:18]  es más fácil lo hablar. Con probabilidad H2 va a obtener 1 multiplicado por 1 por H2,
+[01:28:18 -> 01:28:26]  por 1 por la probabilidad que juega h1 más, pero en este caso es menos,
+[01:28:26 -> 01:28:31]  1 por la probabilidad con que juega t.
+[01:28:33 -> 01:28:42]  O sea, es h2 por 1, h1 menos 1 porque es una multiplicación de...
+[01:28:42 -> 01:28:47]  No sé, no sé si tengo que hacerlo en el pizarrón, pero bueno.
+[01:28:47 -> 01:28:49]  No sé.
+[01:28:51 -> 01:29:06]  O sea, como que tienen H1, perdón, H1, T1, H2, T2 y H1, T1.
+[01:29:12 -> 01:29:21]  y acá tienen, esto era 1,1 y esto era menos 1, ¿no?
+[01:29:21 -> 01:29:28]  y esto es menos 1,1, 1,1
+[01:29:28 -> 01:29:34]  entonces si fijan h2 tienen que hacer, este lo conocen
+[01:29:34 -> 01:29:39]  por 1 por h1 menos 1 por d1
+[01:29:39 -> 01:29:42]  Pero t1 obviamente es 1 menos 81.
+[01:29:42 -> 01:29:45]  Y hace lo mismo para el otro.
+[01:29:45 -> 01:29:49]  Entonces, esos lo ahorramos, lo pueden hacer.
+[01:29:49 -> 01:29:51]  La cuestión es que, ¿qué fue lo que tenemos?
+[01:29:51 -> 01:29:59]  Es que si conocemos la distribución de probabilidad de agente 2,
+[01:29:59 -> 01:30:04]  la utilidad de agente 1 es una función lineal
+[01:30:04 -> 01:30:17]  de la probabilidad de 1 o 2, porque como esto es h1 y t1 es 1 menos h1. Entonces es lineal,
+[01:30:17 -> 01:30:24]  es lindo porque de ahí se dice, si conociera la distribución esta, conocida, o sea, le
+[01:30:24 -> 01:30:34]  puedo poner valores, lo que resulta es una relación lineal de 2 jugadores de una sola
+[01:30:34 -> 01:30:45]  de las acciones. Esto me dice es menos 2 tercios por h1 más 1 tercio. Entonces ahí sí puede
+[01:30:45 -> 01:30:49]  conocer la bare response, porque ahí se verá en realidad cuál va a ser. Y bueno, el valor
+[01:30:49 -> 01:30:53]  de hecho uno que me maximice esto, ese va a ser la respons.
+[01:30:53 -> 01:30:58]  Y esto es una línea recta. La podemos graficar.
+[01:30:58 -> 01:31:01]  Y esto es una línea recta.
+[01:31:01 -> 01:31:07]  Y bueno, es decreciente, tiene un coticiente negativo
+[01:31:07 -> 01:31:11]  y arranca un tránsito.
+[01:31:13 -> 01:31:16]  Cuando ache 1, huele 0.
+[01:31:19 -> 01:31:28]  y cuando h1 vale 1 esto vale menos un talcito.
+[01:31:28 -> 01:31:31]  ¿Dónde está la B response?
+[01:31:31 -> 01:31:37]  O sea, ¿cuál es el valor máximo de h1?
+[01:31:37 -> 01:31:43]  Bueno, eso que quiere decir que hay que jugar tail.
+[01:31:43 -> 01:31:45]  Y eso es lo que veníamos discutiendo.
+[01:31:45 -> 01:31:57]  Si ustedes ven que yo empiezo a jugar más de ese tail que head,
+[01:31:57 -> 01:31:59]  entonces me empiezan a jugar tail.
+[01:31:59 -> 01:32:01]  Y coincide con esto.
+[01:32:01 -> 01:32:07]  O sea, la best response a una distribución que está concentrada
+[01:32:07 -> 01:32:12]  en T2, en este juego, jugar tail.
+[01:32:15 -> 01:32:24]  Bueno, no, un ejemplo no es una prueba, pero siempre hay una estrategia, y esto es importante
+[01:32:24 -> 01:32:31]  porque lo vamos a usar, siempre hay una estrategia pura que es ver response a una mixta.
+[01:32:31 -> 01:32:41]  Este razonamiento que hicimos acá en una dimensión se cumple siempre. Y eso lo vamos
+[01:32:41 -> 01:32:46]  aprovechar porque tiene que ver con eso o sea cuando hicimos ese razonamiento si ustedes
+[01:32:46 -> 01:32:51]  si yo no si ustedes ven que yo juego tail muchas veces entonces empiezan a jugar tail
+[01:32:51 -> 01:32:58]  no se plantean con qué probabilidad van a jugar tail cuando jugamos no no no no no
+[01:32:58 -> 01:33:04]  cuando ustedes aprenden a jugar no es que aplican alguna probabilidad o lo que sea
+[01:33:04 -> 01:33:06]  Voy a jugar. ¿Me estás jugando, Tei?
+[01:33:06 -> 01:33:09]  ¿Estás jugando a Tei?
+[01:33:09 -> 01:33:09]  Comprobalía 1.
+[01:33:12 -> 01:33:16]  O sea, el tema de la distribución de probabilidad
+[01:33:16 -> 01:33:19]  no es necesariamente que cada gente va a jugar eso tirando
+[01:33:19 -> 01:33:24]  una moneda con esa distribución en la realidad.
+[01:33:24 -> 01:33:26]  ¿Para qué va a jugar ARMAX?
+[01:33:26 -> 01:33:27]  Esencialmente lo que me estás diciendo.
+[01:33:27 -> 01:33:29]  Bueno, sí, el otro está.
+[01:33:29 -> 01:33:32]  Porque si el otro está jugando una distribución de
+[01:33:32 -> 01:33:36]  probabilidad que está concentrada en un lado y bueno yo le voy a jugar la acción
+[01:33:36 -> 01:33:45]  pura que maximiza, que se haga la verrepons y yo sé que va a haber un.
+[01:33:45 -> 01:33:50]  De hecho tiene más utilidad que todo lo demás.
+[01:33:56 -> 01:34:00]  No quiero pasar, cuánto nos llevamos?
+[01:34:00 -> 01:34:07]  Bien, entonces eso, el resultado. O sea, cualquiera sea la estrategia apunta, siempre existe una
+[01:34:07 -> 01:34:20]  estrategia de terminista, que es una VR-Empor. Y el interés de esto, en nuestro caso, es
+[01:34:20 -> 01:34:28]  que nos va a servir como herramienta de aprendizaje, para aprender. La idea sería así. Una gente
+[01:34:28 -> 01:34:36]  que observa una determinada distribución de lo que está jugando el contrincante y
+[01:34:36 -> 01:34:54]  elige la pura que es la mejor. Y juega esa, juega esa, como si jugara sin pegar max.
+[01:34:54 -> 01:34:55]  Y cómo?
+[01:34:55 -> 01:34:59]  Estamos pensando que el otro es igualmente racional y si
+[01:34:59 -> 01:35:02]  aprende, entonces va a ser eventualmente lo mismo.
+[01:35:02 -> 01:35:08]  Y va a empezar a ver que el otro cambió en un momento la
+[01:35:08 -> 01:35:09]  distribución.
+[01:35:09 -> 01:35:11]  Se va a cambiar de concentración,
+[01:35:11 -> 01:35:17]  lo está en otro lado y va a cambiar su estrategia.
+[01:35:17 -> 01:35:21]  Este es el resultado importante que nos va a servir.
+[01:35:24 -> 01:35:31]  para después. Bien. Bueno, esto se lo de costa bueno que lo hagan. Ver cuál es el
+[01:35:31 -> 01:35:36]  equilibrado. Bueno, una pregunta que no podemos hacer. Sí, 0,1 es una bare response para
+[01:35:36 -> 01:35:40]  un tercio o dos tercios, pero un tercio o dos tercios, ¿es una bare response 0,1?
+[01:35:40 -> 01:35:45]  La respuesta es no, ¿no? Bueno, digamos que...
+[01:35:45 -> 01:35:48]  La respuesta es no, que tenemos que hacer, bueno, tendríamos que encontrar...
+[01:35:48 -> 01:35:55]  Pero el larga no debería tender cuando los dos...
+[01:35:55 -> 01:36:00]  O sea, acá todavía no vimos, yo me adelanté, todavía no vimos ningún algoritmo a aprendizar,
+[01:36:00 -> 01:36:04]  no sabemos cómo esto va a ser, acá es puntual, digo, esto es un equilibrium hash,
+[01:36:06 -> 01:36:13]  o esta debería ser no, está bien, por un poco la misma razón, porque lo que vamos a ver
+[01:36:13 -> 01:36:18]  si hacemos ese dibujito nos va a dar que el máximo está en uno 0.
+[01:36:18 -> 01:36:21]  O en 0,1, ¿cuál es el que teníamos que...
+[01:36:21 -> 01:36:26]  Sí, pi 1 ganaba cuando salían iguales.
+[01:36:26 -> 01:36:28]  Si salían iguales entonces está en 0,1.
+[01:36:28 -> 01:36:31]  Entonces les conviene pasar todo a 0,1, 0,1, 0,1.
+[01:36:31 -> 01:36:33]  Pero en el momento que...
+[01:36:33 -> 01:36:37]  Pero 0,1, 0,1 no es tampoco un equilibrio de nachos.
+[01:36:37 -> 01:36:39]  Está bien, porque eso ya lo vimos antes,
+[01:36:39 -> 01:36:42]  no hay equilibrio puro, porque entonces 0,1, 0,1...
+[01:36:42 -> 01:36:46]  0,1 no es una per response a 0,1.
+[01:36:51 -> 01:36:59]  Lo que sí se cumple en los juegos de suma 0 es que, bueno,
+[01:36:59 -> 01:37:03]  que si existe, en este caso,
+[01:37:03 -> 01:37:08]  este... bueno, ¿qué se llama? Ah, bueno, no.
+[01:37:08 -> 01:37:11]  Acá decía otra cosa, que
+[01:37:11 -> 01:37:18]  Un medio y medio sí es un equilibrio de Nash y que el valor es cero.
+[01:37:18 -> 01:37:22]  Si ponen cualquier otro valor, pero si ponen cualquier otra distribución de probabilidad,
+[01:37:22 -> 01:37:26]  les va a dar que el valor es negativo.
+[01:37:26 -> 01:37:31]  Igual, una pregunta. Si todo el tiempo están buscando determinístico,
+[01:37:31 -> 01:37:34]  o sea, naturalmente no tienen manera de llegar al Nash.
+[01:37:34 -> 01:37:39]  Van a... van a mover uno, el resto se va a mover, se va a mover uno...
+[01:37:39 -> 01:37:48]  Bueno, la idea es que, y por eso que decía lo de, o sea,
+[01:37:48 -> 01:37:57]  como se llama, es que puntualmente se va a jugar una
+[01:37:57 -> 01:37:59]  response determinista.
+[01:37:59 -> 01:38:07]  Pero si vos mirás en el tiempo lo que jugaron,
+[01:38:07 -> 01:38:15]  Como ves, acá se jugó, por ejemplo, tail, tail.
+[01:38:15 -> 01:38:17]  Acá se jugó tail, tail.
+[01:38:17 -> 01:38:20]  Acá se jugó tail, tail, etcétera.
+[01:38:23 -> 01:38:30]  Cada una de estas fue una vez responsa a la información que
+[01:38:30 -> 01:38:32]  tenía.
+[01:38:32 -> 01:38:37]  Y vos contás la cantidad de tails que jugaron.
+[01:38:37 -> 01:38:42]  el equilibrio va a estar en cuando los dos jugaron la mitad de las veces head y la mitad
+[01:38:42 -> 01:38:45]  aproximadamente la mitad de las veces head y la mitad de las veces head.
+[01:38:45 -> 01:38:50]  ¿Y hay alguna manera de detectar que estás en el lock-on?
+[01:38:50 -> 01:38:58]  No, de hecho ese vídeo lo saqué, pero lo pueden ver ahí, pueden ver que por ejemplo hay loops,
+[01:38:58 -> 01:39:03]  porque si vos ves el comportamiento puede ser que el comento sea cíclico,
+[01:39:03 -> 01:39:05]  También, por ejemplo, pueden ser...
+[01:39:05 -> 01:39:08]  E, C, T
+[01:39:08 -> 01:39:09]  Y...
+[01:39:09 -> 01:39:11]  Lo voy a hacer así, pero...
+[01:39:11 -> 01:39:13]  Piedra, cuando lo fijeras, funciona.
+[01:39:13 -> 01:39:17]  Claro, HellTale y después se hace...
+[01:39:17 -> 01:39:19]  TakeHand
+[01:39:19 -> 01:39:25]  Y bueno, empiezan a cambiar de manera cíclica
+[01:39:25 -> 01:39:29]  las acciones de tal manera que es la mitad de una y la mitad de otra.
+[01:39:29 -> 01:39:38]  y empiezan a jugar siempre lo mismo, o sea no siempre lo mismo, empiezan a jugar en un
+[01:39:38 -> 01:39:46]  ciclo, después de uno tiempo vuelven a repetir de nuevo lo mismo. Y en el infinito juegan
+[01:39:46 -> 01:39:53]  mitad y mitad. ¿Y de qué te das cuenta de que hay que salirse ahí?
+[01:39:53 -> 01:39:56]  No, en los únicos...
+[01:39:56 -> 01:39:58]  es lo que vamos a ver.
+[01:39:59 -> 01:40:01]  Capaz que lo doy ahora, entonces,
+[01:40:01 -> 01:40:04]  y vemos el código después, así.
+[01:40:06 -> 01:40:08]  Hay muy pocos casos en los cuales tenés
+[01:40:08 -> 01:40:10]  certitudes de este teorema que dice
+[01:40:10 -> 01:40:12]  que esto va a converger.
+[01:40:13 -> 01:40:15]  O sea, va a converger a un equilibrio de nachos.
+[01:40:17 -> 01:40:20]  En los juegos de suma cero de dos jugadores, sí.
+[01:40:23 -> 01:40:36]  ¿Por qué ahí uno dice, puede ser mayor o menor para alguna otra estrategia de pi?
+[01:40:36 -> 01:40:46]  No, lo que plantea esto es si podés encontrar uno que sea y podés que en realidad el valor
+[01:40:46 -> 01:40:49]  no va a depender de pi. Es constante, no depende de pi.
+[01:40:49 -> 01:41:06]  No depende de ti. Pero no, digo, el valor para ti es uno.
+[01:41:06 -> 01:41:13]  lo digo para lo que yo a lo que me refería es a una
+[01:41:13 -> 01:41:20]  estrategia conjunta que tuviera valor porque
+[01:41:20 -> 01:41:24]  y la estrategia conjunta es jugar
+[01:41:26 -> 01:41:34]  y la estrategia conjunta si la estrategia depende para quién porque si la
+[01:41:34 -> 01:41:42]  La estrategia conjunta es jugar siempre de head-head, el valor para el jugador 1 es 1
+[01:41:42 -> 01:41:48]  y el valor para el jugador 2 es menos 1, no es 0 el valor.
+[01:41:48 -> 01:41:51]  Defende que es jugador.
+[01:41:51 -> 01:41:56]  Pero la conjunta sí siempre es 0.
+[01:41:56 -> 01:42:12]  No, pero acá dice el valor para 1. El valor para 1. Y eso es lo que pasa, que si vos cambias,
+[01:42:12 -> 01:42:19]  si vos cambias el de 1 va a bajar y el de otro va a subir, entonces no va a ser ese.
+[01:42:19 -> 01:42:21]  Pero es eso, es...
+[01:42:21 -> 01:42:24]  Eh... este...
+[01:42:24 -> 01:42:30]  Lo que dice, el valor del equilibrio en alfa es cero.
+[01:42:30 -> 01:42:34]  Y sí, este...
+[01:42:34 -> 01:42:39]  El valor para uno puede ser mayor.
+[01:42:39 -> 01:42:42]  O sea, ¿tiene alguna otra estrategia mejor? No.
+[01:42:42 -> 01:42:47]  Sí, sí, pi, 2 de estrella es 1.
+[01:42:47 -> 01:43:08]  Something.
+[01:43:08 -> 01:43:18]  Bien, no, capaz que después no...
+[01:43:18 -> 01:43:36]  No, tiene razón, también, porque esto no importa cuando se coge, si se siente, sí,
+[01:43:36 -> 01:43:44]  de este, esto es este, ah no, pero, pero, porque acá está el, para esta fatita cuenta
+[01:43:44 -> 01:43:53]  está simplificada. Bueno, no, porque es un medio, es, no, es un medio por h1, por uno,
+[01:43:53 -> 01:43:55]  No, eso empieza con R.
+[01:43:56 -> 01:43:57]  Eh, tener.
+[01:43:59 -> 01:44:06]  El valor para uno de la estrategia conjunta.
+[01:44:10 -> 01:44:11]  No, ok.
+[01:44:11 -> 01:44:17]  Pero esto es un medio, porque si esto fuera, por ejemplo, un tercio o dos tercios acá,
+[01:44:17 -> 01:44:22]  es por decir descambio, porque no va a ser si no está multiplicado por el mismo coeficiente cada uno de estos.
+[01:44:23 -> 01:44:30]  porque acá siempre es por 1 medio, por 1 medio, por medio, por medio, pero esto puede
+[01:44:30 -> 01:44:36]  estar multiplicado por 1 tercio y otros por 2 tercios, entonces yo ya no entiendo.
+[01:44:36 -> 01:44:38]  entiendo.
+[01:44:38 -> 01:44:40]  Me quede cambiar ahí adentro.
+[01:44:40 -> 01:44:42]  Claro.
+[01:44:42 -> 01:44:44]  Si yo no,
+[01:44:44 -> 01:44:46]  a mí no me cambia ahí
+[01:44:46 -> 01:44:48]  lo que está dentro de la pared.
+[01:44:48 -> 01:44:50]  No, no, esto siempre es...
+[01:44:50 -> 01:44:52]  Esto está en todo, por lo tanto.
+[01:44:52 -> 01:44:54]  Sí, acá, pero porque tenés factor común
+[01:44:54 -> 01:44:56]  un medio para todos, ¿no?
+[01:44:56 -> 01:44:58]  No, no me cambia el hecho
+[01:44:58 -> 01:45:00]  de que ahí adentro yo tengo mucho...
+[01:45:00 -> 01:45:02]  Porque sería, digamos que sería un medio...
+[01:45:02 -> 01:45:04]  Sí, bueno, claro, tenés un
+[01:45:04 -> 01:45:08]  de una interacción, frasal independientemente del multiplicado antes.
+[01:45:08 -> 01:45:10]  Acá sí, no, esta sí.
+[01:45:10 -> 01:45:12]  Eso vale siempre ser.
+[01:45:12 -> 01:45:16]  Como el cambiar alguno de los valores de adentro, el 1 o el menos 1.
+[01:45:16 -> 01:45:18]  Sí, sí, pero...
+[01:45:22 -> 01:45:24]  Pero eso... o sea...
+[01:45:24 -> 01:45:28]  En general, esto es lo que aplica.
+[01:45:28 -> 01:45:32]  De 1 es igual a menos de 2 en general.
+[01:45:32 -> 01:45:35]  siempre, necesariamente ser.
+[01:45:35 -> 01:45:37]  Entonces, como todas...
+[01:45:37 -> 01:45:39]  Solo para el equilibrio.
+[01:45:39 -> 01:45:43]  O sea, no tiene otra estrategia mejor.
+[01:45:43 -> 01:45:46]  Pero bueno, para... capaz que...
+[01:45:46 -> 01:45:49]  después lo veo bien, capaz que...
+[01:45:49 -> 01:45:50]  tener razón, no...
+[01:45:50 -> 01:45:53]  No, porque yo no estoy discutiendo nada.
+[01:45:53 -> 01:45:54]  No, no, no, está bien.
+[01:45:54 -> 01:45:57]  O sea, de esta cuenta no hay otra...
+[01:45:57 -> 01:46:01]  posibilidad que te me dé ser.
+[01:46:01 -> 01:46:01]  Bien.
+[01:46:14 -> 01:46:19]  Bien, pero después lo voy a ir tranquilo porque quiero
+[01:46:19 -> 01:46:26]  responder con tranquilidad porque no quiero.
+[01:46:26 -> 01:46:31]  Pero dejo eso para responder después.
+[01:46:35 -> 01:46:36]  A parte que hay este arraignamiento,
+[01:46:36 -> 01:46:38]  efectivamente, en este juego,
+[01:46:38 -> 01:46:43]  que todas las utilidades son 1 y menos 1,
+[01:46:43 -> 01:46:46]  me da exactamente 0.
+[01:46:49 -> 01:46:50]  Bien.
+[01:46:50 -> 01:47:00]  Aunque si el H2 y el T2 no fueran 1 y menos 1,
+[01:47:00 -> 01:47:03]  como nos pasaba cuando teníamos un tercio y otro tercio,
+[01:47:03 -> 01:47:04]  ahí sí la cuenta te cambia.
+[01:47:04 -> 01:47:07]  Sí, sí. Por eso digo, capaz que efectivamente,
+[01:47:07 -> 01:47:11]  de la razón, en este caso, que es esa matriz 1 menos 1,
+[01:47:11 -> 01:47:14]  en ese caso no es la cuestión.
+[01:47:14 -> 01:47:23]  Si esto fuera de otros valores, pero siempre suma a cero, capaz que la cosa cambia si tengo otra.
+[01:47:23 -> 01:47:29]  En el matching PANIC que tenías antes, ¿cuál era la mejor respuesta?
+[01:47:29 -> 01:47:32]  Ahí no, porque ahí es 1 o 0.
+[01:47:32 -> 01:47:37]  Pero ahí se anda bien claro, contestar a la multiplicación por 1,3 y 2,3, por h2 y t2,
+[01:47:37 -> 01:47:44]  y explicable, pero siendo h2 y t2, 1 y menos 1, ya está.
+[01:47:45 -> 01:47:51]  No, h2 y t2 son 1 y 1 medio, no muy bien.
+[01:47:52 -> 01:47:53]  En este caso.
+[01:47:53 -> 01:47:56]  Sí, porque es la pi estrella.
+[01:47:57 -> 01:47:58]  Perdón, perdón.
+[01:47:59 -> 01:48:01]  Yo lo dije, no sé si...
+[01:48:01 -> 01:48:10]  Después lo vemos, porque en realidad creo que ya capaz que es mejor hacer una pausa
+[01:48:10 -> 01:48:17]  porque estamos, y yo miro eso bien ahora, hagamos una pausa. La idea era presentarles
+[01:48:17 -> 01:48:30]  códigos pero capaz que mejora. Si no más de esto los va a invitar. Y a mí también.
+[01:48:30 -> 01:48:38]  Hacemos una pausa de 10 minutos y vuelvemos.
+[01:48:38 -> 01:48:41]  Y ahora veo esto con tranquilidad.
+[01:48:41 -> 01:48:42]  ¿Está bien?
+[01:48:53 -> 01:48:54]  ¿Retorno?
+[01:48:55 -> 01:48:59]  A ver si terminamos.
+[01:48:59 -> 01:49:02]  Pase un poco de Python al final del punto.
+[01:49:02 -> 01:49:05]  No, no, no, no, no, no, no, no, no.
+[01:49:05 -> 01:49:12]  Nada, no, es para responder a la pregunta de recién.
+[01:49:12 -> 01:49:18]  Vamos a decir que no, o sea, eso ocurre solo en este caso cuando es un medio y un medio.
+[01:49:18 -> 01:49:23]  Fíjense, esta es la matriz. 1 menos 1 menos 1.
+[01:49:23 -> 01:49:27]  Y lo que conocemos es h2 y t2.
+[01:49:27 -> 01:49:31]  No importa, uno menos el otro, pero para sin fin.
+[01:49:31 -> 01:49:38]  Entonces, lo que vamos a hacer es H2 por acá, por algo, más H2 por otra cosa.
+[01:49:38 -> 01:49:40]  ¿Y esto qué va a ser? Bueno.
+[01:49:41 -> 01:49:43]  1 por H1.
+[01:49:43 -> 01:49:45]  Por las dudas, no está compartiendo el pizarrón.
+[01:49:47 -> 01:49:48]  Bien, gracias.
+[01:49:50 -> 01:49:52]  Esto es el porro. Sí, bien.
+[01:49:52 -> 01:49:54]  Así es, o sea, esta es la matriz.
+[01:49:54 -> 01:49:55]  ¿Estás grabando?
+[01:49:55 -> 01:49:57]  Sí, sí, estoy grabando, ¿no?
+[01:49:57 -> 01:50:06]  creo que tú se reanudas la grabación. Sí, sí, ya grabamos. H2, que es lo que conozco, por 1 por H1,
+[01:50:06 -> 01:50:29]  1 por T. Más de 2 por menos 1 por H1 más 1 por T.
+[01:50:29 -> 01:50:36]  Si esto es igual a esto, entonces te das 0 porque sacas factor común pero saca ahí
+[01:50:36 -> 01:50:40]  Pero si no, no. Por ejemplo, si vos ponés un tercio acá...
+[01:50:40 -> 01:50:44]  Ay, pero te dije que el tercer no estaba tan raro, ¿eh?
+[01:50:44 -> 01:50:52]  Si vos ponés un tercio acá, acá te queda 1, te queda 1t1 más...
+[01:50:52 -> 01:51:01]  Bueno, por ejemplo, 2 tercios por menos h1 más t1 y ahí sí la cuentas que da otra cosa.
+[01:51:01 -> 01:51:10]  que si vamos con, o sea, básicamente tenés 1 tercio de h1 menos 2 tercios es menos 1
+[01:51:10 -> 01:51:18]  tercio de h1 por h1 y después es menos 1 tercio más 2 tercios, es más 1 tercio de
+[01:51:18 -> 01:51:31]  h1. O sea, que te queda algo así como 1 tercio por T1 menos h1.
+[01:51:31 -> 01:51:39]  o sea, no es 0. O sea, solo... bueno, en este caso solo es 0 si son iguales que los
+[01:51:39 -> 01:51:49]  cuales que tiene, por ejemplo, que jugar, o sea, mitad y mitad, pero ahí podría obtener más.
+[01:51:49 -> 01:52:03]  Entonces, pero esto también lo que dice es que cualquier, es lo que vimos recién, cualquier
+[01:52:03 -> 01:52:14]  estrategia si uno servía. Entonces elijo la que tiene más. Pero acá son dos iguales.
+[01:52:14 -> 01:52:19]  No importa, pero sigue habiendo una determinista.
+[01:52:19 -> 01:52:20]  ¿Sí?
+[01:52:20 -> 01:52:21]  ¿Todo bien?
+[01:52:21 -> 01:52:24]  ¿Sabe si me he dicho más raritas?
+[01:52:24 -> 01:52:25]  Sí, sí.
+[01:52:25 -> 01:52:26]  ¿Perdón?
+[01:52:26 -> 01:52:37]  Bellisi, Campiglia, Tizión, Dutra, Chili, González, Guerrero, Cielú, Tizón, Tizón,
+[01:52:37 -> 01:52:57]  Chilli, González, Guerrero, Cielu, López, Mucio, Pereira, Pravetria, Rodríguez, Tamarro.
+[01:52:57 -> 01:52:59]  Gracias.
+[01:52:59 -> 01:53:14]  numbers. Bueno. Falta solo un
+[01:53:14 -> 01:53:25]  resultado, este es interesante y después asymmächlich un poco de
+[01:53:25 -> 01:53:34]  sí, no. De verdad que hasta ahora no vimos tampoco cómo encontrar la equilibración de Nash.
+[01:53:34 -> 01:53:41]  O sea, estuvimos jugando, continuamos mostrando que algo era, pero no encontrándolo.
+[01:53:41 -> 01:53:53]  El caso más sencillo para encontrar los equilibrios de Nash son los juegos de dos jugadores de su
+[01:53:53 -> 01:54:01]  sumasero. El más chiquito que pueda ser dos jugadores, una matriz que suma 0. O sea,
+[01:54:01 -> 01:54:08]  ejemplo matching pennies o cualquier equivalente. Pueden tener más acciones también, pero
+[01:54:08 -> 01:54:18]  lo más chiquito es 2x2 con 2x4. Entonces, ahí hacemos este razonamiento. Supongamos
+[01:54:18 -> 01:54:20]  OK.
+[01:54:20 -> 01:54:20]  Ahora sí, claro.
+[01:54:20 -> 01:54:24]  Ahora voy a compartir porque voy a volver a la diapositiva.
+[01:54:24 -> 01:54:27]  Esto si no, no va a llevar mucho tiempo.
+[01:54:27 -> 01:54:28]  Pero no le irá a que compartir.
+[01:54:31 -> 01:54:32]  Bien.
+[01:54:35 -> 01:54:37]  Así es.
+[01:54:37 -> 01:54:40]  Hasta ahora teníamos dos, pero sabemos que tenemos dos.
+[01:54:40 -> 01:54:43]  Si tenemos dos acciones, un juego suma cero con dos
+[01:54:43 -> 01:54:46]  acciones, tenemos un valor de interés porque el otro es uno
+[01:54:46 -> 01:54:48]  menos el valor.
+[01:54:48 -> 01:55:00]  Entonces hacemos siempre ese abrazonamiento de si conozco la distribución del otro, que
+[01:55:00 -> 01:55:03]  es lo que yo puedo hacer.
+[01:55:03 -> 01:55:13]  Como que Agente es el jugador 1.
+[01:55:13 -> 01:55:24]  Entonces, ¿qué haría jugador 2 o con Ente si supiera que la estrategia de Agente es
+[01:55:24 -> 01:55:25]  esta?
+[01:55:25 -> 01:55:29]  O sea, no son números también, son...
+[01:55:29 -> 01:55:32]  Bueno, pero...
+[01:55:32 -> 01:55:49]  Bueno, ya sabemos que tiene que haber una estrategia pura, que sea una B-Response. Entonces, nos
+[01:55:49 -> 01:55:55]  planteamos, bueno, la estrategia pura va a ser jugar una acción o la otra. Supongamos
+[01:55:55 -> 01:56:00]  que nuestro componente tiene las acciones de CellLayer. Entonces, bueno, ¿cuál es la
+[01:56:00 -> 01:56:06]  utilidad para poder elegir entre L y R, tiene que calcular la utilidad de cada una y elegir.
+[01:56:06 -> 01:56:15]  Entonces, ¿cuál es la utilidad de jugar L dado que agente juega a esta matriz? Paramétrico,
+[01:56:15 -> 01:56:22]  porque yo lo que quiero es una recta y ver dónde... Bueno, también acá cambiamos esta matriz.
+[01:56:22 -> 01:56:40]  Entonces va a ser 2 por la agenda S, 2 por la VJ, menos 3 por la VJ.
+[01:56:40 -> 01:56:47]  que es 1 menos lambda, y esto me da 5 lambda menos 3.
+[01:56:47 -> 01:56:51]  Y hace lo mismo para R.
+[01:56:51 -> 01:56:58]  Entonces va a ser menos 3 por lambda más 4 por 1 menos 1.
+[01:56:58 -> 01:57:00]  Y me da esto.
+[01:57:03 -> 01:57:07]  Lo que hacemos es, bueno, grafiquemos esto acá.
+[01:57:10 -> 01:57:24]  Primero mejor graficar esto, grafiquemos esto, la una, la de L es esta, tiene positivo, quiere
+[01:57:24 -> 01:57:39]  decir que cuanto más grande, espérame, sí, cuanto más grande lambda, mejor, es más útil.
+[01:57:39 -> 01:58:00]  Y R, cuanto más chico sea lambda, más grande va a ser utilidad. Entonces, a ver, ¿sí?
+[01:58:00 -> 01:58:08]  Preguntá. Entonces, agente está pensando, está poniéndose en la posición de oponente
+[01:58:08 -> 01:58:14]  está diciendo, si yo juego con esta distribución,
+[01:58:14 -> 01:58:20]  mi oponente va a hacer esto, va a tener tal utilidad.
+[01:58:20 -> 01:58:23]  Está.
+[01:58:23 -> 01:58:29]  Entonces, si juega con una C lambda,
+[01:58:29 -> 01:58:36]  o sea, la probabilidad de jugar A está por acá,
+[01:58:36 -> 01:58:46]  que va oponente va a jugar esta, que es R
+[01:58:49 -> 01:58:54]  y si, porque es la que mayor utilidad le da de las dos, o sea,
+[01:58:54 -> 01:59:00]  para una probabilidad, por ejemplo acá 0.56 o 0.57 de jugar A
+[01:59:00 -> 01:59:08]  A oponente le da esto, si juega L y esto si juega R, entonces va a jugar R.
+[01:59:08 -> 01:59:16]  La B-Response va a ser, en este caso la B-Response va a ser la otra.
+[01:59:16 -> 01:59:26]  Entonces, ¿qué es lo que le conviere jugar? ¿Con qué probabilidad le conviere jugar a IB?
+[01:59:26 -> 01:59:33]  O sea, bueno, le conviene jugar con esta, donde las dos curvas se intersectan.
+[01:59:33 -> 01:59:43]  Porque ahí le da lo mismo que le juegue en cualquiera de las dos.
+[01:59:43 -> 01:59:46]  No importa lo que le juega el otro.
+[01:59:46 -> 01:59:52]  Al otro le va a dar lo mismo jugar esta o esta, porque él le intercende las dos.
+[01:59:52 -> 01:59:54]  Si yo me muevo para acá, me va a jugar esta cosa.
+[01:59:54 -> 01:59:57]  si jugamos por acá, me voy a jugar por el otro.
+[01:59:57 -> 01:59:59]  Pero con esa probabilidad es lo mismo.
+[01:59:59 -> 02:00:02]  O sea, es como que, ahí no importa.
+[02:00:02 -> 02:00:06]  También, yo juego algo que de todas maneras,
+[02:00:06 -> 02:00:14]  cualquier cosa que me juegue, esta es la mejor distribución
+[02:00:14 -> 02:00:15]  de probabilidad que tengo.
+[02:00:18 -> 02:00:22]  O sea, la vez response frente a L y la vez response frente a R
+[02:00:22 -> 02:00:24]  va a ser esa distribución para las dos.
+[02:00:28 -> 02:00:34]  Y este razonamiento, que es igualar estos dos valores y despejar lambda,
+[02:00:34 -> 02:00:42]  en realidad corresponde a ser que lo que está,
+[02:00:42 -> 02:00:44]  porque es un juego de suma cero,
+[02:00:44 -> 02:00:51]  lo que está haciendo oponente
+[02:00:51 -> 02:00:57]  es, la cual es maximizar la utilidad oponente lo mismo que minimizar la gente,
+[02:00:57 -> 02:01:04]  entonces vamos a jugar lo que llamamos MIN, o sea va a jugar a minimizar la utilidad de la gente,
+[02:01:04 -> 02:01:08]  que es maximizar la suya.
+[02:01:08 -> 02:01:13]  Y la gente va a maximizar.
+[02:01:13 -> 02:01:20]  Entonces, ¿y cómo lo leemos? Es el máximo de los mínimos, bueno, los mínimos son estos.
+[02:01:20 -> 02:01:27]  El conjunto de los mínimos, el máximo de todos los mínimos es este.
+[02:01:27 -> 02:01:28]  ¿No?
+[02:01:28 -> 02:01:29]  Mi, otro, otro.
+[02:01:29 -> 02:01:30]  Por acá abajo.
+[02:01:30 -> 02:01:31]  ¿Ya?
+[02:01:31 -> 02:01:42]  Porque todo lo que está acá tiene uno encima, pero el máximo es este.
+[02:01:42 -> 02:01:47]  Pero yo puedo hacer una salida inversa.
+[02:01:47 -> 02:01:49]  O sea, opuesto.
+[02:01:49 -> 02:01:51]  Perdón, no entendí un cosa.
+[02:01:51 -> 02:01:53]  El gráfico de trabajo.
+[02:01:55 -> 02:01:57]  Es esto, es.
+[02:01:57 -> 02:01:59]  La curva azul es
+[02:01:59 -> 02:02:01]  4 menos 7,
+[02:02:01 -> 02:02:03]  4 menos 7 lambda, es cierto.
+[02:02:03 -> 02:02:05]  O sea, es la utilidad
+[02:02:05 -> 02:02:07]  que obtiene oponente
+[02:02:09 -> 02:02:11]  si jugara R.
+[02:02:11 -> 02:02:13]  Sabiendo que
+[02:02:13 -> 02:02:15]  la gente juega
+[02:02:15 -> 02:02:19]  lambda o no menos lambda. O sea, una fija pero desconocida.
+[02:02:19 -> 02:02:29]  ¿Se ve? Es el mismo que hicimos antes, es una recta creciente. Lo que pasa es que está
+[02:02:29 -> 02:02:35]  chicada porque... Sí, sí, porque bueno, esto sí es cero, pero
+[02:02:35 -> 02:02:42]  esto llega acá y esto sigue hasta uno. Ah, esto probablemente no sea cero tampoco,
+[02:02:42 -> 02:02:52]  o sí? No, esto creo que tampoco. La escala está rara. Pero sí, porque si no, no entró
+[02:02:52 -> 02:03:00]  y quedaba muy chiquito. Pero bueno, en un juego de suma a cero de dos jugadores, de
+[02:03:00 -> 02:03:07]  dos acciones, no va a quedar algo así. Uno que sube y otra que baja, dependiendo de cómo
+[02:03:07 -> 02:03:15]  lo que queremos es la utilidad baja si aumento la probabilidad y la utilidad subese aumenta la probabilidad.
+[02:03:15 -> 02:03:19]  Entonces,
+[02:03:19 -> 02:03:30]  esto hay que ponerse en agente que dice yo quiero saber cuál es mi estrategia.
+[02:03:30 -> 02:03:36]  ¿Está bien? Mi estrategia va a ser lambda uno, yo tengo que encontrar cuál es el lambda.
+[02:03:36 -> 02:03:40]  O sea, con qué probabilidad voy a jugar A y con qué probabilidad voy a jugar B. O sea,
+[02:03:40 -> 02:03:49]  uno menos esa probabilidad. Entonces me planteo, ya sé por lo de Nash, que la solución va
+[02:03:49 -> 02:03:54]  a ser una equivalencia de Nash y lo que voy a buscar es una B-response y que si hay una
+[02:03:54 -> 02:04:01]  una B-Response probabilística y una B-Response determinista,
+[02:04:01 -> 02:04:06]  entonces voy a fijar las dos acciones determinísticas que tiene el oponente.
+[02:04:06 -> 02:04:08]  O jugaré y o jugaré R.
+[02:04:08 -> 02:04:12]  Entonces me planteo cuál es la utilidad que obtiene en cada caso.
+[02:04:12 -> 02:04:15]  Y es esto.
+[02:04:15 -> 02:04:21]  Si juega L es 2 por lambda menos 3 por 1 menor lambda,
+[02:04:21 -> 02:04:26]  Y si juega R es menos 3 por lambda, más 4.
+[02:04:26 -> 02:04:28]  Eso me da dos rectas.
+[02:04:32 -> 02:04:40]  Sí, y es lo que decía acá. En esta zona de acá,
+[02:04:42 -> 02:04:45]  o sea, si lambda es un valor de probabilidad por acá,
+[02:04:45 -> 02:04:51]  a oponente le va a convenir jugar R.
+[02:04:51 -> 02:04:54]  Entonces, le hago esa herramienta.
+[02:04:54 -> 02:04:57]  O sea, yo sé que va a jugar R, él sabe que si yo juego lambda,
+[02:04:57 -> 02:04:59]  entonces voy a jugar R.
+[02:04:59 -> 02:05:01]  Entonces, jugaría R.
+[02:05:01 -> 02:05:04]  Y si está acá, jugaría él.
+[02:05:04 -> 02:05:09]  Entonces, ¿cuál es la mejor respuesta a cualquier cosa que juegue?
+[02:05:09 -> 02:05:11]  El otro.
+[02:05:11 -> 02:05:14]  Y bueno, jugar con esta probabilidad.
+[02:05:14 -> 02:05:17]  Porque acá el valor que obtiene el oponente, cuando L o cuando R, es lo mismo.
+[02:05:19 -> 02:05:22]  Está bien, entonces, y bueno, mi response,
+[02:05:23 -> 02:05:26]  o sea, va a ser a L o R,
+[02:05:27 -> 02:05:30]  porque yo conozco la utilidad que va a obtener.
+[02:05:32 -> 02:05:35]  Pero si la gente puede hacer ese razonamiento,
+[02:05:35 -> 02:05:37]  el oponente también puede hacer ese razonamiento al revés.
+[02:05:39 -> 02:05:41]  Pero el razonamiento este es,
+[02:05:41 -> 02:05:48]  cuál es el resultado, es el máximo de todos los mínimos.
+[02:05:48 -> 02:05:51]  Pero así como es el máximo de los mínimos, también es el mínimo de los máximos.
+[02:05:51 -> 02:06:00]  Y bueno, hacemos la cuenta, da lo mismo, está bien.
+[02:06:00 -> 02:06:06]  Pero esto no es solamente en este caso, sino siempre.
+[02:06:06 -> 02:06:15]  Y esto es lo que se llama el Teoremoninux, que es previo a Nash.
+[02:06:15 -> 02:06:20]  Antes de que viniera Nash y dijera que la solución a este problema son los equilibrios
+[02:06:20 -> 02:06:28]  de Nash, para los juegos sumaseros de dos jugadores existía este resultado, que de
+[02:06:28 -> 02:06:36]  Von Neumann, de 1898, o Nash en 1950, por fin.
+[02:06:36 -> 02:06:38]  que es la solución minimax.
+[02:06:38 -> 02:06:40]  Ahí está.
+[02:06:40 -> 02:06:42]  Y básicamente lo que he
+[02:06:42 -> 02:06:44]  probado es eso, que
+[02:06:44 -> 02:06:46]  no importa en qué
+[02:06:46 -> 02:06:48]  orden lo vemos, o sea,
+[02:06:48 -> 02:06:50]  si somos agente o somos oponente
+[02:06:50 -> 02:06:52]  en un juego simultáneo
+[02:06:52 -> 02:06:54]  de dos jugadores, es lo
+[02:06:54 -> 02:06:56]  mismo, me da la
+[02:06:56 -> 02:06:58]  misma. Si agente llega a una solución
+[02:06:58 -> 02:07:00]  pígada estrella, entonces
+[02:07:00 -> 02:07:02]  oponente va
+[02:07:02 -> 02:07:04]  a llegar a la misma solución,
+[02:07:04 -> 02:07:07]  O sea, a la solución pi o estrella, tal que...
+[02:07:07 -> 02:07:10]  Bueno, esto era el equilibrio, esto era la minimax.
+[02:07:10 -> 02:07:13]  Pero ahora, conociendo el equilibrio de Nash,
+[02:07:13 -> 02:07:16]  podemos ver que además, entonces son un equilibrio de Nash.
+[02:07:16 -> 02:07:19]  Esa solución que es...
+[02:07:19 -> 02:07:22]  Lo que está aquí tocada en manual es esto,
+[02:07:22 -> 02:07:25]  es este punto de la sección.
+[02:07:25 -> 02:07:29]  Hay tres o dos curvas en dos dimensiones.
+[02:07:29 -> 02:07:30]  Este...
+[02:07:30 -> 02:07:33]  es un equilibrio de Nash y es una solución primaria.
+[02:07:35 -> 02:07:40]  Y esto sí se puede plantear en ecuaciones como un sistema
+[02:07:40 -> 02:07:43]  lineal, pero el caso general de equilibrio de Nash no.
+[02:07:49 -> 02:07:58]  Esto es interesante porque, pero bueno, de lo que más,
+[02:07:58 -> 02:08:00]  Lo que nos interesa de acá es, sobre todo,
+[02:08:00 -> 02:08:01]  la manera de razonar.
+[02:08:01 -> 02:08:03]  Eso es lo que me parece más importante.
+[02:08:03 -> 02:08:09]  Es, perdón, me voy a confundir más con la rosa.
+[02:08:09 -> 02:08:12]  Es esto.
+[02:08:12 -> 02:08:18]  Cuando llegue a ser la gente, lo que va a hacer es para
+[02:08:18 -> 02:08:22]  construir su estrategia de razonar de esta manera.
+[02:08:22 -> 02:08:36]  ¿qué cosa jugaría? O sea, ¿cuál es la response solamente a las acciones curas que
+[02:08:36 -> 02:08:46]  tiene oponente? No, no me tengo... El caso general me dice, esto tiene que ser la response
+[02:08:46 -> 02:08:52]  a una probabilística, pero no tengo que mirar la probabilística, me cansa como ver la response
+[02:08:52 -> 02:09:09]  a las determinísticas. Porque yo sé que si yo juego una probabilística, oponente tiene
+[02:09:09 -> 02:09:14]  una determinística que maximiza. Entonces quiero ver cuál es. Y después ver cuál
+[02:09:14 -> 02:09:21]  es la distribución de probabilidad que es indiferente a lo que me juego.
+[02:09:21 -> 02:09:30]  Entonces, ¿por qué? Bueno, cualquiera sea lo que me juegue, yo sé, esta es mi mejor
+[02:09:30 -> 02:09:38]  respuesta. Si me juega, si yo juego con A, con alguna
+[02:09:38 -> 02:09:43]  probabilidad por acá, no es indiferente, ¿no? Porque acá va a tener una utilidad positiva
+[02:09:43 -> 02:09:48]  y acaba quedando un tira negativo, o sea, se va a dar cuenta y me va a jugar él.
+[02:09:48 -> 02:09:53]  O puede ir a esta, R. Y si está a este lado, no, se va a cambiar.
+[02:09:53 -> 02:09:57]  Entonces no es indiferente. En cambio, acá es bueno, no importa,
+[02:09:57 -> 02:10:02]  o sea, mi distribución me va a funcionar para cualquier cosa que me juegue.
+[02:10:06 -> 02:10:13]  Y el otro va a ser exágnico de mi morframiento y la conjunción de los dos me da el equilibrio
+[02:10:13 -> 02:10:19]  pero en realidad, bueno, ese razonamiento, si como le hicimos, solo es válido acá para
+[02:10:19 -> 02:10:36]  dos jugadores en un juego de suma cero y en realidad es el resultado de minimax. Pero eso
+[02:10:36 -> 02:10:42]  es también otro tipo de equilibrio, que es el que termina haciendo un equilibrio de la
+[02:10:42 -> 02:10:52]  Pero bueno, los quiero terminar de perder y que después me van a oír.
+[02:10:52 -> 02:11:00]  Entonces vamos a dejar esto por acá para si después bajan un poco a tierra en turismo.
+[02:11:00 -> 02:11:01]  Leen.
+[02:11:01 -> 02:11:07]  Después van a ver que no es tan complicado, solo un montón de conceptos nuevos.
+[02:11:07 -> 02:11:21]  Y no sé, quieren ver un poco de código o quieren ya cansar un poco.
+[02:11:21 -> 02:11:31]  Igual no creo que se pongan a hacer, o sea, la idea no es que trabajen en código de acá
+[02:11:31 -> 02:11:39]  a la vuelta de turismo, sino más bien que vean esto. Pero bueno, no sé, como está
+[02:11:39 -> 02:11:46]  Martín ahí. Aunque sea lo que podamos hacer, por si quieren, es que les mostremos el ambiente
+[02:11:46 -> 02:11:51]  como para que lo puedan decir. Bueno, está, alguna cosita diciendo, bueno, las herramientas
+[02:11:51 -> 02:11:58]  que vamos a usar, el ambiente que vamos a necesitar, si no lo tienen, entonces aprovechan
+[02:11:58 -> 02:12:04]  un poquito para instalarlo o llevarse los tips de
+[02:12:04 -> 02:12:05]  instalación.
+[02:12:05 -> 02:12:07]  ¿Sabéis?
+[02:12:07 -> 02:12:08]  Te agrego como.
+[02:12:12 -> 02:12:12]  Espera.
+[02:12:17 -> 02:12:18]  No tengo el cable, ¿no?
+[02:12:18 -> 02:12:20]  Sí.
+[02:12:20 -> 02:12:21]  A ponerlo en el cable.
+[02:12:21 -> 02:12:22]  Sí, acá te veo cerrado.
+[02:12:22 -> 02:12:28]  No, ahora, convertir en coafitirio.
+[02:12:28 -> 02:12:30]  Ok, listo.
+[02:12:30 -> 02:12:33]  Bien, yo dejo de compartir.
+[02:12:33 -> 02:12:34]  ¿Verdad?
+[02:12:34 -> 02:12:35]  Bien.
+[02:12:35 -> 02:12:36]  Bien.
+[02:12:36 -> 02:12:37]  Sí.
+[02:13:07 -> 02:13:20]  El texto es un que me habla como 100 ventas.
+[02:13:20 -> 02:13:32]  Bueno, el código está todo en la pestaña obligatorio de Aulas.
+[02:13:32 -> 02:13:38]  Ahora se podrán imaginar que eso es porque el código que vamos a usar acabó sirviendo en los prácticos.
+[02:13:38 -> 02:13:49]  Después va a ser el código que van a... o sea, va a ser el obligatorio, va a ser implementar todas las cosas que están en el práctico.
+[02:13:49 -> 02:13:51]  Así que ya vamos a ir haciendo todo a la vez.
+[02:13:54 -> 02:14:00]  Bien, ya debería estar disponible la primera de YomaCodeBase para juegos simultáneos.
+[02:14:02 -> 02:14:08]  Bien, V, el uno con las cosas.
+[02:14:08 -> 02:14:13]  Los cargamos en la rapeta de tiempo tendrá, chicos.
+[02:14:13 -> 02:14:24]  De todo esto, lo primero es, el práctico está armado para usar V.
+[02:14:24 -> 02:14:27]  No sé si saben lo que es V, no sé si alguno usa V.
+[02:14:27 -> 02:14:35]  DaWay es un manejador de paquetes de Python, como PIF, pero supongo que ahora hemos usado PIF Install
+[02:14:35 -> 02:14:37]  Pueh hace lo mismo pero es mejor
+[02:14:37 -> 02:14:42]  Porque te maneja ambientes automáticamente y versiones de Python y un montón de cosas
+[02:14:42 -> 02:14:45]  Entonces, ¿está armado para eso?
+[02:14:45 -> 02:14:47]  ¿Maneja ambientes?
+[02:14:47 -> 02:14:48]  Sí
+[02:14:48 -> 02:14:49]  No pensé que hicimos content entonces
+[02:14:49 -> 02:14:50]  No
+[02:14:50 -> 02:14:52]  ¿Mucho más?
+[02:14:52 -> 02:14:53]  Wait
+[02:14:53 -> 02:15:00]  No, es más rápido y te manejas las versiones de Python. O sea, esto es así. Como no puedo
+[02:15:00 -> 02:15:08]  armar el práctico para todos, yo armé para WSG, el nombre que yo uso. Si alguno usa Poetry
+[02:15:08 -> 02:15:15]  o usa Conda o usa otra cosa, usen eso. O sea, si vos tenés Conda instalado, armate un ambiente
+[02:15:15 -> 02:15:20]  de Conda y listo. Y no hace falta usar nada de lo de WSG. O sea, esto es libre que cada
+[02:15:20 -> 02:15:22]  a uno de lo que quiera.
+[02:15:22 -> 02:15:27]  El Practigo viene ya armado para que funcione con V.
+[02:15:27 -> 02:15:32]  Sí, me importa tener en cuenta las versiones de Python y de
+[02:15:32 -> 02:15:36]  Gymnasium y de Petting Zoo.
+[02:15:36 -> 02:15:37]  Eso está todo acá.
+[02:15:37 -> 02:15:39]  Hay un archivo que se llama Pyproject.tomy.
+[02:15:39 -> 02:15:43]  Lo que yo he pensado poder tribuir, que sonará.
+[02:15:43 -> 02:15:48]  Y acá dentro básicamente vienen definidas las dependencias y
+[02:15:48 -> 02:15:50]  las versiones de Python.
+[02:15:50 -> 02:15:55]  Básicamente vamos a usar Python 3.11 y la versión minor cualquiera,
+[02:15:55 -> 02:15:59]  este .0 puede ser .1, .2, .3, aquella cosa.
+[02:15:59 -> 02:16:02]  Y estas son las librerías que vamos a usar.
+[02:16:02 -> 02:16:04]  Creo que esas son todas.
+[02:16:04 -> 02:16:07]  Capaz que en un otro código se agrega algo más,
+[02:16:07 -> 02:16:09]  pero creo que eso era todo básicamente.
+[02:16:09 -> 02:16:11]  Son esas cuatro cosas.
+[02:16:11 -> 02:16:16]  Esos son Gymnasium, que le deben sonar de gentes.
+[02:16:16 -> 02:16:19]  IPKarner es simplemente para correr las notebooks.
+[02:16:23 -> 02:16:26]  No sé, capaz que cuando les corrieron les dijo que tenían que instalar IPKarner,
+[02:16:26 -> 02:16:29]  no sé qué. Es simplemente para correr las notebooks.
+[02:16:29 -> 02:16:32]  NoPy y Petting Zoo, que es lo nuevo,
+[02:16:32 -> 02:16:34]  que en realidad es una librería como Gymnasium,
+[02:16:34 -> 02:16:38]  de hecho son de la misma gente, de Farama,
+[02:16:38 -> 02:16:42]  que en vez de tener ambientes para agentes simples,
+[02:16:42 -> 02:16:45]  tiene ambientes para multi agentes.
+[02:16:45 -> 02:16:48]  Entonces vamos a ganar muchos de esos ambientes.
+[02:16:48 -> 02:16:53]  Y la API que vamos a usar por atrás va a ser la de Krimzoo.
+[02:16:53 -> 02:16:59]  Es muy parecida a la de Asimnasium,
+[02:16:59 -> 02:17:00]  bastante similar, como funciona.
+[02:17:08 -> 02:17:12]  Bueno, después en el readme tienen un,
+[02:17:12 -> 02:17:18]  El setup es bien sencillo para usar web.
+[02:17:18 -> 02:17:24]  Simplemente tienen que instalarlo desde la página y el IT.
+[02:17:24 -> 02:17:27]  Que básicamente les explica cómo instalarlo.
+[02:17:27 -> 02:17:32]  En mi experiencia y en la gente que lo ha usado ha sido súper sencillo de instalar,
+[02:17:32 -> 02:17:34]  hacer un toque y instalar.
+[02:17:34 -> 02:17:39]  Verdad, porque eso si se tiene algún problema, lo que sea, ahí se van y lo vemos.
+[02:17:39 -> 02:17:44]  y funciona con todo el software que tiene para Windows, para Linux y para más.
+[02:17:44 -> 02:17:47]  Le debería funcionar sin problemas.
+[02:17:50 -> 02:17:55]  Bien, y lo que está además de V, es que si yo abro la terminal,
+[02:17:57 -> 02:17:59]  ya terminé el CAB,
+[02:17:59 -> 02:18:02]  y hago, escribo simplemente, Vsync,
+[02:18:02 -> 02:18:08]  automáticamente va primero a descargarme una versión de Python,
+[02:18:08 -> 02:18:13]  si no tienes una versión de Python compatible, o sea que te da 3.11,
+[02:18:13 -> 02:18:18]  él automáticamente la descarga, que eso es algo que casi ningún manejador de paquetes hace,
+[02:18:18 -> 02:18:20]  por eso elegimos un 0e.
+[02:18:21 -> 02:18:27]  Y además nos descarga todas las dependencias que están definidas acá,
+[02:18:27 -> 02:18:30]  y todas las dependencias que dependen de esas dependencias.
+[02:18:32 -> 02:18:37]  Y lo que vamos a hacer es crear una carpeta acá adentro que se llama .vm,
+[02:18:37 -> 02:18:44]  Acá dentro tienen, está todo, todas las dependencias y de hecho acá adentro tiene
+[02:18:44 -> 02:18:50]  el Python.exe, este Python.exe que ese es el Python que voy a usar.
+[02:18:50 -> 02:19:14]  Bien. Y bueno, aprovecho y les muestro... O sea, esto tiene varias cosas que no han visto
+[02:19:14 -> 02:19:20]  teóricos que más pueden hacer, pero rápido les muestro por arriba cómo está armado el
+[02:19:20 -> 02:19:32]  aleatorio, el código que la letra. Básicamente tenemos dos clases base, una que se llama
+[02:19:32 -> 02:19:40]  Game, bueno, se llama simultáneos Game. Y básicamente todos los ambientes que usemos
+[02:19:40 -> 02:19:44]  van a traer todas estas funciones.
+[02:19:44 -> 02:19:47]  Y después nosotros las vamos a usar.
+[02:19:47 -> 02:19:49]  Les debería sonar la mayoría de cosas.
+[02:19:49 -> 02:19:54]  O sea, es el observation space, de ver el ambiente,
+[02:19:54 -> 02:19:58]  el espacio de acciones que tiene la gente por hacer,
+[02:19:58 -> 02:20:00]  la cantidad de acciones que tiene que hacer.
+[02:20:04 -> 02:20:07]  Creo que el observe es parecido al observation space.
+[02:20:07 -> 02:20:10]  Los rewards para cada gente.
+[02:20:10 -> 02:20:14]  La diferencia que vamos a tener con respecto a lo que usamos
+[02:20:14 -> 02:20:19]  en agentes es que ahora vamos a tener que pasarle un ID de un
+[02:20:19 -> 02:20:22]  agente para decirle cuál es.
+[02:20:22 -> 02:20:26]  Vamos a tener más de uno en el ambiente jugando.
+[02:20:26 -> 02:20:28]  Entonces, nada, hay que manejar eso.
+[02:20:32 -> 02:20:36]  Para eso el ACAD está básicamente,
+[02:20:36 -> 02:20:38]  y ven todo lo que tiene el ambiente.
+[02:20:38 -> 02:20:44]  Es un diccionario que va a estar dado por todos los agentes que tengamos.
+[02:20:44 -> 02:20:46]  Y los valores, ¿no?
+[02:20:46 -> 02:20:47]  Los rewards.
+[02:20:47 -> 02:20:48]  Van a ser floats.
+[02:20:48 -> 02:20:51]  Si terminó o no, va a ser booleano.
+[02:20:51 -> 02:20:54]  La información, pues, es cualquier cosa.
+[02:20:56 -> 02:20:57]  Y...
+[02:21:00 -> 02:21:02]  Eso, básicamente.
+[02:21:02 -> 02:21:09]  Después del agente, todos los agentes que hagamos en Simultaneous Games van a tener
+[02:21:09 -> 02:21:17]  dos funciones. Una que es la policy, que nos va a decir cómo juega, y otra que es el action,
+[02:21:17 -> 02:21:18]  que simplemente va a hacer una acción.
+[02:21:18 -> 02:21:36]  De los juegos hay tres juegos. Les muestro uno para que lo vean. Igual que posado en
+[02:21:36 -> 02:21:42]  agentes, el código que hay acá adentro no nos importa demasiado. O sea, no se preocupen.
+[02:21:42 -> 02:21:45]  Pero bueno, básicamente este juego es del Machin Pennies.
+[02:21:47 -> 02:21:53]  Y básicamente él acá se va a definir una lista
+[02:21:53 -> 02:21:57]  que va a tener dos nombres de agentes, dos IDs.
+[02:21:57 -> 02:22:02]  Que simplemente va a ser agent barra baja cero y agent barra baja uno.
+[02:22:03 -> 02:22:05]  El juego es lo que los arma.
+[02:22:05 -> 02:22:09]  Después nosotros se lo vamos a pedir al juego y vamos a crear nuestros agentes
+[02:22:09 -> 02:22:10]  usando esos IDs.
+[02:22:10 -> 02:22:13]  Entonces el juego sabe cuál es el ID de cada gente.
+[02:22:18 -> 02:22:19]  Ahora se los muestro.
+[02:22:23 -> 02:22:26]  Tenemos dos movimientos que van a ser Head y Tails.
+[02:22:28 -> 02:22:29]  Lo que hizo acá, tenemos dos.
+[02:22:29 -> 02:22:44]  Y, bueno, Observation Space va a ser las acciones que se hicieron anteriormente para cada agente.
+[02:22:44 -> 02:22:55]  Por ejemplo, un step, lo que va a recibir va a ser una dupla de acciones.
+[02:22:55 -> 02:22:59]  de todas las sacadas que yo le hago un step al ambiente.
+[02:22:59 -> 02:23:02]  Antes de un agente, recibía la acción de ese agente.
+[02:23:02 -> 02:23:06]  Yo le decía, el agente hizo esta acción en el ambiente.
+[02:23:06 -> 02:23:10]  Acaba a ser todos estos agentes hicieron todo este grupo de acciones.
+[02:23:10 -> 02:23:15]  Como es simultáneo, la gracia es que se tiran todas a la vez.
+[02:23:15 -> 02:23:17]  Una acción para gente mismo.
+[02:23:17 -> 02:23:18]  Una acción para gente, sí.
+[02:23:18 -> 02:23:20]  Una acción para gente, pero van todas juntas.
+[02:23:20 -> 02:23:31]  Y acá él simplemente va a usar este ION bajo R, un poco raro, pero esto es lo que le da
+[02:23:31 -> 02:23:38]  los rewards. Básicamente va a dar 1 menos 1 según si macharon los pennies o si son
+[02:23:38 -> 02:23:46]  distintos. Y luego va a ver al primero R, que es el que dice si son iguales, o sea,
+[02:23:46 -> 02:23:48]  O sea, aquí juega que son iguales.
+[02:23:48 -> 02:23:51]  Y va a negar el otro, va a sacar el leopuerto.
+[02:24:00 -> 02:24:07]  Lo que es irrelevante ahora para este momento es eso.
+[02:24:07 -> 02:24:10]  Tap va a tener un reset que se va a resetear cada vez que jugamos.
+[02:24:10 -> 02:24:14]  Todos estos ambientes son como de una vez.
+[02:24:14 -> 02:24:21]  O sea, se va a jugar y una vez que se juegue termina el juego.
+[02:24:21 -> 02:24:26]  Entonces, a jugar varias veces vamos a estar reseteando cada vez.
+[02:24:26 -> 02:24:31]  Y bueno, después tiene un render para imprimirlo.
+[02:24:31 -> 02:24:34]  Imprimir lo que vaya saliendo.
+[02:24:34 -> 02:24:38]  Ah, hay dos juegos más. Uno es el Rock Paper Scissor y otro es el Loto,
+[02:24:38 -> 02:24:43]  que igual más adelante los vemos, si no les estamos con el tiempo.
+[02:24:43 -> 02:24:48]  Hay tres agentes, dos los van a tener que implementar ustedes.
+[02:24:48 -> 02:24:51]  Que no lo hemos visto en clase, así que,
+[02:24:51 -> 02:24:55]  por mucho, y ya hay hecho un Random Agent.
+[02:24:55 -> 02:24:59]  Que simplemente va a jugar de forma aleatoria.
+[02:25:04 -> 02:25:06]  Hay cuatro notebooks.
+[02:25:06 -> 02:25:08]  Tres de ellas están hechas para cada juego,
+[02:25:08 -> 02:25:11]  para jugar con esos agentes implementados.
+[02:25:11 -> 02:25:19]  que de nuevo ni siquiera van a funcionar porque esperan que estén implementados los agentes y los tan hechos.
+[02:25:19 -> 02:25:24]  Pero para probar ahora, hay una notebook que se llama Test.
+[02:25:24 -> 02:25:29]  En esta sí podemos jugar.
+[02:25:29 -> 02:25:33]  Entonces, vamos a ver.
+[02:25:33 -> 02:25:45]  Esto va a funcionar así. Vamos a quedarnos el juego, simplemente llamándolo. Este es
+[02:25:45 -> 02:25:55]  mp, que es el machine-penis. Cuando le hacemos reset, yo le puedo pedir, por ejemplo, que
+[02:25:55 -> 02:25:57]  donde diga los agentes.
+[02:26:03 -> 02:26:06]  Ven y tengo esos dos, que no son los agentes en sí, ¿no?
+[02:26:06 -> 02:26:10]  Son dos identificadores de los agentes.
+[02:26:10 -> 02:26:13]  Y después acá los voy a crear.
+[02:26:13 -> 02:26:16]  Entonces, el agente lo que va a saber es cuál es el juego.
+[02:26:16 -> 02:26:18]  Le paso el juego directamente, así el después lo puede llamar
+[02:26:18 -> 02:26:22]  y le puede pedir cuáles son las acciones y cosas así.
+[02:26:22 -> 02:26:27]  Y le voy a decir cuál es su ID, cuál es el ID que le da el juego.
+[02:26:30 -> 02:26:33]  Ah, bueno, el random agent tiene una seed para hacer jugadas rápido.
+[02:26:34 -> 02:26:36]  Entonces, me creo a los dos agentes.
+[02:26:38 -> 02:26:42]  Y después, jugar es simplemente pedirle a cada agente que haga una acción,
+[02:26:43 -> 02:26:46]  que de nuevo acá va a ser random, simplemente.
+[02:26:47 -> 02:26:50]  Y acá me hago un diccionario que simplemente le digo,
+[02:26:50 -> 02:26:54]  de la gente 0.agent, acá es un poco confuso como es el nombre,
+[02:26:54 -> 02:26:58]  pero el .agent es el ID que le había dado al juego,
+[02:26:58 -> 02:27:00]  y la acción que va a hacer.
+[02:27:00 -> 02:27:04]  Y de la gente 1, también, dame el ID y ahora...
+[02:27:04 -> 02:27:06]  Y la acción.
+[02:27:06 -> 02:27:08]  Y básicamente eso es lo que le pasa al juego.
+[02:27:08 -> 02:27:12]  Le digo al juego, mira, hace un step con este diccionario de acciones,
+[02:27:12 -> 02:27:14]  para cada jugador, me dice,
+[02:27:14 -> 02:27:16]  seleccionizo y después lo renderizo.
+[02:27:16 -> 02:27:19]  Y eso se va a jugar 10 partidas.
+[02:27:19 -> 02:27:21]  Y si yo ejecuto...
+[02:27:21 -> 02:27:23]  Bueno, como esto está con seeds...
+[02:27:23 -> 02:27:25]  Ah, vale, partidas.
+[02:27:25 -> 02:27:28]  Saben que...
+[02:27:28 -> 02:27:34]  Cada par de esos es una jugada, es una partida.
+[02:27:34 -> 02:27:37]  Yo aquí no les pongo 1.
+[02:27:37 -> 02:27:40]  Es una partida sola.
+[02:27:40 -> 02:27:52]  Para el agente 0, eligió T, y el agente 1 eligió H, y como eligieron distintos, el agente 1 sacó reward-1,
+[02:27:52 -> 02:27:57]  para el agente 0 sacó reward-1 y el agente 1 sacó reward.
+[02:27:57 -> 02:28:00]  ¿Y en concurrencia ahí que te la controla el agente?
+[02:28:00 -> 02:28:07]  Sí, o sea, en realidad es evidente porque yo le paso el diccionario de acciones,
+[02:28:07 -> 02:28:15]  Entonces, en cuando hace step, en realidad acá las agarra, las dos acciones, o sea, lo saca de acá,
+[02:28:15 -> 02:28:17]  un poco mágico, pero en realidad es...
+[02:28:17 -> 02:28:19]  ¿Deberían disparar un primero y un segundo?
+[02:28:19 -> 02:28:21]  ¿Deberían hacer como...?
+[02:28:21 -> 02:28:23]  ¿Deberían hacer como...?
+[02:28:23 -> 02:28:24]  ¿Cómo?
+[02:28:24 -> 02:28:26]  ¿Se desespera que sea secuencial, digamos?
+[02:28:26 -> 02:28:29]  O sea, ¿cómo juegan cada uno?
+[02:28:29 -> 02:28:32]  No, no, la verdad es que justamente que juegan a la vez.
+[02:28:32 -> 02:28:34]  O sea, no sé...
+[02:28:34 -> 02:28:36]  ¿Qué decirlo?
+[02:28:36 -> 02:28:39]  Sí, o sea, también te dificultan.
+[02:28:39 -> 02:28:43]  Hay una fase de selección que los deliten,
+[02:28:43 -> 02:28:46]  porque se le hace a cada uno y te igual.
+[02:28:46 -> 02:28:51]  Pero después se arma el par y se lo tira al juego.
+[02:28:51 -> 02:28:58]  Obviamente que acá sí hay una parte secuencial de que se les ha hecho mal a cada uno,
+[02:28:58 -> 02:29:03]  pero esto uno no sabe del otro hasta que se juega a este.
+[02:29:06 -> 02:29:16]  y básicamente eso es todo. Lo que sí creo que es que es claro porque parece un poco confuso es
+[02:29:18 -> 02:29:27]  cómo se relacionan los agentes y el ambiente, que es eso lo del ID. O sea, el juego no conoce
+[02:29:27 -> 02:29:33]  realmente los agentes, o sea, no tiene las clases, digamos, pero tiene los IDs. Entonces él sabe
+[02:29:33 -> 02:29:39]  identificar cada agente por su ID y después digamos nosotros nos encargamos o el propio
+[02:29:39 -> 02:29:47]  agente se encarga de decir así de la gente que era agent 0 es efectivamente el agent 0 que yo
+[02:29:47 -> 02:29:55]  definí acá pero eso porque yo le puse los nombres pero los agentes sí conocen el juego porque
+[02:29:55 -> 02:29:59]  después adentro le tienen que hacer preguntas por ejemplo el random agent de acá para calcular la
+[02:29:59 -> 02:30:04]  la Policía, en realidad lo que va a hacer es decirle que la probabilidad de cada acción
+[02:30:04 -> 02:30:12]  es 1 sobre la cantidad de acciones posibles, o sea, es completamente random. Pero yo acá
+[02:30:12 -> 02:30:17]  necesito preguntarle al juego, che, decime cuáles son las acciones. Entonces, en realidad
+[02:30:17 -> 02:30:22]  no es que el juego reciba a los agentes, que es lo más esperable, sino los agentes reciben
+[02:30:22 -> 02:30:28]  el juego y reciben el ID que el juego le da. Téngalo en cuenta cuando más yo sé el código
+[02:30:28 -> 02:30:34]  porque a veces eso a mí por lo menos cuando yo la escuché me confundí un montón al principio
+[02:30:34 -> 02:30:39]  entendía que estaba haciendo. Y eso capaz de responder, o sea, en realidad la implementación,
+[02:30:39 -> 02:30:47]  las preferencias, las utilidades están adentro de un... supone que la mente es ya un juego.
+[02:30:47 -> 02:30:49]  O sea, tienen las...
+[02:30:51 -> 02:30:53]  Lo que pasa es que después...
+[02:30:53 -> 02:30:55]  No puedo sumarte a Game.
+[02:30:55 -> 02:30:57]  Sí, Game.
+[02:30:57 -> 02:30:59]  Game tiene ahí una cantidad de funciones.
+[02:30:59 -> 02:31:01]  Una es Observe.
+[02:31:01 -> 02:31:05]  Que para cada configuración particular,
+[02:31:05 -> 02:31:09]  para la información total, información parcial,
+[02:31:09 -> 02:31:13]  juegos, después, el ternado, etcétera,
+[02:31:13 -> 02:31:15]  le va a decir qué es lo que realmente observa
+[02:31:15 -> 02:31:23]  a geren, eso. Entonces si solo puede observar su recompensa va a observar solo su recompensa.
+[02:31:23 -> 02:31:30]  Si solo puede observar la acción del oponente va a observar la acción del oponente. Si no,
+[02:31:30 -> 02:31:39]  no. Todas las reglas esas de cosas van a estar determinadas a través de ambiente con funcionamientos
+[02:31:39 -> 02:31:41]  particulares de OBSAP.
+[02:31:41 -> 02:31:45]  Por eso lo vamos a ir bien.
+[02:31:45 -> 02:31:48]  Para que no vayan y está todo el ambiente.
+[02:31:48 -> 02:31:54]  Y después si queremos cambiar a otro juego, por el que cambiar...
+[02:31:54 -> 02:31:59]  Si tienen un juego de 2x2, de 2 jugadores, van y cambian la matriz esa de recompensa.
+[02:31:59 -> 02:32:01]  ¿Está eso?
+[02:32:04 -> 02:32:06]  Vería que claro.
+[02:32:06 -> 02:32:13]  Si quieren practicar una cosa que se pueden hacer que es simple, es eso, de cambiarme
+[02:32:13 -> 02:32:15]  la difusión del programas de alfano.
+[02:32:15 -> 02:32:16]  Sí, o sea, acá.
+[02:32:16 -> 02:32:23]  En lugar de jugar medio a medio, uno sobre él, uno sobre él, por cualquier unico y
+[02:32:23 -> 02:32:25]  nominal de un pie.
+[02:32:25 -> 02:32:30]  Como en el crídeo, creo que eso es.
+[02:32:30 -> 02:32:31]  Claro, claro.
+[02:32:31 -> 02:32:42]  Y para hacer por ejemplo dos agentes distintos con distintas cuas que después sacaran test
+[02:32:42 -> 02:32:50]  cuando los crean, los crean distintos y pueden ver que pasa así cuando un contra otro.
+[02:32:50 -> 02:32:59]  Eso es lo básico, después las implementaciones y eso, y los juegos los vamos viendo después
+[02:32:59 -> 02:33:00]  para hacer cosas.
+[02:33:02 -> 02:33:04]  Básicamente, lo más importante,
+[02:33:04 -> 02:33:05]  porque quería aprovechar con otras elogias,
+[02:33:05 -> 02:33:07]  así pueden ir, si van a usar VL,
+[02:33:07 -> 02:33:09]  lo pueden instalar, lo pueden probar,
+[02:33:09 -> 02:33:10]  ver en qué anda.
+[02:33:10 -> 02:33:11]  Ejecute todo bien.
+[02:33:13 -> 02:33:15]  Y nada, rica cosa.
+[02:33:19 -> 02:33:21]  ¿Alguna pregunta?
+[02:33:21 -> 02:33:23]  ¿Una queja?
+[02:33:25 -> 02:33:27]  Por ahora no.
+[02:33:27 -> 02:33:28]  No, no, no, no.
+[02:33:28 -> 02:33:29]  El mal excedente.
+[02:33:29 -> 02:33:32]  Bueno, eso es todo de mi parte.
+[02:33:32 -> 02:33:35]  ¿Qué es lo que va a ser el primero que va a ir?
+[02:33:35 -> 02:33:38]  Esto es parte de lo que yo no lo había entendido, no sé si...
+[02:33:38 -> 02:33:40]  Sí, creo que es una parte de lo que...
+[02:33:40 -> 02:33:41]  El primero es...
+[02:33:41 -> 02:33:43]  Ah, no, falta...
+[02:33:43 -> 02:33:44]  El...
+[02:33:44 -> 02:33:45]  El traje.
+[02:33:45 -> 02:33:49]  Sí, esto es el 70 por ciento.
+[02:33:49 -> 02:33:56]  Es decir, si te dices que te haces un play y regresas el matchup,
+[02:33:56 -> 02:33:58]  te harás lo que quieras.
+[02:33:58 -> 02:34:01]  O sea, después de por instrucción.
+[02:34:01 -> 02:34:06]  Ahora no hay que formar.
+[02:34:06 -> 02:34:08]  Como es que no hay más.
+[02:34:08 -> 02:34:11]  No hay nada que formar.
+[02:34:11 -> 02:34:15]  Una semana que viene no hay clase, ¿no?
+[02:34:15 -> 02:34:17]  No, no estoy bien.
+[02:34:17 -> 02:34:25]  y si pueden leer el libro y bajar a tierra a toda la vez que quieran, lo llegan.
+[02:34:25 -> 02:34:28]  No es perfecto.
+[02:34:28 -> 02:34:31]  Pues también, nos vemos a la vuelta.
+[02:34:31 -> 02:34:33]  Bueno, nos vemos, gracias.
+[02:34:33 -> 02:34:35]  Nos vemos mañana.
+[02:34:35 -> 02:34:37]  Muy bien.
+[02:34:37 -> 02:34:39]  Chao.

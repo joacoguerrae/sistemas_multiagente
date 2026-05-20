@@ -1,0 +1,725 @@
+# Clase7 - sistemas_multiagente (con timestamps)
+
+[00:00:00 -> 00:00:02]  Universidad de Oro. Universidad de Oro.
+[00:05:00 -> 00:05:28]  Bueno, bueno, bueno.
+[00:05:28 -> 00:05:36]  Lo llevo a esta de acá y lo vamos a empezar.
+[00:05:36 -> 00:05:40]  Le dejo perdón, pero si, para que lo ponga y conlleve.
+[00:05:40 -> 00:05:44]  Lo que pueda.
+[00:05:44 -> 00:05:50]  La idea de hoy es este...
+[00:05:50 -> 00:05:56]  No sé, supe que está esto, que es un tema que sabemos,
+[00:05:56 -> 00:06:03]  pero mi movimiento está bastante bien con el obligatorio.
+[00:06:03 -> 00:06:14]  Lo que voy a empezar para hoy es, por aquí, por las cosas que vi, la clase pasada,
+[00:06:14 -> 00:06:22]  los conceptos de equilibrio y todo lo demás, vamos a hacer unos ejercicios
+[00:06:22 -> 00:06:28]  que pueden ser también ejercicios parciales, pero sobre todo, más que nada, para si terminamos de quitar los conceptos.
+[00:06:28 -> 00:06:32]  Después, eso, será la primera hora.
+[00:06:32 -> 00:06:38]  Después la segunda hora. Estoy grabando las máquinas, porque acá no tengo el shifter, creo.
+[00:06:38 -> 00:06:40]  En lo que están todos ocupados.
+[00:06:40 -> 00:06:48]  Y les voy a mostrar un poco algunos ejercicios del obligatorio.
+[00:06:48 -> 00:07:04]  ejemplos que le van a servir para probar, para testear que la solución le funcione para cualquier cantidad de atentes,
+[00:07:04 -> 00:07:12]  porque son sistemas que se conocen los equilibrios, las soluciones, entonces es fácil y simplemente
+[00:07:12 -> 00:07:33]  fue probado a ver si funciona, y bueno, también se pasó el análisis, cómo le va, son todos de esta parte.
+[00:07:33 -> 00:07:48]  Gracias por agregar uno para cuando apliquen de Independent Learning y Joint Action Learning,
+[00:07:48 -> 00:07:56]  que sea este partido, porque el de los robots es la determinación.
+[00:07:56 -> 00:08:12]  Pero bueno, y cuando habremos el tema del obligatorio, discutimos el tema del obligatorio.
+[00:08:12 -> 00:08:19]  Yo después les voy a... entonces dejo de compartir, lo vamos a resolver en el desarrollo,
+[00:08:19 -> 00:08:33]  después les comparto de dónde está el ejercicio, que está en el libro, pero así lo resolvemos
+[00:08:33 -> 00:08:44]  acá primero con lo que recuerden y después tienen la revolución detallada.
+[00:08:44 -> 00:08:47]  En el libro vamos a ver varios.
+[00:08:52 -> 00:08:56]  ¿Ven bien los que están online?
+[00:08:56 -> 00:09:02]  Un pedido máximo que puedo hacer zoom de la pantalla.
+[00:09:02 -> 00:09:08]  vamos a empezar desde la otra parte
+[00:09:08 -> 00:09:10]  creo que es mejor
+[00:09:10 -> 00:09:12]  si
+[00:09:12 -> 00:09:14]  y bueno
+[00:09:14 -> 00:09:16]  entonces
+[00:09:16 -> 00:09:18]  vamos a
+[00:09:18 -> 00:09:20]  reintubar que es
+[00:09:20 -> 00:09:22]  el T40
+[00:09:22 -> 00:09:24]  3
+[00:09:24 -> 00:09:26]  3
+[00:09:26 -> 00:09:28]  3
+[00:09:28 -> 00:09:30]  2
+[00:09:30 -> 00:09:33]  4
+[00:09:35 -> 00:09:38]  y 4 2
+[00:09:47 -> 00:09:51]  Hay dos jugadores, el 1 y 2
+[00:09:52 -> 00:09:55]  que tienen las acciones de salud
+[00:09:55 -> 00:10:05]  Pueblos que son P y C, J, P, C, Y, E, Y, E.
+[00:10:05 -> 00:10:07]  ¿Vale?
+[00:10:07 -> 00:10:15]  Jugador Tila, 1, jugador Columnado, A.
+[00:10:15 -> 00:10:22]  Entonces, P, el objetivo es encontrar los equilibrios.
+[00:10:22 -> 00:10:29]  lo pueden probar, pueden implementar o no,
+[00:10:29 -> 00:10:34]  Vintage Play o Regret Machine, pueden verlo.
+[00:10:39 -> 00:10:47]  Así, primero, tiene... ¿qué conceptos, qué cosas vimos que nos servían para encontrar la solución?
+[00:10:47 -> 00:10:55]  Primero si tienen por ejemplo estrategias puras dominantes.
+[00:10:55 -> 00:10:57]  ¿Acá hay estrategias puras dominantes?
+[00:10:57 -> 00:11:07]  Lo que tienen que mirar si quieren, capaz que es más visual si lo pongo en colores.
+[00:11:07 -> 00:11:11]  Vamos a ponerlo en colores.
+[00:11:41 -> 00:11:47]  3 y 4 y arriba es el... lo dejamos en negro
+[00:11:48 -> 00:11:55]  entonces para ver si hay estrategias, primero un muro, antes de que miramos primero
+[00:12:02 -> 00:12:07]  rojo es 4-thinner
+[00:12:07 -> 00:12:21]  Esto quiere decir que tiene 4 de utilidad, si es de preferencia, si el jugador por lejas juega E y 3 si juega C
+[00:12:21 -> 00:12:30]  Entonces, queremos ver si una denominante lo que hacemos en la columna esta, respecto a la columna esta
+[00:12:30 -> 00:12:33]  y dicen todos los jugadores es mayor o mayor o igual
+[00:12:33 -> 00:12:36]  pero no, con 4 es igual que 2, con 3 no es mayor
+[00:12:36 -> 00:12:39]  y 4, entonces, de la revista a juego
+[00:12:39 -> 00:12:42]  ninguna...
+[00:12:42 -> 00:12:46]  perdón, 4-2 con 3-4
+[00:12:46 -> 00:12:50]  4-2 con 3-4, 4-3, 2-4
+[00:12:50 -> 00:12:55]  y jugador con una se da oigo
+[00:12:55 -> 00:12:59]  4-2 con 3-3, ninguna es mayor
+[00:12:59 -> 00:13:03]  No hay la división dominante.
+[00:13:09 -> 00:13:12]  4-2, 3-4 y 0-3.
+[00:13:14 -> 00:13:17]  Después vamos a ver si haría equilibrios de Nash.
+[00:13:20 -> 00:13:24]  Acabamos la best response de cada giro.
+[00:13:24 -> 00:13:32]  por ejemplo si jugador con una juega E
+[00:13:32 -> 00:13:36]  que le conviene jugar a un jugador D?
+[00:13:36 -> 00:13:43]  4, 4 es la mejor, porque cuando le da 4, se le da 3
+[00:13:43 -> 00:13:48]  y si juega F es al revés, cuando le da 4 se le da 2
+[00:13:54 -> 00:14:12]  rojo, y esto es, si juegas B, a jugador columna, que juegue por 4.
+[00:14:12 -> 00:14:18]  Y si juegas T, a jugador fila, que juegue por E.
+[00:14:18 -> 00:14:22]  No hay ninguno que está marcado opuesto.
+[00:14:22 -> 00:14:29]  Tampoco hay ningún equilibrio en estrategias
+[00:14:29 -> 00:14:33]  parecidas en este caso como el Machine Pays.
+[00:14:33 -> 00:14:35]  Bien.
+[00:14:35 -> 00:14:37]  Bien.
+[00:14:37 -> 00:14:41]  Entonces, ¿cómo vamos al...
+[00:14:41 -> 00:14:56]  ¿Cómo hacemos ahora para ver si hay manualmente estrategias de equilibrios mismos?
+[00:14:56 -> 00:14:57]  Hay.
+[00:14:57 -> 00:15:00]  ¿De qué manejo?
+[00:15:00 -> 00:15:01]  Hay.
+[00:15:01 -> 00:15:02]  Bien.
+[00:15:02 -> 00:15:05]  ¿Y cómo lo encontramos?
+[00:15:05 -> 00:15:19]  ¿Cómo te diste cuenta que no hay equilibrio en NAR?
+[00:15:19 -> 00:15:37]  que es el equilibrio, que todos simultáneamente juegan una respons, pi subi, la ddc a, respons de pi
+[00:15:37 -> 00:15:41]  para todo esto.
+[00:15:41 -> 00:15:45]  Esa es como la definición.
+[00:15:45 -> 00:15:53]  Acá, si es una cura, igual si no una acción,
+[00:15:53 -> 00:15:57]  es más fácil decir que es una acción que un vector o un jostro,
+[00:15:57 -> 00:16:00]  que tiene un número en la acción, es más sencillo.
+[00:16:00 -> 00:16:06]  Y si no, es la que tiene mayor valor,
+[00:16:06 -> 00:16:10]  siempre la que tiene más oro valo ya se va a ver
+[00:16:10 -> 00:16:15]  la utilidad que está acá o la esperanza de utilidad si es mixto
+[00:16:15 -> 00:16:17]  eso está claro?
+[00:16:17 -> 00:16:18]  está
+[00:16:18 -> 00:16:20]  entonces
+[00:16:20 -> 00:16:26]  para encontrarlo, porque primero podemos si vamos a las estrategias
+[00:16:26 -> 00:16:27]  puras
+[00:16:27 -> 00:16:31]  lo primero que podemos mirar es a ver si hay
+[00:16:31 -> 00:16:36]  estrategias dominantes, aquellas que tienen una utilidad ya mayor que otra.
+[00:16:38 -> 00:16:40]  Y acá no hay.
+[00:16:43 -> 00:16:53]  Y entonces, para la otra, en los juegos estos, así dicen, hasta tres lo podemos hacer, vamos a hacer un ejercicio hasta tres,
+[00:16:53 -> 00:17:01]  se complica, lo que podemos hacer es eso, es ir mirando y seguir más o menos la idea,
+[00:17:02 -> 00:17:12]  si oponente elige una acción, por ejemplo elige jugar E, vamos a arrancar por las columnas,
+[00:17:14 -> 00:17:22]  entonces cuál es la best response de fila a E, bueno es el lugar donde el axol que tiene
+[00:17:22 -> 00:17:30]  la mayor utilidad ahora estamos en puras entonces acá no hay ningún cálculo entonces marcamos el 4
+[00:17:32 -> 00:17:43]  y frente a f y bueno el mayor está acá, frente a e es b y frente a f es 0
+[00:17:45 -> 00:17:49]  y eso lo marcamos así para indicarlo
+[00:17:49 -> 00:17:54]  vamos a escribir una tabla. Pero aquí es fácil porque después hacemos lo mismo para el otro.
+[00:17:56 -> 00:18:02]  Si jugador fila juega B, qué es lo mejor que puede hacer el jugador común que va a jugar F?
+[00:18:02 -> 00:18:05]  Tiene 4 heyser o cada 12, no le da respuesta.
+[00:18:07 -> 00:18:13]  Entonces hago lo mismo, cuál es el laminismo yo te diría? Es esta. Entonces ahora me fijo
+[00:18:13 -> 00:18:20]  la matriz y no hay ninguna celda que tiene dos líneas
+[00:18:20 -> 00:18:26]  eso quiere decir que no hay ninguna conjunta en la cual una sea verde
+[00:18:26 -> 00:18:31]  posa la hoja y viceversa
+[00:18:32 -> 00:18:39]  entonces no se cumple que hay un par
+[00:18:43 -> 00:18:53]  de acciones, una de jugador de fila y otra de jugador de columna, que sean por equilibrio,
+[00:18:53 -> 00:18:55]  para que una sea la verdad y la razón al lado, ¿de acuerdo?
+[00:19:01 -> 00:19:02]  ¿Veis?
+[00:19:02 -> 00:19:07]  Si el jugador ve, se defira, se defira, juega a B,
+[00:19:07 -> 00:19:23]  y si juega 0, Columna juega 3 y al revés está cruzado
+[00:19:23 -> 00:19:36]  Las dos es, no hay ninguna estrategia, o sea, ningún equilibrio en estrategias múltiples.
+[00:19:36 -> 00:19:41]  Pero tiene que haber una estrategia mixta.
+[00:19:41 -> 00:19:59]  ¿Cómo es el planteo de encontrar el equilibrio en estos juegos sencillos?
+[00:19:59 -> 00:20:06]  vamos a ver, más de esto se empieza con mi calidad de hacer cosas, o sea por eso
+[00:20:06 -> 00:20:13]  podemos hacer un
+[00:20:13 -> 00:20:14]  ishinklay o regret matching
+[00:20:14 -> 00:20:23]  es así, hay otra propiedad que nosotros enciamos de una manera sencilla que es que si existe
+[00:20:23 -> 00:20:34]  una red de respons mixta entonces también existe una red de respons pulvo y hay algo un poco más que
+[00:20:34 -> 00:20:47]  es que este si algo es un equilibrio de Nash, si algo es un equilibrio de Nash, entonces
+[00:20:47 -> 00:21:01]  es cualquier acción, cualquier estrategia pura, cualquier acción que tenga probabilidad
+[00:21:01 -> 00:21:07]  positiva es también una de respostas y tiene la misma utilidad que el equilibrio.
+[00:21:07 -> 00:21:15]  ¿Vamos? Ahora lo abro.
+[00:21:15 -> 00:21:25]  Porque sabiendo que la distribución es un equilibrio de náuseos, no para cualquier
+[00:21:25 -> 00:21:32]  Pura que. Digo, no para cualquier estrategia misma. Si, la estrategia es una equilibrio en H.
+[00:21:32 -> 00:21:41]  Lo que pasa es que, en definitiva, si yo tengo un equilibrio, tengo una estrategia mixta,
+[00:21:41 -> 00:21:46]  lo que se va a juzgar en definitiva es una acción pura, es una juzgada, una acción,
+[00:21:46 -> 00:21:52]  importa con qué probabilidad. Entonces, cualquiera sea la acción que salga,
+[00:21:52 -> 00:21:57]  que tenga probabilidades positivas, tendría que dar la misma utilidad, porque si no me conviene
+[00:21:57 -> 00:22:01]  darle más probabilidad a la otra y eventualmente cancelar eso, que hay otra que tiene mayor probabilidad.
+[00:22:01 -> 00:22:03]  Bien. Esa es la del otro.
+[00:22:03 -> 00:22:13]  Si en nombre equilibrar, porque si no se rompería esto, se rompería el hecho de que es una gran respuesta.
+[00:22:13 -> 00:22:19]  Que hay otra que tiene mayor utilidad, entonces si hay otra que tiene mayor utilidad, entonces esta no es la parte.
+[00:22:19 -> 00:22:30]  Entonces, para calcular, en estos casos simples, un equilibrio de nash, lo que planteamos es
+[00:22:30 -> 00:22:34]  una igualdad entre dos distribuciones.
+[00:22:34 -> 00:22:42]  O sea, las utilidades producto de esas distribuciones.
+[00:22:42 -> 00:22:48]  y como se hace?
+[00:22:48 -> 00:22:50]  supongamos que
+[00:22:50 -> 00:22:54]  yo tengo dos jugadores
+[00:22:54 -> 00:22:56]  jugador 1 y el jugador 2
+[00:22:56 -> 00:23:02]  supongamos que el jugador 1 juega P1-P
+[00:23:02 -> 00:23:06]  y el jugador 2 juega P1-P
+[00:23:06 -> 00:23:08]  yo no se cuando
+[00:23:08 -> 00:23:16]  cuando lo único que es es una estrategia de hecho lo que quiero hacer es averiguar
+[00:23:16 -> 00:23:22]  cuanto vale, es una estrategia mixto
+[00:23:23 -> 00:23:28]  entonces usando eso que dije recién
+[00:23:30 -> 00:23:38]  si vamos a hacerlo por ejemplo para el jugador 2, si el jugador 2 jugara a esta
+[00:23:38 -> 00:23:43]  entonces
+[00:23:47 -> 00:23:55]  si fuera un equilibrio de Nash, jugador 1 tendría la misma utilidad que puede haber, que puede hacer
+[00:23:58 -> 00:24:01]  por lo que acabo de decir, si es un equilibrio de Nash
+[00:24:01 -> 00:24:07]  entonces la utilidad es la misma para todas las acciones
+[00:24:10 -> 00:24:15]  dará esa instrucción de probabilidad que juega oponente
+[00:24:18 -> 00:24:29]  entonces cuál es la utilidad que tiene el jugador 1 del rojo frente a Pilos
+[00:24:29 -> 00:24:37]  Si juega B, ¿qué unidad tiene si juega B?
+[00:24:39 -> 00:24:46]  Otro A. Bien, cuatro.
+[00:24:46 -> 00:24:49]  Por la probabilidad de E.
+[00:24:49 -> 00:24:56]  Esto es la probabilidad de E, la probabilidad de B, la probabilidad de C, la probabilidad de E y la probabilidad de F.
+[00:24:56 -> 00:25:08]  Entonces va a ser 4 por Q más 2 por 1.
+[00:25:12 -> 00:25:16]  Y si juega a C...
+[00:25:16 -> 00:25:30]  ¿por qué? porque está jugando la tarjeta pura B, entonces comprobaría 0 por esto,
+[00:25:30 -> 00:25:41]  entonces si tienen todos esos términos se van, porque sería 1 por esto, 0 por esto,
+[00:25:41 -> 00:25:52]  y si puedo hacer es 3 por q más 4 por 1
+[00:25:52 -> 00:25:58]  o sea eso sería la posibilidad que obtiene jugando B y jugando C
+[00:25:58 -> 00:26:11]  Para que esto sea, para que q1-q sea parte del equilibrio, esta dos cosas tendrían que ser iguales.
+[00:26:11 -> 00:26:13]  A 0.
+[00:26:13 -> 00:26:15]  La D.
+[00:26:17 -> 00:26:19]  Entonces,
+[00:26:19 -> 00:26:21]  acá abrandamos
+[00:26:21 -> 00:26:23]  que 4
+[00:26:23 -> 00:26:25]  1
+[00:26:25 -> 00:26:27]  por 2, más 2
+[00:26:27 -> 00:26:29]  número 1
+[00:26:29 -> 00:26:31]  se ve igual, 3
+[00:26:31 -> 00:26:33]  1 más 4
+[00:26:33 -> 00:26:35]  por número 1.
+[00:26:41 -> 00:26:56]  Bueno, ahora hay que hacer la cuentita, esto queda 4q menos 2q, esto es 2 menos 2q, 4q
+[00:26:56 -> 00:27:10]  menos 2q, y esto es 4q menos 2q es 2q, más 2, y esto queda 3q menos 4q, esto sí queda
+[00:27:10 -> 00:27:20]  u igual a 3-4
+[00:27:20 -> 00:27:23]  Entonces, ¿cuánto saldrá?
+[00:27:23 -> 00:27:25]  Es que Q...
+[00:27:28 -> 00:27:30]  Q igual a...
+[00:27:35 -> 00:27:37]  Q igual a 2...
+[00:27:41 -> 00:27:43]  Y Z.
+[00:27:45 -> 00:27:47]  ¿2 tercios, no?
+[00:27:47 -> 00:27:49]  3, 4, 5...
+[00:27:49 -> 00:28:04]  2, 2, bien, mejor 10, bien, entonces, como que de esta manera el jugador 1
+[00:28:04 -> 00:28:09]  descubre cuál es la...
+[00:28:09 -> 00:28:16]  vamos a decir el revés, el jugador 2 descubre qué debería jugar dado que
+[00:28:16 -> 00:28:21]  Pobrador 1 va a hacer el mismo razonamiento y para él va a ser donde tiene que poner
+[00:28:21 -> 00:28:23]  la estrategia de hacer lo mismo por el 3.
+[00:28:23 -> 00:28:28]  Entonces de ahí sale Q igual a 2.
+[00:28:29 -> 00:28:34]  Y hacemos lo mismo para el otro.
+[00:28:39 -> 00:28:45]  Entonces, lo que hacemos acá es A.
+[00:28:46 -> 00:29:03]  ¿Cuál es la utilidad de jugador de columna si juega E frente a P1-P?
+[00:29:03 -> 00:29:12]  0 por P más 3 por 1-P
+[00:29:12 -> 00:29:26]  y si juega este va a ser 4 por p más 2 por 1
+[00:29:26 -> 00:29:46]  Hacemos 3 menos p igual a 4p, 4 menos 2, más 2.
+[00:29:46 -> 00:29:50]  y acá sale
+[00:29:50 -> 00:29:54]  e igual a
+[00:29:54 -> 00:29:58]  un de aquí, no?
+[00:29:58 -> 00:30:02]  3P y mal a 1
+[00:30:02 -> 00:30:06]  bueno
+[00:30:06 -> 00:30:10]  entonces
+[00:30:10 -> 00:30:14]  el equilibrio de hash es
+[00:30:14 -> 00:30:26]  pi 1 igual a un tercio, dos tercios, dos tercios, uno.
+[00:30:32 -> 00:30:38]  Y después podemos ver cuál es la utilidad que tiene para los vuelos.
+[00:30:44 -> 00:30:53]  Si lo quieren ver gráficamente acá ya es lo bueno.
+[00:30:53 -> 00:31:02]  Acá es lo mismo, que ahora esto lo que ven es, acá hay dos rectas.
+[00:31:02 -> 00:31:08]  Intercepta la recta 2 recta, la recta 3 de los P con la recta 2 P más 2.
+[00:31:08 -> 00:31:17]  y el punto de intersección es lo que le da y lo mismo, la intersección entre estados como pan.
+[00:31:17 -> 00:31:23]  Es lo que hablábamos este dibujado otra vez.
+[00:31:23 -> 00:31:27]  La pregunta ya no es 3 menos 3d.
+[00:31:27 -> 00:31:30]  Ah, capaz que estoy impulsando. ¿Dónde fue?
+[00:31:30 -> 00:31:33]  Abajo. Ah, sí, sí, justo.
+[00:31:33 -> 00:32:01]  y esto es 3 menos 3t, esto es 5, esto es 5t, un quinto,
+[00:33:01 -> 00:33:11]  ¿Está bien?
+[00:33:11 -> 00:33:23]  Bien.
+[00:33:23 -> 00:33:39]  Lo más importante de acá es que plantean esto, la igualdad entre las dos utilidades
+[00:33:39 -> 00:33:44]  para despejar la programación.
+[00:33:53 -> 00:34:05]  Si esto son buenas, pueden votar listas. ¿Viste tus abeixos?
+[00:34:05 -> 00:34:07]  Dicciotr
+[00:34:07 -> 00:34:09]  Garrero
+[00:34:09 -> 00:34:11]  Thanks
+[00:34:11 -> 00:34:13]  ateful
+[00:34:23 -> 00:34:30]  Bien, vamos a hacer un par de ejercicios más.
+[00:34:30 -> 00:34:31]  ¿Vale?
+[00:34:31 -> 00:34:32]  ¿Y es?
+[00:34:32 -> 00:35:00]  Uno de tres acciones es 1,2 y 4,0 y otro es 1,0 y 0,4.
+[00:35:00 -> 00:35:14]  ¿Cómo la llamamos?
+[00:35:14 -> 00:35:15]  ABCID.
+[00:35:15 -> 00:35:35]  No, no. De hecho, bueno, fue una de las que les, este, la fecha que les subí, hay,
+[00:35:35 -> 00:35:37]  No.
+[00:35:39 -> 00:35:44]  No, no. De hecho, bueno, es una de las que le he subido.
+[00:35:44 -> 00:35:48]  Hay tres jugadores de dos y tres.
+[00:35:48 -> 00:35:52]  ¿Es este la verdad? Ah, parece que de dos y...
+[00:35:52 -> 00:35:59]  Sí, pero hay uno en el que hay dos jugadores que tienen dos y uno que tiene tres.
+[00:36:01 -> 00:36:03]  ¿Estos ya están en obras de otro mundo?
+[00:36:03 -> 00:36:07]  No, no, esto yo imprepaso, no lo digo, es un capítulo del libro, si te pueden ver,
+[00:36:07 -> 00:36:14]  pues, el desarrollo y después le subo el sit con los nuevos, porque no hace.
+[00:36:16 -> 00:36:18]  El dominante no hay.
+[00:36:19 -> 00:36:19]  No.
+[00:36:20 -> 00:36:23]  Ahora, ahora, tenés acciones de...
+[00:36:23 -> 00:36:29]  O sea, 0411120 no, y...
+[00:36:29 -> 00:36:31]  O sea, este C, pero estos están cambiados.
+[00:36:31 -> 00:36:31]  No.
+[00:36:31 -> 00:36:40]  con tres es un lío porque tenemos que hacer un montón de igualdades y cosas así
+[00:36:40 -> 00:36:54]  no lo vamos a poder hacer eso a mano pero no lo que quería es que no hay
+[00:36:56 -> 00:36:58]  ni dominante ni dominada
+[00:36:58 -> 00:37:09]  pura pero si hay una dominada mixta, entonces la podemos eliminar
+[00:37:14 -> 00:37:19]  con la misma adentro, con el shock
+[00:37:19 -> 00:37:31]  hay una dominada pura del jugador 1 pero en las mixtas del jugador 2
+[00:37:37 -> 00:37:45]  imagina esa con la idea que con lo que les dije jugador 1 tiene tres puras A, B o C
+[00:37:45 -> 00:37:57]  ninguna de las estrategias jugas es nominal ni dominar, pero hay una que si jugador columna
+[00:38:04 -> 00:38:11]  una estrategia jugada, que hay para una estrategia mixta, probabilística, que sería dominar
+[00:38:15 -> 00:38:23]  O sea, tendría cero en un equilibrio de narco.
+[00:38:23 -> 00:38:27]  ¿Se imaginan cuáles?
+[00:38:38 -> 00:38:40]  ¿Cuánto les daría B?
+[00:38:40 -> 00:38:52]  Si jugador columna, jugar a Q1 menos Q.
+[00:38:52 -> 00:39:00]  Espera, espera, estamos teniendo barchillas de la ciencia, ¿cuál sería la utilidad de la estrategia pura B?
+[00:39:00 -> 00:39:13]  Bueno, dijimos que da 1 por Q más 1 menos Q.
+[00:39:13 -> 00:39:15]  Y el cuánto da?
+[00:39:15 -> 00:39:22]  Sí, Q menos Q, los Q se van y el nombre da 1.
+[00:39:22 -> 00:39:38]  Entonces, la utilidad para jugador pila si jugador columna jugara una estrategia mixta
+[00:39:38 -> 00:39:42]  1 menos 1 sería 1
+[00:39:51 -> 00:39:54]  y ahora vamos a ver cuánto
+[00:39:56 -> 00:39:59]  sería frente a este
+[00:39:59 -> 00:40:01]  y ahora
+[00:40:01 -> 00:40:04]  si yo le pongo 0 por ejemplo a esta
+[00:40:04 -> 00:40:08]  y juego algo en A y el C
+[00:40:08 -> 00:40:11]  C3
+[00:40:12 -> 00:40:19]  pueden ver algo que les daría mayor que una estrategia mixta
+[00:40:19 -> 00:40:25]  entre A y C que les diera mayor que 1
+[00:40:25 -> 00:40:34]  con esta misma astucia de eliminar, para que no te quede de cú
+[00:40:34 -> 00:40:38]  No, no, no.
+[00:40:38 -> 00:40:42]  La C.
+[00:40:42 -> 00:40:46]  No, la C da dos.
+[00:40:46 -> 00:40:50]  No, te quedaría dos C.
+[00:40:50 -> 00:40:54]  No, pero dos C te queda ahí. Depende de C un poco.
+[00:40:54 -> 00:40:58]  Y esta va a quedar en 10.
+[00:40:58 -> 00:41:23]  Si fuéramos C comprobaría dos tercios y A comprobaría un tercio.
+[00:41:23 -> 00:41:31]  2 tercios por 2 me queda 4 tercios y 1 tercio por 4 me queda 4 tercios
+[00:41:31 -> 00:41:43]  dijiste que no querías defender recu, por eso le estoy dando valor a p
+[00:41:43 -> 00:41:47]  Pero, de hecho tengo uno más, no?
+[00:41:47 -> 00:41:49]  Si, uno.
+[00:41:49 -> 00:41:51]  Lo que pasa es que le voy a estar así
+[00:41:51 -> 00:41:55]  P, cero, uno menos P.
+[00:41:55 -> 00:42:01]  O sea, le voy a dar, cuando valiera cero
+[00:42:01 -> 00:42:03]  a jugar la acción V.
+[00:42:03 -> 00:42:11]  Y voy a calcular la utilidad de Pi 1.
+[00:42:11 -> 00:42:20]  Pero dije ahora tipo P igual a, como les dije, dos tercios.
+[00:42:20 -> 00:42:23]  No, P en A, sí, dos tercios.
+[00:42:27 -> 00:42:30]  ¿Cuál sería la probabilidad?
+[00:42:31 -> 00:42:35]  Si juego A con probabilidad dos tercios,
+[00:43:05 -> 00:43:10]  y 4 por...
+[00:43:10 -> 00:43:13]  No, no, no.
+[00:43:13 -> 00:43:15]  Don't refuse.
+[00:43:15 -> 00:43:17]  Vamos a poner el tomo a escuchar.
+[00:43:17 -> 00:43:20]  Por...
+[00:43:20 -> 00:43:22]  Sí, esto.
+[00:43:22 -> 00:43:26]  Porque esto es la probabilidad de que...
+[00:43:26 -> 00:43:28]  Uno me puso.
+[00:43:35 -> 00:43:45]  ¿Cuánto va a obtener el jugador si juega a con probabilidades de 2 tercios?
+[00:43:45 -> 00:44:10]  es la esperanza, 0 por dos tercios por un, más
+[00:44:10 -> 00:44:27]  Bueno, 4 por 2 tercios, bueno no me lo jugué.
+[00:44:27 -> 00:44:37]  más lo de jugar, o sea, B, o sea, 0, más lo de C.
+[00:44:37 -> 00:44:46]  Entonces, más 2 por una reacción.
+[00:44:46 -> 00:44:48]  Por Q.
+[00:44:48 -> 00:44:50]  Cero.
+[00:44:50 -> 00:44:54]  Cualquiera esta, o sea, la que hay que jugar, creo que la paqueta es la que es.
+[00:44:54 -> 00:44:58]  ¿Cuánto?
+[00:44:58 -> 00:45:00]  Por un tercio.
+[00:45:00 -> 00:45:04]  ¿Por un tercio?
+[00:45:04 -> 00:45:08]  Sí, esa es la revés.
+[00:45:08 -> 00:45:10]  Por un número.
+[00:45:10 -> 00:45:14]  ¿Ole tiene que ser el doble?
+[00:45:14 -> 00:45:16]  Sí, esa es la revés.
+[00:45:16 -> 00:45:18]  ¿Dónde es de 6?
+[00:45:18 -> 00:45:20]  Es 1.5 igual a un tercio.
+[00:45:20 -> 00:45:32]  Me iguala 1 tercio, tengo 1 tercio, acá tengo 2 tercios.
+[00:45:32 -> 00:45:51]  Entonces, esto se va, se va multiplicado por cero, y esto en qué resulta?
+[00:45:51 -> 00:46:05]  Nos queda en 4 tercios menos 4 tercios de Q más 4 tercios de Q.
+[00:46:05 -> 00:46:10]  O sea, igual a 4 tercios.
+[00:46:10 -> 00:46:20]  ¿Cuánto terceros es mayor o cuantos terceros es más grande que uno?
+[00:46:20 -> 00:46:25]  ¿Cuánto terceros es más grande que uno?
+[00:46:25 -> 00:46:28]  ¿Cuánto terceros es mayor que uno?
+[00:46:28 -> 00:46:30]  ¿Eso me quiere decir?
+[00:46:30 -> 00:46:35]  ¿Puedo eliminar la acción B?
+[00:46:35 -> 00:46:38]  Tranquilamente.
+[00:46:38 -> 00:46:54]  porque la acción B, que sería 0,1,0, es dominada por la acción, o sea, por la distribución de probabilidad un 1 0 2 1
+[00:46:54 -> 00:46:58]  entonces nunca la ven, nunca apuesta en el lideraje
+[00:47:03 -> 00:47:06]  porque existe una que tiene mayor utilidad
+[00:47:08 -> 00:47:18]  Entonces, si jugador 2 jugara 1 menos q, jugador 1 nunca iba a jugar b.
+[00:47:18 -> 00:47:28]  Preguntenis jugar 1 tercio o 2 tercios a jugar 0,1, o sea, 1 tercio o 0,3, jugar 0,1, es la mayor utilidad.
+[00:47:28 -> 00:47:34]  O sea, jugar b, jugar la introducción 0,1, 0.
+[00:47:34 -> 00:47:43]  ¿Cómo llegaríamos nosotros a la preguntación?
+[00:47:43 -> 00:47:46]  No, no, no, no.
+[00:47:46 -> 00:47:49]  Es difícil lo reír.
+[00:47:49 -> 00:47:54]  No, no, no, no, no, no, no, no, era eso, era eso.
+[00:47:54 -> 00:47:56]  O sea, él es estrategia, sí.
+[00:47:56 -> 00:48:06]  haciendo las manos y se llena de la vida, empezar a jugar poco y ver y la dificultad de, por ejemplo,
+[00:48:06 -> 00:48:15]  en estrategias mixtas hacer eliminación de cosas, porque uno tendría que explorar todo el espacio y ver si hay una mixta,
+[00:48:15 -> 00:48:25]  tendría que plantearte todas, podría ser bueno, me planteo para cada una, si existe otra, pero ya está,
+[00:48:25 -> 00:48:33]  incluso con esto lo podríamos llegar a resolver, pero ya con otras dimensiones mucho más complicadas.
+[00:48:37 -> 00:48:45]  Pero eso es solo para mostrar que el principio de eliminar dominadas sigue siendo vigente,
+[00:48:45 -> 00:48:50]  o sea, nunca va a haber una dominada en un equilibrio de nachos.
+[00:48:50 -> 00:49:00]  Entonces en conclusión de esto yo puedo ahora eliminar esa fila porque el jugador
+[00:49:00 -> 00:49:07]  uno nunca la va a jugar y resolver el equilibrio en un poco de los polos que se sirve para hacer.
+[00:49:07 -> 00:49:28]  y si yo resuelvo el de operación, ¿qué me da este impacto si lo estoy haciendo válido?
+[00:49:58 -> 00:50:07]  0.420 y 0.110, por eso lo resolvemos igual que la anterior.
+[00:50:16 -> 00:50:22]  Y de hecho si ven algunos enunciados, creo que incluso el profesor, que era el sonor de los juegos,
+[00:50:22 -> 00:50:29]  El de Doleva dice en juegos irreducibles de alguna manera.
+[00:50:29 -> 00:50:38]  El de 2x2 es irreducible, el de 3x2 lo pude reducir, no pierdo ninguna información si elimino B.
+[00:50:38 -> 00:50:44]  Si hay dominadas, puedo sacar.
+[00:50:44 -> 00:50:51]  Pero lo que agrega esto es que la dominancia también funciona en las mixtas.
+[00:50:51 -> 00:51:03]  Sergio, en un ejercicio de parcial o algo tipo, o sea, tenemos que encontrar el que hay que sacar, o qué tendremos que hacer?
+[00:51:03 -> 00:51:13]  No sé, pues si hay un ejercicio así, si se acuerdan de esto, pondremos un hint.
+[00:51:13 -> 00:51:15]  Un hint?
+[00:51:15 -> 00:51:17]  Una ayuda.
+[00:51:17 -> 00:51:20]  O hacer las cuentas para las tres, digamos.
+[00:51:20 -> 00:51:28]  No, por las 13 es imposible. Porque si el 2 al 4 tuvieras un 5, también se puede hacer.
+[00:51:28 -> 00:51:32]  Solo que el P va a quedar horrible.
+[00:51:32 -> 00:51:40]  Como esto se mejora el odds ratio. El odds ratio tiene que ser 2, en este caso.
+[00:51:40 -> 00:51:47]  La fracción oculta que estás buscando es 7 tercios.
+[00:51:47 -> 00:52:06]  La importancia de acá es recordar que como retolvemos en 2x2, 2x2 es esa igualdad, que
+[00:52:06 -> 00:52:18]  viene de... si hay un equilibrio en Ash, las re response curas, o sea, las estrategias
+[00:52:18 -> 00:52:31]  curas tienen la misma utilidad. Entonces, igual las utilidades esperadas de las dos
+[00:52:31 -> 00:52:38]  curas y ya está. O sea, lo que me queda muy incógnita es la probabilidad del otro.
+[00:52:38 -> 00:52:45]  Pero bueno, cuando ya es de 3x3 o de 3x2, ya ahí se complica.
+[00:52:45 -> 00:52:50]  Porque ya no estamos, incluso no estamos fácil, tampoco es P1-P.
+[00:52:50 -> 00:52:57]  Entonces sería P, Q y 1 menos T más Q.
+[00:52:57 -> 00:52:59]  Ya se empieza a complicar.
+[00:52:59 -> 00:53:01]  No te iguales.
+[00:53:01 -> 00:53:07]  La manera manual es ver si existe alguna estrategia denominada y eliminada.
+[00:53:15 -> 00:53:22]  Porque si es denominada, entonces no puede caer el requím.
+[00:53:22 -> 00:53:27]  y reducir el sistema
+[00:53:27 -> 00:53:29]  ¿de acuerdo?
+[00:53:29 -> 00:53:32]  ...
+[00:53:32 -> 00:53:38]  ...
+[00:53:38 -> 00:53:41]  Bueno, quería ver uno más
+[00:53:41 -> 00:53:47]  después de la ecuación del capítulo
+[00:53:47 -> 00:53:49]  si lo ven desde ahí
+[00:53:49 -> 00:53:51]  pero quería ver uno más de...
+[00:53:54 -> 00:53:56]  ...puedo resolver a mano...
+[00:54:01 -> 00:54:03]  ...en puras 3x3
+[00:54:08 -> 00:54:10]  le puse algunos ahí...
+[00:54:19 -> 00:54:27]  porque 3x3 es como 3 cuadros
+[00:54:27 -> 00:54:29]  como?
+[00:54:29 -> 00:54:31]  lo subiste a autor?
+[00:54:31 -> 00:54:35]  no, estos son de libros que están subidos en Aula
+[00:54:35 -> 00:54:39]  todo lo que después les digo cual es el sitio
+[00:54:39 -> 00:54:41]  lo ven ahí el desarrollo
+[00:54:41 -> 00:54:45]  si no lo compias
+[00:54:45 -> 00:54:53]  y algo era acá solo así antes de mostrarlo, pues no mostrarlo pues
+[00:55:01 -> 00:55:05]  por eso tengo acá, estos son unos de tres jugadores
+[00:55:05 -> 00:55:25]  de tres cuadres, pero de 0,5, 2,3 y acá 0,1, porque esto también, ya después de más de esto,
+[00:55:25 -> 00:55:30]  que es lo que quiere decir
+[00:55:30 -> 00:55:33]  0,3
+[00:55:34 -> 00:55:37]  porque es muy variado, es 8,4
+[00:55:40 -> 00:55:42]  8,4
+[00:55:43 -> 00:55:45]  0,6
+[00:55:46 -> 00:55:48]  y 12
+[00:55:48 -> 00:55:51]  el otro lo que vamos a ver va así
+[00:55:51 -> 00:55:54]  es 0,2
+[00:55:55 -> 00:55:59]  6, 2
+[00:55:59 -> 00:56:03]  la interesante ejercicio nunca llegara más
+[00:56:03 -> 00:56:07]  5, 1
+[00:56:15 -> 00:56:19]  y esto es
+[00:56:19 -> 00:56:23]  left right, left right
+[00:56:23 -> 00:56:33]  Top, Bottom, y esto es Westies.
+[00:56:33 -> 00:56:39]  Si te rías el juego, te ponemos.
+[00:56:39 -> 00:56:46]  Bueno, hay una que yo le hago.
+[00:56:46 -> 00:56:48]  ¿Cuál es?
+[00:56:48 -> 00:57:06]  Bueno, acá lo hacemos igual que lo hicimos con los cositos, con las rayitas.
+[00:57:06 -> 00:57:08]  Ah, perdón, ¿qué quiere decir esto?
+[00:57:08 -> 00:57:11]  Perdón, ¿qué quiere decir?
+[00:57:11 -> 00:57:12]  es...
+[00:57:14 -> 00:57:16]  hay tres jugadores
+[00:57:16 -> 00:57:18]  los tres tienen dos acciones
+[00:57:18 -> 00:57:21]  jugador si, la tiene top bottom
+[00:57:21 -> 00:57:24]  jugador por último tiene left right
+[00:57:24 -> 00:57:25]  y el jugador
+[00:57:25 -> 00:57:29]  este se llama el jugador matriz
+[00:57:29 -> 00:57:31]  o sea, juega la matriz o juega esta matriz
+[00:57:31 -> 00:57:33]  o juega esta matriz, decide que matriz jugar
+[00:57:34 -> 00:57:36]  pero cuando dijiste 3x3 yo me mencionaba el juego
+[00:57:36 -> 00:57:38]  no, no, perdón, no
+[00:57:38 -> 00:57:39]  es como compara la profundidad
+[00:57:39 -> 00:57:44]  en realidad es de 2x2x2
+[00:57:47 -> 00:57:53]  si lo tienen que representar en NumPy es de 2x2x2x3
+[00:57:53 -> 00:58:00]  porque hay 2 filas, 2 columnas, 2 matrices y 3 valores
+[00:58:00 -> 00:58:07]  esto en NumPy es de 2x2x2x3
+[00:58:07 -> 00:58:11]  Ese es el shape de eso.
+[00:58:13 -> 00:58:15]  Entonces...
+[00:58:19 -> 00:58:24]  Hacemos el mismo ejercicio.
+[00:58:28 -> 00:58:36]  Lo que nos podemos fijar es que en cada matriz, por ejemplo, si los cuadradores fila y columna tienen alguna estrategia dominante.
+[00:58:37 -> 00:58:42]  ¿Puedes ver el video?
+[00:58:42 -> 00:58:53]  Pues es fácil, 5-3 es mayor que 0-2, o sea esto ya me dice que si jugador 3 juega West, o sea juega esta matriz
+[00:58:53 -> 00:59:05]  este jugador 3 tiene una estrategia muy buena, acá no, casi
+[00:59:05 -> 00:59:12]  Entonces si me fico a esta matriz tengo este objeto
+[00:59:19 -> 00:59:21]  Y si me fico a esta matriz
+[00:59:24 -> 00:59:26]  Acá si me toca ficar
+[00:59:26 -> 00:59:33]  Si fuera R, fuera B y si fuera R, fuera T
+[00:59:33 -> 00:59:38]  O sea, tengo que ir en cada padriche y ver lo que está pasando.
+[00:59:40 -> 00:59:45]  ¿En columna? ¿Eso cuenta como dominante también en columna del 6-2?
+[00:59:47 -> 00:59:49]  Vale, 8-4 también.
+[00:59:49 -> 00:59:52]  A ver, pará, pará. Vamos de 1, vamos de 1.
+[00:59:52 -> 00:59:56]  Me pierdo. Ahora vamos a jugar, vamos a ver, azul.
+[00:59:56 -> 00:59:57]  6-8.
+[00:59:57 -> 01:00:06]  en realidad 8, 4, 0, 3
+[01:00:06 -> 01:00:17]  acá ya es, y frente a T, un rayo 8 y frente a B un rayo esta
+[01:00:17 -> 01:00:30]  En este tablero, si W juega este tablero, jugador 1 y jugador 2 tienen ahí estrategia
+[01:00:30 -> 01:00:33]  de mirar y decirle van a jugar VR.
+[01:00:33 -> 01:00:34]  No?
+[01:00:34 -> 01:00:35]  No me río.
+[01:00:35 -> 01:00:44]  Pero me están mirando el truco del 0 y ver si van a jugar VR.
+[01:00:44 -> 01:00:49]  y 8 modos de 0 y 4 modos de 3
+[01:00:49 -> 01:00:52]  lo estaba mirando ahorita
+[01:00:52 -> 01:00:58]  0,2 frente al ciclo 3
+[01:00:58 -> 01:01:02]  B, el mejor que en todos los casos es T
+[01:01:02 -> 01:01:05]  y R, todos los casos son mejor que el
+[01:01:07 -> 01:01:10]  y acá ya vimos que está cruzado
+[01:01:10 -> 01:01:20]  Entonces acá es frente a T juego R y frente a B
+[01:01:27 -> 01:01:37]  Y ahora el tema está en W, ¿qué va a jugar jugador 3? ¿Va a jugar W o va a jugar E?
+[01:01:40 -> 01:01:49]  Y lo que hay que fijarse es en realidad esto.
+[01:01:49 -> 01:01:54]  No podemos fijarse acá nada más.
+[01:01:54 -> 01:01:57]  Que llegamos a esto porque este no va a ser...
+[01:01:57 -> 01:02:02]  O sea, ningún de estos va a ser porque ahí acá, ningún de estos va a ser por C.
+[01:02:02 -> 01:02:04]  No están los dos marcados.
+[01:02:04 -> 01:02:08]  Y acá no está así.
+[01:02:10 -> 01:02:13]  ¿Pero qué tengo que comparar con qué?
+[01:02:13 -> 01:02:16]  Bueno, sumarse que ahora con el renacimiento remítico, bueno,
+[01:02:16 -> 01:02:22]  jugador 3 sabe que si juega WB,
+[01:02:22 -> 01:02:28]  jugador 1 y 2 tienen estrategia dominante y van a jugar a SBAF.
+[01:02:28 -> 01:02:31]  Van a jugar a OBR.
+[01:02:31 -> 01:02:43]  y si cuelan y si tengo que encontrar un equilibrio y los dos tienen que ser de responges
+[01:02:43 -> 01:02:51]  cuál es la ver responges de jugadores 3 a ver es o es
+[01:02:51 -> 01:02:54]  casi de 2 y ahora ni una
+[01:02:54 -> 01:02:56]  No?
+[01:02:56 -> 01:02:58]  No, tengo que medir cuadrante a cuadrante
+[01:02:58 -> 01:03:02]  Claro, acá el que convivió con el único para este contra este
+[01:03:04 -> 01:03:10]  ¿Cuál es la llave de respons de jugador 3 a BR?
+[01:03:10 -> 01:03:15]  Y es esto, jugamos esto, porque acá si ponen ahí se ve a 1
+[01:03:24 -> 01:03:34]  y ahora vamos a ver cuál era la respons a BL
+[01:03:34 -> 01:03:44]  es E o el W, el W frente a BL, porque acá ni de 1 ni de 2
+[01:03:44 -> 01:03:50]  entonces vamos a marcar acá, este no es un equilibrado
+[01:03:54 -> 01:04:06]  B, R, o sea que si no tenemos cierto marcador, que sabemos? que B, R es la mejor respuesta
+[01:04:06 -> 01:04:15]  a W, entonces ahora me planteo al revés, W es la mejor respuesta a B, R para que estén
+[01:04:15 -> 01:04:25]  y la respuesta es sí porque si jugara East obtendría 1 y si juega West pues tiene 2
+[01:04:25 -> 01:04:31]  entonces es mejor jugar West que jugar East frente a los marcas
+[01:04:31 -> 01:04:38]  ahora vamos acá que también teníamos, acá también hay un equilibrio en el East
+[01:04:38 -> 01:04:44]  una estrategia dominante, no, pero, digo, posible y, digo, acá y acá,
+[01:04:44 -> 01:04:51]  y está en los dos dominantes, digo, ¿cuál es la B-Riskos? Yo sé que B-L era la B-Riskos a E,
+[01:04:51 -> 01:04:55]  también que R, acá pregunto, es posible.
+[01:04:57 -> 01:05:05]  Pero ¿cuál es la B-Riskos a B-L? ¿Es E o W? Y el W, porque acá hay dos y acá hay segundo.
+[01:05:08 -> 01:05:10]  pero esto no me lo desliza
+[01:05:11 -> 01:05:15]  y cuál era la response a TR
+[01:05:16 -> 01:05:20]  comparto dos cosas y acá tengo 6 y acá tengo 5
+[01:05:21 -> 01:05:25]  entonces el único en el que están los tres marcados
+[01:05:34 -> 01:05:37]  este es el que es variador
+[01:05:38 -> 01:05:45]  mucho más pelotos porque hay que comparar cada cuadradito
+[01:05:45 -> 01:05:53]  cuando hay uno que es de 2x2x3x3
+[01:05:53 -> 01:05:57]  o sea hay tres tableros
+[01:05:57 -> 01:06:00]  y ese es más malo también porque hay que comparar con tres
+[01:06:00 -> 01:06:18]  Bueno, ahora hacemos una pausa y después le probamos el código.
+[01:06:18 -> 01:06:33]  Bien, vengo grabando así, no me olvido de retomar.
+[01:06:33 -> 01:06:42]  timeless es un
+[01:43:33 -> 01:43:41]  Ah, perdón, porque no me llevo el tiempo para subirles el archivo.
+[01:43:41 -> 01:43:48]  Se los muestro y después lo subo.
+[01:43:48 -> 01:43:50]  Pero así no...
+[01:43:50 -> 01:43:52]  Se escucha, ¿no?
+[01:43:52 -> 01:43:54]  Está online.
+[01:43:54 -> 01:43:56]  Se escucha, sí.
+[01:43:56 -> 01:44:00]  No, primero tengo que entrar a la sala de Zoom.
+[01:44:00 -> 01:44:02]  Así, este...
+[01:44:02 -> 01:44:04]  No me iniciar, no.
+[01:44:04 -> 01:44:06]  No me comparto.
+[01:44:22 -> 01:44:24]  ¿Viste?
+[01:44:24 -> 01:44:34]  ¿Cuál es el número del proyecto que tenéis? ¿Cuatro?
+[01:44:34 -> 01:44:47]  Ahora le digo del libro, el ejercicio que hicimos, pero que tengo que decirlo,
+[01:44:47 -> 01:44:51]  performers, frecuentemente Sacer
+[01:44:51 -> 01:44:54]  íam.
+[01:44:54 -> 01:44:57]  También massively STARTPIE en
+[01:44:57 -> 01:44:59]  scenalinía y overall
+[01:44:59 -> 01:45:05]  서울.
+[01:45:05 -> 01:45:08]  Y el reasonably
+[01:45:08 -> 01:45:11]  así que te da el selective
+[01:45:11 -> 01:45:13]  y el tema del
+[01:45:13 -> 01:45:14]  feminismo y hoveringalsa
+[01:45:14 -> 01:45:21]  Siempre le pasa lo bonito.
+[01:45:21 -> 01:45:24]  Tengo que...
+[01:45:24 -> 01:45:26]  Tengo que ver eso de acá.
+[01:45:26 -> 01:45:36]  ¿Está bien?
+[01:45:36 -> 01:45:38]  ¿Ve, no?
+[01:45:38 -> 01:45:40]  Sí, ve.
+[01:45:40 -> 01:45:57]  Y tengo que aumentar el tamaño del alivio.
+[01:45:57 -> 01:46:00]  Así se ve bastante bien, por lo menos por mi lado.
+[01:46:00 -> 01:46:05]  Sí, se puede verme.
+[01:46:05 -> 01:46:08]  Pero lo de acá, ven.
+[01:46:08 -> 01:46:13]  Ahí está, ahí está, ahí lo veo.
+[01:46:13 -> 01:46:27]  Le voy a subir ahora en breve unos ejemplos más.
+[01:46:27 -> 01:46:40]  porque junto a lo que había que es MP y RTS era de dos jugadores con dos o tres acciones pero de suma a cero
+[01:46:40 -> 01:46:50]  para ustedes no debería haber ningún cambio si es de suma a cero o no suma a cero
+[01:46:50 -> 01:46:55]  porque el ambiente le va a dar la recompensa adecuada
+[01:46:55 -> 01:47:07]  le voy a subir el de Alice y Bruno, la batalla de los exos, el boss, después le voy a subir
+[01:47:07 -> 01:47:16]  otro que se llama Chicken, que está en el libro, que tiene esta matriz, acá está el formato es
+[01:47:16 -> 01:47:29]  de 2x2x2, dos jugadores, dos cosas, dos recompensas, de los 7, de los 6, de los 2, de los 7, de
+[01:47:29 -> 01:47:40]  los 6, nada, esto para mostrarles lo que voy a subir. Voy a subir otro que se llama Turnong,
+[01:47:40 -> 01:47:47]  Ese es un clásico de economía y de teoría de juegos.
+[01:47:47 -> 01:47:52]  Ese no lo voy a explicar ahora, se lo dejó en el libro.
+[01:47:52 -> 01:47:58]  Está super bien explicado y desarrollado, en el libro Guanan se lo voy a mostrar.
+[01:47:58 -> 01:48:08]  El interés de este es que pueden autentar la cantidad de jugadores que están de un día.
+[01:48:08 -> 01:48:17]  pueden cambiar las cantidades de acciones, son cantidades en este caso, pero pueden
+[01:48:17 -> 01:48:24]  aumentar el espacio de acciones y en cualquier caso la solución del equilibrio en hash es conocido y
+[01:48:24 -> 01:48:35]  eso escala, entonces ahora lo vamos a ejecutar solo para verlo, entonces tiene una solución analítica conocida,
+[01:48:35 -> 01:48:44]  y es fácil de ver si el algoritmo ustedes escala o convalar por ejemplo
+[01:48:44 -> 01:48:50]  fictitious play contra regret matching en términos de escalabilidad
+[01:48:50 -> 01:48:58]  no solamente en términos de convergencia etcétera pero bueno a ver si y también un poco
+[01:48:58 -> 01:49:03]  no solo de si con verga no con verge, sino en qué tiempo con verga
+[01:49:03 -> 01:49:05]  nada, eso ya, abránselo
+[01:49:05 -> 01:49:09]  y después otro de...
+[01:49:09 -> 01:49:12]  que se hagan esto, como que decido para terminar la campaña
+[01:49:12 -> 01:49:19]  de tres webbikes
+[01:49:19 -> 01:49:22]  el que...
+[01:49:22 -> 01:49:25]  vamos a ver hoy, este
+[01:49:25 -> 01:49:35]  acabamos de resolver, que tiene un equilibrio en estrategias puras, que es 342, de acá,
+[01:49:35 -> 01:49:47]  y después hay otros que están en el paper que introduce los equilibrios con relacionados
+[01:49:47 -> 01:49:55]  que está citado en la diapositiva, acá dice que es de tiempo, eso porque si pueden ir
+[01:49:55 -> 01:50:00]  y corroborar con el paper que este algoritmo esté dando la buena solución.
+[01:50:00 -> 01:50:04]  Están las notebooks, si quieren hacer un equipo aquí están,
+[01:50:04 -> 01:50:10]  entonces lo único que tienen que hacer es correr esas notebooks con sus algoritmos.
+[01:50:10 -> 01:50:12]  Y ahí hay cuatro.
+[01:50:12 -> 01:50:19]  La única diferencia de este caso es que cuando hay una única clase
+[01:50:19 -> 01:50:25]  que tiene todos los juegos, para hacerlo sencillo, vamos a tener 15.000 phytons
+[01:50:25 -> 01:50:31]  porque lo único que cambia es la matriz
+[01:50:31 -> 01:50:39]  la matriz de energía adicional de recompensa
+[01:50:39 -> 01:50:44]  el simple enderling que pasara en la configuración quiere
+[01:50:44 -> 01:51:08]  ahora de 4, 1, 2, 3, 4 pueden probar sus algoritmos en esas configuraciones, sobre todo es eso lo que le digo, es como los equilibrios son conocidos, están resueltos, más que nada el objetivo es que funcione bien su algoritmo en cualquier cantidad de agentes y cualquier cantidad de acciones.
+[01:51:08 -> 01:51:21]  Después les voy a pasar alguno, también, si puedo, alguna discusión del Sunday recién en la pausa
+[01:51:21 -> 01:51:31]  a ver uno o otro para probar el Leveled Q-Learning y Right-Dance Learning, que no sea
+[01:51:31 -> 01:51:37]  de este core-agismo, capaz que hay alguna versión un poco más probabilística del core-agismo
+[01:51:39 -> 01:51:46]  ahora le subo el código de mi segundo, bueno en realidad a bloat, pero bloat le sirve para escalar
+[01:51:46 -> 01:51:54]  pero ahí ya no hay soluciones conocidas, pues cierto, necesitan las configuraciones entonces
+[01:51:54 -> 01:52:02]  es más difícil saber si está encontrando algo correcto o no, no le va a servir para probar
+[01:52:02 -> 01:52:05]  si está emocionando bien su código.
+[01:52:07 -> 01:52:13]  Bueno, vamos al de Andri, al de Purno.
+[01:52:17 -> 01:52:23]  Y debo reconocer que creo que de esta notebook no escribí ni siquiera una sola línea del código
+[01:52:23 -> 01:52:29]  y el tarong de código de Kuro, solo le iré a
+[01:52:31 -> 01:52:42]  a Bobilos, a Sonic, el texto del libro y lo implemento
+[01:52:42 -> 01:52:46]  y luego subo, o sea, prácticamente el 95% del código está bien
+[01:52:46 -> 01:53:09]  Así que, también lo pueden hacer solo desde el informe, si recurrieron a la generación automática de código con Copilot y con qué, estaría bueno.
+[01:53:09 -> 01:53:20]  Bien, en donde es un juego, no es un juego, es un tema que está planteado como un problema
+[01:53:20 -> 01:53:26]  y que hay muchas empresas que tienen una determinada capacidad de reducción, un precio de venta,
+[01:53:26 -> 01:53:36]  etcétera, por eso no vamos a entrar en eso, pero sobre todo que el equilibrium en Ash
+[01:53:36 -> 01:53:40]  son conocidos para cualquier cantidad de agentes
+[01:53:40 -> 01:53:46]  entonces, pues lo dejo a usted que lo mire desde el libro
+[01:53:46 -> 01:53:50]  y solo para mostrarles que es lo que va a hacer la Notebook
+[01:53:50 -> 01:53:52]  pueden por ejemplo
+[01:53:52 -> 01:53:58]  pueden por ejemplo crear juegos
+[01:53:58 -> 01:54:00]  basándoles en estos parámetros
+[01:54:00 -> 01:54:04]  esta es la configuración que está en el libro
+[01:54:04 -> 01:54:15]  que explican al libro cuál es la solución. Esto es para dos jugadores, tiene un default
+[01:54:17 -> 01:54:24]  y no le dicen cuántos jugadores, solo para dos, o sea dos jugadores de dos empresas
+[01:54:24 -> 01:54:41]  en el equilibrio de Nash lo expresa como una cantidad de unidades a producir por cada empresa
+[01:54:41 -> 01:54:52]  que es 4, la cantidad total es 8 porque son 4 cada empresa y que hay dos empresas es 8,
+[01:54:52 -> 01:55:03]  Esto es el precio de venta y esta es la ganancia final de la cartes.
+[01:55:03 -> 01:55:07]  Y esa es el equilibrio de NASPAR calculado.
+[01:55:07 -> 01:55:30]  y acá está, bueno, lo mismo que nosotros vimos, intersección, en este caso, en esta instancia de
+[01:55:30 -> 01:55:35]  que juego, porque obviamente depende de todos los parámetros, en este caso particular, acá es el punto de
+[01:55:35 -> 01:55:40]  intersección entre todos.
+[01:55:44 -> 01:55:50]  Pero más que nada digo bueno, es sobre todo para que lo puedan probar
+[01:55:50 -> 01:55:55]  con y sepan un poco lo que están haciendo y después también les voy a mostrar
+[01:55:55 -> 01:56:03]  algunos algunas imágenes, no digo, de blogs que pueden hacer, que quedan algunos que
+[01:56:03 -> 01:56:06]  ya me lo han mostrado en City Web Clubs, pero...
+[01:56:08 -> 01:56:12]  porque he reto hace 500 integraciones de...
+[01:56:14 -> 01:56:16]  de...
+[01:56:16 -> 01:56:18]  de Re-Bed Machine.
+[01:56:22 -> 01:56:24]  Y acá viene...
+[01:56:26 -> 01:56:28]  un tipo de...
+[01:56:28 -> 01:56:30]  de
+[01:56:31 -> 01:56:38]  esto es un poco vax, tiene como una dimensión más que los que nosotros porque pueden bloquear dos
+[01:56:38 -> 01:56:46]  cosas la cantidad pero también la utilidad, cosa que también puede de alguna manera la cantidad es
+[01:56:46 -> 01:56:54]  como que estuvieran bloqueando la emisión de probabilidad y la garancia profit acá,
+[01:56:54 -> 01:57:06]  es como están bloqueando la utilidad. Y esto es como evolucionó la cantidad en el aprendizaje.
+[01:57:09 -> 01:57:16]  Entonces el equilibrio es 32. Eso es. Se resuelve analíticamente.
+[01:57:16 -> 01:57:20]  por eso
+[01:57:20 -> 01:57:28]  esto es algo que por ejemplo te puede bloquear también, por ejemplo el aprendizaje de
+[01:57:28 -> 01:57:33]  fictitious play o de the great machine, a ver cómo va convergiendo a un equilibrio
+[01:57:33 -> 01:57:39]  cuando el equilibrio, bueno si el equilibrio lo conoces ya le han temado
+[01:57:39 -> 01:57:44]  como en algunos juegos como en mp
+[01:57:46 -> 01:58:00]  Puedo ir a Taylor con dafür como el 0.5
+[01:58:03 -> 01:58:09]  lo hago con la estrategia de equilibrio
+[01:58:09 -> 01:58:17]  y tiju play
+[01:58:19 -> 01:58:22]  también convergió, pero tiene un perfil de
+[01:58:22 -> 01:58:29]  convergencia totalmente tímida, por menos que en este caso con el random que
+[01:58:29 -> 01:58:39]  y que se dirigió, como el que aparentemente es mucho más rápido y tuvo una menor oscilación
+[01:58:39 -> 01:58:46]  obviamente luego en el que era 32 también, pero bueno esto está bueno, en serio, es tan bien comparar este plot con este plot
+[01:58:46 -> 01:58:51]  acá en la iteración 100 ya venía como un grafismo
+[01:58:51 -> 01:59:01]  y el cambio de Regret Machine le cortó 3500 de interacciones para el programa
+[01:59:01 -> 01:59:07]  pero bueno, este era un 2
+[01:59:07 -> 01:59:11]  bueno acá también traen la...
+[01:59:11 -> 01:59:24]  Esto es un problema que consta menos inquilino, pero eso que estaba planteado arriba en realidad
+[01:59:24 -> 01:59:35]  era el ARMAX, o sea, el profit o las acciones jugando la estrategia de mayor probabilidad
+[01:59:35 -> 01:59:48]  una vez que expone determinación, por eso es 32. En realidad, si ustedes fijan la
+[01:59:48 -> 01:59:56]  pólisi, y eso lo van a ver, por eso a veces ven los epistítulos que convergen, por ejemplo
+[01:59:56 -> 02:00:04]  por ejemplo, 0,1 converge a 0,5, 0,5, pero en realidad la valencia es 0,49, 0,51 y en el medio
+[02:00:04 -> 02:00:12]  es un modón del otro. Cuando son dos acciones está realmente fácil, pero acá es un modón de acciones
+[02:00:12 -> 02:00:19]  porque tiene que ver con la cantidad de acciones. La cantidad de cosas que puede producir, en el caso
+[02:00:19 -> 02:00:26]  la empresa, entonces hay mucho, es la quantity, son las acciones, puede producir 0, 1, 2, 3, 4
+[02:00:26 -> 02:00:36]  entonces esta es la probabilidad, obviamente la mayor probabilidad está en
+[02:00:36 -> 02:00:47]  que es la cantidad de click-leaks, pero por ejemplo acá se ve que si es la máxima agente SEO
+[02:00:47 -> 02:00:58]  Tiene una distribución un poquito menos concentrada que la de la gente de Volta, más de 0,80
+[02:00:58 -> 02:01:04]  Esa es una de las que pueden ver también
+[02:01:06 -> 02:01:10]  Y bloquear
+[02:01:10 -> 02:01:21]  Esto obviamente tiene que ser lo mismo, y de este lado no.
+[02:01:21 -> 02:01:29]  Este es el regret matching, el regret matching está bastante más concentrado que ficticio.
+[02:01:29 -> 02:01:38]  Esto es latina y acá el regret matching es bastante más conocido.
+[02:01:38 -> 02:01:52]  y acá hay para tres jugadores, creo que es, sí, usamos guardia en la misma configuración,
+[02:02:22 -> 02:02:26]  Ok, se faltó borrar. Ok, gracias.
+[02:02:35 -> 02:02:38]  Esto es Regret Machine.
+[02:02:38 -> 02:02:43]  Está bien. Oscilando alrededor del equilibrio.
+[02:03:13 -> 02:03:18]  ah, capa tu fijo, no, le puse 1000
+[02:03:19 -> 02:03:27]  1000 iteraciones de Regret matching frente a 1000 iteraciones de Retrigger Play
+[02:03:27 -> 02:03:35]  en un problema con un espacio de acciones bastante más grande que 2 o 3
+[02:03:35 -> 02:03:41]  faltaban... tarda más Retrigger Play
+[02:03:41 -> 02:03:48]  mismo lo valemos Klei.
+[02:03:48 -> 02:03:50]  Si lo implementan y
+[02:04:00 -> 02:04:03]  nosotros.
+[02:04:11 -> 02:04:19]  No, no llego a dos.
+[02:04:19 -> 02:04:21]  Pero...
+[02:04:21 -> 02:04:29]  Bueno, se lo digo, si no saben por qué, si no tienen una idea de por qué el t-shirt
+[02:04:29 -> 02:04:35]  Plank puede dar más, experimentenlo y después saquen sus conclusiones en el informe.
+[02:04:35 -> 02:04:41]  está bueno este porque crece bastante
+[02:04:43 -> 02:04:47]  después le voy a subir el ejemplo
+[02:04:49 -> 02:04:51]  era eso que quería comentarles
+[02:04:51 -> 02:04:57]  después de los ejercicios de tres jugadores
+[02:04:59 -> 02:05:01]  que la configura la teoría completa acá
+[02:05:05 -> 02:05:25]  Este es el que hicimos en el XROM, el equilibrio era WTA342, vamos a ver si está abriendo implementación.
+[02:05:25 -> 02:05:40]  control 3 4 2 que es la utilidad y acá está, esta no tiene todas las visualizaciones del otro,
+[02:05:40 -> 02:05:50]  pero está bueno que lo haga también para ver cómo se convierte a 0 1, o sea,
+[02:05:50 -> 02:05:58]  jugar Wraith, jugar Gotham, jugar Wraith y jugar Western
+[02:06:01 -> 02:06:12]  Me ha gustado porque decoraba la manta, por las acciones, por aquel tema del mapeo, el prologue, las acciones por las acciones
+[02:06:12 -> 02:06:15]  no sé si no más, antes quedaba mucho más grande
+[02:06:15 -> 02:06:27]  bueno porque hace action modeling, o sea, modela a nosotros, a gente, entonces cuando más gente se haga ya y cuando más acciones tengan
+[02:06:29 -> 02:06:37]  más va a tardar, regret matching es como independent qb, solo mira básicamente lo que hace
+[02:06:39 -> 02:06:43]  y hace regret contra sus propias acciones pero no tiene un modelo del recodo
+[02:06:43 -> 02:06:50]  Y eso puede pasar también con soncas, sonlean, etc.
+[02:06:50 -> 02:07:02]  ¿Y ahora qué me da? ¿Te acuerdas de María Pintociá?
+[02:07:02 -> 02:07:05]  Sí, ha probado.
+[02:07:05 -> 02:07:07]  ¿Ha probado?
+[02:07:13 -> 02:07:24]  la idea ahora es que el resto de osiris y gonzulas hagan un subeco para que puedan probar también
+[02:07:24 -> 02:07:35]  si pueden, antes por que no dan las notes y eso, creo que hubo gente que tuvo un problema con el foraging
+[02:07:35 -> 02:07:40]  pero no sé, ve ahí, son un cheque
+[02:07:40 -> 02:07:46]  cuando ibas a un tibio y le dices que le dices un error, no nos avisan
+[02:07:46 -> 02:07:48]  después ven que el padre y el chico
+[02:07:48 -> 02:07:54]  yo hice una opción nueva, en la que pasé a vos hace 3 horas creo
+[02:07:54 -> 02:08:01]  la subo, igual son muchos que arreglaron con compañeros
+[02:08:01 -> 02:08:24]  Creo que ésta es una verdad 게
+[02:08:24 -> 02:08:32]  pues si están teniendo problemas y no van a llegar y eso
+[02:08:32 -> 02:08:37]  me avisan el objetivo de este programa de retórico que todos lo hagan
+[02:08:37 -> 02:08:42]  que se pongan en relación con eso, si hay temas de tiempo
+[02:08:42 -> 02:08:47]  avísenme, avísenme a mi o a Martin, que estamos llegando o lo que sea
+[02:08:47 -> 02:08:55]  que probaran todo para ver estas cuestiones de escalabilidad, de corrección y eso
+[02:08:55 -> 02:09:02]  obviamente hay cosas que no se pueden saldear que las entregas a las
+[02:09:02 -> 02:09:12]  fichas correctas pero si hay cosas que les he dado, que quieren probar todos, se avisan y con un poco más de tiempo en la medida que sea antes de la
+[02:09:12 -> 02:09:19]  de la revolución, pero a mí se nos, por eso estamos en la misma vida, estamos bien,
+[02:09:19 -> 02:09:24]  estamos atrasados, tenemos dificultades, etcétera.
+[02:09:24 -> 02:09:32]  Bien, nada, yo ahora dejo de grabar, grabamos unas salas y les subo el correo.

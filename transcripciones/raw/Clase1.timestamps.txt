@@ -1,0 +1,2492 @@
+# Clase1 - Sistemas Multiagente (con timestamps)
+
+[00:00:00 -> 00:00:01]  Gracias.
+[00:00:30 -> 00:00:31]  Gracias.
+[00:01:00 -> 00:01:01]  Gracias.
+[00:01:30 -> 00:01:31]  Gracias.
+[00:02:00 -> 00:02:01]  Gracias.
+[00:02:30 -> 00:02:31]  Gracias.
+[00:03:00 -> 00:03:01]  Gracias.
+[00:03:30 -> 00:03:31]  Gracias.
+[00:04:00 -> 00:04:01]  Gracias.
+[00:04:30 -> 00:04:31]  Gracias.
+[00:05:00 -> 00:05:01]  Gracias.
+[00:05:01 -> 00:05:02]  Gracias.
+[00:05:02 -> 00:05:03]  Gracias.
+[00:05:03 -> 00:05:04]  Gracias.
+[00:05:04 -> 00:05:05]  Gracias.
+[00:05:05 -> 00:05:06]  Gracias.
+[00:05:06 -> 00:05:07]  Gracias, surfing, guía, eso.
+[00:05:07 -> 00:05:08]  Gracias.
+[00:05:08 -> 00:05:09]  Gracias que se ve la cámara.
+[00:05:09 -> 00:05:10]  Gracias.
+[00:05:10 -> 00:05:11]  Gál partner.
+[00:05:11 -> 00:05:12]  Gracias.
+[00:05:12 -> 00:05:13]  Gracias.
+[00:05:13 -> 00:05:14]  Gracias.
+[00:05:14 -> 00:05:15]  Gracias.
+[00:05:15 -> 00:05:16]  Gracias.
+[00:05:16 -> 00:05:17]  Gracias.
+[00:05:18 -> 00:05:19]  Gracias.
+[00:05:19 -> 00:05:20]  Gracias.
+[00:05:20 -> 00:05:21]  Gracias.
+[00:05:21 -> 00:05:22]  Gracias.
+[00:05:22 -> 00:05:23]  Gracias.
+[00:05:23 -> 00:05:24]  Gracias.
+[00:05:24 -> 00:05:25]  Gracias.
+[00:05:25 -> 00:05:26]  Gracias.
+[00:05:26 -> 00:05:27]  Gracias.
+[00:05:27 -> 00:05:28]  Gracias.
+[00:05:28 -> 00:05:29]  Gracias.
+[00:05:29 -> 00:05:30]  Gracias.
+[00:05:30 -> 00:05:32]  comunicación es como no vinculante
+[00:05:32 -> 00:05:34]  y uno
+[00:05:34 -> 00:05:36]  puede mentir, eso es la otra cosa que
+[00:05:36 -> 00:05:36]  puede pasar
+[00:05:36 -> 00:05:39]  en esto, que eventualmente los
+[00:05:39 -> 00:05:41]  agentes podrían
+[00:05:41 -> 00:05:43]  bloquear o mentir
+[00:05:43 -> 00:05:45]  muy ruidoso, creo que habéis dicho ruidoso
+[00:05:45 -> 00:05:46]  claro, bueno, sí
+[00:05:46 -> 00:05:49]  es un depredador muy ruidoso, ¿por qué?
+[00:05:49 -> 00:05:51]  porque en los juegos se puede
+[00:05:51 -> 00:05:52]  bloquear, se puede mentir
+[00:05:52 -> 00:05:54]  en la comunicación
+[00:05:54 -> 00:05:57]  también, y no es vinculante
+[00:05:57 -> 00:05:58]  en este caso
+[00:05:58 -> 00:06:01]  podría llegar a ser vinculante
+[00:06:01 -> 00:06:03]  vamos a ver si hablamos un poquito
+[00:06:03 -> 00:06:05]  de eso, pero acá no era
+[00:06:05 -> 00:06:06]  vinculante la comunicación
+[00:06:06 -> 00:06:07]  es una
+[00:06:07 -> 00:06:11]  es una experiencia previa
+[00:06:11 -> 00:06:13]  que no le tocaba hablar
+[00:06:13 -> 00:06:14]  no sé si eso no lo puedo hablar
+[00:06:14 -> 00:06:15]  y bueno
+[00:06:15 -> 00:06:18]  creo que acá en la situación en particular
+[00:06:18 -> 00:06:19]  entró en juego
+[00:06:19 -> 00:06:23]  pero efectivamente
+[00:06:23 -> 00:06:25]  en la teoría
+[00:06:25 -> 00:06:26]  vamos a ver que una cosa
+[00:06:26 -> 00:06:28]  que vamos a empezar con eso, que es
+[00:06:28 -> 00:06:29]  una cosa es
+[00:06:29 -> 00:06:32]  tipo una instancia
+[00:06:32 -> 00:06:35]  porque
+[00:06:35 -> 00:06:37]  la instancia de
+[00:06:37 -> 00:06:39]  Sara con Steve
+[00:06:39 -> 00:06:41]  es una instancia distinta
+[00:06:41 -> 00:06:43]  a la instancia de
+[00:06:43 -> 00:06:45]  Sara con eventualmente la otra persona
+[00:06:45 -> 00:06:47]  que no sabemos, que jugó y que terminó distinto
+[00:06:47 -> 00:06:50]  lo que eso sugiere
+[00:06:50 -> 00:06:51]  es que eventualmente Sara
+[00:06:51 -> 00:06:53]  en esa otra instancia
+[00:06:53 -> 00:06:55]  tenía otra preferencia
+[00:06:55 -> 00:06:57]  eventualmente, pero no sabemos
+[00:06:57 -> 00:06:57]  ¿no?
+[00:06:58 -> 00:07:00]  pero eso ya nos marca la pauta
+[00:07:00 -> 00:07:02]  de que lo que nosotros vulgarmente
+[00:07:02 -> 00:07:04]  llamamos juego, nosotros llamaríamos
+[00:07:04 -> 00:07:06]  al split or steal un juego
+[00:07:06 -> 00:07:08]  en realidad
+[00:07:08 -> 00:07:12]  no lo vamos a llamar juego
+[00:07:12 -> 00:07:12]  en este contexto
+[00:07:12 -> 00:07:15]  lo vamos a llamar solamente
+[00:07:15 -> 00:07:18]  un marco de juego
+[00:07:18 -> 00:07:20]  es decir, el contexto
+[00:07:20 -> 00:07:22]  el juego verdadero
+[00:07:22 -> 00:07:24]  es con el jugador
+[00:07:24 -> 00:07:26]  un instanciado, con el jugador
+[00:07:26 -> 00:07:27]  dos instanciados, con su
+[00:07:27 -> 00:07:30]  preferencia sustancial, entonces la instancia
+[00:07:30 -> 00:07:32]  Steve, Sara es distinta
+[00:07:32 -> 00:07:32]  a la instancia
+[00:07:32 -> 00:07:36]  Sara con X que no sabemos
+[00:07:36 -> 00:07:41]  y volviendo a lo de
+[00:07:41 -> 00:07:43]  el principio
+[00:07:43 -> 00:07:46]  del dilema del
+[00:07:46 -> 00:07:48]  prisionero, es una instancia
+[00:07:48 -> 00:07:51]  de un juego que se parece mucho a este
+[00:07:51 -> 00:07:53]  marco del juego, pero con
+[00:07:53 -> 00:07:55]  una instancia particular
+[00:07:55 -> 00:07:57]  de jugadores
+[00:07:57 -> 00:07:59]  con su preferencia
+[00:07:59 -> 00:08:01]  esa es la idea
+[00:08:01 -> 00:08:02]  entonces
+[00:08:02 -> 00:08:04]  como que no tenemos que sacar
+[00:08:04 -> 00:08:06]  de encima todo lo que es
+[00:08:06 -> 00:08:09]  la parte humana, lo que discutieron
+[00:08:09 -> 00:08:10]  si se mintieron
+[00:08:10 -> 00:08:12]  si lloraron después
+[00:08:12 -> 00:08:17]  y
+[00:08:17 -> 00:08:19]  otra cosa importante
+[00:08:19 -> 00:08:21]  que tenemos que tener en cuenta
+[00:08:21 -> 00:08:23]  no necesariamente
+[00:08:23 -> 00:08:24]  la recompensa
+[00:08:24 -> 00:08:25]  es la plata
+[00:08:25 -> 00:08:27]  o algo cuantitativo
+[00:08:27 -> 00:08:29]  que sea eso
+[00:08:29 -> 00:08:31]  que represente
+[00:08:31 -> 00:08:35]  pero ahora lo vamos a ver
+[00:08:35 -> 00:08:40]  bueno ahora vamos a ver
+[00:08:40 -> 00:08:43]  entonces el ejercicio que vamos a hacer
+[00:08:43 -> 00:08:44]  y eso sí
+[00:08:44 -> 00:08:48]  es una propuesta
+[00:08:48 -> 00:08:49]  que vamos a discutir
+[00:08:49 -> 00:08:50]  es una propuesta
+[00:08:50 -> 00:08:51]  de
+[00:08:51 -> 00:08:53]  preferencias
+[00:08:53 -> 00:08:56]  de Sara y Steve
+[00:08:56 -> 00:08:57]  que explica
+[00:08:57 -> 00:09:00]  racionalmente lo que vimos en el video
+[00:09:00 -> 00:09:02]  sin
+[00:09:02 -> 00:09:05]  tener en cuenta
+[00:09:05 -> 00:09:07]  que al principio hablaron
+[00:09:07 -> 00:09:08]  que se mintieron
+[00:09:08 -> 00:09:10]  que Steve
+[00:09:10 -> 00:09:11]  aparentemente dijo
+[00:09:11 -> 00:09:14]  una cosa, que Sara dijo
+[00:09:14 -> 00:09:17]  lo mismo pero después jugó otra
+[00:09:17 -> 00:09:19]  y eso
+[00:09:19 -> 00:09:20]  va a ser el concepto de racional
+[00:09:20 -> 00:09:22]  y vamos a ver que no
+[00:09:22 -> 00:09:24]  y lo vamos a hacer
+[00:09:24 -> 00:09:25]  sin tener en cuenta
+[00:09:25 -> 00:09:25]  que no es una propuesta
+[00:09:25 -> 00:09:25]  que no es una propuesta
+[00:09:25 -> 00:09:26]  que no es una propuesta
+[00:09:26 -> 00:09:27]  que no es una propuesta
+[00:09:27 -> 00:09:28]  la plata
+[00:09:28 -> 00:09:31]  solo tratada
+[00:09:31 -> 00:09:34]  y es una propuesta
+[00:09:34 -> 00:09:36]  eventualmente
+[00:09:36 -> 00:09:37]  otros jugadores
+[00:09:37 -> 00:09:39]  con otras preferencias
+[00:09:39 -> 00:09:41]  el resultado hubiera sido distinto
+[00:09:41 -> 00:09:41]  pero vamos a ver
+[00:09:41 -> 00:09:43]  la idea es
+[00:09:43 -> 00:09:44]  o sea el objetivo es explicar que
+[00:09:44 -> 00:09:47]  cualquiera sea las preferencias
+[00:09:47 -> 00:09:49]  de los jugadores
+[00:09:49 -> 00:09:51]  vamos a tener una explicación racional
+[00:09:51 -> 00:09:51]  cuál es
+[00:09:51 -> 00:09:54]  el resultado que tiene que dar el juego
+[00:09:54 -> 00:09:55]  desde un punto de vista
+[00:09:55 -> 00:09:56]  como llamar racional
+[00:09:56 -> 00:09:57]  ¿no?
+[00:09:57 -> 00:10:00]  entonces ahora vamos a ir
+[00:10:00 -> 00:10:03]  un poco de teoría
+[00:10:03 -> 00:10:05]  lo que está en online
+[00:10:05 -> 00:10:08]  yo no sé si conviene que esté
+[00:10:08 -> 00:10:10]  bueno si escribo en el pizarrón
+[00:10:10 -> 00:10:12]  prendo
+[00:10:12 -> 00:10:14]  pero vamos a hacer un poco
+[00:10:14 -> 00:10:16]  de diapositiva primero
+[00:10:16 -> 00:10:19]  para ser claro
+[00:10:19 -> 00:10:21]  ¿qué es el marco de juego?
+[00:10:21 -> 00:10:25]  es lo que se llama el juego de la caja
+[00:10:25 -> 00:10:27]  la caja es un juego
+[00:10:27 -> 00:10:28]  con las cartas
+[00:10:28 -> 00:10:30]  con las reglas de juego
+[00:10:30 -> 00:10:32]  eso es lo que nosotros vamos a llamar
+[00:10:32 -> 00:10:33]  marco de juego
+[00:10:33 -> 00:10:35]  la manera más sencilla
+[00:10:35 -> 00:10:36]  y en este caso
+[00:10:36 -> 00:10:39]  del tipo de marco de juego
+[00:10:39 -> 00:10:40]  más sencillo es
+[00:10:40 -> 00:10:42]  tenemos un montón de agentes
+[00:10:42 -> 00:10:44]  que bueno
+[00:10:44 -> 00:10:46]  ya lo llamamos juego
+[00:10:46 -> 00:10:48]  y voy a ir haciendo el paralelo
+[00:10:48 -> 00:10:49]  con teoría de juego
+[00:10:49 -> 00:10:50]  es solo por
+[00:10:50 -> 00:10:53]  poco de pan que no hace más
+[00:10:53 -> 00:10:54]  nosotros vamos a llamar agentes
+[00:10:54 -> 00:10:55]  en teoría de juego
+[00:10:55 -> 00:10:56]  se llaman jugadores
+[00:10:56 -> 00:10:57]  y si yo mezclo
+[00:10:57 -> 00:10:58]  los dos
+[00:10:58 -> 00:10:59]  disculpen
+[00:10:59 -> 00:11:00]  pero bueno
+[00:11:00 -> 00:11:01]  jugador o agente
+[00:11:01 -> 00:11:02]  es lo mismo
+[00:11:02 -> 00:11:04]  pero por acá
+[00:11:04 -> 00:11:05]  es solamente un índice
+[00:11:05 -> 00:11:05]  ¿está bien?
+[00:11:06 -> 00:11:07]  vamos a hablar del agente 1
+[00:11:07 -> 00:11:08]  agente 2
+[00:11:08 -> 00:11:09]  agente 3
+[00:11:09 -> 00:11:10]  es un marco de juego
+[00:11:10 -> 00:11:14]  cada
+[00:11:14 -> 00:11:16]  jugador
+[00:11:16 -> 00:11:16]  cada agente
+[00:11:16 -> 00:11:17]  va a tener
+[00:11:17 -> 00:11:19]  un conjunto
+[00:11:19 -> 00:11:21]  eventualmente distinto
+[00:11:21 -> 00:11:22]  por eso dice acá
+[00:11:22 -> 00:11:23]  a su P de acciones
+[00:11:23 -> 00:11:25]  en el que acabamos de ver
+[00:11:25 -> 00:11:27]  los dos tenían las mismas acciones
+[00:11:27 -> 00:11:27]  Steel
+[00:11:27 -> 00:11:28]  Split
+[00:11:28 -> 00:11:29]  pero
+[00:11:29 -> 00:11:30]  esto en general
+[00:11:30 -> 00:11:31]  pueden tener
+[00:11:31 -> 00:11:33]  distintas acciones
+[00:11:33 -> 00:11:35]  distinta cantidad de acciones
+[00:11:35 -> 00:11:36]  pueden tener dos
+[00:11:36 -> 00:11:37]  otros tres
+[00:11:37 -> 00:11:39]  ocho etcétera
+[00:11:39 -> 00:11:41]  sí
+[00:11:41 -> 00:11:44]  ¿cuántos mil de los archivos
+[00:11:44 -> 00:11:46]  así que te está?
+[00:11:46 -> 00:11:49]  100
+[00:11:49 -> 00:11:51]  ¿a quién?
+[00:11:51 -> 00:11:52]  a Hs
+[00:11:52 -> 00:11:53]  ah bien
+[00:11:53 -> 00:11:54]  ¿a quién?
+[00:11:54 -> 00:11:55]  a Hs
+[00:11:55 -> 00:11:56]  ah bien
+[00:11:56 -> 00:11:58]  ah bien
+[00:11:58 -> 00:11:59]  mira que bien
+[00:11:59 -> 00:12:00]  ah
+[00:12:00 -> 00:12:02]  un segundito que están tomando discos yo
+[00:12:02 -> 00:12:04]  bien
+[00:12:04 -> 00:12:06]  rey soy
+[00:12:06 -> 00:12:07]  bien
+[00:12:07 -> 00:12:09]  ¿todo bien?
+[00:12:09 -> 00:12:10]  mal, mal
+[00:12:10 -> 00:12:11]  un segundo
+[00:12:11 -> 00:12:12]  ¿cómo?
+[00:12:12 -> 00:12:13]  un segundo
+[00:12:13 -> 00:12:14]  bien
+[00:12:14 -> 00:12:15]  ¿todo bien?
+[00:12:15 -> 00:12:16]  bien
+[00:12:16 -> 00:12:18]  no
+[00:12:18 -> 00:12:19]  bien
+[00:12:19 -> 00:12:20]  ¿bien?
+[00:12:20 -> 00:12:21]  bien
+[00:12:21 -> 00:12:22]  sí
+[00:12:22 -> 00:12:23]  ay no
+[00:12:23 -> 00:12:24]  ¿cómo va?
+[00:12:24 -> 00:12:25]  sí, sí, sí
+[00:12:25 -> 00:12:26]  sí
+[00:12:32 -> 00:12:33]  ¿y?
+[00:12:33 -> 00:12:34]  sí
+[00:12:34 -> 00:12:35]  con B corto
+[00:12:35 -> 00:12:37]  de la red
+[00:12:37 -> 00:12:38]  para confundir
+[00:12:38 -> 00:12:39]  bien
+[00:12:39 -> 00:12:40]  perdón
+[00:12:40 -> 00:12:41]  bútela
+[00:12:41 -> 00:12:42]  por favor
+[00:12:42 -> 00:12:43]  gracias
+[00:12:47 -> 00:12:48]  bien
+[00:12:48 -> 00:12:49]  perdón
+[00:12:49 -> 00:12:51]  no lo están confundiendo
+[00:12:51 -> 00:12:53]  eh
+[00:12:53 -> 00:12:54]  eh
+[00:12:54 -> 00:12:57]  y después el espacio de acciones
+[00:12:57 -> 00:12:59]  el espacio de acciones es el producto cartesiano
+[00:12:59 -> 00:13:00]  de las acciones de cada uno
+[00:13:00 -> 00:13:05]  y después
+[00:13:05 -> 00:13:05]  vamos a decir, bueno
+[00:13:05 -> 00:13:09]  si agrego
+[00:13:09 -> 00:13:11]  a un marco de juego
+[00:13:11 -> 00:13:12]  por eso está afuera
+[00:13:12 -> 00:13:14]  si agrego a un marco de juego
+[00:13:14 -> 00:13:14]  ¿cuál es esto?
+[00:13:16 -> 00:13:17]  si agrego al marco de juego
+[00:13:17 -> 00:13:21]  las recompensas
+[00:13:23 -> 00:13:23]  en
+[00:13:23 -> 00:13:24]  te diría cosas ya
+[00:13:24 -> 00:13:25]  en general
+[00:13:25 -> 00:13:28]  o sea, básicamente
+[00:13:28 -> 00:13:31]  para cada jugador
+[00:13:31 -> 00:13:34]  y para cada acción conjunta
+[00:13:34 -> 00:13:37]  para cada acción conjunta
+[00:13:37 -> 00:13:38]  no para cada acción individual
+[00:13:38 -> 00:13:40]  para cada acción conjunta
+[00:13:40 -> 00:13:42]  le asocio una utilidad
+[00:13:42 -> 00:13:43]  ¿está bien?
+[00:13:44 -> 00:13:46]  o sea, no para cada acción
+[00:13:46 -> 00:13:48]  sino para cada acción conjunta
+[00:13:48 -> 00:13:51]  ¿la acción conjunta
+[00:13:51 -> 00:13:53]  si son determinadas las reglas?
+[00:13:53 -> 00:13:54]  digamos, sí
+[00:13:54 -> 00:13:55]  la acción conjunta
+[00:13:55 -> 00:13:56]  da
+[00:13:56 -> 00:13:59]  un resultado
+[00:13:59 -> 00:14:01]  y a ese resultado
+[00:14:01 -> 00:14:04]  le asocio a través de esto
+[00:14:04 -> 00:14:05]  porque en realidad no importa
+[00:14:05 -> 00:14:06]  cuál es el resultado
+[00:14:06 -> 00:14:07]  en definitiva
+[00:14:07 -> 00:14:10]  por eso lo quiero
+[00:14:10 -> 00:14:12]  disociar de la plata
+[00:14:12 -> 00:14:15]  es simplemente un resultado
+[00:14:15 -> 00:14:16]  y a ese resultado
+[00:14:16 -> 00:14:18]  en realidad lo que importa
+[00:14:18 -> 00:14:19]  en teoría del juego
+[00:14:19 -> 00:14:21]  es la recompensa
+[00:14:21 -> 00:14:23]  o sea, el valor que le asocia
+[00:14:23 -> 00:14:23]  cada jugador
+[00:14:24 -> 00:14:25]  a ese resultado
+[00:14:25 -> 00:14:26]  o sea
+[00:14:26 -> 00:14:29]  que el resultado del juego sea
+[00:14:29 -> 00:14:30]  100.000 libras
+[00:14:30 -> 00:14:33]  no importa
+[00:14:33 -> 00:14:35]  o sea, puede ser distinto
+[00:14:35 -> 00:14:37]  el valor que le asocia Sara
+[00:14:37 -> 00:14:39]  al valor que le asocia Steve
+[00:14:39 -> 00:14:40]  a recibir 100.000 libras
+[00:14:40 -> 00:14:41]  o sea, por eso yo
+[00:14:41 -> 00:14:42]  desacoplo
+[00:14:42 -> 00:14:45]  el resultado del juego
+[00:14:45 -> 00:14:50]  o sea, la acción conjunta
+[00:14:50 -> 00:14:51]  y el valor que le da
+[00:14:51 -> 00:14:53]  a esa acción conjunta
+[00:14:53 -> 00:14:53]  es el valor
+[00:14:54 -> 00:14:55]  que le da
+[00:14:55 -> 00:14:56]  cada jugador
+[00:14:56 -> 00:14:57]  entonces
+[00:14:57 -> 00:15:00]  el valor o utilidad
+[00:15:00 -> 00:15:01]  o recompensa que tiene
+[00:15:01 -> 00:15:02]  para cada jugador
+[00:15:02 -> 00:15:03]  este
+[00:15:03 -> 00:15:04]  como ves
+[00:15:04 -> 00:15:05]  cada acción conjunta
+[00:15:05 -> 00:15:06]  te ha indicado el resultado
+[00:15:06 -> 00:15:07]  ahora vamos si quieres
+[00:15:07 -> 00:15:08]  vamos a ver el ejemplo
+[00:15:08 -> 00:15:09]  cuando estábamos en agentes
+[00:15:09 -> 00:15:10]  de acuerdo que
+[00:15:10 -> 00:15:11]  nos acordamos que
+[00:15:11 -> 00:15:12]  con Sasa
+[00:15:12 -> 00:15:13]  el estado al que
+[00:15:13 -> 00:15:14]  el estado al que llegábamos
+[00:15:14 -> 00:15:15]  dependía siempre
+[00:15:15 -> 00:15:16]  de la cantidad de libras
+[00:15:16 -> 00:15:17]  que teníamos
+[00:15:17 -> 00:15:18]  y de la cantidad de libras
+[00:15:18 -> 00:15:19]  que teníamos
+[00:15:19 -> 00:15:20]  y de la cantidad de libras
+[00:15:20 -> 00:15:21]  que teníamos
+[00:15:21 -> 00:15:22]  de la cantidad de libras
+[00:15:22 -> 00:15:23]  que teníamos
+[00:15:23 -> 00:15:24]  dependía siempre
+[00:15:24 -> 00:15:25]  del estado al que teníamos
+[00:15:25 -> 00:15:27]  claro que la función de utilidad
+[00:15:27 -> 00:15:29]  no depende de ninguna función previa
+[00:15:29 -> 00:15:31]  depende solamente de la acción
+[00:15:31 -> 00:15:34]  este es el tipo más sencillo
+[00:15:34 -> 00:15:35]  de problema
+[00:15:35 -> 00:15:36]  que es
+[00:15:36 -> 00:15:38]  una jugada
+[00:15:38 -> 00:15:41]  donde podemos jugar eso
+[00:15:41 -> 00:15:43]  más tarde
+[00:15:43 -> 00:15:44]  por ejemplo
+[00:15:44 -> 00:15:45]  o sea lo que
+[00:15:45 -> 00:15:48]  en definitiva termina siendo esto
+[00:15:48 -> 00:15:50]  después lo explico bien
+[00:15:50 -> 00:15:51]  pero quiere decir que
+[00:15:51 -> 00:15:52]  un juego
+[00:15:52 -> 00:15:54]  es una matriz
+[00:15:54 -> 00:15:55]  de este estilo
+[00:15:55 -> 00:15:56]  o sea este si quieren
+[00:15:56 -> 00:15:58]  este que está acá
+[00:15:58 -> 00:15:59]  ese es como el marco del juego
+[00:15:59 -> 00:16:00]  que dice
+[00:16:00 -> 00:16:01]  hay jugadores
+[00:16:01 -> 00:16:02]  y las acciones
+[00:16:02 -> 00:16:03]  y cuál es el resultado
+[00:16:03 -> 00:16:04]  del juego
+[00:16:04 -> 00:16:05]  para cada acción conjunta
+[00:16:05 -> 00:16:06]  Sara obtiene 50.000
+[00:16:06 -> 00:16:07]  si los dos juegan split
+[00:16:07 -> 00:16:08]  Sara cada uno obtiene 50.000
+[00:16:08 -> 00:16:09]  si Sara juega
+[00:16:09 -> 00:16:10]  50.000
+[00:16:10 -> 00:16:11]  si Sara juega
+[00:16:11 -> 00:16:12]  50.000
+[00:16:12 -> 00:16:13]  si Sara juega
+[00:16:13 -> 00:16:14]  50.000
+[00:16:14 -> 00:16:15]  si Sara juega
+[00:16:15 -> 00:16:16]  50.000
+[00:16:16 -> 00:16:17]  si Sara juega
+[00:16:17 -> 00:16:18]  50.000
+[00:16:18 -> 00:16:19]  si Sara juega
+[00:16:19 -> 00:16:20]  50.000
+[00:16:20 -> 00:16:21]  si Sara juega
+[00:16:21 -> 00:16:22]  50.000
+[00:16:22 -> 00:16:23]  si Sara juega
+[00:16:23 -> 00:16:24]  o sea jugador uno
+[00:16:24 -> 00:16:25]  jugador fila
+[00:16:25 -> 00:16:26]  no le pongamos nombre todavía
+[00:16:26 -> 00:16:27]  jugador fila
+[00:16:27 -> 00:16:28]  juega
+[00:16:29 -> 00:16:30]  este
+[00:16:30 -> 00:16:31]  steel
+[00:16:31 -> 00:16:32]  y el jugador columna
+[00:16:32 -> 00:16:33]  juega split
+[00:16:33 -> 00:16:34]  el jugador fila obtiene 100
+[00:16:34 -> 00:16:36]  y el jugador columna obtiene nada
+[00:16:36 -> 00:16:37]  está bien
+[00:16:37 -> 00:16:38]  si
+[00:16:38 -> 00:16:40]  el jugador fila juega split
+[00:16:40 -> 00:16:41]  y el jugador
+[00:16:41 -> 00:16:42]  este
+[00:16:42 -> 00:16:43]  columna juega steel
+[00:16:43 -> 00:16:44]  es el jugador
+[00:16:44 -> 00:16:45]  columna
+[00:16:45 -> 00:16:46]  que se lleva todo
+[00:16:46 -> 00:16:48]  y si los dos juegan steel
+[00:16:48 -> 00:16:50]  ninguno se lleva nada
+[00:16:50 -> 00:16:51]  pero ese es el marco del juego
+[00:16:51 -> 00:16:52]  ¿no?
+[00:16:52 -> 00:16:53]  ahora después a esto
+[00:16:53 -> 00:16:54]  hay que ponerle por encima
+[00:16:54 -> 00:16:55]  las preferencias
+[00:16:55 -> 00:16:56]  y no necesariamente
+[00:16:56 -> 00:16:57]  lo que vamos a hacer es que
+[00:16:57 -> 00:17:01]  la cantidad de plata que hay acá
+[00:17:01 -> 00:17:03]  tenga algo que ver
+[00:17:03 -> 00:17:04]  con
+[00:17:04 -> 00:17:05]  la utilidad
+[00:17:05 -> 00:17:06]  o el valor que le da
+[00:17:06 -> 00:17:07]  a cada jugador
+[00:17:07 -> 00:17:08]  a esa
+[00:17:08 -> 00:17:10]  a ese resultado
+[00:17:10 -> 00:17:13]  siempre
+[00:17:13 -> 00:17:16]  por suerte tengo estudiantes
+[00:17:16 -> 00:17:17]  todo el tiempo distintos
+[00:17:17 -> 00:17:18]  pero siempre hago la misma pregunta
+[00:17:18 -> 00:17:20]  o sea no sé si ustedes tienen hijos
+[00:17:20 -> 00:17:21]  si no tienen hijos
+[00:17:21 -> 00:17:22]  si no tienen hijos
+[00:17:22 -> 00:17:23]  si no tienen una pareja
+[00:17:23 -> 00:17:24]  o no
+[00:17:24 -> 00:17:25]  pero siempre han jugado algún juego
+[00:17:25 -> 00:17:26]  con alguna persona
+[00:17:26 -> 00:17:27]  siempre quieren ganar
+[00:17:27 -> 00:17:28]  no
+[00:17:28 -> 00:17:29]  el mismo juego
+[00:17:29 -> 00:17:30]  o sea vos lo jugás con él
+[00:17:30 -> 00:17:31]  pero después capaz que le quiere ganar
+[00:17:31 -> 00:17:32]  pero después con otro
+[00:17:32 -> 00:17:33]  y si no
+[00:17:33 -> 00:17:34]  voy a jugar
+[00:17:34 -> 00:17:35]  el juego
+[00:17:35 -> 00:17:36]  el marco del juego
+[00:17:36 -> 00:17:37]  es exactamente el mismo
+[00:17:37 -> 00:17:38]  pero ustedes no juegan
+[00:17:38 -> 00:17:39]  siempre
+[00:17:39 -> 00:17:40]  con las mismas preferencias
+[00:17:40 -> 00:17:41]  juegan con una preferencia
+[00:17:41 -> 00:17:42]  si están tratando de enseñarle a alguien
+[00:17:42 -> 00:17:43]  que no le gusta
+[00:17:43 -> 00:17:44]  que no le gusta
+[00:17:44 -> 00:17:45]  que no le gusta
+[00:17:45 -> 00:17:46]  que no le gusta
+[00:17:46 -> 00:17:47]  que no le gusta
+[00:17:47 -> 00:17:48]  que no le gusta
+[00:17:48 -> 00:17:49]  que no le gusta
+[00:17:49 -> 00:17:50]  que no le gusta
+[00:17:50 -> 00:17:51]  puede enseñarle a alguien
+[00:17:51 -> 00:17:52]  a jugar
+[00:17:52 -> 00:17:54]  pueden jugar a perder
+[00:17:54 -> 00:17:55]  a ver
+[00:17:55 -> 00:17:56]  entonces así
+[00:17:56 -> 00:17:57]  bueno esta es la idea
+[00:17:57 -> 00:17:58]  no importa cuál es
+[00:17:58 -> 00:18:00]  el resultado del juego
+[00:18:03 -> 00:18:04]  diferentes situaciones
+[00:18:04 -> 00:18:07]  pueden tener diferentes preferencias
+[00:18:07 -> 00:18:08]  incluso
+[00:18:08 -> 00:18:09]  estamos
+[00:18:09 -> 00:18:20]  y bueno, capaz que
+[00:18:20 -> 00:18:21]  cambió
+[00:18:21 -> 00:18:24]  justamente esa parte
+[00:18:24 -> 00:18:25]  de ahí del video
+[00:18:25 -> 00:18:28]  bueno, cambió
+[00:18:28 -> 00:18:30]  sus preferencias, jugó distinto
+[00:18:30 -> 00:18:31]  esa última etapa
+[00:18:31 -> 00:18:33]  en
+[00:18:33 -> 00:18:35]  contraste que con otra
+[00:18:35 -> 00:18:37]  hay dos instancias distintas
+[00:18:37 -> 00:18:38]  con distintas preferencias
+[00:18:38 -> 00:18:42]  tenéis que pensarlo como esto
+[00:18:42 -> 00:18:44]  está bien
+[00:18:44 -> 00:18:47]  y ahora después en la
+[00:18:47 -> 00:18:49]  vamos a ver
+[00:18:49 -> 00:18:51]  cómo pasamos en realidad de preferencias
+[00:18:51 -> 00:18:53]  a valores
+[00:18:53 -> 00:18:55]  pero
+[00:18:55 -> 00:18:57]  piensen
+[00:18:57 -> 00:18:59]  por eso esto se llama además
+[00:18:59 -> 00:19:01]  está acá
+[00:19:01 -> 00:19:03]  juegos ordinales
+[00:19:03 -> 00:19:05]  de una jugada por lo que
+[00:19:05 -> 00:19:07]  pregunté recién
+[00:19:07 -> 00:19:08]  matricial
+[00:19:08 -> 00:19:10]  simultáneo bueno por la forma
+[00:19:10 -> 00:19:12]  pero además dice ordinales porque
+[00:19:12 -> 00:19:14]  justamente la idea es que esa utilidad
+[00:19:14 -> 00:19:16]  es solamente una manera de ordenar
+[00:19:16 -> 00:19:16]  cosas
+[00:19:16 -> 00:19:19]  está bien
+[00:19:19 -> 00:19:24]  y no es cardinal o sea no representa
+[00:19:24 -> 00:19:26]  un valor
+[00:19:26 -> 00:19:27]  este
+[00:19:27 -> 00:19:30]  digamos comparable multiplicable
+[00:19:30 -> 00:19:32]  sumable solamente
+[00:19:32 -> 00:19:34]  para ordenar solamente lo único que importa
+[00:19:34 -> 00:19:36]  es que es algo es mayor menor o igual
+[00:19:36 -> 00:19:38]  que otra cosa no importa si eso es 10 8
+[00:19:38 -> 00:19:41]  o un millón
+[00:19:41 -> 00:19:42]  simplemente
+[00:19:42 -> 00:19:45]  uno mayor que otro
+[00:19:45 -> 00:19:47]  menor
+[00:19:47 -> 00:19:49]  eso la idea o sea
+[00:19:49 -> 00:19:52]  el objetivo es que esas recompensas tienen que presentar
+[00:19:52 -> 00:19:55]  tienen que representar
+[00:19:55 -> 00:19:57]  preferencias
+[00:19:57 -> 00:19:59]  entre este
+[00:19:59 -> 00:20:02]  la preferencia que tiene cada jugador por cada acción
+[00:20:02 -> 00:20:05]  conjunta
+[00:20:05 -> 00:20:08]  eso es lo lo primero
+[00:20:08 -> 00:20:10]  cada acción conjunta
+[00:20:10 -> 00:20:19]  entonces tenemos este
+[00:20:19 -> 00:20:22]  cada utilidad
+[00:20:22 -> 00:20:24]  la función de utilidad
+[00:20:24 -> 00:20:27]  en realidad refleja esto que
+[00:20:27 -> 00:20:29]  dice acá que es
+[00:20:29 -> 00:20:31]  que un jugador
+[00:20:31 -> 00:20:32]  P o agente P
+[00:20:32 -> 00:20:33]  prefiere a B
+[00:20:33 -> 00:20:37]  quiere decir
+[00:20:37 -> 00:20:37]  si el valor de la utilidad
+[00:20:37 -> 00:20:37]  es igual a la utilidad de la jugada
+[00:20:37 -> 00:20:38]  si el valor de la utilidad de la jugada
+[00:20:38 -> 00:20:38]  es igual a la utilidad de la jugada
+[00:20:38 -> 00:20:39]  que le da
+[00:20:39 -> 00:20:40]  a A
+[00:20:40 -> 00:20:43]  es mayor que el de B
+[00:20:43 -> 00:20:45]  pero eso es
+[00:20:45 -> 00:20:47]  si el resultado del
+[00:20:47 -> 00:20:50]  marco del juego en ese momento
+[00:20:50 -> 00:20:52]  por la razón que sea
+[00:20:52 -> 00:20:53]  de
+[00:20:53 -> 00:20:55]  la acción A
+[00:20:55 -> 00:20:56]  conjunta
+[00:20:56 -> 00:20:59]  es preferible al de B
+[00:20:59 -> 00:21:02]  pero no tiene nada que ver con la plata que eso representa
+[00:21:02 -> 00:21:03]  seguimos
+[00:21:03 -> 00:21:05]  sin definir la preferencia
+[00:21:05 -> 00:21:07]  sin definir la preferencia
+[00:21:07 -> 00:21:08]  es eso
+[00:21:08 -> 00:21:09]  la preferencia
+[00:21:09 -> 00:21:10]  entonces vamos a explicar
+[00:21:10 -> 00:21:11]  ahora
+[00:21:11 -> 00:21:13]  si yo puedo
+[00:21:13 -> 00:21:14]  lo que el ejercicio que vamos a hacer
+[00:21:14 -> 00:21:15]  es tratar de llevar
+[00:21:15 -> 00:21:18]  a ese juego
+[00:21:18 -> 00:21:21]  construir un juego
+[00:21:21 -> 00:21:23]  que explique
+[00:21:23 -> 00:21:25]  que tanto Steve como Sara
+[00:21:25 -> 00:21:27]  jugaron racionalmente
+[00:21:27 -> 00:21:27]  si no lo otro es decir
+[00:21:27 -> 00:21:28]  jugaron irracionalmente
+[00:21:28 -> 00:21:29]  entonces no
+[00:21:29 -> 00:21:30]  se olvide ya está
+[00:21:30 -> 00:21:32]  no son agentes racionales
+[00:21:32 -> 00:21:34]  entonces no son objeto de estudio
+[00:21:34 -> 00:21:35]  para mí
+[00:21:35 -> 00:21:36]  entonces
+[00:21:36 -> 00:21:37]  puedo explicar
+[00:21:37 -> 00:21:39]  racionalmente lo que jugaron
+[00:21:39 -> 00:21:41]  y vamos a ver que
+[00:21:41 -> 00:21:45]  si podemos explicar
+[00:21:45 -> 00:21:47]  que lo que jugó cada uno
+[00:21:47 -> 00:21:49]  es racional
+[00:21:49 -> 00:21:51]  con respecto a esas preferencias
+[00:21:51 -> 00:21:53]  esa es la idea
+[00:21:53 -> 00:21:55]  pero
+[00:21:55 -> 00:21:57]  porque la tercera preferencia
+[00:21:57 -> 00:21:59]  Steve
+[00:21:59 -> 00:22:01]  ahora
+[00:22:01 -> 00:22:03]  vamos vamos vamos
+[00:22:03 -> 00:22:05]  esto es tipo ingeniería reversa
+[00:22:05 -> 00:22:07]  vimos esto en el primer video
+[00:22:07 -> 00:22:09]  vimos el resultado
+[00:22:09 -> 00:22:10]  y bueno
+[00:22:10 -> 00:22:11]  vamos a ver si
+[00:22:11 -> 00:22:13]  yo puedo asignarle preferencias
+[00:22:13 -> 00:22:14]  a los jugadores
+[00:22:14 -> 00:22:17]  que expliquen que Sara jugó Steel
+[00:22:17 -> 00:22:20]  y que Steve jugó Split
+[00:22:20 -> 00:22:22]  y que eso tenía un sentido para ellos
+[00:22:22 -> 00:22:23]  porque si no
+[00:22:23 -> 00:22:26]  es distinto si hicieron otra cosa
+[00:22:26 -> 00:22:27]  pero también es posible
+[00:22:27 -> 00:22:34]  pueden jugar estrategias también aleatorias
+[00:22:34 -> 00:22:35]  lo vamos a ver después
+[00:22:35 -> 00:22:36]  pero digo que ahora es
+[00:22:36 -> 00:22:38]  más simple
+[00:22:38 -> 00:22:40]  entonces
+[00:22:40 -> 00:22:42]  vamos a ver de acá para acá
+[00:22:42 -> 00:22:43]  para acá
+[00:22:43 -> 00:22:44]  puedo decir que
+[00:22:44 -> 00:22:45]  bueno supongamos que
+[00:22:45 -> 00:22:47]  Sara es avara
+[00:22:47 -> 00:22:49]  que parece
+[00:22:49 -> 00:22:50]  no hay sentido con lo que
+[00:22:50 -> 00:22:51]  vimos ahí
+[00:22:51 -> 00:22:52]  por lo menos en este momento
+[00:22:52 -> 00:22:53]  o sea no digo
+[00:22:53 -> 00:22:55]  no es un juicio de valor sobre
+[00:22:55 -> 00:22:56]  Sara en general
+[00:22:56 -> 00:22:57]  es
+[00:22:57 -> 00:22:58]  por respecto
+[00:22:58 -> 00:23:00]  es que prefirió más plata menos
+[00:23:00 -> 00:23:02]  de más creo que lo dice
+[00:23:02 -> 00:23:04]  y que además es egoísta
+[00:23:04 -> 00:23:05]  pero
+[00:23:05 -> 00:23:06]  es egoísta
+[00:23:06 -> 00:23:09]  lo cual explica también en que
+[00:23:09 -> 00:23:10]  no importa
+[00:23:10 -> 00:23:11]  no le importa perder
+[00:23:11 -> 00:23:12]  o sea
+[00:23:12 -> 00:23:13]  el último no le sucede nada
+[00:23:13 -> 00:23:14]  el tema
+[00:23:14 -> 00:23:15]  el tema es que lo que le importa
+[00:23:15 -> 00:23:19]  no quiere que el otro se lleve algo
+[00:23:19 -> 00:23:21]  se enfoca en lo que ella recibe
+[00:23:21 -> 00:23:23]  o recibe todo o no le importa
+[00:23:23 -> 00:23:26]  básicamente es eso
+[00:23:26 -> 00:23:27]  entonces eso
+[00:23:27 -> 00:23:29]  si entendemos
+[00:23:29 -> 00:23:33]  podemos mapear esas preferencias
+[00:23:33 -> 00:23:34]  o sea
+[00:23:34 -> 00:23:36]  vamos a ver
+[00:23:36 -> 00:23:37]  a ver si estamos de acuerdo
+[00:23:37 -> 00:23:38]  o sea que
+[00:23:38 -> 00:23:39]  de acuerdo
+[00:23:39 -> 00:23:40]  ahora si al marco de juego
+[00:23:40 -> 00:23:41]  sería que Sara prefiere
+[00:23:41 -> 00:23:42]  Steal Split
+[00:23:42 -> 00:23:43]  conjunto
+[00:23:43 -> 00:23:44]  prefiere realmente que salga
+[00:23:44 -> 00:23:45]  Split Steel
+[00:23:45 -> 00:23:46]  obviamente
+[00:23:46 -> 00:23:47]  terminado resultando
+[00:23:47 -> 00:23:48]  a que salga Split Split
+[00:23:48 -> 00:23:49]  y que además prefiere
+[00:23:49 -> 00:23:50]  que salga Steel Split
+[00:23:50 -> 00:23:51]  así que
+[00:23:51 -> 00:23:52]  es que
+[00:23:52 -> 00:23:53]  es que
+[00:23:53 -> 00:23:54]  es que
+[00:23:54 -> 00:23:55]  yo tengo una idea
+[00:23:55 -> 00:23:56]  de la forma
+[00:23:56 -> 00:23:57]  de la forma
+[00:23:57 -> 00:23:58]  de la forma
+[00:23:58 -> 00:23:59]  que
+[00:23:59 -> 00:24:00]  que
+[00:24:00 -> 00:24:01]  que
+[00:24:01 -> 00:24:02]  que
+[00:24:02 -> 00:24:03]  que
+[00:24:03 -> 00:24:04]  que
+[00:24:04 -> 00:24:06]  a
+[00:24:06 -> 00:24:11]  a split steal
+[00:24:11 -> 00:24:12]  y que
+[00:24:12 -> 00:24:14]  steal steal
+[00:24:14 -> 00:24:16]  o split steal de Alomé
+[00:24:16 -> 00:24:18]  o sea esto explicaría un poco lo que es
+[00:24:18 -> 00:24:19]  Zavara
+[00:24:19 -> 00:24:22]  prefiere más o menos
+[00:24:22 -> 00:24:24]  y el resto le da igual porque acá
+[00:24:24 -> 00:24:25]  es el otro que gana
+[00:24:25 -> 00:24:28]  o sea ella no recibe nada
+[00:24:28 -> 00:24:30]  no le importa
+[00:24:30 -> 00:24:32]  si Steve se lleva nada
+[00:24:32 -> 00:24:33]  o todo
+[00:24:33 -> 00:24:35]  entonces
+[00:24:35 -> 00:24:38]  es
+[00:24:38 -> 00:24:38]  es
+[00:24:38 -> 00:24:42]  entonces
+[00:24:42 -> 00:24:45]  pensando en esto
+[00:24:45 -> 00:24:47]  ahora vamos a ponerle
+[00:24:47 -> 00:24:48]  valores
+[00:24:48 -> 00:24:51]  numéricos
+[00:24:51 -> 00:24:53]  lo único que necesito son números
+[00:24:53 -> 00:24:55]  para que sigan
+[00:24:55 -> 00:24:55]  este orden
+[00:24:55 -> 00:24:58]  entonces
+[00:24:58 -> 00:25:01]  steal split
+[00:25:01 -> 00:25:03]  que es este de acá
+[00:25:03 -> 00:25:03]  y
+[00:25:03 -> 00:25:04]  steal
+[00:25:04 -> 00:25:05]  no
+[00:25:05 -> 00:25:07]  steal split
+[00:25:07 -> 00:25:08]  tiene el valor 4
+[00:25:08 -> 00:25:11]  es la acción
+[00:25:11 -> 00:25:13]  conjunta de mayor valor para Zara
+[00:25:13 -> 00:25:15]  y lo voy a representar en esta tabla
+[00:25:15 -> 00:25:17]  por valores en rojo
+[00:25:17 -> 00:25:20]  es algo
+[00:25:20 -> 00:25:22]  o sea cuando sean de interés
+[00:25:22 -> 00:25:23]  los jugadores fila
+[00:25:23 -> 00:25:24]  van a ser siempre en rojo
+[00:25:24 -> 00:25:26]  y los jugadores de columna van a ser siempre azul
+[00:25:26 -> 00:25:32]  segundo valor
+[00:25:32 -> 00:25:33]  necesito algo que sea
+[00:25:33 -> 00:25:34]  menor que este
+[00:25:34 -> 00:25:36]  pero mayor que esto
+[00:25:36 -> 00:25:38]  o sea en general necesito tres valores
+[00:25:38 -> 00:25:40]  este
+[00:25:40 -> 00:25:41]  y esto es
+[00:25:41 -> 00:25:42]  split split
+[00:25:42 -> 00:25:44]  split split
+[00:25:44 -> 00:25:44]  es este
+[00:25:44 -> 00:25:47]  y pongo algo que sea más chico que 4
+[00:25:47 -> 00:25:49]  puede ser cualquier valor más chico que 4
+[00:25:49 -> 00:25:50]  no importa, 3
+[00:25:50 -> 00:25:52]  pero no importa en realidad cuánto le pongo
+[00:25:52 -> 00:25:53]  solamente que sea más chico
+[00:25:53 -> 00:25:57]  y después estos dos que me quedan
+[00:25:57 -> 00:26:00]  son iguales para Zara
+[00:26:00 -> 00:26:02]  y le pongo 2
+[00:26:02 -> 00:26:02]  y le pongo 2
+[00:26:03 -> 00:26:07]  por ahí esto no explica
+[00:26:07 -> 00:26:07]  el resultado
+[00:26:07 -> 00:26:08]  pero digo
+[00:26:08 -> 00:26:10]  más o menos la lógica
+[00:26:10 -> 00:26:16]  tiene que ver un poco con lo que
+[00:26:16 -> 00:26:18]  termina diciendo después
+[00:26:18 -> 00:26:19]  y ahora vamos a ver que
+[00:26:19 -> 00:26:22]  podemos explicar lo que termina jugando cada uno
+[00:26:22 -> 00:26:25]  y para Steve
+[00:26:25 -> 00:26:28]  también por lo que dice
+[00:26:28 -> 00:26:30]  guarda, lo que dice como dije antes
+[00:26:30 -> 00:26:31]  no es
+[00:26:31 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:32]  este
+[00:26:32 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:33]  este
+[00:26:33 -> 00:26:34]  , o sea, como dice Steve
+[00:26:34 -> 00:26:41]  es equitativo
+[00:26:41 -> 00:26:43]  prefiere repartir en partes iguales
+[00:26:43 -> 00:26:45]  bien
+[00:26:45 -> 00:26:45]  entonces
+[00:26:45 -> 00:26:47]  lo que valora más es
+[00:26:47 -> 00:26:48]  split split
+[00:26:48 -> 00:26:53]  y además es
+[00:26:53 -> 00:26:54]  benevolente
+[00:26:54 -> 00:26:57]  porque prefiere que Zara se lleve
+[00:26:57 -> 00:26:59]  algo a que no se lleve nada
+[00:26:59 -> 00:27:02]  entonces
+[00:27:02 -> 00:27:03]  Zara
+[00:27:03 -> 00:27:07]  ordena
+[00:27:07 -> 00:27:09]  prefiere que Sara
+[00:27:09 -> 00:27:11]  se lleve algo
+[00:27:11 -> 00:27:14]  entonces still split
+[00:27:14 -> 00:27:16]  tiene que ser mayor que still still
+[00:27:16 -> 00:27:17]  porque acá nadie se lleva nada
+[00:27:17 -> 00:27:19]  pero él prefiere que Sara se lleve algo
+[00:27:19 -> 00:27:21]  ¿está bien?
+[00:27:23 -> 00:27:25]  este creo que
+[00:27:25 -> 00:27:26]  a ver si lo que estoy portando
+[00:27:26 -> 00:27:28]  al revés
+[00:27:28 -> 00:27:33]  bueno, este puede estar al revés
+[00:27:33 -> 00:27:34]  pueden ser iguales
+[00:27:34 -> 00:27:37]  creo que el resultado no cambia
+[00:27:37 -> 00:27:38]  pero bueno
+[00:27:38 -> 00:27:42]  este puede ser
+[00:27:42 -> 00:27:44]  creo que si lo invertimos
+[00:27:44 -> 00:27:44]  vamos a tener un problema
+[00:27:44 -> 00:27:47]  entonces tenemos que resolverlo de otra manera
+[00:27:47 -> 00:27:48]  no quería complicar tanto
+[00:27:48 -> 00:27:50]  pero podemos ver después
+[00:27:50 -> 00:27:52]  como ejercicio, a ver si cambiamos esto
+[00:27:52 -> 00:27:57]  pero bueno, no vamos a discusión ahora
+[00:27:57 -> 00:27:58]  vamos a mantener esto
+[00:27:58 -> 00:28:00]  podemos tener alguna duda
+[00:28:00 -> 00:28:02]  pero más o menos el resto es igual
+[00:28:02 -> 00:28:02]  entonces
+[00:28:02 -> 00:28:05]  ordena, le pone primero 4
+[00:28:05 -> 00:28:06]  a split split
+[00:28:06 -> 00:28:09]  le pone primero, después le pone 3
+[00:28:09 -> 00:28:11]  a still split
+[00:28:11 -> 00:28:13]  still split
+[00:28:13 -> 00:28:14]  también
+[00:28:14 -> 00:28:16]  y después le pone este 2
+[00:28:16 -> 00:28:17]  de acá
+[00:28:17 -> 00:28:22]  ¿está bien?
+[00:28:23 -> 00:28:23]  esto es un poco
+[00:28:23 -> 00:28:27]  lo último
+[00:28:27 -> 00:28:28]  que prefiere es llevarse algo él
+[00:28:28 -> 00:28:30]  y que Sara no se lleve nada
+[00:28:30 -> 00:28:32]  básicamente eso es lo que quiere decir eso
+[00:28:32 -> 00:28:32]  pero
+[00:28:32 -> 00:28:33]  es discutible
+[00:28:33 -> 00:28:34]  ¿está?
+[00:28:34 -> 00:28:36]  solo para entender
+[00:28:36 -> 00:28:38]  ¿está?
+[00:28:38 -> 00:28:39]  ¿de dónde sale esto?
+[00:28:39 -> 00:28:41]  ¿sale de acá?
+[00:28:41 -> 00:28:43]  de las preferencias de los jugadores
+[00:28:43 -> 00:28:44]  no sale
+[00:28:44 -> 00:28:47]  de acá
+[00:28:47 -> 00:28:51]  o sea
+[00:28:51 -> 00:28:52]  no podemos
+[00:28:52 -> 00:28:53]  definir
+[00:28:53 -> 00:28:56]  arbitrariamente
+[00:28:56 -> 00:28:58]  o solamente viendo esto
+[00:28:58 -> 00:29:00]  cuáles van a ser las utilidades
+[00:29:00 -> 00:29:02]  en un juego
+[00:29:02 -> 00:29:04]  esto es el marco
+[00:29:04 -> 00:29:06]  ¿está bien?
+[00:29:06 -> 00:29:09]  no es porque acá diga
+[00:29:09 -> 00:29:13]  100, 0, 500, 50, 50
+[00:29:13 -> 00:29:16]  es que automáticamente esto me va a dar
+[00:29:16 -> 00:29:19]  una matriz de utilidades
+[00:29:19 -> 00:29:22]  esto es una matriz de los resultados del juego
+[00:29:22 -> 00:29:23]  pero no necesariamente
+[00:29:23 -> 00:29:27]  es igual a la matriz de utilidades
+[00:29:27 -> 00:29:28]  por eso
+[00:29:28 -> 00:29:30]  este problema
+[00:29:30 -> 00:29:31]  cuando te dicen a la gente
+[00:29:31 -> 00:29:32]  ¿qué es esto?
+[00:29:32 -> 00:29:33]  ¿desinteligen?
+[00:29:33 -> 00:29:34]  no les
+[00:29:34 -> 00:29:35]  pues nada
+[00:29:35 -> 00:29:37]  las recompensas estaban dadas
+[00:29:37 -> 00:29:38]  y en realidad después se les murió la cosa
+[00:29:38 -> 00:29:39]  por ser así
+[00:29:39 -> 00:29:41]  pero es importante entender esto
+[00:29:41 -> 00:29:42]  que
+[00:29:42 -> 00:29:43]  no
+[00:29:43 -> 00:29:45]  es automático
+[00:29:45 -> 00:29:46]  este
+[00:29:46 -> 00:29:48]  pasar de
+[00:29:48 -> 00:29:50]  el marco de juego
+[00:29:50 -> 00:29:51]  que es esto
+[00:29:51 -> 00:29:53]  a las verdaderas utilidades
+[00:29:53 -> 00:29:55]  de los agentes
+[00:29:55 -> 00:29:56]  si
+[00:29:56 -> 00:29:59]  ¿cómo definiste Funtime 4?
+[00:29:59 -> 00:30:00]  fue algo
+[00:30:00 -> 00:30:01]  eh
+[00:30:01 -> 00:30:02]  eh
+[00:30:02 -> 00:30:03]  ¿Al valor 4?
+[00:30:03 -> 00:30:04]  Sí.
+[00:30:04 -> 00:30:05]  Ah, es a evitar,
+[00:30:05 -> 00:30:08]  él podría haber puesto 40, 10, 38,
+[00:30:09 -> 00:30:10]  y menos 2.
+[00:30:11 -> 00:30:11]  10.
+[00:30:11 -> 00:30:12]  No, menos 2 no,
+[00:30:13 -> 00:30:14]  es mayor que este.
+[00:30:14 -> 00:30:15]  Si a él le puse 10,
+[00:30:15 -> 00:30:16]  le tengo que poner cualquier valor
+[00:30:16 -> 00:30:17]  que está entre...
+[00:30:17 -> 00:30:19]  O sea, es un orden, por eso.
+[00:30:19 -> 00:30:20]  Lo único que importa es el orden.
+[00:30:20 -> 00:30:21]  El orden, pero le importa el valor.
+[00:30:22 -> 00:30:25]  No, acá solo va a importar el orden,
+[00:30:25 -> 00:30:26]  porque no voy a hacer nada
+[00:30:26 -> 00:30:28]  con el valor, es algo ordenar,
+[00:30:28 -> 00:30:29]  para lo único que me va a servir.
+[00:30:30 -> 00:30:31]  ¿Está bien?
+[00:30:31 -> 00:30:32]  Entonces, no importa,
+[00:30:32 -> 00:30:37]  si esto es 4, 40 o 400,
+[00:30:38 -> 00:30:40]  el valor de la utilidad
+[00:30:40 -> 00:30:42]  no es representativo,
+[00:30:43 -> 00:30:44]  más allá del orden.
+[00:30:46 -> 00:30:48]  Por eso, pero tampoco lo podemos,
+[00:30:48 -> 00:30:50]  tampoco puedo hacer cosas con esto,
+[00:30:50 -> 00:30:53]  porque para mí lo que sirve es ordenar.
+[00:30:53 -> 00:30:54]  Después vamos a ver que,
+[00:30:55 -> 00:30:57]  si yo quiero operar con esto,
+[00:30:57 -> 00:30:58]  voy a tener que sí,
+[00:30:58 -> 00:31:00]  porque no es lo mismo con un 4 o con 40.
+[00:31:01 -> 00:31:01]  ¿Está bien?
+[00:31:01 -> 00:31:02]  Porque eventualmente están,
+[00:31:02 -> 00:31:06]  los tengo que relacionar.
+[00:31:07 -> 00:31:10]  Pero como es orden,
+[00:31:10 -> 00:31:13]  sí te da para poder tomar posición
+[00:31:13 -> 00:31:14]  de que lo va a ser cada uno.
+[00:31:14 -> 00:31:14]  Está igual.
+[00:31:16 -> 00:31:16]  ¿Pide?
+[00:31:21 -> 00:31:22]  Bueno, o sea,
+[00:31:22 -> 00:31:24]  siempre pasa a mí,
+[00:31:24 -> 00:31:26]  y es el objetivo,
+[00:31:26 -> 00:31:27]  es el objetivo de generar discusión
+[00:31:27 -> 00:31:29]  y ver que no es porque ustedes vean
+[00:31:29 -> 00:31:32]  hay valores en un marco de juego
+[00:31:32 -> 00:31:32]  que eso,
+[00:31:32 -> 00:31:34]  define lo que va a pasar.
+[00:31:35 -> 00:31:35]  ¿No?
+[00:31:36 -> 00:31:37]  Está bien.
+[00:31:37 -> 00:31:38]  Y esa es la historia.
+[00:31:39 -> 00:31:40]  Cuando ahora,
+[00:31:41 -> 00:31:43]  si van y leen,
+[00:31:44 -> 00:31:44]  o sea,
+[00:31:44 -> 00:31:45]  o encuentran ahí,
+[00:31:45 -> 00:31:46]  en algún lado,
+[00:31:47 -> 00:31:48]  el dilema del prisionero,
+[00:31:50 -> 00:31:51]  sepan que no,
+[00:31:51 -> 00:31:52]  el prisionero,
+[00:31:53 -> 00:31:55]  no va a hacer algo así.
+[00:31:56 -> 00:31:58]  Y no va a hacer algo así.
+[00:31:59 -> 00:32:01]  Y este no es el dilema del prisionero.
+[00:32:02 -> 00:32:04]  Es matriz.
+[00:32:04 -> 00:32:05]  Es matriz.
+[00:32:05 -> 00:32:06]  Es matriz.
+[00:32:06 -> 00:32:07]  Es matriz.
+[00:32:07 -> 00:32:09]  A partir del mismo marco de juego,
+[00:32:09 -> 00:32:11]  yo puedo tener diferentes juegos.
+[00:32:11 -> 00:32:13]  Porque le asocio diferentes
+[00:32:13 -> 00:32:15]  utilidades.
+[00:32:15 -> 00:32:17]  También,
+[00:32:17 -> 00:32:19]  entonces la pregunta es,
+[00:32:19 -> 00:32:20]  ah, bueno, pero,
+[00:32:20 -> 00:32:22]  y cómo hago para resolver esto.
+[00:32:22 -> 00:32:24]  No importa, la misma teoría
+[00:32:24 -> 00:32:26]  te va a dar cuál es la solución
+[00:32:26 -> 00:32:29]  de cada uno de los juegos que vos presentas.
+[00:32:29 -> 00:32:31]  Para un marco de juego.
+[00:32:31 -> 00:32:32]  ¿Verdad?
+[00:32:32 -> 00:32:34]  Para cualquier marco.
+[00:32:34 -> 00:32:35]  ¿No?
+[00:32:35 -> 00:32:38]  Pero bueno, vamos por partes.
+[00:32:38 -> 00:32:40]  Olvidémonos de...
+[00:32:40 -> 00:32:41]  Bueno, no.
+[00:32:41 -> 00:32:42]  Digámoslo.
+[00:32:42 -> 00:32:43]  No importa.
+[00:32:43 -> 00:32:44]  Entonces pensemos, bueno,
+[00:32:44 -> 00:32:45]  qué fue lo que,
+[00:32:45 -> 00:32:46]  incluso lo que dijo una gente,
+[00:32:46 -> 00:32:47]  qué fue lo que...
+[00:32:47 -> 00:32:48]  Ah, bueno.
+[00:32:48 -> 00:32:50]  Que cada jugador va a elegir su acción.
+[00:32:50 -> 00:32:51]  Porque ahora te parece que va a elegir su acción.
+[00:32:51 -> 00:32:52]  Cada jugador elige su acción.
+[00:32:52 -> 00:32:54]  Y esa es la dificultad.
+[00:32:54 -> 00:32:55]  Porque...
+[00:32:56 -> 00:32:58]  expresamos las...
+[00:32:58 -> 00:33:00]  este...
+[00:33:00 -> 00:33:01]  utilidades,
+[00:33:02 -> 00:33:04]  de las acciones conjuntas.
+[00:33:04 -> 00:33:07]  Pero Sara y Steve no eligen una acción conjunta.
+[00:33:07 -> 00:33:09]  Elige cada uno una acción.
+[00:33:11 -> 00:33:12]  Entonces,
+[00:33:12 -> 00:33:14]  expresamos las...
+[00:33:14 -> 00:33:15]  eh...
+[00:33:15 -> 00:33:17]  utilidades a partir de las preferencias.
+[00:33:17 -> 00:33:19]  ¿Cuál es la acción, ahora,
+[00:33:19 -> 00:33:21]  que tengo que elegir?
+[00:33:22 -> 00:33:24]  Entonces, guiado por, pongamos,
+[00:33:24 -> 00:33:26]  guiado por este principio, decíamos, bueno, ahora yo tengo que elegir
+[00:33:26 -> 00:33:29]  la acción que maximiza el beneficio esperado.
+[00:33:29 -> 00:33:31]  No importa si eso es un millón o cuatro.
+[00:33:31 -> 00:33:32]  Es lo mismo.
+[00:33:32 -> 00:33:36]  Es el que maximiza mi beneficio.
+[00:33:37 -> 00:33:40]  De acuerdo a las preferencias, etcétera.
+[00:33:40 -> 00:33:42]  Entonces, bueno, acá está la respuesta para acá.
+[00:33:42 -> 00:33:44]  Pero, a ver, ¿usted qué diría?
+[00:33:44 -> 00:33:45]  Que si...
+[00:33:45 -> 00:33:46]  que...
+[00:33:47 -> 00:33:50]  Si estuvimos de acuerdo en que Sara y Steve...
+[00:33:54 -> 00:33:55]  eh...
+[00:33:55 -> 00:33:57]  tenían estas preferencias.
+[00:33:58 -> 00:33:59]  ¿Jugaron bien?
+[00:33:59 -> 00:34:00]  ¿Jugaron racionalmente?
+[00:34:00 -> 00:34:04]  De acuerdo a ese concepto medio intuitivo ahí de que eligieron la acción
+[00:34:04 -> 00:34:07]  que maximizaba el beneficio esperado.
+[00:34:07 -> 00:34:08]  No, no, la plata esperada.
+[00:34:08 -> 00:34:10]  El beneficio que ellos dijeron.
+[00:34:10 -> 00:34:12]  ¿Jugaron bien?
+[00:34:12 -> 00:34:13]  Sí, excelente.
+[00:34:13 -> 00:34:14]  ¿Y por qué?
+[00:34:15 -> 00:34:17]  Cada uno las jugaste la misma.
+[00:34:17 -> 00:34:18]  Cada uno eligió la misma.
+[00:34:21 -> 00:34:22]  Bien.
+[00:34:22 -> 00:34:23]  Bueno.
+[00:34:28 -> 00:34:29]  O sea, pero...
+[00:34:30 -> 00:34:31]  Cuidado.
+[00:34:33 -> 00:34:35]  ¿Qué eligió?
+[00:34:37 -> 00:34:38]  Sara.
+[00:34:38 -> 00:34:40]  Sí, de Steve.
+[00:34:40 -> 00:34:41]  ¿Cómo?
+[00:34:41 -> 00:34:43]  Sara eligió Steve.
+[00:34:43 -> 00:34:44]  Sí, perdón.
+[00:34:44 -> 00:34:45]  Sara eligió Steve.
+[00:34:45 -> 00:34:46]  Yo no.
+[00:34:46 -> 00:34:47]  Sí.
+[00:34:47 -> 00:34:48]  Está.
+[00:34:48 -> 00:34:49]  Pero, ¿usted eligió el cuatro?
+[00:34:49 -> 00:34:50]  No, eligió cuatro cuartas.
+[00:34:50 -> 00:34:51]  No, ¿eh?
+[00:34:51 -> 00:34:52]  Eligió el vector cuatro dos.
+[00:34:52 -> 00:34:53]  ¿Pero eso?
+[00:34:53 -> 00:34:54]  ¿Cómo?
+[00:34:54 -> 00:34:55]  Sara eligió...
+[00:34:55 -> 00:34:56]  No eligió este cuatro.
+[00:34:56 -> 00:34:57]  Sara eligió Steve.
+[00:34:57 -> 00:34:58]  O sea, eligió esto.
+[00:34:58 -> 00:34:59]  Bueno.
+[00:34:59 -> 00:35:00]  Baek serum sin motivos, eso sí.
+[00:35:00 -> 00:35:01]  Sí, ahí va.
+[00:35:01 -> 00:35:02]  Está bien.
+[00:35:02 -> 00:35:04]  O sea, a priori no estaba segura.
+[00:35:04 -> 00:35:05]  ¿Eh?
+[00:35:05 -> 00:35:06]  Y Steve eligió.
+[00:35:06 -> 00:35:07]  Entonces, si Sara, Steve...
+[00:35:07 -> 00:35:20]  No, es בק
+[00:35:20 -> 00:35:25]  Si Sara, Steve hubieran conocido esta matriz.
+[00:35:25 -> 00:35:27]  Esto hubiera的 βυgangenYes.
+[00:35:27 -> 00:35:28]  No.
+[00:35:28 -> 00:35:29]  ¿Qué hubieran elegido?
+[00:35:29 -> 00:35:31]  La matriz y las preferencias.
+[00:35:31 -> 00:35:32]  Sí, sí, exactamente.
+[00:35:33 -> 00:35:34]  Porque ustedes estamos,
+[00:35:34 -> 00:35:36]  nosotros estamos viendo toda la matriz.
+[00:35:39 -> 00:35:40]  Sara y Steve no la vieron.
+[00:35:40 -> 00:35:41]  Sara hubiera elegido lo mismo.
+[00:35:43 -> 00:35:44]  ¿Sara hubiera elegido lo mismo?
+[00:35:44 -> 00:35:45]  ¿Por qué?
+[00:35:46 -> 00:35:48]  Porque maximiza su beneficio.
+[00:35:48 -> 00:35:49]  ¿Y qué quiere decir
+[00:35:49 -> 00:35:51]  maximizar su beneficio?
+[00:35:52 -> 00:35:53]  O sea...
+[00:35:53 -> 00:35:54]  Exacto.
+[00:35:54 -> 00:35:55]  Ah, ya, ya.
+[00:35:58 -> 00:36:00]  O sea...
+[00:36:02 -> 00:36:04]  Sí, pero...
+[00:36:05 -> 00:36:07]  Está haciendo una hipótesis fuerte.
+[00:36:07 -> 00:36:08]  Es decir, que si Sara
+[00:36:08 -> 00:36:09]  elige
+[00:36:09 -> 00:36:11]  solo esto sabiendo
+[00:36:11 -> 00:36:14]  qué es lo que sabe también
+[00:36:14 -> 00:36:17]  conociendo las preferencias
+[00:36:17 -> 00:36:18]  de Steve.
+[00:36:18 -> 00:36:19]  ¿Qué va a ser?
+[00:36:20 -> 00:36:22]  Va a ser split.
+[00:36:23 -> 00:36:24]  ¿Entonces?
+[00:36:24 -> 00:36:25]  ¿Por qué le da 100?
+[00:36:25 -> 00:36:27]  ¿Y por qué?
+[00:36:28 -> 00:36:29]  ¿Sabe eso?
+[00:36:32 -> 00:36:34]  ¿Por qué no deja preferencia del otro?
+[00:36:35 -> 00:36:36]  Sí, pero...
+[00:36:36 -> 00:36:38]  ¿Sabe la preferencia del otro?
+[00:36:38 -> 00:36:39]  Pero además, ¿qué supone?
+[00:36:40 -> 00:36:41]  Que el otro va a jugar racionalmente.
+[00:36:42 -> 00:36:43]  Que se va a pegar en su equipo.
+[00:36:44 -> 00:36:45]  Claro.
+[00:36:45 -> 00:36:48]  Hay un supuesto de que todos
+[00:36:48 -> 00:36:50]  los agentes, o sea, todos los jugadores
+[00:36:50 -> 00:36:51]  van a jugar racionalmente.
+[00:36:52 -> 00:36:53]  ¿Sabes?
+[00:36:53 -> 00:36:54]  Por eso...
+[00:36:54 -> 00:36:56]  Entonces, si...
+[00:36:56 -> 00:36:58]  Si hacemos esto y conocemos...
+[00:36:58 -> 00:37:02]  la matriz completa...
+[00:37:03 -> 00:37:03]  ¿Está?
+[00:37:06 -> 00:37:08]  Sara
+[00:37:08 -> 00:37:10]  dice, bueno...
+[00:37:11 -> 00:37:13]  Elijo Steve.
+[00:37:14 -> 00:37:15]  Porque sé
+[00:37:15 -> 00:37:18]  que Steve
+[00:37:18 -> 00:37:19]  va a elegir split.
+[00:37:20 -> 00:37:21]  Conozco sus preferencias.
+[00:37:22 -> 00:37:23]  Y va
+[00:37:23 -> 00:37:26]  la única...
+[00:37:26 -> 00:37:28]  la que maximiza.
+[00:37:28 -> 00:37:30]  Sus preferencias ahí...
+[00:37:30 -> 00:37:32]  individuales es...
+[00:37:32 -> 00:37:34]  Ahora, si no hubiera...
+[00:37:34 -> 00:37:36]  Por ahí alguien dijo, suma 7.
+[00:37:36 -> 00:37:38]  Que me hace interesante esa pregunta.
+[00:37:38 -> 00:37:40]  Para...
+[00:37:40 -> 00:37:42]  Para...
+[00:37:42 -> 00:37:44]  Está...
+[00:37:44 -> 00:37:46]  Eso...
+[00:37:46 -> 00:37:48]  Al final lo vamos a volver...
+[00:37:48 -> 00:37:50]  A ver...
+[00:37:50 -> 00:37:52]  Se llama conocimiento común.
+[00:37:52 -> 00:37:54]  Y racionalidad. Es decir, yo asumo...
+[00:37:54 -> 00:37:56]  que todos son...
+[00:37:56 -> 00:37:57]  racionales.
+[00:37:57 -> 00:37:59]  Y que si un agente, o sea, yo...
+[00:37:59 -> 00:38:01]  el agente, uno...
+[00:38:01 -> 00:38:03]  llega a una...
+[00:38:03 -> 00:38:04]  decisión...
+[00:38:04 -> 00:38:06]  siguiendo este razonamiento...
+[00:38:06 -> 00:38:07]  racional...
+[00:38:07 -> 00:38:09]  Los otros agentes van a hacer el mismo razonamiento
+[00:38:09 -> 00:38:11]  y van a llegar a la misma decisión.
+[00:38:11 -> 00:38:13]  Un comentario.
+[00:38:13 -> 00:38:15]  Y suma 7...
+[00:38:15 -> 00:38:17]  una simplificación.
+[00:38:17 -> 00:38:20]  En ese sector está el mejor y segundo caso.
+[00:38:20 -> 00:38:21]  ¿Cómo?
+[00:38:21 -> 00:38:23]  Que más que suma 7...
+[00:38:23 -> 00:38:25]  se supone simplificación.
+[00:38:25 -> 00:38:26]  En realidad lo que...
+[00:38:26 -> 00:38:28]  me parece es que...
+[00:38:28 -> 00:38:30]  en ese vector...
+[00:38:30 -> 00:38:32]  está el mejor y segundo mejor...
+[00:38:32 -> 00:38:34]  No sé si...
+[00:38:34 -> 00:38:36]  Sí.
+[00:38:36 -> 00:38:38]  La suma...
+[00:38:38 -> 00:38:40]  No sé si...
+[00:38:40 -> 00:38:42]  No sé si se escucha...
+[00:38:42 -> 00:38:44]  la discusión. Porque es interesante.
+[00:38:44 -> 00:38:46]  ¿Con estos números que nos han puesto?
+[00:38:46 -> 00:38:48]  Sí.
+[00:38:48 -> 00:38:50]  Si los números que le pido a otro...
+[00:38:50 -> 00:38:52]  Si Sara, en vez de ponderar de 1 a 4...
+[00:38:52 -> 00:38:54]  ponderaba de...
+[00:38:54 -> 00:38:56]  10 a 40... como el tuve...
+[00:38:56 -> 00:38:58]  y ahí la comparación se me cae un poco.
+[00:38:58 -> 00:39:00]  Pero no me cambia el hecho de que estaba ordenadito.
+[00:39:00 -> 00:39:02]  Exacto. El tema...
+[00:39:02 -> 00:39:04]  pasa por el...
+[00:39:04 -> 00:39:06]  ¿En realidad qué comparaste?
+[00:39:06 -> 00:39:08]  ¿Qué compararías si vos fueras...
+[00:39:08 -> 00:39:10]  Sara?
+[00:39:10 -> 00:39:12]  O Steve, es lo mismo. Pero si fueras...
+[00:39:12 -> 00:39:14]  Sara, ¿qué compararían?
+[00:39:14 -> 00:39:16]  ¿Contra qué? Y no conocieran...
+[00:39:18 -> 00:39:20]  las preferencias...
+[00:39:20 -> 00:39:22]  del otro jugador.
+[00:39:22 -> 00:39:24]  Como la marginal, si elijo el split...
+[00:39:24 -> 00:39:26]  3 más 2. Esa es mi...
+[00:39:26 -> 00:39:28]  como rango que sea...
+[00:39:28 -> 00:39:30]  Y después para Steve...
+[00:39:30 -> 00:39:32]  Pero ¿por qué lo sumás? Dijimos que no podemos sumar.
+[00:39:32 -> 00:39:34]  Porque es como sumar...
+[00:39:34 -> 00:39:36]  Lo único que tienen esos valores es para ordenar.
+[00:39:36 -> 00:39:38]  O sea, 3...
+[00:39:38 -> 00:39:40]  No puedo sumar 3 más 2.
+[00:39:40 -> 00:39:42]  Claro.
+[00:39:42 -> 00:39:44]  Pero tengo un orden.
+[00:39:44 -> 00:39:46]  Acá, acá. Después vamos a poder hacer cosas así.
+[00:39:46 -> 00:39:48]  Ahora no. En este caso no podemos sumar.
+[00:39:48 -> 00:39:50]  Tenemos que darle a eso otro valor...
+[00:39:50 -> 00:39:52]  en otro espacio.
+[00:39:52 -> 00:39:54]  Ahora esto es lo mismo.
+[00:39:54 -> 00:39:56]  Pero... no importa. ¿Qué es lo que pasa?
+[00:39:56 -> 00:39:58]  Lo que pasa es que...
+[00:39:58 -> 00:40:00]  es que el split...
+[00:40:00 -> 00:40:02]  para Sara es lo mismo.
+[00:40:02 -> 00:40:04]  En el peor escenario...
+[00:40:04 -> 00:40:06]  Sara va a perder 2.
+[00:40:06 -> 00:40:08]  A la derecha.
+[00:40:08 -> 00:40:10]  Y a la izquierda...
+[00:40:10 -> 00:40:12]  tienen 4 y 3. Entonces...
+[00:40:12 -> 00:40:14]  Si Steve elige split...
+[00:40:14 -> 00:40:16]  pase lo que pase, va a tener 2.
+[00:40:16 -> 00:40:18]  Después tienen 4 y 3.
+[00:40:18 -> 00:40:20]  Te va a convenir siempre el 4.
+[00:40:20 -> 00:40:22]  O sea, el peor escenario...
+[00:40:22 -> 00:40:24]  para Sara, va a ser 2.
+[00:40:24 -> 00:40:26]  Elija lo que diga.
+[00:40:26 -> 00:40:28]  ¿Con eso elijo Steve?
+[00:40:36 -> 00:40:38]  Tendrán que generalizarlo.
+[00:40:38 -> 00:40:40]  No basarlo en valores específicos.
+[00:40:40 -> 00:40:42]  ¿Qué es lo que pasa?
+[00:40:44 -> 00:40:46]  ¿Qué es lo que pasa en ambos lados?
+[00:40:46 -> 00:40:48]  O sea...
+[00:40:48 -> 00:40:50]  Si yo miro Steve...
+[00:40:50 -> 00:40:52]  En realidad lo que estoy mirando es todo este vector.
+[00:40:52 -> 00:40:54]  Porque yo no veo todo.
+[00:40:54 -> 00:40:56]  Yo veo...
+[00:40:56 -> 00:40:58]  el vector 4, 2.
+[00:40:58 -> 00:41:00]  Esos son los posibles resultados...
+[00:41:00 -> 00:41:02]  para Sara de jugar...
+[00:41:02 -> 00:41:04]  Steve.
+[00:41:04 -> 00:41:06]  O obtiene 4 o 2.
+[00:41:06 -> 00:41:08]  Si juega Steve.
+[00:41:08 -> 00:41:10]  Y si juega split...
+[00:41:10 -> 00:41:12]  Perdón.
+[00:41:12 -> 00:41:14]  Sí, pero...
+[00:41:14 -> 00:41:16]  ¿Qué compara con qué?
+[00:41:16 -> 00:41:18]  El peor del peor.
+[00:41:18 -> 00:41:20]  El de la columna...
+[00:41:20 -> 00:41:22]  El de la fila...
+[00:41:22 -> 00:41:24]  con el de la otra fila.
+[00:41:24 -> 00:41:26]  No comparo este 4 con este 2.
+[00:41:26 -> 00:41:28]  Porque son incomparables.
+[00:41:28 -> 00:41:30]  Porque esto es la recompensa cuando Steve juega split.
+[00:41:30 -> 00:41:32]  Y esta es la recompensa cuando Steve juega still.
+[00:41:32 -> 00:41:34]  No es igual.
+[00:41:34 -> 00:41:36]  Entonces...
+[00:41:36 -> 00:41:38]  Es un resalto condicional.
+[00:41:38 -> 00:41:40]  Si...
+[00:41:40 -> 00:41:42]  Sara juega still.
+[00:41:42 -> 00:41:44]  Y...
+[00:41:44 -> 00:41:46]  Steve juega split.
+[00:41:46 -> 00:41:48]  Este valor es mayor que este.
+[00:41:48 -> 00:41:50]  Si...
+[00:41:50 -> 00:41:52]  juega still.
+[00:41:52 -> 00:41:54]  Este valor es mayor que este.
+[00:41:54 -> 00:41:56]  En ambos casos...
+[00:41:56 -> 00:41:58]  O mayor o igual.
+[00:41:58 -> 00:42:00]  En este caso es mayor o igual.
+[00:42:00 -> 00:42:02]  Entonces tengo una relación de orden entre el vector...
+[00:42:02 -> 00:42:04]  Still...
+[00:42:04 -> 00:42:06]  Y el vector split.
+[00:42:06 -> 00:42:08]  O sea, en la acción still...
+[00:42:08 -> 00:42:10]  Lo que quería decir...
+[00:42:10 -> 00:42:12]  La acción still para Sara...
+[00:42:12 -> 00:42:14]  Cualquiera sea la situación...
+[00:42:14 -> 00:42:16]  Siempre le da un valor mayor o igual...
+[00:42:16 -> 00:42:18]  Que...
+[00:42:18 -> 00:42:20]  El de jugar split.
+[00:42:20 -> 00:42:22]  ¿No?
+[00:42:22 -> 00:42:24]  Si miramos...
+[00:42:24 -> 00:42:26]  Y llevamos al mismo razonamiento...
+[00:42:26 -> 00:42:28]  O sea, tanto conozco la matriz...
+[00:42:28 -> 00:42:30]  Como no conozco la matriz...
+[00:42:30 -> 00:42:32]  De las diferencias...
+[00:42:32 -> 00:42:34]  Sara termina jugando still.
+[00:42:34 -> 00:42:36]  Y...
+[00:42:36 -> 00:42:38]  Still...
+[00:42:38 -> 00:42:40]  Y bueno, es lo mismo.
+[00:42:40 -> 00:42:42]  El vector 4, 3...
+[00:42:42 -> 00:42:44]  Vector columna ahora...
+[00:42:44 -> 00:42:46]  Porque tengo que comparar la columna...
+[00:42:46 -> 00:42:48]  4, 3 es mayor que el vector 1, 2.
+[00:42:48 -> 00:42:50]  Mayor o igual.
+[00:42:50 -> 00:42:52]  4 mayor que 1...
+[00:42:52 -> 00:42:54]  Y el vector 3, 3 es mayor que el vector 2.
+[00:42:54 -> 00:42:56]  Ya, entonces...
+[00:42:56 -> 00:42:58]  Para still...
+[00:42:58 -> 00:43:00]  Este análisis...
+[00:43:00 -> 00:43:02]  También nos da que still...
+[00:43:02 -> 00:43:04]  Perdón, que split es...
+[00:43:04 -> 00:43:06]  Su acción preferida.
+[00:43:06 -> 00:43:08]  Entonces...
+[00:43:08 -> 00:43:10]  Yo conocer explícitamente...
+[00:43:10 -> 00:43:12]  Las...
+[00:43:12 -> 00:43:14]  Preferencias de los jugadores...
+[00:43:14 -> 00:43:16]  O conocer la matriz...
+[00:43:16 -> 00:43:18]  Son equivalentes.
+[00:43:18 -> 00:43:20]  ¿No lo saben?
+[00:43:20 -> 00:43:22]  No, vamos a tener la miopía.
+[00:43:22 -> 00:43:24]  ¿No?
+[00:43:24 -> 00:43:26]  Como yo tengo una...
+[00:43:26 -> 00:43:28]  Puedo inferir la otra.
+[00:43:28 -> 00:43:30]  Ya sé, por ejemplo, que Sara es gris.
+[00:43:30 -> 00:43:32]  ¿No?
+[00:43:32 -> 00:43:34]  Ah, eso...
+[00:43:34 -> 00:43:36]  Eso es...
+[00:43:36 -> 00:43:38]  Al revés, no sé si funciona el análisis.
+[00:43:38 -> 00:43:40]  O sea, lo que funciona así...
+[00:43:40 -> 00:43:42]  Es como paso de preferencias a valores.
+[00:43:42 -> 00:43:44]  Después de intentar...
+[00:43:44 -> 00:43:46]  Explicar que...
+[00:43:46 -> 00:43:48]  En términos de si era vara...
+[00:43:48 -> 00:43:50]  O lo que sea...
+[00:43:50 -> 00:43:52]  ¿Cuáles son los valores?
+[00:43:52 -> 00:43:54]  En realidad no...
+[00:43:54 -> 00:43:56]  Es interesante.
+[00:43:56 -> 00:43:58]  El orden.
+[00:43:58 -> 00:44:00]  Pero esto es más del orden de lo...
+[00:44:00 -> 00:44:02]  Humano, psicológico, para explicar...
+[00:44:02 -> 00:44:04]  Valores.
+[00:44:04 -> 00:44:06]  Pero esto no es racional.
+[00:44:06 -> 00:44:08]  Lo que es racional es este orden...
+[00:44:08 -> 00:44:10]  Te cuento...
+[00:44:10 -> 00:44:12]  Para explicar...
+[00:44:12 -> 00:44:14]  Sociológicamente la historia.
+[00:44:14 -> 00:44:16]  Pero lo que importa es que...
+[00:44:16 -> 00:44:18]  Es el orden, el orden.
+[00:44:18 -> 00:44:20]  Esto nos explica...
+[00:44:20 -> 00:44:22]  Que lo que jugaron es racional.
+[00:44:22 -> 00:44:24]  ¿Está bien?
+[00:44:24 -> 00:44:26]  Y que eso no tiene nada que ver...
+[00:44:26 -> 00:44:28]  Con la cantidad de plata que estaba en juego.
+[00:44:28 -> 00:44:30]  Ahora...
+[00:44:30 -> 00:44:32]  ¿Qué hora es?
+[00:44:32 -> 00:44:34]  ¿Qué hora es?
+[00:44:34 -> 00:44:36]  Uy, está...
+[00:44:36 -> 00:44:38]  Bueno, entonces, como esta...
+[00:44:38 -> 00:44:40]  Si me permiten dos minutos más...
+[00:44:40 -> 00:44:42]  Eh...
+[00:44:42 -> 00:44:44]  Eh...
+[00:44:44 -> 00:44:46]  Ah, esto es...
+[00:44:46 -> 00:44:48]  Matemática.
+[00:44:48 -> 00:44:50]  Lo pueden ver ustedes.
+[00:44:50 -> 00:44:52]  Eh...
+[00:44:52 -> 00:44:54]  No, lo vamos a decir porque...
+[00:44:54 -> 00:44:56]  Porque es la...
+[00:44:56 -> 00:44:58]  Te vamos a explicar ahora un poco...
+[00:44:58 -> 00:45:00]  Matemáticamente...
+[00:45:00 -> 00:45:02]  Qué fue lo que pasó.
+[00:45:02 -> 00:45:04]  O sea...
+[00:45:04 -> 00:45:06]  Y mapearlo en términos de cosas que ustedes saben.
+[00:45:06 -> 00:45:08]  Entonces, ¿qué es una policy?
+[00:45:08 -> 00:45:10]  O sea, una estrategia también...
+[00:45:10 -> 00:45:12]  En sentido...
+[00:45:12 -> 00:45:14]  A veces lo voy a llamar estrategia...
+[00:45:14 -> 00:45:16]  Porque es el nombre que se usa más en teoría de juego...
+[00:45:16 -> 00:45:18]  Pero lo digo que una policy...
+[00:45:18 -> 00:45:20]  Vamos a distinguir...
+[00:45:20 -> 00:45:22]  Porque ustedes ya, agentes, arrancaron con policy no determinística...
+[00:45:22 -> 00:45:24]  Que está en distribución de probabilidades...
+[00:45:24 -> 00:45:26]  Vamos a hablar con algo más simple...
+[00:45:26 -> 00:45:28]  Una estrategia, o una policy que...
+[00:45:28 -> 00:45:30]  En teoría de juego se llama...
+[00:45:30 -> 00:45:32]  Pura...
+[00:45:32 -> 00:45:34]  También es una acción.
+[00:45:34 -> 00:45:36]  Una acción es una estrategia pura.
+[00:45:36 -> 00:45:38]  Pero ustedes ya hicieron...
+[00:45:38 -> 00:45:40]  Probabilidades y eso...
+[00:45:40 -> 00:45:42]  Pueden decir que es una distribución concentrada en la acción.
+[00:45:42 -> 00:45:44]  Vale uno para la acción, cero para todo lo demás.
+[00:45:44 -> 00:45:46]  Lo mismo.
+[00:45:46 -> 00:45:48]  Todo eso es equivalente.
+[00:45:48 -> 00:45:50]  ¿Vale?
+[00:45:50 -> 00:45:52]  Y conjunta es que es un vector de acciones.
+[00:45:52 -> 00:45:54]  ¿Vale?
+[00:45:54 -> 00:45:56]  Lo pueden ver como un vector de acciones...
+[00:45:56 -> 00:45:58]  O como un vector de vectores...
+[00:45:58 -> 00:46:00]  Donde hay un 1 en la acción.
+[00:46:00 -> 00:46:02]  ¿Vale?
+[00:46:02 -> 00:46:04]  Por eso.
+[00:46:04 -> 00:46:06]  Esto es...
+[00:46:06 -> 00:46:08]  Menos P...
+[00:46:08 -> 00:46:10]  Quiere decir todos los otros.
+[00:46:10 -> 00:46:12]  O sea, yo tengo Steve...
+[00:46:12 -> 00:46:14]  Menos Steve...
+[00:46:14 -> 00:46:16]  Es todos los jugadores que no son Steve.
+[00:46:16 -> 00:46:18]  O sea, sería Sarah en este caso.
+[00:46:18 -> 00:46:20]  Pero no es notación de...
+[00:46:20 -> 00:46:22]  De teoría de escuadros.
+[00:46:22 -> 00:46:24]  Entonces, lo que vamos a hacer es que...
+[00:46:24 -> 00:46:26]  Una policy...
+[00:46:26 -> 00:46:28]  Ahora va a ser un vector...
+[00:46:28 -> 00:46:30]  De policies.
+[00:46:30 -> 00:46:32]  Una policy conjunta es un vector de...
+[00:46:32 -> 00:46:34]  ¿Vale? Porque es una policy para cada...
+[00:46:34 -> 00:46:36]  Jugador.
+[00:46:36 -> 00:46:38]  Que típicamente la vamos a representar así, porque...
+[00:46:38 -> 00:46:40]  Lo que nos va a interesar es un jugador...
+[00:46:40 -> 00:46:42]  Versus todo lo demás.
+[00:46:42 -> 00:46:44]  ¿Vale?
+[00:46:44 -> 00:46:46]  ...
+[00:46:46 -> 00:46:48]  La matemática no la...
+[00:46:48 -> 00:46:50]  No la...
+[00:46:50 -> 00:46:52]  No importa. La cuestión es que lo que...
+[00:46:52 -> 00:46:54]  Lo que... Capaz que es más fácil ir acá.
+[00:46:54 -> 00:46:56]  Y lo vamos a ver.
+[00:46:56 -> 00:46:58]  Vamos a decir que...
+[00:47:02 -> 00:47:04]  La acción...
+[00:47:04 -> 00:47:06]  O sea, la policy pura...
+[00:47:08 -> 00:47:10]  Para Sarah...
+[00:47:10 -> 00:47:12]  Ser Steve...
+[00:47:12 -> 00:47:14]  Es...
+[00:47:14 -> 00:47:16]  Eh...
+[00:47:16 -> 00:47:18]  Débilmente dominante...
+[00:47:18 -> 00:47:20]  Con respecto a...
+[00:47:20 -> 00:47:22]  Split.
+[00:47:22 -> 00:47:24]  ¿Por qué?
+[00:47:24 -> 00:47:26]  Porque es mayor o igual...
+[00:47:26 -> 00:47:28]  En todos los valores...
+[00:47:28 -> 00:47:30]  En todos los... Perdón.
+[00:47:30 -> 00:47:32]  Para todas las acciones...
+[00:47:32 -> 00:47:34]  Este...
+[00:47:34 -> 00:47:36]  Y en al menos uno de los lugares es estrictamente mayor.
+[00:47:36 -> 00:47:38]  ¿Te vas a repetir eso?
+[00:47:38 -> 00:47:40]  Sí.
+[00:47:40 -> 00:47:42]  La Steel, que es 4-2...
+[00:47:42 -> 00:47:44]  Si quieren...
+[00:47:44 -> 00:47:46]  Domina débilmente...
+[00:47:46 -> 00:47:48]  Es porque hay posibilidad de un empate...
+[00:47:48 -> 00:47:50]  Acá...
+[00:47:50 -> 00:47:52]  Este...
+[00:47:52 -> 00:47:54]  A la acción Split...
+[00:47:54 -> 00:47:56]  Porque es mayor o igual en todos lados...
+[00:47:56 -> 00:47:58]  Pero al menos en un lugar...
+[00:47:58 -> 00:48:00]  Es estrictamente mayor.
+[00:48:00 -> 00:48:02]  Acá...
+[00:48:02 -> 00:48:04]  Si no serían iguales.
+[00:48:04 -> 00:48:06]  Y para Steve...
+[00:48:06 -> 00:48:08]  La acción Split...
+[00:48:08 -> 00:48:10]  Que tiene un vector...
+[00:48:10 -> 00:48:12]  4-3...
+[00:48:12 -> 00:48:14]  Es estrictamente dominante...
+[00:48:14 -> 00:48:16]  Para la acción...
+[00:48:16 -> 00:48:18]  O domina estrictamente a la acción...
+[00:48:18 -> 00:48:20]  Steel.
+[00:48:20 -> 00:48:22]  ¿Vale?
+[00:48:22 -> 00:48:24]  Entonces...
+[00:48:24 -> 00:48:26]  Racionalmente...
+[00:48:26 -> 00:48:28]  Si...
+[00:48:28 -> 00:48:30]  Un jugador tiene...
+[00:48:30 -> 00:48:32]  Una acción...
+[00:48:32 -> 00:48:34]  Que es estrictamente dominante o...
+[00:48:34 -> 00:48:36]  Débilmente dominante...
+[00:48:36 -> 00:48:38]  ¿Qué va a jugar?
+[00:48:38 -> 00:48:40]  La acción que es estrictamente dominante.
+[00:48:40 -> 00:48:42]  Porque esa es la mejor acción...
+[00:48:42 -> 00:48:44]  Frente a cualquier otra cosa que juegue el otro...
+[00:48:44 -> 00:48:46]  Y frente a cualquier otra cosa que tiene para jugar.
+[00:48:50 -> 00:48:52]  ¿Está bien?
+[00:48:52 -> 00:48:54]  Y bueno...
+[00:48:54 -> 00:48:56]  Si una gente tiene una...
+[00:48:56 -> 00:48:58]  Con esto...
+[00:48:58 -> 00:49:00]  Terminamos...
+[00:49:00 -> 00:49:02]  Si una gente tiene una...
+[00:49:02 -> 00:49:04]  Estrategia estrictamente dominante...
+[00:49:04 -> 00:49:06]  Por ejemplo, a Steve...
+[00:49:06 -> 00:49:08]  Vimos que su acción Split...
+[00:49:08 -> 00:49:10]  Es estrictamente dominante...
+[00:49:10 -> 00:49:12]  Respecto a la acción Steel.
+[00:49:12 -> 00:49:14]  Si hubiera más de dos...
+[00:49:14 -> 00:49:16]  Lo que tienen es una...
+[00:49:16 -> 00:49:18]  Este...
+[00:49:18 -> 00:49:20]  Un...
+[00:49:20 -> 00:49:22]  El concepto de reticulado...
+[00:49:22 -> 00:49:24]  Es decir, un orden parcial con un máximo...
+[00:49:24 -> 00:49:26]  ¿Está bien?
+[00:49:26 -> 00:49:28]  Que es la estrategia estrictamente dominante.
+[00:49:28 -> 00:49:30]  Si hay una estrategia estrictamente dominante, entonces...
+[00:49:30 -> 00:49:32]  Agentes juegan...
+[00:49:32 -> 00:49:34]  La estrategia estrictamente dominante.
+[00:49:34 -> 00:49:36]  La Police.
+[00:49:36 -> 00:49:38]  No tengo que hacer ningún cálculo.
+[00:49:38 -> 00:49:40]  Si la tengo, juego. No me queda otra.
+[00:49:40 -> 00:49:42]  O sea, si soy pasional.
+[00:49:42 -> 00:49:44]  Este...
+[00:49:44 -> 00:49:46]  Y si es débilmente dominante...
+[00:49:46 -> 00:49:48]  Este...
+[00:49:48 -> 00:49:50]  También, en este caso, Sara también tiene una acción...
+[00:49:50 -> 00:49:52]  Estrategia débilmente dominante, que era Steel.
+[00:49:52 -> 00:49:54]  ¿Está bien?
+[00:49:54 -> 00:49:56]  Entonces, los dos tenían estrategia dominante.
+[00:49:56 -> 00:49:58]  Los dos jugaron su estrategia dominante.
+[00:49:58 -> 00:50:00]  Y ese es el resultado.
+[00:50:00 -> 00:50:02]  Entonces...
+[00:50:02 -> 00:50:04]  Conclusión.
+[00:50:04 -> 00:50:06]  Si, en una situación de este tipo...
+[00:50:06 -> 00:50:08]  En un juego, los jugadores tienen estrategias dominantes...
+[00:50:08 -> 00:50:10]  O estrategias débilmente dominantes...
+[00:50:10 -> 00:50:12]  Van a jugar...
+[00:50:12 -> 00:50:14]  Esa estrategia.
+[00:50:14 -> 00:50:16]  Una.
+[00:50:16 -> 00:50:18]  Si hay muchas, después lo vamos a ver.
+[00:50:18 -> 00:50:20]  Pero...
+[00:50:20 -> 00:50:22]  Y eso...
+[00:50:22 -> 00:50:24]  No requiere conocer las utilidades de los otros.
+[00:50:24 -> 00:50:26]  Solamente...
+[00:50:26 -> 00:50:28]  Miro. Yo tengo una estrategia dominante.
+[00:50:28 -> 00:50:30]  Entonces, la juego.
+[00:50:30 -> 00:50:32]  Y asumo...
+[00:50:32 -> 00:50:34]  Que...
+[00:50:34 -> 00:50:36]  El otro jugador va a hacer exactamente el mismo arreglamiento.
+[00:50:36 -> 00:50:38]  Si tengo una...
+[00:50:38 -> 00:50:40]  Entonces, bueno...
+[00:50:40 -> 00:50:42]  Nada...
+[00:50:42 -> 00:50:44]  Este... Después vamos a seguir...
+[00:50:44 -> 00:50:46]  Pero, que no sé ya...
+[00:50:46 -> 00:50:48]  Terminando de completar el puzzle este...
+[00:50:48 -> 00:50:50]  El mensaje de esto era...
+[00:50:50 -> 00:50:52]  Bueno...
+[00:50:52 -> 00:50:54]  Acuérdense...
+[00:50:54 -> 00:50:56]  El tema de la plata...
+[00:50:56 -> 00:50:58]  No hay que mirarlo.
+[00:50:58 -> 00:51:00]  Hay que mapearlo en preferencias.
+[00:51:00 -> 00:51:02]  Esas preferencias las mapeamos en utilidades.
+[00:51:02 -> 00:51:04]  Y después ahí...
+[00:51:04 -> 00:51:06]  Una vez que hacemos eso, tenemos una manera de resolver el problema.
+[00:51:06 -> 00:51:08]  Y sabemos exactamente cuál es la solución.
+[00:51:08 -> 00:51:10]  ¿Está bien?
+[00:51:10 -> 00:51:12]  Después vamos a ver...
+[00:51:12 -> 00:51:14]  En diferentes situaciones, etc.
+[00:51:14 -> 00:51:16]  ¿Está? Bueno...
+[00:51:16 -> 00:51:18]  Vamos a hacer 10 minutos...
+[00:51:18 -> 00:51:20]  De pausa...
+[00:51:20 -> 00:51:22]  Me parece...
+[00:51:22 -> 00:51:24]  O 5, no sé... Capaz que tienen un poco antes...
+[00:51:24 -> 00:51:26]  Pero igual hacemos 5 minutos...
+[00:51:26 -> 00:51:28]  9 y 10, eh...
+[00:51:28 -> 00:51:30]  Y así nos vamos antes.
+[00:51:30 -> 00:51:32]  Porque creo que nos falta mucho.
+[00:51:32 -> 00:51:34]  ¿Está?
+[00:51:34 -> 00:51:36]  Bien...
+[00:51:36 -> 00:51:38]  Pausa la grabación...
+[00:51:38 -> 00:51:40]  Después acuérdense de...
+[00:51:40 -> 00:51:42]  ...
+[00:51:42 -> 00:51:44]  De recordar lo que le retomé.
+[00:51:44 -> 00:51:46]  A ver...
+[00:51:46 -> 00:51:48]  Eh...
+[00:51:48 -> 00:51:50]  Bien...
+[00:51:50 -> 00:51:52]  Bien...
+[00:51:52 -> 00:51:54]  Capaz que no tiene mucho...
+[00:51:58 -> 00:52:00]  No voy a escribir en el pizarrón, lo voy a poner así...
+[00:52:00 -> 00:52:02]  ...
+[00:52:02 -> 00:52:04]  Porque si no, no...
+[00:52:04 -> 00:52:06]  Eh...
+[00:52:12 -> 00:52:14]  Lo último que terminamos entonces...
+[00:52:14 -> 00:52:16]  Lo último que terminamos entonces...
+[00:52:16 -> 00:52:18]  ...de ver es que...
+[00:52:18 -> 00:52:20]  ...
+[00:52:20 -> 00:52:22]  Finalmente...
+[00:52:22 -> 00:52:24]  Cada uno de los jugadores jugó...
+[00:52:24 -> 00:52:26]  La acción que tomó...
+[00:52:26 -> 00:52:28]  La acción que tomó...
+[00:52:28 -> 00:52:30]  Era...
+[00:52:30 -> 00:52:32]  Correspondía a una policy, una estrategia...
+[00:52:32 -> 00:52:34]  Correspondía a una policy, una estrategia...
+[00:52:34 -> 00:52:36]  Dominante o estrictamente dominante.
+[00:52:36 -> 00:52:38]  Debilmente dominante o estrictamente dominante.
+[00:52:38 -> 00:52:40]  Y cada uno jugó eso.
+[00:52:40 -> 00:52:42]  Bueno, en realidad es...
+[00:52:42 -> 00:52:44]  Ahora si yo miro...
+[00:52:44 -> 00:52:46]  La conjunta...
+[00:52:46 -> 00:52:48]  No lo que jugó cada uno, sino la conjunta...
+[00:52:48 -> 00:52:50]  O sea, el par...
+[00:52:50 -> 00:52:52]  Ustedes ven acá...
+[00:52:52 -> 00:52:54]  Una acción...
+[00:52:54 -> 00:52:56]  Pero imagínense que es...
+[00:52:56 -> 00:52:58]  El vector...
+[00:52:58 -> 00:53:00]  Donde tiene un 1 en still...
+[00:53:00 -> 00:53:02]  Y un 0 en split...
+[00:53:02 -> 00:53:04]  Y este tiene un...
+[00:53:04 -> 00:53:06]  0 en still y un 1 en split...
+[00:53:06 -> 00:53:08]  Pero bueno...
+[00:53:08 -> 00:53:10]  Más fácil...
+[00:53:10 -> 00:53:12]  Eso es un equilibrio...
+[00:53:12 -> 00:53:14]  Se llama un equilibrio...
+[00:53:14 -> 00:53:16]  Es un concepto nuevo...
+[00:53:16 -> 00:53:18]  Que no...
+[00:53:18 -> 00:53:20]  Que no...
+[00:53:20 -> 00:53:22]  Vieron en agentes...
+[00:53:22 -> 00:53:24]  Cuando había un único agente...
+[00:53:24 -> 00:53:26]  Este...
+[00:53:26 -> 00:53:28]  A este par...
+[00:53:28 -> 00:53:30]  En este caso...
+[00:53:30 -> 00:53:32]  Pero a cualquier par que tenga esa característica...
+[00:53:32 -> 00:53:34]  De ser...
+[00:53:34 -> 00:53:36]  O a cualquier en cualquier espacio...
+[00:53:36 -> 00:53:38]  No solamente de 2...
+[00:53:38 -> 00:53:40]  Que tenga esa característica...
+[00:53:40 -> 00:53:42]  Pero que tenga esa característica...
+[00:53:42 -> 00:53:44]  De ser un equilibrio...
+[00:53:44 -> 00:53:46]  En este caso un equilibrio dominante...
+[00:53:46 -> 00:53:48]  Y...
+[00:53:48 -> 00:53:50]  Pero es el concepto de equilibrio que es importante...
+[00:53:50 -> 00:53:52]  O sea, es el hecho...
+[00:53:52 -> 00:53:54]  El equilibrio que hace referencia a que...
+[00:53:54 -> 00:53:56]  De alguna manera...
+[00:53:56 -> 00:53:58]  Si los jugadores o los agentes...
+[00:53:58 -> 00:54:00]  Son racionales, no harían otra cosa...
+[00:54:00 -> 00:54:02]  No se moverían de ese lugar...
+[00:54:02 -> 00:54:04]  No tomarían otra acción...
+[00:54:04 -> 00:54:06]  Por eso es un equilibrio...
+[00:54:06 -> 00:54:08]  ¿Ves?
+[00:54:08 -> 00:54:10]  Como llegaron a un acuerdo...
+[00:54:10 -> 00:54:12]  Pero un acuerdo...
+[00:54:12 -> 00:54:14]  Que no pasó por esa charla que tuvieron...
+[00:54:14 -> 00:54:16]  Que dijeron cualquier cosa...
+[00:54:16 -> 00:54:18]  Pasó porque...
+[00:54:18 -> 00:54:20]  Este...
+[00:54:20 -> 00:54:22]  Cada uno tenía en definitiva...
+[00:54:22 -> 00:54:24]  Unas preferencias que se plasmaron...
+[00:54:24 -> 00:54:26]  En la...
+[00:54:26 -> 00:54:28]  Este...
+[00:54:28 -> 00:54:30]  La acción que cada uno tuvo...
+[00:54:30 -> 00:54:32]  Y ese es el concepto importante...
+[00:54:32 -> 00:54:34]  Y eso es lo que va a cambiar acá también en mucha gente...
+[00:54:34 -> 00:54:36]  Que no...
+[00:54:36 -> 00:54:38]  Este...
+[00:54:38 -> 00:54:40]  La búsqueda de acciones...
+[00:54:40 -> 00:54:42]  De estrategias...
+[00:54:42 -> 00:54:44]  Va a llevar a buscar estrategias de...
+[00:54:44 -> 00:54:46]  De equilibrio...
+[00:54:48 -> 00:54:50]  ¿Ves? Pero equilibrio...
+[00:54:50 -> 00:54:52]  No, no, no...
+[00:54:52 -> 00:54:54]  No tiene por qué ser...
+[00:54:54 -> 00:54:56]  Si quieren, justo...
+[00:54:56 -> 00:54:58]  No, o sea, esto no...
+[00:54:58 -> 00:55:00]  Vamos a ver...
+[00:55:00 -> 00:55:02]  Ver un ejemplo...
+[00:55:02 -> 00:55:04]  No quiere decir que esto es justo...
+[00:55:04 -> 00:55:06]  Simplemente es un equilibrio...
+[00:55:06 -> 00:55:08]  Porque los dos...
+[00:55:08 -> 00:55:10]  Todos los agentes van a jugar algo...
+[00:55:10 -> 00:55:12]  Y se van a jugar...
+[00:55:12 -> 00:55:14]  Los dos...
+[00:55:14 -> 00:55:16]  Los dos...
+[00:55:16 -> 00:55:18]  Se van a jugar...
+[00:55:18 -> 00:55:20]  ¿Por qué?
+[00:55:20 -> 00:55:22]  Porque, bueno...
+[00:55:22 -> 00:55:24]  Tiene que estar...
+[00:55:24 -> 00:55:26]  Tiene que estar...
+[00:55:26 -> 00:55:28]  Con una estrategia dominante...
+[00:55:28 -> 00:55:30]  ¿Ves?
+[00:55:30 -> 00:55:32]  Ahora bien...
+[00:55:32 -> 00:55:34]  La pregunta es...
+[00:55:34 -> 00:55:36]  ¿Y si no hay estrategia dominante?
+[00:55:36 -> 00:55:38]  ¿O siempre hay estrategias dominantes?
+[00:55:38 -> 00:55:41]  pila o una columna
+[00:55:41 -> 00:55:43]  depende de que jugador sea
+[00:55:43 -> 00:55:46]  dominante
+[00:55:46 -> 00:55:46]  justificadamente
+[00:55:46 -> 00:55:49]  ya que dice eso, esta es otra cosa que
+[00:55:49 -> 00:55:51]  cuesta, o sea
+[00:55:51 -> 00:55:55]  todo el tiempo, no importa
+[00:55:55 -> 00:55:56]  es
+[00:55:56 -> 00:55:59]  por eso acá están los colores que ayudan
+[00:55:59 -> 00:56:00]  pero cuando vean
+[00:56:00 -> 00:56:03]  que vayan a ver matrices como en otros ejemplos
+[00:56:03 -> 00:56:05]  que no hay colores, uno se pierde fácil
+[00:56:05 -> 00:56:07]  es, ¿qué matriz hay que leer?
+[00:56:07 -> 00:56:08]  acá hay dos matrices
+[00:56:08 -> 00:56:11]  son matrices de pares, pero hay que leer
+[00:56:11 -> 00:56:13]  imagínense, esto tiene más dimensiones
+[00:56:13 -> 00:56:14]  es más complicado
+[00:56:14 -> 00:56:18]  o sea, acá Sara tiene una matriz
+[00:56:18 -> 00:56:19]  que es la que
+[00:56:19 -> 00:56:21]  la matriz esta que está en rojo
+[00:56:21 -> 00:56:23]  y Steve tiene esta matriz
+[00:56:23 -> 00:56:25]  que es la matriz columna
+[00:56:25 -> 00:56:27]  si lo quieren
+[00:56:27 -> 00:56:29]  proyectar a que todos los jugadores
+[00:56:29 -> 00:56:31]  eligen filas, la tienen que
+[00:56:31 -> 00:56:33]  transponer y volver a otra manera
+[00:56:33 -> 00:56:37]  eso es para cuando
+[00:56:37 -> 00:56:37]  tenga que seguir
+[00:56:37 -> 00:56:40]  el código tienen que recordar eso
+[00:56:40 -> 00:56:43]  o sea, acuérdense
+[00:56:43 -> 00:56:44]  eso, o sea
+[00:56:44 -> 00:56:46]  simplemente tienen que tener claro
+[00:56:46 -> 00:56:48]  cuál es la dimensión en la que está jugando
+[00:56:48 -> 00:56:49]  cada jugador para ver cómo la tengo que ver la matriz
+[00:56:49 -> 00:56:55]  ¿por qué esta
+[00:56:55 -> 00:56:57]  definición es no, o sea, requieren ver
+[00:56:57 -> 00:56:59]  filas o columnas, depende de quién es el jugador
+[00:56:59 -> 00:57:01]  no depende de ver toda la matriz por todos los valores
+[00:57:01 -> 00:57:02]  porque no necesitan, porque
+[00:57:02 -> 00:57:05]  el equilibrio dominante
+[00:57:05 -> 00:57:06]  solo
+[00:57:06 -> 00:57:06]  solo
+[00:57:06 -> 00:57:07]  solo
+[00:57:07 -> 00:57:37]  
+[00:57:37 -> 00:58:07]  
+[00:58:07 -> 00:58:37]  
+[00:58:37 -> 00:58:40]  O sea, ninguna es estrictamente dominante, ¿no?
+[00:58:40 -> 00:58:42]  Porque siempre tiene alguno que está dado vuelta.
+[00:58:43 -> 00:58:48]  Pero, a ver si hay alguna acá.
+[00:58:48 -> 00:58:53]  Si lo miramos así, 1, 2, 2, 0, 1, 4 y 2, 3, 3.
+[00:58:54 -> 00:58:56]  ¿Cuál es? Una que sí, es esta acá que dice.
+[00:58:57 -> 00:59:02]  Ah, sí, 2, 3, 3 es mayor que 1, 2, 2.
+[00:59:03 -> 00:59:04]  2 de 3 es mayor que 1, 2.
+[00:59:05 -> 00:59:06]  ¿Sí?
+[00:59:07 -> 00:59:15]  Entonces, como 2, 3, 3 es mayor que 1, 2, 2,
+[00:59:15 -> 00:59:19]  ¿qué es lo que nunca jugaría el jugador 1 si es racional?
+[00:59:20 -> 00:59:21]  Nunca jugaría 1.
+[00:59:22 -> 00:59:24]  ¿Por qué elegir 1 si puede elegir D?
+[00:59:25 -> 00:59:29]  Que frente a cualquier cosa que juegue el otro tiene mayor utilidad.
+[00:59:29 -> 00:59:31]  No, eso no es racional.
+[00:59:32 -> 00:59:35]  2, 3, 3 es mayor que 1, 2, 2.
+[00:59:35 -> 00:59:36]  Como vector es mayor.
+[00:59:36 -> 00:59:40]  Pero este no es mayor que este porque está el 4 acá, pero sí es mayor que este.
+[00:59:40 -> 00:59:43]  Entonces, en realidad procedo por eliminación.
+[00:59:45 -> 00:59:49]  Elimino, o sea, yo soy jugador 1, elimino 1.
+[00:59:50 -> 00:59:50]  No juego.
+[00:59:51 -> 00:59:54]  Pero, si jugador 1 hace ese razonamiento,
+[00:59:55 -> 01:00:00]  jugador 2, conociendo las preferencias del jugador 1 y siendo jugador racional,
+[01:00:00 -> 01:00:05]  dice, ah, yo sé que jugador 1 no va a jugar nunca 1.
+[01:00:06 -> 01:00:06]  Está bien.
+[01:00:07 -> 01:00:13]  Entonces, como este saca, o sea, imagínense que esta cosa se va completamente.
+[01:00:14 -> 01:00:15]  Está bien.
+[01:00:16 -> 01:00:18]  Y me queda solamente esta matriz ahora.
+[01:00:18 -> 01:00:25]  Entonces, lo que se produce por esa decisión es cambiar la matriz de juego.
+[01:00:25 -> 01:00:26]  O sea, cambio el juego.
+[01:00:26 -> 01:00:31]  Paso de un juego de 3x3 a un juego de 2x3.
+[01:00:32 -> 01:00:33]  Y ahí es otra historia.
+[01:00:34 -> 01:00:35]  Entonces, ahí va.
+[01:00:35 -> 01:00:35]  Bueno.
+[01:00:36 -> 01:00:40]  Y esto después, dependiendo del contexto, lo puedo hacer en cualquier orden.
+[01:00:43 -> 01:00:44]  Entonces, acá.
+[01:00:45 -> 01:00:50]  Y ahora, ¿qué puedo hacer jugador 1?
+[01:00:51 -> 01:00:52]  Uno no puede hacer nada.
+[01:00:52 -> 01:00:52]  Está bien.
+[01:00:53 -> 01:00:53]  Solo, por ahora.
+[01:00:54 -> 01:00:55]  Porque acá no tiene ninguna.
+[01:00:56 -> 01:00:58]  No quedó 0, 1, 4, 2, 3, 3.
+[01:00:58 -> 01:00:59]  No las puedo ordenar.
+[01:01:00 -> 01:01:02]  Pero, ¿jugador 2 qué tiene?
+[01:01:02 -> 01:01:05]  4, 0, 6, 5.
+[01:01:05 -> 01:01:05]  4, 0, 6, 5.
+[01:01:05 -> 01:01:06]  4, 3.
+[01:01:06 -> 01:01:10]  Realmente, 6, 5 es mayor que 4, 3.
+[01:01:10 -> 01:01:12]  Es mayor que 0, 4.
+[01:01:14 -> 01:01:19]  Entonces, jugador 2, sabiendo que jugador 1 no va a jugar U,
+[01:01:21 -> 01:01:25]  elimina de su espacio.
+[01:01:27 -> 01:01:28]  ¿Cuál?
+[01:01:28 -> 01:01:29]  Se va solo L.
+[01:01:30 -> 01:01:31]  ¿Por qué solo L?
+[01:01:31 -> 01:01:33]  Porque en Z hay 3, 6.
+[01:01:33 -> 01:01:34]  6, 5.
+[01:01:34 -> 01:01:34]  No.
+[01:01:35 -> 01:01:37]  3, mayor que 4.
+[01:01:37 -> 01:01:39]  Y 6 es mayor que 0, ¿no?
+[01:01:40 -> 01:01:41]  5 es mayor que 3.
+[01:01:41 -> 01:01:42]  Y 5 es mayor que 4.
+[01:01:42 -> 01:01:44]  Son 0.
+[01:01:44 -> 01:01:44]  Sí, sí.
+[01:01:44 -> 01:01:46]  Por eso es el variador.
+[01:01:46 -> 01:01:46]  No, por eso.
+[01:01:46 -> 01:01:48]  Hay que comparar bien cosas como.
+[01:01:48 -> 01:01:49]  Sí, sí.
+[01:01:49 -> 01:01:49]  ¿Está?
+[01:01:50 -> 01:01:51]  O sea, ¿está?
+[01:01:52 -> 01:01:55]  Entonces, y entonces ahora dicen, ah, bueno.
+[01:01:56 -> 01:02:03]  Jugador 1 sabe que jugador 2, sabiendo que él no va a jugar U, va a eliminar L y R.
+[01:02:04 -> 01:02:05]  Entonces, es una.
+[01:02:05 -> 01:02:06]  Cadena.
+[01:02:06 -> 01:02:10]  Es como, es como la, como se pone en un espejo adentro, ¿no?
+[01:02:10 -> 01:02:10]  Frente a otro.
+[01:02:11 -> 01:02:15]  No, yo sé que vos sabés, que él sabe que yo sé, que vos sabés que él sabe que yo sé.
+[01:02:15 -> 01:02:17]  Y así, infinito.
+[01:02:17 -> 01:02:17]  Está.
+[01:02:17 -> 01:02:20]  Entonces nos quedamos en esto, al final.
+[01:02:20 -> 01:02:21]  Y después.
+[01:02:23 -> 01:02:26]  3 es mayor que 1.
+[01:02:27 -> 01:02:27]  Entonces.
+[01:02:28 -> 01:02:30]  No, porque nos quedamos solamente con esto.
+[01:02:32 -> 01:02:34]  Como 3 ahora.
+[01:02:35 -> 01:02:36]  3 es mayor que 1.
+[01:02:41 -> 01:02:43]  Jugador 1 elimina M de su.
+[01:02:44 -> 01:02:45]  Así nos quedamos.
+[01:02:47 -> 01:02:49]  ¿Es computativo este razonamiento?
+[01:02:50 -> 01:02:50]  O sea.
+[01:02:51 -> 01:02:52]  ¿Para las respuestas rápidas no?
+[01:02:53 -> 01:02:53]  Porque depende.
+[01:02:54 -> 01:02:54]  O sea, sí.
+[01:03:00 -> 01:03:04]  Las estrategias son dominadas, son estrictamente dominadas.
+[01:03:04 -> 01:03:04]  Así.
+[01:03:05 -> 01:03:06]  Estrictamente.
+[01:03:06 -> 01:03:07]  Sí.
+[01:03:07 -> 01:03:08]  Y esto se llama.
+[01:03:08 -> 01:03:10]  O sea, equilibrio dominante y iterado.
+[01:03:10 -> 01:03:14]  Pero si son débilmente dominadas, no.
+[01:03:14 -> 01:03:15]  El orden.
+[01:03:15 -> 01:03:16]  No.
+[01:03:16 -> 01:03:17]  Sí.
+[01:03:17 -> 01:03:18]  Es complicado.
+[01:03:18 -> 01:03:23]  Pero si es estrictamente, lo podés hacer cualquier cosa.
+[01:03:23 -> 01:03:25]  Y este proceso.
+[01:03:25 -> 01:03:28]  En realidad se llama.
+[01:03:28 -> 01:03:31]  El nombre.
+[01:03:31 -> 01:03:33]  La sigla larguísima.
+[01:03:33 -> 01:03:34]  Está bien.
+[01:03:34 -> 01:03:34]  ¿Está bien?
+[01:03:34 -> 01:03:35]  Sí.
+[01:03:35 -> 01:03:36]  Y DSDS.
+[01:03:36 -> 01:03:37]  Que es.
+[01:03:37 -> 01:03:44]  Iterated deletion of strictly dominated strategies.
+[01:03:44 -> 01:03:46]  O sea, es estrictamente.
+[01:03:46 -> 01:03:48]  Si es eso.
+[01:03:48 -> 01:03:49]  Este.
+[01:03:49 -> 01:03:50]  Puedes hacerlo en cualquier orden.
+[01:03:50 -> 01:03:51]  No.
+[01:03:51 -> 01:03:52]  No.
+[01:03:52 -> 01:03:53]  No.
+[01:03:53 -> 01:03:54]  No.
+[01:03:54 -> 01:03:58]  Pero podrían haber estrategias estrictamente dominadas.
+[01:03:58 -> 01:04:03]  O sea, pueden haber estrategias estrictamente dominantes.
+[01:04:03 -> 01:04:04]  ¿Verdad?
+[01:04:04 -> 01:04:06]  O sea, puede no haber equilibrios.
+[01:04:06 -> 01:04:14]  Obviamente, si lo hacemos en uno donde hay estrictamente dominantes, no tiene que dar lo mismo.
+[01:04:14 -> 01:04:18]  O sea, este proceso no puede eliminar.
+[01:04:18 -> 01:04:20]  O sea, no elimina equilibrios dominantes.
+[01:04:20 -> 01:04:26]  Bien.
+[01:04:26 -> 01:04:30]  Y la versión weekly.
+[01:04:30 -> 01:04:32]  Ahí de WDS.
+[01:04:32 -> 01:04:36]  Interacted deletion of weekly dominated strategies.
+[01:04:36 -> 01:04:37]  Que no lo vamos a ver.
+[01:04:37 -> 01:04:38]  Si lo quieren profundizar.
+[01:04:38 -> 01:04:40]  Está ahí en una diapositiva donde explica.
+[01:04:40 -> 01:04:45]  Pero ahí todos los problemas de conmutatividad se cargan.
+[01:04:45 -> 01:04:48]  Entonces ahí no es lo mismo cualquier orden, etcétera.
+[01:04:48 -> 01:04:50]  Está bien.
+[01:04:50 -> 01:04:54]  Es como cuando pones el numerito chico en el sudo.
+[01:04:54 -> 01:04:58]  Es como cuando pones el numerito chico en el sudo.
+[01:04:58 -> 01:05:00]  Ah, notas.
+[01:05:00 -> 01:05:02]  Ah, claro.
+[01:05:02 -> 01:05:04]  Cuando llegues y...
+[01:05:04 -> 01:05:05]  Claro, claro.
+[01:05:05 -> 01:05:06]  Está bien.
+[01:05:06 -> 01:05:08]  Y vas eliminando cosas que sabes que no pueden ir.
+[01:05:08 -> 01:05:09]  Sí.
+[01:05:09 -> 01:05:10]  Es un poco eso.
+[01:05:10 -> 01:05:14]  Es ir eliminando cosas.
+[01:05:14 -> 01:05:18]  O sea, razonando por el contrario.
+[01:05:18 -> 01:05:20]  Hay algo que no puedo hacer.
+[01:05:20 -> 01:05:21]  Pero bueno.
+[01:05:21 -> 01:05:25]  El tema es que...
+[01:05:25 -> 01:05:29]  Lo que resulta de esto sí resulta en uno.
+[01:05:29 -> 01:05:31]  En una sola celda.
+[01:05:31 -> 01:05:32]  Básicamente.
+[01:05:32 -> 01:05:36]  O sea, en un solo elemento de la matriz.
+[01:05:36 -> 01:05:38]  Es un equilibrio.
+[01:05:38 -> 01:05:39]  Pero bueno.
+[01:05:39 -> 01:05:40]  Tienen.
+[01:05:40 -> 01:05:41]  O sea, no es muy estable.
+[01:05:41 -> 01:05:42]  Puede no existir.
+[01:05:42 -> 01:05:43]  Hay que saber si tiene o no tiene.
+[01:05:43 -> 01:05:45]  Es como un...
+[01:05:45 -> 01:05:47]  Un...
+[01:05:49 -> 01:05:51]  O sea, una definición.
+[01:05:51 -> 01:05:52]  Un concepto poco...
+[01:05:52 -> 01:05:54]  O sea, estable si quieren.
+[01:05:54 -> 01:05:58]  Si existe uno más conceptualmente.
+[01:05:58 -> 01:05:59]  Más interesante.
+[01:05:59 -> 01:06:03]  Que es lo que se llama el equilibrio de Nash.
+[01:06:03 -> 01:06:06]  No sé si lo habéis escuchado alguna vez.
+[01:06:06 -> 01:06:07]  De Nash.
+[01:06:07 -> 01:06:08]  Sí.
+[01:06:08 -> 01:06:09]  De John Nash.
+[01:06:09 -> 01:06:10]  Y del equilibrio de Nash.
+[01:06:10 -> 01:06:11]  Está bien.
+[01:06:11 -> 01:06:12]  La película.
+[01:06:12 -> 01:06:13]  No sé si es la puerta.
+[01:06:13 -> 01:06:14]  La película puerta.
+[01:06:14 -> 01:06:15]  Acá está.
+[01:06:15 -> 01:06:16]  Dice Beautiful Mind.
+[01:06:16 -> 01:06:17]  Beautiful Mind.
+[01:06:17 -> 01:06:18]  ¿Verdad?
+[01:06:18 -> 01:06:19]  Sí, sí.
+[01:06:19 -> 01:06:20]  La película puerta.
+[01:06:20 -> 01:06:22]  En realidad, si quieren ir a ver.
+[01:06:22 -> 01:06:25]  Ahí está el link a la escena donde son las dos.
+[01:06:25 -> 01:06:26]  Ahí está.
+[01:06:26 -> 01:06:27]  Ahí está.
+[01:06:27 -> 01:06:29]  La escena donde supuestamente Nash...
+[01:06:29 -> 01:06:30]  No sé si...
+[01:06:30 -> 01:06:33]  No quiero espoilearla, pero bueno.
+[01:06:33 -> 01:06:37]  En un bar descubre el equilibrio de Nash.
+[01:06:37 -> 01:06:40]  Es anecdótico, pero es interesante.
+[01:06:40 -> 01:06:43]  La película es muy interesante.
+[01:06:43 -> 01:06:47]  Digamos, el concepto es tan importante.
+[01:06:47 -> 01:06:50]  O sea, no tanto esto que vamos a ver, sino lo que va después.
+[01:06:50 -> 01:06:52]  Lo vamos a ver en la clase.
+[01:06:52 -> 01:06:54]  Es que, digo, por algo...
+[01:06:54 -> 01:06:56]  Como que le valió el premio a un...
+[01:06:56 -> 01:06:58]  A mí, es un concepto muy importante.
+[01:06:58 -> 01:06:59]  El equilibrio de Nash.
+[01:06:59 -> 01:07:00]  Sí, en esta podemos hacer ejercicio.
+[01:07:00 -> 01:07:01]  Creo que nos han pasado mucho la hora, pero bueno.
+[01:07:01 -> 01:07:02]  Que no hay...
+[01:07:02 -> 01:07:03]  No podemos hacer lo que hicimos antes.
+[01:07:03 -> 01:07:04]  No podemos eliminar así.
+[01:07:04 -> 01:07:07]  Ni hay cosas estrictamente dominantes y todo lo demás.
+[01:07:07 -> 01:07:08]  Está bien.
+[01:07:08 -> 01:07:09]  ¿Verdad?
+[01:07:09 -> 01:07:10]  Sí.
+[01:07:10 -> 01:07:11]  Sí.
+[01:07:11 -> 01:07:12]  Sí.
+[01:07:12 -> 01:07:13]  Sí.
+[01:07:13 -> 01:07:14]  Sí.
+[01:07:14 -> 01:07:15]  Sí.
+[01:07:15 -> 01:07:16]  Sí.
+[01:07:16 -> 01:07:17]  Sí.
+[01:07:17 -> 01:07:18]  Sí.
+[01:07:18 -> 01:07:19]  Sí.
+[01:07:19 -> 01:07:20]  Sí.
+[01:07:20 -> 01:07:21]  Sí.
+[01:07:21 -> 01:07:22]  Sí.
+[01:07:22 -> 01:07:23]  Sí.
+[01:07:23 -> 01:07:24]  Sí.
+[01:07:24 -> 01:07:25]  Sí.
+[01:07:25 -> 01:07:26]  Sí.
+[01:07:26 -> 01:07:27]  Sí.
+[01:07:27 -> 01:07:28]  Sí.
+[01:07:28 -> 01:07:29]  Sí.
+[01:07:29 -> 01:07:30]  Sí.
+[01:07:30 -> 01:07:31]  Sí.
+[01:07:31 -> 01:07:32]  Ese mismo...
+[01:07:32 -> 01:07:33]  Y en general un menubanteWAacak.
+[01:07:33 -> 01:07:34]  Ah.
+[01:07:34 -> 01:07:35]  Sí.
+[01:07:35 -> 01:07:36]  Sí.
+[01:07:36 -> 01:07:37]  lk Özadek足 joke, yoarto, marathon...
+[01:07:37 -> 01:07:38]  Uno de losテ Wash Faro y tres kilómetros de orbitación.
+[01:07:38 -> 01:07:39]  A ver para acá...
+[01:07:39 -> 01:07:40]  Pero...
+[01:07:40 -> 01:07:41]  Bueno, acá...
+[01:07:41 -> 01:07:42]  Acá les hace el spoiler.
+[01:07:42 -> 01:07:43]  El equilibrio de Nash es CLS.
+[01:07:43 -> 01:07:44]  ien, C.L.
+[01:07:44 -> 01:07:45]  El equilibrio de Nash, es CLS.
+[01:07:45 -> 01:07:46]  Bueno, vamos a explicar por qué eso es un equilibrio.
+[01:07:46 -> 01:07:47]  Primero.
+[01:07:47 -> 01:07:48]  Una de las cosas que salta.
+[01:07:48 -> 01:07:49]  Bueno, por ejemplo...
+[01:07:49 -> 01:07:50]  Hay utilidades mayores ¿No?
+[01:07:50 -> 01:07:51]  Por ejemplo...
+[01:07:51 -> 01:07:52]  3 es mayor que 2.
+[01:07:52 -> 01:07:53]  O sea que no es un tema que sospecha demasiado.
+[01:07:53 -> 01:07:55]  Sí.
+[01:07:55 -> 01:07:57]  un poco ya lo vimos, no es que
+[01:07:57 -> 01:07:59]  finalmente el equilibrio es el que nos va a dar
+[01:07:59 -> 01:08:01]  la mayor utilidad
+[01:08:01 -> 01:08:03]  simplemente es un equilibrio
+[01:08:03 -> 01:08:05]  o sea, es un lugar
+[01:08:05 -> 01:08:07]  donde si elegimos esta
+[01:08:07 -> 01:08:09]  acción, o sea, si
+[01:08:09 -> 01:08:11]  jugador fila elige T y jugador columna
+[01:08:11 -> 01:08:13]  elige L, no van a
+[01:08:13 -> 01:08:15]  de una manera de entenderlo, no van a tener incentivo
+[01:08:15 -> 01:08:16]  para moverse a ningún lado
+[01:08:16 -> 01:08:19]  no van a querer hacer otra cosa porque no les interesa
+[01:08:19 -> 01:08:23]  podemos tratar de ver eso
+[01:08:23 -> 01:08:25]  fíjense, si agarramos
+[01:08:25 -> 01:08:27]  por ejemplo
+[01:08:27 -> 01:08:28]  a jugador fila
+[01:08:28 -> 01:08:31]  puede moverse para acá
+[01:08:31 -> 01:08:33]  le convendría
+[01:08:33 -> 01:08:35]  pasar de T a
+[01:08:35 -> 01:08:37]  M sabiendo que
+[01:08:37 -> 01:08:39]  jugador columna no se va a mover
+[01:08:39 -> 01:08:41]  tengo que fijar algo
+[01:08:41 -> 01:08:43]  porque si se mueve, me cambio
+[01:08:43 -> 01:08:45]  pero yo hago ese razonamiento
+[01:08:45 -> 01:08:47]  una especie de what if, que pasa si
+[01:08:47 -> 01:08:49]  dado que jugador
+[01:08:49 -> 01:08:53]  columna juega L
+[01:08:53 -> 01:08:55]  o hace la acción L
+[01:08:55 -> 01:08:57]  jugador fila se la
+[01:08:57 -> 01:08:57]  ¿le conviene?
+[01:08:58 -> 01:08:59]  no, porque baja de 2 a 1
+[01:08:59 -> 01:09:01]  ¿le conviene hacer B?
+[01:09:02 -> 01:09:03]  tampoco, o baja de 2 a 0
+[01:09:03 -> 01:09:06]  y si hacemos razonamiento para
+[01:09:06 -> 01:09:09]  columna, sería elegir otra columna
+[01:09:09 -> 01:09:10]  sabiendo que este no se mueve de acá
+[01:09:10 -> 01:09:11]  de esta fila
+[01:09:11 -> 01:09:14]  2, 1, 0, no
+[01:09:14 -> 01:09:16]  ¿está bien?
+[01:09:18 -> 01:09:20]  sin embargo, si tratamos de
+[01:09:20 -> 01:09:22]  hacer lo anterior, no tenemos
+[01:09:22 -> 01:09:23]  están todos cruzados
+[01:09:23 -> 01:09:24]  no
+[01:09:25 -> 01:09:28]  entonces podemos preguntar por otro
+[01:09:28 -> 01:09:31]  entonces entendemos que es un equilibrio
+[01:09:31 -> 01:09:32]  pero, ¿y otro?
+[01:09:32 -> 01:09:34]  por ejemplo, si elegimos 0, 0
+[01:09:34 -> 01:09:38]  este se puede cambiar
+[01:09:38 -> 01:09:41]  si pasa de acá a acá, va a menos 1
+[01:09:41 -> 01:09:43]  ah, pero si pasa de acá a acá
+[01:09:43 -> 01:09:44]  va a 2
+[01:09:44 -> 01:09:46]  entonces dice, ah, bueno, guarda
+[01:09:46 -> 01:09:50]  si este se mantiene en C
+[01:09:50 -> 01:09:51]  a mí me conviene hacer 2
+[01:09:51 -> 01:09:53]  pero, ¿quiere decir que jugador columna
+[01:09:53 -> 01:09:54]  hace el mismo razonamiento?
+[01:09:55 -> 01:09:57]  si yo juego esto
+[01:09:57 -> 01:09:58]  este se va a pasar acá
+[01:09:58 -> 01:10:01]  pero, entonces, si jugador fila juega B
+[01:10:01 -> 01:10:04]  entonces, yo voy a tener menos 1
+[01:10:04 -> 01:10:05]  entonces yo voy a tener otra acción posible
+[01:10:05 -> 01:10:07]  por ejemplo, 3
+[01:10:07 -> 01:10:09]  esto es preferible a este
+[01:10:09 -> 01:10:10]  porque este es corto ahí
+[01:10:10 -> 01:10:12]  pero si nos movemos acá
+[01:10:12 -> 01:10:15]  entonces ahí, jugador fila hace el mismo razonamiento
+[01:10:15 -> 01:10:16]  y dice, ah, no, yo
+[01:10:16 -> 01:10:19]  no me puedo quedar acá porque tengo menos 2
+[01:10:19 -> 01:10:21]  y si este juega R
+[01:10:21 -> 01:10:22]  puedo pasarme acá o acá, es lo mismo
+[01:10:22 -> 01:10:25]  o sea, yo no miro esto, puedo pasarme
+[01:10:25 -> 01:10:29]  solamente por curiosidad
+[01:10:29 -> 01:10:30]  me puedo mover acá
+[01:10:30 -> 01:10:32]  y si estoy acá, me puedo mover acá
+[01:10:32 -> 01:10:35]  no es una situación de equilibrio
+[01:10:35 -> 01:10:37]  paso dando vueltas
+[01:10:37 -> 01:10:39]  o sea, si quiero tratar de ver dónde moverme
+[01:10:39 -> 01:10:41]  paso, hasta que eventualmente
+[01:10:41 -> 01:10:43]  puedo decir, bueno, en realidad de acá
+[01:10:43 -> 01:10:44]  si este
+[01:10:44 -> 01:10:47]  este no se podría mover acá
+[01:10:47 -> 01:10:48]  porque este es 0 a menos 1
+[01:10:48 -> 01:10:50]  pero este sí se podría mover acá
+[01:10:50 -> 01:10:53]  de menos 1 a 1 se puede mover
+[01:10:53 -> 01:10:55]  y este se puede mover acá
+[01:10:55 -> 01:10:57]  y ahí gana
+[01:10:57 -> 01:11:01]  bien
+[01:11:01 -> 01:11:03]  entonces
+[01:11:03 -> 01:11:05]  esa es conceptualmente
+[01:11:05 -> 01:11:07]  la idea de
+[01:11:07 -> 01:11:09]  de Le Guin
+[01:11:09 -> 01:11:11]  formalmente
+[01:11:11 -> 01:11:13]  es un poquito complicada
+[01:11:13 -> 01:11:15]  pero es importante
+[01:11:15 -> 01:11:17]  que lo vemos de acá
+[01:11:17 -> 01:11:19]  qué pasa con
+[01:11:19 -> 01:11:21]  con esta acción
+[01:11:21 -> 01:11:23]  es
+[01:11:23 -> 01:11:24]  es que
+[01:11:25 -> 01:11:27]  cuál
+[01:11:27 -> 01:11:29]  es la
+[01:11:29 -> 01:11:32]  mejor respuesta
+[01:11:32 -> 01:11:35]  de
+[01:11:35 -> 01:11:37]  dado que
+[01:11:37 -> 01:11:39]  dado que
+[01:11:39 -> 01:11:42]  el jugador columna juega L
+[01:11:42 -> 01:11:45]  cuál es la mejor acción
+[01:11:45 -> 01:11:46]  que se llama
+[01:11:46 -> 01:11:47]  cuál es la mejor respuesta
+[01:11:47 -> 01:11:50]  cuál es la mejor respuesta
+[01:11:50 -> 01:11:52]  que tiene el jugador fila frente a L
+[01:11:52 -> 01:11:55]  y sabemos que
+[01:11:55 -> 01:11:56]  era T
+[01:11:56 -> 01:11:57]  no
+[01:11:57 -> 01:12:05]  y cuál es la mejor respuesta que tiene
+[01:12:05 -> 01:12:06]  jugador
+[01:12:06 -> 01:12:10]  columna frente a T
+[01:12:10 -> 01:12:12]  también es L
+[01:12:12 -> 01:12:14]  entonces
+[01:12:14 -> 01:12:16]  y podemos hacer este ejercicio con todos
+[01:12:16 -> 01:12:18]  cuál es la mejor respuesta que tiene
+[01:12:18 -> 01:12:21]  jugador fila frente a C
+[01:12:21 -> 01:12:23]  B
+[01:12:23 -> 01:12:24]  y podemos hacer este ejercicio con todos cuál es la mejor respuesta que tiene el jugador fila frente a C
+[01:12:24 -> 01:12:25]  B
+[01:12:25 -> 01:12:26]  B
+[01:12:26 -> 01:12:27]  B
+[01:12:27 -> 01:12:28]  B
+[01:12:28 -> 01:12:29]  B
+[01:12:29 -> 01:12:32]  y hacemos el relacionamiento inverso
+[01:12:32 -> 01:12:38]  cuál es la mejor respuesta que tiene el jugador columna frente a B
+[01:12:38 -> 01:12:40]  es R
+[01:12:40 -> 01:12:42]  frente a B
+[01:12:42 -> 01:12:44]  es R
+[01:12:44 -> 01:12:46]  entonces la mejor respuesta
+[01:12:46 -> 01:12:50]  frente a B es R
+[01:12:50 -> 01:12:54]  y la mejor respuesta frente a C era B
+[01:12:54 -> 01:12:56]  no coinciden
+[01:12:56 -> 01:12:58]  entonces no hay un equilibrio
+[01:12:58 -> 01:12:59]  porque
+[01:12:59 -> 01:13:01]  el equilibrio se da cuando
+[01:13:01 -> 01:13:04]  la mejor respuesta de una es la misma
+[01:13:04 -> 01:13:06]  o sea, al revés también se cumple
+[01:13:06 -> 01:13:07]  si una mejor respuesta
+[01:13:07 -> 01:13:10]  la otra también es mejor respuesta a la misma acción
+[01:13:10 -> 01:13:12]  puede haber más de uno
+[01:13:12 -> 01:13:15]  sí, puede haber más de uno
+[01:13:15 -> 01:13:16]  ahora vamos a ver
+[01:13:16 -> 01:13:17]  eso
+[01:13:17 -> 01:13:18]  también
+[01:13:18 -> 01:13:19]  sí
+[01:13:19 -> 01:13:20]  la respuesta es sí
+[01:13:20 -> 01:13:22]  y ahora vemos un
+[01:13:22 -> 01:13:23]  un ejemplo y
+[01:13:23 -> 01:13:25]  y la idea era terminar con eso.
+[01:13:25 -> 01:13:26]  Así que dame un segundo,
+[01:13:27 -> 01:13:28]  porque así es que es una buena idea.
+[01:13:31 -> 01:13:34]  Igual sale más beneficiado
+[01:13:34 -> 01:13:37]  el pila.
+[01:13:39 -> 01:13:39]  No, o sea,
+[01:13:40 -> 01:13:41]  ¿qué quiere decir beneficiado?
+[01:13:41 -> 01:13:42]  O sea, es una situación de equilibrio.
+[01:13:43 -> 01:13:45]  El gusto de flash.
+[01:13:45 -> 01:13:46]  No, bien, bueno.
+[01:13:46 -> 01:13:47]  Eso.
+[01:13:47 -> 01:13:48]  Más.
+[01:13:48 -> 01:13:49]  Señorita.
+[01:13:49 -> 01:13:57]  Le respondo eso en un segundo.
+[01:13:58 -> 01:13:59]  En el fondo de las dos preguntas,
+[01:13:59 -> 01:13:59]  acuérdame,
+[01:13:59 -> 01:14:02]  si no.
+[01:14:04 -> 01:14:06]  Lo que dice esta fórmula acá es eso,
+[01:14:06 -> 01:14:07]  ser la best response.
+[01:14:08 -> 01:14:09]  Pero entiendan que la idea de esto
+[01:14:09 -> 01:14:10]  es que es una especie de punto fijo.
+[01:14:10 -> 01:14:11]  O sea, que decir que una respuesta,
+[01:14:12 -> 01:14:13]  la mejor respuesta es la otra
+[01:14:13 -> 01:14:14]  y la otra es la mejor respuesta.
+[01:14:15 -> 01:14:17]  Entonces tiene que dar esa igualdad.
+[01:14:18 -> 01:14:19]  Y eso es toda la dificultad.
+[01:14:19 -> 01:14:19]  O sea,
+[01:14:20 -> 01:14:21]  entonces,
+[01:14:22 -> 01:14:23]  un equilibrio es cuando
+[01:14:23 -> 01:14:25]  agarra una acción conjunta
+[01:14:25 -> 01:14:26]  y si miro individualmente,
+[01:14:27 -> 01:14:28]  cada una es la mejor respuesta
+[01:14:28 -> 01:14:29]  a todas las otras.
+[01:14:30 -> 01:14:31]  Y a todas les pasa lo mismo.
+[01:14:31 -> 01:14:33]  Si eso ocurre,
+[01:14:33 -> 01:14:33]  es un equilibrio
+[01:14:33 -> 01:14:36]  y puede haber más de uno
+[01:14:36 -> 01:14:37]  y eso puede ser un problema.
+[01:14:38 -> 01:14:40]  Y si lo tienen que hacer a mano
+[01:14:40 -> 01:14:43]  y para entenderlo,
+[01:14:43 -> 01:14:45]  si está bueno que hagan algunos ejercicios
+[01:14:45 -> 01:14:46]  y a mano,
+[01:14:47 -> 01:14:47]  es
+[01:14:47 -> 01:14:48]  básicamente
+[01:14:49 -> 01:14:50]  agarran,
+[01:14:51 -> 01:14:52]  acá sí les puse colores,
+[01:14:53 -> 01:14:54]  hagan ese ejercicio.
+[01:14:55 -> 01:14:56]  Agarran y fijan cuál es el mayor,
+[01:14:57 -> 01:14:58]  por ejemplo, para fila,
+[01:14:58 -> 01:14:59]  agarran y dicen
+[01:14:59 -> 01:15:01]  cuál es el mayor valor en la fila.
+[01:15:02 -> 01:15:03]  Obviamente de su lado, ¿no?
+[01:15:04 -> 01:15:05]  Dos es mayor que menos uno,
+[01:15:05 -> 01:15:05]  tal o marco.
+[01:15:06 -> 01:15:07]  Agarro acá,
+[01:15:07 -> 01:15:08]  uno mayor que cero,
+[01:15:08 -> 01:15:09]  tal o marco
+[01:15:09 -> 01:15:09]  y agarro B,
+[01:15:10 -> 01:15:11]  dos es mayor o no.
+[01:15:11 -> 01:15:13]  Y agarro ahora las columnas.
+[01:15:13 -> 01:15:15]  ¿Cuál es el mayor valor en la columna?
+[01:15:15 -> 01:15:17]  La columna entonces es el segundo elemento.
+[01:15:17 -> 01:15:18]  Dos.
+[01:15:18 -> 01:15:19]  ¿Cuál es el mayor valor?
+[01:15:20 -> 01:15:20]  Cero.
+[01:15:20 -> 01:15:21]  ¿Cuál es el mayor valor?
+[01:15:22 -> 01:15:22]  Tres.
+[01:15:23 -> 01:15:24]  Y donde les quedaron las dos marcadas
+[01:15:24 -> 01:15:25]  es el equilibrio.
+[01:15:26 -> 01:15:26]  ¿Está?
+[01:15:27 -> 01:15:29]  Porque eso quiere decir que una es la mejor respuesta a la otra.
+[01:15:29 -> 01:15:30]  Él se da el mayor.
+[01:15:31 -> 01:15:31]  ¿Está?
+[01:15:34 -> 01:15:35]  Eso parece no malo,
+[01:15:35 -> 01:15:36]  eso parece no malo.
+[01:15:36 -> 01:15:37]  La C es la B del equilibrio.
+[01:15:37 -> 01:15:37]  ¿Eh?
+[01:15:39 -> 01:15:39]  ¿Y quién qué?
+[01:15:40 -> 01:15:41]  La columna del B.
+[01:15:41 -> 01:15:41]  Ah, sí.
+[01:15:42 -> 01:15:42]  Perdón.
+[01:15:42 -> 01:15:43]  Este es uno.
+[01:15:43 -> 01:15:44]  Se ve que usted también tiene razón.
+[01:15:45 -> 01:15:45]  Bien.
+[01:15:46 -> 01:15:46]  Siempre hay un error.
+[01:15:46 -> 01:15:47]  Claro.
+[01:15:47 -> 01:15:47]  Claro.
+[01:15:47 -> 01:15:48]  Esa es, sí.
+[01:15:49 -> 01:15:50]  Aunque por suerte no cambia el resultado.
+[01:15:51 -> 01:15:52]  Pero es este.
+[01:15:52 -> 01:15:52]  Sí, sí, perdón.
+[01:15:52 -> 01:15:53]  No lo voy a cambiar.
+[01:15:53 -> 01:15:53]  Gracias.
+[01:15:54 -> 01:15:55]  ¿Qué pasa con D216?
+[01:15:57 -> 01:15:57]  ¿Cuándo?
+[01:15:58 -> 01:15:58]  ¿Cuándo hay dos valores?
+[01:15:59 -> 01:16:00]  ¿Iguales?
+[01:16:00 -> 01:16:01]  No, marcas todos.
+[01:16:01 -> 01:16:02]  Ahí marcas todos
+[01:16:02 -> 01:16:03]  y eso es lo que te puede dar
+[01:16:03 -> 01:16:05]  más de una solución.
+[01:16:06 -> 01:16:07]  Porque marcas más de un valor.
+[01:16:07 -> 01:16:08]  O sea, efectivamente,
+[01:16:08 -> 01:16:09]  si vos tenés empates,
+[01:16:10 -> 01:16:10]  por ejemplo,
+[01:16:10 -> 01:16:11]  si te fuera un 1
+[01:16:11 -> 01:16:11]  y te fuera un 1,
+[01:16:12 -> 01:16:12]  tenés que marcarlo.
+[01:16:12 -> 01:16:13]  En el M.
+[01:16:14 -> 01:16:14]  Ah,
+[01:16:15 -> 01:16:16]  también me olvidé ahí.
+[01:16:16 -> 01:16:16]  ¿Qué pasa?
+[01:16:17 -> 01:16:18]  Se ve que lo cambié
+[01:16:18 -> 01:16:19]  en algún momento
+[01:16:19 -> 01:16:19]  este ejemplo.
+[01:16:20 -> 01:16:21]  Sí, este es este.
+[01:16:21 -> 01:16:22]  Los dos, sí.
+[01:16:23 -> 01:16:23]  Bien.
+[01:16:23 -> 01:16:24]  Muy bien.
+[01:16:26 -> 01:16:27]  Podría decir
+[01:16:27 -> 01:16:28]  que lo hice a propósito,
+[01:16:28 -> 01:16:29]  pero no es el caso.
+[01:16:30 -> 01:16:31]  Esta.
+[01:16:33 -> 01:16:34]  Esto lo podemos,
+[01:16:34 -> 01:16:35]  esto lo podemos
+[01:16:35 -> 01:16:40]  olvidar, digamos,
+[01:16:40 -> 01:16:40]  no importa.
+[01:16:40 -> 01:16:42]  Esa es la interpretación
+[01:16:42 -> 01:16:43]  en palabras.
+[01:16:44 -> 01:16:44]  Lo podemos usar
+[01:16:44 -> 01:16:46]  y después podemos volver.
+[01:16:46 -> 01:16:46]  Claro.
+[01:16:47 -> 01:16:47]  Efectivamente,
+[01:16:47 -> 01:16:49]  este es un ejemplo.
+[01:16:50 -> 01:16:50]  Este,
+[01:16:51 -> 01:16:52]  hay más de,
+[01:16:52 -> 01:16:53]  más de una solución.
+[01:16:54 -> 01:16:55]  ¿Por qué
+[01:16:55 -> 01:16:56]  yo quería ver esto?
+[01:16:56 -> 01:16:57]  Es porque,
+[01:16:57 -> 01:16:57]  y creo que también
+[01:16:57 -> 01:16:58]  tiene que ver con
+[01:16:58 -> 01:17:00]  la pregunta.
+[01:17:00 -> 01:17:00]  En realidad,
+[01:17:01 -> 01:17:02]  vemos acá que hay dos.
+[01:17:02 -> 01:17:03]  Lo pueden hacer,
+[01:17:04 -> 01:17:04]  si no me equivoqué,
+[01:17:04 -> 01:17:05]  son estos dos.
+[01:17:06 -> 01:17:06]  Este,
+[01:17:07 -> 01:17:10]  que las
+[01:17:10 -> 01:17:13]  utilidades
+[01:17:13 -> 01:17:15]  no, no, no,
+[01:17:15 -> 01:17:16]  no están igualmente
+[01:17:16 -> 01:17:16]  por debajo.
+[01:17:16 -> 01:17:17]  No están ordenadas,
+[01:17:17 -> 01:17:18]  ni siquiera son
+[01:17:18 -> 01:17:19]  la misma.
+[01:17:19 -> 01:17:19]  Acá,
+[01:17:19 -> 01:17:22]  jugador fila obtiene 3,
+[01:17:22 -> 01:17:22]  acá obtiene 4.
+[01:17:23 -> 01:17:24]  Y acá,
+[01:17:24 -> 01:17:25]  este,
+[01:17:25 -> 01:17:27]  jugador columna
+[01:17:27 -> 01:17:29]  obtiene 5
+[01:17:29 -> 01:17:30]  y acá obtiene 6.
+[01:17:32 -> 01:17:32]  Sin embargo,
+[01:17:32 -> 01:17:33]  son los dos equilibrios.
+[01:17:34 -> 01:17:35]  Claro.
+[01:17:37 -> 01:17:37]  La,
+[01:17:37 -> 01:17:38]  el concepto de equilibrio
+[01:17:38 -> 01:17:40]  no es un concepto de performance.
+[01:17:40 -> 01:17:41]  O sea,
+[01:17:41 -> 01:17:41]  no es un concepto,
+[01:17:41 -> 01:17:43]  este,
+[01:17:43 -> 01:17:45]  existe otra de optimalidad
+[01:17:45 -> 01:17:46]  en términos de,
+[01:17:46 -> 01:17:47]  este,
+[01:17:47 -> 01:17:48]  utilidad.
+[01:17:48 -> 01:17:49]  Es solamente
+[01:17:49 -> 01:17:50]  de equilibrio.
+[01:17:50 -> 01:17:51]  Es decir,
+[01:17:51 -> 01:17:52]  en ese sentido.
+[01:17:52 -> 01:17:53]  Este,
+[01:17:53 -> 01:17:54]  cualquier otra cosa que hagamos,
+[01:17:54 -> 01:17:55]  alguno de los,
+[01:17:55 -> 01:17:56]  o sea,
+[01:17:56 -> 01:17:57]  yo voy a,
+[01:17:57 -> 01:17:58]  cada uno va a perder
+[01:17:58 -> 01:17:59]  y entonces,
+[01:17:59 -> 01:18:00]  al menos uno va a perder
+[01:18:00 -> 01:18:01]  y entonces,
+[01:18:01 -> 01:18:02]  se cambia.
+[01:18:02 -> 01:18:03]  Pero no es un concepto
+[01:18:03 -> 01:18:04]  de optimalidad.
+[01:18:04 -> 01:18:05]  El concepto de,
+[01:18:05 -> 01:18:06]  hay otro concepto,
+[01:18:06 -> 01:18:07]  además del equilibrio de Nash,
+[01:18:07 -> 01:18:08]  que es,
+[01:18:08 -> 01:18:09]  que es el,
+[01:18:09 -> 01:18:10]  que es un concepto
+[01:18:10 -> 01:18:11]  de optimalidad,
+[01:18:11 -> 01:18:12]  que es,
+[01:18:12 -> 01:18:13]  pareto.
+[01:18:13 -> 01:18:14]  ¿Qué es?
+[01:18:14 -> 01:18:15]  ¿Qué es?
+[01:18:15 -> 01:18:16]  ¿Qué es?
+[01:18:17 -> 01:18:18]  Si lo tengo acá,
+[01:18:18 -> 01:18:19]  alguno tiene...
+[01:18:19 -> 01:18:20]  ¿Cómo?
+[01:18:20 -> 01:18:21]  ¿El 80-20?
+[01:18:21 -> 01:18:22]  ¿El 80-20?
+[01:18:22 -> 01:18:23]  ¿El 80-20?
+[01:18:23 -> 01:18:24]  ¿El 80-20?
+[01:18:24 -> 01:18:25]  Sí.
+[01:18:25 -> 01:18:26]  Ah,
+[01:18:26 -> 01:18:27]  no,
+[01:18:27 -> 01:18:28]  no lo saqué.
+[01:18:28 -> 01:18:29]  Lo,
+[01:18:29 -> 01:18:30]  lo saqué,
+[01:18:30 -> 01:18:31]  pero...
+[01:18:31 -> 01:18:32]  ¿Qué?
+[01:18:32 -> 01:18:33]  Con lo que vimos antes.
+[01:18:33 -> 01:18:34]  Cualquier proceso de iteración
+[01:18:34 -> 01:18:35]  que vimos,
+[01:18:35 -> 01:18:36]  nos va a llevar a equilibrio.
+[01:18:36 -> 01:18:37]  Sí,
+[01:18:37 -> 01:18:38]  sí.
+[01:18:38 -> 01:18:39]  No,
+[01:18:39 -> 01:18:40]  no,
+[01:18:40 -> 01:18:41]  no.
+[01:18:41 -> 01:18:42]  Los procesos iterativos,
+[01:18:42 -> 01:18:43]  buena pregunta.
+[01:18:43 -> 01:18:44]  Sí.
+[01:18:44 -> 01:18:45]  Un proceso iterativo,
+[01:18:45 -> 01:18:46]  como,
+[01:18:46 -> 01:18:47]  de,
+[01:18:47 -> 01:18:48]  de,
+[01:18:48 -> 01:18:49]  de,
+[01:18:49 -> 01:18:50]  de,
+[01:18:50 -> 01:18:51]  iteración débilmente dominada,
+[01:18:51 -> 01:18:52]  los débilmente dominadas
+[01:18:52 -> 01:18:53]  pueden eliminar
+[01:18:53 -> 01:18:54]  equilibrio de noche.
+[01:18:54 -> 01:18:55]  ¿Y los
+[01:18:55 -> 01:18:56]  principiantes?
+[01:18:56 -> 01:18:57]  No.
+[01:18:57 -> 01:18:58]  Porque,
+[01:18:58 -> 01:18:59]  si son,
+[01:18:59 -> 01:19:00]  si son,
+[01:19:00 -> 01:19:01]  si es todo estrictamente dominante,
+[01:19:01 -> 01:19:02]  no,
+[01:19:02 -> 01:19:03]  o sea,
+[01:19:03 -> 01:19:04]  va a converger a uno,
+[01:19:04 -> 01:19:05]  a un equilibrio,
+[01:19:05 -> 01:19:06]  todo equilibrio estrictamente dominante
+[01:19:06 -> 01:19:07]  es un equilibrio de noche.
+[01:19:07 -> 01:19:08]  Ok.
+[01:19:08 -> 01:19:09]  Claro,
+[01:19:09 -> 01:19:10]  porque es,
+[01:19:10 -> 01:19:11]  eh,
+[01:19:11 -> 01:19:12]  ¿por qué?
+[01:19:12 -> 01:19:13]  Este,
+[01:19:13 -> 01:19:14]  eh,
+[01:19:14 -> 01:19:15]  porque como
+[01:19:15 -> 01:19:17]  es mayor que todas en,
+[01:19:17 -> 01:19:18]  para cualquier acción,
+[01:19:18 -> 01:19:19]  entonces es una vez responsa
+[01:19:19 -> 01:19:20]  cualquiera de las cosas que es fuerte.
+[01:19:20 -> 01:19:21]  Por ejemplo,
+[01:19:21 -> 01:19:22]  que tachamos todo,
+[01:19:22 -> 01:19:23]  es,
+[01:19:23 -> 01:19:24]  quedó,
+[01:19:24 -> 01:19:25]  queda equilibrio.
+[01:19:25 -> 01:19:26]  Sí,
+[01:19:26 -> 01:19:27]  ese sí es un equilibrio de noche,
+[01:19:27 -> 01:19:28]  si lo pueden,
+[01:19:28 -> 01:19:29]  lo deberían poder.
+[01:19:29 -> 01:19:30]  Este,
+[01:19:30 -> 01:19:31]  ¿cómo?
+[01:19:31 -> 01:19:32]  ¿Todo equilibrio dominante
+[01:19:32 -> 01:19:33]  es un equilibrio de noche
+[01:19:33 -> 01:19:34]  o al revés?
+[01:19:34 -> 01:19:35]  Todo equilibrio estrictamente dominante
+[01:19:35 -> 01:19:36]  es un equilibrio de noche
+[01:19:36 -> 01:19:37]  y no al revés.
+[01:19:37 -> 01:19:38]  Y no al revés.
+[01:19:38 -> 01:19:39]  ¿Por qué hay,
+[01:19:39 -> 01:19:40]  porque puede haber empates?
+[01:19:40 -> 01:19:41]  Cuando tengo más
+[01:19:41 -> 01:19:42]  un equilibrio de noche.
+[01:19:42 -> 01:19:43]  Sí,
+[01:19:43 -> 01:19:44]  pues eso también es,
+[01:19:44 -> 01:19:45]  si el día llega muy tarde
+[01:19:45 -> 01:19:46]  lo vemos la próxima,
+[01:19:46 -> 01:19:47]  es decir,
+[01:19:47 -> 01:19:48]  este,
+[01:19:48 -> 01:19:49]  lo que queda es resolver.
+[01:19:49 -> 01:19:50]  ¿Qué puede pasar?
+[01:19:50 -> 01:19:51]  Puede pasar que haya más de uno,
+[01:19:51 -> 01:19:52]  es el problema.
+[01:19:52 -> 01:19:53]  Puede pasar,
+[01:19:53 -> 01:19:54]  está,
+[01:19:54 -> 01:19:55]  eh,
+[01:19:55 -> 01:19:56]  eh,
+[01:19:56 -> 01:19:57]  que no sea el óptimo,
+[01:19:57 -> 01:19:58]  no,
+[01:19:58 -> 01:19:59]  bueno,
+[01:19:59 -> 01:20:00]  eso no tiene solución,
+[01:20:00 -> 01:20:01]  pues,
+[01:20:01 -> 01:20:02]  simplemente son dos conceptos
+[01:20:02 -> 01:20:03]  distintos.
+[01:20:03 -> 01:20:04]  Está,
+[01:20:04 -> 01:20:05]  eh,
+[01:20:05 -> 01:20:06]  las soluciones óptimas
+[01:20:06 -> 01:20:07]  no son necesariamente equilibrios,
+[01:20:07 -> 01:20:08]  entonces,
+[01:20:08 -> 01:20:09]  este,
+[01:20:09 -> 01:20:10]  con este concepto
+[01:20:10 -> 01:20:11]  de racionalidad
+[01:20:11 -> 01:20:12]  no hay equilibrio.
+[01:20:12 -> 01:20:13]  Entonces,
+[01:20:13 -> 01:20:14]  este,
+[01:20:14 -> 01:20:15]  con racionalidad
+[01:20:15 -> 01:20:16]  los jugadores,
+[01:20:16 -> 01:20:17]  o sea,
+[01:20:17 -> 01:20:18]  gente se van a mover
+[01:20:18 -> 01:20:19]  a otro lado.
+[01:20:19 -> 01:20:21]  Y el otro problema
+[01:20:21 -> 01:20:22]  que puede haber
+[01:20:22 -> 01:20:23]  es que,
+[01:20:23 -> 01:20:24]  obviamente,
+[01:20:24 -> 01:20:25]  eh,
+[01:20:25 -> 01:20:27]  si solamente tenemos estrategias puras,
+[01:20:27 -> 01:20:28]  puede haber,
+[01:20:28 -> 01:20:29]  eh,
+[01:20:29 -> 01:20:30]  este,
+[01:20:30 -> 01:20:31]  matrices que no tengan,
+[01:20:31 -> 01:20:32]  eh,
+[01:20:32 -> 01:20:33]  solución
+[01:20:33 -> 01:20:34]  en estrategias puras.
+[01:20:34 -> 01:20:35]  Pero sí
+[01:20:35 -> 01:20:36]  tienen solución
+[01:20:36 -> 01:20:37]  si consideramos,
+[01:20:37 -> 01:20:38]  este,
+[01:20:38 -> 01:20:39]  estrategias,
+[01:20:39 -> 01:20:40]  este,
+[01:20:40 -> 01:20:41]  probabilistas
+[01:20:41 -> 01:20:42]  y ese es en realidad
+[01:20:42 -> 01:20:43]  el resultado
+[01:20:43 -> 01:20:44]  más importante.
+[01:20:44 -> 01:20:45]  Entonces,
+[01:20:45 -> 01:20:46]  todo,
+[01:20:46 -> 01:20:47]  sí,
+[01:20:47 -> 01:20:48]  pero ahí no tenemos que,
+[01:20:48 -> 01:20:49]  que mover a otro,
+[01:20:49 -> 01:20:50]  a otro marco,
+[01:20:50 -> 01:20:51]  o sea,
+[01:20:51 -> 01:20:52]  eh,
+[01:20:52 -> 01:20:53]  teórico.
+[01:20:53 -> 01:20:54]  Está,
+[01:20:54 -> 01:20:55]  pero como dije que vamos a terminar antes,
+[01:20:55 -> 01:20:56]  está.
+[01:20:56 -> 01:20:57]  Eh,
+[01:20:57 -> 01:20:58]  lo que les sugiero es que
+[01:20:58 -> 01:20:59]  de las diapositivas
+[01:20:59 -> 01:21:00]  si tienen tiempo,
+[01:21:00 -> 01:21:01]  en el último link
+[01:21:01 -> 01:21:02]  hay,
+[01:21:02 -> 01:21:03]  eh,
+[01:21:03 -> 01:21:04]  un link a un capítulo
+[01:21:04 -> 01:21:05]  que tiene un montón de ejemplos
+[01:21:05 -> 01:21:06]  que está bueno
+[01:21:06 -> 01:21:07]  si lo pueden hacer
+[01:21:07 -> 01:21:08]  solo para practicar
+[01:21:08 -> 01:21:09]  y fijar el concepto
+[01:21:09 -> 01:21:10]  de,
+[01:21:10 -> 01:21:11]  de equilibrio
+[01:21:11 -> 01:21:12]  de Nash,
+[01:21:12 -> 01:21:13]  está,
+[01:21:13 -> 01:21:14]  especialmente,
+[01:21:14 -> 01:21:15]  eh,
+[01:21:15 -> 01:21:16]  bueno,
+[01:21:16 -> 01:21:17]  dejamos por acá
+[01:21:17 -> 01:21:18]  y nos vemos entonces,
+[01:21:18 -> 01:21:19]  este,
+[01:21:19 -> 01:21:20]  el miércoles de viernes.
+[01:21:20 -> 01:21:27]  Bien.

@@ -1,0 +1,979 @@
+# Clase6 - sistemas_multiagente (con timestamps)
+
+[00:00:00 -> 00:00:01]  Bueno.
+[00:00:05 -> 00:00:06]  Bien.
+[00:00:06 -> 00:00:08]  Bueno, bueno.
+[00:00:08 -> 00:00:10]  Bueno, vamos a arrancar.
+[00:00:10 -> 00:00:13]  Y como decía recién acá,
+[00:00:13 -> 00:00:16]  hoy vamos a arrancar el...
+[00:00:16 -> 00:00:18]  Sería el último tema de esta primera parte
+[00:00:18 -> 00:00:20]  que entra en el obligatorio 1.
+[00:00:21 -> 00:00:24]  Bien. Es como se tocasticos.
+[00:00:24 -> 00:00:27]  Pero ahora, antes de empezar a leer,
+[00:00:27 -> 00:00:36]  porque hice una actualización de las diapositivas de Alicia y Bruno sobre el equilibrio correlacionado
+[00:00:36 -> 00:00:45]  lo único que quería que vieran, digamos, es sobre todo la última agreguna positiva
+[00:00:45 -> 00:00:47]  Así es.
+[00:00:47 -> 00:00:49]  Sí.
+[00:00:49 -> 00:00:51]  Eh...
+[00:00:51 -> 00:00:53]  Voy a...
+[00:00:53 -> 00:00:55]  ...pasar un poco rápido a casa.
+[00:00:55 -> 00:00:57]  Hola. Gracias.
+[00:00:57 -> 00:00:59]  Esto es la parte de crimen colombiano que ya hemos visto.
+[00:00:59 -> 00:01:01]  Es como si hubiera un caso de
+[00:01:01 -> 00:01:03]  Alicia y Bruno,
+[00:01:03 -> 00:01:05]  o que se iban al cine o al partido.
+[00:01:05 -> 00:01:07]  Eh...
+[00:01:07 -> 00:01:09]  Y como también el libro lo...
+[00:01:09 -> 00:01:11]  lo menciona, entonces
+[00:01:11 -> 00:01:13]  tenemos un poco de tiempo,
+[00:01:13 -> 00:01:16]  el que voy a agregar y se diga este...
+[00:01:16 -> 00:01:19]  Pues nada, presentáselo, que usted lo vea,
+[00:01:19 -> 00:01:22]  después lo puede leer con más tranquilidad,
+[00:01:22 -> 00:01:25]  pero este...
+[00:01:26 -> 00:01:31]  este dibujo que ven acá representa
+[00:01:31 -> 00:01:35]  todos los equilibrios que hay en este ejemplo.
+[00:01:35 -> 00:01:38]  Entonces, afuera, por ejemplo, vamos a repartir,
+[00:01:38 -> 00:01:42]  es esta matriz, también,
+[00:01:43 -> 00:01:52]  que tienen que elegir entre cine y partido, sus preferencias son 2-1 cine-cine, 1-2 por
+[00:01:52 -> 00:02:01]  partido este partido y 0-0 todas las partes. Bueno, es que preferían ir juntos, a ir separados
+[00:02:01 -> 00:02:06]  y bueno, ahí se volvió a seguir y se volvió al parque.
+[00:02:07 -> 00:02:09]  Nos habíamos hecho una discusión,
+[00:02:12 -> 00:02:17]  hay, imágnate, hay dos equilibrios de LAS que son este y este,
+[00:02:17 -> 00:02:18]  estrategias puras,
+[00:02:19 -> 00:02:23]  después habíamos hecho el ejercicio de cómo encontrar
+[00:02:23 -> 00:02:37]  los equilibrios de dash en este caso se puede hacer de 2x2 en estrategias mixtas
+[00:02:37 -> 00:02:45]  que la idea es igualar las utilidades de los jugadores
+[00:02:45 -> 00:02:55]  Esa es la estrategia. Si no lo practicas, que practiques algunos ejemplos,
+[00:02:55 -> 00:03:01]  nada después, capaz que...
+[00:03:01 -> 00:03:06]  Creo que ahora la verdad sería que trabajes en el obligatorio, pero después,
+[00:03:06 -> 00:03:14]  si hay tiempo, hacemos algunos ejercicios, o sea, vale recordar tiempo,
+[00:03:14 -> 00:03:20]  por ahí algunos entran en la evaluación parcial, pero si no lo van, lo pueden ir practicando
+[00:03:20 -> 00:03:23]  si pueden hacer fácil con lápiz y papel.
+[00:03:23 -> 00:03:31]  Pero bueno, teníamos que había dos equilibrios en estrategias puras, hubo un equilibrio en
+[00:03:31 -> 00:03:38]  estrategias mixtas, que eran 1 tercio, 2 tercios, 2 tercios, 1 tercio, bien, los dos tenían
+[00:03:38 -> 00:03:52]  utilidad 2 tercios 2 tercios, bien, este tenía 1 tercio 2 tercios, el otro tenía 2 1 1 2,
+[00:03:52 -> 00:04:02]  y después bueno, habíamos visto que este equilibrio, que había un equilibrio que era
+[00:04:02 -> 00:04:09]  una moneda, que se habíamos llamado gilipollos por relacionar. Lo podíamos expresar como una
+[00:04:09 -> 00:04:22]  conjunta, en ese caso es un medio, o sea, la masa está un medio en elegir cine-cine y el otro medio
+[00:04:22 -> 00:04:33]  de elegir partido partido. Y eso sobre la estrategia conjunta, no se puede escribir como el producto de
+[00:04:33 -> 00:04:43]  estrategias independientes. Y ahí teníamos una utilidad de tres medios.
+[00:04:43 -> 00:04:58]  En realidad, algo que surge pero que no habíamos discutido, es que primero existen infinitos
+[00:04:58 -> 00:05:10]  equilibrios correlacionados. Cualquier punto entre los dos extremos que son 1, 2 y 2, 1,
+[00:05:10 -> 00:05:20]  Este es el segmento 02, estas son las utilidades de Bruno y estas son las utilidades de Alicia.
+[00:05:20 -> 00:05:32]  Acá está, en este extremo, está el 102, que es Alicia, Alicia y el sinel, y Bruno, que es el hijo de X-Panty.
+[00:05:32 -> 00:05:39]  El 1 en este caso es para Bruno, el x está...
+[00:05:43 -> 00:05:45]  Y este es el otro punto.
+[00:05:46 -> 00:05:51]  Y el equilibrio correlacional que había jugado es este, que está acá, la mitad de camino,
+[00:05:51 -> 00:06:05]  la mitad mental, con probabilidad un medio, hacemos ese y probabilidad un medio PP.
+[00:06:05 -> 00:06:13]  Pero eso es el punto medio de la recta que va entre 1 y 2.
+[00:06:13 -> 00:06:19]  Todos los puntos en el medio, todos los puntos de recta
+[00:06:19 -> 00:06:26]  que es en realidad la fórmula, t por uno, t por, se ve?
+[00:06:26 -> 00:06:32]  No se si ustedes llegan a hablar, t2, 1, más 1 menos t por 1, 2,
+[00:06:32 -> 00:06:37]  por eso es un vectorial, que en realidad la recta igual a 3 menos x, o más x igual a 3,
+[00:06:37 -> 00:06:42]  la recta de t, son todos equilibrios progresados,
+[00:06:42 -> 00:06:48]  3,5 más 3,5 da 3
+[00:06:48 -> 00:06:57]  1,5 más 1,5, 1 más 2 da 3, 2 más 1 da 3, cualquier punto en el convexo S suma 3
+[00:06:57 -> 00:07:05]  todo ese segmento de recta, pues ustedes todos tienen la misma utilidad y pueden ver la misma suma utilidad
+[00:07:05 -> 00:07:09]  y además pueden ver que es un equilibrio de correlación
+[00:07:09 -> 00:07:13]  para cualquiera sirve, que importa.
+[00:07:13 -> 00:07:19]  La moneda no tiene por qué ser regular,
+[00:07:19 -> 00:07:24]  no tiene por qué ser con provisión de inventos.
+[00:07:24 -> 00:07:26]  El programa tiene otra propiedad.
+[00:07:27 -> 00:07:33]  Acá, acá, es este que está acá,
+[00:07:33 -> 00:07:37]  ese que era 2x3 o 2x3.
+[00:07:37 -> 00:07:43]  La entidad de utilidad es el otro, es la estrategia mixta.
+[00:07:43 -> 00:07:47]  Y ese tiene una utilidad de lo que no.
+[00:07:47 -> 00:07:53]  Y todos aquellos, se acuerdan que habíamos mencionado el concepto de óptimo alfaretto.
+[00:07:53 -> 00:08:07]  El óptimo alfaretto es un vector de utilidades en el que si nos cambiamos de i, al menos alguno, pierde.
+[00:08:07 -> 00:08:18]  son todos mayores o iguales que cualquier otro y al menos uno es mayor.
+[00:08:18 -> 00:08:22]  Pero todos esos son incomparables entre ellos.
+[00:08:22 -> 00:08:26]  Por ejemplo 2 1 y 1 2 son incomparables.
+[00:08:26 -> 00:08:31]  Pero los dos son óptimos con respecto a los 3 y los 3.
+[00:08:31 -> 00:08:41]  porque si alguno se corre, bueno, cierre. Y todos los puntos de ahí pasan lo mismo.
+[00:08:41 -> 00:08:47]  Son todos incomparables entre ellos, pero son todos mayores y iguales que cualquier otro.
+[00:08:47 -> 00:08:55]  Pero ellos son todos ópticos. Entonces bueno, eso es algo que podrían observar.
+[00:08:55 -> 00:09:06]  Se lo digo porque, bueno, si se enfrentan a una etapa que ustedes pueden llegar a observar en alguna ejecución de algunos de los algoritmos,
+[00:09:06 -> 00:09:11]  a algún equilibrio que no es necesariamente de lo que hemos hablado,
+[00:09:11 -> 00:09:16]  a medida que encuentren algunos que están en esa recta,
+[00:09:16 -> 00:09:20]  o incluso esto.
+[00:09:20 -> 00:09:30]  Porque por ejemplo, Big Red Machine, la teoría dice, converge a un punto de equilibrio correlacional
+[00:09:33 -> 00:09:38]  que incluye a los equilibrios de náuseos, o sea, cualquiera de esos puede llegar a salir
+[00:09:38 -> 00:09:51]  Lo que agregamos para el diputado, porque puede haber muchas soluciones,
+[00:09:51 -> 00:09:56]  sin los que infinitas soluciones, al problema.
+[00:09:56 -> 00:10:02]  Por más sencillito que sea.
+[00:10:08 -> 00:10:27]  Bien, empezó. Y esto, todos estos se llaman, o sea, todos, si unimos al conjunto de este óptimo repareto, eso se llama una frontera.
+[00:10:27 -> 00:10:36]  Pues son todos los que están, si ustedes lo ven en alguna visualización, forman un convexo
+[00:10:36 -> 00:10:43]  y no importa, todos los demás están por debajo de eso.
+[00:10:43 -> 00:10:51]  Bien, y en este caso además es un continuo, es este convexo.
+[00:10:51 -> 00:10:59]  Una consulta. ¿Puedo decir que los equilibrios correlacionados incluyen a los equilibrios
+[00:10:59 -> 00:11:05]  de Nash? ¿Hacer referencia a que el equilibrio de Nash es una acción determinística y que
+[00:11:05 -> 00:11:11]  los correlacionados son estrategias que pueden variar pero logran la misma utilidad conjunta?
+[00:11:11 -> 00:11:18]  No, no, no. Los equilibrios de Nash son estrategias puras en la pista. No es necesariamente
+[00:11:18 -> 00:11:25]  una estrategia pura con la cual también puede ser una distribución de probabilidades.
+[00:11:25 -> 00:11:33]  Lo que digo es que si vamos a ver la definición de equilibrio con el relacionado, lo que hace
+[00:11:33 -> 00:11:42]  es define, o sea, sobre el conjunto de todas las estrategias conjuntas.
+[00:11:42 -> 00:11:53]  sin especificar, sin restringirlas particularmente a que sean independientes,
+[00:11:53 -> 00:11:58]  a que estén definidas como el producto de estrategias individuales.
+[00:11:58 -> 00:12:11]  Los equilibrios de Arash son equilibrios cobertos de los cuales la estrategia conjunta es el
+[00:12:11 -> 00:12:20]  producto de estrategias independientes de cada gente. Pero vos podés, pero nosotros
+[00:12:20 -> 00:12:27]  vimos cómo se puede construir la estrategia conjunta como el producto de
+[00:12:27 -> 00:12:34]  las probabilidades que le asigna la estrategia del cárculo.
+[00:12:35 -> 00:12:41]  Entonces, si vamos a poner la ecuación de la definición de equilibrio corregido,
+[00:12:41 -> 00:12:44]  Si vos agarras el equilibrio de Nash y lo pones en la ecuación de equilibrio colo
+[00:12:44 -> 00:12:52]  y te vas a decir que sí, que funciona. Pero hay más cosas que funcionan.
+[00:12:52 -> 00:13:04]  Si vos agarras por ejemplo este punto de acá, que es un medio de CC y un medio de PP,
+[00:13:04 -> 00:13:09]  no entra en la función de equilibrio de Nash.
+[00:13:09 -> 00:13:18]  porque el equilibrio ya te dice que de hecho tiene que ser un vector de estrategias individuales.
+[00:13:18 -> 00:13:22]  Por eso, ¿entendió?
+[00:13:22 -> 00:13:25]  Sí, es más o menos así.
+[00:13:25 -> 00:13:28]  O sea, los equilibrios relacionados no necesariamente son
+[00:13:28 -> 00:13:31]  en conjunto de estrategias puras.
+[00:13:31 -> 00:13:35]  En el sentido de que hay una mejor que otra, quizás.
+[00:13:35 -> 00:13:41]  En Nash no, en Nash vos tenés estrategias en donde la gente no se arrepía desde lo que tomó.
+[00:13:42 -> 00:13:47]  Por ejemplo, poniendo para definición de Nash. O sea, cuando un equilibrio corresponde no es un equilibrio de Nash.
+[00:13:47 -> 00:13:58]  Y bueno, cuando no puede ser expresado como el producto de estrategias de nivel.
+[00:13:58 -> 00:14:02]  El equilibrio es de bien.
+[00:14:02 -> 00:14:06]  Mejor pararte.
+[00:14:10 -> 00:14:12]  Como así.
+[00:14:12 -> 00:14:14]  Qué pasa.
+[00:14:16 -> 00:14:18]  Bueno.
+[00:14:18 -> 00:14:20]  Bueno.
+[00:14:20 -> 00:14:22]  Claro.
+[00:14:22 -> 00:14:24]  No acuerdo con la definición.
+[00:14:24 -> 00:14:27]  se define como
+[00:14:31 -> 00:14:35]  básicamente, si, cada
+[00:14:36 -> 00:14:39]  que yo puedo compartir con el video
+[00:14:41 -> 00:14:45]  o sea, i, i tiene que ser
+[00:14:45 -> 00:14:49]  tiene que pertenecer al conjunto de las verguis ponces de
+[00:14:49 -> 00:14:52]  i menos i
+[00:14:52 -> 00:15:05]  donde tengo una estrategia conjunta que está definida como un vector de estrategia sumida.
+[00:15:05 -> 00:15:15]  Pero esto es como estar definida, a partir de esto yo defino la conjunta.
+[00:15:15 -> 00:15:22]  ¿No? O sea, esto es un vector de vectores de probabilidad.
+[00:15:22 -> 00:15:29]  Y bueno, por eso, la conjunta está implícitamente definida como así.
+[00:15:45 -> 00:16:09]  La introducción de probabilidad conjuntas, la acción conjuntas que es A1N, es el producto
+[00:16:09 -> 00:16:11]  de las probabilidades que se fijaban
+[00:16:11 -> 00:16:13]  y eso fue como lo vimos
+[00:16:13 -> 00:16:15]  por ejemplo en
+[00:16:15 -> 00:16:17]  matching base
+[00:16:17 -> 00:16:19]  tipo cada uno juega medio y medio y medio y medio
+[00:16:19 -> 00:16:21]  la realidad la confunde es el cuarto
+[00:16:21 -> 00:16:23]  para cada barra
+[00:16:25 -> 00:16:27]  definida a partir de
+[00:16:27 -> 00:16:29]  de los dos
+[00:16:29 -> 00:16:31]  distribuciones que son
+[00:16:31 -> 00:16:33]  medio y medio y medio y medio y medio
+[00:16:35 -> 00:16:37]  en el
+[00:16:37 -> 00:16:53]  Acá, voy a compartir, acá ustedes, por ejemplo, la cura 2,1, o sea la cura que da utilidad
+[00:16:53 -> 00:17:02]  el 2,1, en realidad corresponde al vector 1, o sea, si pongo ahí se abre primero y abro
+[00:17:02 -> 00:17:12]  uno el web y la columna sería el vector 1,0, 1,0, o sea que corresponde al base 0.
+[00:17:12 -> 00:17:23]  Toda la base de la introducción está en el individual.
+[00:17:23 -> 00:17:26]  O sea, no en un 0, no en un 0.
+[00:17:28 -> 00:17:37]  Esa igual sí corresponde a una conjunta que es 1 en el par CC, 0 a todos, a 0 a los otros.
+[00:17:37 -> 00:17:53]  entonces de hecho, si vamos acá, es extremo, 2 para Alicia, 1 para Ulf, la cura, esa la puedo escribir
+[00:17:53 -> 00:18:10]  también tanto como el producto de dos o como el parcc y cero a todo lo demás.
+[00:18:10 -> 00:18:18]  Pero esta, que es un medio para el parcc y un medio para el par, no lo puedo.
+[00:18:18 -> 00:18:25]  de escribir como el producto de cosas en un nivel.
+[00:18:25 -> 00:18:33]  ¿Por qué tiene que estar asociado?
+[00:18:33 -> 00:18:39]  Tiene que ir los dos a elegir C con probabilidad y los dos a elegir E juntos,
+[00:18:39 -> 00:18:42]  simultáneamente con probabilidad y con probabilidad.
+[00:18:42 -> 00:18:56]  lo que cambié a la que está acá, 2 tercios, 1 tercio, 1 tercio, 2 tercios, me da la utilidad
+[00:18:56 -> 00:19:03]  de 2 tercios, 2 tercios, por eso este es un y y y y y y y y y y y, que lo tengo así por
+[00:19:03 -> 00:19:16]  la sección de lados rectos. Pero la solución es un par de vectores. En cambio acá, en este caso acá,
+[00:19:16 -> 00:19:21]  la solución no es un par de vectores. No es un par de vectores que después me da una confundad.
+[00:19:21 -> 00:19:28]  Es una interrupción directamente sobre las acciones de confundos.
+[00:19:28 -> 00:19:47]  Entonces requiere algún tipo de comunicación. En este caso los dos agentes tienen que simultáneamente
+[00:19:47 -> 00:19:57]  elegir, en este caso se los dos o él los dos. No pueden libremente elegir. Para elegirse
+[00:19:57 -> 00:19:59]  dado que lo puede elegir él.
+[00:19:59 -> 00:20:01]  Bueno, ya, aquí.
+[00:20:01 -> 00:20:07]  Y, nada por eso. Esa es la que sale a la vez.
+[00:20:07 -> 00:20:15]  La definición de equilibrio de colaboración, que es esta que está acá,
+[00:20:15 -> 00:20:20]  directamente habla de distribución conjuntas.
+[00:20:20 -> 00:20:28]  Por ejemplo, la definición de Lages, cada uno individualmente es una buena respons a todo lo demás.
+[00:20:28 -> 00:20:37]  Pero si vos agarras una que desatifacen esto, es acá, va funcionando.
+[00:20:39 -> 00:20:45]  Y esto que está acá, de lo difícil en realidad, es realmente la notación,
+[00:20:45 -> 00:20:52]  y eso para seguir la notación del libro, es que sencillamente resiste a cualquier cambio que yo haga.
+[00:20:52 -> 00:20:57]  Es lo que quiere decir eso. Cualquier cambio que hagamos en la...
+[00:20:57 -> 00:21:00]  Esta es la recompensa, ¿sabes?
+[00:21:00 -> 00:21:07]  Y lo que quiere decir que si yo cambio esta acción, que es la de A,
+[00:21:07 -> 00:21:16]  y me dicta el equilibrio con el relacionado, entonces no voy a tener una utilidad mayor.
+[00:21:16 -> 00:21:32]  No existe otra que venga mayor virilidad. Cualquier otra es menor o igual.
+[00:21:32 -> 00:21:51]  está, pero bueno, no requieren algún tipo de simulación, no se puede operar individualmente,
+[00:21:51 -> 00:21:54]  requiere algún tipo de garganta
+[00:21:54 -> 00:22:11]  Bien, si quieren podemos volver a esto, a los ejercicios, si no después hacemos en
+[00:22:11 -> 00:22:17]  algún momento más ejercicios así para ustedes.
+[00:22:17 -> 00:22:25]  Si no hay varios que pueden hacer interact.
+[00:22:25 -> 00:22:36]  Hay uno que es el de las gallinas, que es más complicado que el de los reloj.
+[00:22:36 -> 00:22:51]  Bueno, entonces, si terminamos de redondear este último tema que es el que queda para
+[00:22:51 -> 00:22:55]  el obligatorio, que son los juegos estocásticos.
+[00:22:55 -> 00:23:09]  Digamos, lo que ustedes vieron de agentes inteligentes, que son los procesos de decisión de Marcon,
+[00:23:09 -> 00:23:22]  vamos con 7-D, dan acá, esencialmente son algún tipo de grafo, con una autómata,
+[00:23:22 -> 00:23:34]  modelo de estados y transacciones, pero la hipótesis es que hay un único agente,
+[00:23:34 -> 00:23:40]  una unidad que está recorriéndolo, o sea, el ambiente, ese es el modelo de ambiente,
+[00:23:40 -> 00:23:47]  y hay un agente que toma decisiones y va recorriendo ese modelo, va cambiando el estado
+[00:23:47 -> 00:23:51]  en función de las acciones que el agente va tomando.
+[00:23:51 -> 00:23:59]  Y esencialmente, las acciones, las transiciones,
+[00:23:59 -> 00:24:02]  ya siguen una instrucción de probabilidad,
+[00:24:02 -> 00:24:08]  para cada acción hay una instrucción de probabilidad sobre los Estados siguientes.
+[00:24:10 -> 00:24:15]  Y cada, bueno, que el agente o quien es,
+[00:24:15 -> 00:24:18]  cada vez que hace una acción, una reconciliación.
+[00:24:18 -> 00:24:25]  De este lado, porque ya hemos volado a la palabra krispiki, lo que acabamos de ver,
+[00:24:25 -> 00:24:33]  que hemos de redondear recién, eran los juegos, bueno, tiene muchos nombres, pero juegos en
+[00:24:33 -> 00:24:39]  forma normal, juegos ordinales en una jugada, juegos cardinales en una jugada, juegos matriciales
+[00:24:39 -> 00:24:50]  Pero bueno, en definitiva son esos juegos que son matrices en n-dimensionales, en cualquier dimensión,
+[00:24:50 -> 00:25:01]  donde los elementos de esa matriz son vectores de recompensa. Una recompensa para cada agente.
+[00:25:01 -> 00:25:12]  Ahora, si lo llevamos al concepto de estado, en realidad lo que vimos es simplemente un
+[00:25:12 -> 00:25:22]  estado, nada más y si hace una acción, eso da una recompensa y la cosa termina.
+[00:25:22 -> 00:25:30]  La extensión de eso lo usamos todos en forma normal pero repetida.
+[00:25:30 -> 00:25:33]  Básicamente lo único que son es
+[00:25:35 -> 00:25:42]  eso mismo que está acá con una matriz y una transición con una determinada probabilidad,
+[00:25:42 -> 00:25:44]  es decir, una transición por cada acción.
+[00:25:44 -> 00:25:57]  Como que si queremos hacer de manera repetida el juego de recién entre Alicia y Bruno,
+[00:25:57 -> 00:26:15]  decir por ejemplo que si sale CC, entonces hay una probabilidad de 0,5 de tener una determinada
+[00:26:15 -> 00:26:23]  una recompensa y otra probabilidad, o con probabilidad 0.5 obtener otra recompensa.
+[00:26:23 -> 00:26:40]  De así, repetimos como consecuencia de la acción esa que salió, con una determinada
+[00:26:40 -> 00:26:44]  Probabilidad o Repitido
+[00:26:46 -> 00:26:52]  La versión general de eso es que en lugar de tener un estado
+[00:26:53 -> 00:27:01]  y N agentes y por otro lado un agente y un estado, tengo N agentes, M estados
+[00:27:01 -> 00:27:14]  O sea, imagínense, una gran, ahora vamos a terminar, un gran MDP, pero todos los agentes
+[00:27:14 -> 00:27:22]  jugando simultáneamente dentro de ese MDP. Lo único que cambia esencialmente, en lugar
+[00:27:22 -> 00:27:28]  de tener una recompensa, viene un vector de recompensas. Cada agente va a recibir una
+[00:27:28 -> 00:27:33]  recompensa por haber participado en una acción pop-up.
+[00:27:33 -> 00:27:37]  Y después dentro de eso
+[00:27:37 -> 00:27:44]  que es lo mismo, si a su vez en lugar de tener plena observación del
+[00:27:44 -> 00:27:50]  estado de ambiente, solo observan una parte del estado de ambiente.
+[00:27:50 -> 00:27:52]  esos son los parches que observan
+[00:27:52 -> 00:27:55]  esto es castigliel
+[00:27:55 -> 00:27:57]  básicamente es lo mismo
+[00:27:57 -> 00:28:00]  un MDP es lo que ya tengamos algún tipo de
+[00:28:00 -> 00:28:03]  función de observación de tal manera que cada gente
+[00:28:03 -> 00:28:08]  no ve exactamente el estado del ambiente sino
+[00:28:08 -> 00:28:11]  una parte del estado del ambiente
+[00:28:11 -> 00:28:13]  lo cual puede incluir también
+[00:28:13 -> 00:28:18]  cosas como las que compensan, las reciben los otros, las acciones que hacen los otros
+[00:28:18 -> 00:28:35]  La idea de acción conjunta es que dijiste que la que significa que todos recubren lo que van a hacer o cerran, recubren, y jugan todos a la vez.
+[00:28:35 -> 00:28:37]  Sí, sí, todos jugan a la vez.
+[00:28:37 -> 00:28:45]  Por ahora no cambió eso, así como Alice y el visto jugaban sinocladamente, acá también se...
+[00:28:45 -> 00:28:49]  no se va a comparar en el GUL, en el celeste y afuera tampoco cambia o si?
+[00:28:49 -> 00:28:54]  No, todavía no, después de la próxima, ya después vamos a ver que juegos alternados.
+[00:28:54 -> 00:28:57]  Sí, la próxima, claro.
+[00:28:57 -> 00:29:03]  Ay, ahora Sergio, yo tenía una pregunta similar, a Octavio hablando,
+[00:29:03 -> 00:29:09]  en juegos de alternados, si se trata algo secuencial o de turno que el modelo de estado se ve afectado
+[00:29:09 -> 00:29:12]  por lo que hace el jugador anterior, no entraría en este ejemplo, ¿verdad?
+[00:29:12 -> 00:29:15]  Todavía no, todavía no. Esto sigue siendo singular.
+[00:29:15 -> 00:29:17]  Perfecto.
+[00:29:17 -> 00:29:22]  La fomofunda se hace en manera totalmente sincrónica.
+[00:29:22 -> 00:29:28]  Igual como yo le dije en la primera clase, el ejercicio un poco...
+[00:29:28 -> 00:29:35]  El sistema ejemplo es el de los robots que recolectan manzanas.
+[00:29:35 -> 00:29:44]  a veces la desincronización se puede modelar con, o el asincronismo,
+[00:29:44 -> 00:29:50]  por dicho, se puede modelar con alguien no haciendo nada, pero lo que no está es el tema de los punts.
+[00:29:52 -> 00:29:58]  Explicitamente es definido.
+[00:29:58 -> 00:30:08]  Cuando... Después vamos a ver, puedo hacer de logo, explícitamente el concepto de Google.
+[00:30:08 -> 00:30:18]  Pero bueno, por eso, esto es... A ver, si... Para evitar poner muchas figuras solas, imagínense,
+[00:30:18 -> 00:30:24]  Ahora, cada uno de estos círculos, acá olvídense de los puntos,
+[00:30:24 -> 00:30:28]  de los puntos es así.
+[00:30:28 -> 00:30:32]  Es un estado de un MDP.
+[00:30:32 -> 00:30:36]  El MDP tiene unos tres estados.
+[00:30:36 -> 00:30:42]  Acá no están graficadas todas las transiciones, sino simplemente algunas,
+[00:30:42 -> 00:30:43]  una para cada estado.
+[00:30:43 -> 00:30:49]  Acá les dice, por ejemplo, que vamos a agarrar esta S1,
+[00:30:53 -> 00:31:00]  la acción conjunta A, que corresponde a la acción 2-2, que es esto que vamos a agarrar,
+[00:31:01 -> 00:31:08]  tiene 0,5 de probabilidad de volver al estado S1 y 0,5 de probabilidad de ir al estado 0-2.
+[00:31:08 -> 00:31:24]  y la recompensa de la idea es la utilidad que le da la matriz del juego a la acción
+[00:31:24 -> 00:31:28]  un poco un dado 2 que es 1-1
+[00:31:28 -> 00:31:36]  entonces la acción a 2-2 tiene una recompensa 1-1
+[00:31:36 -> 00:31:38]  Mi nombre es Frank, traigo a Salarita.
+[00:31:38 -> 00:31:40]  ¿Visitos de la Pessif?
+[00:31:40 -> 00:31:42]  Visitos.
+[00:31:42 -> 00:31:44]  Guerrero, Melissi.
+[00:31:44 -> 00:31:46]  Gracias.
+[00:31:46 -> 00:31:48]  ¿Está bien?
+[00:31:48 -> 00:31:50]  Sí, por supuesto.
+[00:31:50 -> 00:31:52]  No es que no lo hagas.
+[00:31:56 -> 00:32:04]  O sea, si ustedes hacen la exploración de lo que está dentro y de los vectores asociados a IERD,
+[00:32:04 -> 00:32:12]  lo que ven es un MDP. Todo lo que es que tiene una temática adicional que es un vector de acciones
+[00:32:12 -> 00:32:19]  es una acción conjunta compuesta de acciones de los agentes y la recompensa es un vector de recompensa
+[00:32:22 -> 00:32:24]  y bueno y así básicamente es eso
+[00:32:24 -> 00:32:36]  Y los fondos subvencibles, lo que quiere decir que eventualmente hay algún tipo de
+[00:32:36 -> 00:32:43]  restricción sobre lo que los agentes ven de ese estado.
+[00:32:43 -> 00:32:48]  Eso va a depender del problema.
+[00:32:48 -> 00:33:01]  esa restricción puede depender explícitamente del problema, puede ya estar planteado como que los agentes no observan todo el estado
+[00:33:01 -> 00:33:11]  o también puede ser consecuencia de una restricción computacional, porque observar todo el estado
+[00:33:11 -> 00:33:18]  tener una cantidad de estados observables extremadamente grande
+[00:33:18 -> 00:33:20]  por lo mejor vamos a la mucla
+[00:33:20 -> 00:33:29]  pero es un MDP, de hecho la definición de lo que es un MDP para múltiples jugadores
+[00:33:29 -> 00:33:33]  es desde este punto acá hasta este punto de acá
+[00:33:33 -> 00:33:37]  esencialmente es un MDP, pues tiene un conjunto de estados
+[00:33:37 -> 00:33:41]  Hay algunos estados que son terminales, hay algunos estados que son iniciales,
+[00:33:41 -> 00:33:45]  o sea, tenemos una distribución de probabilidades sobre los estados iniciales.
+[00:33:46 -> 00:33:47]  Ya vamos a ver.
+[00:33:51 -> 00:33:56]  Un estado que final no puede ser inicial.
+[00:33:59 -> 00:34:02]  Es una restricción que va, útil, pero...
+[00:34:02 -> 00:34:14]  Las acciones del MNDP son vectores de acciones conjuntas y la distribución de probabilidad
+[00:34:14 -> 00:34:27]  sobre las transiciones, que son funciones de la tripla estado, acción, estado,
+[00:34:27 -> 00:34:33]  me dice con qué probabilidad voy del estado S, por la acción A, conjuntas al estado S
+[00:34:33 -> 00:34:38]  y tiene que satisfacer que, entonces, para cada acción y para cada estado
+[00:34:38 -> 00:34:43]  es una distribución de solubilidad. ¿Re? Esta es la definición de MDP.
+[00:34:43 -> 00:34:45]  Está igual.
+[00:34:45 -> 00:34:50]  Después, en lugar de recibir una recompensa individual,
+[00:34:50 -> 00:34:56]  el MDP tira un vector de recompensas, una para cada jugador.
+[00:34:56 -> 00:35:01]  Acá el único que interviene en los jugadores es para definir cuántos arcos tienen.
+[00:35:05 -> 00:35:10]  Y después, para simplificar,
+[00:35:14 -> 00:35:22]  vamos a simplemente decir que una observación es una observación.
+[00:35:22 -> 00:35:32]  la observabilidad que tiene agente es alguna función, hay alguna función que va de par,
+[00:35:32 -> 00:35:40]  estado o opción a una observación. Dice cuánto de esa información cada gente puede observar.
+[00:35:40 -> 00:35:46]  Explicitamente o no está definido ahí por ser cualquier cosa, en general suele ser alguna
+[00:35:46 -> 00:35:56]  una restricción de S o de S por A, por eso está fácil.
+[00:35:56 -> 00:36:08]  De hecho, en el libro está bastante complicado, pero eso creo que es suficiente para entender
+[00:36:08 -> 00:36:11]  la abstracción que se hace.
+[00:36:11 -> 00:36:20]  Y de hecho, de la manera que lo vamos a ver, es totalmente invisible, transparente para los agentes,
+[00:36:20 -> 00:36:24]  porque los agentes no van a ver ese.
+[00:36:26 -> 00:36:29]  No van a ver como ese, van a ver alguna observación.
+[00:36:30 -> 00:36:33]  Esa está definida en el web.
+[00:36:35 -> 00:36:38]  Por más que después definamos todas las cosas en función de ese,
+[00:36:38 -> 00:36:45]  lo que los agentes van a percibir como estado en realidad son observaciones
+[00:36:45 -> 00:36:52]  que van a contener parte o todo lo detectado y la acción conjunta o
+[00:36:52 -> 00:36:55]  solamente su acción individual.
+[00:36:55 -> 00:37:03]  Hay algún ejemplo de observación parcial que puede estar, que no es necesariamente un problema de
+[00:37:03 -> 00:37:11]  digamos, de cómo está planteado en sí mismo el sistema sino por un tema computacional, es que es
+[00:37:11 -> 00:37:21]  bastante típico, es que en los sistemas de tipo que son grillas, cosas pueden ser
+[00:37:21 -> 00:37:35]  de ser tridimensionales o tridimensionales, es definir un entorno alrededor del agente.
+[00:37:35 -> 00:37:42]  No sé si usaron en Agentes Intelligence algún estatístico, no sé qué problemas resolvieron
+[00:37:42 -> 00:37:43]  en Agentes.
+[00:37:43 -> 00:37:59]  ¿Cleaf walking hacíamos que tenia grilla? ¿Y veían toda la grilla o veían parte de
+[00:37:59 -> 00:38:04]  la grilla? Veíamos toda la grilla. El que te podías caer
+[00:38:04 -> 00:38:06]  al precipicio.
+[00:38:06 -> 00:38:08]  Las ellas pueden ir por arriba.
+[00:38:08 -> 00:38:10]  No.
+[00:38:10 -> 00:38:12]  Bueno, en general,
+[00:38:12 -> 00:38:14]  digo, si lo hacen
+[00:38:14 -> 00:38:16]  en la gente es tipicamente por un tema
+[00:38:16 -> 00:38:18]  confundacional.
+[00:38:18 -> 00:38:20]  No porque miraban si estaba sucediendo
+[00:38:20 -> 00:38:22]  o no había tomado la vida.
+[00:38:24 -> 00:38:26]  Pero, o sea, no miraban
+[00:38:26 -> 00:38:28]  que había, no sabían si
+[00:38:28 -> 00:38:30]  si les daba toda la observación.
+[00:38:30 -> 00:38:42]  Por ejemplo, en este caso, si tenemos en estas circunstancias lo que la carnalidad está observando,
+[00:38:42 -> 00:38:50]  este nivel de observabilidad, lo que está haciendo es que eventualmente una gente no ve donde está
+[00:38:50 -> 00:38:59]  porque solo ve 3 para cada lab o 2 si quieres para cada lab incluyendo la vista
+[00:38:59 -> 00:39:03]  ¿todo el objetivo es agarrar manzanas?
+[00:39:03 -> 00:39:06]  el objetivo acá es levantar la mayor cantidad de manzanas posible
+[00:39:06 -> 00:39:12]  ¿pueden tener 1,9%? o sea es como hay manzanas
+[00:39:12 -> 00:39:23]  No, lo que dice es que la información que hay en cada asociado, cada robotito, cada individuo es la cantidad de peso que puede levantar.
+[00:39:23 -> 00:39:31]  Entonces, lo que dice es que alguien que tiene una capacidad 2 puede levantar una manzana de peso 1, una manzana de peso 2.
+[00:39:31 -> 00:39:36]  Creo que todas las manzanas que están en el termínio tienen peso menos cual que dos.
+[00:39:36 -> 00:39:48]  o sea que esto así es un juego completamente competitivo porque no es competitivo porque
+[00:39:48 -> 00:39:56]  este puede levantar solo las manzanas de peso, para este puede levantar todo pero este no,
+[00:39:56 -> 00:40:01]  usted va a necesitar la ayuda de este para el otro.
+[00:40:02 -> 00:40:09]  Pero bueno, lo que quiere decir acá es que este va a ver solamente dos manzanas alrededor suyo y este ve una manzana,
+[00:40:09 -> 00:40:12]  pero no sabe dónde está el otro.
+[00:40:14 -> 00:40:20]  Por ejemplo, para en este caso, para el robot del PSU que tiene capacidad 2 puede ser irrelevante,
+[00:40:20 -> 00:40:28]  relevante, pero para el de uno es importante llegar antes y así forzar.
+[00:40:28 -> 00:40:36]  En el ejemplo que lo he puesto en uno de hoy, a manzana de 3, ahí está.
+[00:40:36 -> 00:40:40]  Claro, puede llegar a ver manzana que puede no ser levantada.
+[00:40:40 -> 00:40:45]  La cuestión es que solamente acá es el tema de la subvertida parcial.
+[00:40:45 -> 00:40:58]  Eso lo que les va a hacer es que eventualmente les va a generar equivalencias entre estados,
+[00:40:58 -> 00:41:08]  porque dos estados que dan la misma observación van a ser indistinguibles para un agente.
+[00:41:08 -> 00:41:38]  Entonces, bien, otra cosa que es común a Gar que pongo de la riega de el todia de
+[00:41:38 -> 00:41:42]  es hablar de historia, de la secuencia.
+[00:41:42 -> 00:41:49]  Pero bueno, básicamente, una historia es una secuencia de estado-acción,
+[00:41:49 -> 00:41:54]  eso es como igual que el MDP, está bien, el MDP,
+[00:41:54 -> 00:41:59]  y un episodio es una historia o una secuencia que también es una estómaga.
+[00:41:59 -> 00:42:15]  Esto es lo mismo que el estado de opción, estado de opción, estado de opción, estado
+[00:42:15 -> 00:42:16]  de opción.
+[00:42:16 -> 00:42:22]  Y bueno, cómo está definida, exactamente igual de cómo están definidas los MDP.
+[00:42:22 -> 00:42:27]  O sea, el primer estado es un estado inicial.
+[00:42:27 -> 00:42:30]  Eso es lo que me dice eso. El primer estado es un estado inicial.
+[00:42:30 -> 00:42:43]  Cuando hacen un reset del juego, el ambiente se resetea en un estado inicial cualquiera
+[00:42:43 -> 00:42:47]  al acuerdo a su distribución de probabilidades sobre el estado inicial.
+[00:42:47 -> 00:42:58]  Después, obviamente lo que nos interesa es que las secuencias sean generadas por alguna
+[00:42:58 -> 00:43:07]  policy, por alguna estrategia. También no es que se definizcan realmente las secuencias
+[00:43:07 -> 00:43:17]  generadas por el MP. Entonces, cada acción sigue una distribución de probabilidad que
+[00:43:17 -> 00:43:27]  es, esas acciones que están ahí son acciones conjuntas, son vectores de acción, la acción a sub i
+[00:43:29 -> 00:43:33]  de cualquier instante, en realidad ahí lo defino solamente para instante t porque lo que estoy
+[00:43:33 -> 00:43:37]  diciendo es que importa, yo tengo esta secuencia y si la quiero continuar, cualquier acción al t,
+[00:43:37 -> 00:43:43]  y eso lo quiero continuar, lo que tengo que hacer es sortear una acción a sub t
+[00:43:45 -> 00:43:50]  que puede ser generada por la policy. La única
+[00:43:53 -> 00:44:02]  cosa que cambia explícitamente cuando tenemos observabilidad parcial es que lo voy a hacer sobre
+[00:44:02 -> 00:44:10]  que se puede observar de la historia y típicamente va a ser esa observación de HDT,
+[00:44:10 -> 00:44:18]  quiere decir típicamente voy a observar algo del último estado, típicamente solamente observamos
+[00:44:18 -> 00:44:25]  algo del último estado, pero eventualmente los agentes pueden construir a partir de la historia que vieron,
+[00:44:25 -> 00:44:33]  obviamente, proyectada sobre las observaciones, cualquier cosa, y pueden construir su distribución
+[00:44:33 -> 00:44:51]  de probabilidad sobre eso. No sé si en agentes agregaron información a los estados, o sea,
+[00:44:51 -> 00:45:00]  las observaciones que recibían o que agarraban la observación y así como venía, la consideraban
+[00:45:00 -> 00:45:08]  un escarno. Pero la gente puede hacer cualquier cosa con sus observaciones. Se puede construir un modelo.
+[00:45:08 -> 00:45:22]  Bueno, cuando hacen Deep Reinforced Learning, lo que hacen es transformar la observación
+[00:45:22 -> 00:45:33]  en un vector de features que transforma la red de alguna manera. Ahí ya construyen un
+[00:45:33 -> 00:45:38]  modelo de un estado, que se viene una observación y lo pasa por la red y sobreda...
+[00:45:38 -> 00:45:47]  y lo representa en ese espacio latente que tiene la red y ahí le devuelve una acción.
+[00:45:47 -> 00:45:54]  Imagínense que nada de lo único que hacen en el proceso es que en lugar de agarrar el estado,
+[00:45:54 -> 00:46:01]  o sea, la gente nunca ve la historia completa y solamente las observaciones.
+[00:46:03 -> 00:46:11]  No me da cuenta que la formación está haciendo, porque estamos grabando lo de eso.
+[00:46:11 -> 00:46:23]  Sí, primero que lo pueda hacer, después que lo haga o que no, otro tema, pero podemos hacer cualquier cuantitación.
+[00:46:23 -> 00:46:31]  Por eso está escrito así, pero simplemente dice, de la historia que se ve, se observa,
+[00:46:31 -> 00:46:38]  o sea, la historia que ocurrió a nivel del MDP, bueno, de eso observamos algo, puede ser todo,
+[00:46:38 -> 00:46:48]  tal cual, porque la observación es total, o puede haber una especie de filtro que nos deja ver solo
+[00:46:48 -> 00:46:52]  por eso está así de manera abstracta
+[00:46:55 -> 00:47:04]  pero el estado siguiente es obtenido, porque eso ocurre en el ambiente
+[00:47:05 -> 00:47:12]  entonces ahí sí es ese, el ambiente se mueve de ese T a ese T más 1
+[00:47:14 -> 00:47:15]  por más que yo no lo observe
+[00:47:18 -> 00:47:25]  Por ejemplo, lo que ocurre en el ambiente y en lo que ocurre en la fe.
+[00:47:25 -> 00:47:28]  La gente solamente usa lo que observa.
+[00:47:28 -> 00:47:31]  El ambiente es el ambiente.
+[00:47:31 -> 00:47:36]  Esa es la cuestión de lo que tenemos que tener en cuenta.
+[00:47:36 -> 00:47:44]  Y eventualmente el nivel de observabilidad que tenemos cambia, porque la policía puede ser una si tenemos observabilidad total.
+[00:47:44 -> 00:47:55]  Entonces teniendo información de dónde están los otros robots, puede ser que la puente sea distinta a que si no tengo información.
+[00:47:55 -> 00:48:04]  Por ejemplo, fíjense, si justo la observabilidad que tiene este agente es tan chiquita que no ve las manzanas alrededor.
+[00:48:04 -> 00:48:08]  Básicamente está ciega, puede estar por aquí al lado porque no ve nada de manzanas.
+[00:48:08 -> 00:48:33]  Así como en agentes, en los MDP tiene una definición más denotacional,
+[00:48:33 -> 00:48:44]  que es decir que el retorno esperado, la esperanza de los retornos acumulados sobre todo, de la secuencia,
+[00:48:44 -> 00:48:52]  toda esa parte, yo fui acá también, pero fui directamente a la versión que nos interesa,
+[00:48:52 -> 00:48:57]  la versión más operacional, la versión que nos va a dar directamente que es QGaming para muchas gentes
+[00:48:57 -> 00:49:01]  y nos ahorramos toda la otra en matemática.
+[00:49:01 -> 00:49:04]  Y digo que sí, ahí es un error de vídeo que ahora no es esto.
+[00:49:04 -> 00:49:13]  Entonces, directamente, esto que vamos a hacer es, hoy directamente al valor de gente pensando en su versión ecuacional,
+[00:49:13 -> 00:49:17]  de la cual podríamos derivar value of interactions, ¿de acuerdo?
+[00:49:17 -> 00:49:23]  No lo vamos a hacer, pero digo, esta es la definición que nos da value of interactions.
+[00:49:23 -> 00:49:29]  O sea, el valor de una policy o el valor de la conciencia.
+[00:49:31 -> 00:49:36]  Entonces, y usamos la historia y no los estados.
+[00:49:38 -> 00:49:46]  Esa es la única diferencia, la única y único cambio con respecto a un MDP clásico.
+[00:49:47 -> 00:49:55]  Entonces, el valor para la gente y de una policy P en la historia H
+[00:49:55 -> 00:50:10]  es la esperanza sobre las acciones conjuntas, acá es sobre las acciones conjuntas, no es
+[00:50:10 -> 00:50:24]  sobre sus propias acciones solamente. En fin, la estrategia es una estrategia conjunta
+[00:50:24 -> 00:50:29]  que puede ser, como decíamos, el producto de estrategias individuales.
+[00:50:30 -> 00:50:34]  Pero el valor está dado por la estrategia conjunta.
+[00:50:34 -> 00:50:37]  Después, vamos a ver cómo la aprende y todo lo demás, pero...
+[00:50:37 -> 00:50:40]  Hay una estrategia conjunta
+[00:50:40 -> 00:50:44]  que va a ser el objetivo de encontrarla
+[00:50:48 -> 00:50:49]  que más tenga un valor.
+[00:50:51 -> 00:50:52]  Y acá...
+[00:50:52 -> 00:51:04]  siempre la policy P se aplica a lo que los agentes observan de lector.
+[00:51:06 -> 00:51:18]  Si esta policy P es el producto de polices individuales, entonces ahí ponen su B en
+[00:51:18 -> 00:51:23]  todos lados y el afente i tiene una observación i
+[00:51:31 -> 00:51:34]  todo eso
+[00:51:35 -> 00:51:38]  o sea
+[00:51:38 -> 00:51:55]  A, B, OX, DH, si está dada como un vector de polis individuales va a ser el producto
+[00:51:55 -> 00:52:08]  y se ha subido la observación que la gente quiere
+[00:52:08 -> 00:52:15]  Si es una correlación, nada más
+[00:52:25 -> 00:52:31]  por... perdón, como de... perdón
+[00:52:31 -> 00:52:35]  No sé qué me acordé, si aquí pasamos
+[00:52:35 -> 00:52:39]  Ah sí, pero bueno, se ha rellagado a esto, después de que fue así
+[00:52:39 -> 00:52:43]  por QDHA
+[00:52:43 -> 00:52:47]  QSUB, acá sí
+[00:52:47 -> 00:52:52]  QSUB es lo mismo que en MPD clásico
+[00:52:52 -> 00:53:03]  O sea, el QI de HA es, y esto también es una versión resimulada y simplificada.
+[00:53:03 -> 00:53:09]  La forma más complicada, pero a mi me importa, es, esencialmente, esto es la esperanza sobre,
+[00:53:09 -> 00:53:24]  bueno es a donde vaya el ambiente cuando se ejecuta la acción A en el estado conjunto A en el estado S,
+[00:53:26 -> 00:53:36]  la esperanza y cada gente va a acumular su recompensa, eso sí va a acumular su recompensa,
+[00:53:36 -> 00:53:43]  está bien, pero bueno esta es la versión descontada, está bien y va a ir al siguiente estado.
+[00:53:45 -> 00:53:55]  Típicamente acá es solamente HSPRI, a mí lo podemos ver solamente en la versión de manejo estado.
+[00:53:55 -> 00:54:05]  Esto es la historia A, H, a la cual es concatenada la acción A y el estado siguiente S'.
+[00:54:05 -> 00:54:09]  Y S, que está acá, es el último estado de H.
+[00:54:09 -> 00:54:23]  Si quieren simplificar acá y poner ese acá en lugar de H en todos lados y poner el clima
+[00:54:23 -> 00:54:29]  sensualmente lo mismo sería la opción más barcomiana que solamente dependemos del estado
+[00:54:29 -> 00:54:30]  actual.
+[00:54:30 -> 00:54:40]  Y bueno, nada, el retorno de penado es, bueno, como tenemos que ganar carga de algún lado
+[00:54:40 -> 00:54:46]  y eventualmente el ambiente es no determinístico, el truco es no determinístico,
+[00:54:46 -> 00:54:51]  tenemos que aclarar la esperanza sobre todos los estados iniciales, este programa FI.
+[00:54:51 -> 00:55:02]  Y eso me da el valor de la policía conjunta pi para el AGNI.
+[00:55:02 -> 00:55:13]  Ahora, el problema que vamos a tener ahora es computarlo y encontrar el pi que maximiza esto, que es offset.
+[00:55:13 -> 00:55:15]  Vamos a conseguir el offset.
+[00:55:15 -> 00:55:17]  Cuento caso al equilibrio.
+[00:55:17 -> 00:55:24]  Bueno, vamos a hacer una pausa. Bien, son las 8, vamos a hacer una pausa, 10 minutos.
+[00:55:24 -> 00:55:31]  Y después seguimos con como lo decimos algo mismo para aprender.
+[00:55:31 -> 00:55:36]  Para, Sergio, una duda antes de que vayas al corte.
+[00:55:36 -> 00:55:46]  En el último término de la segunda acuación que tenés, el valor evaluado de una historia
+[00:55:46 -> 00:55:47]  que es h as'
+[00:55:47 -> 00:55:53]  h es la historia y as', en este caso, era historia más acción.
+[00:55:53 -> 00:55:55]  Ah, es acción as'.
+[00:55:55 -> 00:55:56]  Sí.
+[00:55:56 -> 00:55:58]  Y s' es todo siguiente.
+[00:55:58 -> 00:56:02]  Perfecto, ahí quedó claro. O sea, es la historia, le agrega una acción y un estado resultante.
+[00:56:02 -> 00:56:10]  Sí, sí, sí. Si querés, te pones para simplificar, pones el lugar de h y pones ese
+[00:56:10 -> 00:56:14]  que sería el estado en el que estás, sin olvidar la victoria,
+[00:56:14 -> 00:56:22]  y nada más, que esto te daría igual que la versión de MNM clásico.
+[00:56:22 -> 00:56:27]  el punto sería simplemente el valor de la estrategia aquí que en el estado se print
+[00:56:27 -> 00:56:32]  H siempre apunta entonces al último estado de la historia
+[00:56:32 -> 00:56:37]  o en este contexto?
+[00:56:37 -> 00:56:42]  general, puede ser cualquier historia, B, D, C, para cualquier historia
+[00:56:42 -> 00:56:44]  a toda la historia, desde el comienzo hasta...
+[00:56:44 -> 00:56:50]  al final lo terminamos haciendo así, no usamos esa versión general,
+[00:56:50 -> 00:56:54]  es que es una versión simplemente que usa el stave en que estás.
+[00:56:54 -> 00:56:57]  Ok, entendido, gracias.
+[00:56:59 -> 00:57:05]  Y bueno, en realidad esta ecuación no aparece explícitamente en la observabilidad.
+[00:57:05 -> 00:57:11]  La observabilidad aparece acá, solamente acá, cuando le aplico PIC a la cuestión.
+[00:57:13 -> 00:57:17]  Este valor está impactado por la observabilidad, pero...
+[00:57:17 -> 00:57:23]  acá en esta parte no aparece porque esto es todo lo que viene del ambiente
+[00:57:23 -> 00:57:27]  la probabilidad con que el ambiente se mueve y la recompensa que la gente tiene
+[00:57:30 -> 00:57:30]  bien
+[00:57:33 -> 00:57:35]  y 10 retomamos
+[00:58:17 -> 00:58:29]  en junta, el problema que tenemos es calcular o aprender una estrategia, es exactamente igual
+[00:58:29 -> 00:58:45]  que lo que hacíamos para un único agente. Ahora, acá para seguir y usar la misma
+[00:58:45 -> 00:58:51]  anotación del libro, si van no hay confusión. Olvidamos la parte...
+[00:58:51 -> 00:58:53]  ¿Socorriente?
+[00:58:53 -> 00:58:55]  Sí, pues se pilla acá.
+[00:58:55 -> 00:58:57]  No, que le dice...
+[00:58:57 -> 00:58:59]  Dios.
+[00:58:59 -> 00:59:01]  Ah, listo.
+[00:59:01 -> 00:59:03]  Ahí está.
+[00:59:03 -> 00:59:05]  Este...
+[00:59:05 -> 00:59:07]  Olvídemosnos de las historias,
+[00:59:07 -> 00:59:11]  olvídemosnos de la observabilidad parcial,
+[00:59:11 -> 00:59:13]  y vamos a usar esta.
+[00:59:13 -> 00:59:30]  pero en realidad eso que llamamos estado acá termina siendo lo que la gente observa, pero para
+[00:59:30 -> 00:59:50]  y todo eso que después es automático hablamos de esta. Y así como la versión inmediata de QLearning,
+[00:59:50 -> 00:59:56]  acá en muchos países se llama Independent QLearning, que si se acuerdan cuando vimos
+[00:59:56 -> 01:00:01]  vimos dos algoritmos de aprendizaje que ustedes implementaron o están implementando o están
+[01:00:01 -> 01:00:10]  experimentando para los juegos en forma normal que eran fictitious play y regret matching y
+[01:00:10 -> 01:00:21]  también hemos catalogado cómo fictitious play era un tipo de aprendizaje que era de las clases
+[01:00:21 -> 01:00:28]  que llamamos de Asian modeling, modelado de agentes que lo que hace es tomar a
+[01:00:28 -> 01:00:32]  TPCS Play e intenta aprender la estrategia que están jugando los otros.
+[01:00:34 -> 01:00:40]  En cambio, Regret matching lo único que hace es mirar sus propios
+[01:00:40 -> 01:00:50]  propios regrets, pero aunque tiene información sobre los dos
+[01:00:50 -> 01:00:56]  Y después había algo que dijimos que en ese momento que volvimos a ver
+[01:00:56 -> 01:00:58]  era la pretensión de GameBorstance
+[01:00:58 -> 01:01:03]  Básicamente la gente solamente usa las recompensas de su propio policy
+[01:01:03 -> 01:01:06]  Bueno, independent to learning es de ese tipo
+[01:01:06 -> 01:01:16]  pero ella solo mira su propia recompensa y su acción
+[01:01:18 -> 01:01:25]  o mejor dicho, lo que la observabilidad le permite
+[01:01:26 -> 01:01:33]  su acción va a significar solamente su acción y su recompensa
+[01:01:33 -> 01:01:35]  y el escaban que está la meta
+[01:01:36 -> 01:01:41]  de última, si hay información sobre la acción que se cubo en el estado del ambiente
+[01:01:41 -> 01:01:45]  y eso es observable, pero es precisamente nuestra.
+[01:01:47 -> 01:01:55]  Bien, y en grande línea, si ustedes sacan el sub i a eso, es QLN.
+[01:01:55 -> 01:02:06]  Si se acuerdan, se acuerdan de QLN, tenemos una matriz, estado de opción,
+[01:02:06 -> 01:02:21]  Cú, donde se van guardando el valor de la acción A para el estado S.
+[01:02:21 -> 01:02:31]  Acá es a su B. Solamente agente guarda para su propio espacio S.
+[01:02:31 -> 01:02:38]  Y después entonces repite, repite y va generando episodios.
+[01:02:38 -> 01:02:48]  Arranca el estado inicial, cualquiera sea, y repite hasta que termine.
+[01:02:48 -> 01:02:57]  Y después usa epsilon grid para elegir la acción.
+[01:02:57 -> 01:03:00]  Exploit o Explore.
+[01:03:00 -> 01:03:11]  Con alguna probabilidad epsilon, elige una acción uniforme, esto quiere decir uniforme, de su espacio de acción.
+[01:03:11 -> 01:03:14]  Epsilon grid.
+[01:03:14 -> 01:03:17]  y si no, usan una acción que maximiza Q
+[01:03:19 -> 01:03:27]  Esto, para explicar, sería una operación victorial, por eso está escrito acá
+[01:03:27 -> 01:03:33]  La acción que maximiza Q en el estado V
+[01:03:34 -> 01:03:40]  En un país es NP armaz Q
+[01:03:40 -> 01:03:51]  Y ahora, ahí viene un poco el tema, es que obviamente en pool learning, ahí hay un step,
+[01:03:51 -> 01:03:57]  o sea voy a hacer la acción en el ambiente y obtener la observación.
+[01:03:57 -> 01:04:05]  Pero acá qué pasa, tenemos que pensar que mientras juego la parte difícil de visualizar,
+[01:04:05 -> 01:04:07]  es que imagínese que todo el mundo está haciendo lo mismo.
+[01:04:07 -> 01:04:19]  y a gente, o sea, a ambiente hay que mandarle una acción conjunta, ¿también? Entonces
+[01:04:19 -> 01:04:30]  todos los agentes eligen su acción y sincrónicamente, se acabejan, conjunta, le mandan esa acción
+[01:04:30 -> 01:04:37]  a la misma. Ambiente ejecuta esa acción y le devuelve a cada uno de manera separada
+[01:04:37 -> 01:04:45]  su recompensa. Hay una fase de sincronización que nos da.
+[01:04:45 -> 01:04:52]  Imagínense qué ocurre. O sea, ocurre en algún momento entre esta línea y esta línea.
+[01:04:52 -> 01:05:03]  Cada gente elige su acción y después simultáneamente todos ejecutan la acción conjunta en el ángulo.
+[01:05:03 -> 01:05:05]  luego vamos a ver el poder y luego vamos a ver el error.
+[01:05:09 -> 01:05:19]  Pero después de que esa acción conjunta se ejecuta en ambiente, cada agente observa su propia
+[01:05:19 -> 01:05:28]  recompensa y lo que el ambiente le devuelva como observación posible. Por eso dice observar R i y S'
+[01:05:28 -> 01:05:35]  eventualmente ese prima es distinto para cada uno de los agentes
+[01:05:39 -> 01:05:42]  vamos, un nuevo que estamos en esta situación
+[01:05:44 -> 01:05:48]  bueno para este agente su estado es este
+[01:05:51 -> 01:05:57]  para este agente su estado es este, este elige por ejemplo una acción capaz que es
+[01:05:57 -> 01:06:05]  es moverse hacia el oeste y este elige una acción que es moverse hacia el este.
+[01:06:05 -> 01:06:11]  Cada uno elige eso usando la policía de opción grid.
+[01:06:11 -> 01:06:20]  Se arma el vector por donde opción conjunta moverse al oeste, moverse al este, se ejecuta
+[01:06:20 -> 01:06:26]  en el ambiente y el siguiente éste va a estar acá y éste...
+[01:06:26 -> 01:06:31]  En realidad para levantar la manzana no hay que ver si hay que hacer low
+[01:06:31 -> 01:06:36]  Y levanta
+[01:06:38 -> 01:06:46]  Y después ahí este agente va a tener como recompensa uno
+[01:06:46 -> 01:06:51]  Vamos a ver si la recompensa. Este va a obtener como recompensa 0.
+[01:06:51 -> 01:07:01]  Y van a tener su nuevo estado que básicamente es centrar este 3x3, acá y acá.
+[01:07:07 -> 01:07:11]  Cada uno está haciendo Google Learning sobre lo que ve.
+[01:07:11 -> 01:07:19]  Pero hay esa signalización porque el ejecutado de acción como.
+[01:07:19 -> 01:07:28]  Una vez que se ejecuta la acción como una, se obtiene la recompensa y el nuevo estado se actualiza como
+[01:07:28 -> 01:07:30]  ¿Qué obedece?
+[01:07:30 -> 01:07:40]  O sea, la nueva estimación es igual a la vieja estimación más alfa por la recompensa
+[01:07:40 -> 01:07:53]  r i es la recompensa vista, o sea, es r i de s a s' a sub i r a s' más gamma por el máximo
+[01:07:53 -> 01:08:04]  Es el más sencillo de implementar.
+[01:08:11 -> 01:08:20]  La ventaja es simple. Escala. ¿Por qué escala? Porque básicamente la complejidad para cada
+[01:08:20 -> 01:08:30]  espacial para cada agente es el espacio de estado por el espacio de acciones,
+[01:08:30 -> 01:08:41]  grande, grande, pero no tenemos que pagar el costo adicional del producto de las acciones,
+[01:08:41 -> 01:08:47]  que puede ser sobre el espacio de acción, que puede ser muy grande.
+[01:08:47 -> 01:08:58]  La verdad es que puede ser, por bien o como esperas, nada, para vos, para otras cosas.
+[01:08:58 -> 01:09:04]  Pero bueno, es sencillo.
+[01:09:04 -> 01:09:12]  Obviamente acá está bueno también porque acá está lo mismo que en Qlearning, que hay descuento,
+[01:09:12 -> 01:09:20]  entonces el valor contiene obviamente el valor sin el descuento.
+[01:09:25 -> 01:09:31]  Pero bueno, este es fácil, lo único que tenemos que ver es que podemos ver el código, está el tema este.
+[01:09:31 -> 01:09:39]  De la manera como implementamos acá es en dos etapas. Es realmente una primera etapa donde
+[01:09:39 -> 01:09:43]  cada agente hace la selección de su acción.
+[01:09:46 -> 01:09:49]  Entonces todos los agentes se le irán haciendo una acción.
+[01:09:51 -> 01:09:58]  Siguiendo independiently, básicamente la Epsilon Game Warning. Después se juega y después se hace
+[01:09:58 -> 01:10:11]  un update de Google. Todos eligen, juegan, hacen un labio. Y este reset en realidad no está acá,
+[01:10:11 -> 01:10:17]  sino está afuera. Todos receten y todos ejecutan a partir del mismo tome de emisión.
+[01:10:17 -> 01:10:19]  y se disputan las mismas.
+[01:10:19 -> 01:10:32]  De hecho, está implícito en el libro, que es así que ocurre,
+[01:10:32 -> 01:10:41]  pero no está pensado en una implementación distribuida que es lo que hacemos acá.
+[01:10:41 -> 01:10:55]  Después les presento este por complejitud, pero no lo vamos a usar, tiene muchos inconvenientes.
+[01:10:55 -> 01:11:11]  Próximamente es interesante porque este fue uno de los primeros que se presentaron en
+[01:11:11 -> 01:11:20]  en este parque de 1894, una versión científica de esto, pero lo que había era esto, que es
+[01:11:22 -> 01:11:27]  realmente mucho más simple como acá, que en una de las templos que es
+[01:11:29 -> 01:11:33]  intuitivamente lo que hacemos es lo que hacen los agentes, es cada vez que caen en un estado
+[01:11:33 -> 01:11:39]  resuelven el juego que hay en ese estado, usando las técnicas de teoría de juego que vimos, por
+[01:11:39 -> 01:11:41]  por ejemplo, resolver el delivio en hash,
+[01:11:42 -> 01:11:46]  este, usando las técnicas que vimos, por ejemplo,
+[01:11:46 -> 01:11:49]  fictitious play, regret matching o,
+[01:11:49 -> 01:11:54]  en esa época, el resolviendo algún sistema de ecuaciones
+[01:11:54 -> 01:11:56]  para, este, encontrar el delivio en hash.
+[01:11:56 -> 01:11:58]  Básicamente es eso.
+[01:12:00 -> 01:12:06]  Lo que pasa es, básicamente eso es un poquito distinto,
+[01:12:06 -> 01:12:13]  lo que cambia es que este juego que está acá es estático en cc
+[01:12:13 -> 01:12:18]  pero yo lo que quiero es una estrategia
+[01:12:18 -> 01:12:22]  imagínense que caen en ese estado de diferentes lugares
+[01:12:22 -> 01:12:27]  la utilidad que va a tener ese estado va a depender de donde llegan
+[01:12:27 -> 01:12:31]  de alguna manera, como el de Belkert que llegan
+[01:12:31 -> 01:12:36]  y si llegan por varios caminos distintos a un estado
+[01:12:36 -> 01:12:44]  en lo que eso se propaga el tiempo, por ejemplo, de por dónde llegaron, de a dónde llegaron, etc.
+[01:12:44 -> 01:12:51]  Entonces, en lugar de resolver este juego, que sería resolverlo una vez por todas,
+[01:12:51 -> 01:12:56]  se construye un juego donde en lugar de haber uno, uno, cero, uno, dos, etc.,
+[01:12:56 -> 01:13:04]  lo que hay ahí es la matriz de Q, sobre todas las acciones conjuntas.
+[01:13:04 -> 01:13:16]  En lugar de ver uno, vea el Q del estado S1, de la acción, conjunta uno.
+[01:13:16 -> 01:13:24]  Q cada vez que llegan a un estado, tienen una matriz distinta, van a resolver el juego
+[01:13:24 -> 01:13:37]  ese está así seleccionando una acción, jugarla, inescalable.
+[01:13:37 -> 01:13:45]  Lo que está ahí es eso, es cambia, es lo mismo Exit on Gritty, pero en lugar de bueno,
+[01:13:45 -> 01:13:52]  no hay más que digamos eso, ah, llega un estado, hay un juego, instancia de juego,
+[01:13:52 -> 01:14:01]  con la batería cube lo resuelvo y así elijo de nuevo una charco. Cada uno elige una acción,
+[01:14:03 -> 01:14:08]  también, pero esa acción elige cada uno y viene de resolver un juego de manera conjunta,
+[01:14:08 -> 01:14:12]  o sea, aunque lo resuelvan de manera individual, pero si es un equilibrio esto me da una acción conjunta.
+[01:14:14 -> 01:14:18]  Y tiene que ser resuelto de esa manera porque todo tiene que elegir la misma acción.
+[01:14:18 -> 01:14:25]  ¿Qué pasa en un juego que tiene igual desequilibrio de narro?
+[01:14:25 -> 01:14:32]  Esto se muere, es medio complicado.
+[01:14:32 -> 01:14:45]  Pero ahí sí, vamos a usar la acción conjunta, la recompensa conjunta, y actualizamos si tiene básicamente la misma estructura,
+[01:14:45 -> 01:14:51]  porque tiene una acción, jugarla, observar y actualizarla, pero hay que andar resolviendo
+[01:14:51 -> 01:15:04]  ese juego que no es simple, todo el tiempo, este sol está acá y después lo que va a ser el ARMAX
+[01:15:04 -> 01:15:12]  Ahora es, bueno, cuánto vale esa policy, cuánto vale la policy de equilibrio en esta.
+[01:15:14 -> 01:15:21]  Vamos a la otra, si imagina que hay que hacer, imagina si todo el tiempo
+[01:15:21 -> 01:15:24]  tuvieran que estar resolviendo un physical en el adaptado de lo que van,
+[01:15:24 -> 01:15:31]  o un pre-read matching, no lo vamos a hacer pasar por esto.
+[01:15:31 -> 01:15:40]  Pero bueno, desde el punto de vista más allá de ese tema de escalamidad, que el día más
+[01:15:40 -> 01:15:49]  bien más importante es que no hay un aprendizaje propiamente dicho, así como está planteado,
+[01:15:49 -> 01:15:51]  de la policy de cada estado.
+[01:15:51 -> 01:15:56]  en realidad es efectivo resolviendo un juego, por ejemplo,
+[01:15:56 -> 01:16:03]  nada, fijando un equilíbrio de nash que es el que resuelve ese juego ahí
+[01:16:03 -> 01:16:11]  no es que cada gente o juntamente se aprende, capaz que hay otro
+[01:16:11 -> 01:16:14]  y bueno
+[01:16:14 -> 01:16:22]  De hecho ese tema en SACE, se ataba desde la bibliografía no recomendada, pero en la
+[01:16:22 -> 01:16:29]  bibliografía nacional hay un technical report que habla un poco de eso, en el caso concreto
+[01:16:29 -> 01:16:40]  de dos jugadores que ya planteaban hacerlo de otra manera, hacerlo como TG Play, con
+[01:16:40 -> 01:16:48]  la idea de Fetish Play, es decir, modelar que cada gente, en lugar de ir de no veo nada, veo solo lo mío
+[01:16:48 -> 01:17:02]  a veo todo y resuelvo un juego buscando los equilibrios es como Fetish Play y bueno, veo lo que juegan todos
+[01:17:02 -> 01:17:09]  y aprendo lo que es un modelo que están jugando el resto de las personas
+[01:17:11 -> 01:17:13]  sin resolver
+[01:17:13 -> 01:17:15]  así
+[01:17:15 -> 01:17:20]  y el otro algoritmo que es más sencillo
+[01:17:20 -> 01:17:27]  es sensabilizar el término del espacio porque cada gente tiene que modelar también
+[01:17:27 -> 01:17:31]  la acción conjunta, que lo que pasa también en Pistilio y Play
+[01:17:31 -> 01:17:44]  Entonces, en lugar de tener una matriz de estado, de acción de la agenda y, tenemos acción de todo esto, que es la acción conjunta.
+[01:17:44 -> 01:17:46]  ¿Qué por lo tanto?
+[01:17:46 -> 01:17:48]  Rato.
+[01:18:02 -> 01:18:04]  En realidad es que es solo un S5.
+[01:18:04 -> 01:18:08]  Bueno, sí.
+[01:18:08 -> 01:18:10]  Sí porque, o sea, sí.
+[01:18:10 -> 01:18:12]  Eso reemplaza el counting.
+[01:18:12 -> 01:18:17]  mejor el contar modelan directamente la interrupción de probabilidades.
+[01:18:17 -> 01:18:21]  Lo que hacemos es contar
+[01:18:21 -> 01:18:28]  qué acciones han jugado. Acá lo que haremos es estimamos la interrupción de probabilidades que están jugando.
+[01:18:28 -> 01:18:33]  Esto es acción.
+[01:18:33 -> 01:18:40]  ¿Qué acción juega J en el estado S?
+[01:18:40 -> 01:18:50]  Esta es la estimación que tiene el agente i de la distribución de probabilidad, de la policy que está jugando el agente cota
+[01:18:50 -> 01:18:58]  en cada uno de los resultados y lo arranca con una estimación a un porno.
+[01:18:58 -> 01:19:09]  En ese sentido, parecido a el start, parecido a the real magic porque se arranca con una estimación también.
+[01:19:09 -> 01:19:13]  pero fíjense que es para toda gente diferente de I
+[01:19:15 -> 01:19:21]  porque así como en Christian Play puede haber response acá también va a jugar perfect response
+[01:19:23 -> 01:19:24]  está bien
+[01:19:25 -> 01:19:29]  y dónde va a estar la policy que va a aprender el Q
+[01:19:29 -> 01:19:34]  o sea, la que va a estudiar
+[01:19:34 -> 01:19:44]  la agente y o sea la policía de agente y es siempre el alarmas de que eso no
+[01:19:44 -> 01:19:49]  dijimos explicitamente pero lo que está aprendiendo
+[01:19:49 -> 01:19:54]  la policía está jugando y está aprendiendo
+[01:19:54 -> 01:20:02]  en Qlearni es la fungla que va a maximizar el foo
+[01:20:02 -> 01:20:06]  eso es lo mismo que hacían acá
+[01:20:06 -> 01:20:14]  ahora les explico, pero vean, la fungla es la misma
+[01:20:14 -> 01:20:23]  hacen epsilon, mili, eligen una, un, pero no es problemático, eligen uniforme
+[01:20:23 -> 01:20:27]  y si no una que maximiza algo, ahora está.
+[01:20:28 -> 01:20:36]  Pero a diferencia de independent Qline, ahora sí observamos todo.
+[01:20:36 -> 01:20:41]  Estamos observando todo, estamos haciendo agent modeling, estamos modelando lo que juegan los otros.
+[01:20:45 -> 01:20:47]  Y no es que se llama JAL por joint action learning,
+[01:20:47 -> 01:20:49]  están realmente aprendiendo la acción conjunta.
+[01:20:49 -> 01:20:51]  Están aprendiendo la acción conjunta.
+[01:20:51 -> 01:20:56]  Tengo un modelo que lo está jugando todo lo demás.
+[01:20:56 -> 01:20:59]  Bien.
+[01:20:59 -> 01:21:10]  Para todos los otros agentes, si esta es la diferencia, esencial es que tengo que actualizar la policy que está jugando.
+[01:21:10 -> 01:21:13]  Exactamente igual que Fictitious Play.
+[01:21:13 -> 01:21:20]  sencillamente el cuento la podría haber directamente agrandado en un
+[01:21:20 -> 01:21:22]  fontillo y actualizado usando el conté.
+[01:21:22 -> 01:21:27]  O sea, este para todos vota actualizar lo que están jugando nosotros,
+[01:21:27 -> 01:21:29]  y le está poniendo igual que un pichuple.
+[01:21:33 -> 01:21:40]  Y después hago la actualización de Q. Ahora, ahora sí viene la parte interesante, es
+[01:21:40 -> 01:21:53]  antes se usaba solamente Q de la gente para actualizar la policy, pero ahora no, porque
+[01:21:53 -> 01:22:04]  ahora sí tiene información de la policy conjunta, entonces esto no es otra cosa que la utilidad
+[01:22:04 -> 01:22:16]  de la policy conjunta. Y eso cómo se calcula? Y bueno, se calcula utilizando, por un lado,
+[01:22:16 -> 01:22:23]  la parte de la policy que se aprende, que se estima de los otros agentes, es como, si
+[01:22:23 -> 01:22:33]  hay un problema con TSP, van a hacer esto, van a construir una policy conjunta, que es
+[01:22:33 -> 01:22:40]  el producto de la fórmula donde una parte es lo que estimaron de los demás y otra parte es
+[01:22:41 -> 01:22:54]  la que viene jugando a gente que es la ver respons. Donde esta parte de acá es la estimación de lo que están jugando los demás.
+[01:22:54 -> 01:23:00]  le hicimos para uno solo, no? hasta ahora
+[01:23:00 -> 01:23:01]  como?
+[01:23:01 -> 01:23:03]  el fictitious player no
+[01:23:03 -> 01:23:09]  si, pero de lo mismo, la estimación que hace el fictitious player no esta jugando en los demás
+[01:23:09 -> 01:23:15]  no porque, o se ve en realidad no, la multiplicación no la hay cerca
+[01:23:15 -> 01:23:19]  porque no tiene nada que multiplicar si no uno solo
+[01:23:19 -> 01:23:26]  para hacer la best response tienen que multiplicar por la utilidad
+[01:23:26 -> 01:23:43]  pero bueno, de dónde viene la utilidad, porque best response dirían, en fictitious play
+[01:23:43 -> 01:23:55]  que es la multiplicación de la recompensa por la probabilidad de esa recompensa,
+[01:23:55 -> 01:23:59]  pero por la probabilidad de la acción conjunta.
+[01:24:01 -> 01:24:09]  Acá lo que hacen es fijan la acción, porque están haciendo realmente tu
+[01:24:09 -> 01:24:15]  por ver, estamos haciendo acción pura, fijan la acción
+[01:24:16 -> 01:24:21]  y acá donde está la cosa es para cada dieta, la parte completa es para
+[01:24:21 -> 01:24:26]  todas las otras posibilidades que tienen
+[01:24:28 -> 01:24:35]  de la acción conjunta. Pero bueno, el tema de esto no es para
+[01:24:35 -> 01:24:40]  todas las acciones conjuntas sino que es lo que uno hace en fictitious play, en fictitious play tienen que
+[01:24:40 -> 01:24:48]  agarrar y construir ese support con todas las acciones conjuntas, posible, acá es la que observamos
+[01:24:50 -> 01:25:02]  dado que observe la acción A, entonces cuál es la utilidad del estado S hacer la acción A
+[01:25:02 -> 01:25:15]  en las primeras líneas donde haces el armar, de esos 100 contodos, acá, claro, pero para cada una
+[01:25:17 -> 01:25:26]  porque este es el armar de ese, ahí está, y de eso te quedas perfectamente con la, acá,
+[01:25:26 -> 01:25:37]  Acá la acción está fija pero vos tenéis que variar sobre todo para encontrar el máximo.
+[01:25:37 -> 01:25:38]  Si.
+[01:25:38 -> 01:25:39]  Bien.
+[01:25:39 -> 01:25:42]  Pero si, sin revelar, victitious play.
+[01:25:42 -> 01:26:06]  Esta parte es lo mismo, solo que en lugar de calcular la B response, multiplicando por
+[01:26:06 -> 01:26:31]  R calculan usando FOOT y la respuesta es esta, es la que maximiza la utilidad y esto es el valor de la máxima en el TOSIF.
+[01:26:36 -> 01:26:55]  Entonces, este es más complejo y más computacionalmente demandante que el otro, pero bueno, puede aprender
+[01:26:55 -> 01:27:07]  correlaciones que, por ejemplo, podrían resolver situaciones para, por ejemplo, en este ejemplo,
+[01:27:07 -> 01:27:19]  en el cual este podría tomar acciones, por ejemplo, para acercarse a este, para poder
+[01:27:19 -> 01:27:29]  levantar una o si hay dos que tienen por ejemplo dos robots que tienen capacidad 1 se pueden dar
+[01:27:29 -> 01:27:38]  cuenta que hay una acción conjunta que es por ejemplo acercarse a una manzana de peso 2 de
+[01:27:38 -> 01:27:46]  de tal manera de levantarla, un. Sin embargo, individualmente, como solo ven, las acciones
+[01:27:46 -> 01:27:52]  que me toman por ser de tal estrategia no la expongo.
+[01:27:52 -> 01:28:05]  Bueno, a ver, y ese es el último.
+[01:28:05 -> 01:28:20]  Esto lo van a ver mejor cuando lo intenten implementar, pero si tienen implementado
+[01:28:20 -> 01:28:26]  su play, esto no va a salir, y básicamente pasan primero por independent u-learning que es más sencillo
+[01:28:27 -> 01:28:29]  y este no va a ir implementado
+[01:28:34 -> 01:28:42]  lo que yo les quería mostrar, por lo que hace que me tengo que conectar, estamos hablando
+[01:28:43 -> 01:28:46]  de una red, a ver si ahora me puedo conectar
+[01:29:16 -> 01:29:22]  es
+[01:29:22 -> 01:29:33]  padre
+[01:29:33 -> 01:29:40]  behalf
+[01:30:40 -> 01:30:42]  En el comps.
+[01:30:42 -> 01:30:44]  ¿De acuerdo?
+[01:30:44 -> 01:30:46]  Sí.
+[01:30:48 -> 01:30:50]  Ehh...
+[01:30:50 -> 01:30:52]  ...
+[01:30:52 -> 01:30:54]  ...
+[01:30:54 -> 01:30:56]  ...
+[01:30:56 -> 01:30:58]  ...
+[01:30:58 -> 01:31:00]  ...
+[01:31:00 -> 01:31:02]  ...
+[01:31:02 -> 01:31:04]  A ver...
+[01:31:04 -> 01:31:06]  ...
+[01:31:06 -> 01:31:08]  ...
+[01:31:08 -> 01:31:14]  Yo creo que ustedes en el código ya tienen el foraging, ¿no?
+[01:31:14 -> 01:31:19]  Y tienen esa parte, por usted decir que ustedes tienen todo el código de Simultaneous Games.
+[01:31:19 -> 01:31:22]  Hay un zip que se llama foraging.
+[01:31:22 -> 01:31:27]  No, pero cuando...
+[01:31:27 -> 01:31:31]  En el código de Simultaneous Games no tienen todo ya...
+[01:31:31 -> 01:31:32]  ¿Si son?
+[01:31:32 -> 01:31:33]  ¿No?
+[01:31:33 -> 01:31:36]  O sea, si te puedo alterar.
+[01:31:36 -> 01:31:45]  ¿De qué usaron para Fictitious Plane? ¿No estaba la parte de Pedicure Learn o todo eso?
+[01:31:45 -> 01:31:46]  No.
+[01:31:46 -> 01:31:47]  No?
+[01:31:47 -> 01:31:51]  Yo me acuerdo que era un chillo que estaba en la mesa y fue el de Smash.
+[01:31:51 -> 01:31:55]  ¿Y la gozada que tenemos? No, no sé si se fue eso o no.
+[01:31:55 -> 01:31:56]  Ah, ok.
+[01:31:56 -> 01:31:57]  O que tres, nada más.
+[01:31:57 -> 01:32:03]  Me parece... bueno, no es cuando venga el Martino, pero creo que estaba.
+[01:32:03 -> 01:32:07]  pero bueno puede ser que no, no importa ahora se lo...
+[01:32:07 -> 01:32:13]  Si es el que le dio un pato a la gente, hay más específicos que no se ha ido a dar
+[01:32:15 -> 01:32:17]  Ah no acá no está
+[01:32:17 -> 01:32:19]  ¿Crees que es un monumento que está?
+[01:32:19 -> 01:32:23]  Es pero para el piso, no se sabe que es, no lo he podido dar
+[01:32:23 -> 01:32:27]  Eh está pero está, igual está esto no?
+[01:32:27 -> 01:32:29]  Claro, claro, está por allí en la ca
+[01:32:29 -> 01:32:32]  ¿Qué es lo que necesita?
+[01:32:32 -> 01:32:34]  Esto.
+[01:32:34 -> 01:32:36]  Creo que foraging se alcanza.
+[01:32:36 -> 01:32:38]  Si no igual ahora lo vemos.
+[01:32:38 -> 01:32:43]  Si no igual les muestro la notebook y después lo...
+[01:32:43 -> 01:32:49]  cuando venga un artículo lo chequeamos.
+[01:32:49 -> 01:32:51]  Yo no tengo ese foraging.
+[01:32:51 -> 01:32:57]  No, no creo que no está... no estaba en este...
+[01:32:57 -> 01:32:59]  le puedo apagar, le puedo hacer simultáneos
+[01:32:59 -> 01:33:01]  la mano
+[01:33:01 -> 01:33:03]  pero no se si le va
+[01:33:03 -> 01:33:05]  si esto le va a andar
+[01:33:05 -> 01:33:07]  lo que dice Forage y una K
+[01:33:07 -> 01:33:09]  no?
+[01:33:09 -> 01:33:11]  no, no le apagaste simultáneos
+[01:33:11 -> 01:33:13]  en portualito
+[01:33:13 -> 01:33:15]  acá el código, en Outlast dice
+[01:33:15 -> 01:33:17]  código base para simultáneos
+[01:33:17 -> 01:33:19]  ah, bueno
+[01:33:19 -> 01:33:21]  oye, el K me agarra, oye, te apaga el K
+[01:33:21 -> 01:33:23]  tenes que ir a
+[01:33:23 -> 01:33:25]  a que lado de atrás de la obra, si?
+[01:33:25 -> 01:33:28]  Si, que hay un obligatorio y un obligatorio
+[01:33:29 -> 01:33:32]  Esta dentro del obligatorio, en la moza
+[01:33:33 -> 01:33:43]  Si, pero lo que no se si esta la ultima version, eso despues ahora lo chequeamos con Martin
+[01:33:44 -> 01:33:50]  Pero bueno, ahi hay igual para ver también a Youtube
+[01:33:50 -> 01:33:58]  por allí es el de los robots que conecta manzanas
+[01:34:00 -> 01:34:07]  y lo que les quiero mostrar es este
+[01:34:11 -> 01:34:15]  ven por un momento el camionero
+[01:34:20 -> 01:34:26]  ahi esta, bien
+[01:34:26 -> 01:34:35]  ahi esta, notebook
+[01:34:35 -> 01:34:40]  ok, bien
+[01:34:40 -> 01:34:47]  vamos a ver primero el juego
+[01:34:47 -> 01:35:03]  y déjenme ahora hacerles vuestro point render, esto no anda muy bien en marcas.
+[01:35:03 -> 01:35:17]  Esta es una configuración sencilla, tienen por ejemplo, todo vendo, una manzana que tiene
+[01:35:17 -> 01:35:19]  capacidad 2
+[01:35:19 -> 01:35:21]  no no no estas compartiendo
+[01:35:21 -> 01:35:23]  no estoy compartiendo
+[01:35:23 -> 01:35:25]  estoy viendo si
+[01:35:25 -> 01:35:27]  estoy compartiendo
+[01:35:27 -> 01:35:29]  yo veo también
+[01:35:29 -> 01:35:31]  si si si, acá en clase
+[01:35:31 -> 01:35:33]  porque este va a tener esta
+[01:35:33 -> 01:35:35]  no no no
+[01:35:35 -> 01:35:37]  ok
+[01:35:37 -> 01:35:39]  ahi esta
+[01:35:39 -> 01:35:41]  ahi esta
+[01:35:41 -> 01:35:43]  eso es el foraging
+[01:35:43 -> 01:35:45]  si
+[01:35:45 -> 01:35:58]  acá se ve el salamanzada que tiene peso 2 y hay dos agentes que tienen capacidad 2k
+[01:36:02 -> 01:36:12]  bien esa es la configuración de uso, si vamos a lo que observamos en texto,
+[01:36:12 -> 01:36:17]  ese es el render pretty printing.
+[01:36:17 -> 01:36:20]  Tenemos...
+[01:36:20 -> 01:36:23]  ¿Cuántas manzanas había?
+[01:36:23 -> 01:36:26]  Bueno, una.
+[01:36:26 -> 01:36:29]  No perdí la noción.
+[01:36:29 -> 01:36:32]  Había una manzana.
+[01:36:32 -> 01:36:35]  La manzana está en la posición 6 y luego 2.
+[01:36:35 -> 01:36:38]  Eso es lo que me dice eso.
+[01:36:38 -> 01:36:41]  Vamos a seguir en la manzana.
+[01:36:41 -> 01:36:47]  o sea está en la posición 6, 2, 3 y 2 es el peso
+[01:36:53 -> 01:37:02]  está en la posición 1, 2, 3, 4, 5, 6, 0, 1, 2
+[01:37:02 -> 01:37:11]  y tiene peso 2, ese es el 6 o 2 que parece acá
+[01:37:15 -> 01:37:24]  y acá y el otro es 4 6 2 0 1 2, o sea, toda la observabilidad total le está dando la posición
+[01:37:24 -> 01:37:41]  de los dos robots, esa es 4-6 y la capacidad y este es 0-1-2 y se los da en orden, o sea en realidad
+[01:37:41 -> 01:37:52]  le dice el primero es él. ¿Y cómo se les hubiera manzana o manjete? Y bueno, va a haber todo el
+[01:37:52 -> 01:38:00]  choclo de manzana primero y después todo. ¿Y si lo comieron algún? ¿Siempre al final va la cantidad de gente?
+[01:38:02 -> 01:38:11]  Es una pregunta, hay que... realmente creo que van, si se van comiendo creo que van desapareciendo,
+[01:38:11 -> 01:38:13]  Si van comiendo se van desapareciendo.
+[01:38:13 -> 01:38:20]  Porque en una configuración donde no está la manzana en el 12 no hay ninguna manzana.
+[01:38:20 -> 01:38:23]  Hay un tipo de fijo, la cantidad de agentes es fijo.
+[01:38:23 -> 01:38:25]  La cantidad de agentes es fijo.
+[01:38:25 -> 01:38:27]  Entonces puede dar la cantidad de agentes.
+[01:38:27 -> 01:38:29]  La cantidad de agentes es fijo.
+[01:38:29 -> 01:38:31]  No sabe.
+[01:38:31 -> 01:38:42]  Igual esta información normalmente no la tienen que parcial, salvo que se pongan a hacer cosas de observabilidad parcial
+[01:38:42 -> 01:38:51]  la observación que nada de eso, esto es lo que ve a gente serio y lo que ve gente dura, pero eso es una buena idea
+[01:38:51 -> 01:39:01]  Entonces voy a dejar el render ahí, lo voy a dejar ahí porque no lo voy a hacer nunca más
+[01:39:01 -> 01:39:12]  y acá es donde le decía a Hitler, ya está dada cómo se juega un episodio
+[01:39:12 -> 01:39:19]  la parte importante es esta, que estaba acá, todo el reto de script y printing y todo eso
+[01:39:19 -> 01:39:27]  En realidad este no es el interesante, el interesante es este.
+[01:39:30 -> 01:39:32]  Esta parte acá.
+[01:39:38 -> 01:39:44]  Ah, no, porque este es el random.
+[01:39:49 -> 01:39:51]  Este es el rango, ahora no.
+[01:39:51 -> 01:39:53]  Esta es una cuadra.
+[01:39:53 -> 01:39:54]  ¿También?
+[01:39:54 -> 01:40:01]  Este no muestra lo que yo le quería mostrar de la acción y la ableta.
+[01:40:01 -> 01:40:02]  Claro.
+[01:40:02 -> 01:40:05]  Voy a...
+[01:40:05 -> 01:40:08]  Esto, por ejemplo, independientemente de la ableta.
+[01:40:08 -> 01:40:09]  Acá.
+[01:40:09 -> 01:40:13]  Usted no va a ganar nada porque ya está resuelto esto.
+[01:40:13 -> 01:40:16]  No voy a revelar nada.
+[01:40:16 -> 01:40:20]  Estos son ejemplos de configuraciones.
+[01:40:20 -> 01:40:24]  Ahora les muestro.
+[01:40:24 -> 01:40:28]  Lo importante es esto.
+[01:40:28 -> 01:40:32]  Acá voy a elegir la configuración 0
+[01:40:32 -> 01:40:36]  del juego. Voy a crear un poralline con la configuración
+[01:40:36 -> 01:40:40]  con esa configuración. Es esta que está acá.
+[01:40:40 -> 01:40:44]  La configuración
+[01:40:44 -> 01:40:51]  Esta gente del juego y del game, pero lo importante es que es el game este.
+[01:40:52 -> 01:40:59]  De 5x5 con dos piezas, con dos players, una manzana, es eso.
+[01:41:00 -> 01:41:11]  Uno F es One Foot, dos P es Two Player, acá hay un 3 player, One Foot y es cooperativo, me da otra configuración.
+[01:41:11 -> 01:41:18]  cuando dice cooperativo que en general hay al menos alguna manzana que requiere más de un jugador para el ganado
+[01:41:18 -> 01:41:20]  vamos a ver si está, vamos allá
+[01:41:23 -> 01:41:25]  esto lo expliqué
+[01:41:26 -> 01:41:31]  pero esto lo que les quería mostrar por el todo
+[01:41:32 -> 01:41:36]  es esta parte del Play Game
+[01:41:36 -> 01:41:48]  y acá es el mobile de In-Card, y eso está todo en el todo los agentes jugando al software
+[01:41:48 -> 01:41:51]  el reset de global
+[01:41:58 -> 01:42:05]  y acá está la separación, hay una elección de las acciones, cada agente
+[01:42:05 -> 01:42:13]  selecciona una acción, entonces imagínense que este action implementa la acción de
+[01:42:13 -> 01:42:20]  independent killer de elegir la acción, esencialmente es epsilon griddy
+[01:42:22 -> 01:42:31]  con Q, esto le da una acción para cada gente, se arma la acción global
+[01:42:31 -> 01:42:35]  conjuntas y se puede la acción conjunta
+[01:42:35 -> 01:42:43]  y después cada gente hace un update de su situación
+[01:42:43 -> 01:42:48]  en la otra línea de ajustos, lo borré
+[01:43:18 -> 01:43:26]  solo, si no hay un loop repetir para todos los agentes, donde en cada estado cada gente elige
+[01:43:26 -> 01:43:31]  y después cada gente hace su apel.
+[01:43:31 -> 01:43:34]  Esa es la porcentaje.
+[01:43:36 -> 01:43:42]  Bien, acá es complicado porque hay verbos y todo lo demás, pero el reto es
+[01:43:42 -> 01:43:52]  Entonces, lo que ustedes hacen, ejecuciones de entrenamiento,
+[01:43:52 -> 01:44:07]  vamos a ver el plot que es más fácil, le da algo así, por ejemplo, hay 10 iteraciones
+[01:44:07 -> 01:44:13]  y la evolución de las recompensas de cada gente evolucionando de esa manera.
+[01:44:13 -> 01:44:21]  Esta única ejecución de independent queue.
+[01:44:21 -> 01:44:24]  También le voy a poner un poquito más de episodio para que...
+[01:44:31 -> 01:44:32]  Lo que es esto.
+[01:45:02 -> 01:45:06]  No arrancó de cero, sino que continuó la ejecución.
+[01:45:15 -> 01:45:17]  Creo que no hizo más.
+[01:45:17 -> 01:45:19]  Creo que tiene que hacer más.
+[01:45:19 -> 01:45:26]  ¿words, V podium, etc.?
+[01:45:26 -> 01:45:40]  Cecildo mi
+[01:45:40 -> 01:45:44]  para tratar de dar una base a otra.
+[01:45:48 -> 01:45:50]  Está más que en la otra parte.
+[01:45:51 -> 01:45:55]  No le importa, no le da más. En realidad lo que ven es que...
+[01:45:55 -> 01:45:58]  le digo otra.
+[01:45:58 -> 01:46:06]  Pero en la gente 1, pero de la gente 0, la gente 0 es el que está...
+[01:46:06 -> 01:46:19]  La gente 0 es este, que está más cerca de la manzana que este que es el agente 1.
+[01:46:19 -> 01:46:26]  Entonces el independent quillermin este termina aprendiendo que tiene 5 movimientos que lo
+[01:46:26 -> 01:46:29]  llevan a la manzana y este como mínimo tiene 6 movimientos.
+[01:46:29 -> 01:46:33]  1, 2, 3, 4, 5, 6 y de hecho 7 y levantamos.
+[01:46:33 -> 01:46:37]  Este tiene 1, 2, 3, 4, 5 y levantamos.
+[01:46:37 -> 01:46:42]  Entonces al final, en independencia que viene, que es totalmente, en este caso,
+[01:46:42 -> 01:46:50]  totalmente competitivo, bueno, la gente encuentra el camino más rápido.
+[01:46:50 -> 01:47:08]  y termina generando esa estrategia que el agente 0 se lleva la manzana y el agente 1.
+[01:47:08 -> 01:47:19]  Una cosa que hay que ver, la recompensa acá es una fórmula sobre la cantidad de manzanas
+[01:47:19 -> 01:47:24]  y el peso de las manzanas y todo lo demás, lo que está normalizado es 0 y 1, siempre
+[01:47:24 -> 01:47:32]  van a ver algo que varía entre 0 y 1, siempre es, entonces, y como es, puede ser competitivo
+[01:47:32 -> 01:47:37]  cooperativo, pero es de suma constante.
+[01:47:37 -> 01:47:45]  Entonces la suma es la que va a ser.
+[01:47:48 -> 01:47:53]  Entonces era eso, esencialmente lo que le quería...
+[01:47:53 -> 01:48:00]  Acá tenés la respuesta a lo que preguntaste. En realidad las manzanas quedan pero aparecen comidas.
+[01:48:00 -> 01:48:04]  No es que se borran, sino que aparece menos uno menos uno.
+[01:48:04 -> 01:48:09]  Es decir, que había alguna manzana ahí, pero que ahora fue comida.
+[01:48:09 -> 01:48:12]  Y también, como usted dice, que manzana fue comida.
+[01:48:12 -> 01:48:17]  Es decir, obviamente si hay una manzana que todavía está, puede ser la primera, porque la segunda fue comida.
+[01:48:17 -> 01:48:20]  No sé si hay una...
+[01:48:20 -> 01:48:22]  Sí, creo que...
+[01:48:22 -> 01:48:26]  Ah, justo el ejemplo que tengo acá son solamente una manzana.
+[01:48:26 -> 01:48:29]  si crean alguno con manga manzana lo van a ver
+[01:48:30 -> 01:48:34]  bien, entonces yo lo dejo acá
+[01:48:34 -> 01:48:41]  lo que queda es saber cuál es la versión de foraging que se tiene que coger
+[01:48:41 -> 01:48:43]  es la que está ahora disponible
+[01:48:43 -> 01:48:46]  que tiene foraging
+[01:48:46 -> 01:48:48]  no la cambié
+[01:48:48 -> 01:48:50]  esa es la que está
+[01:48:50 -> 01:48:54]  ellos la tienen que dejar junto con simultánea ray
+[01:49:24 -> 01:49:33]  y por allí en dos notebooks, esa es la que leí y después este, y puede que se acabe la doble
+[01:49:33 -> 01:49:41]  la foraging es jugar random, en la que juegas random, si es que la foraging es jugar random
+[01:49:41 -> 01:49:53]  y es solo para que pueda, foraging está ahí para que ustedes puedan si quieren explorar un poco el ambiente
+[01:49:53 -> 01:49:55]  jugar con el rendo y todo lo demás.
+[01:49:55 -> 01:49:59]  Y ahí está armada para que
+[01:49:59 -> 01:50:01]  pargan
+[01:50:01 -> 01:50:03]  una gente random.
+[01:50:03 -> 01:50:05]  Y después
+[01:50:05 -> 01:50:07]  la equal de
+[01:50:07 -> 01:50:09]  Ebisecto.
+[01:50:09 -> 01:50:11]  Que tiene
+[01:50:11 -> 01:50:13]  algunas configuraciones.
+[01:50:13 -> 01:50:15]  Después preden, arranquen con esas configuraciones
+[01:50:15 -> 01:50:17]  después
+[01:50:17 -> 01:50:19]  pueden probar con otras.
+[01:50:19 -> 01:50:21]  Cualquier cosa después nos dicen.
+[01:50:21 -> 01:50:29]  pero primero arranque con eso. Yo creo que la de 8x8 de 3 players y con una funda ya estarán muy bien.
+[01:50:31 -> 01:50:46]  No está la audiencia. Bueno, ya estamos por eso. Y ahora si tienen consultas de lo que van haciendo, nos van diciendo.
+[01:50:46 -> 01:50:50]  el armonás, el techo del labar y armonas salas.

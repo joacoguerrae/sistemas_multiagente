@@ -1,0 +1,1154 @@
+# Clase9 - sistemas_multiagente (con timestamps)
+
+[00:00:00 -> 00:00:03]  Subtítulos por la comunidad de Amara.org
+[00:00:30 -> 00:00:33]  Me molesta más el eco que no sos pez.
+[00:00:33 -> 00:00:38]  No, el problema es que cuando esto se frena la máquina y eso, la grabación queda imposible.
+[00:00:38 -> 00:00:39]  Así? No, no.
+[00:00:39 -> 00:00:43]  Pero ahora en realidad hay que cuidar después.
+[00:00:43 -> 00:00:46]  Yo estaba escuchando la que hace el otro día,
+[00:00:46 -> 00:00:50]  para estar repasando y le dije, no es que en una vos mismo se va a cerrar la puerta.
+[00:00:50 -> 00:00:55]  Bueno, tres minutos, cuatro antes de que se abrara la puerta, imposible.
+[00:00:55 -> 00:00:57]  Sí, está todo bueno.
+[00:00:57 -> 00:00:59]  Sí, sí. Un montón de ruidos.
+[00:00:59 -> 00:01:02]  Bueno, tampoco es que no se escucha, pero...
+[00:01:03 -> 00:01:06]  Vamos a tratar de no olvidar.
+[00:01:08 -> 00:01:15]  Bueno, hoy vamos a seguir la lógica de todas las clases.
+[00:01:15 -> 00:01:22]  Digo que hay dos clases, o sea, hoy y la clase que viene, que no va a estar en Marteín.
+[00:01:22 -> 00:01:32]  y después vamos a sacar tiempo para la consulta y desde el obligatorio creo que
+[00:01:32 -> 00:01:42]  todavía tienen para hacer más o menos, no es la que viene, hay tiempo pero bueno
+[00:01:42 -> 00:01:52]  estaría bueno que si pueden, porque algunos me han mostrado por donde andan, pero no muchos, no sé si...
+[00:01:52 -> 00:02:00]  por ahí, a veces me preguntaron con Martín o algo, estaría bueno que nos vayan mandando este info.
+[00:02:00 -> 00:02:07]  Si no es en clase, no se escriben por fin.
+[00:02:07 -> 00:02:09]  Como no hay...
+[00:02:09 -> 00:02:14]  Esta vez hicimos un grupo de batallas.
+[00:02:14 -> 00:02:18]  Si quieren lo hacemos, no sé si le sirve o no.
+[00:02:18 -> 00:02:21]  Este...
+[00:02:21 -> 00:02:25]  Pero si nos quieren hacer consultas, lo mejor es que hagan un chat
+[00:02:25 -> 00:02:28]  cuando nos ponen a mí o a ti.
+[00:02:28 -> 00:02:32]  Cualquiera de los dos puede responder, por ahí siguen más de práctica.
+[00:02:32 -> 00:02:34]  Bien.
+[00:02:34 -> 00:02:47]  Y son por Teams, por que es más ágil y si por ahí mandan mail, vamos a trabajar más.
+[00:02:47 -> 00:02:53]  Por Teams siempre veo responder.
+[00:02:53 -> 00:03:01]  Bien, entonces vamos a seguir con esto desde los juegos alternados.
+[00:03:01 -> 00:03:08]  La vez pasada presentamos el problema en el modelo, que son los árboles.
+[00:03:12 -> 00:03:20]  Presentamos MIMAX y las grandes formulaciones del problema.
+[00:03:20 -> 00:03:32]  que se llama componentes de azar, que tenían un nodo especial, que se llamaba un nodo chance,
+[00:03:32 -> 00:03:47]  y presentamos una metastrategia, digamos, minimax, que hizo sus propiedades.
+[00:03:47 -> 00:03:58]  No sé si hay alguna duda, cuando tengan que implementarse el Minimax se lo vamos a dar implementado,
+[00:03:58 -> 00:04:08]  o sea que ya tienen esa recurrencia y a partir de ahí lo van a hacer vosotros, o sea, ya acá que terminen el obligatorio 1,
+[00:04:08 -> 00:04:18]  1 vamos a haber introducido como el primer algoritmo que van a tener que implementar en el obligatorio 2
+[00:04:18 -> 00:04:24]  pero vamos a ver que vamos a dar minimax implementado para que lo utilicen de base
+[00:04:24 -> 00:04:32]  Pero vamos viendo la teoría.
+[00:04:32 -> 00:04:33]  ¿Está bien?
+[00:04:33 -> 00:04:34]  Bien.
+[00:04:34 -> 00:04:40]  A ver, yo no sé si, capaz que alguno de ustedes,
+[00:04:40 -> 00:04:50]  digamos, de nivel de grado, vio en minimax este tipo de recurrencia en una época.
+[00:04:50 -> 00:04:55]  Hay cosas que se enseñaban en algoritmos.
+[00:04:55 -> 00:05:02]  Después hubo un momento en la IA, pasó de moda y después vio a ponerse de moda.
+[00:05:02 -> 00:05:10]  Entonces, hay una generación de creos de sistemas, de ciencia de armonía, pero no vio.
+[00:05:10 -> 00:05:17]  si ya lo vio me entendí, uno es capaz de desfilear y me dicen pero si no me voy.
+[00:05:17 -> 00:05:33]  Bien, el problema de los juegos, así como es paradigmático para la inteligencia artificial,
+[00:05:33 -> 00:05:42]  es también paradigmático para la ciencia de la computación porque es una fuente
+[00:05:42 -> 00:05:52]  muy importante de problemas computacionales duros o relativamente duros, o muy duros
+[00:05:52 -> 00:05:59]  y que han marcado, digo, mucha solución, marco hitos
+[00:05:59 -> 00:06:07]  y para lo cual se desarrollaron algoritmos específicos, por ejemplo, no sé si escuchaban alguna vez,
+[00:06:07 -> 00:06:13]  de algún tipo Pension Bound, no? No, no vamos a ver uno ahora,
+[00:06:13 -> 00:06:23]  que eran algoritmos para atacar los problemas de complejidad, en particular, este tipo de problemas,
+[00:06:23 -> 00:06:40]  y que fueron relevados, son muy importantes en varios momentos, en varios hitos en esta historia.
+[00:06:40 -> 00:06:53]  El Brineiro, capaz que algunos se han escuchado hablar, en 1997 la máquina, o sea, el algoritmo
+[00:06:53 -> 00:07:00]  de... me estaba tratando de agarrar el algoritmo, la máquina era la Deep Blue, que le dieron
+[00:07:00 -> 00:07:09]  a Cámparo en ese momento que era campeón de mundo de ajedrez.
+[00:07:09 -> 00:07:11]  Por lo que fue la primera vez.
+[00:07:11 -> 00:07:23]  En realidad, por la historia, fue la primera vez que una máquina le gana a un humán en el ajedrez.
+[00:07:23 -> 00:07:27]  En realidad, históricamente fue la segunda vez,
+[00:07:27 -> 00:07:36]  Pero la primera vez fue un poco de juguete, y la primera fue a mitad del siglo pasado,
+[00:07:36 -> 00:07:42]  con una primera máquina de jugar a la piedra, que en realidad nunca fue una máquina,
+[00:07:42 -> 00:07:48]  es un algoritmo de papel, que fue Hugo Champ,
+[00:07:48 -> 00:07:56]  que es una máquina que diseñó Alan Turing con Champ, perdón, y que le ganó a Perón,
+[00:07:56 -> 00:08:05]  pero era un jugador, un hermano, un amigo de Tíuri, pero obviamente
+[00:08:05 -> 00:08:13]  después fue ganado a un campeón mundial.
+[00:08:13 -> 00:08:21]  Y el segundo, un poco más reciente, con este AlphaGo, que se llama el Magic Network,
+[00:08:21 -> 00:08:28]  empezó en el año 2017, algo así, poco antes, capaz.
+[00:08:28 -> 00:08:34]  No sé si recuerdas, se escucharon, o sea, DeepMind,
+[00:08:34 -> 00:08:39]  antes de inventar AlphaFold, acá se escucharon,
+[00:08:39 -> 00:08:41]  Sí, como era el retenido.
+[00:08:41 -> 00:08:43]  Lo del juego de los de Proteínas.
+[00:08:43 -> 00:08:48]  El señor AlfaLow, que era de ese.
+[00:08:48 -> 00:08:52]  Era un jugador de una guía que juega de Go.
+[00:08:52 -> 00:08:56]  Y también le ganó la batalla.
+[00:08:56 -> 00:08:59]  Y no me hayáis que mentir porque...
+[00:08:59 -> 00:09:01]  Google es en marzo a 26.
+[00:09:01 -> 00:09:06]  Ah, y en el pasado, metió el error de decir que el nuevo era coreano.
+[00:09:06 -> 00:09:08]  Como juego.
+[00:09:08 -> 00:09:10]  Pero es también de la coreana.
+[00:09:10 -> 00:09:12]  ¿Vamos?
+[00:09:12 -> 00:09:16]  Entonces, está ahí, está ahí, está ahí.
+[00:09:16 -> 00:09:20]  Pero está silencioso, silenciado.
+[00:09:20 -> 00:09:22]  El primero fui yo, Ali.
+[00:09:24 -> 00:09:31]  Y bueno, en realidad el algoritmo que usó combinó una cantidad de cosas.
+[00:09:31 -> 00:09:37]  Una vamos a ver en un poquito, o sea, una vamos a ver hoy, vamos a ver la versión que está en nuestro alcance de alguna manera,
+[00:09:37 -> 00:09:44]  manera y después en la otra parte, que se llama los research, la vamos a ver después.
+[00:09:44 -> 00:09:47]  No voy, pero ya la clase que viene.
+[00:09:47 -> 00:09:54]  Pero bueno, en definitiva, el problema es que todos estos problemas son tan complejos
+[00:09:54 -> 00:10:06]  computacionalmente. Acá tienen, por ejemplo, nomás, en general, el árbol de juego es
+[00:10:06 -> 00:10:25]  exponencial, el orden de las ramificaciones de, básicamente es la cantidad de movimiento que tienen en cada nodo,
+[00:10:25 -> 00:10:30]  y se pone en respecto a la profundidad.
+[00:10:30 -> 00:10:41]  Les da algo de galares por cada paso, por cada jugada, por cada nodo que tienen de movimiento,
+[00:10:41 -> 00:10:45]  que tienen la profundidad de entre, que tienen de galares.
+[00:10:45 -> 00:11:00]  En general, por ejemplo, en el AGDS es enorme, si hay una opción, el 35 a la 50 y luego el mucho peor.
+[00:11:00 -> 00:11:07]  O sea, que no se puede resolver directamente por fuerza única, tratando de hacer inducción para atrás,
+[00:11:07 -> 00:11:16]  tratando de llegar al terminal, al nuevo terminal y volver para arriba, remontando la futilidad.
+[00:11:16 -> 00:11:22]  O sea, es... es en realidad imposible.
+[00:11:22 -> 00:11:28]  Me decía que las jugadas serían larguísimas, ¿no?
+[00:11:28 -> 00:11:35]  Entonces, bueno, hay que cortar el árbol del juego de alguna manera.
+[00:11:35 -> 00:11:42]  Entonces luego vamos a ver cómo vamos a dar un par de esa manera.
+[00:11:42 -> 00:11:49]  Vamos a ver con el TATETI, el TATETI, el TATETI, el TATETI, el TATETI, y es relativamente sencillo,
+[00:11:49 -> 00:12:04]  pero igual su árbol tiene una profundidad máxima de 9, como máximo se puede hacer 9 movimientos,
+[00:12:04 -> 00:12:17]  9 casillas, que llegan desde la raíz hasta una hoja, obviamente el nivel de, el orden de ramificación que hay que aplicar,
+[00:12:17 -> 00:12:21]  9, 8, etc. está pero igual...
+[00:12:21 -> 00:12:24]  ¿Esta no es consturna ahora, cuando se propague la pelea?
+[00:12:24 -> 00:12:27]  Ehh...
+[00:12:27 -> 00:12:33]  O sea, el peor caso de 8 o 9...
+[00:12:33 -> 00:12:35]  O sea, sí, porque...
+[00:12:35 -> 00:12:40]  Obviamente termina cuando se desprecen de línea.
+[00:12:40 -> 00:12:46]  Bueno, si vos miras todas las configuraciones posibles, el camino desde un...
+[00:12:46 -> 00:12:55]  Desde la raíz que es el tablero vacío hasta un nodo donde está todo lleno, o que no hay ningún buen viento que se cierre.
+[00:12:56 -> 00:12:59]  Pero ya se orden.
+[00:12:59 -> 00:13:09]  con eso solo pueden, si lo implementan, el ejercicio que le vamos a dar, van a ver que
+[00:13:09 -> 00:13:19]  bueno, los primeros nods, las primeras profundidades, aromas, porque la gravitación es más grande,
+[00:13:19 -> 00:13:25]  después a medida que se va achiscando las cosas se hacen más rápidas porque hay medios.
+[00:13:25 -> 00:13:32]  Bueno, aún con el catechil en una máquina debe haber más o menos, tarda un poco.
+[00:13:32 -> 00:13:35]  Y es que es un bien problema.
+[00:13:35 -> 00:13:41]  Bueno, entonces, la idea fundamental es, bueno,
+[00:13:41 -> 00:13:47]  yo si lo voy a dejar de...
+[00:13:47 -> 00:13:53]  Bueno, es que de alguna manera lo que hay que hacer es cortar esa ejecución.
+[00:14:23 -> 00:14:26]  Llegamos un poco en el Cervo Amorense.
+[00:14:26 -> 00:14:29]  Entonces, te vuelvo a presentar.
+[00:14:29 -> 00:14:32]  De ahí y de acá de compartir.
+[00:14:32 -> 00:14:35]  Ya vamos a...
+[00:14:35 -> 00:14:41]  La idea es así, es decir, si agarramos en un determinado lugar
+[00:14:41 -> 00:14:44]  y empezamos a explorar el arco, ¿no?
+[00:14:44 -> 00:15:01]  Y queremos cortar esta percusión en algún lado, no llegar hasta una hoja, no explorar todo porque es demasiado grave.
+[00:15:01 -> 00:15:06]  El problema que nos vamos a enfrentar es que...
+[00:15:06 -> 00:15:11]  Como vemos que la hoja está acá, pero yo quiero cortar acá.
+[00:15:18 -> 00:15:22]  ¿Cuál es el problema acá?
+[00:15:22 -> 00:15:26]  Que no sabes el valor final, ¿no?
+[00:15:26 -> 00:15:29]  Pero lo tengo que estimar entonces.
+[00:15:29 -> 00:15:37]  Claro, tenemos que de alguna manera, en este lugar, estimar el valor que resultaría de evaluar todo este agua.
+[00:15:38 -> 00:15:40]  Y ese es el problema.
+[00:15:42 -> 00:15:45]  Entonces, básicamente hay dos ideas.
+[00:15:46 -> 00:15:52]  Una que es la poda. Es decir, ahora no vamos a hacer detalles, pero una que es la poda es decir, bueno,
+[00:15:52 -> 00:16:09]  en realidad tengo una estimación de este valor que hace que yo ya sé que va a ser peor de lo que tengo
+[00:16:11 -> 00:16:16]  o sea que calcularlo exactamente no va a cambiar la estrategia que tengo hasta este momento
+[00:16:16 -> 00:16:28]  es una decisión tuya? no no no, te digo, asumamos, si yo tuviera esa certeza de que el valor de
+[00:16:28 -> 00:16:38]  esto no va a cambiar la estrategia que tengo hasta este momento entonces no lo caigo, y eso es la
+[00:16:38 -> 00:16:45]  la apoda, básicamente es, se ve mucho en este árbol, está acá abajo y no lo explora.
+[00:16:45 -> 00:16:54]  Con la certitud, o sea, con la certeza de que su valor no va a afectar el valor final acá.
+[00:16:54 -> 00:16:56]  ¿Vamos?
+[00:16:56 -> 00:16:58]  Está bien.
+[00:17:00 -> 00:17:02]  Ese sería uno.
+[00:17:02 -> 00:17:04]  Y la otra es...
+[00:17:04 -> 00:17:06]  No, bueno...
+[00:17:06 -> 00:17:14]  Si no puedo tener tal certeza,
+[00:17:14 -> 00:17:23]  entonces voy a, como hacemos siempre, a estimar algún valor mediante diferentes técnicas.
+[00:17:23 -> 00:17:27]  eso va a ser la idea.
+[00:17:27 -> 00:17:32]  Obviamente una de las tecnicas que vamos a tener es hacer simulaciones random
+[00:17:32 -> 00:17:41]  como hemos hecho ya, estoy usando cosas de estilo de modelas, pero esas son soluciones.
+[00:17:41 -> 00:17:50]  Entonces vamos a ver primero lo de las poderes.
+[00:17:50 -> 00:17:59]  Y si quiero poder con certeza, bueno, tengo que tener esa certeza.
+[00:17:59 -> 00:18:14]  vamos a fijar el contexto que vamos a hacer para minimax
+[00:18:14 -> 00:18:19]  después vamos a ver a otros, la cosa fuera de minimax en juego de suma 0
+[00:18:19 -> 00:18:25]  Sergio, una consulta, acá estamos asumiendo de que en realidad
+[00:18:25 -> 00:18:31]  Por más que no conozcas cómo vas a llegar hasta esas hojas,
+[00:18:31 -> 00:18:38]  lo único que se me ocurre es que sí sepas cuánto retorno tengan esas hojas en sí, ¿no?
+[00:18:38 -> 00:18:44]  Y ahí decís, ah, ok, puedo dar todo este camino porque en realidad nada de lo que me llega al final me sirve.
+[00:18:44 -> 00:18:54]  Más o menos. O sea, por eso digo, no lo vamos a saber, pero sí vamos a saber que estamos haciendo mínimas.
+[00:18:54 -> 00:19:03]  y a partir de la información que tenemos ya recorrida y de saber que es minimax
+[00:19:03 -> 00:19:08]  lo que estamos haciendo vamos a poner poders
+[00:19:08 -> 00:19:14]  pero vamos a poner un ejemplo, que es el que está en la diapositiva
+[00:19:14 -> 00:19:28]  Pero, eh, eh, según vamos que tenemos este, este arco.
+[00:19:28 -> 00:19:34]  Ya lo, ya lo hago.
+[00:19:34 -> 00:19:42]  o sea acá lo explico así porque yo sé que estoy haciendo minimax
+[00:19:42 -> 00:19:52]  3, 5, 2, 10
+[00:19:52 -> 00:19:55]  ¿Verdad? Es esto.
+[00:19:55 -> 00:20:00]  Ahora, sabiendo que esto es minimax, ¿sabes cuál es el valor?
+[00:20:00 -> 00:20:10]  Ya se que estamos siempre fijando un jugador que hace el análisis, que a veces vamos a llamar agente.
+[00:20:10 -> 00:20:15]  Agente está siendo el agente. Estas son las utilidades del agente, ¿verdad?
+[00:20:15 -> 00:20:21]  Entonces, esto es max y esto es min.
+[00:20:21 -> 00:20:24]  Y estas son las utilidades.
+[00:20:24 -> 00:20:33]  ¿Cuál es el valor pinimax en este nodo?
+[00:20:33 -> 00:20:35]  O sea, ¿cuál es?
+[00:20:35 -> 00:20:39]  ¿Debes hacerlo tras para A?
+[00:20:39 -> 00:20:44]  Eso es mi, entonces entre 3 y 5, qué va a ser? 3.
+[00:20:44 -> 00:20:49]  Y entre 2 y 10 va a ser 2.
+[00:20:49 -> 00:20:52]  Y con estos Max, esto es un 3.
+[00:20:52 -> 00:20:54]  ¿Ves?
+[00:20:54 -> 00:20:56]  Ok.
+[00:21:02 -> 00:21:04]  Bien.
+[00:21:04 -> 00:21:12]  Entonces, subamos ahora que ejecutamos la recurrencia, ¿no?
+[00:21:12 -> 00:21:14]  Algoritmicamente.
+[00:21:14 -> 00:21:20]  Y arrancamos de la raíz y vamos en profundidad.
+[00:21:22 -> 00:21:31]  Su podida es ir hasta una hoja y subir, ver y subir.
+[00:21:31 -> 00:21:42]  Entonces el recorrido está vinculado a acá, bajo a este, bajo a este,
+[00:21:42 -> 00:21:48]  Vamos a ver, voy por acá, voy por acá, hasta llegar acá.
+[00:21:48 -> 00:21:53]  Esto remonta el valor 3.
+[00:21:56 -> 00:21:59]  Pero me faltó que grabar esta hoja.
+[00:21:59 -> 00:22:03]  Bueno, pero nosotros hicimos que teníamos que montar acá 5.
+[00:22:03 -> 00:22:05]  Y acá lo vamos a resolver.
+[00:22:05 -> 00:22:08]  Este nodo en realidad lo que hace es el max.
+[00:22:08 -> 00:22:15]  El migu, entre 3 y sin 3.
+[00:22:15 -> 00:22:17]  Y eso es lo que remonta para acá.
+[00:22:17 -> 00:22:22]  O sea, el valor que estuvo el alunimo para acá es en 3.
+[00:22:28 -> 00:22:32]  Sin derecho.
+[00:22:32 -> 00:22:41]  ¿Qué podemos concluir sobre el valor que tiene para gente este nodo?
+[00:22:41 -> 00:22:44]  Que va a ser 3
+[00:22:44 -> 00:22:51]  Que yo ya sé, yo no sé si va a ser 3 o no, pero sé que va a ser mayor o igual de 3, sí o sí
+[00:22:51 -> 00:22:52]  ¿A ver?
+[00:22:52 -> 00:22:55]  Este es un nodo Max
+[00:22:55 -> 00:23:04]  Lo que va a resolver esto es el max entre 3, que fue lo que salió de acá, y algo que todavía no conozco.
+[00:23:04 -> 00:23:10]  Pero aunque no lo conozca, yo ya sé que va a ser que el resultado sea mayor que 3, porque este es un max.
+[00:23:15 -> 00:23:17]  ¿Podrías descartar todo lo que crees de más?
+[00:23:17 -> 00:23:22]  y bueno algo voy a poder descartar en algún momento
+[00:23:22 -> 00:23:26]  pero no puedo decir que va a ser malo
+[00:23:26 -> 00:23:28]  entonces es mayor o menor que te dejo
+[00:23:28 -> 00:23:32]  entonces sigo por acá
+[00:23:32 -> 00:23:36]  como vamos que siempre lo hago de izquierda a derecha
+[00:23:36 -> 00:23:39]  entonces sigo por acá y voy acá
+[00:23:42 -> 00:23:45]  entonces cuando levanto este valor acá
+[00:23:45 -> 00:23:49]  me pasa lo mismo que acá.
+[00:23:49 -> 00:23:57]  Sólo que sé que el valor acá va a ser el mínimo entre 2 y algo que todavía no conozco.
+[00:23:57 -> 00:24:02]  ¿Entonces? Porque es lo mismo. O sea, si acá es el máximo entre 3 y algo que no conozco,
+[00:24:02 -> 00:24:10]  acá va a ser el mínimo entre 2, que fue lo que observé acá, siempre que recorrí y dirigí a la derecha,
+[00:24:10 -> 00:24:15]  y algo que no conozco que es 10, pero no conozco.
+[00:24:15 -> 00:24:19]  Pero todavía no lo recorrí, lo hemos marcado.
+[00:24:19 -> 00:24:25]  Está ahí, pero está en el grafo, pero desde el árbol, pero no lo recorrí.
+[00:24:25 -> 00:24:33]  Y la pregunta es, entonces yo sé que esto, el valor que voy a obtener acá,
+[00:24:33 -> 00:24:43]  es menor o igual que 3.
+[00:24:43 -> 00:24:49]  Si acá hay mayor o igual que 3, acá por la misma razón menor o igual que 2.
+[00:24:50 -> 00:24:58]  ¿Me sirve de algo el valor 10? No.
+[00:24:58 -> 00:25:04]  No, está bien. Porque yo sé que cualquiera sea el valor que vaya acá,
+[00:25:04 -> 00:25:07]  va a ser menor o igual que 2.
+[00:25:07 -> 00:25:13]  ¿Y por qué lo puedo evitar recobrarlo ahora?
+[00:25:14 -> 00:25:23]  Porque menor igual que 2 es menor que mayor igual que 3.
+[00:25:29 -> 00:25:35]  Lo de acá me dice que tu valor tiene que impastar acá.
+[00:25:35 -> 00:25:39]  y acá dice...
+[00:25:42 -> 00:25:45]  y el valor va a estar acá.
+[00:25:46 -> 00:25:50]  Entonces, como acá hay un nodo max,
+[00:25:51 -> 00:25:55]  cualquiera sea el resultado en realidad de todo este árbol,
+[00:25:57 -> 00:26:01]  no va a importar, porque cualquiera sea este,
+[00:26:01 -> 00:26:03]  dado que este es menor o igual que 2,
+[00:26:03 -> 00:26:06]  y que ese intervalo se baje.
+[00:26:06 -> 00:26:15]  Es el valor que puede surgir de acá va a ser menor que un valor que ya tengo.
+[00:26:15 -> 00:26:23]  Entonces no necesito explorar el pelo sin saber cuánto es.
+[00:26:23 -> 00:26:31]  tengo entonces no necesito explorar el pelo sin saber cuánto es.
+[00:26:31 -> 00:26:33]  Acá va.
+[00:26:33 -> 00:26:40]  Y esto es lo que llaman el algoritmo del branch.
+[00:26:40 -> 00:26:50]  Branch porque ramifico y con un bound, esto me da unas cotas.
+[00:26:50 -> 00:26:57]  Esto me dan cotas con el cual me permiten contar.
+[00:26:57 -> 00:26:59]  ¿Se entendió?
+[00:26:59 -> 00:27:08]  O sea, la intersección entre un min y un max, o sea un max me da una cota inferior,
+[00:27:08 -> 00:27:13]  un min me da una cota superior, la intersección entre los dos es vacía.
+[00:27:13 -> 00:27:22]  En este árbol que es chiquito se nota que el árbol puede tener muchos niveles o más niveles.
+[00:27:22 -> 00:27:23]  Ahora vos.
+[00:27:23 -> 00:27:24]  Yo?
+[00:27:24 -> 00:27:25]  Ahora vos.
+[00:27:25 -> 00:27:26]  Ahora vos.
+[00:27:26 -> 00:27:27]  Solo una cosa más.
+[00:27:27 -> 00:27:28]  Ahora vos vamos a llevar los niveles.
+[00:27:28 -> 00:27:31]  En este solo me cambia si este dos cambia.
+[00:27:31 -> 00:27:33]  A la mayor vez.
+[00:27:34 -> 00:27:35]  ¿Aca?
+[00:27:35 -> 00:27:37]  ¿No se escuchó usted en aquel?
+[00:27:37 -> 00:27:42]  Solo me cambiaría el caso si este dos se convierte en algo mayor a la vez.
+[00:27:43 -> 00:27:52]  Bueno, sí. Pero otra cosa, no importa cuál es el 7 de valor, es más grande o más chico, es 2.
+[00:27:52 -> 00:28:01]  O sea, si había un 10 o había un 1, no me cambiaba, o un menos 1, no importa.
+[00:28:01 -> 00:28:08]  Por ejemplo, ya con haber encontrado una cota superior, que es la más chica que la cota inferior,
+[00:28:08 -> 00:28:14]  O sea, una cota es que había 2.000, que era para una cota superior de 1.000,
+[00:28:14 -> 00:28:21]  siquiera más chica que una cota inferior de 1.000, ya me permitió cortar.
+[00:28:28 -> 00:28:35]  Ya que está, me lo digo, porque es algo que en realidad se eligió de la rutina acá,
+[00:28:35 -> 00:28:43]  En realidad es que si el lugar 2 hubiera tenido el 10 de este lado y el 2 de este lado,
+[00:28:47 -> 00:28:49]  esto hubiera tenido...
+[00:28:49 -> 00:28:53]  A pesar de que nosotros vemos que es lo mismo, porque acá el valor va a ser más chico que 2,
+[00:28:53 -> 00:29:03]  pero yo recorrí este primero que este, tendría un mínimo entre 10 y algo
+[00:29:03 -> 00:29:10]  que me da un menor o igual que 10, que hace que este intervalo sea no vacío,
+[00:29:10 -> 00:29:17]  entonces no tengo información suficiente para cortar, porque al ser el intervalo no vacío
+[00:29:17 -> 00:29:23]  quiere decir que tal vez haya alguna solución en el medio que es mayor o igual que 10.
+[00:29:23 -> 00:29:41]  O sea, la función hasta después depende del orden en que recorro, que puedo cortar o no cortar.
+[00:29:41 -> 00:29:54]  Pero bueno, esto es un problema. La efectividad final depende del orden en que recorremos.
+[00:29:54 -> 00:30:01]  Pues si recorremos en un buen orden, si habíamos recorrido dos antes de 10, ya hemos cortado.
+[00:30:01 -> 00:30:05]  Ahora el tema de profundidad.
+[00:30:05 -> 00:30:09]  Bueno, vamos a ver otro ejemplo.
+[00:30:12 -> 00:30:14]  Sí, hasta ahí.
+[00:30:14 -> 00:30:16]  ¿Ves?
+[00:30:16 -> 00:30:20]  Ahora vamos a dar un ejemplo.
+[00:30:20 -> 00:30:35]  o sea, hacer una recorrida del esquialar medio en el vaso, si el esquialo de los bosques no de ese no.
+[00:30:35 -> 00:30:37]  No, no, no.
+[00:30:37 -> 00:30:39]  Sí.
+[00:30:39 -> 00:30:44]  O sea, esto es porque estamos asumiendo siempre que vamos de izquierda a derecha.
+[00:30:44 -> 00:30:53]  La flecha que te quedó, o precisaba el número ese, sino la flecha que dejaste sin valor.
+[00:30:53 -> 00:30:58]  No, ahora iba a completar. Sí, sí, sí. Ahora iba a poner un ejemplo un poquito más profundo.
+[00:30:58 -> 00:31:04]  En realidad, no, puede cortar acá también. O sea, depende de lo que...
+[00:31:04 -> 00:31:08]  ¿Podrías conseguir una condición que te corte y te llame una condición?
+[00:31:08 -> 00:31:12]  Bueno, si lo abrimos de izquierda a derecha, en realidad el corte es siempre acá.
+[00:31:12 -> 00:31:18]  siempre tengo que alguna de las izquierdas debo de recorrer para remontar algo así, en ese sentido
+[00:31:18 -> 00:31:26]  si ya la cosa va a ser, vamos a ir izquierda a derecha y ahí si, para los cortes vamos a ir a la derecha
+[00:31:26 -> 00:31:33]  cuando necesitas algo a la izquierda que te diga, o bien una ancota inferior, una ancota superior, si
+[00:31:33 -> 00:31:37]  y de hecho tu intento ahora es de cortar todas las ancotas derechas, si que...
+[00:31:37 -> 00:31:41]  Claro, pues cortas todo y cortas todo.
+[00:31:44 -> 00:31:49]  Para mí iba a hacer un ejemplo que era... ¿cuál era? Este, a ver...
+[00:31:50 -> 00:31:55]  Y después tenía otro acá, que acá es de Marvonte.
+[00:31:55 -> 00:32:03]  Y también...
+[00:32:03 -> 00:32:06]  Ah, tenemos árboles desbalanceados?
+[00:32:06 -> 00:32:13]  Los árboles son, sí, de cualquier tipo, no tienen por qué ser balanceados.
+[00:32:13 -> 00:32:22]  No, no, eso no, eso no. Acá están así por esa misma razón, de que tengo que poder
+[00:32:22 -> 00:32:29]  haber remontado un valor en una hoja izquierda para ver si puedo cortar a la derecha, pero
+[00:32:29 -> 00:32:30]  no.
+[00:32:30 -> 00:32:35]  No, pero si tú estás jugando un juego, de un lado termina y del otro sigue.
+[00:32:35 -> 00:32:42]  No sé, eso. O sea, no sé cómo explicarlo.
+[00:32:42 -> 00:32:48]  Si no es cuando un juego de un lado de ti puede terminar, pero del otro lado no.
+[00:32:48 -> 00:32:55]  Ah, sí, sí, claro, claro. ¿Por qué la profundidad puede ser desbalanceada?
+[00:32:55 -> 00:33:04]  Exactamente, porque por ejemplo en el atletico es hacer rápido, aunque con 4 o 5 movimientos,
+[00:33:04 -> 00:33:09]  terminar en 5 movimientos, de hecho 4.
+[00:33:09 -> 00:33:11]  ¿Posiste las 3 pichas?
+[00:33:11 -> 00:33:20]  No, no se puede hacer 3, pero necesitas 3 movimientos por lo menos tuyos y 2 y lo ponés.
+[00:33:20 -> 00:33:29]  y vamos a terminar rápido. Yo hasta no llenar el tablero no termino el tapete.
+[00:33:29 -> 00:33:38]  Pero bueno, los nodos terminales del juego no se expanden más.
+[00:34:08 -> 00:34:10]  Sí, está esto para esto.
+[00:34:10 -> 00:34:13]  Y acá, cuando hacemos esto,
+[00:34:13 -> 00:34:18]  no, esto da igual, está esto, este camino de acá, da igual, tengo un mayor igual que este.
+[00:34:18 -> 00:34:22]  Pero cuando llegue hasta acá, a ver, vamos hasta acá, tengo el min
+[00:34:22 -> 00:34:25]  entre 10 y algo.
+[00:34:25 -> 00:34:26]  ¿Sabes?
+[00:34:26 -> 00:34:30]  Entonces, la intersección entre estos, ¿sí?
+[00:34:30 -> 00:34:34]  Se va a algo que es menor igual que este.
+[00:34:34 -> 00:34:36]  entonces la intersección entre estos dos
+[00:34:39 -> 00:34:42]  se nos vacía, no puedo cortar, tengo que explorar
+[00:34:44 -> 00:34:47]  y el otro es max así que tampoco
+[00:34:51 -> 00:34:58]  ahora vamos a ver, ahora va a ser, no importa la situación del de abajo, siempre va a ser max
+[00:34:58 -> 00:35:04]  y siempre vamos a la izquierda primero entre 12 y a ver.
+[00:35:04 -> 00:35:08]  ¿Tu cota inferior va a ser 12?
+[00:35:08 -> 00:35:12]  Esto va a ser mayor o igual que 12.
+[00:35:18 -> 00:35:20]  ¿Cuál de los dos juega?
+[00:35:20 -> 00:35:26]  Acá el 3 es este o el 10 es este o el 12.
+[00:35:26 -> 00:35:28]  el 12
+[00:35:28 -> 00:35:30]  claro
+[00:35:30 -> 00:35:32]  osea
+[00:35:32 -> 00:35:34]  este que esta aca
+[00:35:38 -> 00:35:40]  no tengo porque recorrerlo
+[00:35:42 -> 00:35:44]  ah por el
+[00:35:44 -> 00:35:46]  si todo, si solo los rojos
+[00:35:46 -> 00:35:48]  me dice bueno
+[00:35:48 -> 00:35:50]  eventualmente yo tengo
+[00:35:50 -> 00:35:52]  una estrategia que tiene
+[00:35:52 -> 00:35:54]  mayor o igual que 12
+[00:35:54 -> 00:36:08]  Pero el hecho que haya un menor igual que 10 acá, me lo corta, pero me corta porque por más que yo le quede pasar algo que es mayor igual que 12 por acá, este me lo va a cortar.
+[00:36:08 -> 00:36:21]  Pero es este 12 que juega y no es 13. O sea, que impididamente entre estos dos, entre este 3 y este 12, lo que les importa es el máximo del todo.
+[00:36:21 -> 00:36:38]  es el máximo de los dos. Entonces ahora entre todos, miro 12 y 10, la intersección ahora sí es vacía.
+[00:36:38 -> 00:36:43]  Tengo 10 para acá y tengo 12 para allá.
+[00:36:43 -> 00:36:55]  porque si acá viene un 15, este 15 lo va a pasar porque es mayor que 12 y este 10 me lo va a cortar
+[00:36:55 -> 00:37:04]  y si es más chico, el que no me lo deja pasar es este 12
+[00:37:04 -> 00:37:08]  o sea que cualquier valor que venga acá no va a subir hasta la raíz
+[00:37:08 -> 00:37:12]  porque si es más chico que 12, paro acá, no pasa acá ese valor,
+[00:37:12 -> 00:37:18]  y si es más grande que 12, no pasa acá, porque es más grande que 12 y más grande que 10,
+[00:37:18 -> 00:37:20]  entonces no pasa acá.
+[00:37:25 -> 00:37:32]  Y bueno, así como tenemos que en una cadena lo que importa es el máximo
+[00:37:32 -> 00:37:38]  de las cuotas inferiores, de los rojos, de los max,
+[00:37:38 -> 00:37:43]  y del otro lado van a ser los mínimos de las cuotas superior.
+[00:37:43 -> 00:37:50]  Vamos a hacer otro ejemplo, un buen ejemplo este,
+[00:37:50 -> 00:37:56]  que es el que se utilizan las propositivas,
+[00:37:56 -> 00:38:01]  que es cuánto es?
+[00:38:01 -> 00:38:03]  ah no, 18
+[00:38:03 -> 00:38:05]  vamos a cerrarlo con un poquito de 18
+[00:38:05 -> 00:38:07]  que es así
+[00:38:07 -> 00:38:10]  le damos 6
+[00:38:10 -> 00:38:12]  y acá le importa
+[00:38:12 -> 00:38:15]  10
+[00:38:22 -> 00:38:24]  ya sube 6
+[00:38:26 -> 00:38:30]  6 y ahí tenemos un más grande que 6. Quiero que hicieras así.
+[00:38:30 -> 00:38:32]  Tenemos que ser un 3.
+[00:38:35 -> 00:38:38]  Para ver todas las partes, para que sean todas las anotaciones.
+[00:38:38 -> 00:38:40]  Esto no es porque sea el mismo, con las medidas.
+[00:38:40 -> 00:38:44]  Ya lo vimos, puede haber varios más.
+[00:38:45 -> 00:38:48]  Uno atrás del otro, puede haber varios sin, juntos.
+[00:38:48 -> 00:39:13]  después es un 8, vamos a ver, después es un 18, un 8 acá, de nuevo esto me da menor
+[00:39:13 -> 00:39:17]  igual que 8, al explorar esto.
+[00:39:47 -> 00:40:00]  Si esto viene desde acá, acá invertí.
+[00:40:00 -> 00:40:04]  Antes estaban los tres acá, el mayor es cuando viene desde acá y el más.
+[00:40:04 -> 00:40:07]  Si ahora es el primer, es que si no hay que mirarlo de hecho.
+[00:40:07 -> 00:40:10]  Claro, acá sí lo tengo que mirar.
+[00:40:10 -> 00:40:20]  porque cualquiera de los dos, con el mayor de los dos, esto sigue siendo no vacío.
+[00:40:20 -> 00:40:24]  Entonces, si lo tengo que mirar.
+[00:40:25 -> 00:40:34]  Y ahora viene otro nodo NIN y es cuando le decimos 5.
+[00:40:34 -> 00:40:38]  Creo que esta es la vuelta de las diapositivas.
+[00:40:38 -> 00:40:48]  Y esto me da, por ejemplo, ahora sí me da menor o igual que 5.
+[00:40:48 -> 00:40:53]  Y ahora en realidad lo que me importa es este con este.
+[00:40:53 -> 00:41:00]  Este con este es lo vacío, este con este también, este con este no me importa, este con este.
+[00:41:00 -> 00:41:06]  y acá sí puedo cortar, por lo que está acá no importa.
+[00:41:07 -> 00:41:22]  Como hicimos más grande que 5, lo voy a cortar este. Si es más chico que 5, bueno, este no necesariamente,
+[00:41:22 -> 00:41:25]  pero el que lo corta seguro es este.
+[00:41:25 -> 00:41:35]  Si el valor es menor que 6, ya no va a pasar nada.
+[00:41:35 -> 00:41:47]  Entonces lo que se define es algo que...
+[00:41:47 -> 00:41:54]  A esto lo vamos a llamar, por ejemplo, A1 y este es un A2.
+[00:41:54 -> 00:42:00]  Este es un B1 y este es un B2.
+[00:42:00 -> 00:42:07]  Lo que llamamos es alfa, por esa es la coda, se llama alfa-beta.
+[00:42:07 -> 00:42:26]  es el máximo de los y, en este caso es 6, y beta, que es el mínimo de los y, en un camino.
+[00:42:26 -> 00:42:44]  Entonces, lo que hay que guardar es si la intersección entre el intervalo mayor o igual que alfa
+[00:42:44 -> 00:42:48]  y el intervalo menor o igual que el verda.
+[00:42:56 -> 00:43:08]  Si la intersección es vacía, si la intersección es vacía, se puede cortar.
+[00:43:08 -> 00:43:14]  También se puede cortar entre ellas si la intersección da un elemento.
+[00:43:14 -> 00:43:21]  Porque es lo mismo, ese elemento si alto es igual a beta va a ser alfa, entonces no...
+[00:43:21 -> 00:43:25]  Vamos a ver si se explora tampoco.
+[00:43:31 -> 00:43:43]  Entonces bueno, este algoritmo se llama de lo que hay que mantener es esto, es cuando estamos en un nodo max
+[00:43:43 -> 00:43:50]  Mantener y actualizar el valor.
+[00:43:50 -> 00:43:55]  A medida que va subiendo lo vamos actualizando.
+[00:43:55 -> 00:43:59]  Y nos vamos quedando con el valor máximo.
+[00:43:59 -> 00:44:02]  ¿Estamos?
+[00:44:02 -> 00:44:05]  Es cuando vamos para abajo, ¿no?
+[00:44:05 -> 00:44:10]  Vamos para arriba, se nos devolvemos y eventualmente tenemos que explorar otro.
+[00:44:10 -> 00:44:12]  Vamos a arrancar con el valor que teníamos para abajo.
+[00:44:12 -> 00:44:15]  eventualmente esto puede concluir en ninguna poda
+[00:44:15 -> 00:44:18]  y lo que hice fue fundamentalmente, igualizar el valor acá
+[00:44:21 -> 00:44:24]  pero si yo acá lo actualicé
+[00:44:24 -> 00:44:31]  en las otras ramas, la poda es en una rama
+[00:44:31 -> 00:44:36]  si yo puse en una rama, ahora me ha venido a dos para dejar explorar
+[00:44:36 -> 00:44:49]  pero bueno, mantengo el máximo de las cotas inferiores de Hebi y mantengo el mínimo de las cotas
+[00:44:49 -> 00:45:07]  superiores que bien los 2000 y si no tiene una intersección trivial, es esa la idea.
+[00:45:07 -> 00:45:14]  El problema mayor que tiene es eso, que esto puede depender del orden.
+[00:45:14 -> 00:45:29]  Bueno, una de las cosas que se hace, también eso sirve, eso es algo que ya hacían en QLearning, por ejemplo,
+[00:45:29 -> 00:45:41]  sino acá en estos algoritmos que vimos también es útil hacerlo, es hacer un random,
+[00:45:41 -> 00:45:49]  es ordenar de manera random las acciones en un tab, para no tomar siempre la misma,
+[00:45:49 -> 00:45:54]  por ejemplo, los algoritmos guard max y no darían siempre la misma,
+[00:45:54 -> 00:46:04]  Para que no sea siempre elegir la misma, pueden hacerle acá, pueden ver que hay órdenes
+[00:46:04 -> 00:46:12]  de ordenamiento que son más rápidas, justo de pegar al correo.
+[00:46:12 -> 00:46:32]  Eso es lo que se llama en la apoda alfabeta, es un ejemplo típico del metadrónismo.
+[00:46:32 -> 00:46:48]  está aquí, de plano. El problema que tiene es el de los... que depende de cómo se recorren las hojas.
+[00:46:48 -> 00:47:00]  o incluso ahí cómo se recorren los arcos, como estamos aquí, o incluso si invertíamos el orden
+[00:47:00 -> 00:47:06]  los recorridos eran distintos.
+[00:47:08 -> 00:47:14]  Por ejemplo, si encontrábamos primero el 2, después teníamos el 1 para acá
+[00:47:14 -> 00:47:17]  y hacer este, pero ya podíamos probar este.
+[00:47:21 -> 00:47:23]  No íbamos a hacer el de 5.
+[00:47:26 -> 00:47:29]  Pero bueno, no se puede.
+[00:47:32 -> 00:47:39]  No, acá no se puede ningún, porque hay que subir 2 y acá no tengo información.
+[00:47:39 -> 00:47:43]  y acá recién se conozco de TTC cuando subo.
+[00:47:43 -> 00:47:45]  Acá no se puede ver.
+[00:47:47 -> 00:47:51]  Bien, bueno,
+[00:47:51 -> 00:47:53]  ahora hacemos una pausa,
+[00:47:53 -> 00:47:55]  pues ya son
+[00:47:55 -> 00:47:57]  casi ya,
+[00:47:57 -> 00:48:01]  ya hacemos 10 minutos de pausa y que vemos la otra técnica
+[00:48:01 -> 00:48:03]  de...
+[00:48:03 -> 00:48:10]  de estimación en lugar de de pobra.
+[00:48:10 -> 00:48:14]  Bien, dejo de compartir...
+[00:48:14 -> 00:48:16]  Dejo de grabar...
+[00:48:16 -> 00:48:20]  ...
+[00:48:20 -> 00:48:22]  Una...
+[00:48:22 -> 00:48:24]  No sé, no sé por qué...
+[00:48:24 -> 00:48:30]  Como lo dije al final de la pasada...
+[00:48:30 -> 00:48:36]  la pasada, o sea la poda es correcta, si la hacemos así esa poda alfabeta es correcta,
+[00:48:36 -> 00:48:43]  es decir que no hay ninguna pérdida de información, el valor que calcula es exactamente el valor
+[00:48:43 -> 00:48:54]  mínimax, no hay aproximación, se evita recorrer partes del árbol que ya sabemos que nos van
+[00:48:54 -> 00:49:01]  a la estrategia minimax.
+[00:49:01 -> 00:49:06]  Y obviamente si invertamos dentro es minimax.
+[00:49:06 -> 00:49:08]  Pero es correcto.
+[00:49:08 -> 00:49:12]  Puede ser más o menos eficiente, pero siempre es correcto.
+[00:49:12 -> 00:49:29]  La poda alfabeta, por acá, necesita muchas veces llegar hasta el fondo,
+[00:49:29 -> 00:49:36]  llegar hasta nodos que son finales de juego, donde se conoce la utilidad,
+[00:49:36 -> 00:49:42]  necesita generar episodios enteros hasta el final.
+[00:49:42 -> 00:49:46]  Y esos episodios pueden ser extremadamente largos y eventualmente
+[00:49:46 -> 00:49:52]  puede haber muchos de esos episodios que hay que recorrer hasta aquí.
+[00:49:52 -> 00:50:04]  Entonces la idea es que podemos ver, bueno, es ir hasta una determinada profundidad.
+[00:50:04 -> 00:50:08]  vamos hasta una determinada profundidad, si no llegamos a una hoja va a haber que
+[00:50:08 -> 00:50:14]  sustituir como decíamos ese valor por un valor estimado
+[00:50:14 -> 00:50:16]  ¿Restamente?
+[00:50:16 -> 00:50:25]  Esto en algún sentido se parece al gamma que se usa en el rífor colectivo
+[00:50:25 -> 00:50:38]  Cuanto más largo el camino menos es el aporte de esa acción, de esa transición
+[00:50:38 -> 00:50:52]  Pero, no sé si bien o no, igual el reinforcement, como es el caso por ejemplo del foraging,
+[00:50:52 -> 00:51:00]  la recompensa es cero, salvo hasta llegar al final, y hay que llegar al final para tener una recompensa en algún momento,
+[00:51:00 -> 00:51:06]  algún episodio completo hay que recorrer hasta el final, eso es el informe también,
+[00:51:06 -> 00:51:10]  en realidad hay que recorrer hasta el final, y eso puede ser extremadamente largo,
+[00:51:10 -> 00:51:16]  si supieron ese problema, puede ser extremadamente largo.
+[00:51:16 -> 00:51:24]  De hecho, el vínculo con el informe, pues luego lo vamos a saber porque hay una técnica que ustedes dieron,
+[00:51:24 -> 00:51:32]  que deriva también del juego de la red.
+[00:51:32 -> 00:51:43]  Entonces, bueno, la idea es esa. Básicamente lo que hacemos es a la recurrencia minimax.
+[00:51:43 -> 00:51:51]  En lugar de poner un valor gamma, como hacemos en el formulario aquí, le ponemos un máximo de profundidad.
+[00:51:51 -> 00:52:03]  Entonces cada vez que desarrollamos la recurrencia, descontamos ese valor.
+[00:52:03 -> 00:52:08]  Vamos descontando. Ahora volvemos sobre esto.
+[00:52:08 -> 00:52:20]  Hay dos estrategias. Una es lo descuento por cada nivel que bajo.
+[00:52:20 -> 00:52:32]  o también lo podemos hacer si el juego es realmente alternado perfecto
+[00:52:32 -> 00:52:41]  existe el concepto de ronda, por ejemplo, un patetí es alternado de una ronda, un jugador un jugador,
+[00:52:41 -> 00:52:47]  se puede hacer también un descenso por rondas.
+[00:52:47 -> 00:52:57]  Uno puede decidir si quiere bajar exactamente por nivel o por ronda.
+[00:53:02 -> 00:53:08]  Ahora el tema es qué pasa cuando, entonces lo ven, sí, en el medio, antes de
+[00:53:08 -> 00:53:17]  a votar la paciencia, a votar la profundidad, llego a cero, el semi control llega a cero, lo reemplazo,
+[00:53:17 -> 00:53:24]  pero si antes de llegar a cero, yo no terminé algo, pero no estamos fácil, directamente vuelvo la utilidad.
+[00:53:24 -> 00:53:30]  Es fácil y si no, tengo que hacer algo. Y eso es lo que se llama una función de volación.
+[00:53:30 -> 00:53:46]  Es una función de... o sea, tengo que sustituir que es una función de evolución, en realidad es una función que estima el valor real de ese árbol.
+[00:53:46 -> 00:53:49]  Se estima el valor de ese árbol.
+[00:53:49 -> 00:53:51]  Está bien.
+[00:53:51 -> 00:53:59]  Y ahí es un tema de diseño, es un tema como el de alfabetas, que yo ya sé que va a ser correcto.
+[00:53:59 -> 00:54:09]  El valor es, bueno, le puedo cerrar por abajo, le puedo cerrar por arriba, puede ser una subestimación, puede ser una sobre aproximación, etc.
+[00:54:09 -> 00:54:18]  Ahora vamos a ver, pero acá estamos en un tema de aproximación. Entonces, el valor que vamos a regular es aproximado.
+[00:54:18 -> 00:54:31]  Lo bueno que tiene esto es que al mismo tiempo se puede y perdemos la exactitud de alfabetas,
+[00:54:31 -> 00:54:33]  pero se puede combinar con alfabetas.
+[00:54:33 -> 00:54:41]  Yo puedo hacer alfabetas sobre valores estimados asumiendo que el valor que estoy calculando es correcto.
+[00:54:41 -> 00:54:47]  Voy a tener una aproximación de nuevo, pero también puedo tener una foda.
+[00:54:47 -> 00:54:54]  El alfabeto no importa de dónde viene ese valor, lo único que hace es imponer que es el valor exacto del árbol.
+[00:54:54 -> 00:55:00]  Cuando este es un valor aproximado, de igual que puede codar, el riesgo que corremos es no tener valor,
+[00:55:00 -> 00:55:09]  no calcular un valor exacto, pero ya lo tenemos cuando hacemos examen, compramos esa función de valor hacia adelante.
+[00:55:09 -> 00:55:11]  Está bien.
+[00:55:11 -> 00:55:18]  En general la primera función del error primeiramente es hacer alguna simulación random
+[00:55:18 -> 00:55:19]  tipo Monte Carlo.
+[00:55:19 -> 00:55:20]  Vamos a ver esto después.
+[00:55:20 -> 00:55:29]  Sabe de origen, otros métodos como ya les mencioné sobre alfa-dough, que es Monte Carlo
+[00:55:29 -> 00:55:30]  research.
+[00:55:30 -> 00:55:33]  Entonces vamos a ver todo lo que son estimaciones Monte Carlo después.
+[00:55:33 -> 00:55:40]  lo que vamos a hacer es diseñar o ver
+[00:55:40 -> 00:55:45]  su manera de definir funciones de evaluación.
+[00:55:45 -> 00:55:51]  Lo vamos a hacer manualmente, después de las funciones de evaluación
+[00:55:51 -> 00:55:55]  pueden venir de diferentes lugares, pueden ser aprendidas
+[00:55:55 -> 00:56:09]  o pueden ser por fin o en el caso de AlphaGOR de las usadas por Brandy Maestros o de Go
+[00:56:09 -> 00:56:11]  de Cheb.
+[00:56:11 -> 00:56:13]  Check and Set.
+[00:56:13 -> 00:56:23]  Esto es, el diseñante es de otro caso, de la profundidad mortura por round.
+[00:56:23 -> 00:56:25]  Eh...
+[00:56:25 -> 00:56:27]  Eh...
+[00:56:27 -> 00:56:29]  Antes de...
+[00:56:29 -> 00:56:31]  de ver...
+[00:56:31 -> 00:56:33]  las propiedades vamos a...
+[00:56:33 -> 00:56:35]  a...
+[00:56:35 -> 00:56:37]  eh...
+[00:56:37 -> 00:56:39]  recurrir a un juego que
+[00:56:39 -> 00:56:41]  todos lo
+[00:56:41 -> 00:56:43]  lo conocen
+[00:56:43 -> 00:56:45]  no sé si lo has jugado
+[00:56:45 -> 00:56:47]  alguna vez, pero
+[00:56:47 -> 00:56:49]  escucharon hablar que es el juego de AGP
+[00:56:49 -> 00:56:51]  y de hecho, sí
+[00:56:51 -> 00:56:59]  particularmente interesante porque históricamente la primera función de
+[00:56:59 -> 00:57:10]  evaluación fue propuesta por Hu-Ring cuando hicieron ese algoritmo, un papel de uno chunk
+[00:57:10 -> 00:57:18]  y en realidad el algoritmo no era otra cosa que evaluar en todos los pasos una función de uno chunk
+[00:57:18 -> 00:57:32]  Y se parece mucho a la que está acá, que es también no usada, que es relativamente sencilla, es darle a cada pieza un valor.
+[00:57:32 -> 00:57:37]  No sé si hablaré en la misma lista, si soy un jugador de ajedrez, si no me hablo bien.
+[00:57:37 -> 00:57:46]  Básicamente la idea es darle a cada pieza un valor numérico, luego un 1, abajo un alfí 3,
+[00:57:46 -> 00:57:57]  Pero bueno, por ejemplo, la de Tuning le daba el caballo 13 al alfíl 3,5, 3,5. Eso es.
+[00:57:57 -> 00:58:03]  La torre 5 y la dama el muerto.
+[00:58:03 -> 00:58:13]  O sea, el valor es mayor cuanto más impacto tiene una pieza en el juego.
+[00:58:13 -> 00:58:22]  Y ahora, ¿cómo se construye y por qué son los valores?
+[00:58:22 -> 00:58:28]  La idea, o sea, no por qué los valores, son crecientes por eso el valor de la dama,
+[00:58:28 -> 00:58:32]  mayor que el valor de la torre, mayor que el valor de la fila, mayor que el valor de la espionja.
+[00:58:32 -> 00:58:40]  Pero a su vez, lo que nos interesa medir es la diferencia entre peso, o sea,
+[00:58:40 -> 00:58:46]  tener una dama y no tenerla, es una diferencia.
+[00:58:46 -> 00:58:54]  Tener una dama y que oponente no tenga la dama es una buena situación,
+[00:58:54 -> 00:59:03]  es un estado, como si tiene un valor positivo en el juego como para dar más chance de ganarlo,
+[00:59:03 -> 00:59:07]  de tener una dama en el tato.
+[00:59:07 -> 00:59:21]  y lo mismo con tener una torre, lo mismo con caballo y algilipio
+[00:59:21 -> 00:59:25]  pero bueno obviamente espejones hay muchos
+[00:59:25 -> 00:59:34]  pero no hay más que caballo, que torre, entonces también lo que cuenta la cantidad que tenemos
+[00:59:34 -> 00:59:45]  Entonces la idea es que, veamos solamente un pedacito, es armar una función de evaluación,
+[00:59:45 -> 00:59:53]  que sea el peso de una pieza o la diferencia entre las cantidades que tenemos.
+[00:59:53 -> 01:00:03]  cuando el D llegaba a 0 en el algoritmo anterior, ahí en el árbol
+[01:00:03 -> 01:00:14]  ahí evaluabas y tu utilidad en ese lugar es lo que te diga la opción
+[01:00:14 -> 01:00:15]  Exacto.
+[01:00:17 -> 01:00:20]  Obviamente tiene que crear unas propiedades.
+[01:00:21 -> 01:00:42]  Por ejemplo, tiene poder distinguir entre lo que sería una buena configuración que tiene un valor positivo, por ejemplo, frente a una que tiene un valor negativo, o que tiene algo que aporta positivamente al valor, versus alguna jugada que va a tener un valor menor.
+[01:00:42 -> 01:00:51]  por ejemplo, hacer una jugada en la que la gds con la dama, la cual me la van a comer,
+[01:00:51 -> 01:00:58]  tienen menor valor que hacer una jugada con la dama, en la cual le como la torre,
+[01:00:58 -> 01:01:05]  o lo que sea, el caballo, un caballo o una torre, a un monedón,
+[01:01:05 -> 01:01:10]  o hago una jugada que es tipo Happy Madness.
+[01:01:13 -> 01:01:17]  Entonces yo tengo que poder distinguir entre esos dos.
+[01:01:17 -> 01:01:19]  Y si...
+[01:01:20 -> 01:01:22]  Está de compartir.
+[01:01:23 -> 01:01:29]  Si yo tengo, por ejemplo, estoy en esta etapa y...
+[01:01:29 -> 01:01:41]  Yo tengo, si yo estoy en este estado, en este estado de max, también desde el fondo de la
+[01:01:41 -> 01:01:49]  y acá tengo un cierto movimiento en el cual
+[01:01:51 -> 01:01:59]  por ejemplo, pongo en riesgo la torre, no sé si usted paró nada más,
+[01:02:29 -> 01:02:31]  una torre
+[01:02:34 -> 01:02:36]  vamos a ponme una torre, ¿sabes?
+[01:02:38 -> 01:02:39]  bien
+[01:02:39 -> 01:02:41]  y pero no puedo evaluar más que esto
+[01:02:41 -> 01:02:43]  esto es lo que me dice...
+[01:02:43 -> 01:02:45]  eeeh...
+[01:02:45 -> 01:02:46]  mi profundidad
+[01:02:46 -> 01:02:48]  y a ustedes que harían
+[01:02:48 -> 01:02:50]  acá, que jugarían, irían por acá
+[01:02:50 -> 01:02:52]  o irían por acá
+[01:02:54 -> 01:02:56]  y bueno, solo este es mi horizonte
+[01:02:56 -> 01:02:58]  solo este es mi...
+[01:02:58 -> 01:03:03]  que puede pasar después. Entonces, si este es mi horizonte, lo podría decir, bueno,
+[01:03:03 -> 01:03:16]  prefiero comerme la torre ahora a oponente y no que oponente me coma la dama dos movimientos después.
+[01:03:16 -> 01:03:21]  Sergio, si ahí hubiera terminado el día de la presidencia, ¿no?
+[01:03:21 -> 01:03:25]  Yo no debería evaluar ambas cosas. O sea, ¿por qué decidir?
+[01:03:25 -> 01:03:27]  Es un ejemplo, no importa.
+[01:03:27 -> 01:03:29]  Bueno, pero...
+[01:03:29 -> 01:03:31]  Luego lo vamos a ver aquí.
+[01:03:31 -> 01:03:33]  ¿Aca?
+[01:03:33 -> 01:03:35]  ¿Para que? ¿Para que? ¿Eh?
+[01:03:35 -> 01:03:37]  ¿Y ahora eso?
+[01:03:37 -> 01:03:39]  No, que no precisaba que hiciera eso.
+[01:03:39 -> 01:03:41]  Yo hubiera esperado que me dijera, ¿yo voy a evaluar ese?
+[01:03:41 -> 01:03:43]  No, yo le evaluo acá.
+[01:03:43 -> 01:03:45]  Yo le evaluo acá.
+[01:03:45 -> 01:03:47]  ¿De allá no tienes que evaluarlo también?
+[01:03:47 -> 01:03:51]  Sí, pero yo le digo, la decisión la tengo que tomar acá.
+[01:03:51 -> 01:03:54]  Yo tengo que tomar la decisión acá, del valor de los futuros posibles.
+[01:03:54 -> 01:04:03]  posibles y bueno a cual de los futuros voy a ir? al que me comen la torre o sea que me
+[01:04:03 -> 01:04:12]  come la dama o al que yo le como la torre al oponente
+[01:04:12 -> 01:04:20]  la formula es la dama más grande, el hijo diseño una función de evaluación
+[01:04:20 -> 01:04:26]  que me pueda permitir ordenar dos estados en los cuales.
+[01:04:26 -> 01:04:33]  Un estado ese acá y otro estado acá, que es de agente.
+[01:04:33 -> 01:04:37]  Toma la torre.
+[01:04:42 -> 01:04:48]  Y ya, bueno, el valor de este estado es mayor, o sea, la estimación que yo tengo del valor de este estado.
+[01:04:48 -> 01:04:55]  La función de evaluación me dice cuál es el valor de todo el árbol que viene acá
+[01:04:55 -> 01:04:57]  Versus todo el valor que viene acá
+[01:04:57 -> 01:05:01]  Me dice, bueno, esta posición es más fuerte que esta, porque es un valor mayor
+[01:05:01 -> 01:05:07]  Entonces, cuando voy acá, por eso me imagino, bueno, anda por acá
+[01:05:07 -> 01:05:16]  Porque si yo tuviera una función de evaluación, que me lo ordene al revés
+[01:05:16 -> 01:05:24]  Bueno, me voy a ir por otro lado. Esto no es una garantía que la función de evaluación sea bueno o malo,
+[01:05:24 -> 01:05:31]  vamos a ver después, pero digo que esos son los criterios para definir una función de evaluación, y eso es lo que digo de esta.
+[01:05:31 -> 01:05:41]  La idea de esta función de evaluación, de las diferencias con estos valores, es esa.
+[01:05:41 -> 01:05:48]  decir, bueno, una posición es más fuerte que otra
+[01:05:48 -> 01:05:58]  si el valor de la función de evaluación es mayor y lo que está diciendo es
+[01:05:58 -> 01:06:02]  conservar la dama
+[01:06:02 -> 01:06:12]  Tiene valor de 9, conservar los alfíes, o sea, conservar cada alfí tiene valor de 5.
+[01:06:12 -> 01:06:16]  Si yo tengo, porque yo tengo una dama y dos alfíes y fuera de los dos torres,
+[01:06:16 -> 01:06:20]  eso sería 19, ya de base.
+[01:06:20 -> 01:06:26]  Sería 9 por la dama si el otro no lo tiene.
+[01:06:26 -> 01:06:28]  ¿Por qué?
+[01:06:28 -> 01:06:35]  Pero hagamos de lo primero con la gente. La gente tiene 9 por la dama, 9 más las dos torres.
+[01:06:35 -> 01:06:43]  Tiene 10, 19. Pero ahora me tengo que comparar con lo que tiene la gente, que tiene oponente.
+[01:06:43 -> 01:06:47]  O sea, oponente también tiene la dama, bueno, de esos estamos iguales.
+[01:06:47 -> 01:06:50]  Entonces los dos 9 se cancelan.
+[01:06:50 -> 01:06:58]  Pero si oponente tiene una torre en lugar de dos, ah, y yo ahí tengo una ventaja, o sea, gente tiene una ventaja de 5.
+[01:06:58 -> 01:07:10]  y va a decir, bueno, tener dos torres es mejor que tener una, o, como mejor he dicho, tener las dos torres
+[01:07:10 -> 01:07:19]  y que oponente tenga una es mejor que tener las dos torres y que oponente tenga dos torres.
+[01:07:19 -> 01:07:28]  Ese tipo de función de evaluación privilegia ciertas cosas.
+[01:07:28 -> 01:07:35]  Privilegia comer la torre.
+[01:07:35 -> 01:07:43]  Cómo se ve, cualquier movimiento que reduzca la cantidad de torres de un puente va a bajar,
+[01:07:43 -> 01:07:56]  pero va a subir el valor de la punta de la orca, dado por la función de evaluación del tab.
+[01:07:56 -> 01:08:10]  O sea que las funciones de evaluación también favorecen o penalizan determinadas estrategias.
+[01:08:10 -> 01:08:24]  Y en general lo que se puede hacer es combinar funciones de evaluación.
+[01:08:24 -> 01:08:31]  Por ejemplo, parte de la función de evolución favorecen movimientos,
+[01:08:31 -> 01:08:36]  por ejemplo, en el caso de esto, de como el ajedrez o el caso de su macero,
+[01:08:36 -> 01:08:47]  poco agresivos en el sentido de, bueno, es un movimiento de ataque, como ver una pieza.
+[01:08:47 -> 01:08:53]  Pero también hay otros que pueden ser movimientos defensivos.
+[01:08:53 -> 01:09:02]  que ahí no está. Esa es muy parcial. Pero pueden favorecer, justamente en el momento de ese medio,
+[01:09:02 -> 01:09:08]  favorecer no ser comida. Esto tiene un poco de los dos, porque obviamente si la gente pierde una dama
+[01:09:08 -> 01:09:13]  o pierde una torre, está malo. Pero bueno.
+[01:09:13 -> 01:09:34]  Pero esa es la idea. Y esta formulación es relativamente general porque para los juegos de zumbas 0,
+[01:09:34 -> 01:09:45]  sobre el gógo, etcétera, vuelta de ti, es pensar la función de evaluación como
+[01:09:45 -> 01:09:47]  este...
+[01:09:50 -> 01:09:52]  no sé, este...
+[01:09:56 -> 01:09:58]  C
+[01:09:58 -> 01:10:00]  y por...
+[01:10:00 -> 01:10:02]  o sea, una constante de hecho, una suma
+[01:10:06 -> 01:10:10]  de términos lineales
+[01:10:10 -> 01:10:12]  de la forma C y por...
+[01:10:12 -> 01:10:20]  la suma entre dos cosas.
+[01:10:20 -> 01:10:31]  EI para gente en el estado S, menos EI para un ponente en el estado S.
+[01:10:31 -> 01:10:40]  O sea, EI es una característica que tiene de evaluar en un estado.
+[01:10:40 -> 01:10:42]  Por ejemplo, la cantidad de damas que tiene.
+[01:10:42 -> 01:10:43]  La cantidad de...
+[01:10:43 -> 01:10:45]  E1 es la cantidad de damas que tiene.
+[01:10:45 -> 01:10:47]  E2 es la cantidad de torres que tiene.
+[01:10:47 -> 01:10:50]  E3 la cantidad de alfiles que tiene.
+[01:10:50 -> 01:10:51]  ¿Sí?
+[01:10:51 -> 01:10:52]  Vale.
+[01:10:52 -> 01:10:55]  Lo pueden hacer otras, venido de su juego de brazos.
+[01:10:55 -> 01:10:56]  Bien.
+[01:10:56 -> 01:11:02]  Y después, el valor es la diferencia entre las dos.
+[01:11:02 -> 01:11:05]  O sea, ponen en oposición y...
+[01:11:05 -> 01:11:07]  ¿Qué tiene sentido? El juego suma a cero.
+[01:11:07 -> 01:11:08]  ¿Vos?
+[01:11:08 -> 01:11:09]  ¿Vos lo vienes?
+[01:11:09 -> 01:11:16]  para gente tiene valor conservar la dama, para ponente también tiene valor conservar la suya.
+[01:11:16 -> 01:11:22]  Entonces, si los dos tenemos dama, esto vuelve a ser canseado.
+[01:11:22 -> 01:11:32]  Y tiene sentido que en esta forma no puedo sumar cero porque si hay una diferencia en el valor acá
+[01:11:32 -> 01:11:40]  y los costos son positivos, entonces quiere decir que esto me va a tener mayor valor para el frente.
+[01:11:40 -> 01:11:44]  O sea, va a aportar positivamente a el valor del frente.
+[01:11:46 -> 01:11:48]  ¿Está bien?
+[01:11:48 -> 01:11:53]  Pero nadie dijo acá, nadie dice acá que el coeficiente tiene que ser positivo.
+[01:11:54 -> 01:12:00]  Si el coeficiente es negativo, quiere decir que esta indicancia es favorable a oponente.
+[01:12:02 -> 01:12:10]  Si, tener más de algo puede ser favorable o mal.
+[01:12:10 -> 01:12:12]  ¿Cómo que sea un problema para mí?
+[01:12:12 -> 01:12:15]  Porque esto yo no sé qué es que sea algo.
+[01:12:15 -> 01:12:21]  Por ejemplo, capaz que haya más espacios en blanco, en un tablero,
+[01:12:21 -> 01:12:25]  es más favorable o mal que la gente.
+[01:12:25 -> 01:12:27]  O sea, solo no sabemos qué es cierto.
+[01:12:27 -> 01:12:43]  Ahora vamos a ver otro juego interesante que capaz te vinieron en agentes.
+[01:12:43 -> 01:12:49]  ¿La evaluación es un parme estado puntual o es profundidad?
+[01:12:49 -> 01:12:54]  La evaluación se plantea. Esto es función de evaluación y ese es un parámetro.
+[01:12:54 -> 01:12:56]  O sea, para todo estado.
+[01:12:56 -> 01:13:01]  ¿Dónde le aplicas? Le aplicas en los estados en los cuales la profundidad es...
+[01:13:01 -> 01:13:14]  O sea, vos te paras en un nuevo ata, estás evaluando y exploras todo el árbol de profundidad B.
+[01:13:15 -> 01:13:18]  Y acá vos evaluas la función global.
+[01:13:18 -> 01:13:24]  y obviamente si llegaste antes a un estado final,
+[01:13:24 -> 01:13:30]  mandar la utilidad, y la remontar. Después tomar la decisión como
+[01:13:30 -> 01:13:34]  en DiniMax, igual que siempre, y hacer un movimiento.
+[01:13:34 -> 01:13:41]  O sea que este arco se va corriendo, todo el tiempo este arco en el que se unirá
+[01:13:41 -> 01:13:43]  de ese van lujando para abajo
+[01:13:44 -> 01:13:47]  todo el tiempo cuando llegas a...
+[01:13:47 -> 01:13:50]  si se te agota la profundidad
+[01:13:50 -> 01:13:52]  todo es normal, si te agota la profundidad
+[01:13:52 -> 01:13:55]  con cual está bien sentido, que me parece más que con el de...
+[01:13:55 -> 01:13:57]  de cine, de estilo
+[01:13:57 -> 01:13:59]  a veces si eres un peón
+[01:13:59 -> 01:14:01]  es algo negativo, pero en función de...
+[01:14:01 -> 01:14:05]  o sea, de comprar a lo que te compre el peón
+[01:14:05 -> 01:14:08]  ahí como que se pega, localmente
+[01:14:08 -> 01:14:10]  digamos, es una cosa
+[01:14:10 -> 01:14:19]  O sea, para mí no es lo mismo, lo que le he preguntado para estados puntuales, digamos,
+[01:14:19 -> 01:14:25]  esta evaluación o en función de recursión o función del árbol, porque para mí cambia
+[01:14:25 -> 01:14:35]  un poco. Una buena cosa es tomar una decisión en un estado concreto y otra por ejemplo
+[01:14:35 -> 01:14:41]  es como tener una estrategia en largo plazo, por ejemplo...
+[01:14:41 -> 01:14:44]  Sí, sí, sí, no, ok.
+[01:14:44 -> 01:14:55]  Ahí es por lo que sí, lo que estás combinando es una estrategia dada
+[01:14:55 -> 01:15:01]  con estimar el valor en determinados lugares.
+[01:15:01 -> 01:15:08]  y lo entiendo perfectamente, la estrategia que está siguiendo es minimax
+[01:15:08 -> 01:15:17]  es un y o y puede ser otra
+[01:15:17 -> 01:15:26]  y esto es como, yo dije eso porque es el contexto en el que nos metimos
+[01:15:26 -> 01:15:34]  Pero, en realidad, después lo puedes combinar con cualquier otra cosa.
+[01:15:34 -> 01:15:39]  También lo puedes combinar con la poda, poder no llegar a este estado,
+[01:15:39 -> 01:15:44]  no porque la función de evaluación no te dejó,
+[01:15:44 -> 01:15:55]  sino porque tenías una estrategia que no te dejó hacer.
+[01:15:55 -> 01:16:00]  que eso también...
+[01:16:02 -> 01:16:06]  Pero eso sería que cuando llegas a un determinado lugar
+[01:16:08 -> 01:16:15]  ni siquiera explorarás, aplicarás la jugada pre-definida
+[01:16:15 -> 01:16:20]  porque ya como que tenés una estrategia para ese...
+[01:16:20 -> 01:16:28]  No, ni siquiera vas a verlo. Espera, era por ahí.
+[01:16:34 -> 01:16:36]  Entonces...
+[01:16:36 -> 01:16:41]  ...
+[01:16:41 -> 01:16:44]  ...
+[01:16:44 -> 01:16:49]  ...
+[01:16:49 -> 01:16:54]  ...
+[01:16:54 -> 01:16:59]  ...
+[01:16:59 -> 01:17:04]  ...
+[01:17:04 -> 01:17:10]  Obviamente no queremos errarle por mucho el valor,
+[01:17:12 -> 01:17:14]  pero sobre todo superar la complejidad.
+[01:17:15 -> 01:17:25]  Entonces, no puedo cambiar la complejidad de evaluar el subárbol
+[01:17:25 -> 01:17:28]  con la complejidad de evaluar la función de evaluación.
+[01:17:28 -> 01:17:40]  o sea, espero que el orden de la función de evaluación, o el tipo de compuso de la función de evaluación
+[01:17:40 -> 01:17:45]  tiene que ser muy inferior al de la evaluación del árbol
+[01:17:45 -> 01:17:49]  porque si no me da recorrer el árbol, que me da toda la evaluación correcta
+[01:17:49 -> 01:17:54]  ¿Puedo jugar sobre la profundidad también?
+[01:17:54 -> 01:18:04]  Pero bueno, ahí es un poco el mismo problema que gamma en reforma.
+[01:18:04 -> 01:18:12]  Si soy muy agresivo con gamma, reforma tendría más...
+[01:18:12 -> 01:18:17]  La vulgaridad natural convierte más rápido, pero algo que no es el...
+[01:18:17 -> 01:18:20]  por ahí, ni siquiera cercano al valor real.
+[01:18:20 -> 01:18:27]  Si yo digo nada más grande, bueno, voy a tener episodios rarísimos, pero nada más.
+[01:18:27 -> 01:18:28]  ¿Tá?
+[01:18:28 -> 01:18:29]  Espera, espera.
+[01:18:29 -> 01:18:31]  La he apagado.
+[01:18:31 -> 01:18:32]  Este nos pudo muy bien orden.
+[01:18:32 -> 01:18:34]  ¡Tá!
+[01:18:34 -> 01:18:38]  En líneas generales, o sea, hay tres criterios.
+[01:18:38 -> 01:18:40]  Este...
+[01:18:40 -> 01:18:50]  Son criterios como de manual, o sea que bueno, también tienen sus problemas para hablar de la práctica, su poquito que tenemos cuidado.
+[01:18:50 -> 01:18:59]  O sea, primero, si estamos en un contexto de juego de suma a cero, está viendo desde ahí, digamos,
+[01:18:59 -> 01:19:03]  estado finales en los que se gana, estado finales en los que se pierde, y igualmente,
+[01:19:03 -> 01:19:06]  estados finales y que hay empates.
+[01:19:06 -> 01:19:08]  Está bien.
+[01:19:08 -> 01:19:11]  Entonces la idea es que la función de evaluación
+[01:19:11 -> 01:19:13]  tiene que ordenar bien esos nuevos puestos.
+[01:19:13 -> 01:19:15]  Con esta misma idea que yo le decía,
+[01:19:15 -> 01:19:23]  tienen que darme más valor a un estado de ganar
+[01:19:23 -> 01:19:27]  que a un estado de empatar, que es a un estado final de perder.
+[01:19:27 -> 01:19:31]  Eso es lo que se está.
+[01:19:31 -> 01:19:41]  En realidad, ya lo sé, en la práctica hay otro tema que hay que tener cuidado, es que,
+[01:19:41 -> 01:19:47]  que no está ahí, pero ya lo vemos ahora, después lo vamos a ver con el ejemplo,
+[01:19:47 -> 01:19:54]  que es que eventualmente lo que puede llegar a pasar, justamente porque los árboles no están balanceados,
+[01:19:54 -> 01:20:02]  balanceados es que me encuentre con un estado ese cualquiera y con un estado final acá.
+[01:20:04 -> 01:20:14]  Y yo justo esté acá en un estado, que yo tengo que comparar estos dos.
+[01:20:17 -> 01:20:22]  Lo que me dice esa cosa de ahí es que si los dos son estados finales los puedo
+[01:20:22 -> 01:20:28]  Pero si uno es de estado final, como este, y el otro no, tengo que tener cuidado.
+[01:20:28 -> 01:20:32]  Porque por ejemplo, ¿qué dice el algoritmo?
+[01:20:32 -> 01:20:34]  Mira, cuando el estado es final...
+[01:20:34 -> 01:20:38]  Acá crees una utilidad, que puede ser 1, 0, o menos 1,
+[01:20:38 -> 01:20:42]  por el que esto es 1, pero acá nadie te dice cuánto va a ser.
+[01:20:42 -> 01:20:46]  Acá que entre las puestas y el botón te da 100.
+[01:20:46 -> 01:20:53]  100 es mayor que 1, pero 1 es sobre todo de ganar. Y esto es una estimación de algo que
+[01:20:53 -> 01:20:57]  puede pasar acá que puede llevar a perder.
+[01:20:57 -> 01:21:05]  Entonces, lo que hay que hacer en la práctica es normalizar esto con respecto a esto.
+[01:21:05 -> 01:21:12]  Si esto es entre el menos 1 y 1, y bueno, esto hay que normalizarlo entre el menos 1 y 1
+[01:21:12 -> 01:21:23]  para que sea menor que uno, para que sea menor que uno,
+[01:21:23 -> 01:21:30]  cosa que siempre vas a tener un valor menor que un estado final ganador
+[01:21:30 -> 01:21:39]  y mayor que un valor final perdedor.
+[01:21:39 -> 01:21:41]  Porque si no, esto es una cuenta de error.
+[01:21:44 -> 01:21:51]  Si imagínense que hagan un box de acá entre esto y esto y se van a decir andate por acá,
+[01:21:51 -> 01:21:53]  pero no me decían acá, nada más.
+[01:21:54 -> 01:21:55]  Y acá no sé.
+[01:21:57 -> 01:22:02]  ¿Veis? Eso no alcanza con eso, sino que es más lo que se hace.
+[01:22:02 -> 01:22:04]  Para que eso tenga sentido hay que normalizarlo.
+[01:22:04 -> 01:22:16]  porque para que me definir a Ibald en un final me tiene que quedar...
+[01:22:16 -> 01:22:20]  en algo que no es un final comparado con un...
+[01:22:20 -> 01:22:27]  o sea, que Ibald en el final me tiene que quedar mayor, si es un ganador, que Ibald en cualquier estado.
+[01:22:27 -> 01:22:29]  No solamente en el E3.
+[01:22:29 -> 01:22:37]  El de que vale la meta rara es el tema de complejidad.
+[01:22:37 -> 01:22:43]  Y bueno, el otro canal, o sea, uno y dos es algo que uno puede chequear más o menos.
+[01:22:43 -> 01:22:53]  Lo que no puede chequear a mano, robarlo o lo que sea, es que tiene que estar fuertemente
+[01:22:53 -> 01:23:01]  con la probabilidad de ganar. Eso con cimiento exterior y que podemos validar simulando.
+[01:23:01 -> 01:23:06]  Y esa es la manera que se hace para estunear esta de otra manera.
+[01:23:06 -> 01:23:19]  Si planteamos una ecuación, una función de evaluación así,
+[01:23:19 -> 01:23:27]  donde, separando por que está acá, este policía de casa se puede llevar a tu unidad, se puede llegar a ajustar, subir o bajar
+[01:23:27 -> 01:23:38]  para responder a la pregunta 3, o sea, el interior 3, que tan bueno es, porque capaz que si le pongo 10 a nada, como en algún lugar, como parece en algún lugar,
+[01:23:38 -> 01:23:42]  que el valor que le daba a ti a mí, es mejor que 9.
+[01:23:42 -> 01:23:55]  ¿Por qué? ¿Pero por qué es mejor o peor igual? Porque en el espacio completo de búsqueda, en general, ubica mejor a los estados buenos,
+[01:23:55 -> 01:23:59]  o separa mejor a los estados buenos, a los estados humanos.
+[01:23:59 -> 01:24:04]  En alguna hora lo que estoy tratando de hacer es separar a los estados de valor alto
+[01:24:04 -> 01:24:09]  de los de valor bajo y no mezclar que la difusión y la evaluación no los mezquen
+[01:24:09 -> 01:24:13]  sino que más bien me los separen.
+[01:24:23 -> 01:24:25]  Me parece que mejor ver un ejemplo.
+[01:24:25 -> 01:24:36]  Ah, sí, un acción de aquí. Lo último es que esta vez es otro problema prácticamente
+[01:24:36 -> 01:24:43]  volviéndose de lo que yo iba a compartir acá, pero volviéndose de esta parte de acá.
+[01:24:43 -> 01:24:51]  Básicamente, la función de evaluación que tenemos acá no satisface ordenar correctamente
+[01:24:51 -> 01:24:54]  los estados finales.
+[01:24:56 -> 01:25:01]  En el orquíficio, porque en realidad el estado final, propiamente final en la
+[01:25:01 -> 01:25:04]  jebelez, es comer al rey, eso no pasa.
+[01:25:04 -> 01:25:07]  Simplemente jatemate.
+[01:25:11 -> 01:25:18]  Pero bueno, si uno dice, bueno, el estado final es comer al rey,
+[01:25:18 -> 01:25:22]  Ahí no está el Rey.
+[01:25:22 -> 01:25:31]  Entonces, siguiendo esa lógica, el tener un valor alto en los estados finales,
+[01:25:31 -> 01:25:43]  y un valor muy bajo como estado final de Pérdida, lo que es un truco habitual es agregar un término...
+[01:25:43 -> 01:25:48]  Por ejemplo, este decide si tengo un rayo o no tengo un rayo.
+[01:25:48 -> 01:25:54]  Rayo de agentes, rayo oponente y pone algún peso astronómicamente acá.
+[01:25:54 -> 01:25:56]  Más infinito.
+[01:25:56 -> 01:26:01]  Entonces, eso hace trivialmente cumplirlo anteriormente.
+[01:26:01 -> 01:26:08]  En los dos finales ganadores eso es infinito, en los dos finales perdedores eso es menos infinito.
+[01:26:08 -> 01:26:12]  Estabes, eso son un poco...
+[01:26:12 -> 01:26:20]  A veces hay que ajustar la función de evaluación para que se vea bien.
+[01:26:20 -> 01:26:26]  Otra cosa que se hace en lugar de eso es un if.
+[01:26:26 -> 01:26:36]  es hacer que la función de evaluación diga, bueno, olvidarse del estado de...
+[01:26:37 -> 01:26:41]  siempre devuelvo el resultado de la función de evaluación, pero la función de evaluación dice,
+[01:26:41 -> 01:26:46]  si, if, estoy en el estado final, devuelvo la utilidad, else devuelvo el...
+[01:26:46 -> 01:26:57]  Entonces, ahí no tengo problema porque hacer esto sí lo normalizan.
+[01:26:57 -> 01:26:59]  Sí normalizan.
+[01:26:59 -> 01:27:01]  Está bien?
+[01:27:01 -> 01:27:04]  Bien, esto son...
+[01:27:04 -> 01:27:06]  Entonces, vamos a hacer una cosa.
+[01:27:06 -> 01:27:24]  Bueno, después vamos a aprender ese examen, pero es demasiado complejo como para entender este concepto.
+[01:27:24 -> 01:27:31]  La siguiente puedo compartir.
+[01:27:31 -> 01:27:34]  Va a ser el...
+[01:27:34 -> 01:27:37]  Bueno, vamos a ver.
+[01:27:37 -> 01:27:40]  Ya la vamos a hablar.
+[01:27:40 -> 01:27:42]  El...
+[01:27:42 -> 01:27:46]  La de ti.
+[01:27:46 -> 01:27:48]  La de ti.
+[01:27:48 -> 01:27:51]  Me pongo ahí.
+[01:27:51 -> 01:27:53]  Ehh...
+[01:27:56 -> 01:28:00]  Se puede pensar que es en su pasado, pero se derruye otro septiembre para que lo pique.
+[01:28:00 -> 01:28:05]  Una función de versión muy sencilla,
+[01:28:07 -> 01:28:10]  que igual van a tener dos problemas que no salen,
+[01:28:10 -> 01:28:13]  para el Taretit, siguiendo esta lógica.
+[01:28:14 -> 01:28:16]  Es...
+[01:28:16 -> 01:28:28]  Para los que están online, así es la forma.
+[01:28:30 -> 01:28:35]  Me parece que el micrófono que decía como va bien ya está en el control.
+[01:28:35 -> 01:28:45]  La idea de la función de la base es que la función le dé en cada...
+[01:28:45 -> 01:28:53]  que es una estaba que atendí, es una función de la red, con cruces y cincuentes.
+[01:28:55 -> 01:29:03]  Y lo que me dice es que la cantidad de filas potencialmente ganadoras.
+[01:29:03 -> 01:29:13]  ¿Qué es una línea? ¿Una columna, una fila o una diagona?
+[01:29:13 -> 01:29:25]  Una línea potencialmente ganadora. Una línea potencialmente ganadora es una línea donde no hay fichas de otro jugador.
+[01:29:25 -> 01:29:34]  Si agente es X, entonces es una línea ganadora, es una línea donde no hay X.
+[01:29:34 -> 01:29:40]  Y al revés para oponer.
+[01:29:40 -> 01:29:46]  Puede estar vacía, puede no haber ni ceros ni X.
+[01:29:46 -> 01:29:54]  Si está libre, y bueno, eventualmente esa es potencialmente ganadora para ambos y se va a cancelar.
+[01:29:54 -> 01:29:59]  Pero es una línea potencialmente agradable.
+[01:29:59 -> 01:30:05]  Esa es la misma lógica que la dama, o tener una dama o no, que las dos tenemos la dama,
+[01:30:05 -> 01:30:07]  eso se cancela.
+[01:30:07 -> 01:30:14]  Una línea que no tiene marcas, que es 1 o 2, se va a cancelar.
+[01:30:14 -> 01:30:26]  Entonces la función de evaluación es la diferencia
+[01:30:26 -> 01:30:40]  de la cantidad de líneas ganadoras que tiene el componente X.
+[01:30:40 -> 01:30:47]  Esa es la diferencia. Y vamos a hablar de la normalización, pero para que las cuentas sencillas
+[01:30:47 -> 01:30:53]  pretenden que normalizar sino en determinados lugares, cuando nos enfrentemos a
+[01:30:53 -> 01:30:58]  parar esa función de evaluación, con ganar o perder, que es 1, 0, o empatar,
+[01:30:58 -> 01:31:05]  que es 1, 0 menos 1, nos va a dar potencialmente equivocado.
+[01:31:05 -> 01:31:09]  Pero olvidémoslo del tema de la normalización, porque eso es.
+[01:31:09 -> 01:31:17]  ¿Tienes sentido?
+[01:31:17 -> 01:31:22]  No sé, capaz que por primero no tienes sentido, pero bueno.
+[01:31:22 -> 01:31:37]  En todo caso, esto es lo que me dice, si yo tengo más posibilidades de movimiento que yo por ejemplo.
+[01:31:37 -> 01:31:44]  de alguna manera, tenemos más oportunidades de ganar que oponentes porque hay más líneas
+[01:31:44 -> 01:31:51]  en las que o bien yo tengo posición o bien están libres pero tengo más que oponentes
+[01:31:51 -> 01:31:55]  esa es la idea
+[01:31:57 -> 01:32:04]  puede haber otras, se les puede hacer una clásica de mi trance
+[01:32:04 -> 01:32:13]  Entonces, por ejemplo, en esta posición, si agente tuviera que evaluar la función de evaluación,
+[01:32:13 -> 01:32:15]  también puede ser oponente, sea en cualquiera, no?
+[01:32:15 -> 01:32:20]  Puede ser que la función de evaluación es un sustituto de la utilidad.
+[01:32:20 -> 01:32:24]  Entonces este valor va a ser tanto para agentes como para oponentes.
+[01:32:24 -> 01:32:29]  Lo que pasa es que oponentes van a usar 1000 y agentes van a usar más.
+[01:32:29 -> 01:32:33]  Es como si el uno pudiese ser positivo o negativo, no importa.
+[01:32:33 -> 01:32:40]  es la estimación de la utilidad para agentes, siempre, por su tradición.
+[01:32:40 -> 01:32:51]  Entonces, agente tiene 6 posibles líneas ganadoras o caminos ganadores,
+[01:32:51 -> 01:32:59]  y bueno, son, están acá, son todos de acá, más la diagonal que es en lo que está X,
+[01:32:59 -> 01:33:11]  que son tres y después la diagonal es la verdad vacía y estas dos, seis.
+[01:33:11 -> 01:33:23]  ¿Cuántos tiene Bo? A ver si tienes cinco, que son, tiene estas dos, una columna y una fila, dos, y después de las otras tres.
+[01:33:23 -> 01:33:29]  El 3 que se van, el 3 que se cancelan.
+[01:33:29 -> 01:33:31]  Ahí estamos.
+[01:33:31 -> 01:33:33]  Bien.
+[01:33:35 -> 01:33:44]  Y entonces, bueno, por ejemplo, esto da menos 2, porque Tx tiene esta.
+[01:33:44 -> 01:33:48]  1, 2, 3 y 4.
+[01:33:48 -> 01:33:54]  pero por ejemplo tiene las dos diamarales
+[01:33:55 -> 01:34:05]  más esto, estos son dos, más esta tres, más esta cuatro,
+[01:34:05 -> 01:34:11]  por que tiene seis que se están olvidando, y esta y esta, las dos que están vacías,
+[01:34:11 -> 01:34:13]  Estas están para los dos.
+[01:34:13 -> 01:34:15]  ¿Qué fue la que fue andando?
+[01:34:15 -> 01:34:17]  Seis.
+[01:34:19 -> 01:34:23]  Entonces, ahora yo puedo... bueno, acá es lo mismo.
+[01:34:23 -> 01:34:30]  Este tiene seis, porque estar en el logo que tiene, a cinco porque está aquí acá.
+[01:34:30 -> 01:34:37]  Tiene dos acá, esta diagonal tres, y estas dos.
+[01:34:37 -> 01:34:44]  5 y ahora tiene 4, 1, 2 y esta 2.
+[01:34:44 -> 01:34:50]  Entonces bueno, si
+[01:34:50 -> 01:34:59]  la gente está en esta situación, básicamente tiene que mover hasta 1, 2, 3, 4, 5,
+[01:34:59 -> 01:35:07]  Entonces voy a mover esto y recolocar el valor.
+[01:35:07 -> 01:35:12]  Y lo puedo comparar. Ahora, ¿cómo se usa?
+[01:35:12 -> 01:35:15]  Esto simplemente me dice esta estructura de evaluación.
+[01:35:15 -> 01:35:20]  Estos son ejemplos de cómo se usa. Bueno, ya vimos que lo que hay que hacer es, bueno,
+[01:35:20 -> 01:35:30]  Bueno, m lo llama poner las x, pero tú lo llamaríamos x, y o el oponente sería ese pulito.
+[01:35:30 -> 01:35:32]  ¿Vale? El oponente.
+[01:35:32 -> 01:35:39]  Y la puntuación de la operación que es, en este caso, la de 9.3 a 2, con coeficiente 1.
+[01:35:39 -> 01:35:47]  Pero que van a llegar, tendríamos que ponerle uno sobre nueve, como coeficiente.
+[01:35:47 -> 01:35:57]  La cantidad de ocho, que son la cantidad de caminos máximos que hay en un tablero vacío.
+[01:35:57 -> 01:36:01]  Pero ¿cómo se usa?
+[01:36:01 -> 01:36:08]  y bueno, arrancamos con el nodo inicial y supongamos que le damos una profundidad de 1 o 2
+[01:36:08 -> 01:36:13]  acá estamos haciendo un minimax de la artes y con profundidad 2
+[01:36:13 -> 01:36:16]  ok, ya arrancamos
+[01:36:16 -> 01:36:19]  ok, estas son las etiquetas, arrancamos de acá
+[01:36:19 -> 01:36:26]  hay tres movimientos, no hay tres movimientos
+[01:36:26 -> 01:36:34]  A ver, en este momento, que son simétricos, cualquier esquina es lo mismo que cualquier medio
+[01:36:34 -> 01:36:38]  que en algún punto en el centro hay uno
+[01:36:44 -> 01:36:46]  Bueno, vamos por acá, ¿sabes?
+[01:36:46 -> 01:36:50]  Fungamos que a gente juega X.
+[01:36:50 -> 01:36:55]  Y bueno, este es un max, este es un min.
+[01:36:55 -> 01:36:59]  Entonces aquí es un min. Acá oponente.
+[01:36:59 -> 01:37:04]  Oponente puede jugar acá, acá, acá, acá...
+[01:37:04 -> 01:37:07]  y algunas son simétricas, no están todas.
+[01:37:07 -> 01:37:09]  ¿Saben? ¿Para qué ven?
+[01:37:09 -> 01:37:13]  ¿Somos de cuenta? Acá se nos agotó la profundidad.
+[01:37:13 -> 01:37:16]  Atencamos con 2, 1, 0.
+[01:37:17 -> 01:37:25]  No importa, si yo desarrollara el árbol completo sería, esto no es Max, es Max, Min, Max.
+[01:37:25 -> 01:37:29]  Pero ni me entero, para mí es como una hoja.
+[01:37:29 -> 01:37:36]  Yo tengo que evaluar la puntuación y el sustituto de la utilidad.
+[01:37:36 -> 01:37:39]  Entonces, de todas las hojas, lo caigo.
+[01:37:39 -> 01:37:48]  Bueno, acá vamos a la cuenta, no importa, pero creo que esta que vimos antes, no va a funcionar.
+[01:37:48 -> 01:37:57]  Bueno, y este, no lo puedo ahorrar, esto me da 6 menos 5, me da 1, me da 0, me da 1, me da 0, me da menos 1.
+[01:37:57 -> 01:38:12]  también esto son las estimaciones que me da mi función de evaluación sobre en realidad el valor del árbol subschacente
+[01:38:12 -> 01:38:23]  esto es como esto que va a sumar a una ganadora, es un empate, ganar, impartar, perder
+[01:38:23 -> 01:38:27]  y cada uno de estos valores remonta, pero como esto es un nodo min,
+[01:38:27 -> 01:38:33]  pero quedamos con el min, el min entre 1, 0, 1, 0, menos 1, y ahora menos 1
+[01:38:33 -> 01:38:36]  un sustituto del...
+[01:38:36 -> 01:38:40]  si voy por acá, dice menos 2,
+[01:38:40 -> 01:38:47]  perdón, si voy por acá hago lo mismo, tengo menos 1, 0, menos 1, 0, menos 2
+[01:38:47 -> 01:38:56]  estos son nodos y bueno y si
+[01:38:56 -> 01:39:08]  juego en el centro tengo valor 1 si opone de juaca y valor 2 si opone de cualquier de los dos
+[01:39:08 -> 01:39:13]  y valor 1 si pongo a cualquier esquina y valor 2 si pongo a cualquier esquina.
+[01:39:13 -> 01:39:20]  Este es un nodo min, entonces su oponente va a remontar 1 y en el nodo más,
+[01:39:20 -> 01:39:25]  que voy a decir, el máximo entre menos 1, menos 2 y 1, se va a hacer jugar el centro.
+[01:39:25 -> 01:39:33]  Que esa sea, después, la mejor jugada que me lleve a ganar,
+[01:39:33 -> 01:39:37]  Pero es lo que me dice mi función de evaluación.
+[01:39:37 -> 01:39:44]  Entre jugar en una esquina, jugar acá o jugar en el centro, jugar aquí.
+[01:39:44 -> 01:39:50]  Capaz que si le damos profundidad 3, el resultado va a ser otro.
+[01:39:50 -> 01:39:55]  Porque con profundidad 3, si los valores van a ser otros, va a haber un poco más de información.
+[01:39:55 -> 01:40:04]  eventualmente y va a remontar y ya no jugamos en otro lado.
+[01:40:04 -> 01:40:12]  ¿Está bien? ¿Se debe la idea de la función de evaluación?
+[01:40:12 -> 01:40:21]  Esto en realidad daría lo mismo si lo juegan, por ejemplo, lo que intento hacer acá es que
+[01:40:21 -> 01:40:26]  porque profundidad 2 acá es esencialmente un turno.
+[01:40:26 -> 01:40:34]  Es lo mismo que decir profundidad 1 pero en turnos, una ronda.
+[01:40:34 -> 01:40:44]  Para mí lo más fácil es porque hay muchos juegos...
+[01:40:44 -> 01:40:56]  No, porque como vimos que hay cartas que hacen que la alternancia no sea perfecta, que se vuelve para atrás, re-jugar y todo lo demás, por lo más fácil es...
+[01:40:56 -> 01:41:05]  Yo sé cuántas cartas hay que jugar, no importa quién juegue, pero bueno, allí hay otras estrategias, es posible.
+[01:41:05 -> 01:41:07]  ¿Está? ¿Sí?
+[01:41:07 -> 01:41:10]  El re-cuadro es el rojo que era lo que decía tu hermano.
+[01:41:10 -> 01:41:14]  Ah, sí, es eso, es que en realidad...
+[01:41:14 -> 01:41:16]  Está diciendo que...
+[01:41:16 -> 01:41:22]  No, es que esto corresponde a una jugada de...
+[01:41:24 -> 01:41:31]  Un play en realidad, es two play, que es decir, dos movimientos, pero two play pero puede.
+[01:41:31 -> 01:41:38]  en un juego, en el terminal, somos cero como el...
+[01:41:38 -> 01:41:41]  ...
+[01:41:41 -> 01:41:45]  ... al tablet y esto es lo mismo que un marco.
+[01:41:47 -> 01:41:50]  Simplemente es el...
+[01:41:50 -> 01:41:52]  No, no, no...
+[01:41:52 -> 01:41:58]  Lo que uno dice es que poner a dos agentes jugando a esto en base a estrategia, digamos.
+[01:41:58 -> 01:42:09]  vos por cada movimiento vas a reconstruir el árbol en la posición en la que está y jugas ahí
+[01:42:09 -> 01:42:21]  si, si puedo mostrar eso ahora o lo puedo mostrar después, pero técnicamente si quieres para responder
+[01:42:21 -> 01:42:32]  Esto es la simulación que hace el jugador X, que es el primero, en la raíz.
+[01:42:32 -> 01:42:37]  Su simulación es, yo tengo que arrancar el juego, tengo que poner las X en algún lugar.
+[01:42:37 -> 01:42:49]  Simulo el juego hasta profundidad 2 y decide, entonces, de acuerdo a su estimación, jugar unas X en el centro.
+[01:42:49 -> 01:43:03]  Ahí terminó esa jugada para jugador X y ahora viene jugador oponente que podemos suponer, por ejemplo, hace también minimax, ahora él es max.
+[01:43:03 -> 01:43:11]  de alguna manera, y entonces hace esto mismo a partir de acá.
+[01:43:11 -> 01:43:14]  El otro puso una línea de...
+[01:43:14 -> 01:43:22]  El otro, entonces yo arranco acá y hago, desarrollo el juego profundidad 2, pero capaz que oponente tiene más memoria,
+[01:43:22 -> 01:43:27]  tiene la mejor máquina, y desarrolla el juego profundidad 4.
+[01:43:27 -> 01:43:39]  Y entonces hace su movimiento. Después de luego toca el turno a X que va a hacer su anarquismo.
+[01:43:39 -> 01:43:49]  Entonces es un esquema de tipo planifico, juego y toca el otro. Planifica, juega y toca.
+[01:43:49 -> 01:43:56]  Si hubiera tres jugadores, los mismos jugadores, los mismos planifican, juegan, planifican, juegan, planifican, juegan.
+[01:43:56 -> 01:44:05]  Para uno puede tener una estrategia, o sea, una meta estrategia de planificación.
+[01:44:05 -> 01:44:17]  Si quieren lo que vamos a hacer, si vean 2000 más, cerramos con poco de historia y de otras
+[01:44:17 -> 01:44:23]  cosas y así después pueden laosar el obligatorio y no hacemos nada, si, vamos a hacer una pausa
+[01:44:23 -> 01:44:33]  que volvemos. Si quieren solo por fan, bueno, es ir a leer un poco la historia del programa
+[01:44:33 -> 01:44:41]  para hacer el tuning, que en realidad nunca fue un programa escrito en una máquina ni nada
+[01:44:41 -> 01:44:50]  si se pudo una sola vez en un papel, el tuning tardaba media hora en hacer cada música de evaluación
+[01:44:50 -> 01:44:52]  la posibilidad de evaluación era bastante más complicada
+[01:44:52 -> 01:45:02]  de hecho estamos en este lugar, acá y a un viejo, o sea un libro de capítulo 20
+[01:45:02 -> 01:45:08]  un libro, está todo desarrollado, es un juego de ajedrez, acá está su función,
+[01:45:08 -> 01:45:17]  Peores 1, Caballeros 3, Los Alfires 3 y medio, etc.
+[01:45:17 -> 01:45:23]  Y el Check Bait, que está en mi, ese campo, que se vio con una con coepicientes muy grandes,
+[01:45:23 -> 01:45:28]  No, ni siquiera llegara a comerla.
+[01:45:28 -> 01:45:35]  Pero tiene o no lo vale.
+[01:45:35 -> 01:45:39]  Pero hay un montón de otras.
+[01:45:39 -> 01:45:42]  Aquí estamos para simularlo acá.
+[01:45:42 -> 01:45:44]  Esa es la función de base.
+[01:45:44 -> 01:45:47]  Después hay otras que es lo que le decía.
+[01:45:47 -> 01:45:49]  Por ejemplo, una parte en componente
+[01:45:49 -> 01:45:56]  por ejemplo, le agregaba puntos en función de por qué no se estaba defendida o no,
+[01:45:56 -> 01:46:04]  por ejemplo, le agregaba puntos y está defendida, y un punto y medio está defendida dos veces,
+[01:46:04 -> 01:46:16]  por ejemplo, ustedes defienden una torre con un peón con un anfil y un caballo,
+[01:46:16 -> 01:46:24]  o sea, muchas cosas que pueden que complican, no solamente el valor.
+[01:46:24 -> 01:46:29]  ¿Cuál es el mérito de Deep Blue?
+[01:46:29 -> 01:46:34]  ¿Iba muy abajo en el cálculo, tenía una buena exclusión de evaluación?
+[01:46:34 -> 01:46:37]  Todas, las dos.
+[01:46:37 -> 01:46:49]  Sí, porque en realidad el anonimo de la contrar que me hacía Milmax con el Crabby.
+[01:46:49 -> 01:47:03]  Sí, el de Deep Blue, aunque hay un puentito por ahí, un cásparo, un movimiento que lo desconcertó.
+[01:47:03 -> 01:47:14]  y ahí hay una duda que respondió, fue un movimiento aleatorio, aparentemente,
+[01:47:14 -> 01:47:19]  pero no se sabe si fue aleatorio expresamente, nadie sabe, nadie sabe,
+[01:47:19 -> 01:47:23]  fue aleatorio o bumbar, fue un error politicial, no?
+[01:47:23 -> 01:47:28]  La cuestión es que, según Casparov, me concertó ese movimiento.
+[01:47:28 -> 01:47:33]  Esa es la única opción, pero sí, la profundidad a la que iba era grande.
+[01:47:33 -> 01:47:36]  ¿Y ese movimiento de jugador, de club o...?
+[01:47:36 -> 01:47:43]  Bueno, en todo caso, de jugador contra Cásparo, que coexpreció sus movimientos y...
+[01:47:43 -> 01:47:50]  Pero eso no es un paper, es una nota en una interview donde dice...
+[01:47:50 -> 01:48:02]  Hay un video de Cáparo jugando contra TurboChamp, una versión que alguien se ocupó de implementar.
+[01:48:02 -> 01:48:13]  para él le decía que le ganaba 4 jugadas, porque era muy rudimental, de todo era que fue como que la primera vez
+[01:48:13 -> 01:48:27]  y bueno, cómo hacer un programa que fue... y no sé si leyeron alguna vez el paper de Turing sobre las...
+[01:48:27 -> 01:48:32]  donde habla de Learning Machines, que está publicado en Mind y no sé qué.
+[01:48:32 -> 01:48:36]  Y es impresionante cómo se hace.
+[01:48:36 -> 01:48:40]  Arranca este capítulo libre haciéndose 6 preguntas,
+[01:48:40 -> 01:48:43]  y solo interpretaciones de qué quiere decir construcción.
+[01:48:43 -> 01:48:47]  Si a uno le dicen, construy un programa que juega la P3,
+[01:48:47 -> 01:48:50]  todo para él tenía 10 interpretaciones posibles.
+[01:48:50 -> 01:49:00]  Pero bueno, perdón, sí, una cosa más que sí quería ver.
+[01:49:00 -> 01:49:04]  Conocen, pero si no saben, si conocen lo cuento.
+[01:49:04 -> 01:49:08]  Bueno, bueno, es...
+[01:49:08 -> 01:49:12]  Bueno, bueno, es...
+[01:49:12 -> 01:49:14]  Hacemos una pausa de dos minutos.
+[01:49:14 -> 01:49:17]  Hacemos una pausa de dos minutos.
+[01:49:47 -> 01:49:49]  porque Faroq está haciendo touring.
+[01:49:49 -> 01:49:52]  Sí, vamos a hacer white.
+[01:49:52 -> 01:49:53]  ¿Quieres jugar white?
+[01:49:53 -> 01:49:55]  ¿Quieres jugar black?
+[01:49:55 -> 01:49:57]  Ok, primero, cambiaré el motor.
+[01:49:57 -> 01:49:59]  Ahora, en nuestro programa,
+[01:49:59 -> 01:50:01]  podemos elegir cualquier motor.
+[01:50:01 -> 01:50:03]  Voy a elegir el motor de touring.
+[01:50:03 -> 01:50:05]  Y luego voy a decir,
+[01:50:05 -> 01:50:07]  como nivel de juego,
+[01:50:07 -> 01:50:09]  ¿deberíamos jugar 2-ply?
+[01:50:09 -> 01:50:11]  No, vamos a jugar original.
+[01:50:11 -> 01:50:13]  2-ply, 2-ply.
+[01:50:13 -> 01:50:15]  Por supuesto, nuestro motor
+[01:50:15 -> 01:50:22]  mucho más profundo y lo haré 10 segundos y luego Amateurs podrán venir y probarlo y ver que es bastante fuerte.
+[01:50:22 -> 01:50:26]  Voy a mover la pared y...
+[01:50:26 -> 01:50:28]  ¿La de Zanzibar?
+[01:50:28 -> 01:50:30]  ¿La de Zanzibar? Claro que sí.
+[01:50:30 -> 01:50:32]  Ahí está Zanzibar.
+[01:50:32 -> 01:50:36]  Sí, está diciendo que en realidad el programa de Tiro Cham,
+[01:50:36 -> 01:50:38]  Alan y Zanzibar han jugado.
+[01:50:38 -> 01:50:40]  Lo que hicimos con él.
+[01:50:40 -> 01:50:43]  Y que Caspar y yo pasamos lo mismo.
+[01:50:43 -> 01:50:45]  ¿Qué?
+[01:50:45 -> 01:50:47]  ¿No iba a hacer eso?
+[01:50:47 -> 01:50:49]  No iba a palañizar madedosa.
+[01:50:49 -> 01:50:51]  En su mente, en el momento.
+[01:50:51 -> 01:50:53]  Claro, claro, eso es lo que dices.
+[01:50:53 -> 01:50:55]  O si pudiera, ¿te entiendes?
+[01:50:55 -> 01:50:57]  ¿Qué? ¿Para hacer un papel o dibujar?
+[01:50:59 -> 01:51:01]  Lo siento.
+[01:51:01 -> 01:51:03]  Tienes que recordar que fue
+[01:51:03 -> 01:51:05]  15 minutos
+[01:51:05 -> 01:51:07]  para calcular cada uno de estos movimientos.
+[01:51:37 -> 01:51:42]  Y yo no quería ir más allá, pero me reconoció.
+[01:51:42 -> 01:51:49]  Fue en la década de 40, y la primera vez se recordó en 1951-52.
+[01:51:49 -> 01:51:52]  Así que 60 años atrás, no existía.
+[01:51:52 -> 01:51:55]  Y fue un gran fin.
+[01:51:55 -> 01:52:00]  Y nadie puede intentar jugar con 5 segundos cada movimiento.
+[01:52:00 -> 01:52:06]  Y, de nuevo, es algo que definitivamente cambió nuestras vidas.
+[01:52:07 -> 01:52:09]  A ver, todo lo que yo hago.
+[01:52:09 -> 01:52:13]  Vamos, el...
+[01:52:13 -> 01:52:15]  el...
+[01:52:15 -> 01:52:17]  digamos, el banca monga.
+[01:52:19 -> 01:52:21]  ¿Aquí conoce el banca monga?
+[01:52:23 -> 01:52:25]  El banca monga que...
+[01:52:27 -> 01:52:29]  No tenía nombres.
+[01:52:31 -> 01:52:33]  Pero, pero, pero, ¿se acuerdan?
+[01:52:33 -> 01:52:35]  Sí, sí.
+[01:52:35 -> 01:52:37]  de Temporal Differences, GD.
+[01:52:39 -> 01:52:43]  Y de la creación de GD Gammon.
+[01:52:44 -> 01:52:45]  ¿Cómo?
+[01:52:46 -> 01:52:47]  Me suena así.
+[01:52:47 -> 01:52:48]  Algo hicimos.
+[01:52:50 -> 01:52:55]  Bueno, en general GD es como una unidad Q-learning.
+[01:52:55 -> 01:53:07]  Y una de las crepnozones, si fue la primera que se usó, fue para jugar al Pac-Gammon
+[01:53:07 -> 01:53:21]  y fue exitoso Fiddy Gammon usar Temporal Differences, un juego de alentado.
+[01:53:21 -> 01:53:28]  Pero ese es el vínculo de esto con...
+[01:53:28 -> 01:53:30]  con...
+[01:53:30 -> 01:53:31]  con Freeform Learning.
+[01:53:31 -> 01:53:33]  Se pueden combinar las cosas.
+[01:53:33 -> 01:53:35]  No hay prueba.
+[01:53:35 -> 01:53:39]  Acá hicimos unas evaluaciones donde el valor se prepara perfecto,
+[01:53:39 -> 01:53:43]  pero eventualmente podríamos poner descuentos gamma
+[01:53:43 -> 01:53:48]  para que los altos valores,
+[01:53:48 -> 01:53:56]  que los muy decanos sean reducidos.
+[01:53:56 -> 01:54:07]  Pero es interesante si lo conocen porque para esto si quieren poder practicar funcionalidad
+[01:54:07 -> 01:54:17]  de evaluación es interesante porque si alguna vez jugaron es mejor.
+[01:54:17 -> 01:54:30]  porque hay mucho lugar para funciones de evaluación que tengan términos que favorezcan atacar,
+[01:54:30 -> 01:54:43]  que en mi caso sería avanzar o avanzar, por ejemplo, versus otras que serían comer lechichas al otro.
+[01:54:43 -> 01:54:50]  Es decir, las escuadras defensivas son por ejemplo favorecedor a la cantidad de...
+[01:54:50 -> 01:54:59]  Sí, si una vez jugaron, básicamente el objetivo es hacer una ficha sola, al contrario de lo que voy a recoger,
+[01:54:59 -> 01:55:07]  las negras van así y las rojas van así.
+[01:55:07 -> 01:55:14]  Estas dos roquitas que están acá, están las que tienen la ríe más complicada,
+[01:55:14 -> 01:55:16]  que tienen que recorrer todo el tablerón que está acá.
+[01:55:16 -> 01:55:22]  Estas dos, estas son las que están...
+[01:55:22 -> 01:55:28]  Entonces, bueno, uno podría querer agarrar y rajar lo antes posible
+[01:55:28 -> 01:55:31]  y hacer que estas dos vayan, ¿no?
+[01:55:31 -> 01:55:39]  la gente se favorece estar en un campo propio.
+[01:55:39 -> 01:55:43]  Pero bueno, riesgo de quedar solo.
+[01:55:45 -> 01:55:53]  Entonces bueno, tener fichas solas es desfavorable.
+[01:55:53 -> 01:55:57]  Porque puede ser comida.
+[01:55:57 -> 01:56:17]  Y tener torres es más bien defensivo porque las torres, etcétera, como las de los dos, no pueden ser combinadas.
+[01:56:17 -> 01:56:24]  Entonces uno puede hacer muchas cosas.
+[01:56:24 -> 01:56:35]  Puede tener la cantidad de torres que tiene uno, la cantidad de fichas que tiene uno en su tablero versus el otro,
+[01:56:35 -> 01:56:42]  la cantidad de fichas comidas, porque las fichas comidas se quedan afuera y hay que volver a centrar.
+[01:56:42 -> 01:56:54]  Pero para volver a centrar, dado que el modelador máximo fundado es 6, tiene que haber lugar en este espacio.
+[01:56:54 -> 01:57:01]  Entonces, una estrategia es llenar eso con fichas propias para que el otro no pueda salir.
+[01:57:01 -> 01:57:07]  Entonces, bueno, acá tienen aplicadas funciones de evaluación.
+[01:57:07 -> 01:57:17]  Hay muchas posibilidades de hacerlas.
+[01:57:17 -> 01:57:23]  Porque ahí pueden ver, eso que yo les decía, positivas, o sea, pretensivas de ataque.
+[01:57:23 -> 01:57:30]  y eventualmente, incluso creo que hay un paper que si lo buscan les voy a notar,
+[01:57:30 -> 01:57:34]  hacen simulaciones para ajustar los peticiones.
+[01:57:34 -> 01:57:45]  Bueno, hay muchos ejercicios de solenco-arciario,
+[01:57:45 -> 01:58:01]  Te digo particularmente porque tienen su uso y han tenido su éxito en varias situaciones.
+[01:58:01 -> 01:58:08]  por ejemplo, en el Sistema de Situación, en Alfago, otras no van a estar, pero también.
+[01:58:08 -> 01:58:14]  Entonces es algo, en nuestro alcance lo que podemos hacer es enseñar a un poco a Marcos,
+[01:58:14 -> 01:58:23]  que está bueno, para entender y permitir resolver cosas, o sea, de manera aproximada personalmente.
+[01:58:23 -> 01:58:32]  Y yo suelo poner...
+[01:58:32 -> 01:58:37]  ¿De Pacamon?
+[01:58:37 -> 01:58:40]  No, no, de Pacamon no, es diseñar una futura evolución.
+[01:58:40 -> 01:58:42]  Vamos a ver cómo le llena.
+[01:58:42 -> 01:58:48]  Por ejemplo, lo más fácil, si hay a veces...
+[01:58:48 -> 01:58:55]  No necesitan hacer una raya de los juegos o del ambiente para sacar algunas.
+[01:58:55 -> 01:59:01]  Por ejemplo, si es por puntos, todo lo que es juego por puntos, y bueno,
+[01:59:01 -> 01:59:07]  hay una cosa que es fácil, que es la diferencia, si el que gana es el que tiene más puntos,
+[01:59:07 -> 01:59:14]  y bueno, entonces, se cae en el cuadro con una pedacito de la inscripción de evaluación
+[01:59:14 -> 01:59:18]  va a ser la diferencia de puntos.
+[01:59:18 -> 01:59:23]  Porque el que tiene más puntos gana, entonces, obviamente ordena correctamente los
+[01:59:23 -> 01:59:30]  resultados finales. Si yo mantengo una cantidad de puntos por encima del otro
+[01:59:30 -> 01:59:33]  todo el tiempo voy a ganar.
+[01:59:33 -> 01:59:35]  Entonces no hay cosas que...
+[01:59:35 -> 01:59:39]  Después la solución que le hacemos.
+[01:59:39 -> 01:59:50]  Eso está bueno. Y vamos a ver un juego que no es muy conocido y que entonces no hay muchas funciones de evaluación.
+[01:59:50 -> 01:59:54]  Había una pregunta en el chat, para la que no lo había pasado, la preguntaba en el chat, que no sabía.
+[01:59:54 -> 01:59:56]  Almoonschat.
+[01:59:56 -> 02:00:02]  Se pregunta por la que ver, va a ser el mil, va a ser el damon, a no decir cuáles son las clases.
+[02:00:02 -> 02:00:09]  Este es para el clave de ti también, pero para este no, no, no, no, no.
+[02:00:09 -> 02:00:11]  Vamos a tener que revisar un poco.
+[02:00:11 -> 02:00:17]  Con esto terminamos.
+[02:00:17 -> 02:00:20]  Así que nada de compartir.
+[02:00:20 -> 02:00:31]  Si tienen preguntas, consultas, del obligatorio que dicen, acuérdense, eso no es...
+[02:00:31 -> 02:00:41]  No, no, espera, hasta un momento, si bien yo le dije que no hay que poner cosas raciales
+[02:00:41 -> 02:00:50]  y después el final, pero es importante que entreguen, que se vea bien, que haya informe y todo.
