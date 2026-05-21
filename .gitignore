@@ -7,8 +7,9 @@ __pycache__/
 .venv/
 venv/
 
-# Videos (demasiado grandes para git)
+# Videos y frames
 clases/*.mp4
+frames/
 
 # OS
 .DS_Store
