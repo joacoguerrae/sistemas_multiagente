@@ -10,6 +10,8 @@ venv/
 # Videos y frames
 clases/*.mp4
 frames/
+transcripciones/vision/
+checkpoints/
 
 # OS
 .DS_Store
