@@ -24,7 +24,11 @@ from agents.random_agent import RandomAgent
 from agents.iql import IQL
 from agents.jal import JAL
 
+import os
+
 # ─── Colores y estilo ────────────────────────────────────────────────────────
+
+OUTPUT_DIR = None  # Setealo con setup_output_dir() para guardar figuras automáticamente
 
 AGENT_COLORS = {
     "FP": "#2196F3",
@@ -62,6 +66,24 @@ def setup_plot_style():
         plt.style.use("seaborn-v0_8-whitegrid")
     except OSError:
         plt.style.use("ggplot")
+
+
+def setup_output_dir(path):
+    """Setea la carpeta donde se guardan automáticamente las figuras generadas."""
+    global OUTPUT_DIR
+    OUTPUT_DIR = path
+    os.makedirs(path, exist_ok=True)
+    print(f'📁 Figuras se guardan en: {os.path.abspath(path)}')
+
+
+def _save_fig(fig, name):
+    """Guarda la figura si OUTPUT_DIR está configurado."""
+    if OUTPUT_DIR is not None:
+        # Sanitizar nombre de archivo
+        safe_name = name.replace(' ', '_').replace('—', '-').replace(':', '')
+        path = os.path.join(OUTPUT_DIR, f'{safe_name}.png')
+        fig.savefig(path, dpi=150, bbox_inches='tight')
+        print(f'  💾 {path}')
 
 
 # ─── Factory de agentes ──────────────────────────────────────────────────────
@@ -109,6 +131,9 @@ def run_experiment(
     **game_kwargs,
 ):
     """Ejecuta un enfrentamiento y trackea políticas y rewards a lo largo del tiempo."""
+    game_name = game_class.__name__
+    print(f'\n🎮 {agent_names[0]} vs {agent_names[1]} — {game_name} — {n_episodes:,} episodios')
+
     game = game_class(**game_kwargs)
     game.reset()
 
@@ -182,6 +207,12 @@ def run_tournament(game_class, agent_list, n_episodes=10000, seed=42, workers=No
         workers = cpu_count()
 
     n = len(agent_list)
+    total_matchups = n * n
+    game_name = game_class.__name__
+    mode = f'paralelo ({workers} CPUs)' if workers > 1 else 'secuencial'
+    print(f'\n🏆 Torneo {game_name} — {n} agentes, {total_matchups} matchups '
+          f'× {n_episodes:,} eps c/u — modo {mode}')
+
     matrix = np.zeros((n, n))
     matchup_args = [
         (game_class, agent_list[i], agent_list[j], n_episodes, seed, game_kwargs)
@@ -193,19 +224,20 @@ def run_tournament(game_class, agent_list, n_episodes=10000, seed=42, workers=No
             results = list(tqdm(
                 pool.imap(_run_single_matchup, matchup_args),
                 total=len(matchup_args),
-                desc=f'Torneo round-robin ({workers} CPUs)',
+                desc=f'Torneo {game_name} ({workers} CPUs)',
                 leave=False,
             ))
         for idx, avg in enumerate(results):
             i, j = divmod(idx, n)
             matrix[i, j] = avg
     else:
-        pbar = tqdm(matchup_args, desc='Torneo round-robin', leave=False)
+        pbar = tqdm(matchup_args, desc=f'Torneo {game_name}', leave=False)
         for idx, args in enumerate(pbar):
             i, j = divmod(idx, n)
             pbar.set_postfix_str(f'{agent_list[i]} vs {agent_list[j]}')
             matrix[i, j] = _run_single_matchup(args)
 
+    print(f'✅ Torneo {game_name} completo')
     return matrix
 
 
@@ -249,6 +281,7 @@ def plot_tournament_heatmap(matrix, agent_list, game_name):
 
     fig.colorbar(im, ax=ax, label="Reward promedio", shrink=0.8)
     plt.tight_layout()
+    _save_fig(fig, f'torneo_{game_name}')
     plt.show()
 
 
@@ -293,6 +326,7 @@ def plot_policy_evolution(result, game_name, action_labels=None):
         y=1.02,
     )
     plt.tight_layout()
+    _save_fig(fig, f'politicas_{game_name}_{result["agent_names"][0]}_vs_{result["agent_names"][1]}')
     plt.show()
 
 
@@ -324,6 +358,7 @@ def plot_reward_evolution(result, game_name):
     ax.legend()
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
+    _save_fig(fig, f'reward_{game_name}')
     plt.show()
 
 
