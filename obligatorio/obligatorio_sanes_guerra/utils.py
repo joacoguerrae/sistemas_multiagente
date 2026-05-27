@@ -6,6 +6,7 @@ de políticas y generar tablas de torneo round-robin.
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
+from multiprocessing import Pool, cpu_count
 from tqdm.auto import tqdm
 
 from agents.fictitiousplay import FictitiousPlay
@@ -117,29 +118,60 @@ def run_experiment(game_class, agent_names, n_episodes=10000,
 
 # ─── Torneo round-robin ─────────────────────────────────────────────────────
 
+def _run_single_matchup(args):
+    """Worker para un matchup individual (top-level para que sea picklable)."""
+    game_class, agent_name_i, agent_name_j, n_episodes, seed, game_kwargs = args
+    game = game_class(**game_kwargs)
+    game.reset()
+    ids = game.agents
+    agents = {
+        ids[0]: make_agent(agent_name_i, game, ids[0], seed=seed),
+        ids[1]: make_agent(agent_name_j, game, ids[1], seed=seed + 1),
+    }
+    total_r = 0.0
+    for _ in range(n_episodes):
+        actions = {a: agents[a].action() for a in ids}
+        game.step(actions)
+        total_r += game.reward(ids[0])
+    return total_r / n_episodes
+
+
 def run_tournament(game_class, agent_list, n_episodes=10000,
-                   seed=42, **game_kwargs):
-    """Ejecuta torneo round-robin. Retorna matriz de rewards promedio del jugador fila."""
+                   seed=42, workers=None, **game_kwargs):
+    """Ejecuta torneo round-robin, paralelizado automáticamente según CPUs disponibles.
+
+    Args:
+        workers: número de procesos paralelos.
+                 None → auto-detecta cpu_count().
+                 1 → secuencial (sin multiprocessing).
+    """
+    if workers is None:
+        workers = cpu_count()
+
     n = len(agent_list)
     matrix = np.zeros((n, n))
+    matchup_args = [
+        (game_class, agent_list[i], agent_list[j], n_episodes, seed, game_kwargs)
+        for i in range(n) for j in range(n)
+    ]
 
-    matchups = [(i, j) for i in range(n) for j in range(n)]
-    pbar = tqdm(matchups, desc='Torneo round-robin', leave=False)
-    for i, j in pbar:
-        pbar.set_postfix_str(f'{agent_list[i]} vs {agent_list[j]}')
-        game = game_class(**game_kwargs)
-        game.reset()
-        ids = game.agents
-        agents = {
-            ids[0]: make_agent(agent_list[i], game, ids[0], seed=seed),
-            ids[1]: make_agent(agent_list[j], game, ids[1], seed=seed + 1),
-        }
-        total_r = 0.0
-        for _ in range(n_episodes):
-            actions = {a: agents[a].action() for a in ids}
-            game.step(actions)
-            total_r += game.reward(ids[0])
-        matrix[i, j] = total_r / n_episodes
+    if workers > 1:
+        with Pool(workers) as pool:
+            results = list(tqdm(
+                pool.imap(_run_single_matchup, matchup_args),
+                total=len(matchup_args),
+                desc=f'Torneo round-robin ({workers} CPUs)',
+                leave=False,
+            ))
+        for idx, avg in enumerate(results):
+            i, j = divmod(idx, n)
+            matrix[i, j] = avg
+    else:
+        pbar = tqdm(matchup_args, desc='Torneo round-robin', leave=False)
+        for idx, args in enumerate(pbar):
+            i, j = divmod(idx, n)
+            pbar.set_postfix_str(f'{agent_list[i]} vs {agent_list[j]}')
+            matrix[i, j] = _run_single_matchup(args)
 
     return matrix
 
