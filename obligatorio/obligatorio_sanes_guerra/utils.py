@@ -3,11 +3,20 @@ Utilidades de experimentación para el Obligatorio 1 — Sistemas Multiagente (2
 Contiene funciones reutilizables para ejecutar enfrentamientos, graficar evolución
 de políticas y generar tablas de torneo round-robin.
 """
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 from multiprocessing import Pool, cpu_count
-from tqdm.auto import tqdm
+
+try:
+    from tqdm.notebook import tqdm
+except ImportError:
+    try:
+        from tqdm.auto import tqdm
+    except ImportError:
+        def tqdm(iterable, *args, **kwargs):
+            return iterable
 
 from agents.fictitiousplay import FictitiousPlay
 from agents.regretmatching import RegretMatching
@@ -18,55 +27,70 @@ from agents.jal import JAL
 # ─── Colores y estilo ────────────────────────────────────────────────────────
 
 AGENT_COLORS = {
-    'FP': '#2196F3',
-    'RM': '#E91E63',
-    'IQL': '#4CAF50',
-    'JAL': '#FF9800',
-    'Random': '#9E9E9E',
+    "FP": "#2196F3",
+    "RM": "#E91E63",
+    "IQL": "#4CAF50",
+    "JAL": "#FF9800",
+    "Random": "#9E9E9E",
 }
 
 AGENT_FULL_NAMES = {
-    'FP': 'Fictitious Play',
-    'RM': 'Regret Matching',
-    'IQL': 'Independent Q-Learning',
-    'JAL': 'JAL – Agent Modeling',
-    'Random': 'Random Agent',
+    "FP": "Fictitious Play",
+    "RM": "Regret Matching",
+    "IQL": "Independent Q-Learning",
+    "JAL": "JAL – Agent Modeling",
+    "Random": "Random Agent",
 }
 
 
 def setup_plot_style():
     """Configura el estilo global de matplotlib para el notebook."""
-    plt.rcParams.update({
-        'figure.figsize': (13, 5),
-        'font.size': 11,
-        'font.family': 'sans-serif',
-        'axes.titlesize': 13,
-        'axes.titleweight': 'bold',
-        'axes.labelsize': 11,
-        'legend.fontsize': 9,
-        'figure.dpi': 100,
-        'savefig.dpi': 150,
-    })
+    plt.rcParams.update(
+        {
+            "figure.figsize": (13, 5),
+            "font.size": 11,
+            "font.family": "sans-serif",
+            "axes.titlesize": 13,
+            "axes.titleweight": "bold",
+            "axes.labelsize": 11,
+            "legend.fontsize": 9,
+            "figure.dpi": 100,
+            "savefig.dpi": 150,
+        }
+    )
     try:
-        plt.style.use('seaborn-v0_8-whitegrid')
+        plt.style.use("seaborn-v0_8-whitegrid")
     except OSError:
-        plt.style.use('ggplot')
+        plt.style.use("ggplot")
 
 
 # ─── Factory de agentes ──────────────────────────────────────────────────────
 
+
 def make_agent(name, game, agent_id, seed=None):
     """Instancia un agente por nombre corto."""
     constructors = {
-        'FP': lambda: FictitiousPlay(game=game, agent=agent_id, seed=seed),
-        'RM': lambda: RegretMatching(game=game, agent=agent_id, seed=seed),
-        'IQL': lambda: IQL(game=game, agent=agent_id,
-                           alpha=0.1, epsilon=0.2, min_epsilon=0.01,
-                           epsilon_decay=0.9999, seed=seed),
-        'JAL': lambda: JAL(game=game, agent=agent_id,
-                           alpha=0.1, epsilon=0.2, min_epsilon=0.01,
-                           epsilon_decay=0.9999, seed=seed),
-        'Random': lambda: RandomAgent(game=game, agent=agent_id),
+        "FP": lambda: FictitiousPlay(game=game, agent=agent_id, seed=seed),
+        "RM": lambda: RegretMatching(game=game, agent=agent_id, seed=seed),
+        "IQL": lambda: IQL(
+            game=game,
+            agent=agent_id,
+            alpha=0.1,
+            epsilon=0.2,
+            min_epsilon=0.01,
+            epsilon_decay=0.9999,
+            seed=seed,
+        ),
+        "JAL": lambda: JAL(
+            game=game,
+            agent=agent_id,
+            alpha=0.1,
+            epsilon=0.2,
+            min_epsilon=0.01,
+            epsilon_decay=0.9999,
+            seed=seed,
+        ),
+        "Random": lambda: RandomAgent(game=game, agent=agent_id),
     }
     if name not in constructors:
         raise ValueError(f"Agente desconocido: {name}")
@@ -75,8 +99,15 @@ def make_agent(name, game, agent_id, seed=None):
 
 # ─── Ejecución de experimentos ───────────────────────────────────────────────
 
-def run_experiment(game_class, agent_names, n_episodes=10000,
-                   track_interval=100, seed=42, **game_kwargs):
+
+def run_experiment(
+    game_class,
+    agent_names,
+    n_episodes=10000,
+    track_interval=100,
+    seed=42,
+    **game_kwargs,
+):
     """Ejecuta un enfrentamiento y trackea políticas y rewards a lo largo del tiempo."""
     game = game_class(**game_kwargs)
     game.reset()
@@ -91,9 +122,12 @@ def run_experiment(game_class, agent_names, n_episodes=10000,
     policy_history = {a: [] for a in agent_ids}
     reward_history = {a: [] for a in agent_ids}
 
-    for ep in tqdm(range(1, n_episodes + 1),
-                    desc=f'{agent_names[0]} vs {agent_names[1]}',
-                    leave=False):
+    for ep in tqdm(
+        range(1, n_episodes + 1),
+        desc=f"{agent_names[0]} vs {agent_names[1]}",
+        unit="ep",
+        leave=False,
+    ):
         actions = {a: agents[a].action() for a in agent_ids}
         game.step(actions)
         for a in agent_ids:
@@ -105,14 +139,14 @@ def run_experiment(game_class, agent_names, n_episodes=10000,
                 reward_history[a].append(rewards_acum[a] / ep)
 
     return {
-        'agents': agents,
-        'agent_names': agent_names,
-        'agent_ids': agent_ids,
-        'rewards_acum': rewards_acum,
-        'policy_history': policy_history,
-        'reward_history': reward_history,
-        'n_episodes': n_episodes,
-        'track_interval': track_interval,
+        "agents": agents,
+        "agent_names": agent_names,
+        "agent_ids": agent_ids,
+        "rewards_acum": rewards_acum,
+        "policy_history": policy_history,
+        "reward_history": reward_history,
+        "n_episodes": n_episodes,
+        "track_interval": track_interval,
     }
 
 
@@ -136,8 +170,7 @@ def _run_single_matchup(args):
     return total_r / n_episodes
 
 
-def run_tournament(game_class, agent_list, n_episodes=10000,
-                   seed=42, workers=None, **game_kwargs):
+def run_tournament(game_class, agent_list, n_episodes=10000, seed=42, workers=None, **game_kwargs):
     """Ejecuta torneo round-robin, paralelizado automáticamente según CPUs disponibles.
 
     Args:
@@ -178,6 +211,7 @@ def run_tournament(game_class, agent_list, n_episodes=10000,
 
 # ─── Visualizaciones ─────────────────────────────────────────────────────────
 
+
 def plot_tournament_heatmap(matrix, agent_list, game_name):
     """Muestra la matriz de torneo como heatmap coloreado."""
     fig, ax = plt.subplots(figsize=(7, 5.5))
@@ -185,59 +219,79 @@ def plot_tournament_heatmap(matrix, agent_list, game_name):
 
     # Normalizamos el color con centro en 0
     vmax = max(abs(matrix.min()), abs(matrix.max()), 0.01)
-    im = ax.imshow(matrix, cmap='RdYlGn', vmin=-vmax, vmax=vmax, aspect='equal')
+    im = ax.imshow(matrix, cmap="RdYlGn", vmin=-vmax, vmax=vmax, aspect="equal")
 
     ax.set_xticks(range(n))
     ax.set_yticks(range(n))
     ax.set_xticklabels(agent_list, fontsize=11)
     ax.set_yticklabels(agent_list, fontsize=11)
-    ax.set_xlabel('Columna (Oponente)', fontsize=11)
-    ax.set_ylabel('Fila (Agente evaluado)', fontsize=11)
-    ax.set_title(f'Torneo Round-Robin — {game_name}', fontsize=14, fontweight='bold', pad=12)
+    ax.set_xlabel("Columna (Oponente)", fontsize=11)
+    ax.set_ylabel("Fila (Agente evaluado)", fontsize=11)
+    ax.set_title(
+        f"Torneo Round-Robin — {game_name}", fontsize=14, fontweight="bold", pad=12
+    )
 
     # Texto en cada celda
     for i in range(n):
         for j in range(n):
             val = matrix[i, j]
-            color = 'white' if abs(val) > vmax * 0.6 else 'black'
-            ax.text(j, i, f'{val:.3f}', ha='center', va='center',
-                    fontsize=10, fontweight='bold', color=color)
+            color = "white" if abs(val) > vmax * 0.6 else "black"
+            ax.text(
+                j,
+                i,
+                f"{val:.3f}",
+                ha="center",
+                va="center",
+                fontsize=10,
+                fontweight="bold",
+                color=color,
+            )
 
-    fig.colorbar(im, ax=ax, label='Reward promedio', shrink=0.8)
+    fig.colorbar(im, ax=ax, label="Reward promedio", shrink=0.8)
     plt.tight_layout()
     plt.show()
 
 
 def plot_policy_evolution(result, game_name, action_labels=None):
     """Gráfica de evolución de políticas aprendidas (lado a lado)."""
-    n_agents = len(result['agent_ids'])
+    n_agents = len(result["agent_ids"])
     fig, axes = plt.subplots(1, n_agents, figsize=(7 * n_agents, 5))
     if n_agents == 1:
         axes = [axes]
 
-    for idx, agent_id in enumerate(result['agent_ids']):
+    for idx, agent_id in enumerate(result["agent_ids"]):
         ax = axes[idx]
-        history = np.array(result['policy_history'][agent_id])
+        history = np.array(result["policy_history"][agent_id])
         if len(history) == 0:
             continue
-        x = np.arange(1, len(history) + 1) * result['track_interval']
+        x = np.arange(1, len(history) + 1) * result["track_interval"]
         n_actions = history.shape[1]
-        labels = action_labels if action_labels else [f'Acción {i}' for i in range(n_actions)]
+        labels = (
+            action_labels
+            if action_labels
+            else [f"Acción {i}" for i in range(n_actions)]
+        )
 
         for a_idx in range(n_actions):
             ax.plot(x, history[:, a_idx], label=labels[a_idx], linewidth=2, alpha=0.85)
 
-        name = result['agent_names'][idx]
-        ax.set_title(f'{AGENT_FULL_NAMES.get(name, name)}', fontsize=12, fontweight='bold')
-        ax.set_xlabel('Episodios')
-        ax.set_ylabel('π (probabilidad)')
+        name = result["agent_names"][idx]
+        ax.set_title(
+            f"{AGENT_FULL_NAMES.get(name, name)}", fontsize=12, fontweight="bold"
+        )
+        ax.set_xlabel("Episodios")
+        ax.set_ylabel("π (probabilidad)")
         ax.set_ylim(-0.05, 1.05)
-        ax.legend(loc='best')
+        ax.legend(loc="best")
         ax.grid(True, alpha=0.3)
 
-    fig.suptitle(f'Evolución de Políticas — {game_name}: '
-                 f'{result["agent_names"][0]} vs {result["agent_names"][1]}',
-                 fontsize=14, fontweight='bold', y=1.02)
+    fig.suptitle(
+        f"Evolución de Políticas — {game_name}: "
+        f"{result['agent_names'][0]} vs {result['agent_names'][1]}",
+        fontsize=14,
+        fontweight="bold",
+        y=1.02,
+    )
     plt.tight_layout()
     plt.show()
 
@@ -246,20 +300,27 @@ def plot_reward_evolution(result, game_name):
     """Gráfica de evolución del reward promedio acumulado."""
     fig, ax = plt.subplots(figsize=(10, 4))
 
-    for idx, agent_id in enumerate(result['agent_ids']):
-        history = result['reward_history'][agent_id]
+    for idx, agent_id in enumerate(result["agent_ids"]):
+        history = result["reward_history"][agent_id]
         if len(history) == 0:
             continue
-        x = np.arange(1, len(history) + 1) * result['track_interval']
-        name = result['agent_names'][idx]
+        x = np.arange(1, len(history) + 1) * result["track_interval"]
+        name = result["agent_names"][idx]
         color = AGENT_COLORS.get(name, None)
-        ax.plot(x, history, label=f'{AGENT_FULL_NAMES.get(name, name)}',
-                linewidth=2, color=color, alpha=0.85)
+        ax.plot(
+            x,
+            history,
+            label=f"{AGENT_FULL_NAMES.get(name, name)}",
+            linewidth=2,
+            color=color,
+            alpha=0.85,
+        )
 
-    ax.set_title(f'Reward Promedio Acumulado — {game_name}',
-                 fontsize=13, fontweight='bold')
-    ax.set_xlabel('Episodios')
-    ax.set_ylabel('Reward promedio')
+    ax.set_title(
+        f"Reward Promedio Acumulado — {game_name}", fontsize=13, fontweight="bold"
+    )
+    ax.set_xlabel("Episodios")
+    ax.set_ylabel("Reward promedio")
     ax.legend()
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
@@ -269,10 +330,10 @@ def plot_reward_evolution(result, game_name):
 def print_final_policies(result):
     """Imprime las políticas finales aprendidas por cada agente."""
     print("Políticas finales aprendidas:")
-    for idx, agent_id in enumerate(result['agent_ids']):
-        name = result['agent_names'][idx]
-        pi = result['agents'][agent_id].policy()
-        pi_str = ', '.join(f'{p:.4f}' for p in pi)
+    for idx, agent_id in enumerate(result["agent_ids"]):
+        name = result["agent_names"][idx]
+        pi = result["agents"][agent_id].policy()
+        pi_str = ", ".join(f"{p:.4f}" for p in pi)
         print(f"  {AGENT_FULL_NAMES.get(name, name):>25}:  [{pi_str}]")
     print()
 
@@ -283,7 +344,7 @@ def print_ranking(matrix, agent_list, game_name):
     ranking = sorted(zip(agent_list, avg), key=lambda x: -x[1])
     print(f"  Ranking en {game_name}:")
     for rank, (name, reward) in enumerate(ranking, 1):
-        bar = '█' * int(max(0, (reward + 0.5) * 15))
+        bar = "█" * int(max(0, (reward + 0.5) * 15))
         full = AGENT_FULL_NAMES.get(name, name)
         print(f"    {rank}. {full:>25}: {reward:>8.4f}  {bar}")
     print()
