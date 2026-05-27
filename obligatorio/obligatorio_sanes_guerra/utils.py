@@ -6,6 +6,7 @@ de políticas y generar tablas de torneo round-robin.
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
+from tqdm.auto import tqdm
 
 from agents.fictitiousplay import FictitiousPlay
 from agents.regretmatching import RegretMatching
@@ -89,7 +90,9 @@ def run_experiment(game_class, agent_names, n_episodes=10000,
     policy_history = {a: [] for a in agent_ids}
     reward_history = {a: [] for a in agent_ids}
 
-    for ep in range(1, n_episodes + 1):
+    for ep in tqdm(range(1, n_episodes + 1),
+                    desc=f'{agent_names[0]} vs {agent_names[1]}',
+                    leave=False):
         actions = {a: agents[a].action() for a in agent_ids}
         game.step(actions)
         for a in agent_ids:
@@ -120,21 +123,23 @@ def run_tournament(game_class, agent_list, n_episodes=10000,
     n = len(agent_list)
     matrix = np.zeros((n, n))
 
-    for i in range(n):
-        for j in range(n):
-            game = game_class(**game_kwargs)
-            game.reset()
-            ids = game.agents
-            agents = {
-                ids[0]: make_agent(agent_list[i], game, ids[0], seed=seed),
-                ids[1]: make_agent(agent_list[j], game, ids[1], seed=seed + 1),
-            }
-            total_r = 0.0
-            for _ in range(n_episodes):
-                actions = {a: agents[a].action() for a in ids}
-                game.step(actions)
-                total_r += game.reward(ids[0])
-            matrix[i, j] = total_r / n_episodes
+    matchups = [(i, j) for i in range(n) for j in range(n)]
+    pbar = tqdm(matchups, desc='Torneo round-robin', leave=False)
+    for i, j in pbar:
+        pbar.set_postfix_str(f'{agent_list[i]} vs {agent_list[j]}')
+        game = game_class(**game_kwargs)
+        game.reset()
+        ids = game.agents
+        agents = {
+            ids[0]: make_agent(agent_list[i], game, ids[0], seed=seed),
+            ids[1]: make_agent(agent_list[j], game, ids[1], seed=seed + 1),
+        }
+        total_r = 0.0
+        for _ in range(n_episodes):
+            actions = {a: agents[a].action() for a in ids}
+            game.step(actions)
+            total_r += game.reward(ids[0])
+        matrix[i, j] = total_r / n_episodes
 
     return matrix
 
