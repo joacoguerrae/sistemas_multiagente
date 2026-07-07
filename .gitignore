@@ -26,3 +26,6 @@ Thumbs.db
 
 # uv
 uv.lock
+
+# Repo git independiente (tiene su propio remote: github.com/joacoguerrae/obligatorio2-sma-guerra-sanes)
+obligatorio2-sma-guerra-sanes/
